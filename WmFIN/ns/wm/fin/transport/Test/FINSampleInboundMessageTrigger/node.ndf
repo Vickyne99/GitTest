@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="node_type">webMethods/trigger</value>
+  <value name="node_nsName">wm.fin.transport.Test:FINSampleInboundMessageTrigger</value>
+  <value name="node_pkg">WmFIN</value>
+  <record name="trigger" javaclass="com.wm.util.Values">
+    <value name="concurrent">false</value>
+    <value name="ordering">1</value>
+    <value name="auditOption">0</value>
+    <record name="auditSettings" javaclass="com.wm.util.Values">
+      <value name="document_data">0</value>
+      <value name="startExecution">false</value>
+      <value name="stopExecution">false</value>
+      <value name="onError">true</value>
+    </record>
+    <array name="conditions" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="type">simple</value>
+        <record name="data" javaclass="com.wm.util.Values">
+          <record name="messageTypeFilterPair" javaclass="com.wm.util.Values">
+            <value name="messageType">wm.fin.transport.Test:FINSampleInboundMessage</value>
+            <value name="filter"></value>
+          </record>
+          <value name="serviceName">wm.fin.sample:receive</value>
+          <value name="conditionName">FINSampleInboundMessage</value>
+        </record>
+      </record>
+    </array>
+    <record name="redeliveryOptions" javaclass="com.wm.util.Values">
+      <value name="max">5</value>
+      <value name="delayInterval">10000</value>
+    </record>
+    <value name="deliverEnabled">true</value>
+    <value name="executeEnabled">true</value>
+    <value name="joinTimeout">86400000</value>
+    <value name="docsPrefetchMax">10</value>
+    <value name="docsPrefetchMin">4</value>
+    <value name="maxConcurrentThreads">1</value>
+  </record>
+</Values>

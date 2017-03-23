@@ -1,0 +1,65 @@
+function printMessage(message, colspan)
+{
+	w("<table width=100% >");
+	w("<tr>");
+	w("<td class=\"message\" colspan=" + colspan + ">");
+	w(message);
+	w("</td>");
+	w("</tr>");
+	w("</table>");
+}
+
+function printCMessage(message, colspan)
+{
+	w("<table width=100% >");
+	w("<tr>");
+	w("<td class=\"message\" colspan=" + colspan + ">");
+	w("<center>");		
+	w(message);
+	w("</center>");		
+	w("</td>");
+	w("</tr>");
+	w("</table>");
+}
+
+function move(from, to)
+{
+	var fromSelectBox =  document.getElementById(from);
+	var toSelectBox =  document.getElementById(to);
+	var fromLength = fromSelectBox.length;
+	var temp = new Array(fromLength);
+
+	for(var i = 0; i < fromLength; i++) {
+		if(fromSelectBox[i].selected) {
+			temp[i] = true;
+			var optn = document.createElement("OPTION");
+			optn.text = fromSelectBox[i].text;
+			optn.value = fromSelectBox[i].value;
+			toSelectBox.options.add(optn);
+		} else {
+			temp[i] = false;
+		}
+	}
+
+	for(var i = fromLength-1; i >= 0; i--) {
+		if(temp[i]) {
+			fromSelectBox.remove(i);
+		}
+	}
+
+}
+
+function changePartner(selectBox) 
+{
+	var changeForm = document.getElementById('changeForm');
+	var newInput = document.getElementById('partnerID');
+	newInput.value = selectBox.options[selectBox.selectedIndex].value;
+	changeForm.submit();
+}
+
+function containsNonLatinCodepoints(str) {
+    for (var i = 0, n = str.length; i < n; i++) {
+        if (str.charCodeAt(i) > 255) { return true; }
+    }
+    return false;
+}

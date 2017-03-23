@@ -1,0 +1,42 @@
+METHOD get_previous_object.
+  DATA : key             TYPE vbco6,
+         doc_list        TYPE TABLE OF vbfa INITIAL SIZE 0,
+         doc             TYPE vbfa.
+
+*- Retrieve document flow information
+  swc0_get_object_key bo key-vbeln.
+  key-mandt = sy-mandt.
+  CALL FUNCTION 'RV_ORDER_FLOW_INFORMATION'
+    EXPORTING
+      aufbereitung  = '2'
+      comwa         = key
+      nachfolger    = space
+      vorgaenger    = 'X'
+      v_stufen      = '20'
+      n_stufen      = '20'
+    TABLES
+      vbfa_tab      = doc_list
+    EXCEPTIONS
+      no_vbfa       = 1
+      no_vbuk_found = 2.
+  IF sy-subrc <> 0.                                         "#EC NEEDED
+    ...
+  ENDIF.
+
+*- Check for the previous document number from the document flow
+  LOOP AT doc_list INTO doc WHERE vbeln = key-vbeln. ENDLOOP.
+
+*- Change business object
+  IF NOT doc-vbelv = ''.
+    CASE doc-vbtyp_v.
+      WHEN zbem_chara.
+        swc0_create_object bo zbem_bus2030 doc-vbelv.
+      WHEN zbem_charb.
+        swc0_create_object bo zbem_bus2031 doc-vbelv.
+      WHEN zbem_charc.
+        swc0_create_object bo zbem_bus2032 doc-vbelv.
+      WHEN zbem_charj.
+        swc0_create_object bo zbem_likp doc-vbelv.
+    ENDCASE.
+  ENDIF.
+ENDMETHOD.

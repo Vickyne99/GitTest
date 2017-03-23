@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<constraints>
+<field name="52A:" type="MixedType">
+    <bizName>A - Ordering Institution</bizName>
+    <pattern>[/1!a][/34x][CRLF]4!a2!a2!c[3!c]</pattern>
+</field>
+<field name="52D:" type="MixedType">
+    <bizName>D - Ordering Institution</bizName>
+    <pattern>[/1!a][/34x][CRLF]4*35x</pattern>
+</field>
+<field name="56A:" type="MixedType">
+    <bizName>A - Intermediary Institution</bizName>
+    <pattern>[/1!a][/34x][CRLF]4!a2!a2!c[3!c]</pattern>
+</field>
+<field name="56C:" type="PatternType">
+    <bizName>C - Intermediary Institution</bizName>
+    <pattern>/34x</pattern>
+</field>
+<field name="56D:" type="MixedType">
+    <bizName>D - Intermediary Institution</bizName>
+    <pattern>[/1!a][/34x][CRLF]4*35x</pattern>
+</field>
+
+<field name="57A:" type="MixedType">
+    <bizName>A - Account With Institution</bizName>
+    <pattern>[/1!a][/34x][CRLF]4!a2!a2!c[3!c]</pattern>
+</field>
+
+<field name="57B:" type="MixedType">
+    <bizName>B - Account With Institution</bizName>
+    <pattern>[/1!a][/34x][CRLF][35x]</pattern>
+</field>
+<field name="57C:" type="PatternType">
+    <bizName>C - Account With Institution</bizName>
+    <pattern>/34x</pattern>
+</field>
+<field name="57D:" type="MixedType">
+    <bizName>D - Account With Institution</bizName>
+    <pattern>[/1!a][/34x][CRLF]4*35x</pattern>
+</field>
+
+<field name="59A:" type="PatternType">
+    <bizName>A - Beneficiary Customer</bizName>
+    <pattern>[/34x][CRLF](&lt;SWIFTBIC&gt;|&lt;NONSWIFTBIC&gt;)</pattern>
+    <alias pattern="34x" bizName="Account" />    
+</field>
+</constraints>

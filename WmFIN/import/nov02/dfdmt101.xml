@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<constraints>
+
+<!-- Text Block for NOV02 MT101 -->
+<field name="20:" type="PatternType">
+    <bizName>Reference - Sender's Reference</bizName>
+    <pattern>16x</pattern>
+    <error type="content">T26</error>
+</field>
+<field name="21:" type="PatternType">
+    <bizName>Reference - Transaction Reference</bizName>
+    <pattern>16x</pattern>
+    <error type="content">T26</error>
+</field>
+<field name="23E:" type="MixedType">
+    <bizName>Instruction Code</bizName>
+    <pattern>4!c[/30x]</pattern>
+    <choice>CHQB</choice>
+    <choice>CMSW</choice>
+    <choice>CMTO</choice>
+    <choice>CMZB</choice>
+    <choice>CORT</choice>
+    <choice>INTC</choice>
+    <choice>NETS</choice>
+    <choice>PHON</choice>
+    <choice>This</choice>
+    <choice>REPA</choice>
+    <choice>RTGS</choice>
+    <choice>URGP</choice>
+    <choice>OTHR</choice>
+    <error type="code">T47</error>
+</field>
+<field name="25:" type="PatternType">
+    <bizName>Authorisation</bizName>
+    <pattern>35x</pattern>
+</field>
+<field name="30:" type="PatternType">
+    <bizName>Date - Requested Execution Date</bizName>
+    <pattern>&lt;DATE2&gt;</pattern>
+</field>
+<field name="32B:" type="PatternType">
+    <bizName>B - Currency/Transaction Amount</bizName>
+    <pattern>&lt;CUR&gt;&lt;AMOUNT&gt;15</pattern>
+</field>
+<field name="33B:" type="PatternType">
+    <bizName>B - Currency/Original Ordered Amount</bizName>
+    <pattern>&lt;CUR&gt;&lt;NUMBER&gt;15</pattern>
+</field>
+<field name="52A:" type="MixedType">
+    <bizName>A - Account Servicing Institution</bizName>
+    <pattern>[&lt;BICPLUS&gt;][CRLF]&lt;SWIFTBIC&gt;|&lt;NONSWIFTBIC&gt;</pattern>
+</field>
+<field name="52C:" type="MixedType">
+    <bizName>C - Account Servicing Institution</bizName>
+    <pattern>&lt;BICPLUS&gt;</pattern>
+</field>
+<field name="56A:" type="MixedType">
+    <bizName>A - Intermediary</bizName>
+    <pattern>[&lt;BICPLUS&gt;][CRLF]&lt;SWIFTBIC&gt;|&lt;NON-SWIFTBIC&gt;</pattern>
+</field>
+<field name="56C:" type="MixedType">
+    <bizName>C - Intermediary</bizName>
+    <pattern>&lt;BICPLUS&gt;</pattern>
+</field>
+<field name="56D:" type="MixedType">
+    <bizName>D - Intermediary</bizName>
+    <pattern>[&lt;BICPLUS&gt;][CRLF]4*35x</pattern>
+</field>
+<field name="57A:" type="MixedType">
+    <bizName>A - Account With Institution</bizName>
+    <pattern>[&lt;BICPLUS&gt;][CRLF]&lt;SWIFTBIC&gt;|&lt;NONSWIFTBIC&gt;</pattern>
+</field>
+<field name="57D:" type="MixedType">
+    <bizName>D - Account With Institution</bizName>
+    <pattern>[&lt;BICPLUS&gt;][CRLF]4*35x</pattern>
+</field>
+<field name="59:" type="PatternType">
+    <bizName>Beneficiary</bizName>
+    <pattern>[/34xCRLF]4*35x</pattern>
+</field>
+<field name="59A:" type="PatternType">
+    <bizName>A - Beneficiary</bizName>
+    <pattern>[/34xCRLF]&lt;SWIFTBIC&gt;|&lt;NONSWIFTBIC&gt;</pattern>
+</field>
+
+</constraints>

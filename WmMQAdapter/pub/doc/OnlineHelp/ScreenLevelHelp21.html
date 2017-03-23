@@ -1,0 +1,828 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="GENERATOR" content="Quadralay WebWorks Publisher Professional Edition 7.0" />
+  <meta name="TEMPLATEBASE" content="wM_WWH20030908" />
+  <meta name="LASTUPDATED" content="07/27/06 06:26:21" />
+  <title>Asynchronous Listener Notification Service Template Screens</title>
+  <link rel="StyleSheet" href="document.css" type="text/css" />
+  <link rel="StyleSheet" href="catalog.css" type="text/css" />
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+ </head>
+
+ <body onLoad="WWHUpdate();">
+
+
+<a name="wp1117928"> </a><h2 class="pNewHTMLPage">
+Asynchronous Listener Notification Service Template Screens
+</h2><a name="wp1117934"> </a><p class="pBody">
+The Asynchronous Notification service enables you to define an asynchronous notification to process multiple messages at an undefined time, which are passed from the listener.
+</p>
+<a name="wp1116405"> </a><p class="pBody">
+The Asynchronous Notification service creates the following:
+</p>
+<div class="pSmartList1" style="margin-top: 7pt"><ul class="pSmartList1" style="margin-top: 7pt">
+<a name="wp1116408"> </a><div style="margin-top: 7pt" class="pSmartList1"><li>An Asnynchronous Listener Notification</li></div>
+<a name="wp1116406"> </a><div style="margin-top: 7pt" class="pSmartList1"><li>An Asnynchronous Publishable Document Type</li></div>
+<a name="wp1116421"> </a><p class="pBodyRelative">
+For more information about this document type, see <a  href="ScreenLevelHelp22.html#wp1110717">Asynchronous Publishable Document Type Screen</a>.
+</p>
+</ul></div>
+<a name="wp1109224"> </a><p class="pBody">
+This service template includes the following tabs:
+</p>
+<a name="wp1109236"> </a><p class="pChapterTOC">
+<img src="images/bullet.gif" height="13" width="10" border="0" />
+<a  href="ScreenLevelHelp21.html#wp1110684">MQMD Header Tab</a>
+</p>
+<a name="wp1113398"> </a><p class="pChapterTOC">
+<img src="images/bullet.gif" height="13" width="10" border="0" />
+<a  href="ScreenLevelHelp21.html#wp1121400">JMS Properties Tab</a>
+</p>
+<a name="wp1110684"> </a><h4 class="pHeading3">
+MQMD Header Tab       
+</h4>
+<a name="wp1123044"> </a><p class="pBody">
+Use the<b class="cBold"> MQMD Header</b> tab to specify the optional msgHeader property fields and constant values for the asynchronous notification. The msgHeader property fields that you select in the <b class="cBold">Output Field Names</b> column appear within the signature of the Asynchronous Publishable Document on the <b class="cBold">Document Type</b> tab.
+</p>
+<a name="wp1123045"> </a><p class="pBody">
+Use the following icons to manage the rows on the<b class="cBold"> MQMD Header</b> tab:
+</p>
+<div class="pSmartList1" style="margin-top: 7pt"><ul class="pSmartList1" style="margin-top: 7pt">
+<a name="wp1123049"> </a><div style="margin-top: 7pt" class="pSmartList1"><li>To define new <b class="cBold">Output Field Names</b>, select the Insert Row icon <img src="images/table_insertrow.gif" border="0" hspace="0" vspace="0"/> (or the Fill in all rows to the table icon <img src="images/append_all_rows.gif" border="0" hspace="0" vspace="0"/>).</li></div>
+<a name="wp1123053"> </a><div style="margin-top: 7pt" class="pSmartList1"><li>To change the order of <b class="cBold">Output Field Names</b> to ensure the parameters are parsed in the correct order, use the Shift Up <img src="images/btn_shift_up.gif" border="0" hspace="0" vspace="0"/> or Shift Down <img src="images/btn_shift_down.gif" border="0" hspace="0" vspace="0"/> icons.</li></div>
+<a name="wp1123063"> </a><div style="margin-top: 7pt" class="pSmartList1"><li>To delete any <b class="cBold">Output Field Names</b>, use the Remove row icon <img src="images/remove_row.gif" border="0" hspace="0" vspace="0"/>.</li></div>
+</ul></div>
+<a name="wp1121396"> </a><p class="pBody">
+You can add the following msgHeader property fields to the <b class="cBold">Input Field Name</b> column and the <b class="cBold">Output Field Name</b> column. In the <b class="cBold">MQMD Header</b>, <b class="cBold">Filter Criteria </b>refers to specific values that must be present in the header of the actual message in order for this notification to process it. You must select the <b class="cBold">Use for Input</b> check box next to each property in order for the notification to use the filter criteria for that property.
+</p>
+<a name="wp1121427"> </a><p class="pAnchor">
+</p><div align="left">
+<table border="0">
+  <caption></caption>
+  <tr align="left" valign="bottom">    <th><a name="wp1122109"> </a><div style="text-align: left" class="pCellHeading">
+msgHeader Property
+<hr />
+</div>
+</th>
+    <th><a name="wp1122111"> </a><div style="text-align: left" class="pCellHeading">
+Data Type
+<hr />
+</div>
+</th>
+    <th><a name="wp1122113"> </a><div style="text-align: left" class="pCellHeading">
+Maximum Field Length <br />for Constant Value
+<hr />
+</div>
+</th>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1122115"> </a><p class="pBody">
+<b class="cBold">AccountingToken*</b>
+</p>
+</td>
+    <td><a name="wp1122117"> </a><p class="pBody">
+String
+</p>
+</td>
+    <td><a name="wp1122119"> </a><p class="pBody">
+32 alphanumeric single-byte characters
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1122121"> </a><p class="pBody">
+<b class="cBold">AccountingTokenByteArray*</b>
+</p>
+</td>
+    <td><a name="wp1122123"> </a><p class="pBody">
+Byte Array
+</p>
+</td>
+    <td><a name="wp1122125"> </a><p class="pBody">
+32 bytes
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1122127"> </a><p class="pBody">
+<b class="cBold">ApplIdentityData</b>
+</p>
+</td>
+    <td><a name="wp1122129"> </a><p class="pBody">
+String
+</p>
+</td>
+    <td><a name="wp1122131"> </a><p class="pBody">
+32 alphanumeric single-byte characters
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1122133"> </a><p class="pBody">
+<b class="cBold">ApplOriginData</b>
+</p>
+</td>
+    <td><a name="wp1122135"> </a><p class="pBody">
+String
+</p>
+</td>
+    <td><a name="wp1122137"> </a><p class="pBody">
+4 alphanumeric single-byte characters
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1122139"> </a><p class="pBody">
+<b class="cBold">BackoutCount</b>
+</p>
+</td>
+    <td><a name="wp1122141"> </a><p class="pBody">
+String
+</p>
+</td>
+    <td><a name="wp1122143"> </a><p class="pBody">
+4 digits
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1122145"> </a><p class="pBody">
+<b class="cBold">CodedCharSetId</b>
+</p>
+</td>
+    <td><a name="wp1122147"> </a><p class="pBody">
+String
+</p>
+</td>
+    <td><a name="wp1122149"> </a><p class="pBody">
+4 digits
+</p>
+<a name="wp1122150"> </a><p class="pNote">
+<b>Note:</b> If this field is left blank, then the WebSphere MQ Adapter enters a default value of <b class="cBold">MQCCSI_Q_MGR</b>.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1122155"> </a><p class="pBody">
+<b class="cBold">CorrelId*</b>
+</p>
+</td>
+    <td><a name="wp1122157"> </a><p class="pBody">
+String
+</p>
+</td>
+    <td><a name="wp1122159"> </a><p class="pBody">
+24 alphanumeric single-byte characters
+</p>
+<a name="wp1122160"> </a><p class="pNote">
+<b>Note:</b> The MsgId value in the Request message maps to the CorrelationID in the Reply message.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1122162"> </a><p class="pBody">
+<b class="cBold">CorrelationIdByteArray*</b>
+</p>
+</td>
+    <td><a name="wp1122164"> </a><p class="pBody">
+Byte Array
+</p>
+</td>
+    <td><a name="wp1122166"> </a><p class="pBody">
+24 bytes
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1122168"> </a><p class="pBody">
+<b class="cBold">Encoding</b>
+</p>
+</td>
+    <td><a name="wp1122170"> </a><p class="pBody">
+String
+</p>
+</td>
+    <td><a name="wp1122172"> </a><p class="pBody">
+4 digits
+</p>
+<a name="wp1122173"> </a><p class="pNote">
+<b>Note:</b> If this field is left blank, then the WebSphere MQ Adapter enters a default value <br />of <b class="cBold">00273 - Native</b>.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1122178"> </a><p class="pBody">
+<b class="cBold">Expiry</b>
+</p>
+</td>
+    <td><a name="wp1122180"> </a><p class="pBody">
+String
+</p>
+</td>
+    <td><a name="wp1122182"> </a><p class="pBody">
+4 digits
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1122184"> </a><p class="pBody">
+<b class="cBold">Feedback</b>
+</p>
+</td>
+    <td><a name="wp1122186"> </a><p class="pBody">
+String
+</p>
+</td>
+    <td><a name="wp1122188"> </a><p class="pBody">
+4 digits
+</p>
+<a name="wp1122189"> </a><p class="pNote">
+<b>Note:</b> If this field is left blank, then the WebSphere MQ Adapter enters a default value of <b class="cBold">MQFB_NONE.</b>
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1122194"> </a><p class="pBody">
+<b class="cBold">Format</b>
+</p>
+</td>
+    <td><a name="wp1122196"> </a><p class="pBody">
+String
+</p>
+</td>
+    <td><a name="wp1122198"> </a><p class="pBody">
+8 alphanumeric single-byte characters
+</p>
+<a name="wp1122199"> </a><p class="pNote">
+<b>Note:</b> If this field is left blank, then the WebSphere MQ Adapter enters a default value of (<b class="cBold">NONE)</b>.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1122204"> </a><p class="pBody">
+<b class="cBold">GroupId*</b>
+</p>
+</td>
+    <td><a name="wp1122206"> </a><p class="pBody">
+String
+</p>
+</td>
+    <td><a name="wp1122208"> </a><p class="pBody">
+24 alphanumeric single-byte characters
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1122210"> </a><p class="pBody">
+<b class="cBold">GroupIdByteArray*</b>
+</p>
+</td>
+    <td><a name="wp1122212"> </a><p class="pBody">
+Byte Array
+</p>
+</td>
+    <td><a name="wp1122214"> </a><p class="pBody">
+24 bytes
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1122216"> </a><p class="pBody">
+<b class="cBold">MsgFlags</b>
+</p>
+</td>
+    <td><a name="wp1122218"> </a><p class="pBody">
+String
+</p>
+</td>
+    <td><a name="wp1122220"> </a><p class="pBody">
+4 digits
+</p>
+<a name="wp1122221"> </a><p class="pNote">
+<b>Note:</b> If this field is left blank, then the WebSphere MQ Adapter enters a default value of <b class="cBold">NONE</b>.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1122226"> </a><p class="pBody">
+<b class="cBold">MsgId*</b>
+</p>
+</td>
+    <td><a name="wp1122228"> </a><p class="pBody">
+String
+</p>
+</td>
+    <td><a name="wp1122230"> </a><p class="pBody">
+24 alphanumeric single-byte characters
+</p>
+<a name="wp1122231"> </a><p class="pNote">
+<b>Note:</b> The MsgId value in the Request message maps to the CorrelationID in the Reply message.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1122233"> </a><p class="pBody">
+<b class="cBold">MsgIdByteArray*</b>
+</p>
+</td>
+    <td><a name="wp1122235"> </a><p class="pBody">
+Byte Array
+</p>
+</td>
+    <td><a name="wp1122237"> </a><p class="pBody">
+24 bytes
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1122239"> </a><p class="pBody">
+<b class="cBold">MsgType</b>
+</p>
+</td>
+    <td><a name="wp1122241"> </a><p class="pBody">
+String
+</p>
+</td>
+    <td><a name="wp1122243"> </a><p class="pBody">
+4 digits
+</p>
+<a name="wp1122244"> </a><p class="pNote">
+<b>Note:</b> If this field is left blank, then the WebSphere MQ Adapter enters a default value of <b class="cBold">Datagram</b>.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1122249"> </a><p class="pBody">
+<b class="cBold">MsgSeqNumber</b>
+</p>
+</td>
+    <td><a name="wp1122251"> </a><p class="pBody">
+String
+</p>
+</td>
+    <td><a name="wp1122253"> </a><p class="pBody">
+4 digits
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1122255"> </a><p class="pBody">
+<b class="cBold">Offset</b>
+</p>
+</td>
+    <td><a name="wp1122257"> </a><p class="pBody">
+String
+</p>
+</td>
+    <td><a name="wp1122259"> </a><p class="pBody">
+4 digits
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1122261"> </a><p class="pBody">
+<b class="cBold">OriginalLength</b>
+</p>
+</td>
+    <td><a name="wp1122263"> </a><p class="pBody">
+String
+</p>
+</td>
+    <td><a name="wp1122265"> </a><p class="pBody">
+4 digits
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1122267"> </a><p class="pBody">
+<b class="cBold">Persistence</b>
+</p>
+</td>
+    <td><a name="wp1122269"> </a><p class="pBody">
+String
+</p>
+</td>
+    <td><a name="wp1122271"> </a><p class="pBody">
+4 digits
+</p>
+<a name="wp1122272"> </a><p class="pNote">
+<b>Note:</b> If this field is left blank, then the WebSphere MQ Adapter enters a default value of <b class="cBold">Not Persistent</b>.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1122277"> </a><p class="pBody">
+<b class="cBold">Priority</b>
+</p>
+</td>
+    <td><a name="wp1122279"> </a><p class="pBody">
+String
+</p>
+</td>
+    <td><a name="wp1122281"> </a><p class="pBody">
+4 digits
+</p>
+<a name="wp1122282"> </a><p class="pNote">
+<b>Note:</b> If this field is left blank, then the WebSphere MQ Adapter enters a default value based on the default priority of the queue.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1122287"> </a><p class="pBody">
+<b class="cBold">PutApplName</b>
+</p>
+</td>
+    <td><a name="wp1122289"> </a><p class="pBody">
+String
+</p>
+</td>
+    <td><a name="wp1122291"> </a><p class="pBody">
+24 alphanumeric single-byte characters
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1122293"> </a><p class="pBody">
+<b class="cBold">PutApplType</b>
+</p>
+</td>
+    <td><a name="wp1122295"> </a><p class="pBody">
+String
+</p>
+</td>
+    <td><a name="wp1122297"> </a><p class="pBody">
+4 digits
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1122299"> </a><p class="pBody">
+<b class="cBold">PutDate</b>
+</p>
+</td>
+    <td><a name="wp1122301"> </a><p class="pBody">
+String
+</p>
+</td>
+    <td><a name="wp1122303"> </a><p class="pBody">
+8 digits
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1122305"> </a><p class="pBody">
+<b class="cBold">PutTime</b>
+</p>
+</td>
+    <td><a name="wp1122307"> </a><p class="pBody">
+String
+</p>
+</td>
+    <td><a name="wp1122309"> </a><p class="pBody">
+8 digits
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1122311"> </a><p class="pBody">
+<b class="cBold">ReplytoQueueMgr</b>
+</p>
+</td>
+    <td><a name="wp1122313"> </a><p class="pBody">
+String
+</p>
+</td>
+    <td><a name="wp1122315"> </a><p class="pBody">
+48 alphanumeric single-byte characters
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1122317"> </a><p class="pBody">
+<b class="cBold">ReplyToQ</b>
+</p>
+</td>
+    <td><a name="wp1122319"> </a><p class="pBody">
+String
+</p>
+</td>
+    <td><a name="wp1122321"> </a><p class="pBody">
+48 alphanumeric single-byte characters
+</p>
+<a name="wp1122322"> </a><p class="pImportant">
+<b>Important!</b> ReplyToQ is a required field. 
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1122324"> </a><p class="pBody">
+<b class="cBold">Report</b>
+</p>
+</td>
+    <td><a name="wp1122326"> </a><p class="pBody">
+String
+</p>
+</td>
+    <td><a name="wp1122328"> </a><p class="pBody">
+4 digits
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1122330"> </a><p class="pBody">
+<b class="cBold">UserIdentifier</b>
+</p>
+</td>
+    <td><a name="wp1122332"> </a><p class="pBody">
+String
+</p>
+</td>
+    <td><a name="wp1122334"> </a><p class="pBody">
+12 alphanumeric single-byte characters
+</p>
+</td>
+</tr>
+</table>
+</div>
+<p class="pAnchor">
+</p>
+<a name="wp1122350"> </a><p class="pAnchor">
+</p><div align="left">
+<table border="0">
+  <caption></caption>
+  <tr align="left" valign="top">    <td><a name="wp1122354"> </a><p class="px_Note">
+&#160;
+<img src="images/note_icon.gif" height="25" width="25" border="1" alt="Note" />
+</p>
+</td>
+    <td><a name="wp1122356"> </a><p class="pNote">
+<b>Note:</b> An asterisk * indicates that you can enter these properties either as a string or as a byte array. For example, <b class="cBold">AccountingToken</b> and <b class="cBold">AccountingTokenByteArray</b> refer to the same msgHeader property. If you specify values for both properties, then the byte array value will be used.
+</p>
+</td>
+</tr>
+</table>
+</div>
+<p class="pAnchor">
+</p>
+<a name="wp1121400"> </a><h4 class="pHeading3">
+JMS Properties Tab       
+</h4>
+<a name="wp1110703"> </a><p class="pBody">
+Use the <b class="cBold">JMS Properties</b> tab to identify the optional JMS property fields that the asynchronous notification will use.
+</p>
+<a name="wp1116530"> </a><p class="pBody">
+Use the following icons to manage rows on the<b class="cBold"> JMS Properties </b>tab:
+</p>
+<div class="pSmartList1" style="margin-top: 7pt"><ul class="pSmartList1" style="margin-top: 7pt">
+<a name="wp1116494"> </a><div style="margin-top: 7pt" class="pSmartList1"><li>To define new JMS property fields, select the Insert Row icon <img src="images/table_insertrow.gif" border="0" hspace="0" vspace="0"/> (or the Fill in all rows to the table icon <img src="images/append_all_rows.gif" border="0" hspace="0" vspace="0"/>).</li></div>
+<a name="wp1116498"> </a><div style="margin-top: 7pt" class="pSmartList1"><li>To change the order of JMS property fields to ensure the parameters are parsed in the correct order, use the Shift Up <img src="images/btn_shift_up.gif" border="0" hspace="0" vspace="0"/> or Shift Down <img src="images/btn_shift_down.gif" border="0" hspace="0" vspace="0"/> icons </li></div>
+<a name="wp1116508"> </a><div style="margin-top: 7pt" class="pSmartList1"><li> To delete any JMS property fields, use the Remove row icon <img src="images/remove_row.gif" border="0" hspace="0" vspace="0"/>.</li></div>
+</ul></div>
+<a name="wp1116489"> </a><p class="pBody">
+You can add the following optional JMS property fields:
+</p>
+<a name="wp1126041"> </a><p class="pAnchor">
+</p><div align="left">
+<table border="0">
+  <caption></caption>
+  <tr align="left" valign="bottom">    <th><a name="wp1116537"> </a><div style="text-align: left" class="pCellHeading">
+JMS Property
+<hr />
+</div>
+</th>
+    <th><a name="wp1116539"> </a><div style="text-align: left" class="pCellHeading">
+Data Type
+<hr />
+</div>
+</th>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1116541"> </a><p class="pBody">
+<b class="cBold">JMSDestination</b>
+</p>
+</td>
+    <td><a name="wp1116543"> </a><p class="pBody">
+String
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1116545"> </a><p class="pBody">
+<b class="cBold">JMSExpiration</b>
+</p>
+</td>
+    <td><a name="wp1116547"> </a><p class="pBody">
+String
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1116549"> </a><p class="pBody">
+<b class="cBold">JMSPriority</b>
+</p>
+</td>
+    <td><a name="wp1116551"> </a><p class="pBody">
+String
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1116553"> </a><p class="pBody">
+<b class="cBold">JMSDeliveryMode</b>
+</p>
+</td>
+    <td><a name="wp1116555"> </a><p class="pBody">
+String
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1116557"> </a><p class="pBody">
+<b class="cBold">JMSCorrelationID</b>
+</p>
+</td>
+    <td><a name="wp1116559"> </a><p class="pBody">
+String
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1116561"> </a><p class="pBody">
+<b class="cBold">JMSCorrelationIDByteArray</b>
+</p>
+</td>
+    <td><a name="wp1116563"> </a><p class="pBody">
+Byte Array
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1116565"> </a><p class="pBody">
+<b class="cBold">JMSReplyTo</b>
+</p>
+</td>
+    <td><a name="wp1116567"> </a><p class="pBody">
+String
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1116569"> </a><p class="pBody">
+<b class="cBold">JMSType</b>
+</p>
+</td>
+    <td><a name="wp1116571"> </a><p class="pBody">
+String
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1116573"> </a><p class="pBody">
+<b class="cBold">JMSMessageID</b>
+</p>
+</td>
+    <td><a name="wp1116575"> </a><p class="pBody">
+String
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1116577"> </a><p class="pBody">
+<b class="cBold">JMSTimestamp</b>
+</p>
+</td>
+    <td><a name="wp1116579"> </a><p class="pBody">
+String
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1116581"> </a><p class="pBody">
+<b class="cBold">JMSRedelivered</b>
+</p>
+</td>
+    <td><a name="wp1116583"> </a><p class="pBody">
+String
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1116585"> </a><p class="pBody">
+<b class="cBold">JMSXGroupID</b>
+</p>
+</td>
+    <td><a name="wp1116587"> </a><p class="pBody">
+String
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1116589"> </a><p class="pBody">
+<b class="cBold">JMSXGroupIdByteArray</b>
+</p>
+</td>
+    <td><a name="wp1116591"> </a><p class="pBody">
+Byte Array
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1116593"> </a><p class="pBody">
+<b class="cBold">JMSXGroupSeq</b>
+</p>
+</td>
+    <td><a name="wp1116595"> </a><p class="pBody">
+String
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1116597"> </a><p class="pBody">
+<b class="cBold">JMSXUserID</b>
+</p>
+</td>
+    <td><a name="wp1116599"> </a><p class="pBody">
+String
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1116601"> </a><p class="pBody">
+<b class="cBold">JMSXAppID</b>
+</p>
+</td>
+    <td><a name="wp1116603"> </a><p class="pBody">
+String
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1116605"> </a><p class="pBody">
+<b class="cBold">JMSXDeliveryCount</b>
+</p>
+</td>
+    <td><a name="wp1116607"> </a><p class="pBody">
+String
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1128714"> </a><p class="pBody">
+<b class="cBold">MCDMessageDomain</b>
+</p>
+</td>
+    <td><a name="wp1128716"> </a><p class="pBody">
+String
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1128710"> </a><p class="pBody">
+<b class="cBold">MCDMessageSet</b>
+</p>
+</td>
+    <td><a name="wp1128712"> </a><p class="pBody">
+String
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1128706"> </a><p class="pBody">
+<b class="cBold">MCDMessageFormat</b>
+</p>
+</td>
+    <td><a name="wp1128708"> </a><p class="pBody">
+String
+</p>
+</td>
+</tr>
+</table>
+</div>
+<p class="pAnchor">
+</p>
+<a name="wp1126120"> </a><p class="pAnchor">
+</p><div align="left">
+<table border="0">
+  <caption></caption>
+  <tr align="left" valign="top">    <td><a name="wp1126117"> </a><p class="px_Note">
+&#160;
+<img src="images/note_icon.gif" height="25" width="25" border="1" alt="Note" />
+</p>
+</td>
+    <td><a name="wp1126119"> </a><p class="pNote">
+<b>Note:</b> An “X“ in the JMS property name indicates that the property is provider specific. The remaining JMS properties are generic, delivered by any JMS provider.
+</p>
+</td>
+</tr>
+</table>
+</div>
+<p class="pAnchor">
+</p>
+<a name="wp1126130"> </a><p class="pBody">
+You can also add your own folders and properties to the JMS Properties.
+</p>
+<a name="wp1126131"> </a><p class="pBody">
+Use the following icons to manage the rows for <b class="cBold">User-Defined Properties</b> on the <b class="cBold">JMS Properties</b> tab:
+</p>
+<div class="pSmartList1" style="margin-top: 7pt"><ul class="pSmartList1" style="margin-top: 7pt">
+<a name="wp1126135"> </a><div style="margin-top: 7pt" class="pSmartList1"><li>To define new folders and properties, select the Insert Row icon <img src="images/table_insertrowa.gif" border="0" hspace="0" vspace="0"/>.</li></div>
+<a name="wp1126136"> </a><div style="margin-top: 7pt" class="pSmartList1"><li>Enter the new folder and property. For example, enter “jms.usr.usr1”. The “jms” and “usr” are the names of the folders and “usr1” is the name of the property.</li></div>
+</ul></div>
+<a name="wp1126137"> </a><p class="pBody">
+All the folders and properties you add will be under JMSProperties as part of the publishable document of the adapter service.</p><div align="left">
+<table border="0">
+  <caption></caption>
+  <tr align="left" valign="top">    <td><a name="wp1126356"> </a><p class="px_Note">
+&#160;
+<img src="images/note_icon.gif" height="25" width="25" border="1" alt="Note" />
+</p>
+</td>
+    <td><a name="wp1126362"> </a><p class="pNote">
+<b>Note:</b> The property name has to be prefixed with a folder name. You cannot use “JMSProperties” and “mcd” as the first folder name.
+</p>
+</td>
+</tr>
+</table>
+</div>
+<p class="pBody">
+</p>
+<div class="pSmartList1" style="margin-top: 7pt"><ul class="pSmartList1" style="margin-top: 7pt">
+<a name="wp1126143"> </a><div style="margin-top: 7pt" class="pSmartList1"><li>To change the order of User-Defined property fields to ensure the parameters are parsed in the correct order, use the Shift Up <img src="images/btn_shift_upa.gif" border="0" hspace="0" vspace="0"/> or Shift Down <img src="images/btn_shift_downa.gif" border="0" hspace="0" vspace="0"/> icons.</li></div>
+<a name="wp1126153"> </a><div style="margin-top: 7pt" class="pSmartList1"><li> To delete any User-Defined property fields, use the Remove row icon <img src="images/remove_rowa.gif" border="0" hspace="0" vspace="0"/>.</li></div>
+</ul></div>
+
+ <hr />
+
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag());
+   // -->
+  </script>
+
+ </body>
+</html>

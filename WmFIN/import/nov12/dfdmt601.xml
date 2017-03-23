@@ -1,0 +1,117 @@
+<?xml version="1.0"?>
+<constraints>
+
+<!-- Text Block for NOV03 MT601 -->
+
+<field name="23:" type="MixedType">
+    <bizName>Further Identification</bizName>
+    <pattern>4a/4a/1!a/4a</pattern>
+     <alias pattern="4a" bizName="Buy/Sell Indicator"/>
+     <alias pattern="4a" bizName="Call/Put Indicator"/>
+     <alias pattern="1!a" bizName="Style Indicator"/>
+     <alias pattern="4a" bizName="Manual/Automatic Indicator"/>
+     <choiceList>
+     	<pattern>4a</pattern>
+       	<choice>BUY</choice>
+    	<choice>SELL</choice>
+    </choiceList>
+    <choiceList>
+    	<pattern>4a</pattern>
+        <choice>CALL</choice>
+        <choice>PUT</choice>
+     </choiceList>
+    <choiceList>
+    	<pattern>1!a</pattern>
+   	<choice>A</choice>
+       	<choice>V</choice>
+       	<choice>E</choice>
+     </choiceList>
+    <choiceList>
+    	<pattern>4a</pattern>
+   	<choice>AUTO</choice>
+       	<choice>MANU</choice>
+     </choiceList>
+</field>
+
+<field name="30:" type="PatternType">
+    <bizName>Date - Date Contract Agreed/Amended</bizName>
+    <pattern>&lt;DATE2&gt;</pattern>
+</field>
+<field name="31C:" type="PatternType">
+    <bizName>C - Earliest Exercise Date</bizName>
+    <pattern>&lt;DATE2&gt;</pattern>
+</field>
+<field name="31E:" type="PatternType">
+    <bizName>E - Final Settlement Date</bizName>
+    <pattern>&lt;DATE2&gt;</pattern>
+</field>
+<field name="32B:" type="PatternType">
+    <bizName>B - Strike Price</bizName>
+    <pattern>&lt;CUR&gt;&lt;PRICE&gt;15</pattern>
+</field>
+<field name="32F:" type="MixedType">
+    <bizName>Unit and Amount of the Metal</bizName>
+    <pattern>3!a&lt;AMOUNT&gt;15</pattern>
+    <choice>FOZ</choice>
+    <choice>GOZ</choice>
+    <choice>GRM</choice>
+    <choice>KLO</choice>
+    <choice>LOT</choice>
+    <choice>TAL</choice>
+    <choice>TOL</choice>
+    <choice>UNT</choice>
+</field>
+<field name="33B:" type="PatternType">
+    <bizName>B - Premium Price</bizName>
+    <pattern>&lt;CUR&gt;&lt;PRICE&gt;15</pattern>
+</field>
+<field name="53A:" type="MixedType">
+    <bizName>A - Sender's Correspondent</bizName>
+    <pattern>[&lt;PartyIdentifier&gt;][CRLF]&lt;SWIFTBIC&gt;</pattern>
+</field>
+<field name="53D:" type="MixedType">
+    <bizName>D - Sender's Correspondent</bizName>
+    <pattern>[&lt;PartyIdentifier&gt;][CRLF]4*35x</pattern>
+</field>
+<field name="57A:" type="MixedType">
+    <bizName>A - Account With Institution</bizName>
+    <pattern>[&lt;PartyIdentifier&gt;][CRLF]&lt;SWIFTBIC&gt;</pattern>
+</field>
+<field name="57D:" type="MixedType">
+    <bizName>D - Account With Institution</bizName>
+    <pattern>[&lt;PartyIdentifier&gt;][CRLF]4*35x</pattern>
+</field>
+<field name="72:" type="PatternType">
+    <bizName>Sender to Receiver Information</bizName>
+    <pattern>&lt;ERI_F72narrative&gt;</pattern>
+</field>
+
+<field name="32F:" type="MixedType">
+    <bizName>Quantity of the Metal</bizName>
+    <pattern>3!a&lt;AMOUNT&gt;15</pattern>
+    <choice>FOZ</choice>
+    <choice>GOZ</choice>
+    <choice>GRM</choice>
+    <choice>KLO</choice>
+    <choice>LIT</choice>
+    <choice>LOT</choice>
+    <choice>OTH</choice>
+    <choice>PND</choice>
+    <choice>TAL</choice>
+    <choice>TOL</choice>
+    <choice>TON</choice>
+    <choice>TOZ</choice>
+    <choice>UNT</choice>
+</field>
+
+<field name="77H:" type="MixedType">
+    <bizName>Type, Date, Version of the Agreement</bizName>
+    <pattern>6a[/&lt;DATE4&gt;][//4!n]</pattern>
+    <choiceList>
+    	<pattern>6a</pattern>
+	<choice>ISDA</choice>
+	<choice>OTHER</choice>	
+    </choiceList>
+</field>
+
+</constraints>

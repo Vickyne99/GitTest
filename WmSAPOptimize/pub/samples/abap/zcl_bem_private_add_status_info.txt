@@ -1,0 +1,94 @@
+METHOD add_status_info.
+  DATA : prop            TYPE zbem_wmkeyvalue,
+         status_list     TYPE TABLE OF bapisdstat INITIAL SIZE 0,
+         status          TYPE bapisdstat.
+
+  swc0_get_table ordercont 'Statusinfo' status_list.        "#EC NOTEXT
+
+  LOOP AT status_list INTO status.
+
+    prop-name = 'CustomerPurchaseOrderNo'.
+    prop-value = status-purch_no.
+    APPEND prop TO _businessdata.
+
+    prop-name = 'ProductId'.
+    prop-value = status-material.
+    APPEND prop TO _businessdata.
+
+    prop-name = 'ProductName'.
+    prop-value = status-short_text.
+    APPEND prop TO _businessdata.
+
+    prop-name = 'RequestedQuantity'.
+    prop-value = status-req_qty.
+    APPEND prop TO _businessdata.
+
+    prop-name = 'RequestedDate'.
+    prop-value = status-req_date.
+    APPEND prop TO _businessdata.
+
+    prop-name = 'ConfirmedQuantity'.
+    prop-value = status-cum_cf_qty.
+    APPEND prop TO _businessdata.
+
+    prop-name = 'SalesUnit'.
+    prop-value = status-sales_unit.
+    APPEND prop TO _businessdata.
+
+    prop-name = 'ItemAmount'.
+    prop-value = status-net_value.
+    APPEND prop TO _businessdata.
+
+    prop-name = 'SalesDocumentItem'.
+    prop-value = status-itm_number.
+    APPEND prop TO _businessdata.
+
+    prop-name = 'InstanceCount'.
+    IF status-itm_number = '10'.
+      prop-value = zbem_char1.
+    ELSE.
+      prop-value = ''.
+    ENDIF.
+    APPEND prop TO _businessdata.
+
+    prop-name = 'ItemCount'.
+    prop-value = zbem_char1.
+    APPEND prop TO _businessdata.
+
+    prop-name = 'OverallProcessingStatusOfDocument'.
+    prop-value = status-prc_stat_h.
+    APPEND prop TO _businessdata.
+
+    prop-name = 'OverallDeliveryStatusForAllItems'.
+    prop-value = status-dlv_stat_h.
+    APPEND prop TO _businessdata.
+
+    prop-name = 'OverallDeliveryStatusForThisItems'.
+    prop-value = status-dlv_stat_i.
+    APPEND prop TO _businessdata.
+
+    prop-name = 'DeliveryNo'.
+    prop-value = status-deliv_numb.
+    APPEND prop TO _businessdata.
+
+    prop-name = 'DeliveryItem'.
+    prop-value = status-deliv_item.
+    APPEND prop TO _businessdata.
+
+    prop-name = 'DeliveryDate'.
+    prop-value = status-deliv_date.
+    APPEND prop TO _businessdata.
+
+    prop-name = 'ActualQuantityDelivered'.
+    prop-value = status-dlv_qty.
+    APPEND prop TO _businessdata.
+
+    prop-name = 'ReferencedQuantity'.
+    prop-value = status-ref_qty.
+    APPEND prop TO _businessdata.
+
+*- Clear the temporary data stored
+    CLEAR : prop, status.
+
+  ENDLOOP.
+ENDMETHOD.

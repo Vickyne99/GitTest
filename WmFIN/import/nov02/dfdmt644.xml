@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+<constraints>
+
+<!-- Text Block for NOV02 MT644 -->
+
+<field name="29A:" type="PatternType">
+    <bizName>From</bizName>
+    <pattern>4*35x</pattern>
+</field>
+<field name="31F:" type="PatternType">
+    <bizName>Interest Period</bizName>
+    <pattern>&lt;DATE2&gt;[/&lt;DATE2&gt;][//35x]</pattern>
+</field>
+<field name="32A:" type="PatternType">
+    <bizName>A - Original Facility Amount</bizName>
+    <pattern>&lt;DATE2&gt;&lt;CUR&gt;&lt;AMOUNT&gt;15</pattern>
+</field>
+<field name="33B:" type="PatternType">
+    <bizName>B - Receiver's Participation</bizName>
+    <pattern>&lt;CUR&gt;&lt;NUMBER&gt;15</pattern>
+</field>
+<field name="34P:" type="PatternType">
+    <bizName>P - Differential Amount</bizName>
+    <pattern>&lt;DATE2&gt;&lt;CUR&gt;&lt;AMOUNT&gt;15</pattern>
+</field>
+<field name="34R:" type="PatternType">
+    <bizName>R - Differential Amount</bizName>
+    <pattern>&lt;DATE2&gt;&lt;CUR&gt;&lt;AMOUNT&gt;15</pattern>
+</field>
+<field name="37G:" type="PatternType">
+    <bizName>G - Basis Rate</bizName>
+    <pattern>[N]&lt;NUMBER&gt;12</pattern>
+</field>
+<field name="37M:" type="PatternType">
+    <bizName>M - Interest Margin</bizName>
+    <pattern>[N]&lt;NUMBER&gt;12</pattern>
+</field>
+<field name="37R:" type="PatternType">
+    <bizName>R - Reserve Interest</bizName>
+    <pattern>[N]&lt;NUMBER&gt;12</pattern>
+</field>
+<field name="37A:" type="MixedType">
+    <bizName>A - Total Interest Rate</bizName>
+    <pattern>&lt;NUMBER&gt;12[//&lt;DATE2&gt;1!a3n][/'ADVANCE'|/'FIXED'|/'NEG'|/'SEE72']</pattern>
+    <choice>D</choice>
+    <choice>M</choice>
+</field>
+<field name="37B:" type="MixedType">
+    <bizName>B - Total Interest Rate</bizName>
+    <pattern>&lt;NUMBER&gt;12[//&lt;DATE2&gt;1!a3n][/'ADVANCE'|/'FIXED'|/'NEG'|/'SEE72']</pattern>
+    <choice>D</choice>
+    <choice>M</choice>
+</field>
+<field name="37C:" type="MixedType">
+    <bizName>C - Total Interest Rate</bizName>
+    <pattern>&lt;NUMBER&gt;12[//&lt;DATE2&gt;1!a3n][/'ADVANCE'|/'FIXED'|/'NEG'|/'SEE72']</pattern>
+    <choice>D</choice>
+    <choice>M</choice>
+</field>
+<field name="37D:" type="MixedType">
+    <bizName>D - Total Interest Rate</bizName>
+    <pattern>&lt;NUMBER&gt;12[//&lt;DATE2&gt;1!a3n][/'ADVANCE'|/'FIXED'|/'NEG'|/'SEE72']</pattern>
+    <choice>D</choice>
+    <choice>M</choice>
+</field>
+<field name="37E:" type="MixedType">
+    <bizName>E - Total Interest Rate</bizName>
+    <pattern>&lt;NUMBER&gt;12[//&lt;DATE2&gt;1!a3n][/'ADVANCE'|/'FIXED'|/'NEG'|/'SEE72']</pattern>
+    <choice>D</choice>
+    <choice>M</choice>
+</field>
+<field name="37F:" type="MixedType">
+    <bizName>F - Total Interest Rate</bizName>
+    <pattern>&lt;NUMBER&gt;12[//&lt;DATE2&gt;1!a3n][/'ADVANCE'|/'FIXED'|/'NEG'|/'SEE72']</pattern>
+    <choice>D</choice>
+    <choice>M</choice>
+</field>
+<field name="57A:" type="MixedType">
+    <bizName>A - Account With Institution</bizName>
+    <pattern>[&lt;BICPLUS&gt;][CRLF]&lt;SWIFTBIC&gt;|&lt;NON-SWIFTBIC&gt;</pattern>
+    <choice>C</choice>
+    <choice>D</choice>
+</field>
+<field name="57D:" type="MixedType">
+    <bizName>D - Account With Institution</bizName>
+    <pattern>[&lt;BICPLUS&gt;][CRLF]4*35x</pattern>
+    <choice>C</choice>
+    <choice>D</choice>
+</field>
+<field name="72:" type="PatternType">
+    <bizName>Sender to Receiver Information</bizName>
+    <pattern>&lt;ERI_F72narrative&gt;</pattern>
+</field>
+<field name="88D:" type="MixedType">
+    <bizName>D - Borrowers</bizName>
+    <pattern>[&lt;BICPLUS&gt;][CRLF]4*35x</pattern>
+    <choice>C</choice>
+    <choice>D</choice>
+</field>
+
+</constraints>

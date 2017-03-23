@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<constraints>
+
+<!-- Text Block for NOV02 MT752 -->
+
+<field name="20:" type="PatternType">
+    <bizName>Reference - Documentary Credit Number</bizName>
+    <pattern>16x</pattern>
+</field>
+<field name="21:" type="ChoiceType">
+    <bizName>Reference - Presenting Bank's Reference</bizName>
+    <pattern>16x</pattern>
+    <choice>ACCEPT</choice>
+    <choice>DEBIT</choice>
+    <choice>NEGOTIATE</choice>
+    <choice>REIMBURSE</choice>
+    <choice>REMITTED</choice>
+    <choice>SEE72</choice>
+</field>
+<field name="30:" type="PatternType">
+    <bizName>Date - Date of Advice of Discrepancy or Mailing</bizName>
+    <pattern>&lt;DATE2&gt;</pattern>
+</field>
+<field name="32B:" type="PatternType">
+    <bizName>B - Total Amount Advised</bizName>
+    <pattern>&lt;CUR&gt;&lt;AMOUNT&gt;15</pattern>
+</field>
+<field name="71B:" type="PatternType">
+    <bizName>B - Charges Deducted</bizName>
+    <pattern>6*35x</pattern>
+</field>
+<field name="33A:" type="PatternType">
+    <bizName>A - Net Amount</bizName>
+    <pattern>&lt;DATE2&gt;&lt;CUR&gt;&lt;AMOUNT&gt;15</pattern>
+</field>
+<field name="33B:" type="PatternType">
+    <bizName>B - Net Amount</bizName>
+    <pattern>&lt;CUR&gt;&lt;NUMBER&gt;15</pattern>
+</field>
+<field name="53A:" type="MixedType">
+    <bizName>A - Sender's Correspondent</bizName>
+    <pattern>[&lt;BICPLUS&gt;][CRLF]&lt;SWIFTBIC&gt;|&lt;NON-SWIFTBIC&gt;</pattern>
+    <choice>C</choice>
+    <choice>D</choice>
+</field>
+<field name="53D:" type="MixedType">
+    <bizName>D - Sender's Correspondent</bizName>
+    <pattern>[&lt;BICPLUS&gt;][CRLF]4*35x</pattern>
+    <choice>C</choice>
+    <choice>D</choice>
+</field>
+<field name="72:" type="PatternType">
+    <bizName>Sender to Receiver Information</bizName>
+    <pattern>&lt;ERI_F72narrative&gt;</pattern>
+</field>
+
+</constraints>

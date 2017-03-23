@@ -1,0 +1,54 @@
+METHOD set_business_data.
+  DATA : prop            TYPE zbem_wmkeyvalue,
+         error           TYPE zbem_error,
+         bo_type         TYPE swo_objtyp,
+         bo_cont         TYPE swconttab,
+         bo_id           TYPE swotobjid,
+         bo              TYPE obj_record,
+         customer_bo     TYPE obj_record.
+
+*- Get event object
+  swc0_get_element _evt_container zbem_evt_object bo_id.
+  IF NOT bo_id IS INITIAL.
+    swc0_object_from_persistent bo_id bo.
+    swc0_get_object_type bo bo_type.
+  ENDIF.
+
+  IF NOT bo-handle IS INITIAL.
+    CASE bo_type.
+
+*- Case document flow type 'C'
+      WHEN zbem_bus2032.
+
+        swc0_get_property bo 'OrderingParty' customer_bo.
+        prop-name = 'OrderingPartyId'.
+        swc0_get_property customer_bo 'CustomerNo' prop-value.
+        APPEND prop TO _businessdata.
+        prop-name = 'OrderingPartyName'.
+        swc0_get_property customer_bo 'Name' prop-value.    "#EC NOTEXT
+        APPEND prop TO _businessdata.
+
+*- Call BAPI GetStatus for more information
+        swc0_clear_container bo_cont.
+        swc0_call_method bo 'GetStatus' bo_cont.
+        CALL METHOD add_status_info
+          CHANGING
+            ordercont = bo_cont.
+
+*- Log any system or application error that might have occurred
+        IF sy-subrc <> 0.
+          error-type = 'SYSTEM.ERROR'.
+          error-message = 'SYSTEM.ERROR'.
+          error-messagedetails = 'SYSTEM.ERROR'.
+          APPEND error TO _error_list.
+        ENDIF.
+
+    ENDCASE.
+
+*- Clear the temporary data stored
+    swc0_free_object bo.
+    CLEAR bo.
+  ENDIF.
+
+  CLEAR prop.
+ENDMETHOD.

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Doc:Document xmlns:Doc="urn:swift:xsd:service.name$camt.004.002.01" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Doc:camt.004.002.01>
+		<Doc:MsgId>
+			<Doc:Id>ABCDEFGHIJKLMNOPQRST123456789012345</Doc:Id>
+		</Doc:MsgId>
+		<Doc:BizQryRef>
+			<Doc:QryRef>ABCDEFGHIJKLMNOPQRST123456789012345</Doc:QryRef>
+			<Doc:QryNm>ABCDEFGHIJKLMNOPQRST123456789012345</Doc:QryNm>
+		</Doc:BizQryRef>
+		<Doc:BizRpt>
+			<Doc:AcctRpt>
+				<Doc:AcctId>
+					<Doc:IBAN>AT611904300234573201</Doc:IBAN>
+				</Doc:AcctId>
+				<Doc:Acct>
+					<Doc:Tp>SACC</Doc:Tp>
+					<Doc:Ccy>AWG</Doc:Ccy>
+					<Doc:MulBal>
+						<Doc:Amt>500000</Doc:Amt>
+						<Doc:CdtDbtInd>CRDT</Doc:CdtDbtInd>
+						<Doc:Tp>BOOK</Doc:Tp>
+						<Doc:ValDt>
+							<Doc:Dt>2002-02-25</Doc:Dt>
+						</Doc:ValDt>
+					</Doc:MulBal>
+				</Doc:Acct>
+			</Doc:AcctRpt>
+		</Doc:BizRpt>
+	</Doc:camt.004.002.01>
+</Doc:Document>

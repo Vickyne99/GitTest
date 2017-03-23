@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<constraints>
+
+<!-- Text Block for NOV02 MT605 -->
+
+<field name="23:" type="PatternType">
+    <bizName>Further Identification</bizName>
+    <pattern>'DELIVERY'|'TRANSFER'</pattern>
+</field>
+<field name="25:" type="PatternType">
+    <bizName>Further Account Identification</bizName>
+    <pattern>35x</pattern>
+</field>
+<field name="72:" type="PatternType">
+    <bizName>Sender to Receiver Information</bizName>
+    <pattern>&lt;ERI_F72narrative&gt;</pattern>
+</field>
+<field name="82A:" type="MixedType">
+    <bizName>A - Instructing Party</bizName>
+    <pattern>[&lt;BICPLUS&gt;][CRLF]&lt;SWIFTBIC&gt;|&lt;NON-SWIFTBIC&gt;</pattern>
+    <choice>C</choice>
+    <choice>D</choice>
+</field>
+<field name="82D:" type="MixedType">
+    <bizName>D - Instructing Party</bizName>
+    <pattern>[&lt;BICPLUS&gt;][CRLF]4*35x</pattern>
+    <choice>C</choice>
+    <choice>D</choice>
+</field>
+<field name="87A:" type="MixedType">
+    <bizName>A - Deliverer of the Metal</bizName>
+    <pattern>[&lt;BICPLUS&gt;][CRLF]&lt;SWIFTBIC&gt;|&lt;NONSWIFTBIC&gt;</pattern>
+    <choice>C</choice>
+    <choice>D</choice>
+</field>
+<field name="87B:" type="MixedType">
+    <bizName>B - Deliverer of the Metal</bizName>
+    <pattern>[&lt;BICPLUS&gt;][CRLF][35x]</pattern>
+    <choice>C</choice>
+    <choice>D</choice>
+</field>
+<field name="87D:" type="MixedType">
+    <bizName>D - Deliverer of the Metal</bizName>
+    <pattern>[&lt;BICPLUS&gt;][CRLF]4*35x</pattern>
+    <choice>C</choice>
+    <choice>D</choice>
+</field>
+<field name="88A:" type="MixedType">
+    <bizName>A - Beneficiary of the Metal</bizName>
+    <pattern>[&lt;BICPLUS&gt;][CRLF]&lt;SWIFTBIC&gt;|&lt;NON-SWIFTBIC&gt;</pattern>
+    <choice>C</choice>
+    <choice>D</choice>
+</field>
+<field name="88D:" type="MixedType">
+    <bizName>D - Beneficiary of the Metal</bizName>
+    <pattern>[&lt;BICPLUS&gt;][CRLF]4*35x</pattern>
+    <choice>C</choice>
+    <choice>D</choice>
+</field>
+
+</constraints>

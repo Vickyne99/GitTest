@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="svc_type">flow</value>
+  <value name="svc_subtype">default</value>
+  <value name="svc_sigtype">java 3.5</value>
+  <record name="svc_sig" javaclass="com.wm.util.Values">
+    <record name="sig_in" javaclass="com.wm.util.Values">
+      <value name="node_type">record</value>
+      <value name="field_type">record</value>
+      <value name="field_dim">0</value>
+      <value name="nillable">true</value>
+      <array name="rec_fields" type="record" depth="1">
+        <record javaclass="com.wm.util.Values">
+          <value name="node_type">record</value>
+          <value name="field_name">ffdata</value>
+          <value name="field_type">object</value>
+          <value name="field_dim">0</value>
+          <value name="nillable">true</value>
+        </record>
+      </array>
+    </record>
+    <record name="sig_out" javaclass="com.wm.util.Values">
+      <value name="node_type">record</value>
+      <value name="field_type">record</value>
+      <value name="field_dim">0</value>
+      <value name="nillable">true</value>
+      <array name="rec_fields" type="record" depth="1">
+        <record javaclass="com.wm.util.Values">
+          <value name="node_type">record</value>
+          <value name="field_name">ffdata</value>
+          <value name="field_type">object</value>
+          <value name="field_dim">0</value>
+          <value name="nillable">true</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="node_type">record</value>
+          <value name="field_name">TN_parms</value>
+          <value name="field_type">record</value>
+          <value name="field_dim">0</value>
+          <value name="nillable">true</value>
+          <array name="rec_fields" type="record" depth="1">
+            <record javaclass="com.wm.util.Values">
+              <value name="node_type">record</value>
+              <value name="field_name">DoctypeName</value>
+              <value name="field_type">string</value>
+              <value name="field_dim">0</value>
+              <value name="nillable">true</value>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="node_type">record</value>
+              <value name="field_name">SenderID</value>
+              <value name="field_type">string</value>
+              <value name="field_dim">0</value>
+              <value name="nillable">true</value>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="node_type">record</value>
+              <value name="field_name">ReceiverID</value>
+              <value name="field_type">string</value>
+              <value name="field_dim">0</value>
+              <value name="nillable">true</value>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="node_type">record</value>
+              <value name="field_name">string attr</value>
+              <value name="field_type">string</value>
+              <value name="field_dim">0</value>
+              <value name="nillable">true</value>
+            </record>
+          </array>
+          <value name="rec_closed">true</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="node_type">record</value>
+          <value name="node_comment"></value>
+          <record name="node_hints" javaclass="com.wm.util.Values">
+            <value name="field_largerEditor">false</value>
+            <value name="field_password">false</value>
+          </record>
+          <value name="field_name">bizdoc</value>
+          <value name="field_type">recref</value>
+          <value name="field_dim">0</value>
+          <value name="nillable">true</value>
+          <value name="rec_ref">wm.tn.rec:BizDocEnvelope</value>
+        </record>
+      </array>
+    </record>
+  </record>
+  <value name="node_comment">This sample document gateway service uses the pub.io services in the WmFlatFile package to
+read the beginning of the input stream in ffdata.  The data that is read from the input stream
+is added to the pipeline under the TN_parms record as "hints" to the Trading Networks
+recognition process.  TN recognition uses this information to determine which document type
+matches the supplied data.
+
+The service first marks the start of the input stream so that it can be reset to that point later.
+
+Then there is a MAP step to add TN_parms, and the attributes this service will be producing, to
+the pipeline.  It adds the DoctypeName, SenderID and RecevierID, which are system attributes.  It
+also adds "string attr", which is a custom attribute.
+
+Next, there is a series of SEQUENCES that read bytes from the input stream and map them, 
+as Strings, into TN_parms.  The service expects the input stream to begin with the following
+structure:
+  24 bytes - DoctypeName
+   9 bytes - Sender's DUNS number
+   9 bytes - Receiver's DUNS number
+  18 bytes - custom string attribute
+
+The pub.io:reset service is invoked to reset the stream back to the beginning.  If we didn't do
+this, subsequent services that read the input stream would start at offset 60 because this
+service reads the first 60 bytes.
+
+Finally, the wm.tn.doc.ff:routeFlatFile service is invoked.  This service is similar to 
+wm.tn:receive, except that it doesn't check that the sender of the document matches the SenderID
+read from the document content.  It is the flat file equivalent of wm.tn.doc.xml:routeXml.
+
+If you would like to perform an end-to-end test with this sample service, do the following.
+1. Import the SampleGatewayConfig.xml file from WmTNSamples/config into Trading Networks.
+   This will add the "Sample FF Type" document type, the "Sample FF Rule" processing rule,
+   the "string attr" attribute, and two partners: "Sample Sender" and "Sample Receiver".
+2. Activate the two partners.
+3. Run the wm.tn.samples.gateway:testStream service and specify config/SampleGatewayData.txt"
+   for the filename.  This value is in the filename picklist.  The testStream service will read
+   the file as a stream and map its content to "ffdata".  Note that the testStream service specifies
+  a content type of "text/plain" in the TN_parms/$contentType variable.  When one service invokes
+  another, the content type for the pipeline is "application/wm-idatabin".  Documents with this
+  content type will not be treated as flat files, so we must specify the content type explicitly.
+
+Some things to remember when creating gateway services.
+1. Use mark and reset if you want other services to be able to read from the start of the
+   input stream.
+2. The recognition hints that you place in TN_parms must exactly match the names of identifying
+   attributes on the Flat file doctype you want to match.
+3. You'll usually want to trim spaces from your hints before adding them to TN_parms.
+4. If you know the DoctypeID or DoctypeName of the doctype you want to match, put that in
+   TN_parms.  This will bypass much of the recognition processing and your documents will be
+   handled more quickly.  DoctypeID is a little more efficient than DoctypeName.
+5. Your gateway service must explicitly call wm.tn:receive, wm.tn.doc.ff:routeFlatFile, or an
+   equivalent service if you want a bizdoc to be created and routed.
+
+This service provides recognition hints by extracting them from the document content.  In your
+application, it may make sense to hardcode these values or derive them by some other means.  This
+service is meant as an example.  It is not intended to be used in a production environment.  For 
+more information on gateway services and TN recognition, see the Trading Networks documentation.
+</value>
+  <value name="stateless">no</value>
+  <value name="caching">no</value>
+  <value name="prefetch">no</value>
+  <value name="cache_ttl">15</value>
+  <value name="prefetch_level">1</value>
+  <value name="audit_level">off</value>
+  <value name="check_internal_acls">no</value>
+  <value name="icontext_policy">$null</value>
+  <value name="system_service">no</value>
+  <value name="retry_max">0</value>
+  <value name="retry_interval">0</value>
+  <value name="svc_in_validator_options">none</value>
+  <value name="svc_out_validator_options">none</value>
+  <value name="auditoption">0</value>
+  <record name="auditsettings" javaclass="com.wm.util.Values">
+    <value name="document_data">0</value>
+    <value name="startExecution">false</value>
+    <value name="stopExecution">false</value>
+    <value name="onError">true</value>
+  </record>
+</Values>

@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<constraints>
+
+<!-- Text Block for NOV02 MT800 -->
+
+<field name="16A:" type="PatternType">
+    <bizName>Selling Agent's No. of PAs</bizName>
+    <pattern>5n</pattern>
+</field>
+<field name="23:" type="PatternType">
+    <bizName>Purchase Agreement ID</bizName>
+    <pattern>16x</pattern>
+</field>
+<field name="30:" type="PatternType">
+    <bizName>Date - Sales Date</bizName>
+    <pattern>&lt;DATE2&gt;</pattern>
+</field>
+<field name="32A:" type="PatternType">
+    <bizName>A - Settlement Amount</bizName>
+    <pattern>&lt;DATE2&gt;&lt;CUR&gt;&lt;AMOUNT&gt;15</pattern>
+</field>
+<field name="33B:" type="PatternType">
+    <bizName>B - Face Amount</bizName>
+    <pattern>&lt;CUR&gt;&lt;NUMBER&gt;15</pattern>
+</field>
+<field name="34B:" type="PatternType">
+    <bizName>B - Selling Agent Amount</bizName>
+    <pattern>&lt;CUR&gt;&lt;AMOUNT&gt;15</pattern>
+</field>
+<field name="51A:" type="MixedType">
+    <bizName>A - Selling Agent</bizName>
+    <pattern>[&lt;BICPLUS&gt;][CRLF]&lt;SWIFTBIC&gt;|&lt;NONSWIFTBIC&gt;</pattern>
+    <choice>C</choice>
+    <choice>D</choice>
+</field>
+<field name="52A:" type="MixedType">
+    <bizName>A - Remitting Agent</bizName>
+    <pattern>[&lt;BICPLUS&gt;][CRLF]&lt;SWIFTBIC&gt;|&lt;NONSWIFTBIC&gt;</pattern>
+    <choice>C</choice>
+    <choice>D</choice>
+</field>
+<field name="52D:" type="MixedType">
+    <bizName>D - Remitting Agent</bizName>
+    <pattern>[&lt;BICPLUS&gt;][CRLF]4*35x</pattern>
+    <choice>C</choice>
+    <choice>D</choice>
+</field>
+<field name="53A:" type="MixedType">
+    <bizName>A - Sender's Correspondent</bizName>
+    <pattern>[&lt;BICPLUS&gt;][CRLF]&lt;SWIFTBIC&gt;|&lt;NON-SWIFTBIC&gt;</pattern>
+    <choice>C</choice>
+    <choice>D</choice>
+</field>
+<field name="53D:" type="MixedType">
+    <bizName>D - Sender's Correspondent</bizName>
+    <pattern>[&lt;BICPLUS&gt;][CRLF]4*35x</pattern>
+    <choice>C</choice>
+    <choice>D</choice>
+</field>
+<field name="72:" type="PatternType">
+    <bizName>Sender to Receiver Information</bizName>
+    <pattern>&lt;ERI_F72narrative&gt;</pattern>
+</field>
+
+</constraints>

@@ -1,0 +1,14 @@
+METHOD raise_local_event.
+*- Raise new business object event locally
+  CALL FUNCTION 'SWE_EVENT_CREATE'
+    EXPORTING
+      event   = evt_name
+      objtype = evt_objtype
+      objkey  = _evt_objkey.
+*- Alternatively the following FM could be used
+*  CALL FUNCTION 'SAP_WAPI_CREATE_EVENT'
+*       EXPORTING
+*            event       = evt_name
+*            object_type = evt_objtype
+*            object_key  = _evt_objkey.
+ENDMETHOD.

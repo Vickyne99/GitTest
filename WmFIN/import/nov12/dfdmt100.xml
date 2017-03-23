@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<constraints>
+
+<!-- Text Block for NOV02 MT100 -->
+<field name="50:" type="PatternType">
+    <bizName>Ordering Customer</bizName>
+    <pattern>4*35x</pattern>
+    <alias pattern="4*35x" bizName="Name & Address" />        
+</field>
+<field name="52A:" type="MixedType">
+    <bizName>A - Ordering Institution</bizName>
+    <pattern>[&lt;PartyIdentifier&gt;][CRLF]&lt;SWIFTBIC&gt;</pattern>
+</field>
+<field name="52D:" type="MixedType">
+    <bizName>D - Ordering Institution</bizName>
+    <pattern>[&lt;PartyIdentifier&gt;][CRLF]4*35x</pattern>
+    <alias pattern="4*35x" bizName="Name & Address" />                
+</field>
+<field name="53A:" type="MixedType">
+    <bizName>A - Sender's Correspondent</bizName>
+    <pattern>[&lt;PartyIdentifier&gt;][CRLF]&lt;SWIFTBIC&gt;</pattern>
+</field>
+<field name="53D:" type="MixedType">
+    <bizName>D - Sender's Correspondent</bizName>
+    <pattern>[&lt;PartyIdentifier&gt;][CRLF]4*35x</pattern>
+    <alias pattern="4*35x" bizName="Name & Address" />                
+</field>
+<field name="56A:" type="MixedType">
+    <bizName>A - Intermediary</bizName>
+    <pattern>[&lt;PartyIdentifier&gt;][CRLF]&lt;SWIFTBIC&gt;</pattern>
+</field>
+<field name="56D:" type="MixedType">
+    <bizName>D - Intermediary</bizName>
+    <pattern>[&lt;PartyIdentifier&gt;][CRLF]4*35x</pattern>
+</field>
+<field name="57A:" type="MixedType">
+    <bizName>A - Account With Institution</bizName>
+    <pattern>[&lt;PartyIdentifier&gt;][CRLF]&lt;SWIFTBIC&gt;</pattern>
+</field>
+<field name="57B:" type="MixedType">
+    <bizName>B - Account With Institution</bizName>
+    <pattern>[&lt;PartyIdentifier&gt;][CRLF][35x]</pattern>
+</field>
+<field name="57D:" type="MixedType">
+    <bizName>D - Account With Institution</bizName>
+    <pattern>[&lt;PartyIdentifier&gt;][CRLF]4*35x</pattern>
+</field>
+<field name="70:" type="PatternType">
+    <bizName>Details of Payment</bizName>
+    <pattern>4*35x</pattern>
+    <alias pattern="4*35x" bizName="Narrative" />        
+</field>
+<field name="71A:" type="PatternType">
+    <bizName>Details of Charges</bizName>
+    <pattern>3!a</pattern>
+    <alias pattern="3!a" bizName="Code" />            
+    <choice>BEN</choice>
+    <choice>OUR</choice>
+    <error type="code">T08</error>
+</field>
+<field name="72:" type="PatternType">
+    <bizName>Sender to Receiver Information</bizName>
+    <pattern>&lt;Fld72MT100&gt;</pattern>
+    <!-- call this Fld72 function separately because it has specific codewords that need to be used -->
+</field>
+</constraints>

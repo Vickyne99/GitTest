@@ -1,0 +1,1113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<businessProcessDiagram xmlns="http://www.webmethods.com/bpm/2006/"
+  Id="" build="1" canvasPool="1" creator="Administrator" description=""
+  focalRole="Focal role" name="PipOneActionInitiatorModel_8x"
+  packageName="PipOneActionInitiatorProject" processCategory=""
+  rnSync="false" runtimeVersion="1" version="8.0">
+  <kpiDimensions/>
+  <systemKPIs>
+    <systemKPI Id="" description="" name="Volume" unitOfMeasure=""/>
+    <systemKPI Id="" description="" name="Cycle Time" unitOfMeasure=""/>
+    <systemKPI Id="" description="" name="Error Count" unitOfMeasure=""/>
+  </systemKPIs>
+  <timeout calendarAlias="" calendarTime=""
+    dynamicCalendarStaticAlias="" dynamicCalendarStaticDays=""
+    dynamicCalendarStaticHours="" dynamicCalendarStaticMinutes=""
+    dynamicFieldName="" isCalendarTimeout="false" isStaticTimeout="true"
+    isXPathTimeout="false" pipelineCalendarAlias=""
+    pipelineCalendarDays="" pipelineCalendarHours=""
+    pipelineCalendarMinutes="" timeoutStyle="RELATIVE"
+    timeoutType="processTimeout" timeoutValue="86400000" xpathTimeoutValue=""/>
+  <pool Id="" blue="128" errorHandler="S50" external="false"
+    externalizeConditions="false" green="128" isCollapsed="false"
+    label="Pool" labelBlue="255" labelGreen="204" labelRed="153"
+    logicalServer="" name="1" orientation="horizontal" red="128"
+    retryCount="0" stepLock="false" timeoutHandler="S50" uid="P2" useCorrelation="false">
+    <documentation/>
+    <businessKPIs/>
+    <fontData boldFont="false" fontFamily="" italicFont="false"/>
+    <dataItem type="" uid="V17"/>
+    <dataItem
+      type="{http://webmethods.com/bpm/TnDoc/2006}ReceiptAckException-----" uid="V730"/>
+    <dataItem type="" uid="V16"/>
+    <dataItem
+      type="{http://webmethods.com/bpm/TnDoc/2006}ReceiptAck20------------" uid="V724"/>
+    <dataItem
+      type="{http://webmethods.com/bpm/TnDoc/2006}ReceiptAck--------------" uid="V722"/>
+    <dataItem
+      type="{http://webmethods.com/bpm/TnDoc/2006}53o6bp0040p9oa9l0000000v" uid="V728"/>
+    <dataItem
+      type="{http://webmethods.com/bpm/TnDoc/2006}0a3c1979f70d29a100000075" uid="V726"/>
+    <dataItem type="" uid="V52"/>
+    <dataItem type="" uid="V51"/>
+    <dataItem type="" uid="V657"/>
+    <dataItem
+      type="{http://webmethods.com/bpm/TnDoc/2006}0a3c1979f70d29a100000075" uid="V246"/>
+    <dataItem
+      type="{http://webmethods.com/bpm/TnDoc/2006}53o6bp0040p9oa9l0000000v" uid="V245"/>
+    <dataItem type="" uid="V243"/>
+    <dataItem
+      type="{http://webmethods.com/bpm/TnDoc/2006}0a3c1979f70d29a100000075" uid="V240"/>
+    <dataItem
+      type="{http://webmethods.com/bpm/TnDoc/2006}RosettaNet Dummy DocType" uid="V720"/>
+    <dataItem type="" uid="V241"/>
+    <dataItem type="" uid="V46"/>
+    <dataItem
+      type="{http://webmethods.com/bpm/TnDoc/2006}53o6bp0040p9oa9l0000000v" uid="V239"/>
+    <dataItem type="" uid="V49"/>
+    <dataItem type="" uid="V48"/>
+    <dataItem type="" uid="V43"/>
+    <dataItem type="" uid="V42"/>
+    <dataItem type="" uid="V45"/>
+    <dataItem type="" uid="V40"/>
+    <dataItem type="" uid="V37"/>
+    <dataItem type="" uid="V36"/>
+    <dataItem type="" uid="V39"/>
+    <dataItem type="" uid="V30"/>
+    <dataItem type="" uid="V34"/>
+    <dataItem type="" uid="V33"/>
+    <dataItem type="" uid="V654"/>
+    <dataItem type="" uid="V31"/>
+    <dataItem type="" uid="V679"/>
+    <dataItem
+      type="{http://webmethods.com/bpm/TnDoc/2006}0a3c1979f70d29a100000075" uid="V678"/>
+    <dataItem
+      type="{http://webmethods.com/bpm/TnDoc/2006}53o6bp0040p9oa9l0000000v" uid="V677"/>
+    <dataItem type="Unconfigured" uid="V583"/>
+    <dataItem type="" uid="V584"/>
+    <dataItem type="Unconfigured" uid="V581"/>
+    <dataItem type="" uid="V582"/>
+    <dataItem type="" uid="V25"/>
+    <dataItem
+      type="{http://webmethods.com/bpm/TnDoc/2006}53o6bp0040p9oa9l0000000v" uid="V683"/>
+    <dataItem type="" uid="V24"/>
+    <dataItem type="" uid="V27"/>
+    <dataItem type="" uid="V681"/>
+    <dataItem
+      type="{http://webmethods.com/bpm/TnDoc/2006}Exception20-------------" uid="V732"/>
+    <dataItem type="" uid="V28"/>
+    <dataItem
+      type="{http://webmethods.com/bpm/TnDoc/2006}0a3c1979f70d29a100000075" uid="V684"/>
+    <dataItem
+      type="{http://webmethods.com/bpm/TnDoc/2006}Exception---------------" uid="V734"/>
+    <dataItem type="" uid="V21"/>
+    <dataItem type="" uid="V22"/>
+    <poolReference label="Pool" logicalServer="Default" poolName="4"
+      stepLock="false" uid="S3" useCorrelation="false" x="-8" y="5">
+      <documentation/>
+      <businessKPIs/>
+      <fontData boldFont="false" fontFamily="" italicFont="false"/>
+    </poolReference>
+    <poolReference label="Pool" logicalServer="Default" poolName="7"
+      stepLock="false" uid="S6" useCorrelation="false" x="829" y="30">
+      <documentation/>
+      <businessKPIs/>
+      <fontData boldFont="false" fontFamily="" italicFont="false"/>
+    </poolReference>
+    <invokeStep dynamicReferenceProcess="false"
+      externalizeConditions="false" inputVariable="V16"
+      invokeContainer="pub.estd.rosettaNet"
+      invokeId="pub.estd.rosettaNet:waitStepInit" invokeLocation=""
+      invokeName="waitStepInit" invokeType="ISSERVICE"
+      label="Wait for Internal Document" logicalServer="Default"
+      ornamentKey="32_invoice.png" outputVariable="V17" retryCount="0"
+      routingRuleSet="" stepLock="false" uid="S15"
+      useCorrelation="false" x="362" y="68">
+      <documentation/>
+      <businessKPIs/>
+      <fontData boldFont="false" fontFamily="Tahoma" fontSize="8" italicFont="false">
+        <fontColor blue="0" green="0" red="0"/>
+      </fontData>
+      <extendedProperty name="retries" value="0"/>
+      <extendedProperty name="retryInterval" value="10000"/>
+      <timeout calendarAlias="" calendarTime=""
+        dynamicCalendarStaticAlias="" dynamicCalendarStaticDays=""
+        dynamicCalendarStaticHours="" dynamicCalendarStaticMinutes=""
+        dynamicFieldName="" isCalendarTimeout="false"
+        isStaticTimeout="true" isXPathTimeout="false"
+        pipelineCalendarAlias="" pipelineCalendarDays=""
+        pipelineCalendarHours="" pipelineCalendarMinutes=""
+        timeoutStyle="RELATIVE" timeoutType="stepTimeout"
+        timeoutValue="0" xpathTimeoutValue=""/>
+    </invokeStep>
+    <receiveStep allowsSynchronousReply="false"
+      externalizeConditions="false" isStart="true"
+      isStartStepServiceRequired="true"
+      label="Receive Internal Document" logicalServer="Default"
+      outputVariable="V720" receiveProtocol="SUBSCRIPTION"
+      receiveType="EMPTY" stepLock="false" uid="S18"
+      useCorrelation="false" x="222" y="72">
+      <documentation/>
+      <businessKPIs/>
+      <fontData boldFont="false" fontFamily="Tahoma" fontSize="8" italicFont="false">
+        <fontColor blue="0" green="0" red="0"/>
+      </fontData>
+      <wmExpressionFilter/>
+    </receiveStep>
+    <invokeStep dynamicReferenceProcess="false"
+      externalizeConditions="false" inputVariable="V21"
+      invokeContainer="wm.b2b.rn.largeDocSample.sender.maps" invokeId=""
+      invokeLocation="" invokeName="outboundMap" invokeType="ISSERVICE"
+      label="Outbound Map" logicalServer="Default"
+      ornamentKey="32_decision_diamond.png" outputVariable="V22"
+      retryCount="0" routingRuleSet="" stepLock="false" uid="S20"
+      useCorrelation="false" x="624" y="68">
+      <documentation/>
+      <businessKPIs/>
+      <fontData boldFont="false" fontFamily="Tahoma" fontSize="8" italicFont="false">
+        <fontColor blue="0" green="0" red="0"/>
+      </fontData>
+      <extendedProperty name="retries" value="0"/>
+      <extendedProperty name="retryInterval" value="10000"/>
+      <timeout calendarAlias="" calendarTime=""
+        dynamicCalendarStaticAlias="" dynamicCalendarStaticDays=""
+        dynamicCalendarStaticHours="" dynamicCalendarStaticMinutes=""
+        dynamicFieldName="" isCalendarTimeout="false"
+        isStaticTimeout="true" isXPathTimeout="false"
+        pipelineCalendarAlias="" pipelineCalendarDays=""
+        pipelineCalendarHours="" pipelineCalendarMinutes=""
+        timeoutStyle="RELATIVE" timeoutType="stepTimeout"
+        timeoutValue="0" xpathTimeoutValue=""/>
+    </invokeStep>
+    <invokeStep dynamicReferenceProcess="false"
+      externalizeConditions="false" inputVariable="V24"
+      invokeContainer="pub.estd.rosettaNet"
+      invokeId="pub.estd.rosettaNet:send" invokeLocation=""
+      invokeName="send" invokeType="ISSERVICE"
+      label="Send External Document" logicalServer="Default"
+      ornamentKey="32_globe.png" outputVariable="V25" retryCount="4"
+      routingRuleSet="" stepLock="false" uid="S23"
+      useCorrelation="false" x="623" y="189">
+      <documentation/>
+      <join joinType="UnsynchronizedOr" suppressJoinFailure="false"/>
+      <businessKPIs/>
+      <fontData boldFont="false" fontFamily="Tahoma" fontSize="8" italicFont="false">
+        <fontColor blue="0" green="0" red="0"/>
+      </fontData>
+      <extendedProperty name="retries" value="0"/>
+      <extendedProperty name="retryInterval" value="10000"/>
+      <timeout calendarAlias="" calendarTime=""
+        dynamicCalendarStaticAlias="" dynamicCalendarStaticDays=""
+        dynamicCalendarStaticHours="" dynamicCalendarStaticMinutes=""
+        dynamicFieldName="" isCalendarTimeout="false"
+        isStaticTimeout="true" isXPathTimeout="false"
+        pipelineCalendarAlias="" pipelineCalendarDays=""
+        pipelineCalendarHours="" pipelineCalendarMinutes=""
+        timeoutStyle="RELATIVE" timeoutType="stepTimeout"
+        timeoutValue="0" xpathTimeoutValue=""/>
+    </invokeStep>
+    <invokeStep dynamicReferenceProcess="false"
+      externalizeConditions="false" inputVariable="V27"
+      invokeContainer="pub.estd.rosettaNet"
+      invokeId="pub.estd.rosettaNet:waitStepInit" invokeLocation=""
+      invokeName="waitStepInit" invokeType="ISSERVICE"
+      label="Wait for Exception" logicalServer="Default"
+      ornamentKey="32_invoice.png" outputVariable="V28" retryCount="0"
+      routingRuleSet="" stepLock="false" uid="S26"
+      useCorrelation="false" x="360" y="159">
+      <documentation/>
+      <join joinType="UnsynchronizedOr" suppressJoinFailure="false"/>
+      <businessKPIs/>
+      <fontData boldFont="false" fontFamily="Tahoma" fontSize="8" italicFont="false">
+        <fontColor blue="0" green="0" red="0"/>
+      </fontData>
+      <extendedProperty name="retries" value="0"/>
+      <extendedProperty name="retryInterval" value="10000"/>
+      <timeout calendarAlias="" calendarTime=""
+        dynamicCalendarStaticAlias="" dynamicCalendarStaticDays=""
+        dynamicCalendarStaticHours="" dynamicCalendarStaticMinutes=""
+        dynamicFieldName="" isCalendarTimeout="false"
+        isStaticTimeout="true" isXPathTimeout="false"
+        pipelineCalendarAlias="" pipelineCalendarDays=""
+        pipelineCalendarHours="" pipelineCalendarMinutes=""
+        timeoutStyle="RELATIVE" timeoutType="stepTimeout"
+        timeoutValue="0" xpathTimeoutValue=""/>
+    </invokeStep>
+    <invokeStep dynamicReferenceProcess="false"
+      externalizeConditions="false" inputVariable="V30"
+      invokeContainer="wm.b2b.rn.largeDocSample.handler" invokeId=""
+      invokeLocation="" invokeName="exceptionHandler"
+      invokeType="ISSERVICE" label="Exception Handler"
+      logicalServer="Default" ornamentKey="32_decision_diamond.png"
+      outputVariable="V31" retryCount="0" routingRuleSet=""
+      stepLock="false" uid="S29" useCorrelation="false" x="362" y="298">
+      <documentation/>
+      <join joinType="UnsynchronizedOr" suppressJoinFailure="false"/>
+      <businessKPIs/>
+      <fontData boldFont="false" fontFamily="Tahoma" fontSize="8" italicFont="false">
+        <fontColor blue="0" green="0" red="0"/>
+      </fontData>
+      <extendedProperty name="retries" value="0"/>
+      <extendedProperty name="retryInterval" value="10000"/>
+      <timeout calendarAlias="" calendarTime=""
+        dynamicCalendarStaticAlias="" dynamicCalendarStaticDays=""
+        dynamicCalendarStaticHours="" dynamicCalendarStaticMinutes=""
+        dynamicFieldName="" isCalendarTimeout="false"
+        isStaticTimeout="true" isXPathTimeout="false"
+        pipelineCalendarAlias="" pipelineCalendarDays=""
+        pipelineCalendarHours="" pipelineCalendarMinutes=""
+        timeoutStyle="RELATIVE" timeoutType="stepTimeout"
+        timeoutValue="0" xpathTimeoutValue=""/>
+    </invokeStep>
+    <invokeStep dynamicReferenceProcess="false"
+      externalizeConditions="false" inputVariable="V33"
+      invokeContainer="pub.estd.rosettaNet"
+      invokeId="pub.estd.rosettaNet:sendNOF" invokeLocation=""
+      invokeName="sendNOF" invokeType="ISSERVICE" label="startNOF"
+      logicalServer="Default" ornamentKey="32_abort.png"
+      outputVariable="V34" retryCount="0" routingRuleSet=""
+      stepLock="false" uid="S32" useCorrelation="false" x="553" y="331">
+      <documentation/>
+      <businessKPIs/>
+      <fontData boldFont="false" fontFamily="Tahoma" fontSize="8" italicFont="false">
+        <fontColor blue="0" green="0" red="0"/>
+      </fontData>
+      <extendedProperty name="retries" value="0"/>
+      <extendedProperty name="retryInterval" value="10000"/>
+      <timeout calendarAlias="" calendarTime=""
+        dynamicCalendarStaticAlias="" dynamicCalendarStaticDays=""
+        dynamicCalendarStaticHours="" dynamicCalendarStaticMinutes=""
+        dynamicFieldName="" isCalendarTimeout="false"
+        isStaticTimeout="true" isXPathTimeout="false"
+        pipelineCalendarAlias="" pipelineCalendarDays=""
+        pipelineCalendarHours="" pipelineCalendarMinutes=""
+        timeoutStyle="RELATIVE" timeoutType="stepTimeout"
+        timeoutValue="0" xpathTimeoutValue=""/>
+    </invokeStep>
+    <invokeStep dynamicReferenceProcess="false"
+      externalizeConditions="false" inputVariable="V36"
+      invokeContainer="pub.estd.rosettaNet"
+      invokeId="pub.estd.rosettaNet:error" invokeLocation=""
+      invokeName="error" invokeType="ISSERVICE" label="Error"
+      logicalServer="Default" ornamentKey="32_error_stop_sign.png"
+      outputVariable="V37" retryCount="0" routingRuleSet=""
+      stepLock="false" uid="S35" useCorrelation="false" x="553" y="459">
+      <documentation/>
+      <join joinType="UnsynchronizedOr" suppressJoinFailure="false"/>
+      <businessKPIs/>
+      <fontData boldFont="false" fontFamily="Tahoma" fontSize="8" italicFont="false">
+        <fontColor blue="0" green="0" red="0"/>
+      </fontData>
+      <extendedProperty name="retries" value="0"/>
+      <extendedProperty name="retryInterval" value="10000"/>
+      <timeout calendarAlias="" calendarTime=""
+        dynamicCalendarStaticAlias="" dynamicCalendarStaticDays=""
+        dynamicCalendarStaticHours="" dynamicCalendarStaticMinutes=""
+        dynamicFieldName="" isCalendarTimeout="false"
+        isStaticTimeout="true" isXPathTimeout="false"
+        pipelineCalendarAlias="" pipelineCalendarDays=""
+        pipelineCalendarHours="" pipelineCalendarMinutes=""
+        timeoutStyle="RELATIVE" timeoutType="stepTimeout"
+        timeoutValue="0" xpathTimeoutValue=""/>
+    </invokeStep>
+    <invokeStep dynamicReferenceProcess="false"
+      externalizeConditions="false" inputVariable="V39"
+      invokeContainer="pub.estd.rosettaNet"
+      invokeId="pub.estd.rosettaNet:waitStepInit" invokeLocation=""
+      invokeName="waitStepInit" invokeType="ISSERVICE"
+      label="Wait for ACK" logicalServer="Default"
+      ornamentKey="32_invoice.png" outputVariable="V40" retryCount="0"
+      routingRuleSet="" stepLock="false" uid="S38"
+      useCorrelation="false" x="627" y="379">
+      <documentation/>
+      <join joinType="Complex" suppressJoinFailure="false">
+        <timeout calendarAlias="" calendarTime=""
+          dynamicCalendarStaticAlias="" dynamicCalendarStaticDays=""
+          dynamicCalendarStaticHours="" dynamicCalendarStaticMinutes=""
+          dynamicFieldName="" isCalendarTimeout="false"
+          isStaticTimeout="true" isXPathTimeout="false"
+          pipelineCalendarAlias="" pipelineCalendarDays=""
+          pipelineCalendarHours="" pipelineCalendarMinutes=""
+          timeoutStyle="RELATIVE" timeoutType="joinTimeout"
+          timeoutValue="7200000" xpathTimeoutValue=""/>
+        <joinExpression value="(Transition-From-S23 and Transition-From-S68) unsynchronizedor (Transition-From-S23 and Transition-From-S103)"/>
+      </join>
+      <businessKPIs/>
+      <fontData boldFont="false" fontFamily="Tahoma" fontSize="8" italicFont="false">
+        <fontColor blue="0" green="0" red="0"/>
+      </fontData>
+      <extendedProperty name="retries" value="0"/>
+      <extendedProperty name="retryInterval" value="10000"/>
+      <timeout calendarAlias="" calendarTime=""
+        dynamicCalendarStaticAlias="" dynamicCalendarStaticDays=""
+        dynamicCalendarStaticHours="" dynamicCalendarStaticMinutes=""
+        dynamicFieldName="" isCalendarTimeout="false"
+        isStaticTimeout="true" isXPathTimeout="false"
+        pipelineCalendarAlias="" pipelineCalendarDays=""
+        pipelineCalendarHours="" pipelineCalendarMinutes=""
+        timeoutStyle="RELATIVE" timeoutType="stepTimeout"
+        timeoutValue="7200000" xpathTimeoutValue=""/>
+    </invokeStep>
+    <invokeStep dynamicReferenceProcess="false"
+      externalizeConditions="false" inputVariable="V42"
+      invokeContainer="pub.estd.rosettaNet"
+      invokeId="pub.estd.rosettaNet:verifyAcknowledgement"
+      invokeLocation="" invokeName="verifyAcknowledgement"
+      invokeType="ISSERVICE" label="Verify ACK" logicalServer="Default"
+      ornamentKey="32_purchase_order.png" outputVariable="V43"
+      retryCount="0" routingRuleSet="" stepLock="false" uid="S41"
+      useCorrelation="false" x="620" y="538">
+      <documentation/>
+      <businessKPIs/>
+      <fontData boldFont="false" fontFamily="Tahoma" fontSize="8" italicFont="false">
+        <fontColor blue="0" green="0" red="0"/>
+      </fontData>
+      <extendedProperty name="retries" value="0"/>
+      <extendedProperty name="retryInterval" value="10000"/>
+      <timeout calendarAlias="" calendarTime=""
+        dynamicCalendarStaticAlias="" dynamicCalendarStaticDays=""
+        dynamicCalendarStaticHours="" dynamicCalendarStaticMinutes=""
+        dynamicFieldName="" isCalendarTimeout="false"
+        isStaticTimeout="true" isXPathTimeout="false"
+        pipelineCalendarAlias="" pipelineCalendarDays=""
+        pipelineCalendarHours="" pipelineCalendarMinutes=""
+        timeoutStyle="RELATIVE" timeoutType="stepTimeout"
+        timeoutValue="0" xpathTimeoutValue=""/>
+    </invokeStep>
+    <invokeStep dynamicReferenceProcess="false"
+      externalizeConditions="false" inputVariable="V45"
+      invokeContainer="wm.b2b.rn.largeDocSample.handler" invokeId=""
+      invokeLocation="" invokeName="receiptAckHandler"
+      invokeType="ISSERVICE" label="Process ACK" logicalServer="Default"
+      ornamentKey="32_decision_diamond.png" outputVariable="V46"
+      retryCount="0" routingRuleSet="" stepLock="false" uid="S44"
+      useCorrelation="false" x="616" y="673">
+      <documentation/>
+      <businessKPIs/>
+      <fontData boldFont="false" fontFamily="Tahoma" fontSize="8" italicFont="false">
+        <fontColor blue="0" green="0" red="0"/>
+      </fontData>
+      <extendedProperty name="retries" value="0"/>
+      <extendedProperty name="retryInterval" value="10000"/>
+      <timeout calendarAlias="" calendarTime=""
+        dynamicCalendarStaticAlias="" dynamicCalendarStaticDays=""
+        dynamicCalendarStaticHours="" dynamicCalendarStaticMinutes=""
+        dynamicFieldName="" isCalendarTimeout="false"
+        isStaticTimeout="true" isXPathTimeout="false"
+        pipelineCalendarAlias="" pipelineCalendarDays=""
+        pipelineCalendarHours="" pipelineCalendarMinutes=""
+        timeoutStyle="RELATIVE" timeoutType="stepTimeout"
+        timeoutValue="0" xpathTimeoutValue=""/>
+    </invokeStep>
+    <invokeStep dynamicReferenceProcess="false"
+      externalizeConditions="false" inputVariable="V48"
+      invokeContainer="pub.estd.rosettaNet"
+      invokeId="pub.estd.rosettaNet:done" invokeLocation=""
+      invokeName="done" invokeType="ISSERVICE" label="Done"
+      logicalServer="Default" ornamentKey="32_success.png"
+      outputVariable="V49" retryCount="0" routingRuleSet=""
+      stepLock="false" uid="S47" useCorrelation="false" x="436" y="673">
+      <documentation/>
+      <businessKPIs/>
+      <fontData boldFont="false" fontFamily="Tahoma" fontSize="8" italicFont="false">
+        <fontColor blue="0" green="0" red="0"/>
+      </fontData>
+      <extendedProperty name="retries" value="0"/>
+      <extendedProperty name="retryInterval" value="10000"/>
+      <timeout calendarAlias="" calendarTime=""
+        dynamicCalendarStaticAlias="" dynamicCalendarStaticDays=""
+        dynamicCalendarStaticHours="" dynamicCalendarStaticMinutes=""
+        dynamicFieldName="" isCalendarTimeout="false"
+        isStaticTimeout="true" isXPathTimeout="false"
+        pipelineCalendarAlias="" pipelineCalendarDays=""
+        pipelineCalendarHours="" pipelineCalendarMinutes=""
+        timeoutStyle="RELATIVE" timeoutType="stepTimeout"
+        timeoutValue="0" xpathTimeoutValue=""/>
+    </invokeStep>
+    <invokeStep dynamicReferenceProcess="false"
+      externalizeConditions="false" inputVariable="V51"
+      invokeContainer="pub.estd.rosettaNet"
+      invokeId="pub.estd.rosettaNet:error" invokeLocation=""
+      invokeName="error" invokeType="ISSERVICE"
+      label="Process Level Error" logicalServer="Default"
+      ornamentKey="32_error_stop_sign.png" outputVariable="V52"
+      retryCount="0" routingRuleSet="" stepLock="false" uid="S50"
+      useCorrelation="false" x="147" y="673">
+      <documentation/>
+      <businessKPIs/>
+      <fontData boldFont="false" fontFamily="Tahoma" fontSize="8" italicFont="false">
+        <fontColor blue="0" green="0" red="0"/>
+      </fontData>
+      <extendedProperty name="retries" value="0"/>
+      <extendedProperty name="retryInterval" value="10000"/>
+      <timeout calendarAlias="" calendarTime=""
+        dynamicCalendarStaticAlias="" dynamicCalendarStaticDays=""
+        dynamicCalendarStaticHours="" dynamicCalendarStaticMinutes=""
+        dynamicFieldName="" isCalendarTimeout="false"
+        isStaticTimeout="true" isXPathTimeout="false"
+        pipelineCalendarAlias="" pipelineCalendarDays=""
+        pipelineCalendarHours="" pipelineCalendarMinutes=""
+        timeoutStyle="RELATIVE" timeoutType="stepTimeout"
+        timeoutValue="0" xpathTimeoutValue=""/>
+    </invokeStep>
+    <receiveStep allowsSynchronousReply="false"
+      externalizeConditions="false" isStartStepServiceRequired="true"
+      label="Receive Exception (RNIF 1.1)" logicalServer="Default"
+      outputVariable="V734" receiveProtocol="SUBSCRIPTION"
+      receiveType="EMPTY" stepLock="false" uid="S65"
+      useCorrelation="false" x="222" y="174">
+      <documentation/>
+      <businessKPIs/>
+      <fontData boldFont="false" fontFamily="Tahoma" fontSize="8" italicFont="false">
+        <fontColor blue="0" green="0" red="0"/>
+      </fontData>
+      <wmExpressionFilter/>
+    </receiveStep>
+    <receiveStep allowsSynchronousReply="false"
+      externalizeConditions="false" isStartStepServiceRequired="true"
+      label="Receive ReceiptAcknowledgement (RNIF 1.1)"
+      logicalServer="Default" outputVariable="V722"
+      receiveProtocol="SUBSCRIPTION" receiveType="EMPTY"
+      stepLock="false" uid="S68" useCorrelation="false" x="718" y="383">
+      <documentation/>
+      <businessKPIs/>
+      <fontData boldFont="false" fontFamily="Tahoma" fontSize="8" italicFont="false">
+        <fontColor blue="0" green="0" red="0"/>
+      </fontData>
+      <wmExpressionFilter/>
+    </receiveStep>
+    <receiveStep allowsSynchronousReply="false"
+      externalizeConditions="false" isStartStepServiceRequired="true"
+      label="Receive ReceiptAcknowledgement (RNIF 2.0)"
+      logicalServer="Default" outputVariable="V724"
+      receiveProtocol="SUBSCRIPTION" receiveType="EMPTY"
+      stepLock="false" uid="S103" useCorrelation="false" x="718" y="496">
+      <documentation/>
+      <businessKPIs/>
+      <fontData boldFont="false" fontFamily="Tahoma" fontSize="8" italicFont="false">
+        <fontColor blue="0" green="0" red="0"/>
+      </fontData>
+      <wmExpressionFilter/>
+    </receiveStep>
+    <receiveStep allowsSynchronousReply="false"
+      externalizeConditions="false" isStartStepServiceRequired="true"
+      label="Receive Exception (RNIF2.0)" logicalServer="Default"
+      outputVariable="V732" receiveProtocol="SUBSCRIPTION"
+      receiveType="EMPTY" stepLock="false" uid="S125"
+      useCorrelation="false" x="219" y="267">
+      <documentation/>
+      <businessKPIs/>
+      <fontData boldFont="false" fontFamily="Tahoma" fontSize="8" italicFont="false">
+        <fontColor blue="0" green="0" red="0"/>
+      </fontData>
+      <wmExpressionFilter/>
+    </receiveStep>
+    <receiveStep allowsSynchronousReply="false"
+      externalizeConditions="false" isStartStepServiceRequired="true"
+      label="Receive ReceiptAcknowledgementException"
+      logicalServer="Default" outputVariable="V730"
+      receiveProtocol="SUBSCRIPTION" receiveType="EMPTY"
+      stepLock="false" uid="S129" useCorrelation="false" x="219" y="368">
+      <documentation/>
+      <businessKPIs/>
+      <fontData boldFont="false" fontFamily="Tahoma" fontSize="8" italicFont="false">
+        <fontColor blue="0" green="0" red="0"/>
+      </fontData>
+      <wmExpressionFilter/>
+    </receiveStep>
+    <receiveStep allowsSynchronousReply="false"
+      externalizeConditions="false" isStartStepServiceRequired="true"
+      label="Receive NOF (RNIF1.1)" logicalServer="Default"
+      outputVariable="V728" receiveProtocol="SUBSCRIPTION"
+      receiveType="EMPTY" stepLock="false" uid="S649"
+      useCorrelation="false" x="155" y="586">
+      <documentation/>
+      <businessKPIs/>
+      <fontData boldFont="false" fontFamily="Segoe UI" fontSize="9" italicFont="false">
+        <fontColor blue="0" green="0" red="0"/>
+      </fontData>
+      <extendedProperty name="retries" value="0"/>
+      <extendedProperty name="retryInterval" value="60000"/>
+      <wmExpressionFilter/>
+    </receiveStep>
+    <receiveStep allowsSynchronousReply="false"
+      externalizeConditions="false" isStartStepServiceRequired="true"
+      label="Receive NOF(RNIF2.0)" logicalServer="Default"
+      outputVariable="V726" receiveProtocol="SUBSCRIPTION"
+      receiveType="EMPTY" stepLock="false" uid="S651"
+      useCorrelation="false" x="291" y="586">
+      <documentation/>
+      <businessKPIs/>
+      <fontData boldFont="false" fontFamily="Segoe UI" fontSize="9" italicFont="false">
+        <fontColor blue="0" green="0" red="0"/>
+      </fontData>
+      <extendedProperty name="retries" value="0"/>
+      <extendedProperty name="retryInterval" value="60000"/>
+      <wmExpressionFilter/>
+    </receiveStep>
+    <invokeStep dynamicReferenceProcess="false"
+      externalizeConditions="false"
+      invokeContainer="pub.estd.rosettaNet"
+      invokeId="pub.estd.rosettaNet:waitStepInit" invokeLocation=""
+      invokeName="waitStepInit" invokeType="ISSERVICE"
+      label="Wait for Notification of Failure" logicalServer="Default"
+      ornamentKey="32_invoice.png" outputVariable="V654" retryCount="0"
+      routingRuleSet="" stepLock="false" uid="S655"
+      useCorrelation="false" x="228" y="470">
+      <documentation/>
+      <join joinType="UnsynchronizedOr" suppressJoinFailure="false"/>
+      <businessKPIs/>
+      <fontData boldFont="false" fontFamily="Tahoma" fontSize="8" italicFont="false">
+        <fontColor blue="0" green="0" red="0"/>
+      </fontData>
+      <extendedProperty name="retries" value="0"/>
+      <extendedProperty name="retryInterval" value="10000"/>
+      <timeout calendarAlias="" calendarTime=""
+        dynamicCalendarStaticAlias="" dynamicCalendarStaticDays=""
+        dynamicCalendarStaticHours="" dynamicCalendarStaticMinutes=""
+        dynamicFieldName="" isCalendarTimeout="false"
+        isStaticTimeout="true" isXPathTimeout="false"
+        pipelineCalendarAlias="" pipelineCalendarDays=""
+        pipelineCalendarHours="" pipelineCalendarMinutes=""
+        timeoutStyle="RELATIVE" timeoutType="stepTimeout"
+        timeoutValue="0" xpathTimeoutValue=""/>
+    </invokeStep>
+    <invokeStep dynamicReferenceProcess="false"
+      externalizeConditions="false"
+      invokeContainer="wm.b2b.rn.sample.handler" invokeId=""
+      invokeLocation="" invokeName="notificationOfFailureHandler"
+      invokeType="ISSERVICE" label="Notification of Failure Handler"
+      logicalServer="Default" ornamentKey="32_stoplight.png"
+      outputVariable="V657" retryCount="0" routingRuleSet=""
+      stepLock="false" uid="S658" useCorrelation="false" x="369" y="470">
+      <documentation/>
+      <businessKPIs/>
+      <fontData boldFont="false" fontFamily="Tahoma" fontSize="8" italicFont="false">
+        <fontColor blue="0" green="0" red="0"/>
+      </fontData>
+      <extendedProperty name="retries" value="0"/>
+      <extendedProperty name="retryInterval" value="10000"/>
+      <timeout calendarAlias="" calendarTime=""
+        dynamicCalendarStaticAlias="" dynamicCalendarStaticDays=""
+        dynamicCalendarStaticHours="" dynamicCalendarStaticMinutes=""
+        dynamicFieldName="" isCalendarTimeout="false"
+        isStaticTimeout="true" isXPathTimeout="false"
+        pipelineCalendarAlias="" pipelineCalendarDays=""
+        pipelineCalendarHours="" pipelineCalendarMinutes=""
+        timeoutStyle="RELATIVE" timeoutType="stepTimeout"
+        timeoutValue="0" xpathTimeoutValue=""/>
+    </invokeStep>
+    <transition blue="255" conditionDescription="" conditionText=""
+      conditionType="IF" green="0" lineShape="STRAIGHT" red="0"
+      source="S18" sourceLocation="296,105" sourceTerminal="RIGHT"
+      target="S15" targetLocation="390,105" targetTerminal="LEFT" uid="T53">
+      <labelLayout blue="0" defaultLocation="true" green="196"
+        height="-1" red="255" width="-1" x="343" y="106">
+        <fontData boldFont="false" fontFamily="Tahoma" fontSize="8" italicFont="false">
+          <fontColor blue="0" green="0" red="0"/>
+        </fontData>
+      </labelLayout>
+      <wmExpression/>
+    </transition>
+    <transition blue="255" conditionDescription="" conditionText=""
+      conditionType="IF" green="0" lineShape="STRAIGHT" red="0"
+      source="S15" sourceLocation="441,105" sourceTerminal="RIGHT"
+      target="S20" targetLocation="646,105" targetTerminal="LEFT" uid="T54">
+      <labelLayout blue="0" defaultLocation="true" green="196"
+        height="-1" red="255" width="-1" x="543" y="106">
+        <fontData boldFont="false" fontFamily="Tahoma" fontSize="8" italicFont="false">
+          <fontColor blue="0" green="0" red="0"/>
+        </fontData>
+      </labelLayout>
+      <wmExpression/>
+    </transition>
+    <transition blue="255" conditionDescription="" conditionText=""
+      conditionType="IF" green="0" lineShape="STRAIGHT" red="0"
+      source="S20" sourceLocation="671,144" sourceTerminal="BOTTOM"
+      target="S23" targetLocation="669,201" targetTerminal="TOP" uid="T55">
+      <bendpoint index="0" location="671,172" weight="0.5"/>
+      <bendpoint index="1" location="669,172" weight="0.5"/>
+      <labelLayout blue="0" defaultLocation="true" green="196"
+        height="-1" red="255" width="-1" x="670" y="173">
+        <fontData boldFont="false" fontFamily="Tahoma" fontSize="8" italicFont="false">
+          <fontColor blue="0" green="0" red="0"/>
+        </fontData>
+      </labelLayout>
+      <wmExpression/>
+    </transition>
+    <transition blue="255" conditionDescription="" conditionText=""
+      conditionType="IF" green="0" lineShape="STRAIGHT" red="0"
+      source="S26" sourceLocation="416,235" sourceTerminal="BOTTOM"
+      target="S29" targetLocation="417,310" targetTerminal="TOP" uid="T57">
+      <labelLayout blue="0" defaultLocation="true" green="196"
+        height="-1" red="255" width="-1" x="416" y="273">
+        <fontData boldFont="false" fontFamily="Tahoma" fontSize="8" italicFont="false">
+          <fontColor blue="0" green="0" red="0"/>
+        </fontData>
+      </labelLayout>
+      <wmExpression/>
+    </transition>
+    <transition blue="255" conditionDescription=""
+      conditionText="Iterations > 4" conditionType="RETRY" green="0"
+      lineShape="STRAIGHT" red="0" source="S23" sourceLocation="654,278"
+      sourceTerminal="BOTTOM" target="S32" targetLocation="590,343"
+      targetTerminal="TOP" uid="T58">
+      <bendpoint index="0" location="654,310" weight="0.5"/>
+      <bendpoint index="1" location="590,310" weight="0.5"/>
+      <labelLayout blue="0" defaultLocation="true" green="196"
+        height="-1" red="255" width="-1" x="589" y="297">
+        <fontData boldFont="false" fontFamily="Tahoma" fontSize="8" italicFont="false">
+          <fontColor blue="0" green="0" red="0"/>
+        </fontData>
+      </labelLayout>
+      <wmExpression/>
+    </transition>
+    <transition blue="255" conditionDescription="" conditionText=""
+      conditionType="IF" green="0" lineShape="STRAIGHT" red="0"
+      source="S23" sourceLocation="685,278" sourceTerminal="BOTTOM"
+      target="S38" targetLocation="669,391" targetTerminal="TOP" uid="T61">
+      <bendpoint index="0" location="685,334" weight="0.5"/>
+      <bendpoint index="1" location="669,334" weight="0.5"/>
+      <labelLayout blue="0" defaultLocation="true" green="196"
+        height="-1" red="255" width="-1" x="677" y="335">
+        <fontData boldFont="false" fontFamily="Tahoma" fontSize="8" italicFont="false">
+          <fontColor blue="0" green="0" red="0"/>
+        </fontData>
+      </labelLayout>
+      <wmExpression/>
+    </transition>
+    <transition blue="255" conditionDescription="" conditionText=""
+      conditionType="IF" green="0" lineShape="STRAIGHT" red="0"
+      source="S38" sourceLocation="655,455" sourceTerminal="BOTTOM"
+      target="S41" targetLocation="657,550" targetTerminal="TOP" uid="T62">
+      <bendpoint index="0" location="655,502" weight="0.5"/>
+      <bendpoint index="1" location="657,502" weight="0.5"/>
+      <labelLayout blue="0" defaultLocation="true" green="196"
+        height="-1" red="255" width="-1" x="656" y="503">
+        <fontData boldFont="false" fontFamily="Tahoma" fontSize="8" italicFont="false">
+          <fontColor blue="0" green="0" red="0"/>
+        </fontData>
+      </labelLayout>
+      <wmExpression/>
+    </transition>
+    <transition blue="255" conditionDescription="" conditionText=""
+      conditionType="IF" green="0" lineShape="STRAIGHT" red="0"
+      source="S41" sourceLocation="657,614" sourceTerminal="BOTTOM"
+      target="S44" targetLocation="657,685" targetTerminal="TOP" uid="T63">
+      <labelLayout blue="0" defaultLocation="true" green="196"
+        height="-1" red="255" width="-1" x="657" y="650">
+        <fontData boldFont="false" fontFamily="Tahoma" fontSize="8" italicFont="false">
+          <fontColor blue="0" green="0" red="0"/>
+        </fontData>
+      </labelLayout>
+      <wmExpression/>
+    </transition>
+    <transition blue="255" conditionDescription="" conditionText=""
+      conditionType="IF" green="0" lineShape="STRAIGHT" red="0"
+      source="S44" sourceLocation="632,710" sourceTerminal="LEFT"
+      target="S47" targetLocation="499,710" targetTerminal="RIGHT" uid="T64">
+      <labelLayout blue="0" defaultLocation="true" green="196"
+        height="-1" red="255" width="-1" x="565" y="711">
+        <fontData boldFont="false" fontFamily="Tahoma" fontSize="8" italicFont="false">
+          <fontColor blue="0" green="0" red="0"/>
+        </fontData>
+      </labelLayout>
+      <wmExpression/>
+    </transition>
+    <transition blue="255" conditionDescription="" conditionText=""
+      conditionType="IF" green="0" lineShape="STRAIGHT" red="0"
+      source="S65" sourceLocation="296,207" sourceTerminal="RIGHT"
+      target="S26" targetLocation="391,183" targetTerminal="LEFT" uid="T67">
+      <bendpoint index="0" location="342,207" weight="0.5"/>
+      <bendpoint index="1" location="342,183" weight="0.5"/>
+      <labelLayout blue="0" defaultLocation="true" green="196"
+        height="-1" red="255" width="-1" x="343" y="196">
+        <fontData boldFont="false" fontFamily="Tahoma" fontSize="8" italicFont="false">
+          <fontColor blue="0" green="0" red="0"/>
+        </fontData>
+      </labelLayout>
+      <wmExpression/>
+    </transition>
+    <transition blue="255" conditionDescription="" conditionText=""
+      conditionType="IF" green="0" lineShape="STRAIGHT" red="0"
+      source="S68" sourceLocation="753,416" sourceTerminal="LEFT"
+      target="S38" targetLocation="695,425" targetTerminal="RIGHT" uid="T70">
+      <bendpoint index="0" location="724,416" weight="0.5"/>
+      <bendpoint index="1" location="724,425" weight="0.5"/>
+      <labelLayout blue="0" defaultLocation="true" green="196"
+        height="-1" red="255" width="-1" x="724" y="421">
+        <fontData boldFont="false" fontFamily="Tahoma" fontSize="8" italicFont="false">
+          <fontColor blue="0" green="0" red="0"/>
+        </fontData>
+      </labelLayout>
+      <wmExpression/>
+    </transition>
+    <transition blue="255" conditionDescription=""
+      conditionText="Execution time > 2 hours &#xa;or Join wait time > 2 hours"
+      conditionType="TIMEOUT" green="0" lineShape="CURVE" red="0"
+      source="S38" sourceLocation="695,408" sourceTerminal="RIGHT"
+      target="S23" targetLocation="695,235" targetTerminal="RIGHT" uid="T85">
+      <labelLayout blue="0" defaultLocation="true" green="196"
+        height="-1" red="255" width="-1" x="661" y="295">
+        <fontData boldFont="false" fontFamily="Tahoma" fontSize="8" italicFont="false">
+          <fontColor blue="0" green="0" red="0"/>
+        </fontData>
+      </labelLayout>
+      <wmExpression/>
+    </transition>
+    <transition blue="255" conditionDescription="" conditionText=""
+      conditionType="IF" green="0" lineShape="STRAIGHT" red="0"
+      source="S103" sourceLocation="774,508" sourceTerminal="TOP"
+      target="S38" targetLocation="683,455" targetTerminal="BOTTOM" uid="T107">
+      <bendpoint index="0" location="774,480" weight="0.5"/>
+      <bendpoint index="1" location="683,480" weight="0.5"/>
+      <labelLayout blue="0" defaultLocation="true" green="196"
+        height="-1" red="255" width="-1" x="728" y="482">
+        <fontData boldFont="false" fontFamily="Tahoma" fontSize="8" italicFont="false">
+          <fontColor blue="0" green="0" red="0"/>
+        </fontData>
+      </labelLayout>
+      <wmExpression/>
+    </transition>
+    <transition blue="255" conditionDescription="" conditionText=""
+      conditionType="IF" green="0" lineShape="STRAIGHT" red="0"
+      source="S129" sourceLocation="296,401" sourceTerminal="RIGHT"
+      target="S26" targetLocation="391,207" targetTerminal="LEFT" uid="T136">
+      <bendpoint index="0" location="342,401" weight="0.5"/>
+      <bendpoint index="1" location="342,207" weight="0.5"/>
+      <labelLayout blue="0" defaultLocation="true" green="196"
+        height="-1" red="255" width="-1" x="343" y="305">
+        <fontData boldFont="false" fontFamily="Tahoma" fontSize="8" italicFont="false">
+          <fontColor blue="0" green="0" red="0"/>
+        </fontData>
+      </labelLayout>
+      <wmExpression/>
+    </transition>
+    <transition blue="255" conditionDescription="" conditionText=""
+      conditionType="IF" green="0" lineShape="STRAIGHT" red="0"
+      source="S125" sourceLocation="296,300" sourceTerminal="RIGHT"
+      target="S26" targetLocation="391,195" targetTerminal="LEFT" uid="T135">
+      <bendpoint index="0" location="342,300" weight="0.5"/>
+      <bendpoint index="1" location="342,195" weight="0.5"/>
+      <labelLayout blue="0" defaultLocation="true" green="196"
+        height="-1" red="255" width="-1" x="343" y="248">
+        <fontData boldFont="false" fontFamily="Tahoma" fontSize="8" italicFont="false">
+          <fontColor blue="0" green="0" red="0"/>
+        </fontData>
+      </labelLayout>
+      <wmExpression/>
+    </transition>
+    <transition blue="255" conditionDescription="" conditionText="Error"
+      conditionType="ERROR" green="0" lineShape="STRAIGHT" red="0"
+      source="S23" sourceLocation="644,226" sourceTerminal="LEFT"
+      target="S29" targetLocation="443,327" targetTerminal="RIGHT" uid="T597">
+      <bendpoint index="0" location="542,226" weight="0.5"/>
+      <bendpoint index="1" location="542,327" weight="0.5"/>
+      <labelLayout blue="0" defaultLocation="true" green="196"
+        height="-1" red="255" width="-1" x="531" y="263">
+        <fontData boldFont="false" fontFamily="Tahoma" fontSize="8" italicFont="false">
+          <fontColor blue="0" green="0" red="0"/>
+        </fontData>
+      </labelLayout>
+      <wmExpression/>
+    </transition>
+    <transition blue="255" conditionDescription="" conditionText=""
+      conditionType="IF" green="0" lineShape="STRAIGHT" red="0"
+      source="S32" sourceLocation="590,407" sourceTerminal="BOTTOM"
+      target="S35" targetLocation="590,471" targetTerminal="TOP" uid="T605">
+      <labelLayout blue="0" defaultLocation="true" green="196"
+        height="-1" red="255" width="-1" x="590" y="440">
+        <fontData boldFont="false" fontFamily="Segoe UI" fontSize="9" italicFont="false">
+          <fontColor blue="0" green="0" red="0"/>
+        </fontData>
+      </labelLayout>
+      <wmExpression/>
+    </transition>
+    <transition blue="255" conditionDescription="" conditionText=""
+      conditionType="IF" green="0" lineShape="STRAIGHT" red="0"
+      source="S29" sourceLocation="443,344" sourceTerminal="RIGHT"
+      target="S35" targetLocation="565,488" targetTerminal="LEFT" uid="T606">
+      <bendpoint index="0" location="502,344" weight="0.5"/>
+      <bendpoint index="1" location="502,488" weight="0.5"/>
+      <labelLayout blue="0" defaultLocation="true" green="196"
+        height="-1" red="255" width="-1" x="504" y="417">
+        <fontData boldFont="false" fontFamily="Segoe UI" fontSize="9" italicFont="false">
+          <fontColor blue="0" green="0" red="0"/>
+        </fontData>
+      </labelLayout>
+      <wmExpression/>
+    </transition>
+    <transition blue="255" conditionDescription="" conditionText=""
+      conditionType="IF" green="0" lineShape="STRAIGHT" red="0"
+      source="S649" sourceLocation="201,598" sourceTerminal="TOP"
+      target="S655" targetLocation="259,572" targetTerminal="BOTTOM" uid="T659">
+      <bendpoint index="0" location="201,584" weight="0.5"/>
+      <bendpoint index="1" location="259,584" weight="0.5"/>
+      <labelLayout blue="0" defaultLocation="true" green="196"
+        height="-1" red="255" width="-1" x="230" y="586">
+        <fontData boldFont="false" fontFamily="Segoe UI" fontSize="9" italicFont="false">
+          <fontColor blue="0" green="0" red="0"/>
+        </fontData>
+      </labelLayout>
+      <wmExpression/>
+    </transition>
+    <transition blue="255" conditionDescription="" conditionText=""
+      conditionType="IF" green="0" lineShape="STRAIGHT" red="0"
+      source="S651" sourceLocation="336,598" sourceTerminal="TOP"
+      target="S655" targetLocation="290,572" targetTerminal="BOTTOM" uid="T660">
+      <bendpoint index="0" location="336,584" weight="0.5"/>
+      <bendpoint index="1" location="290,584" weight="0.5"/>
+      <labelLayout blue="0" defaultLocation="true" green="196"
+        height="-1" red="255" width="-1" x="313" y="586">
+        <fontData boldFont="false" fontFamily="Segoe UI" fontSize="9" italicFont="false">
+          <fontColor blue="0" green="0" red="0"/>
+        </fontData>
+      </labelLayout>
+      <wmExpression/>
+    </transition>
+    <transition blue="255" conditionDescription="" conditionText=""
+      conditionType="IF" green="0" lineShape="STRAIGHT" red="0"
+      source="S655" sourceLocation="300,507" sourceTerminal="RIGHT"
+      target="S658" targetLocation="391,507" targetTerminal="LEFT" uid="T661">
+      <labelLayout blue="0" defaultLocation="true" green="196"
+        height="-1" red="255" width="-1" x="345" y="508">
+        <fontData boldFont="false" fontFamily="Segoe UI" fontSize="9" italicFont="false">
+          <fontColor blue="0" green="0" red="0"/>
+        </fontData>
+      </labelLayout>
+      <wmExpression/>
+    </transition>
+    <transition blue="255" conditionDescription="" conditionText=""
+      conditionType="IF" green="0" lineShape="STRAIGHT" red="0"
+      source="S658" sourceLocation="442,507" sourceTerminal="RIGHT"
+      target="S35" targetLocation="565,505" targetTerminal="LEFT" uid="T662">
+      <bendpoint index="0" location="502,507" weight="0.5"/>
+      <bendpoint index="1" location="502,505" weight="0.5"/>
+      <labelLayout blue="0" defaultLocation="true" green="196"
+        height="-1" red="255" width="-1" x="503" y="507">
+        <fontData boldFont="false" fontFamily="Segoe UI" fontSize="9" italicFont="false">
+          <fontColor blue="0" green="0" red="0"/>
+        </fontData>
+      </labelLayout>
+      <wmExpression/>
+    </transition>
+    <timeout calendarAlias="" calendarTime=""
+      dynamicCalendarStaticAlias="" dynamicCalendarStaticDays=""
+      dynamicCalendarStaticHours="" dynamicCalendarStaticMinutes=""
+      dynamicFieldName="" isCalendarTimeout="false"
+      isStaticTimeout="true" isXPathTimeout="false"
+      pipelineCalendarAlias="" pipelineCalendarDays=""
+      pipelineCalendarHours="" pipelineCalendarMinutes=""
+      timeoutStyle="RELATIVE" timeoutType="stepTimeout" timeoutValue="0" xpathTimeoutValue=""/>
+    <wmExpression/>
+  </pool>
+  <pool Id="" blue="128" external="true" externalizeConditions="false"
+    green="128" isCollapsed="false" label="Backend" labelBlue="255"
+    labelGreen="204" labelRed="153" logicalServer="" name="4"
+    orientation="vertical" red="128" retryCount="0" stepLock="false"
+    uid="P5" useCorrelation="false">
+    <documentation/>
+    <businessKPIs/>
+    <fontData boldFont="false" fontFamily="" italicFont="false"/>
+    <dataItem type="" uid="V10"/>
+    <dataItem type="" uid="V11"/>
+    <invokeStep dynamicReferenceProcess="false"
+      externalizeConditions="false" inputVariable="V10"
+      invokeContainer="" invokeId="" invokeLocation="" invokeName=""
+      invokeType="ISSERVICE" label="Send Internal Document"
+      logicalServer="Default" ornamentKey="32_globe.png"
+      outputVariable="V11" retryCount="0" routingRuleSet=""
+      stepLock="false" uid="S9" useCorrelation="false" x="18" y="42">
+      <documentation/>
+      <businessKPIs/>
+      <fontData boldFont="false" fontFamily="Tahoma" fontSize="8" italicFont="false">
+        <fontColor blue="0" green="0" red="0"/>
+      </fontData>
+      <extendedProperty name="retries" value="0"/>
+      <extendedProperty name="retryInterval" value="10000"/>
+      <timeout calendarAlias="" calendarTime=""
+        dynamicCalendarStaticAlias="" dynamicCalendarStaticDays=""
+        dynamicCalendarStaticHours="" dynamicCalendarStaticMinutes=""
+        dynamicFieldName="" isCalendarTimeout="false"
+        isStaticTimeout="true" isXPathTimeout="false"
+        pipelineCalendarAlias="" pipelineCalendarDays=""
+        pipelineCalendarHours="" pipelineCalendarMinutes=""
+        timeoutStyle="RELATIVE" timeoutType="stepTimeout"
+        timeoutValue="0" xpathTimeoutValue=""/>
+    </invokeStep>
+    <timeout calendarAlias="" calendarTime=""
+      dynamicCalendarStaticAlias="" dynamicCalendarStaticDays=""
+      dynamicCalendarStaticHours="" dynamicCalendarStaticMinutes=""
+      dynamicFieldName="" isCalendarTimeout="false"
+      isStaticTimeout="true" isXPathTimeout="false"
+      pipelineCalendarAlias="" pipelineCalendarDays=""
+      pipelineCalendarHours="" pipelineCalendarMinutes=""
+      timeoutStyle="RELATIVE" timeoutType="stepTimeout" timeoutValue="0" xpathTimeoutValue=""/>
+    <wmExpression/>
+    <swimlane Id="" blue="233" green="233" height="700" labelBlue="255"
+      labelGreen="238" labelRed="221" name="Backend" red="233"
+      uid="W183" width="110">
+      <documentation/>
+    </swimlane>
+  </pool>
+  <pool Id="" blue="128" external="true" externalizeConditions="false"
+    green="128" isCollapsed="false" label="Responder" labelBlue="255"
+    labelGreen="204" labelRed="153" logicalServer="" name="7"
+    orientation="vertical" red="128" retryCount="0" stepLock="false"
+    uid="P8" useCorrelation="false">
+    <documentation/>
+    <businessKPIs/>
+    <fontData boldFont="false" fontFamily="" italicFont="false"/>
+    <dataItem type="" uid="V73"/>
+    <dataItem type="" uid="V72"/>
+    <dataItem type="" uid="V13"/>
+    <dataItem type="" uid="V14"/>
+    <invokeStep dynamicReferenceProcess="false"
+      externalizeConditions="false" inputVariable="V13"
+      invokeContainer="" invokeId="" invokeLocation="" invokeName=""
+      invokeType="ISSERVICE" label="Wait for External Document"
+      logicalServer="Default" ornamentKey="32_invoice.png"
+      outputVariable="V14" retryCount="0" routingRuleSet=""
+      stepLock="false" uid="S12" useCorrelation="false" x="30" y="125">
+      <documentation/>
+      <businessKPIs/>
+      <fontData boldFont="false" fontFamily="Tahoma" fontSize="8" italicFont="false">
+        <fontColor blue="0" green="0" red="0"/>
+      </fontData>
+      <extendedProperty name="retries" value="0"/>
+      <extendedProperty name="retryInterval" value="10000"/>
+      <timeout calendarAlias="" calendarTime=""
+        dynamicCalendarStaticAlias="" dynamicCalendarStaticDays=""
+        dynamicCalendarStaticHours="" dynamicCalendarStaticMinutes=""
+        dynamicFieldName="" isCalendarTimeout="false"
+        isStaticTimeout="true" isXPathTimeout="false"
+        pipelineCalendarAlias="" pipelineCalendarDays=""
+        pipelineCalendarHours="" pipelineCalendarMinutes=""
+        timeoutStyle="RELATIVE" timeoutType="stepTimeout"
+        timeoutValue="0" xpathTimeoutValue=""/>
+    </invokeStep>
+    <invokeStep dynamicReferenceProcess="false"
+      externalizeConditions="false" inputVariable="V72"
+      invokeContainer="" invokeId="" invokeLocation="" invokeName=""
+      invokeType="ISSERVICE" label="Send ACK" logicalServer="Default"
+      ornamentKey="32_globe.png" outputVariable="V73" retryCount="0"
+      routingRuleSet="" stepLock="false" uid="S71"
+      useCorrelation="false" x="32" y="318">
+      <documentation/>
+      <businessKPIs/>
+      <fontData boldFont="false" fontFamily="Tahoma" fontSize="8" italicFont="false">
+        <fontColor blue="0" green="0" red="0"/>
+      </fontData>
+      <extendedProperty name="retries" value="0"/>
+      <extendedProperty name="retryInterval" value="10000"/>
+      <timeout calendarAlias="" calendarTime=""
+        dynamicCalendarStaticAlias="" dynamicCalendarStaticDays=""
+        dynamicCalendarStaticHours="" dynamicCalendarStaticMinutes=""
+        dynamicFieldName="" isCalendarTimeout="false"
+        isStaticTimeout="true" isXPathTimeout="false"
+        pipelineCalendarAlias="" pipelineCalendarDays=""
+        pipelineCalendarHours="" pipelineCalendarMinutes=""
+        timeoutStyle="RELATIVE" timeoutType="stepTimeout"
+        timeoutValue="0" xpathTimeoutValue=""/>
+    </invokeStep>
+    <transition blue="255" conditionDescription="" conditionText=""
+      conditionType="IF" green="0" lineShape="STRAIGHT" red="0"
+      source="S12" sourceLocation="914,274" sourceTerminal="BOTTOM"
+      target="S71" targetLocation="899,390" targetTerminal="TOP" uid="T80">
+      <bendpoint index="0" location="914,332" weight="0.5"/>
+      <bendpoint index="1" location="899,332" weight="0.5"/>
+      <labelLayout blue="0" defaultLocation="true" green="196"
+        height="-1" red="255" width="-1" x="76" y="273">
+        <fontData boldFont="false" fontFamily="Tahoma" fontSize="8" italicFont="false">
+          <fontColor blue="0" green="0" red="0"/>
+        </fontData>
+      </labelLayout>
+      <wmExpression/>
+    </transition>
+    <timeout calendarAlias="" calendarTime=""
+      dynamicCalendarStaticAlias="" dynamicCalendarStaticDays=""
+      dynamicCalendarStaticHours="" dynamicCalendarStaticMinutes=""
+      dynamicFieldName="" isCalendarTimeout="false"
+      isStaticTimeout="true" isXPathTimeout="false"
+      pipelineCalendarAlias="" pipelineCalendarDays=""
+      pipelineCalendarHours="" pipelineCalendarMinutes=""
+      timeoutStyle="RELATIVE" timeoutType="stepTimeout" timeoutValue="0" xpathTimeoutValue=""/>
+    <wmExpression/>
+    <swimlane Id="" blue="233" green="233" height="700" labelBlue="255"
+      labelGreen="238" labelRed="221" name="Responder" red="233"
+      uid="W3" width="139">
+      <documentation/>
+    </swimlane>
+  </pool>
+  <documentation/>
+  <qualityOfService expressPipeline="false" minLogLevel="5"
+    optimizeLocally="false" volatileTracking="false" volatileTransition="false"/>
+  <messageFlow blue="100" conditionDescription="" green="100"
+    lineShape="STRAIGHT" red="100" source="S23" sourceLocation="695,218"
+    sourcePool="1" sourceTerminal="RIGHT" target="S12"
+    targetLocation="889,222" targetPool="7" targetTerminal="LEFT" uid="76">
+    <bendpoint index="0" location="792,218" weight="0.5"/>
+    <bendpoint index="1" location="792,222" weight="0.5"/>
+    <labelLayout blue="0" defaultLocation="true" green="196" height="-1"
+      red="255" width="-1" x="792" y="221">
+      <fontData boldFont="false" fontFamily="Tahoma" fontSize="8" italicFont="false">
+        <fontColor blue="0" green="0" red="0"/>
+      </fontData>
+    </labelLayout>
+  </messageFlow>
+  <messageFlow blue="100" conditionDescription="" green="100"
+    lineShape="STRAIGHT" red="100" source="S71" sourceLocation="874,415"
+    sourcePool="7" sourceTerminal="LEFT" target="S68"
+    targetLocation="796,416" targetPool="1" targetTerminal="RIGHT" uid="79">
+    <bendpoint index="0" location="874,416" weight="0.5"/>
+    <labelLayout blue="0" defaultLocation="true" green="196" height="-1"
+      red="255" width="-1" x="835" y="416">
+      <fontData boldFont="false" fontFamily="Tahoma" fontSize="8" italicFont="false">
+        <fontColor blue="0" green="0" red="0"/>
+      </fontData>
+    </labelLayout>
+  </messageFlow>
+  <messageFlow blue="100" conditionDescription="" green="100"
+    lineShape="STRAIGHT" red="100" source="S9" sourceLocation="82,114"
+    sourcePool="4" sourceTerminal="RIGHT" target="S18"
+    targetLocation="253,105" targetPool="1" targetTerminal="LEFT" uid="81">
+    <bendpoint index="0" location="166,114" weight="0.5"/>
+    <bendpoint index="1" location="166,105" weight="0.5"/>
+    <labelLayout blue="0" defaultLocation="true" green="196" height="-1"
+      red="255" width="-1" x="167" y="110">
+      <fontData boldFont="false" fontFamily="Tahoma" fontSize="8" italicFont="false">
+        <fontColor blue="0" green="0" red="0"/>
+      </fontData>
+    </labelLayout>
+  </messageFlow>
+  <messageFlow blue="100" conditionDescription="" green="100"
+    lineShape="STRAIGHT" red="100" source="S71" sourceLocation="899,454"
+    sourcePool="7" sourceTerminal="BOTTOM" target="S103"
+    targetLocation="796,529" targetPool="1" targetTerminal="RIGHT" uid="211">
+    <bendpoint index="0" location="899,529" weight="0.5"/>
+    <labelLayout blue="0" defaultLocation="true" green="196" height="-1"
+      red="255" width="-1" x="899" y="530">
+      <fontData boldFont="false" fontFamily="Tahoma" fontSize="8" italicFont="false">
+        <fontColor blue="0" green="0" red="0"/>
+      </fontData>
+    </labelLayout>
+  </messageFlow>
+  <tnDocs>
+    <tnBizDoc bizDocID="ReceiptAck20------------"
+      logicalServer="Default" name="ReceiptAcknowledgment (RNIF 2.0)"
+      tnReceiver="Receiver Role" tnSender="Sender Role"/>
+    <tnBizDoc bizDocID="ReceiptAckException-----"
+      logicalServer="Default" name="ReceiptAcknowledgementException"
+      tnReceiver="Receiver Role" tnSender="Sender Role"/>
+    <tnBizDoc bizDocID="Exception---------------"
+      logicalServer="Default" name="Exception (RNIF 1.1)"
+      tnReceiver="Receiver Role" tnSender="Sender Role"/>
+    <tnBizDoc bizDocID="53o6bp0040p9oa9l0000000v"
+      logicalServer="Default"
+      name="PIP0A1v1.1Failure Notification Action Failure Report Administrator Document"
+      tnReceiver="Receiver Role" tnSender="Sender Role"/>
+    <tnBizDoc bizDocID="ReceiptAck--------------"
+      logicalServer="Default" name="ReceiptAcknowledgement (RNIF 1.1)"
+      tnReceiver="Receiver Role" tnSender="Sender Role"/>
+    <tnBizDoc bizDocID="0a3c1979f70d29a100000075"
+      logicalServer="Default"
+      name="PIP0A1vV02.00 Failure Notification Action Failure Report Administrator Document"
+      tnReceiver="Receiver Role" tnSender="Sender Role"/>
+    <tnBizDoc bizDocID="RosettaNet Dummy DocType"
+      logicalServer="Default" name="RosettaNet Dummy DocType"
+      tnReceiver="Receiver Role" tnSender="Sender Role"/>
+    <tnBizDoc bizDocID="Exception20-------------"
+      logicalServer="Default" name="Exception (RNIF 2.0)"
+      tnReceiver="Receiver Role" tnSender="Sender Role"/>
+  </tnDocs>
+</businessProcessDiagram>

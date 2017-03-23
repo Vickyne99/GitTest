@@ -1,0 +1,28 @@
+*----------------------------------------------------------------------*
+*       CLASS ZCL_BEM  DEFINITIO
+*----------------------------------------------------------------------*
+*
+*----------------------------------------------------------------------*
+CLASS zcl_bem DEFINITION
+  PUBLIC
+  FINAL
+  CREATE PUBLIC .
+
+*"* public components of class ZCL_BEM
+*"* do not include other source files here!!!
+PUBLIC SECTION.
+  TYPE-POOLS zbem .
+
+  METHODS constructor
+    IMPORTING
+      value(evt_container) TYPE swconttab
+      value(rectype) TYPE swetypecou-rectype .
+  CLASS-METHODS main .
+  METHODS get_evt_container
+    RETURNING
+      value(evt_container) TYPE swconttab .
+  METHODS set_evt_parameters .
+  METHODS push_event .
+  METHODS handle_substeps .
+  METHODS set_corr_object .
+  METHODS set_business_data .

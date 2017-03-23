@@ -1,0 +1,16 @@
+METHOD constructor.
+*- Set receiver type
+  _rectype = rectype.
+
+*- Set event container
+  _evt_container = evt_container.
+
+*- Set event name
+  swc0_get_element _evt_container zbem_evt_name _evt_name.
+
+*- Set event business object type
+  swc0_get_element _evt_container zbem_evt_objtype _evt_objtype.
+
+*- Set event business object key
+  swc0_get_element _evt_container zbem_evt_objkey _evt_objkey.
+ENDMETHOD.

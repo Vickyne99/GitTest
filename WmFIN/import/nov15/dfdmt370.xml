@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<constraints>
+<field name="23G:" type="Mixed2Type">
+    <bizName>Function of the Message</bizName>
+    <pattern>4!c[/4!c]</pattern>
+    <alias pattern="4!c" bizName="Function"/>
+	<choice1>AMND</choice1>
+    <choice1>CANC</choice1>
+    <choice1>NEWM</choice1>
+    <alias pattern="4!c" bizName="Sub Function"/>
+	<choice2>CODU</choice2>
+    <choice2>COPY</choice2>
+    <choice2>DUPL</choice2>
+    <error type="choice">T86</error>
+</field>
+
+<field name="20C::NETT" type="PatternType">
+    <bizName>Netting Position Reference</bizName>
+    <pattern>//16x</pattern>
+    <alias pattern="16x" bizName="Reference" />                
+</field>
+
+<field name="98A::NETT" type="PatternType">
+    <bizName>Date/Time A - Date/Time</bizName>
+    <pattern>//&lt;DATE4&gt;</pattern>
+    <alias pattern="&lt;DATE4&gt;" bizName="Time"/>      
+</field>
+
+<field name="98C::NETT" type="PatternType">
+    <bizName>Date/Time C - Netting Date/Time</bizName>
+    <pattern>//&lt;DATE4&gt;&lt;TIME2&gt;</pattern>
+    <alias pattern="&lt;DATE4&gt;" bizName="Date" />        
+    <alias pattern="&lt;TIME2&gt;" bizName="Time" />            
+</field>
+
+<field name="22H::RECP" type="MixedType">
+    <bizName>Receive Pay Indicator</bizName>
+    <pattern>//4!c</pattern>
+    <alias pattern="4!c" bizName="Indicator" />                                
+    <choice>NOPA</choice>
+	<choice>PAYO</choice>
+    <choice>RECE</choice>
+</field>
+
+<field name="22F::TRAN" type="MixedType">
+    <bizName>Transaction Indicator</bizName>
+    <pattern>/[8c]/4!c</pattern>
+    <alias pattern="8c" bizName="Data Source Scheme" />    
+    <alias pattern="4!c" bizName="Indicator" />            
+    <choice>FOEX</choice>
+    <choice>METL</choice>
+    <choice>MMKT</choice>
+    <choice>NDLF</choice>
+    <choice>OPTI</choice>
+</field>
+
+<field name="99A::TRAD" type="PatternType">
+    <bizName>Number Count A - Number of Trades</bizName>
+    <pattern>//[N]3!n</pattern>
+    <alias pattern="3!n" bizName="Number" />            
+</field>
+
+<field name="99C::TRAD" type="PatternType">
+    <bizName>Number Count C - Number of Trades</bizName>
+    <pattern>//6!n</pattern>
+    <alias pattern="6!n" bizName="Number" />            
+</field>
+
+</constraints>

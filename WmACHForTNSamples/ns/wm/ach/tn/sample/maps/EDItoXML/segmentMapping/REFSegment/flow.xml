@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<FLOW VERSION="3.0" CLEANUP="true">
+  <COMMENT></COMMENT>
+
+  <!-- nodes -->
+
+<LOOP TIMEOUT="" IN-ARRAY="/REF">
+  <COMMENT></COMMENT>
+
+  <!-- nodes -->
+
+<BRANCH TIMEOUT="" SWITCH="/REF/REF01/code">
+  <COMMENT>Reference Number Qualifier</COMMENT>
+
+  <!-- nodes -->
+
+<MAP NAME="1V" MODE="STANDALONE">
+  <COMMENT>Related Vendor Order Number</COMMENT>
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="MapCopy" FROM="/REF;2;0/REF02;1;0" TO="/Reference;2;0/RelatedVendorOrderNumber;1;0">
+</MAPCOPY>
+</MAP>
+
+<MAP NAME="BB" MODE="STANDALONE">
+  <COMMENT>Authorization Number</COMMENT>
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="MapCopy" FROM="/REF;2;0/REF02;1;0" TO="/Reference;2;0/AuthorizationNumber;1;0">
+</MAPCOPY>
+</MAP>
+
+<MAP NAME="CR" MODE="STANDALONE">
+  <COMMENT>Customer Reference Number</COMMENT>
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="MapCopy" FROM="/REF;2;0/REF02;1;0" TO="/Reference;2;0/CustomerReferenceNumber;1;0">
+</MAPCOPY>
+</MAP>
+
+<MAP NAME="E4" MODE="STANDALONE">
+  <COMMENT>Charge Card Number</COMMENT>
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="MapCopy" FROM="/REF;2;0/REF02;1;0" TO="/Reference;2;0/ChargeCardNumber;1;0">
+</MAPCOPY>
+</MAP>
+</BRANCH>
+</LOOP>
+</FLOW>

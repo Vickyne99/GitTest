@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<constraints>
+
+<!-- Text Block for MT940 -->
+<field name="20:" type="PatternType">
+    <bizName>Reference - Transaction Reference Number</bizName>
+    <pattern>16x</pattern>
+    <alias pattern="16x" bizName="Transaction Reference Number" />    
+    <error type="content">T26</error>
+</field>
+<field name="61:" type="MixedType">
+    <bizName>Statement Line</bizName>
+    <pattern>&lt;Fld61Plus&gt;</pattern> 
+    <alias pattern="&lt;Fld61Plus&gt;" bizName="Statement Line" />    
+    <choice>C</choice>
+    <choice>D</choice>
+    <choice>RC</choice>
+    <choice>RD</choice>
+</field>
+</constraints>

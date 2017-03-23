@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<constraints>
+
+<!-- Text Block for MT600 -->
+<field name="26C:" type="PatternType">
+    <bizName>C - Identification of the Metal and the Metal Account</bizName>
+    <pattern>&lt;FuncMetal&gt;</pattern>
+    <choice>ALUM</choice>
+    <choice>COPP</choice>
+    <choice>GOLD</choice>
+    <choice>IRID</choice>
+    <choice>LEAD</choice>
+    <choice>NICK</choice>
+    <choice>OSMI</choice>
+    <choice>PALL</choice>
+    <choice>PLAT</choice>
+    <choice>RHOD</choice>
+    <choice>RUTH</choice>
+    <choice>SILV</choice>
+    <choice>TINA</choice>
+    <choice>zinc</choice>
+</field>
+<field name="30:" type="PatternType">
+    <bizName>Date - Date Contract Agreed/Amended</bizName>
+    <pattern>&lt;DATE2&gt;</pattern>
+</field>
+<field name="34P:" type="PatternType">
+    <bizName>P - Consideration</bizName>
+    <pattern>&lt;DATE2&gt;&lt;CUR&gt;&lt;AMOUNT&gt;15</pattern>
+</field>
+<field name="34R:" type="PatternType">
+    <bizName>R - Consideration</bizName>
+    <pattern>&lt;DATE2&gt;&lt;CUR&gt;&lt;AMOUNT&gt;15</pattern>
+</field>
+<field name="53A:" type="MixedType">
+    <bizName>A - Sender's Correspondent</bizName>
+    <pattern>[&lt;PartyIdentifier&gt;][CRLF]&lt;SWIFTBIC&gt;</pattern>
+</field>
+<field name="53D:" type="MixedType">
+    <bizName>D - Sender's Correspondent</bizName>
+    <pattern>[&lt;PartyIdentifier&gt;][CRLF]4*35x</pattern>
+</field>
+<field name="57A:" type="MixedType">
+    <bizName>A - Account With Institution</bizName>
+    <pattern>[&lt;PartyIdentifier&gt;][CRLF]&lt;SWIFTBIC&gt;</pattern>
+</field>
+<field name="57A:" type="MixedType">
+    <bizName>A - Account With Institution</bizName>
+    <pattern>[&lt;PartyIdentifier&gt;][CRLF]&lt;SWIFTBIC&gt;</pattern>
+</field>
+<field name="72:" type="PatternType">
+    <bizName>Sender to Receiver Information</bizName>
+    <pattern>&lt;ERI_F72narrative&gt;</pattern>
+</field>
+<field name="87A:" type="MixedType">
+    <bizName>A - Receiver of the Metal</bizName>
+    <pattern>[&lt;PartyIdentifier&gt;][CRLF]&lt;SWIFTBIC&gt;</pattern>
+</field>
+<field name="87D:" type="MixedType">
+    <bizName>D - Receiver of the Metal</bizName>
+    <pattern>[&lt;PartyIdentifier&gt;][CRLF]4*35x</pattern>
+</field>
+
+<field name="77H:" type="MixedType">
+    <bizName>Type, Date, Version of the Agreement</bizName>
+    <pattern>6a[/&lt;DATE4&gt;][//4!n]</pattern>
+    <choiceList>
+    	<pattern>6a</pattern>
+	<choice>ISDA</choice>
+	<choice>OTHER</choice>
+    </choiceList>
+</field>
+
+<field name="32F:" type="MixedType">
+    <bizName>Quantity of the Metal</bizName>
+    <pattern>3!a&lt;AMOUNT&gt;15</pattern>
+    <choice>FOZ</choice>
+    <choice>GOZ</choice>
+    <choice>GRM</choice>
+    <choice>KLO</choice>
+    <choice>LIT</choice>
+    <choice>LOT</choice>
+    <choice>OTH</choice>
+    <choice>PND</choice>
+    <choice>TAL</choice>
+    <choice>TOL</choice>
+    <choice>TON</choice>
+    <choice>TOZ</choice>
+    <choice>UNT</choice>
+</field>
+
+</constraints>

@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<constraints>
+
+<!-- Text Block for NOV03 MT802 -->
+
+<field name="28:" type="PatternType">
+    <bizName>Settlement No./Page No.</bizName>
+    <pattern>5n[/2n]</pattern>
+</field>
+<field name="32A:" type="PatternType">
+    <bizName>A - Settlement Amount</bizName>
+    <pattern>&lt;DATE2&gt;&lt;CUR&gt;&lt;AMOUNT&gt;15</pattern>
+</field>
+<field name="52A:" type="MixedType">
+    <bizName>A - Remitting Agent</bizName>
+    <pattern>[&lt;PartyIdentifier&gt;][CRLF]&lt;SWIFTBIC&gt;</pattern>
+</field>
+<field name="52D:" type="MixedType">
+    <bizName>D - Remitting Agent</bizName>
+    <pattern>[&lt;PartyIdentifier&gt;][CRLF]4*35x</pattern>
+</field>
+<field name="53A:" type="MixedType">
+    <bizName>A - Sender's Correspondent</bizName>
+    <pattern>[&lt;PartyIdentifier&gt;][CRLF]&lt;SWIFTBIC&gt;</pattern>
+</field>
+<field name="53D:" type="MixedType">
+    <bizName>D - Sender's Correspondent</bizName>
+    <pattern>[&lt;PartyIdentifier&gt;][CRLF]4*35x</pattern>
+</field>
+<field name="72:" type="PatternType">
+    <bizName>Sender to Receiver Information</bizName>
+    <pattern>&lt;ERI_F72narrative&gt;</pattern>
+</field>
+
+</constraints>

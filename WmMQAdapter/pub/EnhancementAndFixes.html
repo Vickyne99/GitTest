@@ -1,0 +1,1003 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+<title>webMethods WebSphere MQ Adapter 6.5 Enhancements and Fixes</title>
+<style>
+<!--
+
+/* Named Styles */
+
+.wm-rmBody {
+	font-family:        "Courier New", Courier, monospace;
+	font-size:          10.0pt;
+	font-weight:        normal;
+	font-style:         normal;
+	margin-top:         12.0pt;
+	margin-right:       0in;
+	margin-bottom:      0in;
+	margin-left:        0in;  }
+
+
+.wm-rmBodyIndent {
+	font-family:        "Courier New", Courier, monospace;
+	font-size:          10.0pt;
+	font-weight:        normal;
+	font-style:         normal;
+	margin-top:         12.0pt;
+	margin-right:       0in;
+	margin-bottom:      0in;
+	margin-left:       .25in;  }
+
+
+.wm-rmInstructionsToWriter
+ {
+	font-family:        "Times New Roman", "Times Roman", serif;
+	font-size:          9.0pt;
+	font-style:         italic;
+	font-weight:        normal;
+	color:              red;
+	margin-top:         6.0pt;
+	margin-right:       0in;
+	margin-bottom:      0in;
+	margin-left:        0in;  }
+
+
+.wm-rmBulletList {
+	font-family:        "Courier New", Courier, monospace;
+	font-size:          10.0pt;
+	font-style:         normal;
+	font-weight:        normal;
+	margin-top:         9.0pt;
+	margin-right:       0in;
+	margin-bottom:      0in;
+	margin-left:       .25in;
+	text-indent:      -.25in;  }
+
+
+.wm-rmTableHead {
+	font-family:         Arial, Helvetica, sans-serif;
+	font-size:           9.0pt;
+	font-style:          normal;
+	font-weight:         bold;
+	margin-top:          12.0pt;
+	margin-right:        0in;
+	margin-bottom:       0in;
+	margin-left:         0in;
+	border:              bottom;
+	padding:             0in;  }
+
+
+.wm-rmTableCell {
+	font-family:         "Courier New", Courier, monospace;
+	font-size:           9.0pt;
+	font-style:          normal;
+	font-weight:         normal;
+	margin-top:          6.0pt;
+	margin-right:        0in;
+	margin-bottom:       3.0pt;
+	margin-left:         0in;
+	padding:             0in;  }
+
+
+/* Tag Styles */
+
+h1 {
+	font-family:     Arial, Helvetica, sans-serif;
+	font-size:           16.0pt;
+	font-style:          normal;
+	font-weight:         bold;
+	margin-top:          12.0pt;
+	margin-right:        0in;
+	margin-left:         0in;
+	margin-bottom:       3.0pt;
+	text-align:          center;  }
+
+
+h2 {
+	font-family:         Arial, Helvetica, sans-serif;
+	font-size:           14.0pt;
+	font-style:          normal;
+	font-weight:         bold;
+	margin-top:          12.0pt;
+	margin-right:        0in;
+	margin-left:         0in;
+	margin-bottom:       3.0pt;  }
+
+
+h3  {
+	font-family:         Arial, Helvetica, sans-serif;
+	font-size:           12.0pt;
+	font-style:          normal;
+	font-weight:         bold;
+	margin-top:         .25in;
+	margin-right:        0in;
+	margin-bottom:       0in;
+	margin-left:         0in;  }
+
+
+a:link {
+	color:               blue;
+	text-decoration:     none;  }
+
+
+a:visited {
+	color:               purple;
+	text-decoration:     none;  }
+
+
+a:hover {
+	text-decoration   :  underline; }
+
+
+p {
+	font-family:        "Courier New", Courier, monospace;
+	font-size:          10.0pt;
+	font-weight:        normal;
+	font-style:         normal;
+	margin-top:         12.0pt;
+	margin-right:       0in;
+	margin-bottom:      0in;
+	margin-left:        0in;  }
+
+
+th {
+	font-family:         Arial, Helvetica, sans-serif;
+	font-size:           9.0pt;
+	font-style:          normal;
+	font-weight:         bold;
+	margin-top:          12.0pt;
+	margin-right:        0in;
+	margin-bottom:       0in;
+	margin-left:         0in;
+	border:              bottom;
+	padding:             0in;  }
+
+
+td {
+	font-family:         "Courier New", Courier, monospace;
+	font-size:           0.0pt;
+	font-style:          normal;
+	font-weight:         normal;
+	margin-top:          6.0pt;
+	margin-right:        0in;
+	margin-bottom:       0in;
+	padding:             0in;
+	margin-left:         0in;  }
+
+
+ul {
+	font-family:        "Courier New", Courier, monospace;
+	font-size:          10.0pt;
+	font-style:         normal;
+	font-weight:        normal;
+	list-style :        square;  }
+
+
+ol {
+	font-family:        "Courier New", Courier, monospace;
+	font-size:          10.0pt;
+	font-style:         normal;
+	font-weight:        normal;  }
+
+-->
+</style>
+</head>
+
+<body lang=EN-US link=blue vlink=purple>
+
+<div class=Section1>
+
+<h1><a name="wmRM_title">webMethods WebSphere MQ
+Adapter 6.5 Enhancements and Fixes</a></h1>
+
+<div style='border:none;border-bottom:solid windowtext 1.0pt;padding:0in 0in 1.0pt 0in'>
+
+<h2 align=center style='text-align:center'>July 2006</h2>
+
+</div>
+
+<p class=wm-rmBody>This file
+provides important information about enhancements and fixes in webMethods
+WebSphere MQ Adapter 6.5.</p>
+
+<div style='border:none;border-bottom:solid windowtext 1.0pt;padding:0in 0in 1.0pt 0in'>
+
+<h2>Contents</h2>
+
+</div>
+
+<p class=wm-rmBody>1.0 <a
+href="#_1.0_Fixes_and_Service Packs Include">Fixes and Service Packs Included
+in This Release</a></span></p>
+
+<p class=wm-rmBody>2.0 <a
+href="#_2.0_Enhancements">Enhancements</a></span></p>
+
+<p class=wm-rmBody>3.0 <a
+href="#_3.0_Resolved_Issues">Resolved Issues</a></span></p>
+
+<p class=wm-rmBody>4.0 <a
+href="#_4.0_Terminology_Changes_1">Terminology Changes</a></span></p>
+
+<p class=wm-rmBody>5.0 <a
+href="#_5.0_Added_and">Added and Removed Services and APIs</a></span></p>
+
+<p class=wm-rmBody>    5.1 <a href="#_5.1_Added_Services_and APIs">Added
+Services and APIs</a></span></p>
+
+<p class=wm-rmBody>    5.2 <a
+href="#_5.2_Removed_Services_and APIs">Removed Services and APIs</a></span></p>
+
+<p class=wm-rmBody>6.0 <a
+href="#_6.0_Enhancements_and_Fixes in Previ">Enhancements and Fixes in Previous
+Release</a></span></p>
+
+<div style='border:none;border-bottom:solid windowtext 1.0pt;padding:0in 0in 1.0pt 0in'>
+
+<h2><a name="_1.0_Enhancements"></a><a name="_2.0_Included_Fixes"></a><a
+name="_1.0_Fixes_and_Service Packs Include"></a>1.0 Fixes and Service Packs
+Included in This Release</h2>
+
+</div>
+
+<p class=wm-rmBody>webMethods WebSphere MQ Adapter 6.5 includes the following
+fixes and service packs that were shipped since the last release.</p>
+
+<p class=wm-rmBulletList>-  1-QJZA3 (MQS_6-0_Fix1)</p>
+
+<p class=wm-rmBody style='margin-top:0in'><b>Adapter
+fails to disconnect</b></p>
+
+<p class=wm-rmBody style='margin-top:0in'>The adapter failed
+to properly disconnect from the Queue Manager when a connection closed, causing
+the channel connection limit to be reached. This adapter now disconnects from
+the Queue Manager properly.</p>
+
+<p class=wm-rmBulletList>-  1-QMX0C
+(MQS_6-0_Fix2)</p>
+
+<p class=wm-rmBody style='margin-top:0in'><b>Options
+used for opening the MQ message Queues</b></p>
+
+<p class=wm-rmBody style='margin-top:0in'>The adapter will
+now set the open option, MQOO_SET_IDENTITY_CONTEXT, if the pipeline specifies a
+userid, correlationId, accountingToken or messageId.</p>
+
+<p class=wm-rmBulletList>-  1-QFULC
+(MQS_6-0_Fix3)</p>
+
+<p class=wm-rmBody style='margin-top:0in'><b>Getting error &quot;The queue
+manager does not support version 2 WebSphere MQ API&quot; when doing a get</b></p>
+
+<p class=wm-rmBody style='margin-top:0in'>The adapter will now validate the
+messageSequenceNumber and offset properties in the msgHeader before invoking
+the get() operation. Invalid values in these properties cause a reason code =
+2026 failure when accessing a queue on OS/390.</p>
+
+<p class=wm-rmBulletList>-  1-QRLFC (MQS_6-0_Fix4)</p>
+
+<p class=wm-rmBody style='margin-top:0in'><b>How to receive the msgBody as a
+byte array instead of a string</b></p>
+
+<p class=wm-rmBody style='margin-top:0in'>A new property has been added to the
+output signatures of the Get, Peek and RequestReply services. The property has
+also been added to the output signatures of the Asynchronous and Synchronous
+Listener Notifications. The property is: msgBodyByteArray and it will contain
+the payload data in a byte array.</p>
+
+<p class=wm-rmBulletList>-  1-QRV77 (MQS_6-0_Fix5)</p>
+
+<p class=wm-rmBody style='margin-top:0in'><b>Need
+&lt;mcd&gt;&lt;Msd&gt;jms_text&lt;/Msd&gt;&lt;/mcd&gt; in JMS Header</b></p>
+
+<p class=wm-rmBody style='margin-top:0in'>A new server property has been
+created: watt.MQSeries.Suppress.JMSType.tag </p>
+
+<p class=wm-rmBody style='margin-top:0in'>to allow the user to suppress the
+&lt;Type&gt; tag from the JMS header for outbound messages. This property
+should be set to &quot;true&quot; to suppress the &lt;Type&gt; tag.</p>
+
+<p class=wm-rmBulletList>-  1-QSH9I (MQS_6-0_Fix6)</p>
+
+<p class=wm-rmBody style='margin-top:0in'><b>MQ
+Adapter 6, when listener notification service encounters exception, msg is not
+returned back to queue</b></p>
+
+<p class=wm-rmBody style='margin-top:0in'>When the synchronous notification
+message service throws an exception, the message is not returned to the queue. The
+adapter now rolls back messages if the synchronous notification message service
+throws an exception.</p>
+
+<p class=wm-rmBulletList>-  1-RALJS (MQS_6-0_Fix7)</p>
+
+<p class=wm-rmBody style='margin-top:0in'><b>Questions
+about Group and Segment</b></p>
+
+<p class=wm-rmBody style='margin-top:0in'>The MQMD header property, MsgFlags,
+was not processed properly for received messages. Grouping and Segmentation
+flags were ignored. The adapter now properly processes the MsgFlags property.</p>
+
+<p class=wm-rmBulletList>-  1-QHUKQ (MQS_6-0_Fix8)</p>
+
+<p class=wm-rmBody style='margin-top:0in'><b>[I18N]
+Listener screen is in English sometimes and in Japanese sometimes</b></p>
+
+<p class=wm-rmBody style='margin-top:0in'>The ListListeners.dsp and
+ListListenerNotifications.dsp files referenced the WmART directory instead of
+the WmMQAdapter directory. This caused the dsp's to switch between English and
+the non-English locale when any link was used.</p>
+
+<p class=wm-rmBulletList>-  1-RV4JN (MQS_6-0_Fix9)</p>
+
+<p class=wm-rmBody style='margin-top:0in'><b>MQ
+Adapter 6, not releasing connections when queue manager name is overwritten for
+Put or Get adapter service</b></p>
+
+<p class=wm-rmBody style='margin-top:0in'>Overriding the connection's queue
+manager property at run time cached the connection object on the wrong
+connection factory. The adapter now correctly releases the connection object
+when overriding the connection's queue manager property.</p>
+
+<p class=wm-rmBulletList>-  1-S15OV/1-RZDD0
+(MQS_6-0_Fix10)</p>
+
+<p class=wm-rmBody style='margin-top:0in'><b>Messages
+go to the wrong queue if the queue name is overridden during run time/Get
+message MQ Adapter service over-rides data obtained from different queues</b></p>
+
+<p class=wm-rmBody style='margin-top:0in'>If multiple threads override the same
+connection alias at run time, it is possible for messages to be written to, or
+read from, the wrong queue. The adapter now makes the connection override
+feature thread-safe.</p>
+
+<p class=wm-rmBulletList>-  1-SGRKK (MQS_6-0_Fix11)</p>
+
+<p class=wm-rmBody style='margin-top:0in'><b>Adapter
+throws NullPointerException when IS is shutdown</b></p>
+
+<p class=wm-rmBody style='margin-top:0in'>During shutdown of Integration
+Server, a NullPointerException is caught. This exception occurs because the
+destroyConnection() method is called multiple times. The adapter now resolves
+the NullPointerException.</p>
+
+<p class=wm-rmBulletList>-  1-R60VH (MQS_6-0_Fix12)</p>
+
+<p class=wm-rmBody style='margin-top:0in'><b>The
+problem with getting Japanese message</b></p>
+
+<p class=wm-rmBody style='margin-top:0in'>Messages that contain double-byte
+characters are not received correctly. The Get service returns a reason code of
+2119. To specify a different CCSID for data conversion when receiving a
+message, the adapter now allows the overrideConnection.CCSID property to be
+used. If the overrideConnection.CCSID property is not null, its value will be
+passed in the MQMD header during the MQGET operation.</p>
+
+<p class=wm-rmBulletList>-  1-14WOV9 (MQS_6-0_SP1_Fix2)</p>
+
+<p class=wm-rmBody style='margin-top:0in'><b>PUT
+operation being performed against wrong queue</b></p>
+
+<p class=wm-rmBody style='margin-top:0in'>When overriding an adapter's service
+connection, the Put service puts the messages in the wrong queue. A connection
+node stores the connection properties, using which the adapter creates a
+connection. When a WebSphere MQ Adapter's service connection parameters are
+overridden at run time, the service changes the configured parameters on the
+connection node and uses this changed node to create a new connection. In a
+case where multiple threads invoke the service using the same connection node,
+it is possible that one thread over writes the changes done by the other
+resulting an inconsistent behavior. </p>
+
+<p class=wm-rmBody style='margin-top:0in'>This issue is resolved.</p>
+
+<p class=wm-rmBulletList>-  1-150GZN (MQS_6-0_SP1_Fix2)</p>
+
+<p class=wm-rmBody style='margin-top:0in'><b>Question
+about MQ put date and put time</b></p>
+
+<p class=wm-rmBody style='margin-top:0in'>When putting a message into the queue
+using the Put service, the adapter ignores the Put Time and Put Date specified
+at the run time.</p>
+
+<p class=wm-rmBody>The &quot;Put Date&quot; and &quot;Put Time&quot; fields
+present in MQ header are by default populated with the current date and time.
+You can also override the values of Put Date and Put Time at run time. The
+values specified at the run time are currently not set to the corresponding fields
+in the MQ message header.</p>
+
+<p class=wm-rmBody>The adapter now uses the Put Date and Put Time in GMT
+format. The format for Put Date should be ‘YYYYMMDD’ and the format for Put
+Time should be ‘HHMMSSTT’</p>
+
+<p class=wm-rmBulletList>-  1-14CUA5
+(MQS_6-0_<span class=wm-rmBulletListChar>SP1_</span>Fix2)</p>
+
+<p class=wm-rmBody style='margin-top:0in'><b>Empty
+documents published when Enable/Disable Connection is performed on a MQ
+Listener</b></p>
+
+<p class=wm-rmBody style='margin-top:0in'>An empty document is published when
+the connection associated to a listener is disabled. When a listener with
+asynchronous notification is running, if you disable the associated connection,
+an empty document is published. This issue is resolved by treating the error
+with WebSphere MQ reason code 2019(MQRC_HOBJ_ERROR) as a fatal error.</p>
+
+<p class=wm-rmBulletList>-  1-SYJSX/1-TAEC5
+(MQS_6-0_Fix13) (MQS_6-0_SP1_Fix2)</p>
+
+<p class=wm-rmBody style='margin-top:0in'><b>Is
+MQ Adapter transaction committed during IS shutdown?/MQ message does not
+rollback when using connection override</b></p>
+
+<p class=wm-rmBody style='margin-top:0in'>The adapter disconnects from the
+Queue Manager when the connection is destroyed during the shutdown of the
+Integration Server. If a transaction is active during shutdown, the transaction
+is committed by the Queue Manager.</p>
+
+<p class=wm-rmBody>The adapter now addresses this issue and introduces a new
+property:</p>
+
+<p class=wm-rmBody>watt.WmMQAdapter.actionBeforeDisconnect</p>
+
+<p class=wm-rmBody>If this property is set to &quot;rollback&quot;, any active
+transaction is rolled before the adapter disconnects. If this property is set
+to &quot;commit&quot;, any active transaction is committed before the adapter
+disconnects. The default value of &quot;none&quot; instructs the adapter to do
+nothing before disconnecting.</p>
+
+<p class=wm-rmBulletList><span lang=FR>-  1-TE7MG (MQS_6-0_Fix14) (MQS_6-0_SP1_Fix2)</span></p>
+
+<p class=wm-rmBody style='margin-top:0in'><b>TrackID
+duplicated when published from MQ Listener Notification</b></p>
+
+<p class=wm-rmBody style='margin-top:0in'>Duplicate tracking IDs are generated
+if the messageID contains values above 0X7F. The adapter will now correctly
+generate unique tracking IDs for messages with a messageID value above 0X7F.</p>
+
+<p class=wm-rmBulletList>-  1-TKO6F (MQS_6-0_Fix15)
+(MQS_6-0_SP1_Fix2)</p>
+
+<p class=wm-rmBody style='margin-top:0in'><b>PEEK
+service returns wrong reason code if overrideConnection.CCSID is not specified</b></p>
+
+<p class=wm-rmBody style='margin-top:0in'>The Peek and RequestReply services
+use the default CCSID value of 819 when retrieving a message from a queue. If
+the retrieved message contains data from a different code page, the service
+completes with a reasonCode = 2119, indicating that the conversion has failed. The
+adapter now allows these services to use the CCSID value from the associated
+connection object while retrieving messages.</p>
+
+<p class=wm-rmBulletList>-  1-UEK9U/1-UE4JO
+(MQS_6-0_Fix16) (MQS_6-0_SP1_Fix2)</p>
+
+<p class=wm-rmBody style='margin-top:0in'><b>MQ
+Messages are being lost when Listener is on, and Notifier is off/Messages not
+going to dead letter queue or returning to original queue</b></p>
+
+<p class=wm-rmBody style='margin-top:0in'>WmART allows the user to enable an
+adapter listener, even if the listener has zero enabled notifications
+associated with it. This creates a problem because the listener can remove
+messages that are never processed. As a work-around, the adapter now prevents
+the listener from retrieving any messages until at least one enabled
+notification exists.</p>
+
+<p class=wm-rmBulletList>-  1-WGT27
+(MQS_6-0_Fix17) (MQS_6-0_SP1_Fix2)</p>
+
+<p class=wm-rmBody style='margin-top:0in'><b>Create
+fix to include Feature Request 1-W3XEN in V6.0</b></p>
+
+<p class=wm-rmBody style='margin-top:0in'>When the adapter writes a message to
+the dead letter queue, it will include the original message's MQMD header
+fields in a byte array. The payload data of the message written to the dead
+letter queue will now consist of:</p>
+
+<p class=wm-rmBody>Dead Letter Header (172 bytes)</p>
+
+<p class=wm-rmBody>MQMD header fields of original message (364 bytes)</p>
+
+<p class=wm-rmBody>Original message's payload data (variable length)</p>
+
+<p class=wm-rmBody>The format of the MQMD header fields in the message will be:</p>
+
+<p class=wm-rmBody style='margin-top:0in'>offset      Property                Type</p>
+
+<p class=wm-rmBody style='margin-top:0in'>-------     -----------             ---------</p>
+
+<p class=wm-rmBody style='margin-top:0in'>+0000       Identifier (&quot;MD
+&quot;)     String(4)</p>
+
+<p class=wm-rmBody style='margin-top:0in'>+0004       Version                 Int</p>
+
+<p class=wm-rmBody style='margin-top:0in'>+0008       Report                  Int</p>
+
+<p class=wm-rmBody style='margin-top:0in'>+000C       MessageType             Int</p>
+
+<p class=wm-rmBody style='margin-top:0in'>+0010       Expiry                  Int</p>
+
+<p class=wm-rmBody style='margin-top:0in'>+0014       Feedback                Int</p>
+
+<p class=wm-rmBody style='margin-top:0in'>+0018       Encoding                Int</p>
+
+<p class=wm-rmBody style='margin-top:0in'>+001C       CharacterSet            Int</p>
+
+<p class=wm-rmBody style='margin-top:0in'>+0020       Format                  String(8)</p>
+
+<p class=wm-rmBody style='margin-top:0in'>+0028       Priority                Int</p>
+
+<p class=wm-rmBody style='margin-top:0in'>+002C       Persistence             Int</p>
+
+<p class=wm-rmBody style='margin-top:0in'>+0030       MessageId               byte[24]</p>
+
+<p class=wm-rmBody style='margin-top:0in'>+0048       CorrelationId           byte[24]</p>
+
+<p class=wm-rmBody style='margin-top:0in'>+0060       BackoutCount            Int</p>
+
+<p class=wm-rmBody style='margin-top:0in'>+0064       ReplyToQueueName        String(48)</p>
+
+<p class=wm-rmBody style='margin-top:0in'>+0094       ReplyToQueueManagerNameString(48)</p>
+
+<p class=wm-rmBody style='margin-top:0in'>+00C4       UserId                  String</p>
+
+<p class=wm-rmBody style='margin-top:0in'>+00D0       AccountingToken         byte[32]</p>
+
+<p class=wm-rmBody style='margin-top:0in'>+00F0       ApplicationIdData       String(32)</p>
+
+<p class=wm-rmBody style='margin-top:0in'>+0110       PutApplicationType      Int</p>
+
+<p class=wm-rmBody style='margin-top:0in'>+0114       PutApplicationName      String(28)</p>
+
+<p class=wm-rmBody style='margin-top:0in'>+0130       PutDate                 String(8)</p>
+
+<p class=wm-rmBody style='margin-top:0in'>+0138       PutTime                 String(8)</p>
+
+<p class=wm-rmBody style='margin-top:0in'>+0140       ApplicationOriginData   String(4)</p>
+
+<p class=wm-rmBody>If the value of the Version property is greater than 1,
+these fields will be included:</p>
+
+<p class=wm-rmBody style='margin-top:0in'>+0144       GroupId                 byte[24]</p>
+
+<p class=wm-rmBody style='margin-top:0in'>+015C       MessageSequenceNumber   Int</p>
+
+<p class=wm-rmBody style='margin-top:0in'>+0160       Offset                  Int</p>
+
+<p class=wm-rmBody style='margin-top:0in'>+0164       MessageFlags            Int</p>
+
+<p class=wm-rmBody style='margin-top:0in'>+0168       OriginalLength          Int</p>
+
+<p class=wm-rmBody>The numbers in parenthesis after the String type indicate
+the length of the string. The number in brackets after the byte type indicate
+the length of the byte array.</p>
+
+<p class=wm-rmBulletList>-  1-WVILA
+(MQS_6-0_Fix18) (MQS_6-0_SP1_Fix2)</p>
+
+<p class=wm-rmBody style='margin-top:0in'><b>MQ
+adapter process dead letter queue header info while dead letter queue is full</b></p>
+
+<p class=wm-rmBody style='margin-top:0in'>When the Dead Letter Queue is full,
+the WebSphere MQ Adapter incorrectly processes dead letter messages. The
+adapter will now discard a received dead letter message if the adapter fails to
+move that message to the dead letter queue. </p>
+
+<p class=wm-rmBody>The adapter now also introduces three new properties:</p>
+
+<p class=wm-rmBody>watt.WmMQAdapter.deadLetterMessageHeaders - Specifies which
+headers to include in the message sent to the dead letter queue. Valid values
+are (None|DLH|MQMD|Both). The default is Both. The original message's payload
+is always included.</p>
+
+<p class=wm-rmBody>watt.WmMQAdapter.includeDataInError3041 - Specifies whether
+the 3041 message should include a hex dump of the payload data of the message
+that could not be written to the dead letter queue. Valid values are
+(true|false). The default is false (do not include the hex dump).</p>
+
+<p class=wm-rmBody>watt.WmMQAdapter.logLevelOverride - Specifies the different
+log levels for certain WebSphere MQ adapter messages and also specifies the
+Message ID value and its log level as: </p>
+
+<p class=wm-rmBody>
+msgId=level,msgId=level...</p>
+
+<p class=wm-rmBody>    where: msgId can
+be any wmMQAdapter message <st1:place><st1:State>Id.</st1:State></st1:place></p>
+
+<p class=wm-rmBody>           level can
+be an integer between 0 and 10, inclusive.</p>
+
+<p class=wm-rmBody>For more information about working with extended
+configuration settings, see the webMethods Integration Server Administrator's
+Guide.</p>
+
+<p class=wm-rmBulletList>-  1-VHTSV
+(MQS_6-0_Fix18) (MQS_6-0_SP1_Fix2)</p>
+
+<p class=wm-rmBody style='margin-top:0in'><b>The
+WmMQAdapter ABOUT dsp needs to use the WmART dsp to support the fix level
+reporting feature avialable with IS 6.5</b></p>
+
+<p class=wm-rmBody style='margin-top:0in'>Need to allow the adapter to support
+fix level reporting. When using the WebSphere MQ Adapter with Integration
+Server 6.5, the adapter now enables you to view the list of updates that have
+been applied to the adapter.</p>
+
+<p class=wm-rmBulletList><span lang=FR>-  1-QPSPQ (MQS_6-0_Fix19)  (MQS_6-0_SP1_Fix2)</span></p>
+
+<p class=wm-rmBody style='margin-top:0in'><b><span
+lang=FR>MQ Adapter 6.  </span>Need support for SSL</b></p>
+
+<p class=wm-rmBody style='margin-top:0in'>The adapter does not support
+communications with the WebSphere MQ server over the Secure Sockets Layer
+(SSL). The adapter now addresses this issue by introducing a new property,
+watt.WmMQAdapter.SSL.Support, that enables/disables SSL support.</p>
+
+<p class=wm-rmBody>For information about using SSL with the adapter, see
+webMethods WebSphere MQ Adapter User’s Guide 6.5.</p>
+
+<p class=wm-rmBulletList>-  1-XRUXO
+(MQS_6-0_Fix20) (MQS_6-0_SP1_Fix2)</p>
+
+<p class=wm-rmBody style='margin-top:0in'><b>Multithread
+call of adapter service cause &quot;Exception caught Instantiating
+MQQueueManager(QM) : MQJE001: Completion Code 2, Reason 2058&quot;</b></p>
+
+<p class=wm-rmBody style='margin-top:0in'>The adapter failed to synchronize its
+access to the MQEnvironment object. This allowed multiple threads to modify the
+MQEnvironment object simultaneously, causing connections to fail with reason
+code = 2058 or 2059. The adapter now synchronizes its access to the
+MQEnvironment object.</p>
+
+<p class=wm-rmBulletList>-  1-XHJ94
+(MQS_6-0_Fix20) (MQS_6-0_SP1_Fix2)</p>
+
+<p class=wm-rmBody style='margin-top:0in'><b>Websphere
+MQ Adapter 6.0 connection not timing out</b></p>
+
+<p class=wm-rmBody style='margin-top:0in'>The adapter failed to catch a
+NullPointerException generated while closing a connection. This caused
+overridden connections to remain active, but inaccessible. The adapter now
+avoids the NullPointerException to prevent stale connections.</p>
+
+<p class=wm-rmBulletList>-  1-XSO2S
+(MQS_6-0_Fix20) (MQS_6-0_SP1_Fix2)</p>
+
+<p class=wm-rmBody style='margin-top:0in'><b>MQ
+Listener transaction did not stop after Listener package shutdown</b></p>
+
+<p class=wm-rmBody style='margin-top:0in'>The adapter failed to synchronize its
+access to the Queue Manager object. This allowed the adapter to attempt to
+commit a transaction after the connection was disconnected. The adapter will
+now synchronize its access to the Queue Manager object.</p>
+
+<p class=wm-rmBulletList><span lang=FR>-  1-Y72E9 (MQS_6-0_Fix20) (MQS_6-0_SP1_Fix2)</span></p>
+
+<p class=wm-rmBody style='margin-top:0in'><b>NullPointerException
+processing RFH2 header</b></p>
+
+<p class=wm-rmBody style='margin-top:0in'>The adapter encountered a NullPointerException
+while processing a message that contained an RFH2 header. The header included a
+&lt;usr&gt; tag, but not a &lt;jms&gt; tag. The adapter now processes the RFH2
+header properly. </p>
+
+<p class=wm-rmBulletList>-  1-VF52N
+(MQS_6-0_Fix21) (MQS_6-0_SP1_Fix2)</p>
+
+<p class=wm-rmBody style='margin-top:0in'><b>Number
+of connections increases when doing an MQ Put</b></p>
+
+<p class=wm-rmBody style='margin-top:0in'>The number of adapter connections
+increases during execution of Put service.</p>
+
+<p class=wm-rmBody>If the Queue/Queue Manager values are changed in the
+overloaded connection properties, the webMethods WebSphere MQ Adapter creates
+dynamic connections (overloaded connections) at run time, which are outside the
+control of WmART. The adapter also does internal caching of these connections
+at ConnectionFactoryLevel to improve the performance. However, in some cases
+the internal caching can lead to large number of open connections.</p>
+
+<p class=wm-rmBody>To overcome this issue, disable the internal caching of
+overloaded connections by adding
+&quot;watt.WmMQAdapter.Cache.Overridden.Connections=false&quot; in server.cnf
+file. The default value is &quot;true&quot;; that is, internal caching is
+enabled. </p>
+
+<p class=wm-rmBody>You can update the server.cnf file by using the Settings
+&gt; Extended screen of the Integration Server Administrator. For instructions
+on using this screen and working with extended configuration settings, see the
+webMethods Integration Server Administrator's Guide.</p>
+
+<p class=wm-rmBulletList>-  1-ZSMCG
+(MQS_6-0_Fix21) (MQS_6-0_SP1_Fix2)</p>
+
+<p class=wm-rmBody style='margin-top:0in'><b>ReplyTo
+connection does not get updated</b></p>
+
+<p class=wm-rmBody style='margin-top:0in'>ReplyTo connection does not get
+updated. When a user updates the connection to point to an MQ Server on a
+different host (with the same QueueManager, queue, and channel), the
+request-reply adapter service stops working because the service is still
+looking for a reply in the original host reply queue. This issue is happening
+because the replyTo connection is cached (in wmMQconnection), which is keyed by
+queue manager and queue names.</p>
+
+<p class=wm-rmBody>This issue is resolved. Now, the WebSphere MQ Adapter adds
+the host name in the caching key.</p>
+
+<p class=wm-rmBulletList><span lang=FR>-  1-1097NU (MQS_6-0_Fix21) (MQS_6-0_SP1_Fix2)</span></p>
+
+<p class=wm-rmBody style='margin-top:0in'><b>MQ
+adapter connection increases when clicking on Edit button</b></p>
+
+<p class=wm-rmBody style='margin-top:0in'>The webMethods WebSphere MQ Adapter increases
+the number of adapter connections when the user clicks Edit. </p>
+
+<p class=wm-rmBody>Clicking the Edit icon on the WebSphere MQ Adapter
+Connections page, the adapter creates a new connection in the queue manager,
+which lists the available queues. However, if the adapter throws an exception
+it does not close the connection.</p>
+
+<p class=wm-rmBody>This connection does not drop until the Integration Server
+is restarted.</p>
+
+<p class=wm-rmBody>This issue is resolved. Now, the WebSphere MQ Adapter closes
+the connection even when an exception occurs.</p>
+
+<p class=wm-rmBulletList>-  1-1031MB
+(MQS_6-0_Fix21) (MQS_6-0_SP1_Fix2)</p>
+
+<p class=wm-rmBody style='margin-top:0in'><b>MQ
+get set to inhibited pumps lots of empty messages into the broker queue</b></p>
+
+<p class=wm-rmBody style='margin-top:0in'>If the WebSphere MQ queue’s property
+is set as &quot;Get Inhibited&quot;, the webMethods WebSphere MQ Adapter
+listener sends a large number of empty messages to the Broker queue.</p>
+
+<p class=wm-rmBody>The listener sends a large number of empty messages to the
+Broker queue, which clogs the Broker queue, even though the MQ queue’s property
+is set as &quot;Get Inhibited&quot;. </p>
+
+<p class=wm-rmBody>This issue is resolved. Now, the WebSphere MQ Adapter no
+longer sends these empty messages. A new informational message (4071) has been
+added:</p>
+
+<p class=wm-rmBody>4071 : Non-Fatal error occurred in the listener listenerName</p>
+
+<p class=wm-rmBody>while reading from the queue queueName on queueManagerName;
+conditionCode=conditionCode, reasonCode=reasonCode</p>
+
+<p class=wm-rmBulletList>-  1-10G93N / 1-11V8WX
+(MQS_6-0_SP1_Fix1) (MQS_6-0_SP1_Fix2)</p>
+
+<p class=wm-rmBody style='margin-top:0in'><b>Adapter
+puts message into wrong queue/Concurrent put requests pick the wrong queue</b></p>
+
+<p class=wm-rmBody style='margin-top:0in'>When overriding a service's
+connection, the Put service puts the messages in the wrong queue. </p>
+
+<p class=wm-rmBody>A connection node stores the connection properties, using
+which the adapter creates a connection. When a WebSphere MQ Adapter service’s
+connection parameters are overridden at run time, the service changes the
+configured parameters on the connection node and uses this changed node to
+create a new connection. Once the connection with the new parameters is
+created, the parameters on the connection node should be reset to its original
+(User configured at design time) connection parameters. If the connection node
+is not reset, the subsequent connections created using this connection node
+will use the overridden connection parameters giving unwanted results.</p>
+
+<p class=wm-rmBody>This issue is resolved by resetting the connection node with
+the original connection parameters.</p>
+
+<p class=wm-rmBulletList>-  1-11YH1R
+(MQS_6-0_SP1_Fix1) (MQS_6-0_SP1_Fix2)</p>
+
+<p class=wm-rmBody style='margin-top:0in'><b>Developer6.5
+does not create a object type input/output for MQ adapter Service</b></p>
+
+<p class=wm-rmBody style='margin-top:0in'>Developer 6.5 does not create proper
+input/output parameters for WebSphere MQ adapter services or notifications. </p>
+
+<p class=wm-rmBody>When configuring an adapter service or a listener notification,
+the input parameters msgBody, msgBodyByteArray and the output parameters
+replyMsgBody and replyMsgBodyByteArray are created as string instead of Object
+datatype. Due to this, incorrect input and output signatures are created in the
+WebSphere MQ Adapter.</p>
+
+<p class=wm-rmBody>This issue is resolved.</p>
+
+<p class=wm-rmBulletList>-  1-12K2HK
+(MQS_6-0_SP1_Fix1) (MQS_6-0_SP1_Fix2)</p>
+
+<p class=wm-rmBody style='margin-top:0in'><b>MQCCSI_Q_MGR
+can not be specified for the MQ connection</b></p>
+
+<p class=wm-rmBody style='margin-top:0in'>When CCSID values are set as
+MQCCSI_Q_MGR or MQCCSI_INHERIT, the MQ connection cannot be enabled.</p>
+
+<p class=wm-rmBody>When enabling an MQ connection configured with valid CCSID
+values such as MQCCSI_Q_MGR or MQCCSI_INHERIT, an exception is thrown.</p>
+
+<p class=wm-rmBulletList>This issue is resolved.</p>
+
+<p class=wm-rmBody>For detailed information
+on these fixes and service packs for webMethods WebSphere MQ Adapter, see the <span
+class=MsoHyperlink><a href="http://advantage.webmethods.com/knowledgebase"
+target=newwin>Knowledge Base</a></span> on the <span class=MsoHyperlink><a href="http://advantage.webmethods.com/"
+target=newwin>webMethods Advantage</a></span> Web site.</p>
+
+<div style='border:none;border-bottom:solid windowtext 1.0pt;padding:0in 0in 1.0pt 0in'>
+
+<h2><a name="_3.0_Other_Resolved"></a><a name="_2.0_Enhancements_and_Fixes"></a><a
+name="_2.0_Enhancements"></a>2.0
+Enhancements</h2>
+
+</div>
+
+<p class=wm-rmBody>webMethods
+WebSphere MQ Adapter 6.5 includes the following enhancements:</p>
+
+<p class=wm-rmBulletList style='margin-left:0in;text-indent:0in'>1-SRY1R<br>
+Ability to inquire QueueManager and Queue properties.</p>
+
+<p class=wm-rmBulletList style='margin:0in;margin-bottom:.0001pt;text-indent:
+0in'>Enable users to execute PCF commands as adapter services.</p>
+
+<p class=wm-rmBody>1-T58T7/1-T68RL<br>
+Ability to configure listeners to listen to multiple queues.</p>
+
+<p class=wm-rmBody>1-T7EMP<br>
+Ability to route Get and Listener messages to services depending on the
+originating queue and queue manager.</p>
+
+<p class=wm-rmBody>1-SJZNY<br>
+Inbound Queues should be opened with MQGMO_FAIL_IF_QUIESCING option.</p>
+
+<p class=wm-rmBody>1-10SKY3<br>
+Flexibility to get messages with or without MQGMO_CONVERT option.</p>
+
+<p class=wm-rmBody>1-WGB5H/1-R36XX<br>
+WaitInterval parameter to the connection override.</p>
+
+<p class=wm-rmBody>1-R6Z3T<br>
+Encoding parameter as a connection property.</p>
+
+<p class=wm-rmBody>1-10KRMI<br>
+New additional fields to message header (for e.g MQRFH2).</p>
+
+<p class=wm-rmBody>1-11469Z/1-114I3C<br>
+Send messages to remote queues, connecting to a local QueueManager.</p>
+
+<div style='border:none;border-bottom:solid windowtext 1.0pt;padding:0in 0in 1.0pt 0in'>
+
+<h2><a name="_3.0_Resolved_Issues"></a>3.0 Resolved Issues</h2>
+
+</div>
+
+<p class=wm-rmBody><a name="_4.0_Terminology_Changes"></a>None.</p>
+
+<div style='border:none;border-bottom:solid windowtext 1.0pt;padding:0in 0in 1.0pt 0in'>
+
+<h2><a name="_4.0_Terminology_Changes_1"></a>4.0 Terminology Changes</h2>
+
+</div>
+
+<p class=wm-rmBody>The terms
+listed below have been changed as indicated.</p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width="66%"
+ style='width:66.68%;border-collapse:collapse;'>
+ <tr>
+  <td width="50%" valign=top style='width:50.0%;padding:0in 5.4pt 0in 5.4pt'>
+  <div style='border:none;border-bottom:solid windowtext 1.0pt;padding:0in 0in 1.0pt 0in'>
+  <p class=wm-rmTableHead>Old
+  Term</p>
+  </div>
+  </td>
+  <td width="50%" valign=top style='width:50.0%;padding:0in 5.4pt 0in 5.4pt'>
+  <div style='border:none;border-bottom:solid windowtext 1.0pt;padding:0in 0in 1.0pt 0in'>
+  <p class=wm-rmTableHead>New
+  Term</p>
+  </div>
+  </td>
+ </tr>
+ <tr>
+  <td width="50%" valign=top style='width:50.0%;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=wm-rmTableCell>Listener</p>
+  </td>
+  <td width="50%" valign=top style='width:50.0%;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=wm-rmTableCell>Single-Queue
+  Listener or </p>
+  <p class=wm-rmTableCell>Multi-Queue
+  Listener</p>
+  </td>
+ </tr>
+</table>
+
+<div style='border:none;border-bottom:solid windowtext 1.0pt;padding:0in 0in 1.0pt 0in'>
+
+<h2><a name="_5.0_Added_and"></a><a name="_5.0_Added_and_Removed Services and "></a>5.0 Added and Removed Services and
+APIs</h2>
+
+</div>
+
+<p class=wm-rmBody>This
+release contains the following changes to built-in services and the APIs.</p>
+
+<h3><a name="_5.1_Added_Services"></a><a name="_5.1_Added_Services_and APIs"></a> 5.1 Added Services and APIs</h3>
+
+<p class=wm-rmBody>The
+following services and APIs have been added in this release.</p>
+
+<p class=wm-rmBody><span lang=FR>Inquire Queue Manager/Queue Service</span></p>
+
+<p class=wm-rmBody style='margin-top:0in'>The Inquire Queue Manager/Queue service inquires the properties of
+the queue manager and the properties of the queue specified in the connection.</p>
+
+<p class=wm-rmBody>PCF
+Command Service</p>
+
+<p class=wm-rmBody style='margin-top:0in'>PCF Command service issues Programmable Command Format (PCF)
+commands to the WebSphere MQ command server for execution. PCF commands allow you
+to use a single application to perform network administration from a single
+queue manager within the network.</p>
+
+<h3><a name="_5.2_Removed_Services"></a><a name="_5.2_Removed_Services_and APIs"></a>5.2 Removed Services and APIs</h3>
+
+<p class=wm-rmBody>None.</p>
+
+<div style='border:none;border-bottom:solid windowtext 1.0pt;padding:0in 0in 1.0pt 0in'>
+
+<h2><a name="_6.0_Link_to"></a><a name="_6.0_Enhancements_and"></a><a
+name="_6.0_Enhancements_and_Fixes in Previ"></a>6.0 Enhancements and Fixes in
+Previous Release</h2>
+
+</div>
+
+<p class=wm-rmBody>To view information about the previous release of webMethods
+WebSphere MQ Adapter, see the <span class=MsoHyperlink><a
+href="http://advantage.webmethods.com/bookshelf_adapters_websphere_mq"
+target="_blank">previous readme on the webMethods Bookshelf</a></span>.</p>
+
+<p class=wm-rmBody>&nbsp;</p>
+
+<p class=wm-rmBody>ADAPTER-WEBSPHEREMQ-E&amp;F-650-20060731</p>
+
+<p class=wm-rmBody>&nbsp;</p>
+
+<p class=wm-rmBody>&nbsp;</p>
+
+<p class=wm-rmBody>&nbsp;</p>
+
+<p class=wm-rmBody>&nbsp;</p>
+
+<p class=wm-rmBody>&nbsp;</p>
+
+<p class=wm-rmBody>&nbsp;</p>
+
+<p class=wm-rmBody>&nbsp;</p>
+
+<p class=wm-rmBody>&nbsp;</p>
+
+<p class=wm-rmBody>&nbsp;</p>
+
+<p class=wm-rmBody>&nbsp;</p>
+
+<p class=wm-rmBody>&nbsp;</p>
+
+<p class=wm-rmBody>&nbsp;</p>
+
+<p class=wm-rmBody>&nbsp;</p>
+
+<p class=wm-rmBody>&nbsp;</p>
+
+<p class=wm-rmBody>&nbsp;</p>
+
+<p class=wm-rmBody>&nbsp;</p>
+
+<p class=wm-rmBody>&nbsp;</p>
+
+</div>
+
+</body>
+
+</html>

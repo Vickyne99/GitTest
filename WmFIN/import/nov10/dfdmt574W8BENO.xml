@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<constraints>
+
+<!-- this is for field 119 in the B3 block of the message -->
+<field name="119:" type="PatternType">
+    <pattern>'W8BENO'</pattern>
+</field>
+
+<!-- Text Block for NOV03 MT574 W8BENO -->
+
+<field name="22F::BENT" type="GenericFieldType">
+    <bizName>Type of Beneficial Owner</bizName>
+    <pattern>/[8c]/4!c</pattern>
+    <choice>CORR</choice>
+    <choice>DISR</choice>
+    <choice>ESTA</choice>
+    <choice>FOCT</choice>
+    <choice>FOGU</choice>
+    <choice>INDV</choice>
+    <choice>INTL</choice>
+    <choice>PATN</choice>
+    <choice>TRUS</choice>
+    <choice>TXEX</choice>
+</field>
+<field name="23G:" type="Mixed2Type">
+    <bizName>Function of the Message</bizName>
+    <pattern>4!c[/4!c]</pattern>
+    <alias pattern="4!c" bizName="Function" />            
+    <alias pattern="4!c" bizName="Subfunction" />                
+    <choice1>CANC</choice1>
+    <choice1>NEWM</choice1>
+    <choice1>REPL</choice1>
+    <choice2>CODU</choice2>
+    <choice2>COPY</choice2>
+    <choice2>DUPL</choice2>
+    <error type="choice">T86</error>
+</field>
+<field name="95S::ALTE" type="GenericFieldType">
+    <bizName>Party S - Alternate Identification</bizName>
+    <pattern>/[8c]/4!c/&lt;CC&gt;/30x</pattern>
+    <choice>EINX</choice>
+    <choice>FTIN</choice>
+    <choice>ITIN</choice>
+    <choice>SSNX</choice>
+</field>
+<field name="22F::BENT" type="Mixed2Type">
+    <bizName>Type of Beneficial Owner</bizName>
+    <pattern>(/4!c/4!c)|(/[8c]/4!c)</pattern>
+    <choice1>IRSX</choice1>
+    <choice2>CORR</choice2>
+    <choice2>DISR</choice2>
+    <choice2>ESTA</choice2>
+    <choice2>FOCT</choice2>
+    <choice2>FOGU</choice2>
+    <choice2>INDV</choice2>
+    <choice2>INTL</choice2>
+    <choice2>PATN</choice2>
+    <choice2>TRUS</choice2>
+    <choice2>TXEX</choice2>
+</field>
+
+</constraints>

@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+<constraints>
+
+<!-- Text Block for NOV03 MT524 -->
+
+<field name="23G:" type="Mixed2Type">
+    <bizName>Function of the Message</bizName>
+    <pattern>4!c[/4!c]</pattern>
+    <alias pattern="4!c" bizName="Function" />            
+    <alias pattern="4!c" bizName="Subfunction" />                
+    <choice1>CANC</choice1>
+    <choice1>NEWM</choice1>
+    <choice2>CODU</choice2>
+    <choice2>COPY</choice2>
+    <choice2>DUPL</choice2>
+    <error type="choice">T86</error>
+</field>
+<field name="93A::FROM" type="GenericFieldType">
+    <bizName>Balance A - Balance From</bizName>
+    <pattern>/[8c]/4!c</pattern>
+    <choice>AVAI</choice>
+    <choice>AWAS</choice>
+    <choice>BLOK</choice>
+    <choice>COLA</choice>
+    <choice>ISSU</choice>
+    <choice>NOMI</choice>
+    <choice>OTHR</choice>
+    <choice>PLED</choice>
+    <choice>QUAS</choice>
+    <choice>REGO</choice>
+    <choice>RSTR</choice>
+    <choice>SPOS</choice>
+    <choice>UNRG</choice>
+</field>
+<field name="93A::TOBA" type="GenericFieldType">
+    <bizName>Balance A - Balance To</bizName>
+    <pattern>/[8c]/4!c</pattern>
+    <choice>AVAI</choice>
+    <choice>AWAS</choice>
+    <choice>BLOK</choice>
+    <choice>COLA</choice>
+    <choice>ISSU</choice>
+    <choice>NOMI</choice>
+    <choice>OTHR</choice>
+    <choice>PLED</choice>
+    <choice>QUAS</choice>
+    <choice>REGO</choice>
+    <choice>RSTR</choice>
+    <choice>SPOS</choice>
+    <choice>UNRG</choice>
+</field>
+
+<field name="97B::SAFE" type="PatternType">
+    <bizName>Account B - Safekeeping Account</bizName>
+    <pattern>/[8c]/4!c/35x</pattern>
+    <alias pattern="8c" bizName="Data Source Scheme" />                
+    <alias pattern="4!c" bizName="Account Type Code" />                    
+    <alias pattern="35x" bizName="Account Number" />                           
+</field>
+
+<field name="94B::PLIS" type="GenericFieldType">
+    <bizName>Place B - Place Of Listing</bizName>
+    <pattern>/[8c]/4!c[/30x]</pattern>
+    <choice>EXCH</choice>
+    <choice>OTCO</choice>
+</field>
+
+<field name="12B::OPST" type="GenericFieldType">
+    <bizName>Type of Financial Instrument B - Option Style</bizName>
+    <pattern>/[8c]/4!c</pattern>
+    <alias pattern="8c" bizName="Data Source Scheme" />    
+    <alias pattern="4!c" bizName="Instrument Type Code" />            
+    <choice>AMER</choice>
+    <choice>EURO</choice>
+</field>
+<field name="13B::SSBI" type="GenericFieldType">
+    <bizName>Number Identification B - Securities Sub-balance Identification</bizName>
+    <pattern>/[8c]/30x</pattern>
+    <alias pattern="8c" bizName="Data Source Scheme" />                
+    <alias pattern="30x" bizName="Number" />                    
+</field>
+</constraints>

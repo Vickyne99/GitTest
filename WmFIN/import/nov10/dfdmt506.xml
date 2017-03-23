@@ -1,0 +1,175 @@
+<?xml version="1.0"?>
+<constraints>
+
+<!-- this is for field 119 in the B3 block of the message -->
+<field name="119:" type="PatternType">
+    <pattern>'COMM'|'CRPR'|'CRSP'|'CRTL'|'EXTD'|'FIXI'|'FORX'|'LIQU'|'OTCD'|'PAYM'|'REPO'|'SBSB'|'SCRP'|'SECL'|'SLEB'|'TCRP'|'SLOA'</pattern>
+</field>
+
+<!-- Text Block for NOV03 MT506 -->
+<field name="22F::COLA" type="GenericFieldType">
+    <bizName>Exposure Type Indicator</bizName>
+    <pattern>/[8c]/4!c</pattern>
+    <alias pattern="8c" bizName="Data Source Scheme" />    
+    <alias pattern="4!c" bizName="Indicator" />  
+    <choice>BFWD</choice>
+    <choice>CCIR</choice>
+    <choice>COMM</choice>
+    <choice>CRDS</choice>
+    <choice>CRPR</choice>
+    <choice>CRSP</choice>
+    <choice>CRTL</choice>
+    <choice>EQPT</choice>
+    <choice>EQUS</choice>
+    <choice>EXPT</choice>
+    <choice>EXTD</choice>    
+    <choice>FIXI</choice>
+    <choice>FORW</choice>
+    <choice>FORX</choice>
+    <choice>FUTR</choice>
+    <choice>LIQU</choice>
+    <choice>OPTN</choice>
+    <choice>OTCD</choice>
+    <choice>PAYM</choice>
+    <choice>REPO</choice>
+    <choice>RVPO</choice>
+    <choice>SBSB</choice>
+    <choice>SCIE</choice>
+    <choice>SCIR</choice>
+    <choice>SCRP</choice>    
+    <choice>SLEB</choice>
+    <choice>SLOA</choice>
+    <choice>SWPT</choice>
+    <choice>TBAS</choice>
+    <choice>TCRP</choice>
+</field>
+
+<field name="22H::COLA" type="MixedType">
+    <bizName>Indicator H - Exposure Type Indicator</bizName>
+    <pattern>//4!c</pattern>
+    <alias pattern="4!c" bizName="Indicator" /> 
+    	<choice>BFWD</choice>
+	    <choice>CCIR</choice>
+	    <choice>COMM</choice>
+	    <choice>CRDS</choice>
+	    <choice>CRPR</choice>
+	    <choice>CRSP</choice>
+	    <choice>CRTL</choice>
+	    <choice>EQPT</choice>
+	    <choice>EQUS</choice>
+	    <choice>EXPT</choice>
+	    <choice>EXTD</choice>    
+	    <choice>FIXI</choice>
+	    <choice>FORW</choice>
+	    <choice>FORX</choice>
+	    <choice>FUTR</choice>
+	    <choice>LIQU</choice>
+	    <choice>OPTN</choice>
+	    <choice>OTCD</choice>
+	    <choice>PAYM</choice>
+	    <choice>REPO</choice>
+	    <choice>RVPO</choice>
+	    <choice>SBSB</choice>
+	    <choice>SCIE</choice>
+	    <choice>SCIR</choice>
+	    <choice>SCRP</choice>    
+	    <choice>SLEB</choice>
+	    <choice>SLOA</choice>
+	    <choice>SWPT</choice>
+	    <choice>TBAS</choice>
+    <choice>TCRP</choice>
+</field>
+
+<field name="23G:" type="Mixed2Type">
+    <bizName>Function of the Message</bizName>
+    <pattern>4!c[/4!c]</pattern>
+    <alias pattern="4!c" bizName="Function" />            
+    <alias pattern="4!c" bizName="Subfunction" />                
+    <choice1>CANC</choice1>
+    <choice1>NEWM</choice1>
+    <choice2>CODU</choice2>
+    <choice2>COPY</choice2>
+    <choice2>DUPL</choice2>
+    <error type="choice">T86</error>
+</field>
+<field name="92A::SHAI" type="PatternType">
+    <bizName>Rate A - Securities Haircurt</bizName>
+    <pattern>//[N]&lt;NUMBER&gt;15</pattern>
+    <alias pattern="&lt;NUMBER&gt;15" bizName="Rate" />            
+</field>
+
+
+<field name="22F::COLA" type="GenericFieldType">
+    <bizName>Exposure Type Indicator</bizName>
+    <pattern>/[8c]/4!c</pattern>
+    <alias pattern="8c" bizName="Data Source Scheme" />    
+    <alias pattern="4!c" bizName="Indicator" />  
+    <choice>BFWD</choice>
+    <choice>CCIR</choice>
+    <choice>COMM</choice>
+    <choice>CRDS</choice>
+    <choice>CRPR</choice>
+    <choice>CRSP</choice>
+    <choice>CRTL</choice>
+    <choice>EQPT</choice>
+    <choice>EQUS</choice>
+    <choice>EXPT</choice>
+    <choice>EXTD</choice>    
+    <choice>FIXI</choice>
+    <choice>FORW</choice>
+    <choice>FORX</choice>
+    <choice>FUTR</choice>
+    <choice>LIQU</choice>
+    <choice>OPTN</choice>
+    <choice>OTCD</choice>
+    <choice>PAYM</choice>
+    <choice>REPO</choice>
+    <choice>RVPO</choice>
+    <choice>SBSB</choice>
+    <choice>SCIE</choice>
+    <choice>SCIR</choice>
+    <choice>SCRP</choice>    
+    <choice>SLEB</choice>
+    <choice>SLOA</choice>
+    <choice>SWPT</choice>
+    <choice>TBAS</choice>
+    <choice>TCRP</choice>
+</field>
+
+<field name="22H::COLA" type="MixedType">
+    <bizName>Indicator H - Exposure Type Indicator</bizName>
+    <pattern>//4!c</pattern>
+    <alias pattern="4!c" bizName="Indicator" /> 
+    	<choice>BFWD</choice>
+	    <choice>CCIR</choice>
+	    <choice>COMM</choice>
+	    <choice>CRDS</choice>
+	    <choice>CRPR</choice>
+	    <choice>CRSP</choice>
+	    <choice>CRTL</choice>
+	    <choice>EQPT</choice>
+	    <choice>EQUS</choice>
+	    <choice>EXPT</choice>
+	    <choice>EXTD</choice>    
+	    <choice>FIXI</choice>
+	    <choice>FORW</choice>
+	    <choice>FORX</choice>
+	    <choice>FUTR</choice>
+	    <choice>LIQU</choice>
+	    <choice>OPTN</choice>
+	    <choice>OTCD</choice>
+	    <choice>PAYM</choice>
+	    <choice>REPO</choice>
+	    <choice>RVPO</choice>
+	    <choice>SBSB</choice>
+	    <choice>SCIE</choice>
+	    <choice>SCIR</choice>
+	    <choice>SCRP</choice>    
+	    <choice>SLEB</choice>
+	    <choice>SLOA</choice>
+	    <choice>SWPT</choice>
+	    <choice>TBAS</choice>
+    <choice>TCRP</choice>
+</field>
+
+</constraints>

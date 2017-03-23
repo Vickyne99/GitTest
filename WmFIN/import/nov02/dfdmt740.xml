@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<constraints>
+
+<!-- Text Block for NOV02 MT740 -->
+
+<field name="20:" type="PatternType">
+    <bizName>Reference - Documentary Credit Number</bizName>
+    <pattern>16x</pattern>
+</field>
+<field name="32B:" type="PatternType">
+    <bizName>B - Credit Amount</bizName>
+    <pattern>&lt;CUR&gt;&lt;AMOUNT&gt;15</pattern>
+</field>
+<field name="58A:" type="MixedType">
+    <bizName>A - Negotiating Bank</bizName>
+    <pattern>[&lt;BICPLUS&gt;][CRLF]&lt;SWIFTBIC&gt;|&lt;NONSWIFTBIC&gt;</pattern>
+    <choice>C</choice>
+    <choice>D</choice>
+</field>
+<field name="58D:" type="MixedType">
+    <bizName>D - Negotiating Bank</bizName>
+    <pattern>[&lt;BICPLUS&gt;][CRLF]4*35x</pattern>
+    <choice>C</choice>
+    <choice>D</choice>
+</field>
+<field name="59:" type="PatternType">
+    <bizName>Beneficiary</bizName>
+    <pattern>[/34xCRLF]4*35x</pattern>
+</field>
+<field name="71A:" type="MixedType">
+    <bizName>Reimbursing Bank's Charges</bizName>
+    <pattern>3!a</pattern>
+    <choice>CLM</choice>
+    <choice>OUR</choice>
+    <error type="code">T08</error>
+</field>
+<field name="71B:" type="PatternType">
+    <bizName>B - Other Charges</bizName>
+    <pattern>6*35x</pattern>
+</field>
+<field name="72:" type="PatternType">
+    <bizName>Sender to Receiver Information</bizName>
+    <pattern>&lt;ERI_F72narrative&gt;</pattern>
+</field>
+
+</constraints>

@@ -1,0 +1,133 @@
+<?xml version="1.0"?>
+<constraints>
+
+<!-- Text Block for NOV03 MT305 -->
+
+<field name="22:" type="PatternType">
+    <bizName>Code/Common Reference</bizName>
+    <pattern>('AMEND'|'CANCEL'|'CLOSEOUT'|'NEW')/&lt;SB-LCPlus&gt;</pattern>
+</field>
+<field name="23:" type="PatternType">
+    <bizName>Further Identification</bizName>
+    <pattern>4a/4a/1!a/&lt;CUR&gt;</pattern>
+    <alias pattern="4a" bizName="Code 1" />            
+    <alias pattern="4a" bizName="Code 2" />                
+</field>
+<field name="30:" type="PatternType">
+    <bizName>Date - Date Contract Agreed/Amended</bizName>
+    <pattern>&lt;DATE2&gt;</pattern>
+</field>
+<field name="31C:" type="PatternType">
+    <bizName>C - Earliest Exercise Date</bizName>
+    <pattern>&lt;DATE2&gt;</pattern>
+</field>
+<field name="31E:" type="PatternType">
+    <bizName>E - Final Settlement Date</bizName>
+    <pattern>&lt;DATE2&gt;</pattern>
+</field>
+<field name="32B:" type="PatternType">
+    <bizName>B - Counter Currency and Amount</bizName>
+    <pattern>&lt;CUR&gt;&lt;AMOUNT&gt;15</pattern>
+</field>
+<field name="33B:" type="PatternType">
+    <bizName>B - Currency, Amount Sold</bizName>
+    <pattern>&lt;CUR&gt;&lt;AMOUNT&gt;15</pattern>
+</field>
+<field name="36:" type="PatternType">
+    <bizName>Strike Price</bizName>
+    <pattern>&lt;NUMBER&gt;12</pattern>
+</field>
+<field name="53A:" type="MixedType">
+    <bizName>A - Sender's Correspondent</bizName>
+    <pattern>[&lt;PartyIdentifier&gt;][CRLF]&lt;SWIFTBIC&gt;</pattern>
+</field>
+<field name="53D:" type="MixedType">
+    <bizName>D - Sender's Correspondent</bizName>
+    <pattern>[&lt;PartyIdentifier&gt;][CRLF]4*35x</pattern>
+</field>
+<field name="57A:" type="MixedType">
+    <bizName>A - Account With Institution</bizName>
+    <pattern>[&lt;PartyIdentifier&gt;][CRLF]&lt;SWIFTBIC&gt;</pattern>
+</field>
+<field name="57D:" type="MixedType">
+    <bizName>D - Account With Institution</bizName>
+    <pattern>[&lt;PartyIdentifier&gt;][CRLF]4*35x</pattern>
+</field>
+<field name="72:" type="PatternType">
+    <bizName>Sender to Receiver Information</bizName>
+    <pattern>&lt;FLD72&gt;</pattern>
+</field>
+<field name="77D:" type="MixedType">
+    <bizName>D - Terms and Conditions</bizName>
+    <pattern>6*35x</pattern>
+</field>
+
+<field name="94A:" type="PatternType">
+    <bizName>94A - Scope of Operation </bizName>
+    <pattern>4!c</pattern>
+    <choice>AGNT</choice>
+    <choice>BILA</choice>
+    <choice>BROK</choice>
+</field>
+
+<field name="82A:" type="MixedType">
+    <bizName>A - Party A</bizName>
+    <pattern>[&lt;PartyIdentifier&gt;][CRLF]&lt;SWIFTBIC&gt;</pattern>
+ /field>
+<field name="82D:" type="MixedType">
+    <bizName>D - Party A</bizName>
+    <pattern>[&lt;PartyIdentifier&gt;][CRLF]4*35x</pattern>
+ /field>
+<field name="82J:" type="MixedType">
+    <bizName>D - Party A</bizName>
+    <pattern>5*40x</pattern>
+</field>
+
+<field name="87A:" type="MixedType">
+    <bizName>A - Party B </bizName>
+    <pattern>[&lt;PartyIdentifier&gt;][CRLF]&lt;SWIFTBIC&gt;</pattern>
+ /field>
+<field name="87D:" type="MixedType">
+    <bizName>D - Party B </bizName>
+    <pattern>[&lt;PartyIdentifier&gt;][CRLF]4*35x</pattern>
+ /field>
+<field name="87J:" type="MixedType">
+    <bizName>J - Party B</bizName>
+    <pattern>&lt;PARTYFLD/J&gt;</pattern>
+    <choice>/ABIC/</choice>
+    <choice>/ACCT/</choice>
+    <choice>/NAME/</choice>
+    <choice>/ADD1/</choice>
+    <choice>/ADD2/</choice>
+    <choice>/CITY/</choice>
+    <choice>/USFW/</choice>
+    <choice>/USCH/</choice>
+    <choice>/GBSC/</choice>
+    <choice>/CLRC/</choice>
+    <error type="choice">T78</error>
+</field>
+
+<field name="83A:" type="MixedType">
+    <bizName>A - Fund or Beneficiary Customer</bizName>
+    <pattern>[&lt;PartyIdentifier&gt;][CRLF]&lt;SWIFTBIC&gt;</pattern>
+ /field>
+<field name="83D:" type="MixedType">
+    <bizName>D - Fund or Beneficiary Customer</bizName>
+    <pattern>[&lt;PartyIdentifier&gt;][CRLF]4*35x</pattern>
+ /field>
+<field name="83J:" type="MixedType">
+    <bizName>J - Fund or Beneficiary Customer</bizName>
+    <pattern>&lt;PARTYFLD/J&gt;</pattern>
+    <choice>/ABIC/</choice>
+    <choice>/ACCT/</choice>
+    <choice>/NAME/</choice>
+    <choice>/ADD1/</choice>
+    <choice>/ADD2/</choice>
+    <choice>/CITY/</choice>
+    <choice>/USFW/</choice>
+    <choice>/USCH/</choice>
+    <choice>/GBSC/</choice>
+    <choice>/CLRC/</choice>
+    <error type="choice">T78</error>
+</field>
+</constraints>

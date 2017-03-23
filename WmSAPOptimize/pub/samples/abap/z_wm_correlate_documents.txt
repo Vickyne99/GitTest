@@ -1,0 +1,32 @@
+FUNCTION z_wm_correlate_documents.
+*"----------------------------------------------------------------------
+*"*"Local Interface:
+*"  IMPORTING
+*"     VALUE(OBJTYPE) LIKE  SWETYPECOU-OBJTYPE
+*"     VALUE(OBJKEY) LIKE  SWEINSTCOU-OBJKEY
+*"     VALUE(EVENT) LIKE  SWETYPECOU-EVENT
+*"     VALUE(RECTYPE) LIKE  SWETYPECOU-RECTYPE
+*"  TABLES
+*"      EVENT_CONTAINER STRUCTURE  SWCONT
+*"  EXCEPTIONS
+*"      ANY_EXCEPTION
+*"----------------------------------------------------------------------
+  DATA hcl TYPE REF TO zcl_bem.
+
+*- Initialize helper class
+  CREATE OBJECT hcl
+    EXPORTING
+      evt_container = event_container[]
+      rectype       = rectype.
+
+*- Set event parameters
+  IF objtype = zbem_likp AND event = zbem_created.
+    CALL METHOD hcl->set_evt_parameters( ).
+  ENDIF.
+
+*- Add entry CORR_OBJECT to the container
+  CALL METHOD hcl->set_corr_object( ).
+
+*- Retrieve the altered container
+  event_container[] = hcl->get_evt_container( ).
+ENDFUNCTION.

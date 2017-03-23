@@ -1,0 +1,703 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<businessProcessDiagram xmlns="http://www.webmethods.com/bpm/2006/"
+  build="1" canvasPool="1" creator="WebMethods" description=""
+  focalRole="Focal role" name="Two Action Responder Model"
+  runtimeVersion="1" version="7.1">
+  <kpiDimensions/>
+  <systemKPIs>
+    <systemKPI description="" name="Volume" unitOfMeasure=""/>
+    <systemKPI description="" name="Cycle Time" unitOfMeasure=""/>
+    <systemKPI description="" name="Error Count" unitOfMeasure=""/>
+  </systemKPIs>
+  <logicalDataItem description="" dimension="0" label="sendFailed"
+    name="{ProcessNamespace}sendFailed" type="{http://webmethods.com/bpm/ISType/2006}string"/>
+  <timeout calendarAlias="" calendarTime="" dynamicFieldName=""
+    isCalendarTimeout="false" isStaticTimeout="true"
+    isXPathTimeout="false" timeoutStyle="RELATIVE"
+    timeoutType="processTimeout" timeoutValue="0" xpathTimeoutValue=""/>
+  <pool blue="128" external="true" externalizeConditions="false"
+    green="128" isCollapsed="false" label="Buyer" logicalServer=""
+    name="4" orientation="vertical" red="128" retryCount="0" uid="P5">
+    <documentation/>
+    <businessKPIs/>
+    <dataItem type="" uid="V31"/>
+    <dataItem type="" uid="V32"/>
+    <dataItem type="" uid="V13"/>
+    <dataItem type="" uid="V96"/>
+    <dataItem type="" uid="V88"/>
+    <dataItem type="" uid="V89"/>
+    <dataItem type="" uid="V12"/>
+    <dataItem type="" uid="V95"/>
+    <invokeStep externalizeConditions="false" inputVariable="V12"
+      invokeContainer="" invokeId="" invokeLocation="" invokeName=""
+      invokeType="ISSERVICE" label="Send Order Create"
+      logicalServer="Default" ornamentKey="32_globe.png"
+      outputVariable="V13" retryCount="0" routingRuleSet="" uid="S11"
+      x="23" y="31">
+      <documentation/>
+      <businessKPIs/>
+      <extendedProperty name="retries" value="-1"/>
+      <extendedProperty name="retryInterval" value="10000"/>
+      <timeout calendarAlias="" calendarTime="" dynamicFieldName=""
+        isCalendarTimeout="false" isStaticTimeout="true"
+        isXPathTimeout="false" timeoutStyle="RELATIVE"
+        timeoutType="stepTimeout" timeoutValue="0" xpathTimeoutValue=""/>
+    </invokeStep>
+    <invokeStep externalizeConditions="false" inputVariable="V31"
+      invokeContainer="" invokeId="" invokeLocation="" invokeName=""
+      invokeType="ISSERVICE" label="Wait for Ack"
+      logicalServer="Default" ornamentKey="32_invoice.png"
+      outputVariable="V32" retryCount="0" routingRuleSet="" uid="S30"
+      x="22" y="146">
+      <documentation/>
+      <businessKPIs/>
+      <extendedProperty name="retries" value="-1"/>
+      <extendedProperty name="retryInterval" value="10000"/>
+      <timeout calendarAlias="" calendarTime="" dynamicFieldName=""
+        isCalendarTimeout="false" isStaticTimeout="true"
+        isXPathTimeout="false" timeoutStyle="RELATIVE"
+        timeoutType="stepTimeout" timeoutValue="0" xpathTimeoutValue=""/>
+    </invokeStep>
+    <invokeStep externalizeConditions="false" inputVariable="V88"
+      invokeContainer="" invokeId="" invokeLocation="" invokeName=""
+      invokeType="ISSERVICE" label="Process Order Response"
+      logicalServer="Default" ornamentKey="32_globe.png"
+      outputVariable="V89" retryCount="0" routingRuleSet="" uid="S87"
+      x="16" y="358">
+      <documentation/>
+      <businessKPIs/>
+      <extendedProperty name="retries" value="-1"/>
+      <extendedProperty name="retryInterval" value="10000"/>
+      <timeout calendarAlias="" calendarTime="" dynamicFieldName=""
+        isCalendarTimeout="false" isStaticTimeout="true"
+        isXPathTimeout="false" timeoutStyle="RELATIVE"
+        timeoutType="stepTimeout" timeoutValue="0" xpathTimeoutValue=""/>
+    </invokeStep>
+    <invokeStep externalizeConditions="false" inputVariable="V95"
+      invokeContainer="" invokeId="" invokeLocation="" invokeName=""
+      invokeType="ISSERVICE" label="Send Ack" logicalServer="Default"
+      ornamentKey="32_ship.png" outputVariable="V96" retryCount="0"
+      routingRuleSet="" uid="S94" x="26" y="486">
+      <documentation/>
+      <businessKPIs/>
+      <extendedProperty name="retries" value="-1"/>
+      <extendedProperty name="retryInterval" value="10000"/>
+      <timeout calendarAlias="" calendarTime="" dynamicFieldName=""
+        isCalendarTimeout="false" isStaticTimeout="true"
+        isXPathTimeout="false" timeoutStyle="RELATIVE"
+        timeoutType="stepTimeout" timeoutValue="0" xpathTimeoutValue=""/>
+    </invokeStep>
+    <transition blue="255" conditionDescription="" conditionType="IF"
+      green="0" lineShape="CURVE" red="0" source="S11"
+      sourceTerminal="BOTTOM" target="S30" targetTerminal="TOP" uid="T81">
+      <wmExpression/>
+    </transition>
+    <transition blue="255" conditionDescription="" conditionType="IF"
+      green="0" lineShape="CURVE" red="0" source="S30"
+      sourceTerminal="BOTTOM" target="S87" targetTerminal="TOP" uid="T90">
+      <wmExpression/>
+    </transition>
+    <transition blue="255" conditionDescription="" conditionType="IF"
+      green="0" lineShape="CURVE" red="0" source="S87"
+      sourceTerminal="BOTTOM" target="S94" targetTerminal="TOP" uid="T97">
+      <wmExpression/>
+    </transition>
+    <timeout calendarAlias="" calendarTime="" dynamicFieldName=""
+      isCalendarTimeout="false" isStaticTimeout="true"
+      isXPathTimeout="false" timeoutStyle="RELATIVE"
+      timeoutType="stepTimeout" timeoutValue="0" xpathTimeoutValue=""/>
+    <wmExpression/>
+    <swimlane blue="233" green="233" height="700" name="Buyer" red="233"
+      uid="W6" width="100">
+      <documentation/>
+    </swimlane>
+  </pool>
+  <pool blue="128" external="false" externalizeConditions="false"
+    green="128" isCollapsed="false" label="Pool" logicalServer=""
+    name="1" orientation="horizontal" red="128" retryCount="0" uid="P2">
+    <documentation/>
+    <businessKPIs/>
+    <dataItem type="" uid="V201"/>
+    <dataItem type="" uid="V205"/>
+    <dataItem type="" uid="V23"/>
+    <dataItem
+      type="{http://webmethods.com/bpm/TnDoc/2006}ReceiptAck--------------" uid="V193"/>
+    <dataItem type="" uid="V72"/>
+    <dataItem
+      type="{http://webmethods.com/bpm/TnDoc/2006}Exception---------------" uid="V138"/>
+    <dataItem type="" uid="V202"/>
+    <dataItem type="" uid="V68"/>
+    <dataItem type="" uid="V127"/>
+    <dataItem type="" uid="V203"/>
+    <dataItem type="" uid="V38"/>
+    <dataItem type="" uid="V113"/>
+    <dataItem type="" uid="V204"/>
+    <dataItem type="" uid="V37"/>
+    <dataItem type="" uid="V120"/>
+    <dataItem type="" uid="V22"/>
+    <dataItem type="" uid="V112"/>
+    <dataItem type="" uid="V73"/>
+    <dataItem type="" uid="V199"/>
+    <dataItem type="" uid="V69"/>
+    <dataItem type="" uid="V109"/>
+    <dataItem
+      type="{http://webmethods.com/bpm/TnDoc/2006}5064sn00u4osmjl300000001" uid="V180"/>
+    <dataItem type="" uid="V105"/>
+    <dataItem type="" uid="V41"/>
+    <dataItem type="" uid="V108"/>
+    <dataItem type="" uid="V83"/>
+    <dataItem type="" uid="V17"/>
+    <dataItem type="" uid="V61"/>
+    <dataItem type="" uid="V27"/>
+    <dataItem type="" uid="V197"/>
+    <dataItem type="" uid="V42"/>
+    <dataItem type="" uid="V26"/>
+    <dataItem type="" uid="V121"/>
+    <dataItem
+      type="{http://webmethods.com/bpm/TnDoc/2006}0a013c9cf70d7c6c000000fe" uid="V148"/>
+    <dataItem type="" uid="V18"/>
+    <dataItem type="" uid="V77"/>
+    <dataItem type="" uid="V116"/>
+    <dataItem type="" uid="V206"/>
+    <dataItem type="" uid="V84"/>
+    <dataItem type="" uid="V117"/>
+    <dataItem type="" uid="V128"/>
+    <dataItem type="" uid="V76"/>
+    <dataItem type="" uid="V104"/>
+    <dataItem type="" uid="V200"/>
+    <poolReference label="Unconfigured" logicalServer="Default"
+      poolName="4" uid="S3" x="44" y="31">
+      <documentation/>
+      <businessKPIs/>
+    </poolReference>
+    <poolReference label="Unconfigured" logicalServer="Default"
+      poolName="8" uid="S7" x="1083" y="52">
+      <documentation/>
+      <businessKPIs/>
+    </poolReference>
+    <invokeStep externalizeConditions="false" inputVariable="V17"
+      invokeContainer="pub.estd.chem"
+      invokeId="pub.estd.chem:waitStepInit" invokeLocation=""
+      invokeName="waitStepInit" invokeType="ISSERVICE"
+      label="Wait for External Request Document" logicalServer="Default"
+      ornamentKey="32_decision_diamond.png" outputVariable="V18"
+      retryCount="0" routingRuleSet="" uid="S16" x="339" y="58">
+      <documentation/>
+      <join joinType="Or"/>
+      <businessKPIs/>
+      <extendedProperty name="retries" value="-1"/>
+      <extendedProperty name="retryInterval" value="10000"/>
+      <timeout calendarAlias="" calendarTime="" dynamicFieldName=""
+        isCalendarTimeout="false" isStaticTimeout="true"
+        isXPathTimeout="false" timeoutStyle="RELATIVE"
+        timeoutType="stepTimeout" timeoutValue="0" xpathTimeoutValue=""/>
+    </invokeStep>
+    <invokeStep externalizeConditions="false" inputVariable="V22"
+      invokeContainer="pub.estd.chem"
+      invokeId="pub.estd.chem:inboundValidation" invokeLocation=""
+      invokeName="inboundValidation" invokeType="ISSERVICE"
+      label="Inbound Validation" logicalServer="Default"
+      ornamentKey="32_purchase_order.png" outputVariable="V23"
+      retryCount="0" routingRuleSet="" uid="S21" x="472" y="87">
+      <documentation/>
+      <businessKPIs/>
+      <extendedProperty name="retries" value="-1"/>
+      <extendedProperty name="retryInterval" value="10000"/>
+      <timeout calendarAlias="" calendarTime="" dynamicFieldName=""
+        isCalendarTimeout="false" isStaticTimeout="true"
+        isXPathTimeout="false" timeoutStyle="RELATIVE"
+        timeoutType="stepTimeout" timeoutValue="0" xpathTimeoutValue=""/>
+    </invokeStep>
+    <invokeStep externalizeConditions="false" inputVariable="V26"
+      invokeContainer="pub.estd.chem"
+      invokeId="pub.estd.chem:sendReceiptAck" invokeLocation=""
+      invokeName="sendReceiptAck" invokeType="ISSERVICE"
+      label="Send Receipt Ack" logicalServer="Default"
+      ornamentKey="32_globe.png" outputVariable="V27" retryCount="0"
+      routingRuleSet="" uid="S25" x="334" y="198">
+      <documentation/>
+      <businessKPIs/>
+      <output name="{ProcessNamespace}sendFailed"/>
+      <extendedProperty name="retries" value="-1"/>
+      <extendedProperty name="retryInterval" value="10000"/>
+      <timeout calendarAlias="" calendarTime="" dynamicFieldName=""
+        isCalendarTimeout="false" isStaticTimeout="true"
+        isXPathTimeout="false" timeoutStyle="RELATIVE"
+        timeoutType="stepTimeout" timeoutValue="0" xpathTimeoutValue=""/>
+    </invokeStep>
+    <invokeStep externalizeConditions="false" inputVariable="V37"
+      invokeContainer="wm.ip.chem.sample.company2.maps.inbound"
+      invokeId="" invokeLocation="" invokeName="PORequest"
+      invokeType="ISSERVICE" label="Inbound Map" logicalServer="Default"
+      ornamentKey="32_decision_diamond.png" outputVariable="V38"
+      retryCount="0" routingRuleSet="" uid="S36" x="634" y="108">
+      <documentation/>
+      <businessKPIs/>
+      <extendedProperty name="retries" value="-1"/>
+      <extendedProperty name="retryInterval" value="10000"/>
+      <timeout calendarAlias="" calendarTime="" dynamicFieldName=""
+        isCalendarTimeout="false" isStaticTimeout="true"
+        isXPathTimeout="false" timeoutStyle="RELATIVE"
+        timeoutType="stepTimeout" timeoutValue="0" xpathTimeoutValue=""/>
+    </invokeStep>
+    <invokeStep externalizeConditions="false" inputVariable="V41"
+      invokeContainer="wm.ip.chem.sample.company2" invokeId=""
+      invokeLocation="" invokeName="sendToBackend"
+      invokeType="ISSERVICE" label="Send to Backend"
+      logicalServer="Default" ornamentKey="32_decision_diamond.png"
+      outputVariable="V42" retryCount="0" routingRuleSet="" uid="S40"
+      x="835" y="108">
+      <documentation/>
+      <businessKPIs/>
+      <extendedProperty name="retries" value="-1"/>
+      <extendedProperty name="retryInterval" value="10000"/>
+      <timeout calendarAlias="" calendarTime="" dynamicFieldName=""
+        isCalendarTimeout="false" isStaticTimeout="true"
+        isXPathTimeout="false" timeoutStyle="RELATIVE"
+        timeoutType="stepTimeout" timeoutValue="0" xpathTimeoutValue=""/>
+    </invokeStep>
+    <receiveStep allowsSynchronousReply="false"
+      externalizeConditions="false" isStart="true"
+      label="Receive Internal Response Doc" logicalServer="Default"
+      outputVariable="V148" receiveProtocol="SUBSCRIPTION" uid="S53"
+      x="940" y="267">
+      <documentation/>
+      <businessKPIs/>
+      <wmExpressionFilter/>
+    </receiveStep>
+    <invokeStep externalizeConditions="false"
+      invokeContainer="pub.estd.chem"
+      invokeId="pub.estd.chem:waitStepInit" invokeLocation=""
+      invokeName="waitStepInit" invokeType="ISSERVICE"
+      label="Wait for Internal Response Doc" logicalServer="Default"
+      ornamentKey="32_decision_diamond.png" outputVariable="V61"
+      retryCount="0" routingRuleSet="" uid="S59" x="833" y="263">
+      <documentation/>
+      <businessKPIs/>
+      <extendedProperty name="retries" value="-1"/>
+      <extendedProperty name="retryInterval" value="10000"/>
+      <timeout calendarAlias="" calendarTime="" dynamicFieldName=""
+        isCalendarTimeout="false" isStaticTimeout="true"
+        isXPathTimeout="false" timeoutStyle="RELATIVE"
+        timeoutType="stepTimeout" timeoutValue="7200000" xpathTimeoutValue=""/>
+    </invokeStep>
+    <invokeStep externalizeConditions="false" inputVariable="V68"
+      invokeContainer="wm.ip.chem.sample.company2.maps.outbound"
+      invokeId="" invokeLocation="" invokeName="POAcceptance"
+      invokeType="ISSERVICE" label="Outbound Map"
+      logicalServer="Default" ornamentKey="32_decision_diamond.png"
+      outputVariable="V69" retryCount="0" routingRuleSet="" uid="S67"
+      x="839" y="427">
+      <documentation/>
+      <businessKPIs/>
+      <extendedProperty name="retries" value="-1"/>
+      <extendedProperty name="retryInterval" value="10000"/>
+      <timeout calendarAlias="" calendarTime="" dynamicFieldName=""
+        isCalendarTimeout="false" isStaticTimeout="true"
+        isXPathTimeout="false" timeoutStyle="RELATIVE"
+        timeoutType="stepTimeout" timeoutValue="0" xpathTimeoutValue=""/>
+    </invokeStep>
+    <invokeStep externalizeConditions="false" inputVariable="V72"
+      invokeContainer="pub.estd.chem" invokeId="pub.estd.chem:error"
+      invokeLocation="" invokeName="error" invokeType="ISSERVICE"
+      label="Error" logicalServer="Default"
+      ornamentKey="32_error_stop_sign.png" outputVariable="V73"
+      retryCount="0" routingRuleSet="" uid="S71" x="706" y="263">
+      <documentation/>
+      <join joinType="Or"/>
+      <businessKPIs/>
+      <extendedProperty name="retries" value="-1"/>
+      <extendedProperty name="retryInterval" value="10000"/>
+      <timeout calendarAlias="" calendarTime="" dynamicFieldName=""
+        isCalendarTimeout="false" isStaticTimeout="true"
+        isXPathTimeout="false" timeoutStyle="RELATIVE"
+        timeoutType="stepTimeout" timeoutValue="0" xpathTimeoutValue=""/>
+    </invokeStep>
+    <invokeStep externalizeConditions="false" inputVariable="V76"
+      invokeContainer="" invokeId="" invokeLocation="" invokeName=""
+      invokeType="ISSERVICE" label="Exception Handler"
+      logicalServer="Default" ornamentKey="32_decision_diamond.png"
+      outputVariable="V77" retryCount="0" routingRuleSet="" uid="S75"
+      x="533" y="263">
+      <documentation/>
+      <join joinType="Or"/>
+      <businessKPIs/>
+      <extendedProperty name="retries" value="-1"/>
+      <extendedProperty name="retryInterval" value="10000"/>
+      <timeout calendarAlias="" calendarTime="" dynamicFieldName=""
+        isCalendarTimeout="false" isStaticTimeout="true"
+        isXPathTimeout="false" timeoutStyle="RELATIVE"
+        timeoutType="stepTimeout" timeoutValue="0" xpathTimeoutValue=""/>
+    </invokeStep>
+    <invokeStep externalizeConditions="false" inputVariable="V83"
+      invokeContainer="pub.estd.chem" invokeId="pub.estd.chem:send"
+      invokeLocation="" invokeName="send" invokeType="ISSERVICE"
+      label="Send Order Response" logicalServer="Default"
+      ornamentKey="32_globe.png" outputVariable="V84" retryCount="0"
+      routingRuleSet="" uid="S82" x="347" y="427">
+      <documentation/>
+      <join joinType="Or"/>
+      <businessKPIs/>
+      <extendedProperty name="retries" value="-1"/>
+      <extendedProperty name="retryInterval" value="10000"/>
+      <timeout calendarAlias="" calendarTime="" dynamicFieldName=""
+        isCalendarTimeout="false" isStaticTimeout="true"
+        isXPathTimeout="false" timeoutStyle="RELATIVE"
+        timeoutType="stepTimeout" timeoutValue="0" xpathTimeoutValue=""/>
+    </invokeStep>
+    <invokeStep externalizeConditions="false" inputVariable="V104"
+      invokeContainer="pub.estd.chem"
+      invokeId="pub.estd.chem:waitStepInit" invokeLocation=""
+      invokeName="waitStepInit" invokeType="ISSERVICE"
+      label="Wait for Receipt Ack" logicalServer="Default"
+      ornamentKey="32_invoice.png" outputVariable="V105" retryCount="0"
+      routingRuleSet="" uid="S103" x="335" y="550">
+      <documentation/>
+      <join joinType="And">
+        <timeout calendarAlias="" calendarTime="0:0:0"
+          dynamicFieldName="" isCalendarTimeout="false"
+          isStaticTimeout="true" isXPathTimeout="false"
+          timeoutStyle="RELATIVE" timeoutType="joinTimeout"
+          timeoutValue="0" xpathTimeoutValue=""/>
+        <joinExpression value=""/>
+      </join>
+      <businessKPIs/>
+      <extendedProperty name="retries" value="-1"/>
+      <extendedProperty name="retryInterval" value="10000"/>
+      <timeout calendarAlias="" calendarTime="" dynamicFieldName=""
+        isCalendarTimeout="false" isStaticTimeout="true"
+        isXPathTimeout="false" timeoutStyle="RELATIVE"
+        timeoutType="stepTimeout" timeoutValue="7200000" xpathTimeoutValue=""/>
+    </invokeStep>
+    <invokeStep externalizeConditions="false" inputVariable="V108"
+      invokeContainer="pub.estd.chem"
+      invokeId="pub.estd.chem:verifyAcknowledgement" invokeLocation=""
+      invokeName="verifyAcknowledgement" invokeType="ISSERVICE"
+      label="Verify Ack" logicalServer="Default"
+      ornamentKey="32_purchase_order.png" outputVariable="V109"
+      retryCount="0" routingRuleSet="" uid="S107" x="491" y="550">
+      <documentation/>
+      <businessKPIs/>
+      <extendedProperty name="retries" value="-1"/>
+      <extendedProperty name="retryInterval" value="10000"/>
+      <timeout calendarAlias="" calendarTime="" dynamicFieldName=""
+        isCalendarTimeout="false" isStaticTimeout="true"
+        isXPathTimeout="false" timeoutStyle="RELATIVE"
+        timeoutType="stepTimeout" timeoutValue="0" xpathTimeoutValue=""/>
+    </invokeStep>
+    <invokeStep externalizeConditions="false" inputVariable="V112"
+      invokeContainer="wm.ip.chem.sample.handler" invokeId=""
+      invokeLocation="" invokeName="receiptAckHandler"
+      invokeType="ISSERVICE" label="Process Ack" logicalServer="Default"
+      ornamentKey="32_decision_diamond.png" outputVariable="V113"
+      retryCount="0" routingRuleSet="" uid="S111" x="629" y="550">
+      <documentation/>
+      <businessKPIs/>
+      <extendedProperty name="retries" value="-1"/>
+      <extendedProperty name="retryInterval" value="10000"/>
+      <timeout calendarAlias="" calendarTime="" dynamicFieldName=""
+        isCalendarTimeout="false" isStaticTimeout="true"
+        isXPathTimeout="false" timeoutStyle="RELATIVE"
+        timeoutType="stepTimeout" timeoutValue="0" xpathTimeoutValue=""/>
+    </invokeStep>
+    <invokeStep externalizeConditions="false" inputVariable="V116"
+      invokeContainer="pub.estd.chem" invokeId="pub.estd.chem:done"
+      invokeLocation="" invokeName="done" invokeType="ISSERVICE"
+      label="Done" logicalServer="Default" ornamentKey="32_success.png"
+      outputVariable="V117" retryCount="0" routingRuleSet="" uid="S115"
+      x="777" y="550">
+      <documentation/>
+      <businessKPIs/>
+      <extendedProperty name="retries" value="-1"/>
+      <extendedProperty name="retryInterval" value="10000"/>
+      <timeout calendarAlias="" calendarTime="" dynamicFieldName=""
+        isCalendarTimeout="false" isStaticTimeout="true"
+        isXPathTimeout="false" timeoutStyle="RELATIVE"
+        timeoutType="stepTimeout" timeoutValue="0" xpathTimeoutValue=""/>
+    </invokeStep>
+    <invokeStep externalizeConditions="false" inputVariable="V120"
+      invokeContainer="pub.estd.chem" invokeId="pub.estd.chem:error"
+      invokeLocation="" invokeName="error" invokeType="ISSERVICE"
+      label="Process Level Error" logicalServer="Default"
+      ornamentKey="32_error_stop_sign.png" outputVariable="V121"
+      retryCount="0" routingRuleSet="" uid="S119" x="530" y="667">
+      <documentation/>
+      <businessKPIs/>
+      <extendedProperty name="retries" value="-1"/>
+      <extendedProperty name="retryInterval" value="10000"/>
+      <timeout calendarAlias="" calendarTime="" dynamicFieldName=""
+        isCalendarTimeout="false" isStaticTimeout="true"
+        isXPathTimeout="false" timeoutStyle="RELATIVE"
+        timeoutType="stepTimeout" timeoutValue="0" xpathTimeoutValue=""/>
+    </invokeStep>
+    <receiveStep allowsSynchronousReply="false"
+      externalizeConditions="false" isStart="true"
+      label="Receive Exception" logicalServer="Default"
+      outputVariable="V138" receiveProtocol="SUBSCRIPTION" uid="S124"
+      x="208" y="294">
+      <documentation/>
+      <businessKPIs/>
+      <wmExpressionFilter/>
+    </receiveStep>
+    <invokeStep externalizeConditions="false" inputVariable="V127"
+      invokeContainer="pub.estd.chem"
+      invokeId="pub.estd.chem:waitStepInit" invokeLocation=""
+      invokeName="waitStepInit" invokeType="ISSERVICE"
+      label="Wait for Exception" logicalServer="Default"
+      ornamentKey="32_invoice.png" outputVariable="V128" retryCount="0"
+      routingRuleSet="" uid="S126" x="331" y="289">
+      <documentation/>
+      <join joinType="And">
+        <timeout calendarAlias="" calendarTime="" dynamicFieldName=""
+          isCalendarTimeout="false" isStaticTimeout="true"
+          isXPathTimeout="false" timeoutStyle="RELATIVE"
+          timeoutType="joinTimeout" timeoutValue="0" xpathTimeoutValue=""/>
+        <joinExpression value=""/>
+      </join>
+      <businessKPIs/>
+      <extendedProperty name="retries" value="-1"/>
+      <extendedProperty name="retryInterval" value="10000"/>
+      <timeout calendarAlias="" calendarTime="" dynamicFieldName=""
+        isCalendarTimeout="false" isStaticTimeout="true"
+        isXPathTimeout="false" timeoutStyle="RELATIVE"
+        timeoutType="stepTimeout" timeoutValue="0" xpathTimeoutValue=""/>
+    </invokeStep>
+    <receiveStep allowsSynchronousReply="false"
+      externalizeConditions="false" isStart="true"
+      label="Receive External Request Document" logicalServer="Default"
+      outputVariable="V180" receiveProtocol="SUBSCRIPTION" uid="S176"
+      x="181" y="62">
+      <documentation/>
+      <businessKPIs/>
+      <extendedProperty name="retries" value="0"/>
+      <extendedProperty name="retryInterval" value="60000"/>
+      <wmExpressionFilter/>
+    </receiveStep>
+    <receiveStep allowsSynchronousReply="false"
+      externalizeConditions="false" isStart="true"
+      label="Receive ReceiptAcknowledgement (RNIF 1.1)"
+      logicalServer="Default" outputVariable="V193"
+      receiveProtocol="SUBSCRIPTION" uid="S185" x="207" y="550">
+      <documentation/>
+      <businessKPIs/>
+      <extendedProperty name="retries" value="0"/>
+      <extendedProperty name="retryInterval" value="60000"/>
+      <wmExpressionFilter/>
+    </receiveStep>
+    <transition blue="255" conditionDescription="" conditionType="IF"
+      green="0" lineShape="CURVE" red="0" source="S16"
+      sourceTerminal="RIGHT" target="S21" targetTerminal="LEFT" uid="T24">
+      <wmExpression/>
+    </transition>
+    <transition blue="255" conditionDescription="" conditionType="IF"
+      green="0" lineShape="CURVE" red="0" source="S25"
+      sourceTerminal="LEFT" target="S16" targetTerminal="LEFT" uid="T29">
+      <wmExpression>
+        <row chainOperator="" leftFieldPath=""
+          leftOperand="{ProcessNamespace}sendFailed" operator="=" rightOperand="'Yes'"/>
+      </wmExpression>
+    </transition>
+    <transition blue="255" conditionDescription="" conditionType="IF"
+      green="0" lineShape="STRAIGHT" red="0" source="S21"
+      sourceTerminal="BOTTOM" target="S25" targetTerminal="TOP" uid="T28">
+      <wmExpression/>
+    </transition>
+    <transition blue="255" conditionDescription="" conditionType="IF"
+      green="0" lineShape="STRAIGHT" red="0" source="S25"
+      sourceTerminal="RIGHT" target="S36" targetTerminal="BOTTOM" uid="T39">
+      <wmExpression/>
+    </transition>
+    <transition blue="255" conditionDescription="" conditionType="IF"
+      green="0" lineShape="CURVE" red="0" source="S36"
+      sourceTerminal="RIGHT" target="S40" targetTerminal="LEFT" uid="T43">
+      <wmExpression/>
+    </transition>
+    <transition blue="255" conditionDescription="" conditionType="IF"
+      green="0" lineShape="CURVE" red="0" source="S53"
+      sourceTerminal="LEFT" target="S59" targetTerminal="RIGHT" uid="T64">
+      <wmExpression/>
+    </transition>
+    <transition blue="255" conditionDescription="" conditionType="IF"
+      green="0" lineShape="CURVE" red="0" source="S59"
+      sourceTerminal="BOTTOM" target="S67" targetTerminal="TOP" uid="T70">
+      <wmExpression/>
+    </transition>
+    <transition blue="255" conditionDescription=""
+      conditionType="TIMEOUT" green="0" lineShape="CURVE" red="0"
+      source="S59" sourceTerminal="LEFT" target="S71"
+      targetTerminal="RIGHT" uid="T74">
+      <wmExpression/>
+    </transition>
+    <transition blue="255" conditionDescription="" conditionType="ERROR"
+      green="0" lineShape="STRAIGHT" red="0" source="S21"
+      sourceTerminal="RIGHT" target="S75" targetTerminal="TOP" uid="T78">
+      <wmExpression/>
+    </transition>
+    <transition blue="255" conditionDescription="" conditionType="IF"
+      green="0" lineShape="CURVE" red="0" source="S75"
+      sourceTerminal="RIGHT" target="S71" targetTerminal="LEFT" uid="T80">
+      <wmExpression/>
+    </transition>
+    <transition blue="255" conditionDescription="" conditionType="IF"
+      green="0" lineShape="CURVE" red="0" source="S67"
+      sourceTerminal="LEFT" target="S82" targetTerminal="RIGHT" uid="T85">
+      <wmExpression/>
+    </transition>
+    <transition blue="255" conditionDescription="" conditionType="ERROR"
+      green="0" lineShape="STRAIGHT" red="0" source="S82"
+      sourceTerminal="TOP" target="S71" targetTerminal="BOTTOM" uid="T86">
+      <wmExpression/>
+    </transition>
+    <transition blue="255" conditionDescription="" conditionType="IF"
+      green="0" lineShape="CURVE" red="0" source="S103"
+      sourceTerminal="RIGHT" target="S107" targetTerminal="LEFT" uid="T110">
+      <wmExpression/>
+    </transition>
+    <transition blue="255" conditionDescription="" conditionType="IF"
+      green="0" lineShape="CURVE" red="0" source="S107"
+      sourceTerminal="RIGHT" target="S111" targetTerminal="LEFT" uid="T114">
+      <wmExpression/>
+    </transition>
+    <transition blue="255" conditionDescription="" conditionType="IF"
+      green="0" lineShape="CURVE" red="0" source="S111"
+      sourceTerminal="RIGHT" target="S115" targetTerminal="LEFT" uid="T118">
+      <wmExpression/>
+    </transition>
+    <transition blue="255" conditionDescription="" conditionType="IF"
+      green="0" lineShape="CURVE" red="0" source="S124"
+      sourceTerminal="RIGHT" target="S126" targetTerminal="LEFT" uid="T129">
+      <wmExpression/>
+    </transition>
+    <transition blue="255" conditionDescription="" conditionType="IF"
+      green="0" lineShape="CURVE" red="0" source="S126"
+      sourceTerminal="RIGHT" target="S75" targetTerminal="LEFT" uid="T130">
+      <wmExpression/>
+    </transition>
+    <transition blue="255" conditionDescription="" conditionType="ERROR"
+      green="0" lineShape="CURVE" red="0" source="S25"
+      sourceTerminal="BOTTOM" target="S126" targetTerminal="TOP" uid="T154">
+      <wmExpression/>
+    </transition>
+    <transition blue="255" conditionDescription=""
+      conditionType="TIMEOUT" green="0" lineShape="CURVE" red="0"
+      source="S103" sourceTerminal="LEFT" target="S82"
+      targetTerminal="LEFT" uid="T123">
+      <wmExpression/>
+    </transition>
+    <transition blue="255" conditionDescription="" conditionType="IF"
+      green="0" lineShape="CURVE" red="0" source="S176"
+      sourceTerminal="RIGHT" target="S16" targetTerminal="LEFT" uid="T182">
+      <wmExpression/>
+    </transition>
+    <transition blue="255" conditionDescription="" conditionType="IF"
+      green="0" lineShape="CURVE" red="0" source="S185"
+      sourceTerminal="RIGHT" target="S103" targetTerminal="LEFT" uid="T191">
+      <wmExpression/>
+    </transition>
+    <transition blue="255" conditionDescription="" conditionType="IF"
+      green="0" lineShape="CURVE" red="0" source="S82"
+      sourceTerminal="BOTTOM" target="S103" targetTerminal="TOP" uid="T209">
+      <wmExpression/>
+    </transition>
+    <timeout calendarAlias="" calendarTime="" dynamicFieldName=""
+      isCalendarTimeout="false" isStaticTimeout="true"
+      isXPathTimeout="false" timeoutStyle="RELATIVE"
+      timeoutType="stepTimeout" timeoutValue="0" xpathTimeoutValue=""/>
+    <wmExpression/>
+  </pool>
+  <pool blue="128" external="true" externalizeConditions="false"
+    green="128" isCollapsed="false" label="Backend" logicalServer=""
+    name="8" orientation="vertical" red="128" retryCount="0" uid="P9">
+    <documentation/>
+    <businessKPIs/>
+    <dataItem type="" uid="V51"/>
+    <dataItem type="" uid="V45"/>
+    <dataItem type="" uid="V52"/>
+    <dataItem type="" uid="V46"/>
+    <invokeStep externalizeConditions="false" inputVariable="V45"
+      invokeContainer="" invokeId="" invokeLocation="" invokeName=""
+      invokeType="ISSERVICE" label="Process Order Create"
+      logicalServer="Default" ornamentKey="32_globe.png"
+      outputVariable="V46" retryCount="0" routingRuleSet="" uid="S44"
+      x="21" y="24">
+      <documentation/>
+      <businessKPIs/>
+      <extendedProperty name="retries" value="-1"/>
+      <extendedProperty name="retryInterval" value="10000"/>
+      <timeout calendarAlias="" calendarTime="" dynamicFieldName=""
+        isCalendarTimeout="false" isStaticTimeout="true"
+        isXPathTimeout="false" timeoutStyle="RELATIVE"
+        timeoutType="stepTimeout" timeoutValue="0" xpathTimeoutValue=""/>
+    </invokeStep>
+    <invokeStep externalizeConditions="false" inputVariable="V51"
+      invokeContainer="" invokeId="" invokeLocation="" invokeName=""
+      invokeType="ISSERVICE" label="Send Internal Order Response"
+      logicalServer="Default" ornamentKey="32_globe.png"
+      outputVariable="V52" retryCount="0" routingRuleSet="" uid="S50"
+      x="18" y="181">
+      <documentation/>
+      <businessKPIs/>
+      <extendedProperty name="retries" value="-1"/>
+      <extendedProperty name="retryInterval" value="10000"/>
+      <timeout calendarAlias="" calendarTime="" dynamicFieldName=""
+        isCalendarTimeout="false" isStaticTimeout="true"
+        isXPathTimeout="false" timeoutStyle="RELATIVE"
+        timeoutType="stepTimeout" timeoutValue="0" xpathTimeoutValue=""/>
+    </invokeStep>
+    <transition blue="255" conditionDescription="" conditionType="IF"
+      green="0" lineShape="CURVE" red="0" source="S44"
+      sourceTerminal="BOTTOM" target="S50" targetTerminal="TOP" uid="T56">
+      <wmExpression/>
+    </transition>
+    <timeout calendarAlias="" calendarTime="" dynamicFieldName=""
+      isCalendarTimeout="false" isStaticTimeout="true"
+      isXPathTimeout="false" timeoutStyle="RELATIVE"
+      timeoutType="stepTimeout" timeoutValue="0" xpathTimeoutValue=""/>
+    <wmExpression/>
+    <swimlane blue="233" green="233" height="700" name="Backend"
+      red="233" uid="W10" width="100">
+      <documentation/>
+    </swimlane>
+  </pool>
+  <documentation/>
+  <qualityOfService expressPipeline="true" localCorrelation="true"
+    minLogLevel="5" optimizeLocally="true" volatileTracking="false" volatileTransition="true"/>
+  <messageFlow blue="100" conditionDescription="" green="100"
+    lineShape="STRAIGHT" red="100" source="S40" sourcePool="1"
+    sourceTerminal="RIGHT" target="S44" targetPool="8"
+    targetTerminal="LEFT" uid="49"/>
+  <messageFlow blue="100" conditionDescription="" green="100"
+    lineShape="CURVE" red="100" source="S94" sourcePool="4"
+    sourceTerminal="RIGHT" target="S185" targetPool="1"
+    targetTerminal="LEFT" uid="190"/>
+  <messageFlow blue="100" conditionDescription="" green="100"
+    lineShape="STRAIGHT" red="100" source="S25" sourcePool="1"
+    sourceTerminal="LEFT" target="S30" targetPool="4"
+    targetTerminal="RIGHT" uid="35"/>
+  <messageFlow blue="100" conditionDescription="" green="100"
+    lineShape="STRAIGHT" red="100" source="S82" sourcePool="1"
+    sourceTerminal="LEFT" target="S87" targetPool="4"
+    targetTerminal="RIGHT" uid="93"/>
+  <messageFlow blue="100" conditionDescription="" green="100"
+    lineShape="STRAIGHT" red="100" source="S50" sourcePool="8"
+    sourceTerminal="LEFT" target="S53" targetPool="1"
+    targetTerminal="RIGHT" uid="65"/>
+  <messageFlow blue="100" conditionDescription="" green="100"
+    lineShape="CURVE" red="100" source="S11" sourcePool="4"
+    sourceTerminal="RIGHT" target="S176" targetPool="1"
+    targetTerminal="LEFT" uid="181"/>
+  <tnDocs>
+    <tnBizDoc bizDocID="Exception---------------"
+      logicalServer="Default" name="Exception (RNIF 1.1)"
+      tnReceiver="Receiver Role" tnSender="Sender Role"/>
+    <tnBizDoc bizDocID="5064sn00u4osmjl300000001"
+      logicalServer="Default" name="External E41 Order Create 2.0"
+      tnReceiver="Receiver Role" tnSender="Sender Role"/>
+    <tnBizDoc bizDocID="0a013c9cf70d7c6c000000fe"
+      logicalServer="Default" name="Internal E42 Order Response 2.0"
+      tnReceiver="Receiver Role" tnSender="Sender Role"/>
+    <tnBizDoc bizDocID="ReceiptAck--------------"
+      logicalServer="Default" name="ReceiptAcknowledgement (RNIF 1.1)"
+      tnReceiver="Receiver Role" tnSender="Sender Role"/>
+  </tnDocs>
+</businessProcessDiagram>

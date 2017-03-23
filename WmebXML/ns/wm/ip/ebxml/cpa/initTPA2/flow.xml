@@ -1,0 +1,2895 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<FLOW VERSION="3.0" CLEANUP="true">
+  <COMMENT></COMMENT>
+
+  <!-- nodes -->
+
+<MAP TIMEOUT="" MODE="STANDALONE">
+  <COMMENT>init cpa2 </COMMENT>
+  <MAPTARGET>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="nillable">true</value>
+    <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">tpaData</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="rec_ref">com.wm.estd.ebXML.documents.CPA2:cpa_2</value>
+      </record>
+    </array>
+  </record>
+</Values>
+</MAPTARGET>
+  <MAPSOURCE>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="nillable">true</value>
+    <array name="rec_fields" type="record" depth="1">
+    </array>
+  </record>
+</Values>
+</MAPSOURCE>
+
+  <!-- nodes -->
+
+<MAPSET NAME="Setter" OVERWRITE="true" VARIABLES="false" FIELD="/tpaData;4;0;com.wm.estd.ebXML.documents.CPA2:cpa_2/tns:CollaborationProtocolAgreement;2;0/tns:PartyInfo;2;1">
+  <DATA ENCODING="XMLValues" I18N="true">
+
+<Values version="2.0">
+  <array name="xml" type="record" depth="1">
+    <record javaclass="com.wm.util.Values">
+      <value name="@tns:defaultMshChannelId">DC1</value>
+      <value name="@tns:defaultMshPackageId">PKG1</value>
+      <array name="tns:DeliveryChannel" type="record" depth="1">
+        <record javaclass="com.wm.util.Values">
+          <value name="@tns:channelId">DC1</value>
+          <value name="@tns:docExchangeId">DX1</value>
+          <record name="tns:MessagingCharacteristics" javaclass="com.wm.util.Values">
+            <value name="@tns:syncReplyMode">none</value>
+            <value name="@tns:ackRequested">never</value>
+            <value name="@tns:ackSignatureRequested">never</value>
+            <value name="@tns:duplicateElimination">never</value>
+            <value name="@tns:actor">urn:oasis:names:tc:ebxml-msg:actor:toPartyMSH</value>
+          </record>
+        </record>
+      </array>
+      <array name="tns:DocExchange" type="record" depth="1">
+        <record javaclass="com.wm.util.Values">
+          <value name="@tns:docExchangeId">DX1</value>
+          <record name="tns:ebXMLSenderBinding" javaclass="com.wm.util.Values">
+            <value name="@tns:version">2.0</value>
+            <record name="tns:ReliableMessaging" javaclass="com.wm.util.Values">
+              <value name="tns:MessageOrderSemantics">NotGuaranteed</value>
+            </record>
+          </record>
+          <record name="tns:ebXMLReceiverBinding" javaclass="com.wm.util.Values">
+            <record name="tns:ReliableMessaging" javaclass="com.wm.util.Values">
+              <value name="tns:MessageOrderSemantics">NotGuaranteed</value>
+            </record>
+          </record>
+        </record>
+      </array>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="@tns:defaultMshChannelId">DC1</value>
+      <value name="@tns:defaultMshPackageId">PKG1</value>
+      <array name="tns:DeliveryChannel" type="record" depth="1">
+        <record javaclass="com.wm.util.Values">
+          <value name="@tns:channelId">DC1</value>
+          <value name="@tns:docExchangeId">DX1</value>
+          <record name="tns:MessagingCharacteristics" javaclass="com.wm.util.Values">
+            <value name="@tns:syncReplyMode">none</value>
+            <value name="@tns:ackRequested">never</value>
+            <value name="@tns:ackSignatureRequested">never</value>
+            <value name="@tns:duplicateElimination">never</value>
+            <value name="@tns:actor">urn:oasis:names:tc:ebxml-msg:actor:toPartyMSH</value>
+          </record>
+        </record>
+      </array>
+      <array name="tns:DocExchange" type="record" depth="1">
+        <record javaclass="com.wm.util.Values">
+          <value name="@tns:docExchangeId">DX1</value>
+          <record name="tns:ebXMLSenderBinding" javaclass="com.wm.util.Values">
+            <value name="@tns:version">2.0</value>
+            <record name="tns:ReliableMessaging" javaclass="com.wm.util.Values">
+              <value name="tns:MessageOrderSemantics">NotGuaranteed</value>
+            </record>
+          </record>
+          <record name="tns:ebXMLReceiverBinding" javaclass="com.wm.util.Values">
+            <record name="tns:ReliableMessaging" javaclass="com.wm.util.Values">
+              <value name="tns:MessageOrderSemantics">NotGuaranteed</value>
+            </record>
+          </record>
+        </record>
+      </array>
+    </record>
+  </array>
+  <record name="type" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="node_comment"></value>
+    <record name="node_hints" javaclass="com.wm.util.Values">
+      <value name="field_largerEditor">false</value>
+      <value name="field_password">false</value>
+    </record>
+    <value name="field_name">tns:PartyInfo</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">1</value>
+    <value name="nillable">false</value>
+    <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+    <value name="is_soap_array_encoding_used">true</value>
+    <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="node_comment"></value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <null name="field_usereditable"/>
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+        </record>
+        <value name="field_name">@tns:partyName</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <record name="field_content_type" javaclass="com.wm.util.Values">
+          <value name="contentType">1</value>
+          <value name="internalType">reference</value>
+          <value name="dataTypeVersion">dtVersion2</value>
+          <array name="targetNames" type="record" depth="1">
+            <record javaclass="com.wm.util.Values">
+              <value name="xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+              <value name="ncName">non-empty-string</value>
+            </record>
+          </array>
+        </record>
+        <value name="nillable">true</value>
+        <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">@tns:defaultMshChannelId</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <record name="field_content_type" javaclass="com.wm.util.Values">
+          <value name="contentType">1</value>
+          <value name="internalType">reference</value>
+          <value name="dataTypeVersion">dtVersion2</value>
+          <array name="targetNames" type="record" depth="1">
+            <record javaclass="com.wm.util.Values">
+              <value name="xmlns">http://www.w3.org/2001/XMLSchema</value>
+              <value name="ncName">IDREF</value>
+            </record>
+          </array>
+        </record>
+        <value name="nillable">true</value>
+        <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">@tns:defaultMshPackageId</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <record name="field_content_type" javaclass="com.wm.util.Values">
+          <value name="contentType">1</value>
+          <value name="internalType">reference</value>
+          <value name="dataTypeVersion">dtVersion2</value>
+          <array name="targetNames" type="record" depth="1">
+            <record javaclass="com.wm.util.Values">
+              <value name="xmlns">http://www.w3.org/2001/XMLSchema</value>
+              <value name="ncName">IDREF</value>
+            </record>
+          </array>
+        </record>
+        <value name="nillable">true</value>
+        <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="node_comment"></value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+        </record>
+        <value name="field_name">tns:PartyId</value>
+        <value name="field_type">record</value>
+        <value name="field_dim">1</value>
+        <value name="nillable">false</value>
+        <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+        <value name="is_soap_array_encoding_used">true</value>
+        <array name="rec_fields" type="record" depth="1">
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">*body</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="field_opt">true</value>
+            <record name="field_content_type" javaclass="com.wm.util.Values">
+              <value name="contentType">1</value>
+              <value name="internalType">reference</value>
+              <value name="dataTypeVersion">dtVersion2</value>
+              <array name="targetNames" type="record" depth="1">
+                <record javaclass="com.wm.util.Values">
+                  <value name="xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                  <value name="ncName">non-empty-string</value>
+                </record>
+              </array>
+            </record>
+            <value name="nillable">true</value>
+            <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">@tns:type</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="field_opt">true</value>
+            <record name="field_content_type" javaclass="com.wm.util.Values">
+              <value name="contentType">1</value>
+              <value name="internalType">reference</value>
+              <value name="dataTypeVersion">dtVersion2</value>
+              <array name="targetNames" type="record" depth="1">
+                <record javaclass="com.wm.util.Values">
+                  <value name="xmlns">http://www.w3.org/2001/XMLSchema</value>
+                  <value name="ncName">anyURI</value>
+                </record>
+              </array>
+            </record>
+            <value name="nillable">true</value>
+            <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+          </record>
+        </array>
+        <value name="rec_closed">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="node_comment"></value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+        </record>
+        <value name="field_name">tns:PartyRef</value>
+        <value name="field_type">record</value>
+        <value name="field_dim">1</value>
+        <value name="field_opt">true</value>
+        <value name="nillable">false</value>
+        <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+        <value name="is_soap_array_encoding_used">true</value>
+        <array name="rec_fields" type="record" depth="1">
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">@xlink:type</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="field_opt">true</value>
+            <record name="field_content_type" javaclass="com.wm.util.Values">
+              <value name="contentType">1</value>
+              <value name="internalType">instance</value>
+              <value name="ct_class">com.wm.lang.schema.datatype.WmString</value>
+              <value name="name">NMTOKEN</value>
+              <array name="parent-ancestors" type="record" depth="1">
+                <record javaclass="com.wm.util.Values">
+                  <value name="xmlns">http://www.w3.org/2000/10/XMLSchema</value>
+                  <value name="ncName">anySimpleType</value>
+                </record>
+                <record javaclass="com.wm.util.Values">
+                  <value name="xmlns">http://www.w3.org/2000/10/XMLSchema</value>
+                  <value name="ncName">string</value>
+                </record>
+                <record javaclass="com.wm.util.Values">
+                  <value name="xmlns">http://www.w3.org/2000/10/XMLSchema</value>
+                  <value name="ncName">CDATA</value>
+                </record>
+                <record javaclass="com.wm.util.Values">
+                  <value name="xmlns">http://www.w3.org/2000/10/XMLSchema</value>
+                  <value name="ncName">token</value>
+                </record>
+                <record javaclass="com.wm.util.Values">
+                  <value name="xmlns">http://www.w3.org/2000/10/XMLSchema</value>
+                  <value name="ncName">anyType</value>
+                </record>
+              </array>
+              <record name="baseType" javaclass="com.wm.util.Values">
+                <value name="contentType">1</value>
+                <value name="internalType">instance</value>
+                <value name="ct_class">com.wm.lang.schema.datatype.WmString</value>
+                <value name="whiteSpace">collapse</value>
+              </record>
+              <array name="enumeration" type="value" depth="1">
+                <value>simple</value>
+              </array>
+              <value name="whiteSpace">collapse</value>
+            </record>
+            <value name="nillable">true</value>
+            <value name="field_xmlns">http://www.w3.org/1999/xlink</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">@xlink:href</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <record name="field_content_type" javaclass="com.wm.util.Values">
+              <value name="contentType">1</value>
+              <value name="internalType">reference</value>
+              <array name="targetNames" type="record" depth="1">
+                <record javaclass="com.wm.util.Values">
+                  <value name="xmlns">http://www.w3.org/2000/10/XMLSchema</value>
+                  <value name="ncName">uriReference</value>
+                </record>
+              </array>
+            </record>
+            <value name="nillable">true</value>
+            <value name="field_xmlns">http://www.w3.org/1999/xlink</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">@tns:type</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="field_opt">true</value>
+            <record name="field_content_type" javaclass="com.wm.util.Values">
+              <value name="contentType">1</value>
+              <value name="internalType">reference</value>
+              <value name="dataTypeVersion">dtVersion2</value>
+              <array name="targetNames" type="record" depth="1">
+                <record javaclass="com.wm.util.Values">
+                  <value name="xmlns">http://www.w3.org/2001/XMLSchema</value>
+                  <value name="ncName">anyURI</value>
+                </record>
+              </array>
+            </record>
+            <value name="nillable">true</value>
+            <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">@tns:schemaLocation</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <value name="field_opt">true</value>
+            <record name="field_content_type" javaclass="com.wm.util.Values">
+              <value name="contentType">1</value>
+              <value name="internalType">reference</value>
+              <value name="dataTypeVersion">dtVersion2</value>
+              <array name="targetNames" type="record" depth="1">
+                <record javaclass="com.wm.util.Values">
+                  <value name="xmlns">http://www.w3.org/2001/XMLSchema</value>
+                  <value name="ncName">anyURI</value>
+                </record>
+              </array>
+            </record>
+            <value name="nillable">true</value>
+            <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+          </record>
+        </array>
+        <value name="rec_closed">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="node_comment"></value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+        </record>
+        <value name="field_name">tns:CollaborationRole</value>
+        <value name="field_type">record</value>
+        <value name="field_dim">1</value>
+        <value name="nillable">false</value>
+        <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+        <value name="is_soap_array_encoding_used">true</value>
+        <array name="rec_fields" type="record" depth="1">
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">record</value>
+            <value name="node_comment"></value>
+            <record name="node_hints" javaclass="com.wm.util.Values">
+              <value name="field_largerEditor">false</value>
+              <value name="field_password">false</value>
+            </record>
+            <value name="field_name">tns:ProcessSpecification</value>
+            <value name="field_type">record</value>
+            <value name="field_dim">0</value>
+            <value name="field_opt">true</value>
+            <value name="nillable">false</value>
+            <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+            <array name="rec_fields" type="record" depth="1">
+              <record javaclass="com.wm.util.Values">
+                <value name="node_type">unknown</value>
+                <value name="node_comment"></value>
+                <record name="node_hints" javaclass="com.wm.util.Values">
+                  <null name="field_usereditable"/>
+                  <value name="field_largerEditor">false</value>
+                  <value name="field_password">false</value>
+                </record>
+                <value name="field_name">@tns:name</value>
+                <value name="field_type">string</value>
+                <value name="field_dim">0</value>
+                <value name="field_opt">true</value>
+                <record name="field_content_type" javaclass="com.wm.util.Values">
+                  <value name="contentType">1</value>
+                  <value name="internalType">reference</value>
+                  <value name="dataTypeVersion">dtVersion2</value>
+                  <array name="targetNames" type="record" depth="1">
+                    <record javaclass="com.wm.util.Values">
+                      <value name="xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                      <value name="ncName">non-empty-string</value>
+                    </record>
+                  </array>
+                </record>
+                <value name="nillable">true</value>
+                <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+              </record>
+              <record javaclass="com.wm.util.Values">
+                <value name="node_type">unknown</value>
+                <value name="node_comment"></value>
+                <record name="node_hints" javaclass="com.wm.util.Values">
+                  <null name="field_usereditable"/>
+                  <value name="field_largerEditor">false</value>
+                  <value name="field_password">false</value>
+                </record>
+                <value name="field_name">@tns:version</value>
+                <value name="field_type">string</value>
+                <value name="field_dim">0</value>
+                <value name="field_opt">true</value>
+                <record name="field_content_type" javaclass="com.wm.util.Values">
+                  <value name="contentType">1</value>
+                  <value name="internalType">reference</value>
+                  <value name="dataTypeVersion">dtVersion2</value>
+                  <array name="targetNames" type="record" depth="1">
+                    <record javaclass="com.wm.util.Values">
+                      <value name="xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                      <value name="ncName">non-empty-string</value>
+                    </record>
+                  </array>
+                </record>
+                <value name="nillable">true</value>
+                <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+              </record>
+              <record javaclass="com.wm.util.Values">
+                <value name="node_type">unknown</value>
+                <value name="field_name">@xlink:type</value>
+                <value name="field_type">string</value>
+                <value name="field_dim">0</value>
+                <value name="field_opt">true</value>
+                <record name="field_content_type" javaclass="com.wm.util.Values">
+                  <value name="contentType">1</value>
+                  <value name="internalType">instance</value>
+                  <value name="ct_class">com.wm.lang.schema.datatype.WmString</value>
+                  <value name="name">NMTOKEN</value>
+                  <array name="parent-ancestors" type="record" depth="1">
+                    <record javaclass="com.wm.util.Values">
+                      <value name="xmlns">http://www.w3.org/2000/10/XMLSchema</value>
+                      <value name="ncName">anySimpleType</value>
+                    </record>
+                    <record javaclass="com.wm.util.Values">
+                      <value name="xmlns">http://www.w3.org/2000/10/XMLSchema</value>
+                      <value name="ncName">string</value>
+                    </record>
+                    <record javaclass="com.wm.util.Values">
+                      <value name="xmlns">http://www.w3.org/2000/10/XMLSchema</value>
+                      <value name="ncName">CDATA</value>
+                    </record>
+                    <record javaclass="com.wm.util.Values">
+                      <value name="xmlns">http://www.w3.org/2000/10/XMLSchema</value>
+                      <value name="ncName">token</value>
+                    </record>
+                    <record javaclass="com.wm.util.Values">
+                      <value name="xmlns">http://www.w3.org/2000/10/XMLSchema</value>
+                      <value name="ncName">anyType</value>
+                    </record>
+                  </array>
+                  <record name="baseType" javaclass="com.wm.util.Values">
+                    <value name="contentType">1</value>
+                    <value name="internalType">instance</value>
+                    <value name="ct_class">com.wm.lang.schema.datatype.WmString</value>
+                    <value name="whiteSpace">collapse</value>
+                  </record>
+                  <array name="enumeration" type="value" depth="1">
+                    <value>simple</value>
+                  </array>
+                  <value name="whiteSpace">collapse</value>
+                </record>
+                <value name="nillable">true</value>
+                <value name="field_xmlns">http://www.w3.org/1999/xlink</value>
+              </record>
+              <record javaclass="com.wm.util.Values">
+                <value name="node_type">unknown</value>
+                <value name="node_comment"></value>
+                <record name="node_hints" javaclass="com.wm.util.Values">
+                  <null name="field_usereditable"/>
+                  <value name="field_largerEditor">false</value>
+                  <value name="field_password">false</value>
+                </record>
+                <value name="field_name">@xlink:href</value>
+                <value name="field_type">string</value>
+                <value name="field_dim">0</value>
+                <value name="field_opt">true</value>
+                <record name="field_content_type" javaclass="com.wm.util.Values">
+                  <value name="contentType">1</value>
+                  <value name="internalType">reference</value>
+                  <array name="targetNames" type="record" depth="1">
+                    <record javaclass="com.wm.util.Values">
+                      <value name="xmlns">http://www.w3.org/2000/10/XMLSchema</value>
+                      <value name="ncName">uriReference</value>
+                    </record>
+                  </array>
+                </record>
+                <value name="nillable">true</value>
+                <value name="field_xmlns">http://www.w3.org/1999/xlink</value>
+              </record>
+              <record javaclass="com.wm.util.Values">
+                <value name="node_type">unknown</value>
+                <value name="field_name">@tns:uuid</value>
+                <value name="field_type">string</value>
+                <value name="field_dim">0</value>
+                <value name="field_opt">true</value>
+                <record name="field_content_type" javaclass="com.wm.util.Values">
+                  <value name="contentType">1</value>
+                  <value name="internalType">reference</value>
+                  <value name="dataTypeVersion">dtVersion2</value>
+                  <array name="targetNames" type="record" depth="1">
+                    <record javaclass="com.wm.util.Values">
+                      <value name="xmlns">http://www.w3.org/2001/XMLSchema</value>
+                      <value name="ncName">anyURI</value>
+                    </record>
+                  </array>
+                </record>
+                <value name="nillable">true</value>
+                <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+              </record>
+            </array>
+            <value name="rec_closed">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">record</value>
+            <value name="node_comment"></value>
+            <record name="node_hints" javaclass="com.wm.util.Values">
+              <value name="field_largerEditor">false</value>
+              <value name="field_password">false</value>
+            </record>
+            <value name="field_name">tns:Role</value>
+            <value name="field_type">record</value>
+            <value name="field_dim">0</value>
+            <value name="field_opt">true</value>
+            <value name="nillable">false</value>
+            <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+            <array name="rec_fields" type="record" depth="1">
+              <record javaclass="com.wm.util.Values">
+                <value name="node_type">unknown</value>
+                <value name="node_comment"></value>
+                <record name="node_hints" javaclass="com.wm.util.Values">
+                  <null name="field_usereditable"/>
+                  <value name="field_largerEditor">false</value>
+                  <value name="field_password">false</value>
+                </record>
+                <value name="field_name">@tns:name</value>
+                <value name="field_type">string</value>
+                <value name="field_dim">0</value>
+                <value name="field_opt">true</value>
+                <record name="field_content_type" javaclass="com.wm.util.Values">
+                  <value name="contentType">1</value>
+                  <value name="internalType">reference</value>
+                  <value name="dataTypeVersion">dtVersion2</value>
+                  <array name="targetNames" type="record" depth="1">
+                    <record javaclass="com.wm.util.Values">
+                      <value name="xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                      <value name="ncName">non-empty-string</value>
+                    </record>
+                  </array>
+                </record>
+                <value name="nillable">true</value>
+                <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+              </record>
+              <record javaclass="com.wm.util.Values">
+                <value name="node_type">unknown</value>
+                <value name="field_name">@xlink:type</value>
+                <value name="field_type">string</value>
+                <value name="field_dim">0</value>
+                <value name="field_opt">true</value>
+                <record name="field_content_type" javaclass="com.wm.util.Values">
+                  <value name="contentType">1</value>
+                  <value name="internalType">instance</value>
+                  <value name="ct_class">com.wm.lang.schema.datatype.WmString</value>
+                  <value name="name">NMTOKEN</value>
+                  <array name="parent-ancestors" type="record" depth="1">
+                    <record javaclass="com.wm.util.Values">
+                      <value name="xmlns">http://www.w3.org/2000/10/XMLSchema</value>
+                      <value name="ncName">anySimpleType</value>
+                    </record>
+                    <record javaclass="com.wm.util.Values">
+                      <value name="xmlns">http://www.w3.org/2000/10/XMLSchema</value>
+                      <value name="ncName">string</value>
+                    </record>
+                    <record javaclass="com.wm.util.Values">
+                      <value name="xmlns">http://www.w3.org/2000/10/XMLSchema</value>
+                      <value name="ncName">CDATA</value>
+                    </record>
+                    <record javaclass="com.wm.util.Values">
+                      <value name="xmlns">http://www.w3.org/2000/10/XMLSchema</value>
+                      <value name="ncName">token</value>
+                    </record>
+                    <record javaclass="com.wm.util.Values">
+                      <value name="xmlns">http://www.w3.org/2000/10/XMLSchema</value>
+                      <value name="ncName">anyType</value>
+                    </record>
+                  </array>
+                  <record name="baseType" javaclass="com.wm.util.Values">
+                    <value name="contentType">1</value>
+                    <value name="internalType">instance</value>
+                    <value name="ct_class">com.wm.lang.schema.datatype.WmString</value>
+                    <value name="whiteSpace">collapse</value>
+                  </record>
+                  <array name="enumeration" type="value" depth="1">
+                    <value>simple</value>
+                  </array>
+                  <value name="whiteSpace">collapse</value>
+                </record>
+                <value name="nillable">true</value>
+                <value name="field_xmlns">http://www.w3.org/1999/xlink</value>
+              </record>
+              <record javaclass="com.wm.util.Values">
+                <value name="node_type">unknown</value>
+                <value name="node_comment"></value>
+                <record name="node_hints" javaclass="com.wm.util.Values">
+                  <null name="field_usereditable"/>
+                  <value name="field_largerEditor">false</value>
+                  <value name="field_password">false</value>
+                </record>
+                <value name="field_name">@xlink:href</value>
+                <value name="field_type">string</value>
+                <value name="field_dim">0</value>
+                <value name="field_opt">true</value>
+                <record name="field_content_type" javaclass="com.wm.util.Values">
+                  <value name="contentType">1</value>
+                  <value name="internalType">reference</value>
+                  <array name="targetNames" type="record" depth="1">
+                    <record javaclass="com.wm.util.Values">
+                      <value name="xmlns">http://www.w3.org/2000/10/XMLSchema</value>
+                      <value name="ncName">uriReference</value>
+                    </record>
+                  </array>
+                </record>
+                <value name="nillable">true</value>
+                <value name="field_xmlns">http://www.w3.org/1999/xlink</value>
+              </record>
+            </array>
+            <value name="rec_closed">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">record</value>
+            <value name="field_name">tns:ApplicationCertificateRef</value>
+            <value name="field_type">record</value>
+            <value name="field_dim">1</value>
+            <value name="field_opt">true</value>
+            <value name="nillable">false</value>
+            <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+            <value name="is_soap_array_encoding_used">true</value>
+            <array name="rec_fields" type="record" depth="1">
+              <record javaclass="com.wm.util.Values">
+                <value name="node_type">unknown</value>
+                <value name="field_name">@tns:certId</value>
+                <value name="field_type">string</value>
+                <value name="field_dim">0</value>
+                <record name="field_content_type" javaclass="com.wm.util.Values">
+                  <value name="contentType">1</value>
+                  <value name="internalType">reference</value>
+                  <value name="dataTypeVersion">dtVersion2</value>
+                  <array name="targetNames" type="record" depth="1">
+                    <record javaclass="com.wm.util.Values">
+                      <value name="xmlns">http://www.w3.org/2001/XMLSchema</value>
+                      <value name="ncName">IDREF</value>
+                    </record>
+                  </array>
+                </record>
+                <value name="nillable">true</value>
+                <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+              </record>
+            </array>
+            <value name="rec_closed">true</value>
+            <record name="schemaType" javaclass="com.wm.util.Values">
+              <value name="xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+              <value name="ncName">CertificateRef.type</value>
+            </record>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">record</value>
+            <value name="node_comment"></value>
+            <record name="node_hints" javaclass="com.wm.util.Values">
+              <value name="field_largerEditor">false</value>
+              <value name="field_password">false</value>
+            </record>
+            <value name="field_name">tns:ApplicationSecurityDetailsRef</value>
+            <value name="field_type">record</value>
+            <value name="field_dim">0</value>
+            <value name="field_opt">true</value>
+            <value name="nillable">false</value>
+            <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+            <array name="rec_fields" type="record" depth="1">
+              <record javaclass="com.wm.util.Values">
+                <value name="node_type">unknown</value>
+                <value name="field_name">@tns:securityId</value>
+                <value name="field_type">string</value>
+                <value name="field_dim">0</value>
+                <record name="field_content_type" javaclass="com.wm.util.Values">
+                  <value name="contentType">1</value>
+                  <value name="internalType">reference</value>
+                  <value name="dataTypeVersion">dtVersion2</value>
+                  <array name="targetNames" type="record" depth="1">
+                    <record javaclass="com.wm.util.Values">
+                      <value name="xmlns">http://www.w3.org/2001/XMLSchema</value>
+                      <value name="ncName">IDREF</value>
+                    </record>
+                  </array>
+                </record>
+                <value name="nillable">true</value>
+                <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+              </record>
+            </array>
+            <value name="rec_closed">true</value>
+            <record name="schemaType" javaclass="com.wm.util.Values">
+              <value name="xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+              <value name="ncName">SecurityDetailsRef.type</value>
+            </record>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">record</value>
+            <value name="node_comment"></value>
+            <record name="node_hints" javaclass="com.wm.util.Values">
+              <value name="field_largerEditor">false</value>
+              <value name="field_password">false</value>
+            </record>
+            <value name="field_name">tns:ServiceBinding</value>
+            <value name="field_type">record</value>
+            <value name="field_dim">1</value>
+            <value name="nillable">false</value>
+            <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+            <value name="is_soap_array_encoding_used">true</value>
+            <array name="rec_fields" type="record" depth="1">
+              <record javaclass="com.wm.util.Values">
+                <value name="node_type">record</value>
+                <value name="node_comment"></value>
+                <record name="node_hints" javaclass="com.wm.util.Values">
+                  <value name="field_largerEditor">false</value>
+                  <value name="field_password">false</value>
+                </record>
+                <value name="field_name">tns:Service</value>
+                <value name="field_type">record</value>
+                <value name="field_dim">0</value>
+                <value name="nillable">false</value>
+                <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                <array name="rec_fields" type="record" depth="1">
+                  <record javaclass="com.wm.util.Values">
+                    <value name="node_type">unknown</value>
+                    <value name="field_name">*body</value>
+                    <value name="field_type">string</value>
+                    <value name="field_dim">0</value>
+                    <value name="field_opt">true</value>
+                    <record name="field_content_type" javaclass="com.wm.util.Values">
+                      <value name="contentType">1</value>
+                      <value name="internalType">reference</value>
+                      <value name="dataTypeVersion">dtVersion2</value>
+                      <array name="targetNames" type="record" depth="1">
+                        <record javaclass="com.wm.util.Values">
+                          <value name="xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                          <value name="ncName">non-empty-string</value>
+                        </record>
+                      </array>
+                    </record>
+                    <value name="nillable">true</value>
+                    <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                  </record>
+                  <record javaclass="com.wm.util.Values">
+                    <value name="node_type">unknown</value>
+                    <value name="field_name">@tns:type</value>
+                    <value name="field_type">string</value>
+                    <value name="field_dim">0</value>
+                    <value name="field_opt">true</value>
+                    <record name="field_content_type" javaclass="com.wm.util.Values">
+                      <value name="contentType">1</value>
+                      <value name="internalType">reference</value>
+                      <value name="dataTypeVersion">dtVersion2</value>
+                      <array name="targetNames" type="record" depth="1">
+                        <record javaclass="com.wm.util.Values">
+                          <value name="xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                          <value name="ncName">non-empty-string</value>
+                        </record>
+                      </array>
+                    </record>
+                    <value name="nillable">true</value>
+                    <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                  </record>
+                </array>
+                <value name="rec_closed">true</value>
+                <record name="schemaType" javaclass="com.wm.util.Values">
+                  <value name="xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                  <value name="ncName">service.type</value>
+                </record>
+              </record>
+            </array>
+            <value name="rec_closed">true</value>
+          </record>
+        </array>
+        <value name="rec_closed">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="node_comment"></value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+        </record>
+        <value name="field_name">tns:Certificate</value>
+        <value name="field_type">record</value>
+        <value name="field_dim">1</value>
+        <value name="field_opt">true</value>
+        <value name="nillable">false</value>
+        <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+        <value name="is_soap_array_encoding_used">true</value>
+        <array name="rec_fields" type="record" depth="1">
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">@tns:certId</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <record name="field_content_type" javaclass="com.wm.util.Values">
+              <value name="contentType">1</value>
+              <value name="internalType">reference</value>
+              <value name="dataTypeVersion">dtVersion2</value>
+              <array name="targetNames" type="record" depth="1">
+                <record javaclass="com.wm.util.Values">
+                  <value name="xmlns">http://www.w3.org/2001/XMLSchema</value>
+                  <value name="ncName">ID</value>
+                </record>
+              </array>
+            </record>
+            <value name="nillable">true</value>
+            <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+          </record>
+        </array>
+        <value name="rec_closed">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="node_comment"></value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+        </record>
+        <value name="field_name">tns:SecurityDetails</value>
+        <value name="field_type">record</value>
+        <value name="field_dim">1</value>
+        <value name="field_opt">true</value>
+        <value name="nillable">false</value>
+        <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+        <value name="is_soap_array_encoding_used">true</value>
+        <array name="rec_fields" type="record" depth="1">
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">@tns:securityId</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <record name="field_content_type" javaclass="com.wm.util.Values">
+              <value name="contentType">1</value>
+              <value name="internalType">reference</value>
+              <value name="dataTypeVersion">dtVersion2</value>
+              <array name="targetNames" type="record" depth="1">
+                <record javaclass="com.wm.util.Values">
+                  <value name="xmlns">http://www.w3.org/2001/XMLSchema</value>
+                  <value name="ncName">ID</value>
+                </record>
+              </array>
+            </record>
+            <value name="nillable">true</value>
+            <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">record</value>
+            <value name="field_name">tns:TrustAnchors</value>
+            <value name="field_type">record</value>
+            <value name="field_dim">0</value>
+            <value name="field_opt">true</value>
+            <value name="nillable">false</value>
+            <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+            <array name="rec_fields" type="record" depth="1">
+              <record javaclass="com.wm.util.Values">
+                <value name="node_type">record</value>
+                <value name="field_name">tns:AnchorCertificateRef</value>
+                <value name="field_type">record</value>
+                <value name="field_dim">1</value>
+                <value name="nillable">false</value>
+                <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                <value name="is_soap_array_encoding_used">true</value>
+                <array name="rec_fields" type="record" depth="1">
+                  <record javaclass="com.wm.util.Values">
+                    <value name="node_type">unknown</value>
+                    <value name="field_name">@tns:certId</value>
+                    <value name="field_type">string</value>
+                    <value name="field_dim">0</value>
+                    <record name="field_content_type" javaclass="com.wm.util.Values">
+                      <value name="contentType">1</value>
+                      <value name="internalType">reference</value>
+                      <value name="dataTypeVersion">dtVersion2</value>
+                      <array name="targetNames" type="record" depth="1">
+                        <record javaclass="com.wm.util.Values">
+                          <value name="xmlns">http://www.w3.org/2001/XMLSchema</value>
+                          <value name="ncName">IDREF</value>
+                        </record>
+                      </array>
+                    </record>
+                    <value name="nillable">true</value>
+                    <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                  </record>
+                </array>
+                <value name="rec_closed">true</value>
+                <record name="schemaType" javaclass="com.wm.util.Values">
+                  <value name="xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                  <value name="ncName">CertificateRef.type</value>
+                </record>
+              </record>
+            </array>
+            <value name="rec_closed">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">record</value>
+            <value name="field_name">tns:SecurityPolicy</value>
+            <value name="field_type">record</value>
+            <value name="field_dim">0</value>
+            <value name="field_opt">true</value>
+            <value name="nillable">false</value>
+            <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+            <array name="rec_fields" type="record" depth="1">
+            </array>
+            <value name="rec_closed">true</value>
+          </record>
+        </array>
+        <value name="rec_closed">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="node_comment"></value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+        </record>
+        <value name="field_name">tns:DeliveryChannel</value>
+        <value name="field_type">record</value>
+        <value name="field_dim">1</value>
+        <value name="nillable">false</value>
+        <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+        <value name="is_soap_array_encoding_used">true</value>
+        <array name="rec_fields" type="record" depth="1">
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">@tns:channelId</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <record name="field_content_type" javaclass="com.wm.util.Values">
+              <value name="contentType">1</value>
+              <value name="internalType">reference</value>
+              <value name="dataTypeVersion">dtVersion2</value>
+              <array name="targetNames" type="record" depth="1">
+                <record javaclass="com.wm.util.Values">
+                  <value name="xmlns">http://www.w3.org/2001/XMLSchema</value>
+                  <value name="ncName">ID</value>
+                </record>
+              </array>
+            </record>
+            <value name="nillable">true</value>
+            <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">@tns:transportId</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <record name="field_content_type" javaclass="com.wm.util.Values">
+              <value name="contentType">1</value>
+              <value name="internalType">reference</value>
+              <value name="dataTypeVersion">dtVersion2</value>
+              <array name="targetNames" type="record" depth="1">
+                <record javaclass="com.wm.util.Values">
+                  <value name="xmlns">http://www.w3.org/2001/XMLSchema</value>
+                  <value name="ncName">IDREF</value>
+                </record>
+              </array>
+            </record>
+            <value name="nillable">true</value>
+            <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">@tns:docExchangeId</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <record name="field_content_type" javaclass="com.wm.util.Values">
+              <value name="contentType">1</value>
+              <value name="internalType">reference</value>
+              <value name="dataTypeVersion">dtVersion2</value>
+              <array name="targetNames" type="record" depth="1">
+                <record javaclass="com.wm.util.Values">
+                  <value name="xmlns">http://www.w3.org/2001/XMLSchema</value>
+                  <value name="ncName">IDREF</value>
+                </record>
+              </array>
+            </record>
+            <value name="nillable">true</value>
+            <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">record</value>
+            <value name="node_comment"></value>
+            <record name="node_hints" javaclass="com.wm.util.Values">
+              <value name="field_largerEditor">false</value>
+              <value name="field_password">false</value>
+            </record>
+            <value name="field_name">tns:MessagingCharacteristics</value>
+            <value name="field_type">record</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">false</value>
+            <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+            <array name="rec_fields" type="record" depth="1">
+              <record javaclass="com.wm.util.Values">
+                <value name="node_type">unknown</value>
+                <value name="node_comment"></value>
+                <record name="node_hints" javaclass="com.wm.util.Values">
+                  <value name="field_usereditable">false</value>
+                  <value name="field_largerEditor">false</value>
+                  <value name="field_password">false</value>
+                </record>
+                <value name="field_name">@tns:syncReplyMode</value>
+                <value name="field_type">string</value>
+                <value name="field_dim">0</value>
+                <value name="field_opt">true</value>
+                <array name="field_options" type="value" depth="1">
+                  <value>none</value>
+                  <value>mshSignalsOnly</value>
+                  <value>signalsOnly</value>
+                  <value>signalsAndResponse</value>
+                  <value>responseOnly</value>
+                </array>
+                <record name="field_content_type" javaclass="com.wm.util.Values">
+                  <value name="contentType">1</value>
+                  <value name="internalType">reference</value>
+                  <value name="dataTypeVersion">dtVersion2</value>
+                  <array name="targetNames" type="record" depth="1">
+                    <record javaclass="com.wm.util.Values">
+                      <value name="xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                      <value name="ncName">syncReplyMode.type</value>
+                    </record>
+                  </array>
+                </record>
+                <value name="nillable">true</value>
+                <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+              </record>
+              <record javaclass="com.wm.util.Values">
+                <value name="node_type">unknown</value>
+                <value name="node_comment"></value>
+                <record name="node_hints" javaclass="com.wm.util.Values">
+                  <value name="field_usereditable">false</value>
+                  <value name="field_largerEditor">false</value>
+                  <value name="field_password">false</value>
+                </record>
+                <value name="field_name">@tns:ackRequested</value>
+                <value name="field_type">string</value>
+                <value name="field_dim">0</value>
+                <value name="field_opt">true</value>
+                <array name="field_options" type="value" depth="1">
+                  <value>never</value>
+                  <value>always</value>
+                  <value>perMessage</value>
+                </array>
+                <record name="field_content_type" javaclass="com.wm.util.Values">
+                  <value name="contentType">1</value>
+                  <value name="internalType">reference</value>
+                  <value name="dataTypeVersion">dtVersion2</value>
+                  <array name="targetNames" type="record" depth="1">
+                    <record javaclass="com.wm.util.Values">
+                      <value name="xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                      <value name="ncName">perMessageCharacteristics.type</value>
+                    </record>
+                  </array>
+                </record>
+                <value name="nillable">true</value>
+                <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+              </record>
+              <record javaclass="com.wm.util.Values">
+                <value name="node_type">unknown</value>
+                <value name="node_comment"></value>
+                <record name="node_hints" javaclass="com.wm.util.Values">
+                  <value name="field_usereditable">false</value>
+                  <value name="field_largerEditor">false</value>
+                  <value name="field_password">false</value>
+                </record>
+                <value name="field_name">@tns:ackSignatureRequested</value>
+                <value name="field_type">string</value>
+                <value name="field_dim">0</value>
+                <value name="field_opt">true</value>
+                <array name="field_options" type="value" depth="1">
+                  <value>never</value>
+                  <value>always</value>
+                  <value>perMessage</value>
+                </array>
+                <record name="field_content_type" javaclass="com.wm.util.Values">
+                  <value name="contentType">1</value>
+                  <value name="internalType">reference</value>
+                  <value name="dataTypeVersion">dtVersion2</value>
+                  <array name="targetNames" type="record" depth="1">
+                    <record javaclass="com.wm.util.Values">
+                      <value name="xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                      <value name="ncName">perMessageCharacteristics.type</value>
+                    </record>
+                  </array>
+                </record>
+                <value name="nillable">true</value>
+                <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+              </record>
+              <record javaclass="com.wm.util.Values">
+                <value name="node_type">unknown</value>
+                <value name="node_comment"></value>
+                <record name="node_hints" javaclass="com.wm.util.Values">
+                  <value name="field_usereditable">false</value>
+                  <value name="field_largerEditor">false</value>
+                  <value name="field_password">false</value>
+                </record>
+                <value name="field_name">@tns:duplicateElimination</value>
+                <value name="field_type">string</value>
+                <value name="field_dim">0</value>
+                <value name="field_opt">true</value>
+                <array name="field_options" type="value" depth="1">
+                  <value>never</value>
+                  <value>always</value>
+                  <value>perMessage</value>
+                </array>
+                <record name="field_content_type" javaclass="com.wm.util.Values">
+                  <value name="contentType">1</value>
+                  <value name="internalType">reference</value>
+                  <value name="dataTypeVersion">dtVersion2</value>
+                  <array name="targetNames" type="record" depth="1">
+                    <record javaclass="com.wm.util.Values">
+                      <value name="xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                      <value name="ncName">perMessageCharacteristics.type</value>
+                    </record>
+                  </array>
+                </record>
+                <value name="nillable">true</value>
+                <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+              </record>
+              <record javaclass="com.wm.util.Values">
+                <value name="node_type">unknown</value>
+                <value name="node_comment"></value>
+                <record name="node_hints" javaclass="com.wm.util.Values">
+                  <value name="field_usereditable">false</value>
+                  <value name="field_largerEditor">false</value>
+                  <value name="field_password">false</value>
+                </record>
+                <value name="field_name">@tns:actor</value>
+                <value name="field_type">string</value>
+                <value name="field_dim">0</value>
+                <value name="field_opt">true</value>
+                <array name="field_options" type="value" depth="1">
+                  <value>urn:oasis:names:tc:ebxml-msg:actor:toPartyMSH</value>
+                  <value>urn:oasis:names:tc:ebxml-msg:actor:nextMSH</value>
+                </array>
+                <record name="field_content_type" javaclass="com.wm.util.Values">
+                  <value name="contentType">1</value>
+                  <value name="internalType">reference</value>
+                  <value name="dataTypeVersion">dtVersion2</value>
+                  <array name="targetNames" type="record" depth="1">
+                    <record javaclass="com.wm.util.Values">
+                      <value name="xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                      <value name="ncName">actor.type</value>
+                    </record>
+                  </array>
+                </record>
+                <value name="nillable">true</value>
+                <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+              </record>
+            </array>
+            <value name="rec_closed">true</value>
+          </record>
+        </array>
+        <value name="rec_closed">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="node_comment"></value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+        </record>
+        <value name="field_name">tns:Transport</value>
+        <value name="field_type">record</value>
+        <value name="field_dim">1</value>
+        <value name="nillable">false</value>
+        <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+        <value name="is_soap_array_encoding_used">true</value>
+        <array name="rec_fields" type="record" depth="1">
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">@tns:transportId</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <record name="field_content_type" javaclass="com.wm.util.Values">
+              <value name="contentType">1</value>
+              <value name="internalType">reference</value>
+              <value name="dataTypeVersion">dtVersion2</value>
+              <array name="targetNames" type="record" depth="1">
+                <record javaclass="com.wm.util.Values">
+                  <value name="xmlns">http://www.w3.org/2001/XMLSchema</value>
+                  <value name="ncName">ID</value>
+                </record>
+              </array>
+            </record>
+            <value name="nillable">true</value>
+            <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">record</value>
+            <value name="field_name">tns:TransportSender</value>
+            <value name="field_type">record</value>
+            <value name="field_dim">0</value>
+            <value name="field_opt">true</value>
+            <value name="nillable">false</value>
+            <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+            <array name="rec_fields" type="record" depth="1">
+              <record javaclass="com.wm.util.Values">
+                <value name="node_type">record</value>
+                <value name="field_name">tns:TransportProtocol</value>
+                <value name="field_type">record</value>
+                <value name="field_dim">0</value>
+                <value name="nillable">false</value>
+                <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                <array name="rec_fields" type="record" depth="1">
+                  <record javaclass="com.wm.util.Values">
+                    <value name="node_type">unknown</value>
+                    <value name="field_name">*body</value>
+                    <value name="field_type">string</value>
+                    <value name="field_dim">0</value>
+                    <value name="field_opt">true</value>
+                    <record name="field_content_type" javaclass="com.wm.util.Values">
+                      <value name="contentType">1</value>
+                      <value name="internalType">reference</value>
+                      <value name="dataTypeVersion">dtVersion2</value>
+                      <array name="targetNames" type="record" depth="1">
+                        <record javaclass="com.wm.util.Values">
+                          <value name="xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                          <value name="ncName">non-empty-string</value>
+                        </record>
+                      </array>
+                    </record>
+                    <value name="nillable">true</value>
+                    <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                  </record>
+                  <record javaclass="com.wm.util.Values">
+                    <value name="node_type">unknown</value>
+                    <value name="field_name">@tns:version</value>
+                    <value name="field_type">string</value>
+                    <value name="field_dim">0</value>
+                    <value name="field_opt">true</value>
+                    <record name="field_content_type" javaclass="com.wm.util.Values">
+                      <value name="contentType">1</value>
+                      <value name="internalType">reference</value>
+                      <value name="dataTypeVersion">dtVersion2</value>
+                      <array name="targetNames" type="record" depth="1">
+                        <record javaclass="com.wm.util.Values">
+                          <value name="xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                          <value name="ncName">non-empty-string</value>
+                        </record>
+                      </array>
+                    </record>
+                    <value name="nillable">true</value>
+                    <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                  </record>
+                </array>
+                <value name="rec_closed">true</value>
+                <record name="schemaType" javaclass="com.wm.util.Values">
+                  <value name="xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                  <value name="ncName">protocol.type</value>
+                </record>
+              </record>
+              <record javaclass="com.wm.util.Values">
+                <value name="node_type">unknown</value>
+                <value name="field_name">tns:AccessAuthentication</value>
+                <value name="field_type">string</value>
+                <value name="field_dim">1</value>
+                <value name="field_opt">true</value>
+                <record name="field_content_type" javaclass="com.wm.util.Values">
+                  <value name="contentType">1</value>
+                  <value name="internalType">reference</value>
+                  <value name="dataTypeVersion">dtVersion2</value>
+                  <array name="targetNames" type="record" depth="1">
+                    <record javaclass="com.wm.util.Values">
+                      <value name="xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                      <value name="ncName">accessAuthentication.type</value>
+                    </record>
+                  </array>
+                </record>
+                <value name="nillable">false</value>
+                <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                <value name="is_soap_array_encoding_used">true</value>
+              </record>
+              <record javaclass="com.wm.util.Values">
+                <value name="node_type">record</value>
+                <value name="field_name">tns:TransportClientSecurity</value>
+                <value name="field_type">record</value>
+                <value name="field_dim">0</value>
+                <value name="field_opt">true</value>
+                <value name="nillable">false</value>
+                <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                <array name="rec_fields" type="record" depth="1">
+                  <record javaclass="com.wm.util.Values">
+                    <value name="node_type">record</value>
+                    <value name="field_name">tns:TransportSecurityProtocol</value>
+                    <value name="field_type">record</value>
+                    <value name="field_dim">0</value>
+                    <value name="nillable">false</value>
+                    <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                    <array name="rec_fields" type="record" depth="1">
+                      <record javaclass="com.wm.util.Values">
+                        <value name="node_type">unknown</value>
+                        <value name="field_name">*body</value>
+                        <value name="field_type">string</value>
+                        <value name="field_dim">0</value>
+                        <value name="field_opt">true</value>
+                        <record name="field_content_type" javaclass="com.wm.util.Values">
+                          <value name="contentType">1</value>
+                          <value name="internalType">reference</value>
+                          <value name="dataTypeVersion">dtVersion2</value>
+                          <array name="targetNames" type="record" depth="1">
+                            <record javaclass="com.wm.util.Values">
+                              <value name="xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                              <value name="ncName">non-empty-string</value>
+                            </record>
+                          </array>
+                        </record>
+                        <value name="nillable">true</value>
+                        <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                      </record>
+                      <record javaclass="com.wm.util.Values">
+                        <value name="node_type">unknown</value>
+                        <value name="field_name">@tns:version</value>
+                        <value name="field_type">string</value>
+                        <value name="field_dim">0</value>
+                        <value name="field_opt">true</value>
+                        <record name="field_content_type" javaclass="com.wm.util.Values">
+                          <value name="contentType">1</value>
+                          <value name="internalType">reference</value>
+                          <value name="dataTypeVersion">dtVersion2</value>
+                          <array name="targetNames" type="record" depth="1">
+                            <record javaclass="com.wm.util.Values">
+                              <value name="xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                              <value name="ncName">non-empty-string</value>
+                            </record>
+                          </array>
+                        </record>
+                        <value name="nillable">true</value>
+                        <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                      </record>
+                    </array>
+                    <value name="rec_closed">true</value>
+                    <record name="schemaType" javaclass="com.wm.util.Values">
+                      <value name="xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                      <value name="ncName">protocol.type</value>
+                    </record>
+                  </record>
+                  <record javaclass="com.wm.util.Values">
+                    <value name="node_type">record</value>
+                    <value name="field_name">tns:ClientCertificateRef</value>
+                    <value name="field_type">record</value>
+                    <value name="field_dim">0</value>
+                    <value name="field_opt">true</value>
+                    <value name="nillable">false</value>
+                    <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                    <array name="rec_fields" type="record" depth="1">
+                      <record javaclass="com.wm.util.Values">
+                        <value name="node_type">unknown</value>
+                        <value name="field_name">@tns:certId</value>
+                        <value name="field_type">string</value>
+                        <value name="field_dim">0</value>
+                        <record name="field_content_type" javaclass="com.wm.util.Values">
+                          <value name="contentType">1</value>
+                          <value name="internalType">reference</value>
+                          <value name="dataTypeVersion">dtVersion2</value>
+                          <array name="targetNames" type="record" depth="1">
+                            <record javaclass="com.wm.util.Values">
+                              <value name="xmlns">http://www.w3.org/2001/XMLSchema</value>
+                              <value name="ncName">IDREF</value>
+                            </record>
+                          </array>
+                        </record>
+                        <value name="nillable">true</value>
+                        <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                      </record>
+                    </array>
+                    <value name="rec_closed">true</value>
+                    <record name="schemaType" javaclass="com.wm.util.Values">
+                      <value name="xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                      <value name="ncName">CertificateRef.type</value>
+                    </record>
+                  </record>
+                  <record javaclass="com.wm.util.Values">
+                    <value name="node_type">record</value>
+                    <value name="field_name">tns:ServerSecurityDetailsRef</value>
+                    <value name="field_type">record</value>
+                    <value name="field_dim">0</value>
+                    <value name="field_opt">true</value>
+                    <value name="nillable">false</value>
+                    <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                    <array name="rec_fields" type="record" depth="1">
+                      <record javaclass="com.wm.util.Values">
+                        <value name="node_type">unknown</value>
+                        <value name="field_name">@tns:securityId</value>
+                        <value name="field_type">string</value>
+                        <value name="field_dim">0</value>
+                        <record name="field_content_type" javaclass="com.wm.util.Values">
+                          <value name="contentType">1</value>
+                          <value name="internalType">reference</value>
+                          <value name="dataTypeVersion">dtVersion2</value>
+                          <array name="targetNames" type="record" depth="1">
+                            <record javaclass="com.wm.util.Values">
+                              <value name="xmlns">http://www.w3.org/2001/XMLSchema</value>
+                              <value name="ncName">IDREF</value>
+                            </record>
+                          </array>
+                        </record>
+                        <value name="nillable">true</value>
+                        <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                      </record>
+                    </array>
+                    <value name="rec_closed">true</value>
+                    <record name="schemaType" javaclass="com.wm.util.Values">
+                      <value name="xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                      <value name="ncName">SecurityDetailsRef.type</value>
+                    </record>
+                  </record>
+                </array>
+                <value name="rec_closed">true</value>
+              </record>
+            </array>
+            <value name="rec_closed">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">record</value>
+            <value name="field_name">tns:TransportReceiver</value>
+            <value name="field_type">record</value>
+            <value name="field_dim">0</value>
+            <value name="field_opt">true</value>
+            <value name="nillable">false</value>
+            <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+            <array name="rec_fields" type="record" depth="1">
+              <record javaclass="com.wm.util.Values">
+                <value name="node_type">record</value>
+                <value name="field_name">tns:TransportProtocol</value>
+                <value name="field_type">record</value>
+                <value name="field_dim">0</value>
+                <value name="nillable">false</value>
+                <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                <array name="rec_fields" type="record" depth="1">
+                  <record javaclass="com.wm.util.Values">
+                    <value name="node_type">unknown</value>
+                    <value name="field_name">*body</value>
+                    <value name="field_type">string</value>
+                    <value name="field_dim">0</value>
+                    <value name="field_opt">true</value>
+                    <record name="field_content_type" javaclass="com.wm.util.Values">
+                      <value name="contentType">1</value>
+                      <value name="internalType">reference</value>
+                      <value name="dataTypeVersion">dtVersion2</value>
+                      <array name="targetNames" type="record" depth="1">
+                        <record javaclass="com.wm.util.Values">
+                          <value name="xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                          <value name="ncName">non-empty-string</value>
+                        </record>
+                      </array>
+                    </record>
+                    <value name="nillable">true</value>
+                    <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                  </record>
+                  <record javaclass="com.wm.util.Values">
+                    <value name="node_type">unknown</value>
+                    <value name="field_name">@tns:version</value>
+                    <value name="field_type">string</value>
+                    <value name="field_dim">0</value>
+                    <value name="field_opt">true</value>
+                    <record name="field_content_type" javaclass="com.wm.util.Values">
+                      <value name="contentType">1</value>
+                      <value name="internalType">reference</value>
+                      <value name="dataTypeVersion">dtVersion2</value>
+                      <array name="targetNames" type="record" depth="1">
+                        <record javaclass="com.wm.util.Values">
+                          <value name="xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                          <value name="ncName">non-empty-string</value>
+                        </record>
+                      </array>
+                    </record>
+                    <value name="nillable">true</value>
+                    <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                  </record>
+                </array>
+                <value name="rec_closed">true</value>
+                <record name="schemaType" javaclass="com.wm.util.Values">
+                  <value name="xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                  <value name="ncName">protocol.type</value>
+                </record>
+              </record>
+              <record javaclass="com.wm.util.Values">
+                <value name="node_type">unknown</value>
+                <value name="field_name">tns:AccessAuthentication</value>
+                <value name="field_type">string</value>
+                <value name="field_dim">1</value>
+                <value name="field_opt">true</value>
+                <record name="field_content_type" javaclass="com.wm.util.Values">
+                  <value name="contentType">1</value>
+                  <value name="internalType">reference</value>
+                  <value name="dataTypeVersion">dtVersion2</value>
+                  <array name="targetNames" type="record" depth="1">
+                    <record javaclass="com.wm.util.Values">
+                      <value name="xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                      <value name="ncName">accessAuthentication.type</value>
+                    </record>
+                  </array>
+                </record>
+                <value name="nillable">false</value>
+                <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                <value name="is_soap_array_encoding_used">true</value>
+              </record>
+              <record javaclass="com.wm.util.Values">
+                <value name="node_type">record</value>
+                <value name="field_name">tns:Endpoint</value>
+                <value name="field_type">record</value>
+                <value name="field_dim">1</value>
+                <value name="nillable">false</value>
+                <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                <value name="is_soap_array_encoding_used">true</value>
+                <array name="rec_fields" type="record" depth="1">
+                  <record javaclass="com.wm.util.Values">
+                    <value name="node_type">unknown</value>
+                    <value name="field_name">@tns:uri</value>
+                    <value name="field_type">string</value>
+                    <value name="field_dim">0</value>
+                    <record name="field_content_type" javaclass="com.wm.util.Values">
+                      <value name="contentType">1</value>
+                      <value name="internalType">reference</value>
+                      <value name="dataTypeVersion">dtVersion2</value>
+                      <array name="targetNames" type="record" depth="1">
+                        <record javaclass="com.wm.util.Values">
+                          <value name="xmlns">http://www.w3.org/2001/XMLSchema</value>
+                          <value name="ncName">anyURI</value>
+                        </record>
+                      </array>
+                    </record>
+                    <value name="nillable">true</value>
+                    <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                  </record>
+                  <record javaclass="com.wm.util.Values">
+                    <value name="node_type">unknown</value>
+                    <value name="field_name">@tns:type</value>
+                    <value name="field_type">string</value>
+                    <value name="field_dim">0</value>
+                    <value name="field_opt">true</value>
+                    <record name="field_content_type" javaclass="com.wm.util.Values">
+                      <value name="contentType">1</value>
+                      <value name="internalType">reference</value>
+                      <value name="dataTypeVersion">dtVersion2</value>
+                      <array name="targetNames" type="record" depth="1">
+                        <record javaclass="com.wm.util.Values">
+                          <value name="xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                          <value name="ncName">endpointType.type</value>
+                        </record>
+                      </array>
+                    </record>
+                    <value name="nillable">true</value>
+                    <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                  </record>
+                </array>
+                <value name="rec_closed">true</value>
+              </record>
+              <record javaclass="com.wm.util.Values">
+                <value name="node_type">record</value>
+                <value name="field_name">tns:TransportServerSecurity</value>
+                <value name="field_type">record</value>
+                <value name="field_dim">0</value>
+                <value name="field_opt">true</value>
+                <value name="nillable">false</value>
+                <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                <array name="rec_fields" type="record" depth="1">
+                  <record javaclass="com.wm.util.Values">
+                    <value name="node_type">record</value>
+                    <value name="field_name">tns:TransportSecurityProtocol</value>
+                    <value name="field_type">record</value>
+                    <value name="field_dim">0</value>
+                    <value name="nillable">false</value>
+                    <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                    <array name="rec_fields" type="record" depth="1">
+                      <record javaclass="com.wm.util.Values">
+                        <value name="node_type">unknown</value>
+                        <value name="field_name">*body</value>
+                        <value name="field_type">string</value>
+                        <value name="field_dim">0</value>
+                        <value name="field_opt">true</value>
+                        <record name="field_content_type" javaclass="com.wm.util.Values">
+                          <value name="contentType">1</value>
+                          <value name="internalType">reference</value>
+                          <value name="dataTypeVersion">dtVersion2</value>
+                          <array name="targetNames" type="record" depth="1">
+                            <record javaclass="com.wm.util.Values">
+                              <value name="xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                              <value name="ncName">non-empty-string</value>
+                            </record>
+                          </array>
+                        </record>
+                        <value name="nillable">true</value>
+                        <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                      </record>
+                      <record javaclass="com.wm.util.Values">
+                        <value name="node_type">unknown</value>
+                        <value name="field_name">@tns:version</value>
+                        <value name="field_type">string</value>
+                        <value name="field_dim">0</value>
+                        <value name="field_opt">true</value>
+                        <record name="field_content_type" javaclass="com.wm.util.Values">
+                          <value name="contentType">1</value>
+                          <value name="internalType">reference</value>
+                          <value name="dataTypeVersion">dtVersion2</value>
+                          <array name="targetNames" type="record" depth="1">
+                            <record javaclass="com.wm.util.Values">
+                              <value name="xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                              <value name="ncName">non-empty-string</value>
+                            </record>
+                          </array>
+                        </record>
+                        <value name="nillable">true</value>
+                        <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                      </record>
+                    </array>
+                    <value name="rec_closed">true</value>
+                    <record name="schemaType" javaclass="com.wm.util.Values">
+                      <value name="xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                      <value name="ncName">protocol.type</value>
+                    </record>
+                  </record>
+                  <record javaclass="com.wm.util.Values">
+                    <value name="node_type">record</value>
+                    <value name="field_name">tns:ServerCertificateRef</value>
+                    <value name="field_type">record</value>
+                    <value name="field_dim">0</value>
+                    <value name="nillable">false</value>
+                    <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                    <array name="rec_fields" type="record" depth="1">
+                      <record javaclass="com.wm.util.Values">
+                        <value name="node_type">unknown</value>
+                        <value name="field_name">@tns:certId</value>
+                        <value name="field_type">string</value>
+                        <value name="field_dim">0</value>
+                        <record name="field_content_type" javaclass="com.wm.util.Values">
+                          <value name="contentType">1</value>
+                          <value name="internalType">reference</value>
+                          <value name="dataTypeVersion">dtVersion2</value>
+                          <array name="targetNames" type="record" depth="1">
+                            <record javaclass="com.wm.util.Values">
+                              <value name="xmlns">http://www.w3.org/2001/XMLSchema</value>
+                              <value name="ncName">IDREF</value>
+                            </record>
+                          </array>
+                        </record>
+                        <value name="nillable">true</value>
+                        <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                      </record>
+                    </array>
+                    <value name="rec_closed">true</value>
+                    <record name="schemaType" javaclass="com.wm.util.Values">
+                      <value name="xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                      <value name="ncName">CertificateRef.type</value>
+                    </record>
+                  </record>
+                  <record javaclass="com.wm.util.Values">
+                    <value name="node_type">record</value>
+                    <value name="field_name">tns:ClientSecurityDetailsRef</value>
+                    <value name="field_type">record</value>
+                    <value name="field_dim">0</value>
+                    <value name="field_opt">true</value>
+                    <value name="nillable">false</value>
+                    <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                    <array name="rec_fields" type="record" depth="1">
+                      <record javaclass="com.wm.util.Values">
+                        <value name="node_type">unknown</value>
+                        <value name="field_name">@tns:securityId</value>
+                        <value name="field_type">string</value>
+                        <value name="field_dim">0</value>
+                        <record name="field_content_type" javaclass="com.wm.util.Values">
+                          <value name="contentType">1</value>
+                          <value name="internalType">reference</value>
+                          <value name="dataTypeVersion">dtVersion2</value>
+                          <array name="targetNames" type="record" depth="1">
+                            <record javaclass="com.wm.util.Values">
+                              <value name="xmlns">http://www.w3.org/2001/XMLSchema</value>
+                              <value name="ncName">IDREF</value>
+                            </record>
+                          </array>
+                        </record>
+                        <value name="nillable">true</value>
+                        <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                      </record>
+                    </array>
+                    <value name="rec_closed">true</value>
+                    <record name="schemaType" javaclass="com.wm.util.Values">
+                      <value name="xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                      <value name="ncName">SecurityDetailsRef.type</value>
+                    </record>
+                  </record>
+                </array>
+                <value name="rec_closed">true</value>
+              </record>
+            </array>
+            <value name="rec_closed">true</value>
+          </record>
+        </array>
+        <value name="rec_closed">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="node_comment"></value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+        </record>
+        <value name="field_name">tns:DocExchange</value>
+        <value name="field_type">record</value>
+        <value name="field_dim">1</value>
+        <value name="nillable">false</value>
+        <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+        <value name="is_soap_array_encoding_used">true</value>
+        <array name="rec_fields" type="record" depth="1">
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="node_comment"></value>
+            <record name="node_hints" javaclass="com.wm.util.Values">
+              <null name="field_usereditable"/>
+              <value name="field_largerEditor">false</value>
+              <value name="field_password">false</value>
+            </record>
+            <value name="field_name">@tns:docExchangeId</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <record name="field_content_type" javaclass="com.wm.util.Values">
+              <value name="contentType">1</value>
+              <value name="internalType">reference</value>
+              <value name="dataTypeVersion">dtVersion2</value>
+              <array name="targetNames" type="record" depth="1">
+                <record javaclass="com.wm.util.Values">
+                  <value name="xmlns">http://www.w3.org/2001/XMLSchema</value>
+                  <value name="ncName">ID</value>
+                </record>
+              </array>
+            </record>
+            <value name="nillable">true</value>
+            <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">record</value>
+            <value name="field_name">tns:ebXMLSenderBinding</value>
+            <value name="field_type">record</value>
+            <value name="field_dim">0</value>
+            <value name="field_opt">true</value>
+            <value name="nillable">false</value>
+            <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+            <array name="rec_fields" type="record" depth="1">
+              <record javaclass="com.wm.util.Values">
+                <value name="node_type">unknown</value>
+                <value name="field_name">@tns:version</value>
+                <value name="field_type">string</value>
+                <value name="field_dim">0</value>
+                <record name="field_content_type" javaclass="com.wm.util.Values">
+                  <value name="contentType">1</value>
+                  <value name="internalType">reference</value>
+                  <value name="dataTypeVersion">dtVersion2</value>
+                  <array name="targetNames" type="record" depth="1">
+                    <record javaclass="com.wm.util.Values">
+                      <value name="xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                      <value name="ncName">non-empty-string</value>
+                    </record>
+                  </array>
+                </record>
+                <value name="nillable">true</value>
+                <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+              </record>
+              <record javaclass="com.wm.util.Values">
+                <value name="node_type">unknown</value>
+                <value name="field_name">tns:PersistDuration</value>
+                <value name="field_type">string</value>
+                <value name="field_dim">0</value>
+                <value name="field_opt">true</value>
+                <record name="field_content_type" javaclass="com.wm.util.Values">
+                  <value name="contentType">1</value>
+                  <value name="internalType">reference</value>
+                  <value name="dataTypeVersion">dtVersion2</value>
+                  <array name="targetNames" type="record" depth="1">
+                    <record javaclass="com.wm.util.Values">
+                      <value name="xmlns">http://www.w3.org/2001/XMLSchema</value>
+                      <value name="ncName">duration</value>
+                    </record>
+                  </array>
+                </record>
+                <value name="nillable">false</value>
+                <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+              </record>
+              <record javaclass="com.wm.util.Values">
+                <value name="node_type">record</value>
+                <value name="node_comment"></value>
+                <record name="node_hints" javaclass="com.wm.util.Values">
+                  <value name="field_largerEditor">false</value>
+                  <value name="field_password">false</value>
+                </record>
+                <value name="field_name">tns:SenderNonRepudiation</value>
+                <value name="field_type">record</value>
+                <value name="field_dim">0</value>
+                <value name="field_opt">true</value>
+                <value name="nillable">false</value>
+                <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                <array name="rec_fields" type="record" depth="1">
+                  <record javaclass="com.wm.util.Values">
+                    <value name="node_type">record</value>
+                    <value name="field_name">tns:NonRepudiationProtocol</value>
+                    <value name="field_type">record</value>
+                    <value name="field_dim">0</value>
+                    <value name="nillable">false</value>
+                    <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                    <array name="rec_fields" type="record" depth="1">
+                      <record javaclass="com.wm.util.Values">
+                        <value name="node_type">unknown</value>
+                        <value name="field_name">*body</value>
+                        <value name="field_type">string</value>
+                        <value name="field_dim">0</value>
+                        <value name="field_opt">true</value>
+                        <record name="field_content_type" javaclass="com.wm.util.Values">
+                          <value name="contentType">1</value>
+                          <value name="internalType">reference</value>
+                          <value name="dataTypeVersion">dtVersion2</value>
+                          <array name="targetNames" type="record" depth="1">
+                            <record javaclass="com.wm.util.Values">
+                              <value name="xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                              <value name="ncName">non-empty-string</value>
+                            </record>
+                          </array>
+                        </record>
+                        <value name="nillable">true</value>
+                        <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                      </record>
+                      <record javaclass="com.wm.util.Values">
+                        <value name="node_type">unknown</value>
+                        <value name="field_name">@tns:version</value>
+                        <value name="field_type">string</value>
+                        <value name="field_dim">0</value>
+                        <value name="field_opt">true</value>
+                        <record name="field_content_type" javaclass="com.wm.util.Values">
+                          <value name="contentType">1</value>
+                          <value name="internalType">reference</value>
+                          <value name="dataTypeVersion">dtVersion2</value>
+                          <array name="targetNames" type="record" depth="1">
+                            <record javaclass="com.wm.util.Values">
+                              <value name="xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                              <value name="ncName">non-empty-string</value>
+                            </record>
+                          </array>
+                        </record>
+                        <value name="nillable">true</value>
+                        <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                      </record>
+                    </array>
+                    <value name="rec_closed">true</value>
+                    <record name="schemaType" javaclass="com.wm.util.Values">
+                      <value name="xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                      <value name="ncName">protocol.type</value>
+                    </record>
+                  </record>
+                  <record javaclass="com.wm.util.Values">
+                    <value name="node_type">unknown</value>
+                    <value name="field_name">tns:HashFunction</value>
+                    <value name="field_type">string</value>
+                    <value name="field_dim">0</value>
+                    <record name="field_content_type" javaclass="com.wm.util.Values">
+                      <value name="contentType">1</value>
+                      <value name="internalType">reference</value>
+                      <value name="dataTypeVersion">dtVersion2</value>
+                      <array name="targetNames" type="record" depth="1">
+                        <record javaclass="com.wm.util.Values">
+                          <value name="xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                          <value name="ncName">non-empty-string</value>
+                        </record>
+                      </array>
+                    </record>
+                    <value name="nillable">false</value>
+                    <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                  </record>
+                  <record javaclass="com.wm.util.Values">
+                    <value name="node_type">record</value>
+                    <value name="node_comment"></value>
+                    <record name="node_hints" javaclass="com.wm.util.Values">
+                      <value name="field_largerEditor">false</value>
+                      <value name="field_password">false</value>
+                    </record>
+                    <value name="field_name">tns:SigningCertificateRef</value>
+                    <value name="field_type">record</value>
+                    <value name="field_dim">0</value>
+                    <value name="nillable">false</value>
+                    <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                    <array name="rec_fields" type="record" depth="1">
+                      <record javaclass="com.wm.util.Values">
+                        <value name="node_type">unknown</value>
+                        <value name="field_name">@tns:certId</value>
+                        <value name="field_type">string</value>
+                        <value name="field_dim">0</value>
+                        <record name="field_content_type" javaclass="com.wm.util.Values">
+                          <value name="contentType">1</value>
+                          <value name="internalType">reference</value>
+                          <value name="dataTypeVersion">dtVersion2</value>
+                          <array name="targetNames" type="record" depth="1">
+                            <record javaclass="com.wm.util.Values">
+                              <value name="xmlns">http://www.w3.org/2001/XMLSchema</value>
+                              <value name="ncName">IDREF</value>
+                            </record>
+                          </array>
+                        </record>
+                        <value name="nillable">true</value>
+                        <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                      </record>
+                    </array>
+                    <value name="rec_closed">true</value>
+                    <record name="schemaType" javaclass="com.wm.util.Values">
+                      <value name="xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                      <value name="ncName">CertificateRef.type</value>
+                    </record>
+                  </record>
+                </array>
+                <value name="rec_closed">true</value>
+              </record>
+              <record javaclass="com.wm.util.Values">
+                <value name="node_type">record</value>
+                <value name="node_comment"></value>
+                <record name="node_hints" javaclass="com.wm.util.Values">
+                  <value name="field_largerEditor">false</value>
+                  <value name="field_password">false</value>
+                </record>
+                <value name="field_name">tns:SenderDigitalEnvelope</value>
+                <value name="field_type">record</value>
+                <value name="field_dim">0</value>
+                <value name="field_opt">true</value>
+                <value name="nillable">false</value>
+                <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                <array name="rec_fields" type="record" depth="1">
+                  <record javaclass="com.wm.util.Values">
+                    <value name="node_type">record</value>
+                    <value name="field_name">tns:DigitalEnvelopeProtocol</value>
+                    <value name="field_type">record</value>
+                    <value name="field_dim">0</value>
+                    <value name="nillable">false</value>
+                    <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                    <array name="rec_fields" type="record" depth="1">
+                      <record javaclass="com.wm.util.Values">
+                        <value name="node_type">unknown</value>
+                        <value name="field_name">*body</value>
+                        <value name="field_type">string</value>
+                        <value name="field_dim">0</value>
+                        <value name="field_opt">true</value>
+                        <record name="field_content_type" javaclass="com.wm.util.Values">
+                          <value name="contentType">1</value>
+                          <value name="internalType">reference</value>
+                          <value name="dataTypeVersion">dtVersion2</value>
+                          <array name="targetNames" type="record" depth="1">
+                            <record javaclass="com.wm.util.Values">
+                              <value name="xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                              <value name="ncName">non-empty-string</value>
+                            </record>
+                          </array>
+                        </record>
+                        <value name="nillable">true</value>
+                        <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                      </record>
+                      <record javaclass="com.wm.util.Values">
+                        <value name="node_type">unknown</value>
+                        <value name="field_name">@tns:version</value>
+                        <value name="field_type">string</value>
+                        <value name="field_dim">0</value>
+                        <value name="field_opt">true</value>
+                        <record name="field_content_type" javaclass="com.wm.util.Values">
+                          <value name="contentType">1</value>
+                          <value name="internalType">reference</value>
+                          <value name="dataTypeVersion">dtVersion2</value>
+                          <array name="targetNames" type="record" depth="1">
+                            <record javaclass="com.wm.util.Values">
+                              <value name="xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                              <value name="ncName">non-empty-string</value>
+                            </record>
+                          </array>
+                        </record>
+                        <value name="nillable">true</value>
+                        <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                      </record>
+                    </array>
+                    <value name="rec_closed">true</value>
+                    <record name="schemaType" javaclass="com.wm.util.Values">
+                      <value name="xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                      <value name="ncName">protocol.type</value>
+                    </record>
+                  </record>
+                  <record javaclass="com.wm.util.Values">
+                    <value name="node_type">record</value>
+                    <value name="node_comment"></value>
+                    <record name="node_hints" javaclass="com.wm.util.Values">
+                      <value name="field_largerEditor">false</value>
+                      <value name="field_password">false</value>
+                    </record>
+                    <value name="field_name">tns:EncryptionSecurityDetailsRef</value>
+                    <value name="field_type">record</value>
+                    <value name="field_dim">0</value>
+                    <value name="field_opt">true</value>
+                    <value name="nillable">false</value>
+                    <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                    <array name="rec_fields" type="record" depth="1">
+                      <record javaclass="com.wm.util.Values">
+                        <value name="node_type">unknown</value>
+                        <value name="field_name">@tns:securityId</value>
+                        <value name="field_type">string</value>
+                        <value name="field_dim">0</value>
+                        <record name="field_content_type" javaclass="com.wm.util.Values">
+                          <value name="contentType">1</value>
+                          <value name="internalType">reference</value>
+                          <value name="dataTypeVersion">dtVersion2</value>
+                          <array name="targetNames" type="record" depth="1">
+                            <record javaclass="com.wm.util.Values">
+                              <value name="xmlns">http://www.w3.org/2001/XMLSchema</value>
+                              <value name="ncName">IDREF</value>
+                            </record>
+                          </array>
+                        </record>
+                        <value name="nillable">true</value>
+                        <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                      </record>
+                    </array>
+                    <value name="rec_closed">true</value>
+                    <record name="schemaType" javaclass="com.wm.util.Values">
+                      <value name="xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                      <value name="ncName">SecurityDetailsRef.type</value>
+                    </record>
+                  </record>
+                </array>
+                <value name="rec_closed">true</value>
+              </record>
+            </array>
+            <value name="rec_closed">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">record</value>
+            <value name="field_name">tns:ebXMLReceiverBinding</value>
+            <value name="field_type">record</value>
+            <value name="field_dim">0</value>
+            <value name="field_opt">true</value>
+            <value name="nillable">false</value>
+            <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+            <array name="rec_fields" type="record" depth="1">
+              <record javaclass="com.wm.util.Values">
+                <value name="node_type">unknown</value>
+                <value name="node_comment"></value>
+                <record name="node_hints" javaclass="com.wm.util.Values">
+                  <null name="field_usereditable"/>
+                  <value name="field_largerEditor">false</value>
+                  <value name="field_password">false</value>
+                </record>
+                <value name="field_name">@tns:version</value>
+                <value name="field_type">string</value>
+                <value name="field_dim">0</value>
+                <value name="field_opt">true</value>
+                <record name="field_content_type" javaclass="com.wm.util.Values">
+                  <value name="contentType">1</value>
+                  <value name="internalType">reference</value>
+                  <value name="dataTypeVersion">dtVersion2</value>
+                  <array name="targetNames" type="record" depth="1">
+                    <record javaclass="com.wm.util.Values">
+                      <value name="xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                      <value name="ncName">non-empty-string</value>
+                    </record>
+                  </array>
+                </record>
+                <value name="nillable">true</value>
+                <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+              </record>
+              <record javaclass="com.wm.util.Values">
+                <value name="node_type">unknown</value>
+                <value name="field_name">tns:PersistDuration</value>
+                <value name="field_type">string</value>
+                <value name="field_dim">0</value>
+                <value name="field_opt">true</value>
+                <record name="field_content_type" javaclass="com.wm.util.Values">
+                  <value name="contentType">1</value>
+                  <value name="internalType">reference</value>
+                  <value name="dataTypeVersion">dtVersion2</value>
+                  <array name="targetNames" type="record" depth="1">
+                    <record javaclass="com.wm.util.Values">
+                      <value name="xmlns">http://www.w3.org/2001/XMLSchema</value>
+                      <value name="ncName">duration</value>
+                    </record>
+                  </array>
+                </record>
+                <value name="nillable">false</value>
+                <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+              </record>
+              <record javaclass="com.wm.util.Values">
+                <value name="node_type">record</value>
+                <value name="node_comment"></value>
+                <record name="node_hints" javaclass="com.wm.util.Values">
+                  <value name="field_largerEditor">false</value>
+                  <value name="field_password">false</value>
+                </record>
+                <value name="field_name">tns:ReceiverNonRepudiation</value>
+                <value name="field_type">record</value>
+                <value name="field_dim">0</value>
+                <value name="field_opt">true</value>
+                <value name="nillable">false</value>
+                <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                <array name="rec_fields" type="record" depth="1">
+                  <record javaclass="com.wm.util.Values">
+                    <value name="node_type">record</value>
+                    <value name="field_name">tns:NonRepudiationProtocol</value>
+                    <value name="field_type">record</value>
+                    <value name="field_dim">0</value>
+                    <value name="nillable">false</value>
+                    <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                    <array name="rec_fields" type="record" depth="1">
+                      <record javaclass="com.wm.util.Values">
+                        <value name="node_type">unknown</value>
+                        <value name="field_name">*body</value>
+                        <value name="field_type">string</value>
+                        <value name="field_dim">0</value>
+                        <value name="field_opt">true</value>
+                        <record name="field_content_type" javaclass="com.wm.util.Values">
+                          <value name="contentType">1</value>
+                          <value name="internalType">reference</value>
+                          <value name="dataTypeVersion">dtVersion2</value>
+                          <array name="targetNames" type="record" depth="1">
+                            <record javaclass="com.wm.util.Values">
+                              <value name="xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                              <value name="ncName">non-empty-string</value>
+                            </record>
+                          </array>
+                        </record>
+                        <value name="nillable">true</value>
+                        <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                      </record>
+                      <record javaclass="com.wm.util.Values">
+                        <value name="node_type">unknown</value>
+                        <value name="field_name">@tns:version</value>
+                        <value name="field_type">string</value>
+                        <value name="field_dim">0</value>
+                        <value name="field_opt">true</value>
+                        <record name="field_content_type" javaclass="com.wm.util.Values">
+                          <value name="contentType">1</value>
+                          <value name="internalType">reference</value>
+                          <value name="dataTypeVersion">dtVersion2</value>
+                          <array name="targetNames" type="record" depth="1">
+                            <record javaclass="com.wm.util.Values">
+                              <value name="xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                              <value name="ncName">non-empty-string</value>
+                            </record>
+                          </array>
+                        </record>
+                        <value name="nillable">true</value>
+                        <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                      </record>
+                    </array>
+                    <value name="rec_closed">true</value>
+                    <record name="schemaType" javaclass="com.wm.util.Values">
+                      <value name="xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                      <value name="ncName">protocol.type</value>
+                    </record>
+                  </record>
+                  <record javaclass="com.wm.util.Values">
+                    <value name="node_type">unknown</value>
+                    <value name="field_name">tns:HashFunction</value>
+                    <value name="field_type">string</value>
+                    <value name="field_dim">0</value>
+                    <record name="field_content_type" javaclass="com.wm.util.Values">
+                      <value name="contentType">1</value>
+                      <value name="internalType">reference</value>
+                      <value name="dataTypeVersion">dtVersion2</value>
+                      <array name="targetNames" type="record" depth="1">
+                        <record javaclass="com.wm.util.Values">
+                          <value name="xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                          <value name="ncName">non-empty-string</value>
+                        </record>
+                      </array>
+                    </record>
+                    <value name="nillable">false</value>
+                    <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                  </record>
+                  <record javaclass="com.wm.util.Values">
+                    <value name="node_type">record</value>
+                    <value name="node_comment"></value>
+                    <record name="node_hints" javaclass="com.wm.util.Values">
+                      <value name="field_largerEditor">false</value>
+                      <value name="field_password">false</value>
+                    </record>
+                    <value name="field_name">tns:SigningSecurityDetailsRef</value>
+                    <value name="field_type">record</value>
+                    <value name="field_dim">0</value>
+                    <value name="field_opt">true</value>
+                    <value name="nillable">false</value>
+                    <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                    <array name="rec_fields" type="record" depth="1">
+                      <record javaclass="com.wm.util.Values">
+                        <value name="node_type">unknown</value>
+                        <value name="field_name">@tns:securityId</value>
+                        <value name="field_type">string</value>
+                        <value name="field_dim">0</value>
+                        <record name="field_content_type" javaclass="com.wm.util.Values">
+                          <value name="contentType">1</value>
+                          <value name="internalType">reference</value>
+                          <value name="dataTypeVersion">dtVersion2</value>
+                          <array name="targetNames" type="record" depth="1">
+                            <record javaclass="com.wm.util.Values">
+                              <value name="xmlns">http://www.w3.org/2001/XMLSchema</value>
+                              <value name="ncName">IDREF</value>
+                            </record>
+                          </array>
+                        </record>
+                        <value name="nillable">true</value>
+                        <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                      </record>
+                    </array>
+                    <value name="rec_closed">true</value>
+                    <record name="schemaType" javaclass="com.wm.util.Values">
+                      <value name="xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                      <value name="ncName">SecurityDetailsRef.type</value>
+                    </record>
+                  </record>
+                </array>
+                <value name="rec_closed">true</value>
+              </record>
+              <record javaclass="com.wm.util.Values">
+                <value name="node_type">record</value>
+                <value name="node_comment"></value>
+                <record name="node_hints" javaclass="com.wm.util.Values">
+                  <value name="field_largerEditor">false</value>
+                  <value name="field_password">false</value>
+                </record>
+                <value name="field_name">tns:ReceiverDigitalEnvelope</value>
+                <value name="field_type">record</value>
+                <value name="field_dim">0</value>
+                <value name="field_opt">true</value>
+                <value name="nillable">false</value>
+                <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                <array name="rec_fields" type="record" depth="1">
+                  <record javaclass="com.wm.util.Values">
+                    <value name="node_type">record</value>
+                    <value name="field_name">tns:DigitalEnvelopeProtocol</value>
+                    <value name="field_type">record</value>
+                    <value name="field_dim">0</value>
+                    <value name="nillable">false</value>
+                    <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                    <array name="rec_fields" type="record" depth="1">
+                      <record javaclass="com.wm.util.Values">
+                        <value name="node_type">unknown</value>
+                        <value name="field_name">*body</value>
+                        <value name="field_type">string</value>
+                        <value name="field_dim">0</value>
+                        <value name="field_opt">true</value>
+                        <record name="field_content_type" javaclass="com.wm.util.Values">
+                          <value name="contentType">1</value>
+                          <value name="internalType">reference</value>
+                          <value name="dataTypeVersion">dtVersion2</value>
+                          <array name="targetNames" type="record" depth="1">
+                            <record javaclass="com.wm.util.Values">
+                              <value name="xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                              <value name="ncName">non-empty-string</value>
+                            </record>
+                          </array>
+                        </record>
+                        <value name="nillable">true</value>
+                        <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                      </record>
+                      <record javaclass="com.wm.util.Values">
+                        <value name="node_type">unknown</value>
+                        <value name="field_name">@tns:version</value>
+                        <value name="field_type">string</value>
+                        <value name="field_dim">0</value>
+                        <value name="field_opt">true</value>
+                        <record name="field_content_type" javaclass="com.wm.util.Values">
+                          <value name="contentType">1</value>
+                          <value name="internalType">reference</value>
+                          <value name="dataTypeVersion">dtVersion2</value>
+                          <array name="targetNames" type="record" depth="1">
+                            <record javaclass="com.wm.util.Values">
+                              <value name="xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                              <value name="ncName">non-empty-string</value>
+                            </record>
+                          </array>
+                        </record>
+                        <value name="nillable">true</value>
+                        <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                      </record>
+                    </array>
+                    <value name="rec_closed">true</value>
+                    <record name="schemaType" javaclass="com.wm.util.Values">
+                      <value name="xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                      <value name="ncName">protocol.type</value>
+                    </record>
+                  </record>
+                  <record javaclass="com.wm.util.Values">
+                    <value name="node_type">record</value>
+                    <value name="node_comment"></value>
+                    <record name="node_hints" javaclass="com.wm.util.Values">
+                      <value name="field_largerEditor">false</value>
+                      <value name="field_password">false</value>
+                    </record>
+                    <value name="field_name">tns:EncryptionCertificateRef</value>
+                    <value name="field_type">record</value>
+                    <value name="field_dim">0</value>
+                    <value name="nillable">false</value>
+                    <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                    <array name="rec_fields" type="record" depth="1">
+                      <record javaclass="com.wm.util.Values">
+                        <value name="node_type">unknown</value>
+                        <value name="field_name">@tns:certId</value>
+                        <value name="field_type">string</value>
+                        <value name="field_dim">0</value>
+                        <record name="field_content_type" javaclass="com.wm.util.Values">
+                          <value name="contentType">1</value>
+                          <value name="internalType">reference</value>
+                          <value name="dataTypeVersion">dtVersion2</value>
+                          <array name="targetNames" type="record" depth="1">
+                            <record javaclass="com.wm.util.Values">
+                              <value name="xmlns">http://www.w3.org/2001/XMLSchema</value>
+                              <value name="ncName">IDREF</value>
+                            </record>
+                          </array>
+                        </record>
+                        <value name="nillable">true</value>
+                        <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                      </record>
+                    </array>
+                    <value name="rec_closed">true</value>
+                    <record name="schemaType" javaclass="com.wm.util.Values">
+                      <value name="xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                      <value name="ncName">CertificateRef.type</value>
+                    </record>
+                  </record>
+                </array>
+                <value name="rec_closed">true</value>
+              </record>
+            </array>
+            <value name="rec_closed">true</value>
+          </record>
+        </array>
+        <value name="rec_closed">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">tns:OverrideMshActionBinding</value>
+        <value name="field_type">record</value>
+        <value name="field_dim">1</value>
+        <value name="field_opt">true</value>
+        <value name="nillable">false</value>
+        <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+        <value name="is_soap_array_encoding_used">true</value>
+        <array name="rec_fields" type="record" depth="1">
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">@tns:action</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <record name="field_content_type" javaclass="com.wm.util.Values">
+              <value name="contentType">1</value>
+              <value name="internalType">reference</value>
+              <value name="dataTypeVersion">dtVersion2</value>
+              <array name="targetNames" type="record" depth="1">
+                <record javaclass="com.wm.util.Values">
+                  <value name="xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                  <value name="ncName">non-empty-string</value>
+                </record>
+              </array>
+            </record>
+            <value name="nillable">true</value>
+            <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">@tns:channelId</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <record name="field_content_type" javaclass="com.wm.util.Values">
+              <value name="contentType">1</value>
+              <value name="internalType">reference</value>
+              <value name="dataTypeVersion">dtVersion2</value>
+              <array name="targetNames" type="record" depth="1">
+                <record javaclass="com.wm.util.Values">
+                  <value name="xmlns">http://www.w3.org/2001/XMLSchema</value>
+                  <value name="ncName">IDREF</value>
+                </record>
+              </array>
+            </record>
+            <value name="nillable">true</value>
+            <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+          </record>
+        </array>
+        <value name="rec_closed">true</value>
+      </record>
+    </array>
+    <value name="rec_closed">true</value>
+  </record>
+</Values>
+</DATA>
+</MAPSET>
+
+<MAPSET NAME="Setter" OVERWRITE="true" VARIABLES="false" FIELD="/tpaData;4;0;com.wm.estd.ebXML.documents.CPA2:cpa_2/tns:CollaborationProtocolAgreement;2;0/@xsi:schemaLocation;1;0">
+  <DATA ENCODING="XMLValues" I18N="true">
+
+<Values version="2.0">
+  <value name="xml">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd
+                      cpp-cpa-2_0b.xsd</value>
+  <record name="type" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="node_comment"></value>
+    <record name="node_hints" javaclass="com.wm.util.Values">
+      <null name="field_usereditable"/>
+      <value name="field_largerEditor">false</value>
+      <value name="field_password">false</value>
+    </record>
+    <value name="field_name">@xsi:schemaLocation</value>
+    <value name="field_type">string</value>
+    <value name="field_dim">0</value>
+    <value name="nillable">true</value>
+  </record>
+</Values>
+</DATA>
+</MAPSET>
+
+<MAPSET NAME="Setter" OVERWRITE="true" VARIABLES="false" FIELD="/tpaData;4;0;com.wm.estd.ebXML.documents.CPA2:cpa_2/tns:CollaborationProtocolAgreement;2;0/@tns:version;1;0">
+  <DATA ENCODING="XMLValues" I18N="true">
+
+<Values version="2.0">
+  <value name="xml">2.0</value>
+  <record name="type" javaclass="com.wm.util.Values">
+    <value name="node_type">unknown</value>
+    <value name="node_comment"></value>
+    <record name="node_hints" javaclass="com.wm.util.Values">
+      <null name="field_usereditable"/>
+      <value name="field_largerEditor">false</value>
+      <value name="field_password">false</value>
+    </record>
+    <value name="field_name">@tns:version</value>
+    <value name="field_type">string</value>
+    <value name="field_dim">0</value>
+    <record name="field_content_type" javaclass="com.wm.util.Values">
+      <value name="contentType">1</value>
+      <value name="internalType">reference</value>
+      <value name="dataTypeVersion">dtVersion2</value>
+      <array name="targetNames" type="record" depth="1">
+        <record javaclass="com.wm.util.Values">
+          <value name="xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+          <value name="ncName">non-empty-string</value>
+        </record>
+      </array>
+    </record>
+    <value name="nillable">true</value>
+    <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+  </record>
+</Values>
+</DATA>
+</MAPSET>
+
+<MAPSET NAME="Setter" OVERWRITE="true" VARIABLES="false" FIELD="/tpaData;4;0;com.wm.estd.ebXML.documents.CPA2:cpa_2/tns:CollaborationProtocolAgreement;2;0/tns:Status;2;0/@tns:value;1;0">
+  <DATA ENCODING="XMLValues" I18N="true">
+
+<Values version="2.0">
+  <value name="xml">Proposed</value>
+  <record name="type" javaclass="com.wm.util.Values">
+    <value name="node_type">unknown</value>
+    <value name="field_name">@tns:value</value>
+    <value name="field_type">string</value>
+    <value name="field_dim">0</value>
+    <record name="field_content_type" javaclass="com.wm.util.Values">
+      <value name="contentType">1</value>
+      <value name="internalType">reference</value>
+      <value name="dataTypeVersion">dtVersion2</value>
+      <array name="targetNames" type="record" depth="1">
+        <record javaclass="com.wm.util.Values">
+          <value name="xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+          <value name="ncName">statusValue.type</value>
+        </record>
+      </array>
+    </record>
+    <value name="nillable">true</value>
+    <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+  </record>
+</Values>
+</DATA>
+</MAPSET>
+
+<MAPSET NAME="Setter" OVERWRITE="true" VARIABLES="false" FIELD="/tpaData;4;0;com.wm.estd.ebXML.documents.CPA2:cpa_2/tns:CollaborationProtocolAgreement;2;0/tns:SimplePart;2;1">
+  <DATA ENCODING="XMLValues" I18N="true">
+
+<Values version="2.0">
+  <array name="xml" type="record" depth="1">
+    <record javaclass="com.wm.util.Values">
+      <value name="@tns:id">SP1</value>
+      <value name="@tns:mimetype">text/xml</value>
+    </record>
+  </array>
+  <record name="type" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="node_comment"></value>
+    <record name="node_hints" javaclass="com.wm.util.Values">
+      <value name="field_largerEditor">false</value>
+      <value name="field_password">false</value>
+    </record>
+    <value name="field_name">tns:SimplePart</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">1</value>
+    <value name="nillable">false</value>
+    <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+    <value name="is_soap_array_encoding_used">true</value>
+    <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">@tns:id</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <record name="field_content_type" javaclass="com.wm.util.Values">
+          <value name="contentType">1</value>
+          <value name="internalType">reference</value>
+          <value name="dataTypeVersion">dtVersion2</value>
+          <array name="targetNames" type="record" depth="1">
+            <record javaclass="com.wm.util.Values">
+              <value name="xmlns">http://www.w3.org/2001/XMLSchema</value>
+              <value name="ncName">ID</value>
+            </record>
+          </array>
+        </record>
+        <value name="nillable">true</value>
+        <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">@tns:mimetype</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <record name="field_content_type" javaclass="com.wm.util.Values">
+          <value name="contentType">1</value>
+          <value name="internalType">reference</value>
+          <value name="dataTypeVersion">dtVersion2</value>
+          <array name="targetNames" type="record" depth="1">
+            <record javaclass="com.wm.util.Values">
+              <value name="xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+              <value name="ncName">non-empty-string</value>
+            </record>
+          </array>
+        </record>
+        <value name="nillable">true</value>
+        <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">@tns:mimeparameters</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">true</value>
+        <record name="field_content_type" javaclass="com.wm.util.Values">
+          <value name="contentType">1</value>
+          <value name="internalType">reference</value>
+          <value name="dataTypeVersion">dtVersion2</value>
+          <array name="targetNames" type="record" depth="1">
+            <record javaclass="com.wm.util.Values">
+              <value name="xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+              <value name="ncName">non-empty-string</value>
+            </record>
+          </array>
+        </record>
+        <value name="nillable">true</value>
+        <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">@xlink:role</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">true</value>
+        <record name="field_content_type" javaclass="com.wm.util.Values">
+          <value name="contentType">1</value>
+          <value name="internalType">reference</value>
+          <array name="targetNames" type="record" depth="1">
+            <record javaclass="com.wm.util.Values">
+              <value name="xmlns">http://www.w3.org/2000/10/XMLSchema</value>
+              <value name="ncName">uriReference</value>
+            </record>
+          </array>
+        </record>
+        <value name="nillable">true</value>
+        <value name="field_xmlns">http://www.w3.org/1999/xlink</value>
+      </record>
+    </array>
+    <value name="rec_closed">true</value>
+  </record>
+</Values>
+</DATA>
+</MAPSET>
+
+<MAPSET NAME="Setter" OVERWRITE="true" VARIABLES="false" FIELD="/tpaData;4;0;com.wm.estd.ebXML.documents.CPA2:cpa_2/tns:CollaborationProtocolAgreement;2;0/tns:Packaging;2;1">
+  <DATA ENCODING="XMLValues" I18N="true">
+
+<Values version="2.0">
+  <array name="xml" type="record" depth="1">
+    <record javaclass="com.wm.util.Values">
+      <value name="@tns:id">PKG1</value>
+      <array name="tns:CompositeList" type="record" depth="1">
+        <record javaclass="com.wm.util.Values">
+          <array name="tns:Composite" type="record" depth="1">
+            <record javaclass="com.wm.util.Values">
+              <value name="@tns:id">C1</value>
+              <array name="tns:Constituent" type="record" depth="1">
+                <record javaclass="com.wm.util.Values">
+                  <value name="@tns:idref">SP1</value>
+                </record>
+              </array>
+            </record>
+          </array>
+        </record>
+      </array>
+    </record>
+  </array>
+  <record name="type" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="node_comment"></value>
+    <record name="node_hints" javaclass="com.wm.util.Values">
+      <value name="field_largerEditor">false</value>
+      <value name="field_password">false</value>
+    </record>
+    <value name="field_name">tns:Packaging</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">1</value>
+    <value name="nillable">false</value>
+    <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+    <value name="is_soap_array_encoding_used">true</value>
+    <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">@tns:id</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <record name="field_content_type" javaclass="com.wm.util.Values">
+          <value name="contentType">1</value>
+          <value name="internalType">reference</value>
+          <value name="dataTypeVersion">dtVersion2</value>
+          <array name="targetNames" type="record" depth="1">
+            <record javaclass="com.wm.util.Values">
+              <value name="xmlns">http://www.w3.org/2001/XMLSchema</value>
+              <value name="ncName">ID</value>
+            </record>
+          </array>
+        </record>
+        <value name="nillable">true</value>
+        <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="node_comment"></value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+        </record>
+        <value name="field_name">tns:ProcessingCapabilities</value>
+        <value name="field_type">record</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">true</value>
+        <value name="nillable">false</value>
+        <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+        <array name="rec_fields" type="record" depth="1">
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">@tns:parse</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <record name="field_content_type" javaclass="com.wm.util.Values">
+              <value name="contentType">1</value>
+              <value name="internalType">reference</value>
+              <value name="dataTypeVersion">dtVersion2</value>
+              <array name="targetNames" type="record" depth="1">
+                <record javaclass="com.wm.util.Values">
+                  <value name="xmlns">http://www.w3.org/2001/XMLSchema</value>
+                  <value name="ncName">boolean</value>
+                </record>
+              </array>
+            </record>
+            <value name="nillable">true</value>
+            <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">unknown</value>
+            <value name="field_name">@tns:generate</value>
+            <value name="field_type">string</value>
+            <value name="field_dim">0</value>
+            <record name="field_content_type" javaclass="com.wm.util.Values">
+              <value name="contentType">1</value>
+              <value name="internalType">reference</value>
+              <value name="dataTypeVersion">dtVersion2</value>
+              <array name="targetNames" type="record" depth="1">
+                <record javaclass="com.wm.util.Values">
+                  <value name="xmlns">http://www.w3.org/2001/XMLSchema</value>
+                  <value name="ncName">boolean</value>
+                </record>
+              </array>
+            </record>
+            <value name="nillable">true</value>
+            <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+          </record>
+        </array>
+        <value name="rec_closed">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">tns:CompositeList</value>
+        <value name="field_type">record</value>
+        <value name="field_dim">1</value>
+        <value name="nillable">false</value>
+        <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+        <value name="is_soap_array_encoding_used">true</value>
+        <array name="rec_fields" type="record" depth="1">
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">record</value>
+            <value name="field_name">tns:Encapsulation</value>
+            <value name="field_type">record</value>
+            <value name="field_dim">1</value>
+            <value name="field_opt">true</value>
+            <value name="nillable">false</value>
+            <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+            <value name="is_soap_array_encoding_used">true</value>
+            <array name="rec_fields" type="record" depth="1">
+              <record javaclass="com.wm.util.Values">
+                <value name="node_type">unknown</value>
+                <value name="field_name">@tns:id</value>
+                <value name="field_type">string</value>
+                <value name="field_dim">0</value>
+                <record name="field_content_type" javaclass="com.wm.util.Values">
+                  <value name="contentType">1</value>
+                  <value name="internalType">reference</value>
+                  <value name="dataTypeVersion">dtVersion2</value>
+                  <array name="targetNames" type="record" depth="1">
+                    <record javaclass="com.wm.util.Values">
+                      <value name="xmlns">http://www.w3.org/2001/XMLSchema</value>
+                      <value name="ncName">ID</value>
+                    </record>
+                  </array>
+                </record>
+                <value name="nillable">true</value>
+                <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+              </record>
+              <record javaclass="com.wm.util.Values">
+                <value name="node_type">unknown</value>
+                <value name="field_name">@tns:mimetype</value>
+                <value name="field_type">string</value>
+                <value name="field_dim">0</value>
+                <record name="field_content_type" javaclass="com.wm.util.Values">
+                  <value name="contentType">1</value>
+                  <value name="internalType">reference</value>
+                  <value name="dataTypeVersion">dtVersion2</value>
+                  <array name="targetNames" type="record" depth="1">
+                    <record javaclass="com.wm.util.Values">
+                      <value name="xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                      <value name="ncName">non-empty-string</value>
+                    </record>
+                  </array>
+                </record>
+                <value name="nillable">true</value>
+                <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+              </record>
+              <record javaclass="com.wm.util.Values">
+                <value name="node_type">unknown</value>
+                <value name="field_name">@tns:mimeparameters</value>
+                <value name="field_type">string</value>
+                <value name="field_dim">0</value>
+                <value name="field_opt">true</value>
+                <record name="field_content_type" javaclass="com.wm.util.Values">
+                  <value name="contentType">1</value>
+                  <value name="internalType">reference</value>
+                  <value name="dataTypeVersion">dtVersion2</value>
+                  <array name="targetNames" type="record" depth="1">
+                    <record javaclass="com.wm.util.Values">
+                      <value name="xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                      <value name="ncName">non-empty-string</value>
+                    </record>
+                  </array>
+                </record>
+                <value name="nillable">true</value>
+                <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+              </record>
+            </array>
+            <value name="rec_closed">true</value>
+          </record>
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">record</value>
+            <value name="field_name">tns:Composite</value>
+            <value name="field_type">record</value>
+            <value name="field_dim">1</value>
+            <value name="field_opt">true</value>
+            <value name="nillable">false</value>
+            <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+            <value name="is_soap_array_encoding_used">true</value>
+            <array name="rec_fields" type="record" depth="1">
+              <record javaclass="com.wm.util.Values">
+                <value name="node_type">unknown</value>
+                <value name="field_name">@tns:id</value>
+                <value name="field_type">string</value>
+                <value name="field_dim">0</value>
+                <record name="field_content_type" javaclass="com.wm.util.Values">
+                  <value name="contentType">1</value>
+                  <value name="internalType">reference</value>
+                  <value name="dataTypeVersion">dtVersion2</value>
+                  <array name="targetNames" type="record" depth="1">
+                    <record javaclass="com.wm.util.Values">
+                      <value name="xmlns">http://www.w3.org/2001/XMLSchema</value>
+                      <value name="ncName">ID</value>
+                    </record>
+                  </array>
+                </record>
+                <value name="nillable">true</value>
+                <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+              </record>
+              <record javaclass="com.wm.util.Values">
+                <value name="node_type">unknown</value>
+                <value name="field_name">@tns:mimetype</value>
+                <value name="field_type">string</value>
+                <value name="field_dim">0</value>
+                <record name="field_content_type" javaclass="com.wm.util.Values">
+                  <value name="contentType">1</value>
+                  <value name="internalType">reference</value>
+                  <value name="dataTypeVersion">dtVersion2</value>
+                  <array name="targetNames" type="record" depth="1">
+                    <record javaclass="com.wm.util.Values">
+                      <value name="xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                      <value name="ncName">non-empty-string</value>
+                    </record>
+                  </array>
+                </record>
+                <value name="nillable">true</value>
+                <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+              </record>
+              <record javaclass="com.wm.util.Values">
+                <value name="node_type">unknown</value>
+                <value name="field_name">@tns:mimeparameters</value>
+                <value name="field_type">string</value>
+                <value name="field_dim">0</value>
+                <value name="field_opt">true</value>
+                <record name="field_content_type" javaclass="com.wm.util.Values">
+                  <value name="contentType">1</value>
+                  <value name="internalType">reference</value>
+                  <value name="dataTypeVersion">dtVersion2</value>
+                  <array name="targetNames" type="record" depth="1">
+                    <record javaclass="com.wm.util.Values">
+                      <value name="xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+                      <value name="ncName">non-empty-string</value>
+                    </record>
+                  </array>
+                </record>
+                <value name="nillable">true</value>
+                <value name="field_xmlns">http://www.oasis-open.org/committees/ebxml-cppa/schema/cpp-cpa-2_0.xsd</value>
+              </record>
+            </array>
+            <value name="rec_closed">true</value>
+          </record>
+        </array>
+        <value name="rec_closed">true</value>
+      </record>
+    </array>
+    <value name="rec_closed">true</value>
+  </record>
+</Values>
+</DATA>
+</MAPSET>
+</MAP>
+</FLOW>

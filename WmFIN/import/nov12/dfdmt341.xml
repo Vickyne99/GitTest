@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<constraints>
+
+<!-- Text Block for NOV03 MT341 -->
+<field name="17F:" type="MixedType">
+    <bizName>FRA Discounting</bizName>
+    <pattern>1!a</pattern>
+    <choice>N</choice>
+    <choice>Y</choice>
+    <error type="choice">T36</error>
+</field>
+<field name="20:" type="PatternType">
+    <bizName>Reference - Sender's Reference</bizName>
+    <pattern>16x</pattern>
+    <error type="content">T26</error>
+</field>
+<field name="22A:" type="MixedType">
+    <bizName>Type of Operation</bizName>
+    <pattern>4!c</pattern>
+    <choice>AMND</choice>
+    <choice>CANC</choice>
+    <choice>SETT</choice>
+    <error type="choice">T36</error>
+</field>
+<field name="30F:" type="PatternType">
+    <bizName>F - Effective Date</bizName>
+    <pattern>&lt;DATE4&gt;</pattern>
+</field>
+<field name="30V:" type="PatternType">
+    <bizName>V - Fixing Date</bizName>
+    <pattern>&lt;DATE4&gt;</pattern>
+</field>
+<field name="32B:" type="PatternType">
+    <bizName>B - Currency, Notional Amount</bizName>
+    <pattern>&lt;CUR&gt;&lt;AMOUNT&gt;15</pattern>
+</field>
+<field name="38G:" type="MixedType">
+    <bizName>Designated Maturity</bizName>
+    <pattern>2n1!a/2n1!a</pattern>
+    <alias pattern="2n" bizName="Number-From" />            
+    <alias pattern="1!a" bizName="Period-From" />                
+    <alias pattern="2n" bizName="Number-To" />            
+    <alias pattern="1!a" bizName="Number-To" />                
+    <choice1>D</choice1>
+    <choice1>M</choice1>
+    <choice1>O</choice1>
+    <choice1>W</choice1>
+    <choice1>Y</choice1>
+    <choice2>D</choice2>
+    <choice2>M</choice2>
+    <choice2>O</choice2>
+    <choice2>W</choice2>
+    <choice2>Y</choice2>
+</field>
+<field name="71F:" type="PatternType">
+    <bizName>F - Broker's Commission</bizName>
+    <pattern>&lt;CUR&gt;&lt;AMOUNT&gt;15</pattern>
+</field>
+<field name="72:" type="PatternType">
+    <bizName>Sender to Receiver Information</bizName>
+    <pattern>&lt;FLD72&gt;</pattern>
+</field>
+<field name="77H:" type="MixedType">
+    <bizName>Type, Date, Version of the Agreement</bizName>
+    <pattern>6a[&lt;DATE4&gt;][//4!n]</pattern>
+    <choice>AFB</choice>
+    <choice>DERV</choice>
+    <choice>FRABBA</choice>
+    <choice>ISDA</choice>
+</field>
+<field name="86A:" type="MixedType">
+    <bizName>A - Intermediary 2</bizName>
+    <pattern>[&lt;PartyIdentifier&gt;][CRLF]&lt;SWIFTBIC&gt;</pattern>
+</field>
+<field name="86D:" type="MixedType">
+    <bizName>D - Intermediary 2</bizName>
+    <pattern>[&lt;PartyIdentifier&gt;][CRLF]4*35x</pattern>
+</field>
+
+</constraints>

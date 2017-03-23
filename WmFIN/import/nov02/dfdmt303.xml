@@ -1,0 +1,161 @@
+<?xml version="1.0"?>
+<constraints>
+
+<!-- Text Block for NOV02 MT303 -->
+
+<field name="17A:" type="MixedType">
+    <bizName>Buy (Sell) Indicator</bizName>
+    <pattern>1!a</pattern>
+    <choice>Y</choice>
+    <choice>N</choice>
+    <error type="choice">T36</error>
+</field>
+<field name="20:" type="PatternType">
+    <bizName>Reference - Sender's Reference</bizName>
+    <pattern>16x</pattern>
+</field>
+<field name="22A:" type="MixedType">
+    <bizName>Type of Operation</bizName>
+    <pattern>4!c</pattern>
+    <choice>AMNA</choice>
+    <choice>AMND</choice>
+    <choice>CANC</choice>
+    <choice>DUPL</choice>
+    <choice>NEWT</choice>
+    <error type="choice">T36</error>
+</field>
+<field name="23B:" type="MixedType">
+    <bizName>Identification of the Option</bizName>
+    <pattern>4!c</pattern>
+    <choice>CLAM</choice>
+    <choice>CLEU</choice>
+    <choice>PTAM</choice>
+    <choice>PTEU</choice>
+    <error type="choice">T36</error>
+</field>
+<field name="28C:" type="PatternType">
+    <bizName>Entry Number, Page Number</bizName>
+    <pattern>5n[/5n]</pattern>
+</field>
+<field name="30F:" type="PatternType">
+    <bizName>F - Final Settlement Date</bizName>
+    <pattern>&lt;DATE4&gt;</pattern>
+</field>
+<field name="30P:" type="PatternType">
+    <bizName>P - Premium Payment Date</bizName>
+    <pattern>&lt;DATE4&gt;</pattern>
+</field>
+<field name="30X:" type="PatternType">
+    <bizName>X - Earliest Excercise Date</bizName>
+    <pattern>&lt;DATE4&gt;</pattern>
+</field>
+<field name="32B:" type="PatternType">
+    <bizName>B - Currency, Amount Bought</bizName>
+    <pattern>&lt;CUR&gt;&lt;AMOUNT&gt;15</pattern>
+</field>
+<field name="33B:" type="PatternType">
+    <bizName>B - Currency, Amount Sold</bizName>
+    <pattern>&lt;CUR&gt;&lt;AMOUNT&gt;15</pattern>
+</field>
+<field name="72:" type="PatternType">
+    <bizName>Sender to Receiver Information</bizName>
+    <pattern>&lt;FLD72&gt;</pattern>
+</field>
+<field name="77D:" type="PathType">
+    <bizName>D - Terms and Conditions</bizName>
+    <path name="B4/B/77D:" type="PatternType">
+        <pattern>6*35x</pattern>
+    </path>
+    <path name="B4/C/77D:" type="MixedType">
+        <bizName>D - Terms and Conditions</bizName>
+        <pattern>(/ICOM/29x)|(/VARICOM/26x)|(/NONICOM/26x)5*35x</pattern>
+    </path>
+</field>
+<field name="82A:" type="MixedType">
+    <bizName>A - Fund Manager</bizName>
+    <pattern>[&lt;BICPLUS&gt;][CRLF]&lt;SWIFTBIC&gt;|&lt;NON-SWIFTBIC&gt;</pattern>
+    <choice>C</choice>
+    <choice>D</choice>
+</field>
+<field name="82D:" type="MixedType">
+    <bizName>D - Fund Manager</bizName>
+    <pattern>[&lt;BICPLUS&gt;][CRLF]4*35x</pattern>
+    <choice>C</choice>
+    <choice>D</choice>
+</field>
+<field name="82J:" type="MixedType">
+    <bizName>J - Fund Manager</bizName>
+    <pattern>&lt;PARTYFLD/J&gt;</pattern>
+    <choice>/ABIC/</choice>
+    <choice>/ACCT/</choice>
+    <choice>/NAME/</choice>
+    <choice>/ADD1/</choice>
+    <choice>/ADD2/</choice>
+    <choice>/CITY/</choice>
+    <choice>/USFW/</choice>
+    <choice>/USCH/</choice>
+    <choice>/GBSC/</choice>
+    <choice>/CLRC/</choice>
+    <error type="choice">T78</error>
+</field>
+<field name="83A:" type="MixedType">
+    <bizName>A - Fund</bizName>
+    <pattern>[&lt;BICPLUS&gt;][CRLF]&lt;SWIFTBIC&gt;|&lt;NONSWIFTBIC&gt;</pattern>
+    <choice>C</choice>
+    <choice>D</choice>
+</field>
+<field name="83D:" type="MixedType">
+    <bizName>D - Fund</bizName>
+    <pattern>[&lt;BICPLUS&gt;][CRLF]4*35x</pattern>
+    <choice>C</choice>
+    <choice>D</choice>
+</field>
+<field name="83J:" type="MixedType">
+    <bizName>J - Fund</bizName>
+    <pattern>&lt;PARTYFLD/J&gt;</pattern>
+    <choice>/ABIC/</choice>
+    <choice>/ACCT/</choice>
+    <choice>/NAME/</choice>
+    <choice>/ADD1/</choice>
+    <choice>/ADD2/</choice>
+    <choice>/CITY/</choice>
+    <choice>/USFW/</choice>
+    <choice>/USCH/</choice>
+    <choice>/GBSC/</choice>
+    <choice>/CLRC/</choice>
+    <error type="choice">T78</error>
+</field>
+<field name="87A:" type="MixedType">
+    <bizName>A - Executing Broker</bizName>
+    <pattern>[&lt;BICPLUS&gt;][CRLF]&lt;SWIFTBIC&gt;|&lt;NONSWIFTBIC&gt;</pattern>
+    <choice>C</choice>
+    <choice>D</choice>
+</field>
+<field name="87D:" type="MixedType">
+    <bizName>D - Executing Broker</bizName>
+    <pattern>[&lt;BICPLUS&gt;][CRLF]4*35x</pattern>
+    <choice>C</choice>
+    <choice>D</choice>
+</field>
+<field name="87J:" type="MixedType">
+    <bizName>J - Executing Broker</bizName>
+    <pattern>&lt;PARTYFLD/J&gt;</pattern>
+    <choice>/ABIC/</choice>
+    <choice>/ACCT/</choice>
+    <choice>/NAME/</choice>
+    <choice>/ADD1/</choice>
+    <choice>/ADD2/</choice>
+    <choice>/CITY/</choice>
+    <choice>/USFW/</choice>
+    <choice>/USCH/</choice>
+    <choice>/GBSC/</choice>
+    <choice>/CLRC/</choice>
+    <error type="choice">T78</error>
+</field>
+<field name="94A:" type="MixedType">
+    <bizName>Place A - Scope of Operation</bizName>
+    <pattern>4!c</pattern>
+    <choice>FORX</choice>
+    <choice>FXOP</choice>
+</field>
+</constraints>

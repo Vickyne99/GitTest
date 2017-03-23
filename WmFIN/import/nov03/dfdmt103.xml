@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<constraints>
+
+<!-- this is for field 119 in the B3 block of the message -->
+<field name="119:" type="PatternType">
+    <pattern>'STP'|'REMIT'</pattern>
+</field>
+
+<!-- Text Block for NOV03 MT103 -->
+<field name="20:" type="PatternType">
+    <bizName>Reference - Sender's Reference Number</bizName>
+    <pattern>16x</pattern>
+    <alias pattern="16x" bizName="Sender Reference" />    
+</field>
+<field name="32A:" type="PatternType">
+    <bizName>A - Value Date/Currency/Interbank Settled Amount</bizName>
+    <pattern>&lt;DATE2&gt;&lt;CUR&gt;&lt;AMOUNT&gt;15</pattern>
+    <alias pattern="&lt;DATE2&gt;" bizName="Value Date" />            
+</field>
+<field name="52A:" type="MixedType">
+    <bizName>A - Ordering Institution</bizName>
+    <pattern>[&lt;BICPLUS&gt;][CRLF]&lt;SWIFTBIC&gt;|&lt;NONSWIFTBIC&gt;</pattern>
+</field>
+<field name="52D:" type="MixedType">
+    <bizName>D - Ordering Institution</bizName>
+    <pattern>[&lt;BICPLUS&gt;][CRLF]4*35x</pattern>
+    <alias pattern="4*35x" bizName="Name & Address" />            
+</field>
+<field name="53A:" type="MixedType">
+    <bizName>A - Sender's Correspondent</bizName>
+    <pattern>[&lt;BICPLUS&gt;][CRLF]&lt;SWIFTBIC&gt;|&lt;NONSWIFTBIC&gt;</pattern>
+    <alias pattern="34x" bizName="Party Identifier" />                
+    <choice>C</choice>
+    <choice>D</choice>
+</field>
+<field name="53D:" type="MixedType">
+    <bizName>D - Sender's Correspondent</bizName>
+    <pattern>[&lt;BICPLUS&gt;][CRLF]4*35x</pattern>
+    <alias pattern="34x" bizName="Party Identifier" />                    
+    <alias pattern="4*35x" bizName="Name & Address" />                        
+    <choice>C</choice>
+    <choice>D</choice>
+</field>
+<field name="56A:" type="MixedType">
+    <bizName>A - Intermediary Institution</bizName>
+    <pattern>[&lt;BICPLUS&gt;][CRLF]&lt;SWIFTBIC&gt;|&lt;NON-SWIFTBIC&gt;</pattern>
+</field>
+<field name="56C:" type="MixedType">
+    <bizName>C - Intermediary Institution</bizName>
+    <pattern>&lt;BICPLUS&gt;</pattern>
+</field>
+<field name="56D:" type="MixedType">
+    <bizName>D - Intermediary Institution</bizName>
+    <pattern>[&lt;BICPLUS&gt;][CRLF]4*35x</pattern>
+    <alias pattern="4*35x" bizName="Name & Address" />                            
+</field>
+<field name="57A:" type="MixedType">
+    <bizName>A - Account With Institution</bizName>
+    <pattern>[&lt;BICPLUS&gt;][CRLF]&lt;SWIFTBIC&gt;|&lt;NONSWIFTBIC&gt;</pattern>
+</field>
+<field name="57D:" type="MixedType">
+    <bizName>D - Account With Institution</bizName>
+    <pattern>[&lt;BICPLUS&gt;][CRLF]4*35x</pattern>
+    <alias pattern="4*35x" bizName="Name & Address" />                                
+</field>
+<field name="72:" type="PatternType">
+    <bizName>Sender to Receiver Information</bizName>
+    <pattern>&lt;REJT/RETN/72&gt;|&lt;FLD72_not_STP&gt;</pattern>
+</field>
+</constraints>

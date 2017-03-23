@@ -1,0 +1,154 @@
+<?xml version="1.0"?>
+<constraints>
+
+<!-- Text Block for NOV03 MT514 -->
+
+<field name="22H::BUSE" type="MixedType">
+    <bizName>Buy/Sell Indicator</bizName>
+    <pattern>//4!c</pattern>
+    <choice>BUYI</choice>
+    <choice>CROF</choice>
+    <choice>CROT</choice>
+    <choice>DIVR</choice>
+    <choice>IPOO</choice>
+    <choice>REDM</choice>
+    <choice>SELL</choice>
+    <choice>SUBS</choice>
+    <choice>SWIF</choice>
+    <choice>SWIT</choice>
+</field>
+<field name="22F::TRCA" type="GenericFieldType">
+    <bizName>Party Capacity Indicator</bizName>
+    <pattern>/[8c]/4!c</pattern>
+    <choice>AGEN</choice>
+    <choice>BAGN</choice>
+    <choice>CAGN</choice>
+    <choice>CPRN</choice>
+    <choice>OAGN</choice>
+    <choice>PRAG</choice>
+    <choice>PRIN</choice>
+</field>
+<field name="22F::SETR" type="GenericFieldType">
+    <bizName>Type of Settlement Transaction</bizName>
+    <pattern>/[8c]/4!c</pattern>
+    <choice>BSBK</choice>
+    <choice>COLI</choice>
+    <choice>COLO</choice>
+    <choice>CONV</choice>
+    <choice>ISSU</choice>
+    <choice>OWNE</choice>
+    <choice>OWNI</choice>
+    <choice>MKDW</choice>
+    <choice>MKUP</choice>
+    <choice>NETT</choice>
+    <choice>NSYN</choice>
+    <choice>PAIR</choice>
+    <choice>PLAC</choice>
+    <choice>REAL</choice>
+    <choice>REDI</choice>
+    <choice>REDM</choice>
+    <choice>RELE</choice>
+    <choice>REPU</choice>
+    <choice>RODE</choice>
+    <choice>RPTO</choice>
+    <choice>RVPO</choice>
+    <choice>SBBK</choice>
+    <choice>SECB</choice>
+    <choice>SECL</choice>
+    <choice>SUBS</choice>
+    <choice>SYND</choice>
+    <choice>TRAD</choice>
+    <choice>TRPO</choice>
+    <choice>TRVO</choice>
+    <choice>TURN</choice>
+</field>
+<field name="22F::TRTR" type="GenericFieldType">
+    <bizName>Trade Transaction Type</bizName>
+    <pattern>/[8c]/4!c</pattern>
+    <choice>BASK</choice>
+    <choice>BRKR</choice>
+    <choice>FUND</choice>
+    <choice>INDX</choice>
+    <choice>LIST</choice>
+    <choice>PALL</choice>
+    <choice>PROG</choice>
+    <choice>TRAD</choice>
+</field>
+<field name="92A::INDX" type="PatternType">
+    <bizName>Rate A - Index Factor</bizName>
+    <pattern>//[N]&lt;NUMBER&gt;15</pattern>
+</field>
+<field name="22F::TTCO" type="GenericFieldType">
+    <bizName>Trade Transaction Condition Indicator</bizName>
+    <pattern>/[8c]/4!c</pattern>
+    <choice>BCBL</choice>
+    <choice>BCBN</choice>
+    <choice>BCFD</choice>
+    <choice>BCPD</choice>
+    <choice>BCRO</choice>
+    <choice>BCRP</choice>
+    <choice>BLKO</choice>
+    <choice>BTEX</choice>
+    <choice>BTMI</choice>
+    <choice>CALL</choice>
+    <choice>CBNS</choice>
+    <choice>CCPN</choice>
+    <choice>CDIV</choice>
+    <choice>CLBR</choice>
+    <choice>CLEN</choice>
+    <choice>CRST</choice>
+    <choice>CRTS</choice>
+    <choice>CWAR</choice>
+    <choice>DIOR</choice>
+    <choice>DIRT</choice>
+    <choice>DORD</choice>
+    <choice>FRAC</choice>
+    <choice>GTDL</choice>
+    <choice>MAPR</choice>
+    <choice>MONT</choice>
+    <choice>NBFR</choice>
+    <choice>NCRS</choice>
+    <choice>NEGO</choice>
+    <choice>NMPR</choice>
+    <choice>PUTT</choice>
+    <choice>SETI</choice>
+    <choice>SPCU</choice>
+    <choice>SPEX</choice>
+    <choice>SPSI</choice>
+    <choice>SSTI</choice>
+    <choice>TRFR</choice>
+    <choice>XBNS</choice>
+    <choice>XCPN</choice>
+    <choice>XDIV</choice>
+    <choice>XRTS</choice>
+    <choice>XWAR</choice>
+</field>
+<field name="23G:" type="Mixed2Type">
+    <bizName>Function of the Message</bizName>
+    <pattern>4!c[/4!c]</pattern>
+    <alias pattern="4!c" bizName="Function" />            
+    <alias pattern="4!c" bizName="Subfunction" />                
+    <choice1>CANC</choice1>
+    <choice1>NEWM</choice1>
+    <choice2>CODU</choice2>
+    <choice2>COPY</choice2>
+    <choice2>DUPL</choice2>
+    <error type="choice">T86</error>
+</field>
+<field name="94B::TRAD" type="GenericFieldType">
+    <bizName>Place B - Place of Trade</bizName>
+    <pattern>/[8c]/4!c[/30x]</pattern>
+    <choice>EXCH</choice>
+    <choice>OTCO</choice>
+    <choice>PRIM</choice>
+    <choice>SECM</choice>
+    <choice>VARI</choice>
+</field>
+<field name="22F::REVA" type="GenericFieldType">
+    <bizName>Revaluation Indicator</bizName>
+    <pattern>/[8c]/4!c</pattern>
+    <choice>REVY</choice>
+    <choice>REVN</choice>
+</field>
+
+</constraints>

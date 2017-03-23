@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+<constraints>
+
+<!-- Text Block for NOV03 MT544 -->
+
+<field name="23G:" type="Mixed2Type">
+    <bizName>Function of the Message</bizName>
+    <pattern>4!c[/4!c]</pattern>
+    <alias pattern="4!c" bizName="Function" />
+    <alias pattern="4!c" bizName="Subfunction" />
+    <choice1>CANC</choice1>
+    <choice1>NEWM</choice1>
+    <choice1>RVSL</choice1>
+    <choice2>CODU</choice2>
+    <choice2>COPY</choice2>
+    <choice2>DUPL</choice2>
+    <error type="choice">T86</error>
+</field>
+<field name="98B::SETT" type="GenericFieldType">
+    <bizName>Date/Time B - Settlement Date/Time</bizName>
+    <pattern>/[8c]/4!c</pattern>
+    <alias pattern="8c" bizName="Data Source Scheme" />    
+    <alias pattern="4!c" bizName="Date Code" />        
+    <choice>SEOP</choice>
+    <choice>WDIS</choice>
+    <choice>WIDI</choice>
+    <choice>WISS</choice>
+</field>
+<field name="22F::SETR" type="GenericFieldType">
+    <bizName>Type of Settlement Transaction</bizName>
+    <pattern>/[8c]/4!c</pattern>
+    <alias pattern="8c" bizName="Data Source Scheme" />    
+    <alias pattern="4!c" bizName="Indicator" />        
+    <choice>BSBC</choice>
+    <choice>BSBO</choice>
+    <choice>CNCB</choice>
+    <choice>COLO</choice>
+    <choice>COLI</choice>
+    <choice>CONV</choice>
+    <choice>FCTA</choice>
+    <choice>INSP</choice>
+    <choice>ISSU</choice>
+    <choice>OWNE</choice>
+    <choice>OWNI</choice>
+    <choice>MKDW</choice>
+    <choice>MKUP</choice>
+    <choice>NETT</choice>
+    <choice>NSYN</choice>
+    <choice>PAIR</choice>
+    <choice>PLAC</choice>
+    <choice>PORT</choice>
+    <choice>REAL</choice>
+    <choice>REDI</choice>
+    <choice>REDM</choice>
+    <choice>RELE</choice>
+    <choice>REPU</choice>
+    <choice>RODE</choice>
+    <choice>RPTO</choice>
+    <choice>SECB</choice>
+    <choice>SECL</choice>
+    <choice>SUBS</choice>
+    <choice>SYND</choice>
+    <choice>TBAC</choice>
+    <choice>TRAD</choice>
+    <choice>TRPO</choice>
+    <choice>TRVO</choice>
+    <choice>TURN</choice>
+</field>
+<field name="22F::TTCO" type="GenericFieldType">
+    <bizName>Trade Transaction Condition Indicator</bizName>
+    <pattern>/[8c]/4!c</pattern>
+    <alias pattern="8c" bizName="Data Source Scheme" />    
+    <alias pattern="4!c" bizName="Indicator" />        
+    <choice>BCRO</choice>
+    <choice>BCRP</choice>
+    <choice>BCPD</choice>
+    <choice>BCFD</choice>
+    <choice>BCBL</choice>
+    <choice>BCBN</choice>
+    <choice>CBNS</choice>
+    <choice>CCPN</choice>
+    <choice>CDIV</choice>
+    <choice>CRTS</choice>
+    <choice>CWAR</choice>
+    <choice>GTDL</choice>
+    <choice>SPCU</choice>
+    <choice>SPEX</choice>
+    <choice>XBNS</choice>
+    <choice>XCPN</choice>
+    <choice>XDIV</choice>
+    <choice>XRTS</choice>
+    <choice>XWAR</choice>
+</field>
+
+</constraints>

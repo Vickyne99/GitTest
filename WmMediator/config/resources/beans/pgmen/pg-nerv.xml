@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+            http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd">
+    
+	<bean id="EDAPerfMetricsFormatter" class="com.softwareag.pg.pgmen.events.eda.EDAPerfMetricsFormatter"
+		init-method="init" destroy-method="destroy">  
+        <property name="tableName" value="MED_EVENT_METRICS"/>
+        <property name="trueFormat" value="Y"/>
+        <property name="falseFormat" value="N"/>
+	</bean> 
+	
+	<bean id="EDAErrorFormatter" class="com.softwareag.pg.pgmen.events.eda.EDAErrorFormatter"
+		init-method="init" destroy-method="destroy">  
+        <property name="tableName" value="MED_EVENT_ERR"/>
+	</bean> 
+
+	<bean id="EDALifecycleFormatter" class="com.softwareag.pg.pgmen.events.eda.EDALifecycleFormatter"
+		init-method="init" destroy-method="destroy">  
+        <property name="tableName" value="MED_EVENT_LC"/>
+	</bean> 
+
+	<bean id="EDAMonitorFormatter" class="com.softwareag.pg.pgmen.events.eda.EDAMonitorFormatter"
+		init-method="init" destroy-method="destroy">    
+        <property name="tableName" value="MED_EVENT_MON"/>
+	</bean> 
+
+	<bean id="EDAPVFormatter" class="com.softwareag.pg.pgmen.events.eda.EDAPVFormatter"
+		init-method="init" destroy-method="destroy">    
+        <property name="tableName" value="MED_EVENT_PV"/>
+	</bean> 
+
+	<bean id="EDATransactionFormatter" class="com.softwareag.pg.pgmen.events.eda.EDATransactionFormatter"
+		init-method="init" destroy-method="destroy">    
+        <property name="tableName" value="MED_EVENT_TXN"/>
+	</bean> 
+
+	<bean id="nervBundler" class="com.softwareag.pg.pgmen.events.eda.bundle.EDANervBundler"/>
+		
+	<bean id="PgMenEdaConfiguration" class="com.softwareag.pg.pgmen.events.eda.PgMenEdaConfiguration"
+          factory-method="inst" destroy-method="destroy">
+        <property name="reportInterval" value="${pg.nerv.PgMenConfiguration.reportInterval}"/>
+        <property name="pdCollectionEnabled" value="${pg.nerv.PgMenConfiguration.perfDataEnabled}"/>
+        <property name="lifeCycleEventPublished" value="${pg.nerv.PgMenConfiguration.publishLifeCycleEvents}"/>
+        <property name="errorEventPublished" value="${pg.nerv.PgMenConfiguration.publishErrorEvents}"/>
+        <property name="policyViolationEventPublished" value="${pg.nerv.PgMenConfiguration.publishPolicyViolationEvents}"/>
+        <!--<property name="dbAlias" value="${pg.nerv.jdbc.functional.pool.alias}"/>-->
+        <property name="_emitToEDADefEP" value="${pg.nerv.PgMenConfiguration.emitToDefaultEndpoint}"/>
+        <property name="_emitToSqlEP" value="${pg.nerv.PgMenConfiguration.emitToSqlEndpoint}"/>
+        <property name="stopOnException" value="${pg.nerv.muticast.stoponexception}"/>
+
+    </bean>
+
+    <bean id="EDAEventEmitter" class="com.softwareag.pg.pgmen.events.eda.EDAEventEmitter"
+		init-method="init" destroy-method="destroy" depends-on="PgMenEdaConfiguration">  
+	</bean> 
+
+</beans>

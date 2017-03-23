@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<constraints>
+
+<!-- Text Block for NOV02 MT812 -->
+
+<field name="33B:" type="PatternType">
+    <bizName>B - Authorised Refund Amount</bizName>
+    <pattern>&lt;CUR&gt;&lt;NUMBER&gt;15</pattern>
+</field>
+<field name="57A:" type="MixedType">
+    <bizName>A - Refund Agent</bizName>
+    <pattern>[&lt;BICPLUS&gt;][CRLF]&lt;SWIFTBIC&gt;|&lt;NON-SWIFTBIC&gt;</pattern>
+    <choice>C</choice>
+    <choice>D</choice>
+</field>
+<field name="57B:" type="MixedType">
+    <bizName>B - Refund Agent</bizName>
+    <pattern>[&lt;BICPLUS&gt;][CRLF][35x]</pattern>
+    <choice>C</choice>
+    <choice>D</choice>
+</field>
+<field name="57D:" type="MixedType">
+    <bizName>D - Refund Agent</bizName>
+    <pattern>[&lt;BICPLUS&gt;][CRLF]4*35x</pattern>
+    <choice>C</choice>
+    <choice>D</choice>
+</field>
+<field name="59:" type="PatternType">
+    <bizName>Claimant (Contact Address)</bizName>
+    <pattern>[/34xCRLF]4*35x</pattern>
+</field>
+<field name="72:" type="PatternType">
+    <bizName>Sender to Receiver Information</bizName>
+    <pattern>&lt;ERI_F72narrative&gt;</pattern>
+</field>
+
+</constraints>

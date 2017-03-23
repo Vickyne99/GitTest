@@ -1,0 +1,42 @@
+function  WWHBookData_MatchTopic(P)
+{
+var C=null;
+if(P=="MQ_TraceConsole")C="ScreenLevelHelp12.html#wp1110882";
+if(P=="MQ_GET_GET")C="ScreenLevelHelp16.html#wp1110456";
+if(P=="MQ_GET_MQMD")C="ScreenLevelHelp16.html#wp1110474";
+if(P=="MQ_RR_MQMD")C="ScreenLevelHelp18.html#wp1110512";
+if(P=="MQ_ASYNC_MQMD")C="ScreenLevelHelp21.html#wp1110684";
+if(P=="MQ_SYNC_MQMD")C="ScreenLevelHelp23.html#wp1110532";
+if(P=="MQ_ViewNotifs")C="ScreenLevelHelp10.html#wp1111425";
+if(P=="MQ_ListNotifs")C="ScreenLevelHelp11.html#wp1111882";
+if(P=="MQ_ASYNC_JMS")C="ScreenLevelHelp21.html#wp1121400";
+if(P=="MQ_About")C="ScreenLevelHelp13.html#wp1083206";
+if(P=="MQ_PUT_JMS")C="ScreenLevelHelp15.html#wp1113430";
+if(P=="MQ_GET_JMS")C="ScreenLevelHelp16.html#wp1113966";
+if(P=="MQ_PEEK_MQMD")C="ScreenLevelHelp17.html#wp1115273";
+if(P=="MQ_PEEK_JMS")C="ScreenLevelHelp17.html#wp1115277";
+if(P=="MQ_RR_RR")C="ScreenLevelHelp18.html#wp1115801";
+if(P=="MQ_RR_JMS")C="ScreenLevelHelp18.html#wp1115781";
+if(P=="MQ_Inquire_Inquire")C="ScreenLevelHelp19.html#wp1126655";
+if(P=="MQ_Inquire_QM")C="ScreenLevelHelp19.html#wp1126656";
+if(P=="MQ_Inquire_Q")C="ScreenLevelHelp19.html#wp1126728";
+if(P=="MQ_PCF_OPT")C="ScreenLevelHelp20.html#wp1126953";
+if(P=="MQ_PCF_RESP")C="ScreenLevelHelp20.html#wp1126958";
+if(P=="MQ_ASYNC_PUB")C="ScreenLevelHelp22.html#wp1116657";
+if(P=="MQ_SYNC_SETTINGS")C="ScreenLevelHelp23.html#wp1116350";
+if(P=="MQ_PUT_PUT")C="ScreenLevelHelp15.html#wp1108912";
+if(P=="MQ_PUT_MQMD")C="ScreenLevelHelp15.html#wp1108930";
+if(P=="MQ_PCF_PCF")C="ScreenLevelHelp20.html#wp1128668";
+if(P=="MQ_PEEK_PEEK")C="ScreenLevelHelp17.html#wp1109088";
+if(P=="MQ_SYNC_JMS")C="ScreenLevelHelp23.html#wp1109764";
+if(P=="MQ_ConfConnType")C="ScreenLevelHelp5.html#wp1079463";
+if(P=="MQ_List")C="ScreenLevelHelp6.html#wp1110852";
+if(P=="MQ_EditNotifs")C="ScreenLevelHelp9.html#wp1110887";
+if(P=="MQ_ConfListType")C="ScreenLevelHelp8.html#wp1110996";
+if(P=="MQ_ConfListType")C="ScreenLevelHelp8.html#wp1110996";
+if(P=="MQ_ConnTypes")C="ScreenLevelHelp4.html#wp1067709";
+if(P=="MQ_Conn")C="ScreenLevelHelp3.html#wp1067368";
+if(P=="MQ_ListTypes")C="ScreenLevelHelp7.html#wp1110868";
+if(P=="MQ_ListTypes")C="ScreenLevelHelp7.html#wp1110868";
+return C;
+}

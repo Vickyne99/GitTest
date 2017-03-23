@@ -1,0 +1,196 @@
+<?xml version='1.0'?>
+<!--
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'
+                      '/share/xml/XHTML/dtds/xhtml1-transitional.dtd'>
+-->
+<html>
+  <head>
+    <title>webMethods Optimize for SAP 8.0</title>
+    <meta http-equiv="Pragma" content="no-cache"></meta>
+    <meta http-equiv="Expires" content="-1"></meta>
+    <link rel="stylesheet" type="text/css" href="/WmSAP/home.css"></link>
+  </head>
+  <body>
+    <h1>webMethods Optimize for SAP 8.0</h1>
+    
+    <!-- Contents -->
+    <div class="toc">
+      <p><strong>Contents</strong></p>
+      <ol>
+        <li><a class="tocxref" href="#h-1">About</a></li>
+        <li><a class="tocxref" href="#h-2">Documentation</a>
+          <ol>
+            <li><a class="tocxref" href="#h-2.1">Guides</a></li>
+            <li><a class="tocxref" href="#h-2.2">Where can I find the documentation?</a></li>
+          </ol>
+        </li>
+        <li><a class="tocxref" href="#h-3">Samples</a>
+          <ol><li><a class="tocxref" href="#h-3.1">Order to Cash</a></li></ol>
+        </li>
+      </ol>
+    </div>
+
+    <!-- About -->
+    <h2><a name="h-1">1</a> About</h2>
+    <p>webMethods Optimize for SAP enables you to extract process data (such as
+    the start and end time of a process instance), error data, or business data
+    (such as customers, order quantities, and revenues) from a running SAP process.
+    The extracted data can then be sent, using the webMethods SAP Adapter (SAP
+    Adapter) and Integration Server technologies, to webMethods Optimize for Process
+    (Optimize) for business monitoring and analysis.</p>
+
+    <p>The new architecture of Optimize for SAP is based on the following principles:</p>
+    <ul>
+      <li><b>Taking the webMethods centric view to SAP business processes...</b>
+      By representing events from a SAP business process as adapter notifications
+      at the webMethods platform, the SAP events can be represented as receive steps
+      that will be managed by the Process Engine. The following mapping between
+      usage patterns and the use of adapter notifications applies:
+      <ul>
+      <li>Remote Receiver FM <b>::</b> Remote event-receiver coupling (asynchronous)</li>
+      <li>Local Receiver FM <b>::</b> Local event-receiver coupling (asynchronous)</li>
+      <div class="note">
+	    <p><strong>Note.</strong> The publishable document created with this type
+      of notification will conform to the import parameters defined with RFC
+      <code>WM_PUSH_EVENT</code>. This is because the Local Receiver FM specified
+      under <em>Receiver FM</em> is expected to call RFC <code>WM_PUSH_EVENT</code>
+      in the end.</p></div>
+      <li>Remote Events <b>::</b> ALE listener notification (asynchronous)</li>
+      <li>Extending the Receiver FM for process steps not triggered by an event <b>::</b>
+	    RFC listener notification for function name <code>WM_PUSH_EVENT</code></li>
+      <div class="note">
+	    <p><strong>Note.</strong> In this case, only one RFC listener notification for
+      function name <code>WM_PUSH_EVENT</code> needs to be created. You can assign
+      it to different steps from your process model by specifying a subscription
+      filter.</p></div>
+      <div class="note">
+	    <p><strong>Note.</strong>  Make sure that the RFC listener notification created
+      for function name <code>WM_PUSH_EVENT</code> is the last one in the list of
+      adapter notifications defined with the listener. You can edit the notification
+      order via <em>Adapters > SAP Adapter > Edit Listener > Edit Notification
+      Order</em>.</p></div>
+      </ul>
+      </li>
+      <li><b>All Optimize for SAP monitoring will be done via the Process Engine...</b>
+      By uploading the business process for execution and letting the SAP Process
+      Monitoring Agent talking to the Process Engine directly, it is now possible
+      to embed SAP business process steps into an overall business process orchestrated
+      by the Process Engine. Additionally, the already available functionality of
+      Receive Steps, like selecting a correlation service	and specifying logged
+      fields, will automatically become available in Optimize for SAP scenarios.</li>
+      <li><b>Support of event parameters...</b> SAP events can have additional
+      parameters defined with them. By supporting these parameters it will now be
+      possible to monitor	business data stored in the SAP event parameter.</li>
+    </ul>
+
+    <!-- Documentation -->
+    <h2><a name="h-2">2</a> Documentation</h2>
+    <h3><a name="h-2.1">2.1</a> Guides</h3>
+    <p>The following documentation is available for Optimize for SAP:</p>
+    <ul>
+      <li>webMethods Optimize for SAP Installation Guide</li>
+      <li>webMethods Optimize for SAP Solutions Guide</li>
+    </ul>
+    <h3><a name="h-2.2">2.2</a> Where can I find the documentation?</h3>
+    <p>Documentation is available from the Software AG Documentation Web site,
+       the Empower Web site, and the Installer:</p>
+    <ul>
+      <li>Visit the <strong>webMethods</strong> area of the
+	      <a href="http://documentation.softwareag.com/">Software AG Documentation Web site</a>
+	     for the latest updates to the documentation.</li>
+      <li>Visit the <strong>Products</strong> area of the
+	      <a href="https://empower.softwareag.com/">Empower Web site </a>
+        for documentation for all current and previous versions of our products,
+        and documentation in other languages.</li>
+    <li>Product documentation is also available for download from the Software AG
+      Installer. From the Installer, select "Documentation" to download and install
+      the entire webMethods product library, or navigate within the Documentation
+      folder to select the product libraries to install. By default, the Installer
+      installs the documentation files to a single directory called <code>_documentation</code>,
+      located under your webMethods product installation directory.</li>
+     </ul>
+
+    <!-- Samples -->
+    <h2><a name="h-3">3</a> Samples</h2>
+    <h3><a name="h-3.1">3.1</a> Order to Cash</h3>
+    <p>The sample <i>Order to Cash</i> is the reference implementation chosen to
+    show the benefits of Optimize for SAP. The sample provides a business process
+    model, a package with predefined adapter notifications, and a simulator package.</p>
+    <p>To install the <i>Order to Cash</i> sample:
+      <ol>
+        <li>Download the sample from the
+          <a href="http://communities.softwareag.com/webmethods">Software AG Developer
+          Community for webMethods</a>.</li>
+        <li>Install package <code>Order2CashAN</code> from the <code>IntegrationServer/replicate/inbound</code> directory.</li>
+        <li>Load the process model into Designer and then upload it for execution. 
+          This will create a new package <code>Order2CashPE</code> that works
+          together with the notifications defined in package <code>Order2CashAN</code>.</li>
+      </ol>
+    </p>
+    <p>To install the <i>Order to Cash</i> simulator:
+      <ol>
+        <li>Install package <code>Order2CashSC</code> from the <code>IntegrationServer/replicate/inbound</code> directory.</li>
+      </ol>
+    </p>
+
+    <p>Package <code>Order2CashSC</code> contains service
+    <a href="/WmRoot/service-info.dsp?service=sim:sampleSimulator">sim:sampleSimulator</a>
+    that can be used to simulate the typical Order to Cash business process without requiring
+    an actual connection to a SAP system resource. Instead it reads and manipulates
+    pipeline files from the files system that were originally created by executing
+    an Order to Cash process instance within SAP.</p>
+    <p>Most of the SAP related Receive Steps from the <i>Order to Cash</i> process model use the service
+    <a href="/WmRoot/service-info.dsp?service=sample.sap.bem.Correlate:extractCID">sample.sap.bem.Correlate:extractCID</a>
+    in conjunction with the Correlation FM
+    <a href="./samples/abap/z_wm_correlate_documents.txt">z_wm_correlate_documents</a>,
+    installed on your SAP system, to map individual document id's to a business
+    process instance.</p>
+    <p>With remote event-receiver couplings, the event container will be published
+    to the Broker directly via a matching adapter notification defined on the SAP
+    Adapter.</p>
+
+    <p>Local event-receiver couplings are implemented via local receiver FM
+    <a href="./samples/abap/z_wm_handle_event.txt">z_wm_handle_event</a> installed
+    on your SAP system. The event container will be published to the
+    Broker via a matching adapter notification defined on the SAP Adapter by
+    calling RFC <code>WM_PUSH_EVENT</code> at the SAP Adapter from the local
+    receiver FM.</p>
+    <div class="note">
+      <p><strong>Note.</strong> RFC <code>WM_PUSH_EVENT</code> called from the
+      Local Receiver FM does not have to be defined at the calling SAP system. It
+      is already defined in the local SAP Adapter DDIC.</p></div>
+    <div class="note">
+      <p><strong>Important!</strong> The local event-receiver coupling approach is
+      deprecated. Functionality will not be developed further and may be removed in
+      a later release of Optimize for SAP.</p></div>
+    
+    <p>The local function modules
+    <a href="./samples/abap/z_wm_correlate_documents.txt">z_wm_correlate_documents</a> and
+    <a href="./samples/abap/z_wm_handle_event.txt">z_wm_handle_event</a> work in
+    conjunction with type pool <a href="./samples/abap/zbem.txt">zbem</a>
+    and helper <code>class zcl_bem</code>:
+    <ul>
+      <li><a href="./samples/abap/zcl_bem_macros.txt">Macros</a></li>
+      <li><a href="./samples/abap/zcl_bem_private.txt">Private Section</a>
+        <ul>
+          <li><a href="./samples/abap/zcl_bem_private_add_status_info.txt">add_status_info</a></li>
+          <li><a href="./samples/abap/zcl_bem_private_get_previous_object.txt">get_previous_object</a></li>
+          <li><a href="./samples/abap/zcl_bem_private_get_table_data.txt">get_table_data</a></li>
+          <li><a href="./samples/abap/zcl_bem_private_raise_local_event.txt">raise_local_event</a></li>
+        </ul>
+      </li>
+      <li><a href="./samples/abap/zcl_bem_public.txt">Public Section</a>
+        <ul>
+          <li><a href="./samples/abap/zcl_bem_public_constructor.txt">constructor</a></li>
+          <li><a href="./samples/abap/zcl_bem_public_get_evt_container.txt">get_evt_container</a></li>
+          <li><a href="./samples/abap/zcl_bem_public_handle_substeps.txt">handle_substeps</a></li>
+          <li><a href="./samples/abap/zcl_bem_public_push_event.txt">push_event</a></li>
+          <li><a href="./samples/abap/zcl_bem_public_set_business_data.txt">set_business_data</a></li>
+          <li><a href="./samples/abap/zcl_bem_public_set_corr_object.txt">set_corr_object</a></li>
+          <li><a href="./samples/abap/zcl_bem_public_set_evt_parameters.txt">set_evt_parameters</a></li>
+        </ul>
+      </li>
+    </ul>
+    </p>
+  </body>
+</html>

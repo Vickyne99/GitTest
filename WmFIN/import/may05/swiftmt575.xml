@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<block id="575" isMandatory="true" isList="false">
+	<lineAttribute id="1:" isMandatory="true" EAImap="B1" B2BMap="" Validation="" extractHint="BR,{,},T,S" idHint="FL,0,2"/>
+	<lineAttribute id="2:" isMandatory="false" EAImap="B2" B2BMap="" Validation="" extractHint="BR,{,},T,S" idHint="FL,0,2"/>
+	<block id="3:" isMandatory="false" isList="false" termString="" EAImap="B3" B2BMap="" Validation="" extractHint="BR,{,},T,S" idHint="FL,0,2">
+		<lineAttribute id="103:" isMandatory="false" EAImap="O103" B2BMap="" Validation="" extractHint="BR,{,},T,S" idHint="FL,0,4"/>
+		<lineAttribute id="113:" isMandatory="false" EAImap="O113" B2BMap="" Validation="" extractHint="BR,{,},T,S" idHint="FL,0,4"/>
+		<lineAttribute id="108:" isMandatory="false" EAImap="O108" B2BMap="" Validation="" extractHint="BR,{,},T,S" idHint="FL,0,4"/>
+		<lineAttribute id="119:" isMandatory="false" EAImap="O119" B2BMap="" Validation="" extractHint="BR,{,},T,S" idHint="FL,0,4"/>
+		<lineAttribute id="115:" isMandatory="false" EAImap="O115" B2BMap="" Validation="" extractHint="BR,{,},T,S" idHint="FL,0,4"/>
+	</block>
+	<block id="4:\r\n" isMandatory="false" isList="false" termString="\r\n" EAImap="B4" B2BMap="" Validation="" extractHint="BR,{,-},T,S" idHint="FL,0,4">
+		<block id="GENL" isMandatory="true" isList="false" termString="\r\n" extractHint="BR,:16R:GENL\r\n,:16S:GENL,T,S" idHint="EH,5,9" EAImap="MGENL" B2BMap="" Validation="">
+			<lineAttribute id=":28E:" isMandatory="true" EAImap="M28E" B2BMap="" Validation="" extractHint="DL,:,T,S" idHint="FL,0,5"/>
+			<lineAttribute id=":13A::STAT" isMandatory="false" EAImap="O13ASTAT" B2BMap="" Validation="" extractHint="DL,:,T,S" idHint="FL,0,10"/>
+			<lineAttribute id=":20C::SEME" isMandatory="true" EAImap="M20CSEME" B2BMap="" Validation="" extractHint="DL,:,T,S" idHint="FL,0,10"/>
+			<lineAttribute id=":23G:" isMandatory="true" EAImap="M23G" B2BMap="" Validation="" extractHint="DL,:,T,S" idHint="FL,0,5"/>
+			<lineAttribute id=":98A::PREP,:98C::PREP" isMandatory="false" EAImap="O98APREP,O98CPREP" B2BMap="" Validation="" extractHint="DL,:,T,S" idHint="FL,0,10"/>
+			<lineAttribute id=":69A::STAT,:69B::STAT" isMandatory="true" EAImap="M69ASTAT,M69BSTAT" B2BMap="" Validation="" extractHint="DL,:,T,S" idHint="FL,0,10"/>
+			<block id="SB1" isList="true" termString="\r\n" EAImap="OBSB1" B2BMap="" Validation="" isMandatory="false">
+				<lineAttribute id=":22F::SFRE,:22F::CODE" EAImap="O22FSFRE,O22FCODE" B2BMap="" Validation="" extractHint="DL,:,T,S" idHint="FL,0,10" isMandatory="true"/>
+			</block>
+			<block id="LINK" isMandatory="false" isList="true" termString="\r\n" extractHint="BR,:16R:LINK\r\n,:16S:LINK,T,S" idHint="EH,5,9" EAImap="OLINK" B2BMap="" Validation="">
+				<lineAttribute id=":13A::LINK,:13B::LINK" isMandatory="false" EAImap="O13ALINK,O13BLINK" B2BMap="" Validation="" extractHint="DL,:,T,S" idHint="FL,0,10"/>
+				<lineAttribute id=":20C::PREV,:20C::RELA" isMandatory="true" EAImap="M20CPREV,M20CRELA" B2BMap="" Validation="" extractHint="DL,:,T,S" idHint="FL,0,10"/>
+			</block>
+			<lineAttribute id=":97A::SAFE,:97B::SAFE" isMandatory="false" EAImap="O97ASAFE,O97BSAFE" B2BMap="" Validation="" extractHint="DL,:,T,S" idHint="FL,0,10"/>
+			<lineAttribute id=":17B::ACTI" isMandatory="true" EAImap="M17BACTI" B2BMap="" Validation="" extractHint="DL,:,T,S" idHint="FL,0,10"/>
+		</block>
+		<block id="CASHACCT" isMandatory="false" isList="true" termString="\r\n" extractHint="BR,:16R:CASHACCT\r\n,:16S:CASHACCT,T,S" idHint="EH,5,13" EAImap="OCASHACCT" B2BMap="" Validation="">
+			<lineAttribute id=":97A::CASH" isMandatory="true" EAImap="M97ACASH" B2BMap="" Validation="" extractHint="DL,:,T,S" idHint="FL,0,10"/>
+			<block id="ACTCURR" isMandatory="true" isList="true" termString="\r\n" extractHint="BR,:16R:ACTCURR\r\n,:16S:ACTCURR,T,S" idHint="EH,5,12" EAImap="MACTCURR" B2BMap="" Validation="">
+				<lineAttribute id=":11A::ACCT" isMandatory="true" EAImap="M11AACCT" B2BMap="" Validation="" extractHint="DL,:,T,S" idHint="FL,0,10"/>
+				<lineAttribute id=":17B::ACTI" isMandatory="true" EAImap="M17BACTI" B2BMap="" Validation="" extractHint="DL,:,T,S" idHint="FL,0,10"/>
+				<block id="SB1" isMandatory="true" isList="true" termString="\r\n" EAImap="MBSB1" B2BMap="" Validation="">
+					<lineAttribute id=":93D::FIOP,:93D::INOP,:93D::FICL,:93D::INCL" isMandatory="true" EAImap="O93DFIOP,O93DINOP,O93DFICL,O93DINCL" B2BMap="" Validation="" extractHint="DL,:,T,S" idHint="FL,0,10"/>
+				</block>
+				<block id="ACTINFO" isMandatory="false" isList="true" termString="\r\n" extractHint="BR,:16R:ACTINFO\r\n,:16S:ACTINFO,T,S" idHint="EH,5,12" EAImap="OACTINFO" B2BMap="" Validation="">
+					<block id="LINK" isMandatory="true" isList="true" termString="\r\n" extractHint="BR,:16R:LINK\r\n,:16S:LINK,T,S" idHint="EH,5,9" EAImap="MLINK" B2BMap="" Validation="">
+						<lineAttribute id=":13A::LINK,:13B::LINK" isMandatory="false" EAImap="O13ALINK,O13BLINK" B2BMap="" Validation="" extractHint="DL,:,T,S" idHint="FL,0,10"/>
+						<lineAttribute id=":20C::PREV,:20C::RELA,:20C::ASRF,:20C::COMM,:20C::POOL,:20C::TRRF" isMandatory="true" EAImap="M20CPREV,M20CRELA,M20CASRF,M20CCOMM,M20CPOOL,M20CTRRF" B2BMap="" Validation="" extractHint="DL,:,T,S" idHint="FL,0,10"/>
+					</block>
+					<block id="CASHDET" isMandatory="false" isList="false" termString="\r\n" extractHint="BR,:16R:CASHDET\r\n,:16S:CASHDET,T,S" idHint="EH,5,12" EAImap="OCASHDET" B2BMap="" Validation="">
+						<lineAttribute id=":19A::PSTA" isMandatory="true" EAImap="M19APSTA" B2BMap="" Validation="" extractHint="DL,:,T,S" idHint="FL,0,10"/>
+						<lineAttribute id=":36B::UNDL" isMandatory="false" EAImap="O36BUNDL" B2BMap="" Validation="" extractHint="DL,:,T,S" idHint="FL,0,10"/>
+						<lineAttribute id=":35B:" isMandatory="false" EAImap="O35B" B2BMap="" Validation="" extractHint="DL,:,T,S" idHint="FL,0,5"/>
+						<block id="SB1" isMandatory="true" isList="true" termString="\r\n" EAImap="MBSB1" B2BMap="" Validation="">
+							<lineAttribute id=":22F::TRAN,:22H::CRDB,:22F::CAEV,:22F::CASH" isMandatory="true" EAImap="M22FTRAN,M22HCRDB,O22FCAEV,O22FCASH" B2BMap="" Validation="" extractHint="DL,:,T,S" idHint="FL,0,10"/>
+						</block>
+						<lineAttribute id=":98A::ESET,:98B::ESET,:98C::ESET" isMandatory="true" EAImap="M98AESET,M98BESET,M98CESET" B2BMap="" Validation="" extractHint="DL,:,T,S" idHint="FL,0,10"/>
+						<lineAttribute id=":70E::TRDE" isMandatory="false" EAImap="O70ETRDE" B2BMap="" Validation="" extractHint="DL,:,T,S" idHint="FL,0,10"/>
+					</block>
+					<block id="CASHSECDET" isMandatory="false" isList="false" termString="\r\n" extractHint="BR,:16R:CASHSECDET\r\n,:16S:CASHSECDET,T,S" idHint="EH,5,15" EAImap="OCASHSECDET" B2BMap="" Validation="">
+						<lineAttribute id=":97A::SAFE,:97B::SAFE" isMandatory="false" EAImap="O97ASAFE,O97BSAFE" B2BMap="" Validation="" extractHint="DL,:,T,S" idHint="FL,0,10"/>
+						<block id="SB1" isMandatory="true" isList="true" termString="\r\n" EAImap="MBSB1" B2BMap="" Validation="">
+							<lineAttribute id=":19A::PSTA,:19A::ACRU,:19A::DEAL" isMandatory="true" EAImap="M19APSTA,O19AACRU,O19ADEAL" B2BMap="" Validation="" extractHint="DL,:,T,S" idHint="FL,0,10"/>
+						</block>
+						<lineAttribute id=":36B::PSTA" isMandatory="true" EAImap="M36BPSTA" B2BMap="" Validation="" extractHint="DL,:,T,S" idHint="FL,0,10"/>
+						<lineAttribute id=":99A::DAAC" isMandatory="false" EAImap="O99ADAAC" B2BMap="" Validation="" extractHint="DL,:,T,S" idHint="FL,0,10"/>
+						<lineAttribute id=":35B:" isMandatory="true" EAImap="M35B" B2BMap="" Validation="" extractHint="DL,:,T,S" idHint="FL,0,5"/>
+						<block id="SB2" isMandatory="true" isList="true" termString="\r\n" EAImap="MBSB2" B2BMap="" Validation="">
+							<lineAttribute id=":22F::TRAN,:22H::REDE,:22F::CAEV,:22F::SETR,:22F::STCO,:22F::TRCA,:22F::STAM,:22F::RTGS,:22F::REGT,:22F::BENE,:22F::CASY,:22F::TCPI,:22F::REPT,:22F::MACL,:22F::BLOC,:22F::REST,:22F::SETS" isMandatory="true" EAImap="M22FTRAN,M22HREDE,O22FCAEV,O22FSETR,O22FSTCO,O22FTRCA,O22FSTAM,O22FRTGS,O22FREGT,O22FBENE,O22FCASY,O22FTCPI,O22FREPT,O22FMACL,O22FBLOC,O22FREST,O22FSETS" B2BMap="" Validation="" extractHint="DL,:,T,S" idHint="FL,0,10"/>
+						</block>
+						<block id="SB3" isMandatory="true" isList="true" termString="\r\n" EAImap="MBSB3" B2BMap="" Validation="">
+							<lineAttribute id=":98A::ESET,:98A::SETT,:98A::TRAD,:98B::SETT,:98B::TRAD,:98C::ESET,:98C::SETT,:98C::TRAD" isMandatory="true" EAImap="M98AESET,O98ASETT,O98ATRAD,O98BSETT,O98BTRAD,M98CESET,O98CSETT,O98CTRAD" B2BMap="" Validation="" extractHint="DL,:,T,S" idHint="FL,0,10"/>
+						</block>
+						<lineAttribute id=":25D::MOVE" isMandatory="false" EAImap="O25DMOVE" B2BMap="" Validation="" extractHint="DL,:,T,S" idHint="FL,0,10"/>
+						<lineAttribute id=":70E::TRDE" isMandatory="false" EAImap="O70ETRDE" B2BMap="" Validation="" extractHint="DL,:,T,S" idHint="FL,0,10"/>
+					</block>
+					<block id="SETPRTY" isMandatory="false" isList="true" termString="\r\n" extractHint="BR,:16R:SETPRTY\r\n,:16S:SETPRTY,T,S" idHint="EH,5,12" EAImap="OSETPRTY" B2BMap="" Validation="">
+						<lineAttribute id=":95P::BUYR,:95P::DEAG,:95P::DECU,:95P::DEI1,:95P::DEI2,:95P::DEI3,:95P::DEI4,:95P::DEI5,:95P::DEI6,:95P::DEI7,:95P::DEI8,:95P::DEI9,:95P::PSET,:95P::REAG,:95P::RECU,:95P::REI1,:95P::REI2,:95P::REI3,:95P::REI4,:95P::REI5,:95P::REI6,:95P::REI7,:95P::REI8,:95P::REI9,:95P::SELL,:95R::BUYR,:95R::DEAG,:95R::DECU,:95R::DEI1,:95R::DEI2,:95R::DEI3,:95R::DEI4,:95R::DEI5,:95R::DEI6,:95R::DEI7,:95R::DEI8,:95R::DEI9,:95R::REAG,:95R::RECU,:95R::REI1,:95R::REI2,:95R::REI3,:95R::REI4,:95R::REI5,:95R::REI6,:95R::REI7,:95R::REI8,:95R::REI9,:95R::SELL,:95Q::BUYR,:95Q::DEAG,:95Q::DECU,:95Q::DEI1,:95Q::DEI2,:95Q::DEI3,:95Q::DEI4,:95Q::DEI5,:95Q::DEI6,:95Q::DEI7,:95Q::DEI8,:95Q::DEI9,:95Q::PSET,:95Q::REAG,:95Q::RECU,:95Q::REI1,:95Q::REI2,:95Q::REI3,:95Q::REI4,:95Q::REI5,:95Q::REI6,:95Q::REI7,:95Q::REI8,:95Q::REI9,:95Q::SELL,:95C::PSET" isMandatory="true" EAImap="O95PBUYR,O95PDEAG,O95PDECU,O95PDEI1,O95PDEI2,O95PDEI3,O95PDEI4,O95PDEI5,O95PDEI6,O95PDEI7,O95PDEI8,O95PDEI9,O95PPSET,O95PREAG,O95PRECU,O95PREI1,O95PREI2,O95PREI3,O95PREI4,O95PREI5,O95PREI6,O95PREI7,O95PREI8,O95PREI9,O95PSELL,O95RBUYR,O95RDEAG,O95RDECU,O95RDEI1,O95RDEI2,O95RDEI3,O95RDEI4,O95RDEI5,O95RDEI6,O95RDEI7,O95RDEI8,O95RDEI9,O95RREAG,O95RRECU,O95RREI1,O95RREI2,O95RREI3,O95RREI4,O95RREI5,O95RREI6,O95RREI7,O95RREI8,O95RREI9,O95RSELL,O95QBUYR,O95QDEAG,O95QDECU,O95QDEI1,O95QDEI2,O95QDEI3,O95QDEI4,O95QDEI5,O95QDEI6,O95QDEI7,O95QDEI8,O95QDEI9,O95QPSET,O95QREAG,O95QRECU,O95QREI1,O95QREI2,O95QREI3,O95QREI4,O95QREI5,O95QREI6,O95QREI7,O95QREI8,O95QREI9,O95QSELL,O95CPSET" B2BMap="" Validation="" extractHint="DL,:,T,S" idHint="FL,0,10"/>
+						<lineAttribute id=":97A::SAFE,:97B::SAFE" isMandatory="false" EAImap="O97ASAFE,O97BSAFE" B2BMap="" Validation="" extractHint="DL,:,T,S" idHint="FL,0,10"/>
+					</block>
+				</block>
+			</block>
+		</block>
+		<block id="FREEASS" isMandatory="false" isList="true" termString="\r\n" extractHint="BR,:16R:FREEASS\r\n,:16S:FREEASS,T,S" idHint="EH,5,12" EAImap="OFREEASS" B2BMap="" Validation="">
+			<block id="LINK" isMandatory="true" isList="true" termString="\r\n" extractHint="BR,:16R:LINK\r\n,:16S:LINK,T,S" idHint="EH,5,9" EAImap="MLINK" B2BMap="" Validation="">
+				<lineAttribute id=":13A::LINK,:13B::LINK" isMandatory="false" EAImap="O13ALINK,O13BLINK" B2BMap="" Validation="" extractHint="DL,:,T,S" idHint="FL,0,10"/>
+				<lineAttribute id=":20C::PREV,:20C::RELA,:20C::ASRF,:20C::COMM,:20C::POOL,:20C::TRRE" isMandatory="true" EAImap="M20CPREV,M20CRELA,M20CASRF,M20CCOMM,M20CPOOL,M20CTRRE" B2BMap="" Validation="" extractHint="DL,:,T,S" idHint="FL,0,10"/>
+			</block>
+			<block id="TRANSDET" isMandatory="false" isList="false" termString="\r\n" extractHint="BR,:16R:TRANSDET\r\n,:16S:TRANSDET,T,S" idHint="EH,5,13" EAImap="OTRANSDET" B2BMap="" Validation="">
+				<lineAttribute id=":97A::SAFE,:97B::SAFE" isMandatory="false" EAImap="O97ASAFE,O97BSAFE" B2BMap="" Validation="" extractHint="DL,:,T,S" idHint="FL,0,10"/>
+				<lineAttribute id=":36B::PSTA" isMandatory="true" EAImap="M36BPSTA" B2BMap="" Validation="" extractHint="DL,:,T,S" idHint="FL,0,10"/>
+				<lineAttribute id=":99A::DAAC" isMandatory="false" EAImap="O99ADAAC" B2BMap="" Validation="" extractHint="DL,:,T,S" idHint="FL,0,10"/>
+				<lineAttribute id=":35B:" isMandatory="true" EAImap="M35B" B2BMap="" Validation="" extractHint="DL,:,T,S" idHint="FL,0,5"/>
+				<block id="SB1" isMandatory="true" isList="true" termString="\r\n" EAImap="MBSB1" B2BMap="" Validation="">
+					<lineAttribute id=":22F::TRAN,:22H::REDE,:22F::CAEV,:22F::SETR,:22F::STCO,:22F::TRCA,:22F::STAM,:22F::RTGS,:22F::REGT,:22F::BENE,:22F::TCPI,:22F::REPT,:22F::MACL,:22F::BLOC,:22F::REST,:22F::SETS" isMandatory="true" EAImap="M22FTRAN,O22HREDE,O22FCAEV,O22FSETR,O22FSTCO,O22FTRCA,O22FSTAM,O22FRTGS,O22FREGT,O22FBENE,O22FTCPI,O22FREPT,O22FMACL,O22FBLOC,O22FREST,O22FSETS" B2BMap="" Validation="" extractHint="DL,:,T,S" idHint="FL,0,10"/>
+				</block>
+				<block id="SB2" isMandatory="true" isList="true" termString="\r\n" EAImap="MBSB2" B2BMap="" Validation="">
+					<lineAttribute id=":98A::ESET,:98A::SETT,:98A::TRAD,:98B::SETT,:98B::TRAD,:98C::ESET,:98C::SETT,:98C::TRAD" isMandatory="true" EAImap="M98AESET,O98ASETT,O98ATRAD,O98BSETT,O98BTRAD,M98CESET,O98CSETT,O98CTRAD" B2BMap="" Validation="" extractHint="DL,:,T,S" idHint="FL,0,10"/>
+				</block>
+				<lineAttribute id=":25D::MOVE" isMandatory="false" EAImap="O25DMOVE" B2BMap="" Validation="" extractHint="DL,:,T,S" idHint="FL,0,10"/>
+				<lineAttribute id=":70E::TRDE" isMandatory="false" EAImap="O70ETRDE" B2BMap="" Validation="" extractHint="DL,:,T,S" idHint="FL,0,10"/>
+				<block id="SETPRTY" isMandatory="false" isList="true" termString="\r\n" extractHint="BR,:16R:SETPRTY\r\n,:16S:SETPRTY,T,S" idHint="EH,5,12" EAImap="OSETPRTY" B2BMap="" Validation="">
+					<lineAttribute id=":95P::BUYR,:95P::DEAG,:95P::DECU,:95P::DEI1,:95P::DEI2,:95P::DEI3,:95P::DEI4,:95P::DEI5,:95P::DEI6,:95P::DEI7,:95P::DEI8,:95P::DEI9,:95P::PSET,:95P::REAG,:95P::RECU,:95P::REI1,:95P::REI2,:95P::REI3,:95P::REI4,:95P::REI5,:95P::REI6,:95P::REI7,:95P::REI8,:95P::REI9,:95P::SELL,:95R::BUYR,:95R::DEAG,:95R::DECU,:95R::DEI1,:95R::DEI2,:95R::DEI3,:95R::DEI4,:95R::DEI5,:95R::DEI6,:95R::DEI7,:95R::DEI8,:95R::DEI9,:95R::REAG,:95R::RECU,:95R::REI1,:95R::REI2,:95R::REI3,:95R::REI4,:95R::REI5,:95R::REI6,:95R::REI7,:95R::REI8,:95R::REI9,:95R::SELL,:95Q::BUYR,:95Q::DEAG,:95Q::DECU,:95Q::DEI1,:95Q::DEI2,:95Q::DEI3,:95Q::DEI4,:95Q::DEI5,:95Q::DEI6,:95Q::DEI7,:95Q::DEI8,:95Q::DEI9,:95Q::PSET,:95Q::REAG,:95Q::RECU,:95Q::REI1,:95Q::REI2,:95Q::REI3,:95Q::REI4,:95Q::REI5,:95Q::REI6,:95Q::REI7,:95Q::REI8,:95Q::REI9,:95Q::SELL,:95C::PSET" isMandatory="true" EAImap="O95PBUYR,O95PDEAG,O95PDECU,O95PDEI1,O95PDEI2,O95PDEI3,O95PDEI4,O95PDEI5,O95PDEI6,O95PDEI7,O95PDEI8,O95PDEI9,O95PPSET,O95PREAG,O95PRECU,O95PREI1,O95PREI2,O95PREI3,O95PREI4,O95PREI5,O95PREI6,O95PREI7,O95PREI8,O95PREI9,O95PSELL,O95RBUYR,O95RDEAG,O95RDECU,O95RDEI1,O95RDEI2,O95RDEI3,O95RDEI4,O95RDEI5,O95RDEI6,O95RDEI7,O95RDEI8,O95RDEI9,O95RREAG,O95RRECU,O95RREI1,O95RREI2,O95RREI3,O95RREI4,O95RREI5,O95RREI6,O95RREI7,O95RREI8,O95RREI9,O95RSELL,O95QBUYR,O95QDEAG,O95QDECU,O95QDEI1,O95QDEI2,O95QDEI3,O95QDEI4,O95QDEI5,O95QDEI6,O95QDEI7,O95QDEI8,O95QDEI9,O95QPSET,O95QREAG,O95QRECU,O95QREI1,O95QREI2,O95QREI3,O95QREI4,O95QREI5,O95QREI6,O95QREI7,O95QREI8,O95QREI9,O95QSELL,O95CPSET" B2BMap="" Validation="" extractHint="DL,:,T,S" idHint="FL,0,10"/>
+					<lineAttribute id=":97A::SAFE,:97B::SAFE" isMandatory="false" EAImap="O97ASAFE,O97BSAFE" B2BMap="" Validation="" extractHint="DL,:,T,S" idHint="FL,0,10"/>
+				</block>
+			</block>
+		</block>
+		<block id="ADDINFO" isMandatory="false" isList="false" termString="\r\n" extractHint="BR,:16R:ADDINFO\r\n,:16S:ADDINFO,T,S" idHint="EH,5,12" EAImap="OADDINFO" B2BMap="" Validation="">
+			<block id="SB1" isList="true" termString="\r\n" EAImap="OBSB1" B2BMap="" Validation="" isMandatory="false">
+				<lineAttribute id=":95P::MEOR,:95P::MERE,:95R::MEOR,:95R::MERE,:95Q::MEOR,:95Q::MERE" EAImap="O95PMEOR,O95PMERE,O95RMEOR,O95RMERE,O95QMEOR,O95QMERE" B2BMap="" Validation="" extractHint="DL,:,T,S" idHint="FL,0,10" isMandatory="true"/>
+			</block>
+		</block>
+	</block>
+	    <block id="5:" isMandatory="false" isList="false" termString="" EAImap="B5" B2BMap="" Validation="" extractHint="BR,{,},T,S" idHint="FL,0,2">
+	        <block id="SB1" isMandatory="false" isList="true" EAImap="OSB1" termString="" B2BMap="" Validation="">
+
+		<lineAttribute id="MAC:" isMandatory="false" EAImap="OMAC" B2BMap="" Validation="" extractHint="BR,{,},T,S" idHint="FL,0,4"/>
+		<lineAttribute id="CHK:" isMandatory="false" EAImap="OCHK" B2BMap="" Validation="" extractHint="BR,{,},T,S" idHint="FL,0,4"/>
+		<lineAttribute id="TNG:" isMandatory="false" EAImap="OTNG" B2BMap="" Validation="" extractHint="BR,{,},T,S" idHint="FL,0,4"/>
+		<lineAttribute id="PDE:" isMandatory="false" EAImap="OPDE" B2BMap="" Validation="" extractHint="BR,{,},T,S" idHint="FL,0,4"/>
+		<lineAttribute id="SYS:" isMandatory="false" EAImap="OSYS" B2BMap="" Validation="" extractHint="BR,{,},T,S" idHint="FL,0,4"/>
+		<lineAttribute id="PDM:" isMandatory="false" EAImap="OPDM" B2BMap="" Validation="" extractHint="BR,{,},T,S" idHint="FL,0,4"/>
+		<lineAttribute id="DLM:" isMandatory="false" EAImap="ODLM" B2BMap="" Validation="" extractHint="BR,{,},T,S" idHint="FL,0,4"/>
+		<lineAttribute id="PAC:" isMandatory="false" EAImap="OPAC" B2BMap="" Validation="" extractHint="BR,{,},T,S" idHint="FL,0,4"/>
+		<lineAttribute id="MRF:" isMandatory="false" EAImap="OMRF" B2BMap="" Validation="" extractHint="BR,{,},T,S" idHint="FL,0,4"/>
+	</block>
+</block>
+</block>
+

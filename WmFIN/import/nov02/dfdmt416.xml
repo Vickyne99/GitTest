@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<constraints>
+
+<!-- Text Block for NOV02 MT 416 -->
+<field name="20:" type="PatternType">
+    <bizName>Reference - Sender's Reference</bizName>
+    <pattern>16x</pattern>
+</field>
+<field name="21A:" type="PatternType">
+    <bizName>Reference A - Related Sequence Reference</bizName>
+    <pattern>16x</pattern>
+    <error type="content">T26</error>
+</field>
+<field name="23E:" type="MixedType">
+    <bizName>Advice Type</bizName>
+    <pattern>4!c[/30x]</pattern>
+    <choice>NPAY</choice>
+    <choice>NACC</choice>
+    <choice>OTHR</choice>
+</field>
+<field name="32A:" type="PatternType">
+    <bizName>A - Face Amount of Document(s)</bizName>
+    <pattern>&lt;DATE2&gt;&lt;CUR&gt;&lt;AMOUNT&gt;15</pattern>
+</field>
+<field name="32B:" type="PatternType">
+    <bizName>B - Face Amount of Document(s)</bizName>
+    <pattern>&lt;CUR&gt;&lt;AMOUNT&gt;15</pattern>
+</field>
+<field name="32K:" type="Mixed2Type">
+    <bizName>K - Face Amount of Document(s)</bizName>
+    <pattern>1!a3!n2!a&lt;CUR&gt;&lt;AMOUNT&gt;15</pattern>
+    <choice1>D</choice1>
+    <choice1>M</choice1>
+    <choice2>BE</choice2>
+    <choice2>ST</choice2>
+</field>
+<field name="53A:" type="MixedType">
+    <bizName>A - Sender's Correspondent</bizName>
+    <pattern>[&lt;BICPLUS&gt;][CRLF]&lt;SWIFTBIC&gt;|&lt;NON-SWIFTBIC&gt;</pattern>
+    <choice>C</choice>
+    <choice>D</choice>
+</field>
+<field name="59:" type="PatternType">
+    <bizName>Drawee</bizName>
+    <pattern>[/34xCRLF]4*35x</pattern>
+</field>
+<field name="77A:" type="PatternType">
+    <bizName>Reason for Non-Payment/Non-Acceptance</bizName>
+    <pattern>&lt;ERI_F77A&gt;</pattern>
+</field>
+</constraints>

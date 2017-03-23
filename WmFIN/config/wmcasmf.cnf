@@ -1,0 +1,33 @@
+# 
+# 		Properties file for WmCASmf
+#
+# ***** NOTE! Any changes to this file requires a restart of the Integration Server ******
+#
+
+# Sending and receiving Map IDs defined on SAA
+wm.casmf.send.mapid=CASmfInput
+wm.casmf.receive.mapid=CASmfOutput
+
+# Folder location where outbound FIN messages sent via CASmf are stored.
+wm.casmf.send.message.folder=packages/WmFIN/config/outboundMessages
+
+# Authentication parameters
+# valid values are AUTH_ACCESS, AUTH_DATA, AUTH_BOTH and AUTH_NONE.
+# AUTH_ACCESS is session authentication
+# AUTH_DATA is data authentication
+# AUTH_BOTH is session and data authentication
+# AUTH_NONE is no authentication
+
+wm.casmf.authentication.type=AUTH_BOTH
+
+# Send and Receive keys configured on SAA. The keys will have to be flipped in this
+# properties file i.e. the sendKey specified on SAA will be the receiveKey in this
+# file and vice-versa.
+
+wm.casmf.authentication.sendKey=0123456789ABCDEF0123456789ABCDEF
+wm.casmf.authentication.receiveKey=0123456789ABCDEF0123456789ABCDEF
+wm.casmf.authentication.localSendKey=0123456789ABCDEF0123456789ABCDEF
+wm.casmf.authentication.localReceiveKey=0123456789ABCDEF0123456789ABCDEF
+
+# Time out value in seconds waiting to receive messages.
+wm.casmf.receive.timeout=300

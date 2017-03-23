@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="name">saveConfigPropsFromUI</value>
+  <value name="sigtype">java 3.5</value>
+  <value name="encodeutf8">true</value>
+  <value name="body">DQpJRGF0YUN1cnNvciBjdXJzb3IgPSBwaXBlbGluZS5nZXRDdXJzb3IoKTsNCmlmIChjdXJzb3Ig
+IT0gbnVsbCkgY3Vyc29yLmZpcnN0KCk7DQpTdHJpbmcgcyA9IChTdHJpbmcpIGN1cnNvci5nZXRW
+YWx1ZSgpOw0KU3RyaW5nIGFsbFNldHRpbmdzID0gKFN0cmluZylJRGF0YVV0aWwuZ2V0KGN1cnNv
+ciwgInNldHRpbmdzIik7DQpTdHJpbmdUb2tlbml6ZXIgc3QgPSBuZXcgU3RyaW5nVG9rZW5pemVy
+KGFsbFNldHRpbmdzLCAiXG4iKTsNCndoaWxlIChzdC5oYXNNb3JlVG9rZW5zKCkpIHsNCglTdHJp
+bmcgdG9rZW4gPSBzdC5uZXh0VG9rZW4oKTsNCglpbnQgZXFQb3MgPSB0b2tlbi5pbmRleE9mKCI9
+Iik7DQoJaWYgKGVxUG9zID4gLTEpIHsNCgkJU3RyaW5nIHZhbHVlID0gdG9rZW4uc3Vic3RyaW5n
+KGVxUG9zICsgMSkudHJpbSgpOw0KCQlTdHJpbmcga2V5ID0gdG9rZW4uc3Vic3RyaW5nKDAsIGVx
+UG9zKS50cmltKCk7DQoJCWN1cnNvci5pbnNlcnRBZnRlcihrZXksIHZhbHVlKTsNCgl9DQp9DQpz
+YXZlQ29uZmlnUHJvcHMocGlwZWxpbmUpOw0KCSAgICANCg==</value>
+</Values>

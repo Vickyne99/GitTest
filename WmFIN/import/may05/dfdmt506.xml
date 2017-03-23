@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<constraints>
+
+<!-- this is for field 119 in the B3 block of the message -->
+<field name="119:" type="PatternType">
+    <pattern>'COMM'|'CRPR'|'CRSP'|'CRTL'|'EXTD'|'FIXI'|'FORX'|'LIQU'|'OTCD'|'PAYM'|'REPO'|'SBSB'|'SCRP'|'SECL'|'SLEB'|'TCRP'</pattern>
+</field>
+
+<!-- Text Block for NOV03 MT506 -->
+<field name="22H::COLA" type="PathType">
+    <bizName>Indicator H - Exposure Type Indicator</bizName>
+    <path name="B4/A1/22H::COLA" type="MixedType">
+        <pattern>//4!c</pattern>
+        <choice>CCIR</choice><choice>COMM</choice>
+        <choice>CRPR</choice><choice>CRSP</choice>
+        <choice>CRTL</choice><choice>EXTD</choice>
+        <choice>FIXI</choice><choice>FORW</choice>
+        <choice>FORX</choice><choice>OPTN</choice>
+        <choice>OTCD</choice><choice>REPO</choice>
+        <choice>SBSB</choice><choice>SCIR</choice>
+        <choice>SCRP</choice><choice>SECL</choice>
+        <choice>SLEB</choice><choice>TCRP</choice>
+    </path>
+    <path name="B4/C/22H::COLA" type="MixedType">
+        <pattern>//4!c</pattern>
+        <choice>COMM</choice><choice>CRPR</choice>
+        <choice>CRSP</choice><choice>CRTL</choice>
+        <choice>EXTD</choice><choice>FIXI</choice>
+        <choice>FORX</choice><choice>LIQU</choice>
+        <choice>OTCD</choice><choice>PAYM</choice>
+        <choice>REPO</choice><choice>SBSB</choice>
+        <choice>SCRP</choice><choice>SECL</choice>
+        <choice>SLEB</choice><choice>TCRP</choice>
+    </path>
+</field>
+<field name="23G:" type="Mixed2Type">
+    <bizName>Function of the Message</bizName>
+    <pattern>4!c[/4!c]</pattern>
+    <alias pattern="4!c" bizName="Function" />            
+    <alias pattern="4!c" bizName="Subfunction" />                
+    <choice1>CANC</choice1>
+    <choice1>NEWM</choice1>
+    <choice2>CODU</choice2>
+    <choice2>COPY</choice2>
+    <choice2>DUPL</choice2>
+    <error type="choice">T86</error>
+</field>
+</constraints>

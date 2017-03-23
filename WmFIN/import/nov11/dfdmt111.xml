@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<constraints>
+
+<!-- Text Block for NOV03 MT111 -->
+<field name="20:" type="PatternType">
+    <bizName>Reference - Sender's Reference</bizName>
+    <pattern>16x</pattern>
+    <error type="content">T26</error>
+</field>
+<field name="21:" type="PatternType">
+    <bizName>Reference - Cheque Number</bizName>
+    <pattern>16x</pattern>
+    <error type="content">T26</error>
+</field>
+<field name="30:" type="PatternType">
+    <bizName>Date - Date of Issue</bizName>
+    <pattern>&lt;DATE2&gt;</pattern>
+</field>
+<field name="32A:" type="PatternType">
+    <bizName>A - Amount</bizName>
+    <pattern>&lt;DATE2&gt;&lt;CUR&gt;&lt;AMOUNT&gt;15</pattern>
+</field>
+<field name="32B:" type="PatternType">
+    <bizName>B - Amount</bizName>
+    <pattern>&lt;CUR&gt;&lt;NUMBER&gt;15</pattern>
+</field>
+<field name="52A:" type="MixedType">
+    <bizName>A - Drawer Bank</bizName>
+    <pattern>[&lt;PartyIdentifier&gt;][CRLF]&lt;SWIFTBIC&gt;</pattern>
+</field>
+<field name="52B:" type="MixedType">
+    <bizName>B - Drawer Bank</bizName>
+    <pattern>[&lt;PartyIdentifier&gt;][CRLF][35x]</pattern>
+</field>
+<field name="52D:" type="MixedType">
+    <bizName>D - Drawer Bank</bizName>
+    <pattern>[&lt;PartyIdentifier&gt;][CRLF]4*35x</pattern>
+</field>
+<field name="59:" type="PatternType">
+    <bizName>Payee</bizName>
+    <pattern>[/34x][CRLF]4*35x</pattern>
+</field>
+</constraints>

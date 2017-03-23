@@ -1,0 +1,973 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<businessProcessDiagram xmlns="http://www.webmethods.com/bpm/2006/"
+  build="1" canvasPool="1" creator="Administrator" description=""
+  focalRole="Focal role" name="PipTwoActionInitiatorModel"
+  packageName="PipTwoActionInitiatorProject" runtimeVersion="1" version="7.1">
+  <kpiDimensions/>
+  <systemKPIs>
+    <systemKPI description="" name="Volume" unitOfMeasure=""/>
+    <systemKPI description="" name="Cycle Time" unitOfMeasure=""/>
+    <systemKPI description="" name="Error Count" unitOfMeasure=""/>
+  </systemKPIs>
+  <timeout calendarAlias="" calendarTime="" dynamicFieldName=""
+    isCalendarTimeout="false" isStaticTimeout="true"
+    isXPathTimeout="false" timeoutStyle="RELATIVE"
+    timeoutType="processTimeout" timeoutValue="86400000" xpathTimeoutValue=""/>
+  <pool blue="128" external="true" externalizeConditions="false"
+    green="128" isCollapsed="false" label="Backend" labelBlue="255"
+    labelGreen="204" labelRed="153" logicalServer="" name="11"
+    orientation="vertical" red="128" retryCount="0" stepLock="false" uid="P12">
+    <documentation/>
+    <businessKPIs/>
+    <dataItem type="" uid="V61"/>
+    <dataItem type="" uid="V62"/>
+    <dataItem type="" uid="V17"/>
+    <dataItem type="" uid="V18"/>
+    <invokeStep externalizeConditions="false" inputVariable="V17"
+      invokeContainer="" invokeId="" invokeLocation="" invokeName=""
+      invokeType="ISSERVICE" label="Send Internal Document"
+      logicalServer="Default" ornamentKey="32_globe.png"
+      outputVariable="V18" retryCount="0" routingRuleSet=""
+      stepLock="false" uid="S16"
+      wrapperService="PipTwoActionInitiatorProject.PipTwoActionInitiatorModel.PipTwoActionInitiatorModel_1.Default:S16_MAPPING"
+      x="26" y="26">
+      <documentation/>
+      <businessKPIs/>
+      <extendedProperty name="retries" value="-1"/>
+      <extendedProperty name="retryInterval" value="10000"/>
+      <timeout calendarAlias="" calendarTime="" dynamicFieldName=""
+        isCalendarTimeout="false" isStaticTimeout="true"
+        isXPathTimeout="false" timeoutStyle="RELATIVE"
+        timeoutType="stepTimeout" timeoutValue="0" xpathTimeoutValue=""/>
+    </invokeStep>
+    <invokeStep externalizeConditions="false" inputVariable="V61"
+      invokeContainer="" invokeId="" invokeLocation="" invokeName=""
+      invokeType="ISSERVICE" label="Receive Document"
+      logicalServer="Default" ornamentKey="32_ship.png"
+      outputVariable="V62" retryCount="0" routingRuleSet=""
+      stepLock="false" uid="S60"
+      wrapperService="PipTwoActionInitiatorProject.PipTwoActionInitiatorModel.PipTwoActionInitiatorModel_1.Default:S60_MAPPING"
+      x="33" y="480">
+      <documentation/>
+      <businessKPIs/>
+      <extendedProperty name="retries" value="-1"/>
+      <extendedProperty name="retryInterval" value="10000"/>
+      <timeout calendarAlias="" calendarTime="" dynamicFieldName=""
+        isCalendarTimeout="false" isStaticTimeout="true"
+        isXPathTimeout="false" timeoutStyle="RELATIVE"
+        timeoutType="stepTimeout" timeoutValue="0" xpathTimeoutValue=""/>
+    </invokeStep>
+    <transition blue="255" conditionDescription="" conditionText=""
+      conditionType="IF" green="0" lineShape="STRAIGHT" red="0"
+      source="S16" sourceTerminal="BOTTOM" target="S60"
+      targetTerminal="TOP" uid="T63">
+      <wmExpression/>
+    </transition>
+    <timeout calendarAlias="" calendarTime="" dynamicFieldName=""
+      isCalendarTimeout="false" isStaticTimeout="true"
+      isXPathTimeout="false" timeoutStyle="RELATIVE"
+      timeoutType="stepTimeout" timeoutValue="0" xpathTimeoutValue=""/>
+    <wmExpression/>
+    <swimlane blue="233" green="233" height="700" labelBlue="255"
+      labelGreen="238" labelRed="221" name="Backend" red="233"
+      uid="W206" width="130">
+      <documentation/>
+    </swimlane>
+  </pool>
+  <pool blue="128" external="true" externalizeConditions="false"
+    green="128" isCollapsed="false" label="Responder" labelBlue="255"
+    labelGreen="204" labelRed="153" logicalServer="" name="14"
+    orientation="vertical" red="128" retryCount="0" stepLock="false" uid="P15">
+    <documentation/>
+    <businessKPIs/>
+    <dataItem type="" uid="V37"/>
+    <dataItem type="" uid="V36"/>
+    <dataItem type="" uid="V59"/>
+    <dataItem type="" uid="V58"/>
+    <dataItem type="" uid="V56"/>
+    <dataItem type="" uid="V30"/>
+    <dataItem type="" uid="V55"/>
+    <dataItem type="" uid="V31"/>
+    <invokeStep externalizeConditions="false" inputVariable="V30"
+      invokeContainer="" invokeId="" invokeLocation="" invokeName=""
+      invokeType="ISSERVICE" label="Wait for PO Request"
+      logicalServer="Default" ornamentKey="32_invoice.png"
+      outputVariable="V31" retryCount="0" routingRuleSet=""
+      stepLock="false" uid="S29"
+      wrapperService="PipTwoActionInitiatorProject.PipTwoActionInitiatorModel.PipTwoActionInitiatorModel_1.Default:S29_MAPPING"
+      x="34" y="26">
+      <documentation/>
+      <businessKPIs/>
+      <extendedProperty name="retries" value="0"/>
+      <extendedProperty name="retryInterval" value="10000"/>
+      <timeout calendarAlias="" calendarTime="" dynamicFieldName=""
+        isCalendarTimeout="false" isStaticTimeout="true"
+        isXPathTimeout="false" timeoutStyle="RELATIVE"
+        timeoutType="stepTimeout" timeoutValue="0" xpathTimeoutValue=""/>
+    </invokeStep>
+    <invokeStep externalizeConditions="false" inputVariable="V36"
+      invokeContainer="" invokeId="" invokeLocation="" invokeName=""
+      invokeType="ISSERVICE" label="Send ACK" logicalServer="Default"
+      ornamentKey="32_globe.png" outputVariable="V37" retryCount="0"
+      routingRuleSet="" stepLock="false" uid="S35"
+      wrapperService="PipTwoActionInitiatorProject.PipTwoActionInitiatorModel.PipTwoActionInitiatorModel_1.Default:S35_MAPPING"
+      x="38" y="168">
+      <documentation/>
+      <businessKPIs/>
+      <extendedProperty name="retries" value="0"/>
+      <extendedProperty name="retryInterval" value="10000"/>
+      <timeout calendarAlias="" calendarTime="" dynamicFieldName=""
+        isCalendarTimeout="false" isStaticTimeout="true"
+        isXPathTimeout="false" timeoutStyle="RELATIVE"
+        timeoutType="stepTimeout" timeoutValue="0" xpathTimeoutValue=""/>
+    </invokeStep>
+    <invokeStep externalizeConditions="false" inputVariable="V55"
+      invokeContainer="" invokeId="" invokeLocation="" invokeName=""
+      invokeType="ISSERVICE" label="Send Document"
+      logicalServer="Default" ornamentKey="32_globe.png"
+      outputVariable="V56" retryCount="0" routingRuleSet=""
+      stepLock="false" uid="S54"
+      wrapperService="PipTwoActionInitiatorProject.PipTwoActionInitiatorModel.PipTwoActionInitiatorModel_1.Default:S54_MAPPING"
+      x="38" y="353">
+      <documentation/>
+      <businessKPIs/>
+      <extendedProperty name="retries" value="0"/>
+      <extendedProperty name="retryInterval" value="10000"/>
+      <timeout calendarAlias="" calendarTime="" dynamicFieldName=""
+        isCalendarTimeout="false" isStaticTimeout="true"
+        isXPathTimeout="false" timeoutStyle="RELATIVE"
+        timeoutType="stepTimeout" timeoutValue="0" xpathTimeoutValue=""/>
+    </invokeStep>
+    <invokeStep externalizeConditions="false" inputVariable="V58"
+      invokeContainer="" invokeId="" invokeLocation="" invokeName=""
+      invokeType="ISSERVICE" label="Receive ACK" logicalServer="Default"
+      ornamentKey="32_ship.png" outputVariable="V59" retryCount="0"
+      routingRuleSet="" stepLock="false" uid="S57"
+      wrapperService="PipTwoActionInitiatorProject.PipTwoActionInitiatorModel.PipTwoActionInitiatorModel_1.Default:S57_MAPPING"
+      x="33" y="497">
+      <documentation/>
+      <businessKPIs/>
+      <extendedProperty name="retries" value="0"/>
+      <extendedProperty name="retryInterval" value="10000"/>
+      <timeout calendarAlias="" calendarTime="" dynamicFieldName=""
+        isCalendarTimeout="false" isStaticTimeout="true"
+        isXPathTimeout="false" timeoutStyle="RELATIVE"
+        timeoutType="stepTimeout" timeoutValue="0" xpathTimeoutValue=""/>
+    </invokeStep>
+    <transition blue="255" conditionDescription="" conditionText=""
+      conditionType="IF" green="0" lineShape="STRAIGHT" red="0"
+      source="S29" sourceTerminal="BOTTOM" target="S35"
+      targetTerminal="TOP" uid="T53">
+      <wmExpression/>
+    </transition>
+    <transition blue="255" conditionDescription="" conditionText=""
+      conditionType="IF" green="0" lineShape="STRAIGHT" red="0"
+      source="S35" sourceTerminal="BOTTOM" target="S54"
+      targetTerminal="TOP" uid="T188">
+      <wmExpression/>
+    </transition>
+    <transition blue="255" conditionDescription="" conditionText=""
+      conditionType="IF" green="0" lineShape="STRAIGHT" red="0"
+      source="S54" sourceTerminal="BOTTOM" target="S57"
+      targetTerminal="TOP" uid="T189">
+      <wmExpression/>
+    </transition>
+    <timeout calendarAlias="" calendarTime="" dynamicFieldName=""
+      isCalendarTimeout="false" isStaticTimeout="true"
+      isXPathTimeout="false" timeoutStyle="RELATIVE"
+      timeoutType="stepTimeout" timeoutValue="0" xpathTimeoutValue=""/>
+    <wmExpression/>
+    <swimlane blue="233" green="233" height="702" labelBlue="255"
+      labelGreen="238" labelRed="221" name="Responder" red="233"
+      uid="W209" width="153">
+      <documentation/>
+    </swimlane>
+  </pool>
+  <pool blue="128" errorHandler="S176" external="false"
+    externalizeConditions="false" green="128" isCollapsed="false"
+    label="Pool" labelBlue="255" labelGreen="204" labelRed="153"
+    logicalServer="" name="1" orientation="horizontal" red="128"
+    retryCount="0" stepLock="false" timeoutHandler="S176" uid="P2">
+    <documentation/>
+    <businessKPIs/>
+    <dataItem
+      type="{http://webmethods.com/bpm/TnDoc/2006}RosettaNet Dummy DocType" uid="V338"/>
+    <dataItem type="" uid="V102"/>
+    <dataItem type="" uid="V101"/>
+    <dataItem type="" uid="V290"/>
+    <dataItem type="" uid="V170"/>
+    <dataItem type="" uid="V173"/>
+    <dataItem type="" uid="V130"/>
+    <dataItem type="" uid="V131"/>
+    <dataItem type="" uid="V178"/>
+    <dataItem type="" uid="V174"/>
+    <dataItem type="" uid="V51"/>
+    <dataItem type="" uid="V50"/>
+    <dataItem type="" uid="V177"/>
+    <dataItem
+      type="{http://webmethods.com/bpm/TnDoc/2006}0a3c1979f70d29a100000075" uid="V367"/>
+    <dataItem type="" uid="V7"/>
+    <dataItem
+      type="{http://webmethods.com/bpm/TnDoc/2006}ReceiptAck--------------" uid="V328"/>
+    <dataItem
+      type="{http://webmethods.com/bpm/TnDoc/2006}53o6bp0040p9oa9l0000000v" uid="V365"/>
+    <dataItem type="" uid="V289"/>
+    <dataItem type="" uid="V8"/>
+    <dataItem
+      type="{http://webmethods.com/bpm/TnDoc/2006}RosettaNet Dummy DocType" uid="V326"/>
+    <dataItem
+      type="{http://webmethods.com/bpm/TnDoc/2006}ReceiptAckException-----" uid="V363"/>
+    <dataItem type="Unconfigured" uid="V349"/>
+    <dataItem type="" uid="V287"/>
+    <dataItem type="Unconfigured" uid="V286"/>
+    <dataItem
+      type="{http://webmethods.com/bpm/TnDoc/2006}Exception20-------------" uid="V361"/>
+    <dataItem type="" uid="V25"/>
+    <dataItem type="" uid="V180"/>
+    <dataItem type="" uid="V125"/>
+    <dataItem type="" uid="V144"/>
+    <dataItem type="" uid="V161"/>
+    <dataItem type="" uid="V126"/>
+    <dataItem type="" uid="V160"/>
+    <dataItem type="" uid="V26"/>
+    <dataItem type="" uid="V47"/>
+    <dataItem type="" uid="V46"/>
+    <dataItem type="" uid="V65"/>
+    <dataItem type="" uid="V66"/>
+    <dataItem type="" uid="V145"/>
+    <dataItem type="" uid="V181"/>
+    <dataItem type="" uid="V169"/>
+    <dataItem
+      type="{http://webmethods.com/bpm/TnDoc/2006}ReceiptAck20------------" uid="V330"/>
+    <dataItem type="" uid="V166"/>
+    <dataItem type="" uid="V165"/>
+    <dataItem
+      type="{http://webmethods.com/bpm/TnDoc/2006}Exception---------------" uid="V359"/>
+    <dataItem type="" uid="V23"/>
+    <dataItem type="" uid="V350"/>
+    <dataItem type="" uid="V22"/>
+    <receiveStep allowsSynchronousReply="false"
+      externalizeConditions="false" isStart="true"
+      isStartStepServiceRequired="true"
+      label="Receive Internal Document" logicalServer="Default"
+      outputVariable="V326" receiveProtocol="SUBSCRIPTION"
+      stepLock="false" uid="S3"
+      wrapperService="PipTwoActionInitiatorProject.PipTwoActionInitiatorModel.PipTwoActionInitiatorModel_1.Default:S3_MAPPING"
+      x="352" y="78">
+      <documentation/>
+      <businessKPIs/>
+      <wmExpressionFilter/>
+    </receiveStep>
+    <invokeStep externalizeConditions="false" inputVariable="V7"
+      invokeContainer="wm.b2b.rn.sample.company1.maps.outbound"
+      invokeId="" invokeLocation="" invokeName="PORequest"
+      invokeType="ISSERVICE" label="Outbound Map"
+      logicalServer="Default" ornamentKey="32_decision_diamond.png"
+      outputVariable="V8" retryCount="0" routingRuleSet=""
+      stepLock="false" uid="S6"
+      wrapperService="PipTwoActionInitiatorProject.PipTwoActionInitiatorModel.PipTwoActionInitiatorModel_1.Default:S6_MAPPING"
+      x="626" y="74">
+      <documentation/>
+      <businessKPIs/>
+      <extendedProperty name="retries" value="0"/>
+      <extendedProperty name="retryInterval" value="10000"/>
+      <timeout calendarAlias="" calendarTime="" dynamicFieldName=""
+        isCalendarTimeout="false" isStaticTimeout="true"
+        isXPathTimeout="false" timeoutStyle="RELATIVE"
+        timeoutType="stepTimeout" timeoutValue="0" xpathTimeoutValue=""/>
+    </invokeStep>
+    <poolReference label="Backend" logicalServer="Default" poolName="11"
+      stepLock="false" uid="S10" x="50" y="33">
+      <documentation/>
+      <businessKPIs/>
+    </poolReference>
+    <poolReference label="Responder" logicalServer="Default"
+      poolName="14" stepLock="false" uid="S13" x="1124" y="33">
+      <documentation/>
+      <businessKPIs/>
+    </poolReference>
+    <invokeStep externalizeConditions="false" inputVariable="V22"
+      invokeContainer="pub.estd.rosettaNet"
+      invokeId="pub.estd.rosettaNet:send" invokeLocation=""
+      invokeName="send" invokeType="ISSERVICE"
+      label="Send External Document" logicalServer="Default"
+      ornamentKey="32_globe.png" outputVariable="V23" retryCount="4"
+      routingRuleSet="" stepLock="false" uid="S21"
+      wrapperService="PipTwoActionInitiatorProject.PipTwoActionInitiatorModel.PipTwoActionInitiatorModel_1.Default:S21_MAPPING"
+      x="805" y="39">
+      <documentation/>
+      <join joinType="Or"/>
+      <businessKPIs/>
+      <extendedProperty name="retries" value="0"/>
+      <extendedProperty name="retryInterval" value="10000"/>
+      <timeout calendarAlias="" calendarTime="" dynamicFieldName=""
+        isCalendarTimeout="false" isStaticTimeout="true"
+        isXPathTimeout="false" timeoutStyle="RELATIVE"
+        timeoutType="stepTimeout" timeoutValue="0" xpathTimeoutValue=""/>
+    </invokeStep>
+    <invokeStep externalizeConditions="false" inputVariable="V25"
+      invokeContainer="pub.estd.rosettaNet"
+      invokeId="pub.estd.rosettaNet:sendNOF" invokeLocation=""
+      invokeName="sendNOF" invokeType="ISSERVICE" label="startNOF"
+      logicalServer="Default" ornamentKey="32_abort.png"
+      outputVariable="V26" retryCount="0" routingRuleSet=""
+      stepLock="false" uid="S24"
+      wrapperService="PipTwoActionInitiatorProject.PipTwoActionInitiatorModel.PipTwoActionInitiatorModel_1.Default:S24_MAPPING"
+      x="262" y="168">
+      <documentation/>
+      <join joinType="Or"/>
+      <businessKPIs/>
+      <extendedProperty name="retries" value="0"/>
+      <extendedProperty name="retryInterval" value="10000"/>
+      <timeout calendarAlias="" calendarTime="" dynamicFieldName=""
+        isCalendarTimeout="false" isStaticTimeout="true"
+        isXPathTimeout="false" timeoutStyle="RELATIVE"
+        timeoutType="stepTimeout" timeoutValue="0" xpathTimeoutValue=""/>
+    </invokeStep>
+    <invokeStep externalizeConditions="false" inputVariable="V46"
+      invokeContainer="pub.estd.rosettaNet"
+      invokeId="pub.estd.rosettaNet:verifyAcknowledgement"
+      invokeLocation="" invokeName="verifyAcknowledgement"
+      invokeType="ISSERVICE" label="Verify ACK" logicalServer="Default"
+      ornamentKey="32_purchase_order.png" outputVariable="V47"
+      retryCount="0" routingRuleSet="" stepLock="false" uid="S45"
+      wrapperService="PipTwoActionInitiatorProject.PipTwoActionInitiatorModel.PipTwoActionInitiatorModel_1.Default:S45_MAPPING"
+      x="885" y="286">
+      <documentation/>
+      <businessKPIs/>
+      <extendedProperty name="retries" value="0"/>
+      <extendedProperty name="retryInterval" value="10000"/>
+      <timeout calendarAlias="" calendarTime="" dynamicFieldName=""
+        isCalendarTimeout="false" isStaticTimeout="true"
+        isXPathTimeout="false" timeoutStyle="RELATIVE"
+        timeoutType="stepTimeout" timeoutValue="0" xpathTimeoutValue=""/>
+    </invokeStep>
+    <invokeStep externalizeConditions="false" inputVariable="V50"
+      invokeContainer="" invokeId="" invokeLocation="" invokeName=""
+      invokeType="ISSERVICE" label="Process ACK" logicalServer="Default"
+      ornamentKey="32_decision_diamond.png" outputVariable="V51"
+      retryCount="0" routingRuleSet="" stepLock="false" uid="S49"
+      wrapperService="PipTwoActionInitiatorProject.PipTwoActionInitiatorModel.PipTwoActionInitiatorModel_1.Default:S49_MAPPING"
+      x="779" y="286">
+      <documentation/>
+      <businessKPIs/>
+      <extendedProperty name="retries" value="0"/>
+      <extendedProperty name="retryInterval" value="10000"/>
+      <timeout calendarAlias="" calendarTime="" dynamicFieldName=""
+        isCalendarTimeout="false" isStaticTimeout="true"
+        isXPathTimeout="false" timeoutStyle="RELATIVE"
+        timeoutType="stepTimeout" timeoutValue="0" xpathTimeoutValue=""/>
+    </invokeStep>
+    <invokeStep externalizeConditions="false" inputVariable="V65"
+      invokeContainer="pub.estd.rosettaNet"
+      invokeId="pub.estd.rosettaNet:error" invokeLocation=""
+      invokeName="error" invokeType="ISSERVICE" label="Error"
+      logicalServer="Default" ornamentKey="32_error_stop_sign.png"
+      outputVariable="V66" retryCount="0" routingRuleSet=""
+      stepLock="false" uid="S64"
+      wrapperService="PipTwoActionInitiatorProject.PipTwoActionInitiatorModel.PipTwoActionInitiatorModel_1.Default:S64_MAPPING"
+      x="369" y="168">
+      <documentation/>
+      <join joinType="Or"/>
+      <businessKPIs/>
+      <extendedProperty name="retries" value="0"/>
+      <extendedProperty name="retryInterval" value="10000"/>
+      <timeout calendarAlias="" calendarTime="" dynamicFieldName=""
+        isCalendarTimeout="false" isStaticTimeout="true"
+        isXPathTimeout="false" timeoutStyle="RELATIVE"
+        timeoutType="stepTimeout" timeoutValue="0" xpathTimeoutValue=""/>
+    </invokeStep>
+    <invokeStep externalizeConditions="false" inputVariable="V101"
+      invokeContainer="wm.b2b.rn.sample.handler" invokeId=""
+      invokeLocation="" invokeName="exceptionHandler"
+      invokeType="ISSERVICE" label="Exception Handler"
+      logicalServer="Default" ornamentKey="32_decision_diamond.png"
+      outputVariable="V102" retryCount="0" routingRuleSet=""
+      stepLock="false" uid="S100"
+      wrapperService="PipTwoActionInitiatorProject.PipTwoActionInitiatorModel.PipTwoActionInitiatorModel_1.Default:S100_MAPPING"
+      x="690" y="168">
+      <documentation/>
+      <join joinType="Or"/>
+      <businessKPIs/>
+      <extendedProperty name="retries" value="0"/>
+      <extendedProperty name="retryInterval" value="10000"/>
+      <timeout calendarAlias="" calendarTime="" dynamicFieldName=""
+        isCalendarTimeout="false" isStaticTimeout="true"
+        isXPathTimeout="false" timeoutStyle="RELATIVE"
+        timeoutType="stepTimeout" timeoutValue="0" xpathTimeoutValue=""/>
+    </invokeStep>
+    <receiveStep allowsSynchronousReply="false"
+      externalizeConditions="false" isStartStepServiceRequired="true"
+      label="Receive External Document" logicalServer="Default"
+      outputVariable="V338" receiveProtocol="SUBSCRIPTION"
+      stepLock="false" uid="S106"
+      wrapperService="PipTwoActionInitiatorProject.PipTwoActionInitiatorModel.PipTwoActionInitiatorModel_1.Default:S106_MAPPING"
+      x="1002" y="428">
+      <documentation/>
+      <businessKPIs/>
+      <wmExpressionFilter/>
+    </receiveStep>
+    <invokeStep externalizeConditions="false" inputVariable="V125"
+      invokeContainer="pub.estd.rosettaNet"
+      invokeId="pub.estd.rosettaNet:waitStepInit" invokeLocation=""
+      invokeName="waitStepInit" invokeType="ISSERVICE"
+      label="Wait for Internal  Document" logicalServer="Default"
+      ornamentKey="32_invoice.png" outputVariable="V126" retryCount="0"
+      routingRuleSet="" stepLock="false" uid="S124"
+      wrapperService="PipTwoActionInitiatorProject.PipTwoActionInitiatorModel.PipTwoActionInitiatorModel_1.Default:S124_MAPPING"
+      x="484" y="74">
+      <documentation/>
+      <businessKPIs/>
+      <extendedProperty name="retries" value="0"/>
+      <extendedProperty name="retryInterval" value="10000"/>
+      <timeout calendarAlias="" calendarTime="" dynamicFieldName=""
+        isCalendarTimeout="false" isStaticTimeout="true"
+        isXPathTimeout="false" timeoutStyle="RELATIVE"
+        timeoutType="stepTimeout" timeoutValue="0" xpathTimeoutValue=""/>
+    </invokeStep>
+    <invokeStep externalizeConditions="false" inputVariable="V130"
+      invokeContainer="pub.estd.rosettaNet"
+      invokeId="pub.estd.rosettaNet:waitStepInit" invokeLocation=""
+      invokeName="waitStepInit" invokeType="ISSERVICE"
+      label="Wait for External Document" logicalServer="Default"
+      ornamentKey="32_invoice.png" outputVariable="V131" retryCount="0"
+      routingRuleSet="" stepLock="false" uid="S129"
+      wrapperService="PipTwoActionInitiatorProject.PipTwoActionInitiatorModel.PipTwoActionInitiatorModel_1.Default:S129_MAPPING"
+      x="767" y="415">
+      <documentation/>
+      <join joinType="Complex">
+        <timeout calendarAlias="" calendarTime="" dynamicFieldName=""
+          isCalendarTimeout="false" isStaticTimeout="true"
+          isXPathTimeout="false" timeoutStyle="RELATIVE"
+          timeoutType="joinTimeout" timeoutValue="7200000" xpathTimeoutValue=""/>
+        <joinExpression value="(Transition-From-S49 and Transition-From-S106 ) or (Transition-From-S106 and Transition-From-S164 )"/>
+      </join>
+      <businessKPIs/>
+      <extendedProperty name="retries" value="0"/>
+      <extendedProperty name="retryInterval" value="10000"/>
+      <timeout calendarAlias="" calendarTime="" dynamicFieldName=""
+        isCalendarTimeout="false" isStaticTimeout="true"
+        isXPathTimeout="false" timeoutStyle="RELATIVE"
+        timeoutType="stepTimeout" timeoutValue="7200000" xpathTimeoutValue=""/>
+    </invokeStep>
+    <receiveStep allowsSynchronousReply="false"
+      externalizeConditions="false" isStartStepServiceRequired="true"
+      label="Receive ReceiptAcknowledgement (RNIF 1.1)"
+      logicalServer="Default" outputVariable="V328"
+      receiveProtocol="SUBSCRIPTION" stepLock="false" uid="S137"
+      wrapperService="PipTwoActionInitiatorProject.PipTwoActionInitiatorModel.PipTwoActionInitiatorModel_1.Default:S137_MAPPING"
+      x="1031" y="150">
+      <documentation/>
+      <businessKPIs/>
+      <wmExpressionFilter/>
+    </receiveStep>
+    <receiveStep allowsSynchronousReply="false"
+      externalizeConditions="false" isStartStepServiceRequired="true"
+      label="Receive ReceiptAcknowledgement (RNIF 2.0)"
+      logicalServer="Default" outputVariable="V330"
+      receiveProtocol="SUBSCRIPTION" stepLock="false" uid="S140"
+      wrapperService="PipTwoActionInitiatorProject.PipTwoActionInitiatorModel.PipTwoActionInitiatorModel_1.Default:S140_MAPPING"
+      x="1031" y="290">
+      <documentation/>
+      <businessKPIs/>
+      <wmExpressionFilter/>
+    </receiveStep>
+    <invokeStep externalizeConditions="false" inputVariable="V144"
+      invokeContainer="pub.estd.rosettaNet"
+      invokeId="pub.estd.rosettaNet:waitStepInit" invokeLocation=""
+      invokeName="waitStepInit" invokeType="ISSERVICE"
+      label="Wait for ACK" logicalServer="Default"
+      ornamentKey="32_invoice.png" outputVariable="V145" retryCount="0"
+      routingRuleSet="" stepLock="false" uid="S143"
+      wrapperService="PipTwoActionInitiatorProject.PipTwoActionInitiatorModel.PipTwoActionInitiatorModel_1.Default:S143_MAPPING"
+      x="929" y="207">
+      <documentation/>
+      <join joinType="Complex">
+        <timeout calendarAlias="" calendarTime="" dynamicFieldName=""
+          isCalendarTimeout="false" isStaticTimeout="true"
+          isXPathTimeout="false" timeoutStyle="RELATIVE"
+          timeoutType="joinTimeout" timeoutValue="7200000" xpathTimeoutValue=""/>
+        <joinExpression value="Transition-From-S21 and (Transition-From-S137 or Transition-From-S140 )"/>
+      </join>
+      <businessKPIs/>
+      <extendedProperty name="retries" value="0"/>
+      <extendedProperty name="retryInterval" value="10000"/>
+      <timeout calendarAlias="" calendarTime="" dynamicFieldName=""
+        isCalendarTimeout="false" isStaticTimeout="true"
+        isXPathTimeout="false" timeoutStyle="RELATIVE"
+        timeoutType="stepTimeout" timeoutValue="7200000" xpathTimeoutValue=""/>
+    </invokeStep>
+    <invokeStep externalizeConditions="false" inputVariable="V160"
+      invokeContainer="pub.estd.rosettaNet"
+      invokeId="pub.estd.rosettaNet:inboundValidation" invokeLocation=""
+      invokeName="inboundValidation" invokeType="ISSERVICE"
+      label="Inbound Validation" logicalServer="Default"
+      ornamentKey="32_purchase_order.png" outputVariable="V161"
+      retryCount="0" routingRuleSet="" stepLock="false" uid="S159"
+      wrapperService="PipTwoActionInitiatorProject.PipTwoActionInitiatorModel.PipTwoActionInitiatorModel_1.Default:S159_MAPPING"
+      x="690" y="481">
+      <documentation/>
+      <businessKPIs/>
+      <extendedProperty name="retries" value="0"/>
+      <extendedProperty name="retryInterval" value="10000"/>
+      <timeout calendarAlias="" calendarTime="" dynamicFieldName=""
+        isCalendarTimeout="false" isStaticTimeout="true"
+        isXPathTimeout="false" timeoutStyle="RELATIVE"
+        timeoutType="stepTimeout" timeoutValue="0" xpathTimeoutValue=""/>
+    </invokeStep>
+    <invokeStep externalizeConditions="false" inputVariable="V165"
+      invokeContainer="pub.estd.rosettaNet"
+      invokeId="pub.estd.rosettaNet:sendReceiptAck" invokeLocation=""
+      invokeName="sendReceiptAck" invokeType="ISSERVICE"
+      label="Send Receipt Ack" logicalServer="Default"
+      ornamentKey="32_globe.png" outputVariable="V166" retryCount="0"
+      routingRuleSet="" stepLock="false" uid="S164"
+      wrapperService="PipTwoActionInitiatorProject.PipTwoActionInitiatorModel.PipTwoActionInitiatorModel_1.Default:S164_MAPPING"
+      x="939" y="604">
+      <documentation/>
+      <businessKPIs/>
+      <extendedProperty name="retries" value="0"/>
+      <extendedProperty name="retryInterval" value="10000"/>
+      <timeout calendarAlias="" calendarTime="" dynamicFieldName=""
+        isCalendarTimeout="false" isStaticTimeout="true"
+        isXPathTimeout="false" timeoutStyle="RELATIVE"
+        timeoutType="stepTimeout" timeoutValue="0" xpathTimeoutValue=""/>
+    </invokeStep>
+    <invokeStep externalizeConditions="false" inputVariable="V169"
+      invokeContainer="wm.b2b.rn.sample.company1.maps.inbound"
+      invokeId="" invokeLocation="" invokeName="POAcceptance"
+      invokeType="ISSERVICE" label="Inbound Map" logicalServer="Default"
+      ornamentKey="32_decision_diamond.png" outputVariable="V170"
+      retryCount="0" routingRuleSet="" stepLock="false" uid="S168"
+      wrapperService="PipTwoActionInitiatorProject.PipTwoActionInitiatorModel.PipTwoActionInitiatorModel_1.Default:S168_MAPPING"
+      x="787" y="604">
+      <documentation/>
+      <businessKPIs/>
+      <extendedProperty name="retries" value="0"/>
+      <extendedProperty name="retryInterval" value="10000"/>
+      <timeout calendarAlias="" calendarTime="" dynamicFieldName=""
+        isCalendarTimeout="false" isStaticTimeout="true"
+        isXPathTimeout="false" timeoutStyle="RELATIVE"
+        timeoutType="stepTimeout" timeoutValue="0" xpathTimeoutValue=""/>
+    </invokeStep>
+    <invokeStep externalizeConditions="false" inputVariable="V173"
+      invokeContainer="wm.b2b.rn.sample.company1" invokeId=""
+      invokeLocation="" invokeName="sendToBackendSystem"
+      invokeType="ISSERVICE" label="Send To Back-End"
+      logicalServer="Default" ornamentKey="32_decision_diamond.png"
+      outputVariable="V174" retryCount="0" routingRuleSet=""
+      stepLock="false" uid="S172"
+      wrapperService="PipTwoActionInitiatorProject.PipTwoActionInitiatorModel.PipTwoActionInitiatorModel_1.Default:S172_MAPPING"
+      x="486" y="634">
+      <documentation/>
+      <businessKPIs/>
+      <extendedProperty name="retries" value="0"/>
+      <extendedProperty name="retryInterval" value="10000"/>
+      <timeout calendarAlias="" calendarTime="" dynamicFieldName=""
+        isCalendarTimeout="false" isStaticTimeout="true"
+        isXPathTimeout="false" timeoutStyle="RELATIVE"
+        timeoutType="stepTimeout" timeoutValue="0" xpathTimeoutValue=""/>
+    </invokeStep>
+    <invokeStep externalizeConditions="false" inputVariable="V177"
+      invokeContainer="pub.estd.rosettaNet"
+      invokeId="pub.estd.rosettaNet:error" invokeLocation=""
+      invokeName="error" invokeType="ISSERVICE"
+      label="Process Level Error" logicalServer="Default"
+      ornamentKey="32_error_stop_sign.png" outputVariable="V178"
+      retryCount="0" routingRuleSet="" stepLock="false" uid="S176"
+      wrapperService="PipTwoActionInitiatorProject.PipTwoActionInitiatorModel.PipTwoActionInitiatorModel_1.Default:S176_MAPPING"
+      x="216" y="578">
+      <documentation/>
+      <businessKPIs/>
+      <extendedProperty name="retries" value="0"/>
+      <extendedProperty name="retryInterval" value="10000"/>
+      <timeout calendarAlias="" calendarTime="" dynamicFieldName=""
+        isCalendarTimeout="false" isStaticTimeout="true"
+        isXPathTimeout="false" timeoutStyle="RELATIVE"
+        timeoutType="stepTimeout" timeoutValue="0" xpathTimeoutValue=""/>
+    </invokeStep>
+    <invokeStep externalizeConditions="false" inputVariable="V180"
+      invokeContainer="pub.estd.rosettaNet"
+      invokeId="pub.estd.rosettaNet:done" invokeLocation=""
+      invokeName="done" invokeType="ISSERVICE" label="Done"
+      logicalServer="Default" ornamentKey="32_success.png"
+      outputVariable="V181" retryCount="0" routingRuleSet=""
+      stepLock="false" uid="S179"
+      wrapperService="PipTwoActionInitiatorProject.PipTwoActionInitiatorModel.PipTwoActionInitiatorModel_1.Default:S179_MAPPING"
+      x="498" y="523">
+      <documentation/>
+      <businessKPIs/>
+      <extendedProperty name="retries" value="0"/>
+      <extendedProperty name="retryInterval" value="10000"/>
+      <timeout calendarAlias="" calendarTime="" dynamicFieldName=""
+        isCalendarTimeout="false" isStaticTimeout="true"
+        isXPathTimeout="false" timeoutStyle="RELATIVE"
+        timeoutType="stepTimeout" timeoutValue="0" xpathTimeoutValue=""/>
+    </invokeStep>
+    <receiveStep allowsSynchronousReply="false"
+      externalizeConditions="false" isStartStepServiceRequired="true"
+      label="Receive NOF (RNIF2.0)" logicalServer="Default"
+      outputVariable="V367" receiveProtocol="SUBSCRIPTION"
+      stepLock="false" uid="S283"
+      wrapperService="PipTwoActionInitiatorProject.PipTwoActionInitiatorModel.PipTwoActionInitiatorModel_1.Default:S283_MAPPING"
+      x="344" y="466">
+      <documentation/>
+      <businessKPIs/>
+      <wmExpressionFilter/>
+    </receiveStep>
+    <receiveStep allowsSynchronousReply="false"
+      externalizeConditions="false" isStartStepServiceRequired="true"
+      label="Receive NOF (RNIF1.1)" logicalServer="Default"
+      outputVariable="V365" receiveProtocol="SUBSCRIPTION"
+      stepLock="false" uid="S285"
+      wrapperService="PipTwoActionInitiatorProject.PipTwoActionInitiatorModel.PipTwoActionInitiatorModel_1.Default:S285_MAPPING"
+      x="218" y="466">
+      <documentation/>
+      <businessKPIs/>
+      <wmExpressionFilter/>
+    </receiveStep>
+    <invokeStep externalizeConditions="false" inputVariable="V286"
+      invokeContainer="pub.estd.rosettaNet"
+      invokeId="pub.estd.rosettaNet:waitStepInit" invokeLocation=""
+      invokeName="waitStepInit" invokeType="ISSERVICE"
+      label="Wait for Notification of Failure" logicalServer="Default"
+      ornamentKey="32_invoice.png" outputVariable="V287" retryCount="0"
+      routingRuleSet="" stepLock="false" uid="S288"
+      wrapperService="PipTwoActionInitiatorProject.PipTwoActionInitiatorModel.PipTwoActionInitiatorModel_1.Default:S26_MAPPING"
+      x="278" y="264">
+      <documentation/>
+      <join joinType="Or"/>
+      <businessKPIs/>
+      <extendedProperty name="retries" value="0"/>
+      <extendedProperty name="retryInterval" value="10000"/>
+      <timeout calendarAlias="" calendarTime="" dynamicFieldName=""
+        isCalendarTimeout="false" isStaticTimeout="true"
+        isXPathTimeout="false" timeoutStyle="RELATIVE"
+        timeoutType="stepTimeout" timeoutValue="0" xpathTimeoutValue=""/>
+    </invokeStep>
+    <invokeStep externalizeConditions="false" inputVariable="V289"
+      invokeContainer="pub.estd.rosettaNet" invokeId=""
+      invokeLocation="" invokeName="waitStepInit" invokeType="ISSERVICE"
+      label="Notification of Failure Handler" logicalServer="Default"
+      ornamentKey="32_stoplight.png" outputVariable="V290"
+      retryCount="0" routingRuleSet="" stepLock="false" uid="S291"
+      wrapperService="PipTwoActionInitiatorProject.PipTwoActionInitiatorModel.PipTwoActionInitiatorModel_1.Default:S26_MAPPING"
+      x="359" y="264">
+      <documentation/>
+      <businessKPIs/>
+      <extendedProperty name="retries" value="0"/>
+      <extendedProperty name="retryInterval" value="10000"/>
+      <timeout calendarAlias="" calendarTime="" dynamicFieldName=""
+        isCalendarTimeout="false" isStaticTimeout="true"
+        isXPathTimeout="false" timeoutStyle="RELATIVE"
+        timeoutType="stepTimeout" timeoutValue="0" xpathTimeoutValue=""/>
+    </invokeStep>
+    <receiveStep allowsSynchronousReply="false"
+      externalizeConditions="false" isStartStepServiceRequired="true"
+      label="Receive Exception (RNIF 1.1)" logicalServer="Default"
+      outputVariable="V359" receiveProtocol="SUBSCRIPTION"
+      stepLock="false" uid="S344"
+      wrapperService="PipTwoActionInitiatorProject.PipTwoActionInitiatorModel.PipTwoActionInitiatorModel_1.Default:S65_MAPPING"
+      x="431" y="284">
+      <documentation/>
+      <businessKPIs/>
+      <wmExpressionFilter/>
+    </receiveStep>
+    <receiveStep allowsSynchronousReply="false"
+      externalizeConditions="false" isStartStepServiceRequired="true"
+      label="Receive Exception (RNIF 2.0)" logicalServer="Default"
+      outputVariable="V361" receiveProtocol="SUBSCRIPTION"
+      stepLock="false" uid="S346"
+      wrapperService="PipTwoActionInitiatorProject.PipTwoActionInitiatorModel.PipTwoActionInitiatorModel_1.Default:S125_MAPPING"
+      x="511" y="315">
+      <documentation/>
+      <businessKPIs/>
+      <wmExpressionFilter/>
+    </receiveStep>
+    <receiveStep allowsSynchronousReply="false"
+      externalizeConditions="false" isStartStepServiceRequired="true"
+      label="Receive ReceiptAcknowledgementException"
+      logicalServer="Default" outputVariable="V363"
+      receiveProtocol="SUBSCRIPTION" stepLock="false" uid="S347"
+      wrapperService="PipTwoActionInitiatorProject.PipTwoActionInitiatorModel.PipTwoActionInitiatorModel_1.Default:S129_MAPPING"
+      x="600" y="284">
+      <documentation/>
+      <businessKPIs/>
+      <wmExpressionFilter/>
+    </receiveStep>
+    <invokeStep externalizeConditions="false" inputVariable="V349"
+      invokeContainer="pub.estd.rosettaNet"
+      invokeId="pub.estd.rosettaNet:waitStepInit" invokeLocation=""
+      invokeName="waitStepInit" invokeType="ISSERVICE"
+      label="Wait for Exception" logicalServer="Default"
+      ornamentKey="32_invoice.png" outputVariable="V350" retryCount="0"
+      routingRuleSet="" stepLock="false" uid="S351"
+      wrapperService="PipTwoActionInitiatorProject.PipTwoActionInitiatorModel.PipTwoActionInitiatorModel_1.Default:S26_MAPPING"
+      x="528" y="207">
+      <documentation/>
+      <join joinType="Or"/>
+      <businessKPIs/>
+      <extendedProperty name="retries" value="0"/>
+      <extendedProperty name="retryInterval" value="10000"/>
+      <timeout calendarAlias="" calendarTime="" dynamicFieldName=""
+        isCalendarTimeout="false" isStaticTimeout="true"
+        isXPathTimeout="false" timeoutStyle="RELATIVE"
+        timeoutType="stepTimeout" timeoutValue="0" xpathTimeoutValue=""/>
+    </invokeStep>
+    <transition blue="255" conditionDescription=""
+      conditionText="Iterations > 4" conditionType="RETRY" green="0"
+      lineShape="STRAIGHT" red="0" source="S21" sourceTerminal="LEFT"
+      target="S24" targetTerminal="TOP" uid="T27">
+      <wmExpression/>
+    </transition>
+    <transition blue="255" conditionDescription="" conditionText=""
+      conditionType="IF" green="0" lineShape="STRAIGHT" red="0"
+      source="S6" sourceTerminal="RIGHT" target="S21"
+      targetTerminal="BOTTOM" uid="T28">
+      <wmExpression/>
+    </transition>
+    <transition blue="255" conditionDescription="" conditionText=""
+      conditionType="IF" green="0" lineShape="STRAIGHT" red="0"
+      source="S24" sourceTerminal="RIGHT" target="S64"
+      targetTerminal="LEFT" uid="T67">
+      <wmExpression/>
+    </transition>
+    <transition blue="255" conditionDescription="" conditionText=""
+      conditionType="IF" green="0" lineShape="STRAIGHT" red="0"
+      source="S3" sourceTerminal="RIGHT" target="S124"
+      targetTerminal="LEFT" uid="T127">
+      <wmExpression/>
+    </transition>
+    <transition blue="255" conditionDescription="" conditionText=""
+      conditionType="IF" green="0" lineShape="STRAIGHT" red="0"
+      source="S124" sourceTerminal="RIGHT" target="S6"
+      targetTerminal="LEFT" uid="T128">
+      <wmExpression/>
+    </transition>
+    <transition blue="255" conditionDescription="" conditionText=""
+      conditionType="IF" green="0" lineShape="STRAIGHT" red="0"
+      source="S106" sourceTerminal="LEFT" target="S129"
+      targetTerminal="RIGHT" uid="T132">
+      <wmExpression/>
+    </transition>
+    <transition blue="255" conditionDescription="" conditionText=""
+      conditionType="IF" green="0" lineShape="STRAIGHT" red="0"
+      source="S137" sourceTerminal="LEFT" target="S143"
+      targetTerminal="RIGHT" uid="T146">
+      <wmExpression/>
+    </transition>
+    <transition blue="255" conditionDescription="" conditionText=""
+      conditionType="IF" green="0" lineShape="STRAIGHT" red="0"
+      source="S140" sourceTerminal="LEFT" target="S143"
+      targetTerminal="RIGHT" uid="T147">
+      <wmExpression/>
+    </transition>
+    <transition blue="255" conditionDescription="" conditionText=""
+      conditionType="IF" green="0" lineShape="STRAIGHT" red="0"
+      source="S143" sourceTerminal="LEFT" target="S45"
+      targetTerminal="TOP" uid="T148">
+      <wmExpression/>
+    </transition>
+    <transition blue="255" conditionDescription="" conditionText=""
+      conditionType="IF" green="0" lineShape="STRAIGHT" red="0"
+      source="S49" sourceTerminal="BOTTOM" target="S129"
+      targetTerminal="TOP" uid="T158">
+      <wmExpression/>
+    </transition>
+    <transition blue="255" conditionDescription="" conditionText="Error"
+      conditionType="ERROR" green="0" lineShape="STRAIGHT" red="0"
+      source="S159" sourceTerminal="TOP" target="S100"
+      targetTerminal="BOTTOM" uid="T163">
+      <wmExpression/>
+    </transition>
+    <transition blue="255" conditionDescription="" conditionText=""
+      conditionType="IF" green="0" lineShape="STRAIGHT" red="0"
+      source="S164" sourceTerminal="LEFT" target="S168"
+      targetTerminal="RIGHT" uid="T171">
+      <wmExpression/>
+    </transition>
+    <transition blue="255" conditionDescription="" conditionText=""
+      conditionType="IF" green="0" lineShape="STRAIGHT" red="0"
+      source="S168" sourceTerminal="LEFT" target="S172"
+      targetTerminal="RIGHT" uid="T175">
+      <wmExpression/>
+    </transition>
+    <transition blue="255" conditionDescription="" conditionText=""
+      conditionType="IF" green="0" lineShape="STRAIGHT" red="0"
+      source="S172" sourceTerminal="TOP" target="S179"
+      targetTerminal="BOTTOM" uid="T182">
+      <wmExpression/>
+    </transition>
+    <transition blue="255" conditionDescription=""
+      conditionText="Execution time > 2 hours &#xa;or Join wait time > 2 hours"
+      conditionType="TIMEOUT" green="0" lineShape="STRAIGHT" red="0"
+      source="S129" sourceTerminal="LEFT" target="S24"
+      targetTerminal="BOTTOM" uid="T191">
+      <wmExpression/>
+    </transition>
+    <transition blue="255" conditionDescription="" conditionText=""
+      conditionType="IF" green="0" lineShape="STRAIGHT" red="0"
+      source="S129" sourceTerminal="BOTTOM" target="S159"
+      targetTerminal="RIGHT" uid="T162">
+      <wmExpression/>
+    </transition>
+    <transition blue="255" conditionDescription="" conditionText=""
+      conditionType="IF" green="0" lineShape="STRAIGHT" red="0"
+      source="S159" sourceTerminal="BOTTOM" target="S164"
+      targetTerminal="TOP" uid="T167">
+      <wmExpression/>
+    </transition>
+    <transition blue="255" conditionDescription="" conditionText=""
+      conditionType="IF" green="0" lineShape="STRAIGHT" red="0"
+      source="S21" sourceTerminal="RIGHT" target="S143"
+      targetTerminal="LEFT" uid="T220">
+      <wmExpression/>
+    </transition>
+    <transition blue="255" conditionDescription=""
+      conditionText="Execution time > 2 hours &#xa;or Join wait time > 2 hours"
+      conditionType="TIMEOUT" green="0" lineShape="STRAIGHT" red="0"
+      source="S143" sourceTerminal="LEFT" target="S21"
+      targetTerminal="RIGHT" uid="T221">
+      <wmExpression/>
+    </transition>
+    <transition blue="255" conditionDescription="" conditionText="Error"
+      conditionType="ERROR" green="0" lineShape="STRAIGHT" red="0"
+      source="S21" sourceTerminal="BOTTOM" target="S100"
+      targetTerminal="RIGHT" uid="T265">
+      <wmExpression/>
+    </transition>
+    <transition blue="255" conditionDescription="" conditionText=""
+      conditionType="IF" green="0" lineShape="CURVE" red="0"
+      source="S100" sourceTerminal="LEFT" target="S64"
+      targetTerminal="RIGHT" uid="T275">
+      <wmExpression/>
+    </transition>
+    <transition blue="255" conditionDescription="" conditionText=""
+      conditionType="IF" green="0" lineShape="CURVE" red="0"
+      source="S45" sourceTerminal="LEFT" target="S49"
+      targetTerminal="RIGHT" uid="T276">
+      <wmExpression/>
+    </transition>
+    <transition blue="255" conditionDescription="" conditionText="Error"
+      conditionType="ERROR" green="0" lineShape="STRAIGHT" red="0"
+      source="S164" sourceTerminal="LEFT" target="S129"
+      targetTerminal="RIGHT" uid="T281">
+      <wmExpression/>
+    </transition>
+    <transition blue="255" conditionDescription="" conditionText=""
+      conditionType="IF" green="0" lineShape="STRAIGHT" red="0"
+      source="S283" sourceTerminal="LEFT" target="S288"
+      targetTerminal="BOTTOM" uid="T249">
+      <wmExpression/>
+    </transition>
+    <transition blue="255" conditionDescription="" conditionText=""
+      conditionType="IF" green="0" lineShape="STRAIGHT" red="0"
+      source="S285" sourceTerminal="RIGHT" target="S288"
+      targetTerminal="BOTTOM" uid="T248">
+      <wmExpression/>
+    </transition>
+    <transition blue="255" conditionDescription="" conditionText=""
+      conditionType="IF" green="0" lineShape="CURVE" red="0"
+      source="S291" sourceTerminal="TOP" target="S64"
+      targetTerminal="BOTTOM" uid="T296">
+      <wmExpression/>
+    </transition>
+    <transition blue="255" conditionDescription="" conditionText=""
+      conditionType="IF" green="0" lineShape="CURVE" red="0"
+      source="S288" sourceTerminal="RIGHT" target="S291"
+      targetTerminal="LEFT" uid="T297">
+      <wmExpression/>
+    </transition>
+    <transition blue="255" conditionDescription="" conditionText=""
+      conditionType="IF" green="0" lineShape="STRAIGHT" red="0"
+      source="S346" sourceTerminal="TOP" target="S351"
+      targetTerminal="BOTTOM" uid="T354">
+      <wmExpression/>
+    </transition>
+    <transition blue="255" conditionDescription="" conditionText=""
+      conditionType="IF" green="0" lineShape="STRAIGHT" red="0"
+      source="S347" sourceTerminal="LEFT" target="S351"
+      targetTerminal="BOTTOM" uid="T355">
+      <wmExpression/>
+    </transition>
+    <transition blue="255" conditionDescription="" conditionText=""
+      conditionType="IF" green="0" lineShape="STRAIGHT" red="0"
+      source="S344" sourceTerminal="RIGHT" target="S351"
+      targetTerminal="BOTTOM" uid="T356">
+      <wmExpression/>
+    </transition>
+    <transition blue="255" conditionDescription="" conditionText=""
+      conditionType="IF" green="0" lineShape="STRAIGHT" red="0"
+      source="S351" sourceTerminal="RIGHT" target="S100"
+      targetTerminal="BOTTOM" uid="T357">
+      <wmExpression/>
+    </transition>
+    <timeout calendarAlias="" calendarTime="" dynamicFieldName=""
+      isCalendarTimeout="false" isStaticTimeout="true"
+      isXPathTimeout="false" timeoutStyle="RELATIVE"
+      timeoutType="stepTimeout" timeoutValue="0" xpathTimeoutValue=""/>
+    <wmExpression/>
+  </pool>
+  <documentation/>
+  <qualityOfService expressPipeline="false" localCorrelation="false"
+    minLogLevel="5" optimizeLocally="false" volatileTracking="false" volatileTransition="false"/>
+  <messageFlow blue="100" conditionDescription="" green="100"
+    lineShape="STRAIGHT" red="100" source="S35" sourcePool="14"
+    sourceTerminal="LEFT" target="S137" targetPool="1"
+    targetTerminal="LEFT" uid="154"/>
+  <messageFlow blue="100" conditionDescription="" green="100"
+    lineShape="STRAIGHT" red="100" source="S54" sourcePool="14"
+    sourceTerminal="LEFT" target="S106" targetPool="1"
+    targetTerminal="RIGHT" uid="190"/>
+  <messageFlow blue="100" conditionDescription="" green="100"
+    lineShape="STRAIGHT" red="100" source="S164" sourcePool="1"
+    sourceTerminal="RIGHT" target="S57" targetPool="14"
+    targetTerminal="LEFT" uid="185"/>
+  <messageFlow blue="100" conditionDescription="" green="100"
+    lineShape="STRAIGHT" red="100" source="S21" sourcePool="1"
+    sourceTerminal="RIGHT" target="S29" targetPool="14"
+    targetTerminal="LEFT" uid="34"/>
+  <messageFlow blue="100" conditionDescription="" green="100"
+    lineShape="STRAIGHT" red="100" source="S35" sourcePool="14"
+    sourceTerminal="LEFT" target="S140" targetPool="1"
+    targetTerminal="LEFT" uid="157"/>
+  <messageFlow blue="100" conditionDescription="" green="100"
+    lineShape="STRAIGHT" red="100" source="S172" sourcePool="1"
+    sourceTerminal="LEFT" target="S60" targetPool="11"
+    targetTerminal="BOTTOM" uid="187"/>
+  <messageFlow blue="100" conditionDescription="" green="100"
+    lineShape="STRAIGHT" red="100" source="S16" sourcePool="11"
+    sourceTerminal="RIGHT" target="S3" targetPool="1"
+    targetTerminal="LEFT" uid="19"/>
+  <tnDocs>
+    <tnBizDoc bizDocID="ReceiptAck20------------"
+      logicalServer="Default" name="ReceiptAcknowledgment (RNIF 2.0)"
+      tnReceiver="Receiver Role" tnSender="Sender Role"/>
+    <tnBizDoc bizDocID="ReceiptAckException-----"
+      logicalServer="Default" name="ReceiptAcknowledgementException"
+      tnReceiver="Receiver Role" tnSender="Sender Role"/>
+    <tnBizDoc bizDocID="Exception---------------"
+      logicalServer="Default" name="Exception (RNIF 1.1)"
+      tnReceiver="Receiver Role" tnSender="Sender Role"/>
+    <tnBizDoc bizDocID="ReceiptAck--------------"
+      logicalServer="Default" name="ReceiptAcknowledgement (RNIF 1.1)"
+      tnReceiver="Receiver Role" tnSender="Sender Role"/>
+    <tnBizDoc bizDocID="53o6bp0040p9oa9l0000000v"
+      logicalServer="Default"
+      name="PIP0A1v1.1Failure Notification Action Failure Report Administrator Document"
+      tnReceiver="Receiver Role" tnSender="Sender Role"/>
+    <tnBizDoc bizDocID="0a3c1979f70d29a100000075"
+      logicalServer="Default"
+      name="PIP0A1vV02.00 Failure Notification Action Failure Report Administrator Document"
+      tnReceiver="Receiver Role" tnSender="Sender Role"/>
+    <tnBizDoc bizDocID="InternalPORequest-------"
+      logicalServer="Default" name="Internal PO Request"
+      tnReceiver="Receiver Role" tnSender="Sender Role"/>
+    <tnBizDoc bizDocID="RosettaNet Dummy DocType"
+      logicalServer="Default" name="RosettaNet Dummy DocType"
+      tnReceiver="Receiver Role" tnSender="Sender Role"/>
+    <tnBizDoc bizDocID="Exception20-------------"
+      logicalServer="Default" name="Exception (RNIF 2.0)"
+      tnReceiver="Receiver Role" tnSender="Sender Role"/>
+  </tnDocs>
+</businessProcessDiagram>

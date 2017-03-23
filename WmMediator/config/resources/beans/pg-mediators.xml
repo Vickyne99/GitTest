@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd"
+       default-init-method="init"
+       default-destroy-method="shutdown">
+
+    <bean class="com.softwareag.pg.config.PGServiceFactory" name="pgServiceFactory"
+          depends-on="mediatorFactoryManager">
+        <property name="mediatorFactoryProvider" ref="mediatorFactoryManager"/>
+        <property name="registeredConsumersParser" ref="registeredConsumersParser"/>
+    </bean>
+
+    <bean name="registeredConsumersParser" class="com.softwareag.pg.consumers.RegisteredConsumersParser">
+        <property name="serviceFactory" ref="pgServiceFactory"/>
+    </bean>
+
+    <bean class="com.softwareag.pg.mediators.factory.MediatorFactoryManager"
+          name="mediatorFactoryManager, mediatorProvider, mediatorFactoryProvider">
+        <property name="factories">
+            <set>
+			    <bean class="com.softwareag.pg.mediators.factory.URLRewriteMediatorFactory"/>
+                <bean class="com.softwareag.pg.mediators.factory.ODataResourceFilterMediatorFactory"/>
+                <bean class="com.softwareag.pg.mediators.factory.AuthorizationMediatorFactory"/>
+
+                <bean class="com.softwareag.pg.mediators.factory.PgMenPolicyActionListMediatorFactory"
+                      parent="listMediatorFactory"/>
+
+                <bean class="com.softwareag.pg.mediators.factory.PgMenLogPolicyMediatorFactory"/>
+                <bean class="com.softwareag.pg.mediators.factory.PgMenMonitorPolicyMediatorFactory"/>
+                <bean class="com.softwareag.pg.mediators.factory.PgMenSlaPolicyMediatorFactory"/>
+
+                <bean class="com.softwareag.pg.config.PGSendMediatorFactory"/>
+                <bean class="com.softwareag.pg.mediators.factory.RequireHTTPAuthMediatorFactory"/>
+				<bean class="com.softwareag.pg.mediators.factory.RequireApiKeyMediatorFactory"/>
+				<bean class="com.softwareag.pg.mediators.factory.EnforcePolicyMediatorFactory"/>
+				<bean class="com.softwareag.pg.mediators.factory.ExposeAsRestMediatorFactory"/>
+				
+                <bean class="com.softwareag.pg.mediators.factory.SequenceMediatorFactory"
+                      parent="listMediatorFactory"/>
+
+                <bean class="com.softwareag.pg.mediators.factory.routing.AndMediatorFactory"
+                      parent="listMediatorFactory"/>
+
+                <bean class="com.softwareag.pg.mediators.factory.routing.OrMediatorFactory"
+                      parent="listMediatorFactory"/>
+
+                <bean class="com.softwareag.pg.mediators.factory.routing.RuleMediatorFactory"
+                      parent="listMediatorFactory"/>
+
+                <bean class="com.softwareag.pg.mediators.factory.routing.ContextMediatorFactory"
+                      parent="listMediatorFactory"/>
+
+                <bean class="com.softwareag.pg.mediators.factory.routing.ContentMediatorFactory"
+                      parent="listMediatorFactory"/>
+                      
+                <bean class="com.softwareag.pg.mediators.factory.routing.DynamicRoutingMediatorFactory"
+                      parent="listMediatorFactory"/>
+
+                <bean class="com.softwareag.pg.mediators.factory.routing.ConditionMediatorFactory"/>
+
+                <bean class="com.softwareag.pg.mediators.factory.JMSConfigMediatorFactory"/>
+                <bean class="com.softwareag.pg.mediators.factory.HTTPHeadersMediatorFactory"/>
+  
+                <bean class="com.softwareag.pg.mediators.factory.IDConsumerMediatorFactory"/>
+                <bean class="com.softwareag.pg.mediators.factory.EncryptResponseMediatorFactory"/>
+                <bean class="com.softwareag.pg.mediators.factory.SchemaMediatorFactory"/>
+
+                <bean id="xsltMediatorFactory" class="com.softwareag.pg.mediators.factory.XSLTMediatorFactory"/>
+                <bean class="com.softwareag.pg.mediators.factory.PgFaultMediatorFactory"/>
+
+				<bean class="com.softwareag.pg.mediators.factory.RequestMessageTypeMediatorFactory"/>
+				<bean class="com.softwareag.pg.mediators.factory.ResponseMessageTypeMediatorFactory"/>
+				<bean class="com.softwareag.pg.mediators.factory.CacheServiceResultMediatorFactory"/>
+				<bean class="com.softwareag.pg.mediators.factory.FaultCriteriaMediatorFactory"/>
+				<bean class="com.softwareag.pg.mediators.factory.AudienceCheckerMediatorFactory"/>
+
+                <!--IS specific mediators-->
+                <bean class="com.softwareag.pg.mediators.InvokeESBMediatorFactory"/>
+				<bean class="com.softwareag.pg.mediators.factory.MessageOutboundMediatorFactory"/>
+
+            </set>
+        </property>
+    </bean>
+
+    <bean class="com.softwareag.pg.mediators.factory.AbstractListMediatorFactory"
+          name="listMediatorFactory"
+          depends-on="mediatorFactoryManager" abstract="true">
+        <property name="mediatorProvider" ref="mediatorFactoryManager"/>
+    </bean>
+
+</beans>

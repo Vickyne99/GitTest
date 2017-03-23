@@ -1,0 +1,147 @@
+<?xml version="1.0"?>
+<constraints>
+
+<!-- Text Block for NOV03 MT304 -->
+
+<field name="22A:" type="MixedType">
+    <bizName>Type of Operation</bizName>
+    <pattern>4!c</pattern>
+    <choice>AMND</choice>
+    <choice>CANC</choice>
+    <choice>DUPL</choice>
+    <choice>NEWT</choice>
+    <error type="choice">T36</error>
+</field>
+
+<field name="17F:" type="MixedType">
+    <bizName>Final Close Indicator</bizName>
+    <pattern>1!a</pattern>
+    <choice>N</choice>
+    <choice>Y</choice>
+    <error type="choice">T36</error>
+</field>
+<field name="20:" type="PatternType">
+    <bizName>Reference - Sender's Reference</bizName>
+    <pattern>16x</pattern>
+</field>
+<field name="21A:" type="PatternType">
+    <bizName>Reference A - Reference to the Associated Trade</bizName>
+    <pattern>16x</pattern>
+    <error type="content">T26</error>
+</field>
+<field name="21G:" type="PatternType">
+    <bizName>Reference G - Executing Broker's Reference</bizName>
+    <pattern>16x</pattern>
+</field>
+<field name="32B:" type="PatternType">
+    <bizName>B - Currency, Amount Bought</bizName>
+    <pattern>&lt;CUR&gt;&lt;AMOUNT&gt;15</pattern>
+</field>
+<field name="33B:" type="PatternType">
+    <bizName>B - Currency, Amount Sold</bizName>
+    <pattern>&lt;CUR&gt;&lt;AMOUNT&gt;15</pattern>
+</field>
+<field name="72:" type="PatternType">
+    <bizName>Sender to Receiver Information</bizName>
+    <pattern>&lt;FLD72&gt;</pattern>
+</field>
+<field name="82A:" type="MixedType">
+    <bizName>A - Fund Manager</bizName>
+    <pattern>[&lt;PartyIdentifier&gt;][CRLF]&lt;SWIFTBIC&gt;</pattern>
+</field>
+<field name="82D:" type="MixedType">
+    <bizName>D - Fund Manager</bizName>
+    <pattern>[&lt;PartyIdentifier&gt;][CRLF]4*35x</pattern>
+</field>
+<field name="82J:" type="MixedType">
+    <bizName>J - Fund Manager</bizName>
+    <pattern>&lt;PARTYFLD/J&gt;</pattern>
+    <choice>/ABIC/</choice>
+    <choice>/ACCT/</choice>
+    <choice>/NAME/</choice>
+    <choice>/ADD1/</choice>
+    <choice>/ADD2/</choice>
+    <choice>/CITY/</choice>
+    <choice>/USFW/</choice>
+    <choice>/USCH/</choice>
+    <choice>/GBSC/</choice>
+    <choice>/CLRC/</choice>
+	<choice>/LEIC/</choice>
+    <error type="choice">T78</error>
+</field>
+<field name="83A:" type="MixedType">
+    <bizName>A - Fund</bizName>
+    <pattern>[&lt;PartyIdentifier&gt;][CRLF]&lt;SWIFTBIC&gt;</pattern>
+</field>
+<field name="83D:" type="MixedType">
+    <bizName>D - Fund</bizName>
+    <pattern>[&lt;PartyIdentifier&gt;][CRLF]4*35x</pattern>
+</field>
+<field name="83J:" type="MixedType">
+    <bizName>J - Fund</bizName>
+    <pattern>&lt;PARTYFLD/J&gt;</pattern>
+    <choice>/ABIC/</choice>
+    <choice>/ACCT/</choice>
+    <choice>/NAME/</choice>
+    <choice>/ADD1/</choice>
+    <choice>/ADD2/</choice>
+    <choice>/CITY/</choice>
+    <choice>/USFW/</choice>
+    <choice>/USCH/</choice>
+    <choice>/GBSC/</choice>
+    <choice>/CLRC/</choice>
+	<choice>/LEIC/</choice>
+    <error type="choice">T78</error>
+</field>
+<field name="87A:" type="MixedType">
+    <bizName>A - Executing Broker</bizName>
+    <pattern>[&lt;PartyIdentifier&gt;][CRLF]&lt;SWIFTBIC&gt;</pattern>
+</field>
+<field name="87D:" type="MixedType">
+    <bizName>D - Executing Broker</bizName>
+    <pattern>[&lt;PartyIdentifier&gt;][CRLF]4*35x</pattern>
+</field>
+<field name="87J:" type="MixedType">
+    <bizName>J - Executing Broker</bizName>
+    <pattern>&lt;PARTYFLD/J&gt;</pattern>
+    <choice>/ABIC/</choice>
+    <choice>/ACCT/</choice>
+    <choice>/NAME/</choice>
+    <choice>/ADD1/</choice>
+    <choice>/ADD2/</choice>
+    <choice>/CITY/</choice>
+    <choice>/USFW/</choice>
+    <choice>/USCH/</choice>
+    <choice>/GBSC/</choice>
+    <choice>/CLRC/</choice>
+	<choice>/LEIC/</choice>
+    <error type="choice">T78</error>
+</field>
+<field name="94A:" type="MixedType">
+    <bizName>Place A - Scope of Operation</bizName>
+    <pattern>4!c</pattern>
+    <choice>AFWD</choice>
+    <choice>ASET</choice>
+</field>
+<field name="98G:" type="Mixed2Type">
+    <bizName>Confirmation Timestamp</bizName>
+    <pattern>&lt;DATE4&gt;&lt;TIME2&gt;[1!x][3n][/[1!x]2!n[2!n]]</pattern>
+    <alias pattern="&lt;DATE4&gt;" bizName="Execution Date" />                
+    <alias pattern="&lt;TIME2&gt;" bizName="Execution Time" />
+	<alias pattern="1!x" bizName="Comma" />
+	<alias pattern="1!x" bizName="Sign" />
+	<choice1>,</choice1>
+	<choice2>-</choice2>
+     <choice2>+</choice2>
+</field>
+<field name="98H:" type="Mixed2Type">
+    <bizName>Clearing Timestamp</bizName>
+    <pattern>&lt;TIME2&gt;[1!x][3n][/[1!x]2!n[2!n]]</pattern>               
+    <alias pattern="&lt;TIME2&gt;" bizName="Execution Time" />
+	<alias pattern="1!x" bizName="Comma" />
+	<alias pattern="1!x" bizName="Sign" />
+	<choice1>,</choice1>
+	<choice2>-</choice2>
+     <choice2>+</choice2>
+</field>
+</constraints>

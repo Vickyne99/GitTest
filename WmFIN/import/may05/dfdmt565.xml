@@ -1,0 +1,149 @@
+<?xml version="1.0"?>
+<constraints>
+
+<!-- Text Block for NOV03 MT564 -->
+
+<field name="22H::CAOP" type="MixedType">
+    <bizName>Indicator H - Corporate Action Option Code</bizName>
+    <pattern>//4!c</pattern>
+    <choice>144A</choice>
+    <choice>ABST</choice>
+    <choice>AMGT</choice>
+    <choice>ATCH</choice>
+    <choice>BEAR</choice>
+    <choice>BUYA</choice>
+    <choice>CASE</choice>
+    <choice>CASH</choice>
+    <choice>CEXC</choice>
+    <choice>CONN</choice>
+    <choice>CONV</choice>
+    <choice>CONY</choice>
+    <choice>CTEN</choice>
+    <choice>DETH</choice>
+    <choice>DRIP</choice>
+    <choice>EDVO</choice>
+    <choice>EXER</choice>
+    <choice>IBBO</choice>
+    <choice>LAPS</choice>
+    <choice>MNGT</choice>
+    <choice>MPUT</choice>
+    <choice>NOAC</choice>
+    <choice>OFFR</choice>
+    <choice>OTHR</choice>
+    <choice>OVER</choice>
+    <choice>PROX</choice>
+    <choice>PUTT</choice>
+    <choice>REGD</choice>
+    <choice>REGS</choice>
+    <choice>SECU</choice>
+    <choice>SLLE</choice>
+    <choice>SPLI</choice>
+</field>
+<field name="23G:" type="Mixed2Type">
+    <bizName>Function of the Message</bizName>
+    <pattern>4!c[/4!c]</pattern>
+    <alias pattern="4!c" bizName="Function" />            
+    <alias pattern="4!c" bizName="Subfunction" />                
+    <choice1>CANC</choice1>
+    <choice1>NEWM</choice1>
+    <choice2>CODU</choice2>
+    <choice2>COPY</choice2>
+    <choice2>DUPL</choice2>
+    <error type="choice">T86</error>
+</field>
+<field name="90B::INDC" type="MixedType">
+    <bizName>Price B - Indicative Price</bizName>
+    <pattern>//4!c/&lt;CUR&gt;&lt;NUMBER&gt;15</pattern>
+    <choice>ACTU</choice>
+    <choice>DISC</choice>
+    <choice>PREM</choice>
+    <choice>PLOT</choice>
+</field>
+<field name="90B::MRKT" type="MixedType">
+    <bizName>Price B - Market Price</bizName>
+    <pattern>//4!c/&lt;CUR&gt;&lt;NUMBER&gt;15</pattern>
+    <choice>ACTU</choice>
+    <choice>DISC</choice>
+    <choice>PREM</choice>
+    <choice>PLOT</choice>
+</field>
+<field name="90B::EXER" type="MixedType">
+    <bizName>Price B - Exercise Price</bizName>
+    <pattern>//4!c/&lt;CUR&gt;&lt;NUMBER&gt;15</pattern>
+    <choice>ACTU</choice>
+    <choice>DISC</choice>
+    <choice>PREM</choice>
+    <choice>PLOT</choice>
+</field>
+<field name="90B::ISSU" type="MixedType">
+    <bizName>Price B - Issue Price</bizName>
+    <pattern>//4!c/&lt;CUR&gt;&lt;NUMBER&gt;15</pattern>
+    <choice>ACTU</choice>
+    <choice>DISC</choice>
+    <choice>PREM</choice>
+    <choice>PLOT</choice>
+</field>
+<field name="90B::OFFR" type="MixedType">
+    <bizName>Price B - Offer Price Received</bizName>
+    <pattern>//4!c/&lt;CUR&gt;&lt;NUMBER&gt;15</pattern>
+    <choice>ACTU</choice>
+    <choice>DISC</choice>
+    <choice>PREM</choice>
+    <choice>PLOT</choice>
+</field>
+<field name="90B::PRPP" type="MixedType">
+    <bizName>Price B - Price per Product Paid</bizName>
+    <pattern>//4!c/&lt;CUR&gt;&lt;NUMBER&gt;15</pattern>
+    <choice>ACTU</choice>
+    <choice>DISC</choice>
+    <choice>PREM</choice>
+    <choice>PLOT</choice>
+</field>
+<field name="90B::REIN" type="MixedType">
+    <bizName>Price B - Reinvestment Price</bizName>
+    <pattern>//4!c/&lt;CUR&gt;&lt;NUMBER&gt;15</pattern>
+    <choice>ACTU</choice>
+    <choice>DISC</choice>
+    <choice>PREM</choice>
+    <choice>PLOT</choice>
+</field>
+<field name="90B::REDM" type="MixedType">
+    <bizName>Price B - Redemption  Price</bizName>
+    <pattern>//4!c/&lt;CUR&gt;&lt;NUMBER&gt;15</pattern>
+    <choice>ACTU</choice>
+    <choice>DISC</choice>
+    <choice>PREM</choice>
+    <choice>PLOT</choice>
+</field>
+<field name="90B::SUPR" type="MixedType">
+    <bizName>Price B - Subscription Price</bizName>
+    <pattern>//4!c/&lt;CUR&gt;&lt;NUMBER&gt;15</pattern>
+    <choice>ACTU</choice>
+    <choice>DISC</choice>
+    <choice>PREM</choice>
+    <choice>PLOT</choice>
+</field>
+<field name="90B::OFFP" type="MixedType">
+    <bizName>Price B - Offer Price Paid</bizName>
+    <pattern>//4!c/&lt;CUR&gt;&lt;NUMBER&gt;15</pattern>
+    <choice>ACTU</choice>
+    <choice>DISC</choice>
+    <choice>PREM</choice>
+    <choice>PLOT</choice>
+</field>
+<field name="90B::PRPR" type="MixedType">
+    <bizName>Price B - Price per Product Received</bizName>
+    <pattern>//4!c/&lt;CUR&gt;&lt;NUMBER&gt;15</pattern>
+    <choice>ACTU</choice>
+    <choice>DISC</choice>
+    <choice>PREM</choice>
+    <choice>PLOT</choice>
+</field>
+<field name="94B::SAFE" type="GenericFieldType">
+    <bizName>Place B - Place of Safekeeping</bizName>
+    <pattern>/[8c]/4!c[/30x]</pattern>
+    <choice>SHHE</choice>
+    <choice>ALLP</choice>
+</field>
+
+</constraints>

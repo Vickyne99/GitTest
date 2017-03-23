@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<constraints>
+
+<!-- Text Block for NOV03 MT574 IRSLST -->
+
+<field name="19A::TAXR" type="PatternType">
+    <bizName>Amount A - Witholding Tax Amount</bizName>
+    <pattern>//[N]&lt;CUR&gt;&lt;NUMBER&gt;15</pattern>
+</field>
+<field name="23G:" type="Mixed2Type">
+    <bizName>Function of the Message</bizName>
+    <pattern>4!c[/4!c]</pattern>
+    <alias pattern="4!c" bizName="Function" />            
+    <alias pattern="4!c" bizName="Subfunction" />                
+    <choice1>CANC</choice1>
+    <choice1>NEWM</choice1>
+    <choice1>REPL</choice1>
+    <choice2>CODU</choice2>
+    <choice2>COPY</choice2>
+    <choice2>DUPL</choice2>
+    <error type="choice">T86</error>
+</field>
+<field name="95S::ALTE" type="GenericFieldType">
+    <bizName>Party S - Alternate Identification</bizName>
+    <pattern>/[8c]/4!c/&lt;CC&gt;/30x</pattern>
+    <choice>EINX</choice>
+    <choice>FTIN</choice>
+    <choice>ITIN</choice>
+    <choice>QEIN</choice>
+    <choice>SSNX</choice>
+</field>
+<field name="22F::DOCT" type="Mixed2Type">
+    <bizName>Documentation Type</bizName>
+    <pattern>(/4!c/4!c)|(/[8c]/4!c)</pattern>
+    <choice1>IRSX</choice1>
+    <choice2>W8BE</choice2>
+    <choice2>W8IM</choice2>
+    <choice2>W8EC</choice2>
+    <choice2>W8EX</choice2>
+    <choice2>W9US</choice2>
+    <choice2>OTHE</choice2>
+</field>
+<field name="22F::RECT" type="Mixed2Type">
+    <bizName>Recipient Type</bizName>
+    <pattern>(/4!c/4!c)|(/[8c]/4!c)</pattern>
+    <choice1>IRSX</choice1>
+    <choice2>0001</choice2>
+    <choice2>0002</choice2>
+    <choice2>0003</choice2>
+    <choice2>0004</choice2>
+    <choice2>0005</choice2>
+    <choice2>0006</choice2>
+    <choice2>0007</choice2>
+    <choice2>0008</choice2>
+    <choice2>0009</choice2>
+    <choice2>0010</choice2>
+    <choice2>0011</choice2>
+    <choice2>0012</choice2>
+    <choice2>0013</choice2>
+    <choice2>0014</choice2>
+    <choice2>0015</choice2>
+    <choice2>0020</choice2>
+</field>
+<field name="22F::ACCL" type="Mixed2Type">
+    <bizName>Account Classification</bizName>
+    <pattern>(/4!c/4!c)|(/[8c]/4!c)</pattern>
+    <choice1>IRSX</choice1>
+    <choice2>FBEN</choice2>
+    <choice2>FBRA</choice2>
+    <choice2>FELT</choice2>
+    <choice2>FIMY</choice2>
+    <choice2>USEX</choice2>
+    <choice2>USNX</choice2>
+</field>
+</constraints>

@@ -1,0 +1,58 @@
+METHOD push_event.
+  DATA : evtattr         TYPE sweqconts,
+         timestamp       TYPE char15,
+         bo_id           TYPE swotobjid,
+         bo              TYPE obj_record,
+         correlationid   TYPE char10,
+         error           TYPE zbem_error.
+
+*- Get event creation date
+  swc0_get_element
+    _evt_container zbem_evt_creation_date evtattr-crea_date.
+  IF sy-subrc <> 0.
+    evtattr-crea_date = sy-datum.
+  ENDIF.
+
+*- Get event creation time
+  swc0_get_element
+    _evt_container zbem_evt_creation_time evtattr-crea_time.
+  IF sy-subrc <> 0.
+    evtattr-crea_time = sy-uzeit.
+  ENDIF.
+
+*- Convert into event creation timestamp
+  CONVERT DATE evtattr-crea_date TIME evtattr-crea_time
+    INTO TIME STAMP evtattr-crea_stmp TIME ZONE sy-zonlo.
+  CONCATENATE evtattr-crea_date evtattr-crea_time
+    INTO timestamp SEPARATED BY 'T'.                        "#EC NOTEXT
+
+*- Read the list of errors
+  IF NOT _error_list IS INITIAL.
+    LOOP AT _error_list INTO error. ENDLOOP.
+  ENDIF.
+
+*- Get correlation id
+  swc0_get_element _evt_container zbem_corr_object bo_id.
+  IF NOT bo_id IS INITIAL.
+    swc0_object_from_persistent bo_id bo.
+    swc0_get_object_key bo correlationid.
+  ENDIF.
+
+*- As we report complete SAP LUW only, the start and stop timestamps
+*- are usually very likely to be identical
+
+*- Send event
+  CALL FUNCTION 'WM_PUSH_EVENT' DESTINATION zbem_dest
+    EXPORTING
+      eventname           = _evt_name
+      eventobjecttype     = _evt_objtype
+      receivertype        = _rectype
+      eventobjectid       = _evt_objkey
+      correlationobjectid = correlationid
+      timestamp_start     = timestamp
+      timestamp_stop      = timestamp
+      businessdata        = _businessdata
+      errortype           = error-type
+      errormessage        = error-message
+      errormessagedetail  = error-messagedetails.
+ENDMETHOD.

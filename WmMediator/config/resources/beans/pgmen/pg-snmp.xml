@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd"
+       default-init-method="init"
+       default-destroy-method="shutdown">
+
+    <!-- CS Snmp Server, configured to receive v3 alerts  -->
+    <bean id="SnmpCentraSiteSender" class="com.softwareag.pg.pgmen.events.snmp.SnmpEventTrapDestination"
+          init-method="init" destroy-method="destroy">
+        <property name="toCs" value="true"/>
+        <property name="active" value="${pg.cs.snmpTarget.sendTraps}"/>
+        <!-- hack, to reduce dropped messages (milliseconds)  -->
+        <property name="sendDelay" value="${pg.csSnmpSender.sendDelay}"/>
+        <!--  Change this property to true to create a new snmp session for each alert sent. -->
+        <!--  this is not an optimal configuration for performance reasons.                  -->
+        <property name="closeAfterSend" value="false"/>
+        <!--  How many milliseconds are inactive, open connection objects kept around?  Zero -->
+        <!--     implies they are open indefinitely.                                         -->
+        <property name="connectionTimeout" value="${pg.cs.snmpTarget.connTimeout}"/>
+        <property name="snmpTarget" ref="csSnmpTarget"/>
+        <property name="pduBuilder" ref="pduBuilder"/>
+    </bean>
+
+    <!--  3rd party SNMP Server, configured to receive v1 alerts -->
+    <bean id="Snmp3rdPartySender" class="com.softwareag.pg.pgmen.events.snmp.SnmpEventTrapDestination"
+          init-method="init" destroy-method="destroy">
+        <property name="toCs" value="false"/>
+        <property name="active" value="${pg.snmp.customTarget.sendTraps}"/>
+        <!-- hack, to reduce dropped messages (milliseconds)  -->
+        <property name="sendDelay" value="${pg.3pSnmpSender.sendDelay}"/>
+        <!--  Change this property to true to create a new snmp session for each alert sent. -->
+        <!--  this is not an optimal configuration for performance reasons.                  -->
+        <property name="closeAfterSend" value="false"/>
+        <!--  How many milliseconds are inactive, open connection objects kept around?  Zero -->
+        <!--     implies they are open indefinitely.                                         -->
+        <property name="connectionTimeout" value="${pg.snmp.customTarget.connTimeout}"/>
+        <property name="snmpTarget" ref="${pg.snmp.customTarget}"/>
+        <property name="pduBuilder" ref="pduBuilder"/>
+    </bean>
+
+    <bean id="pduBuilder" class="com.softwareag.pg.pgmen.events.snmp.PduBuilder"/>
+
+    <bean id="communityTarget" class="com.softwareag.pg.pgmen.events.snmp.SnmpCommunityTarget">
+        <!-- set to true, if communityName value is base64 encoded-->
+        <property name="base64Encoded" value="${pg.snmp.communityTarget.base64Encoded}"/>
+
+        <property name="communityName" value="${pg.snmp.communityTarget.communityName}"/>
+
+        <property name="transportProtocol" value="${pg.snmp.communityTarget.transportProtocol}"/>
+        <property name="ipAddress" value="${pg.snmp.communityTarget.ipAddress}"/>
+        <property name="port" value="${pg.snmp.communityTarget.port}"/>
+
+        <property name="retries" value="${pg.snmp.communityTarget.retries}"/>
+        <property name="timeOut" value="${pg.snmp.communityTarget.sendTimeOut}"/>
+        <!--  what is the largest pdu the server can accept? Snmp4j defaults to 64K  -->
+        <property name="maxRequestSize" value="${pg.snmp.communityTarget.maxRequestSize}"/>
+    </bean>
+
+    <bean id="userTarget" class="com.softwareag.pg.pgmen.events.snmp.SnmpUserTarget"
+          depends-on="PgMenSharedCacheManager">
+
+        <property name="userName" value="${pg.snmp.userTarget.userName}"/>
+
+        <property name="useAuth" value="${pg.snmp.userTarget.useAuth}"/>
+        <!-- 'MD5' or 'SHA'-->
+        <property name="authProtocol" value="${pg.snmp.userTarget.authProtocol}"/>
+        <property name="authKeyHandle" value="pg.snmp.userTarget.authKey"/>
+
+        <property name="usePrivacy" value="${pg.snmp.userTarget.usePrivacy}"/>
+        <!-- 'DES' or 'AES128' or 'AES192' or 'AES256'-->
+        <property name="privProtocol" value="${pg.snmp.userTarget.privProtocol}"/>
+        <property name="privKeyHandle" value="pg.snmp.userTarget.privKey"/>
+
+        <!--'tcp' or 'udp' -->
+        <property name="transportProtocol" value="${pg.snmp.userTarget.transportProtocol}"/>
+        <property name="ipAddress" value="${pg.snmp.userTarget.ipAddress}"/>
+        <property name="port" value="${pg.snmp.userTarget.port}"/>
+
+        <property name="retries" value="${pg.snmp.userTarget.retries}"/>
+        <property name="timeOut" value="${pg.snmp.userTarget.sendTimeOut}"/>
+        <!--  what is the largest pdu the server can accept? Snmp4j defaults to 64K  -->
+        <property name="maxRequestSize" value="${pg.snmp.userTarget.maxRequestSize}"/>
+
+    </bean>
+
+    <bean id="csSnmpTarget" class="com.softwareag.pg.pgmen.events.snmp.SnmpUserTarget">
+        <!-- set to true, if either authKey or privKey are base64 encoded-->
+        <property name="base64Encoded" value="${pg.cs.snmpTarget.base64Encoded}"/>
+
+        <property name="userName" value="${pg.cs.snmpTarget.userName}"/>
+
+        <property name="useAuth" value="${pg.cs.snmpTarget.useAuth}"/>
+        <!-- 'MD5' or 'SHA'-->
+        <property name="authProtocol" value="${pg.cs.snmpTarget.authProtocol}"/>
+        <property name="authKeyHandle" value="pg.cs.snmpTarget.authKey"/>
+
+        <property name="usePrivacy" value="${pg.cs.snmpTarget.usePrivacy}"/>
+        <!-- 'DES' or 'AES128' or 'AES192' or 'AES256'-->
+        <property name="privProtocol" value="${pg.cs.snmpTarget.privProtocol}"/>
+        <property name="privKeyHandle" value="pg.cs.snmpTarget.privKey"/>
+
+        <!--'tcp' or 'udp' -->
+        <property name="transportProtocol" value="${pg.cs.snmpTarget.transportProtocol}"/>
+        <property name="ipAddress" value="${pg.cs.snmpTarget.ipAddress}"/>
+        <property name="port" value="${pg.cs.snmpTarget.port}"/>
+
+        <property name="retries" value="${pg.cs.snmpTarget.retries}"/>
+        <property name="timeOut" value="${pg.cs.snmpTarget.sendTimeOut}"/>
+        <!--  what is the largest pdu the server can accept? Snmp4j defaults to 64K  -->
+        <property name="maxRequestSize" value="${pg.cs.snmpTarget.maxRequestSize}"/>
+
+    </bean>
+
+
+    <!--
+    A collection of formatters to support conversion of various event
+      types to send to cs snmp server.
+    One formatter for each snmp message type.
+    -->
+    <bean id="PduCsErrorFormatter" class="com.softwareag.pg.pgmen.events.snmp.PduCsErrorFormatter"
+          init-method="init" destroy-method="destroy"/>
+
+    <bean id="PduCsLifeCycleFormatter" class="com.softwareag.pg.pgmen.events.snmp.PduCsLifeCycleFormatter"
+          init-method="init" destroy-method="destroy"/>
+
+    <bean id="PduCsMonitorFormatter" class="com.softwareag.pg.pgmen.events.snmp.PduCsMonitorFormatter"
+          init-method="init" destroy-method="destroy"/>
+
+    <bean id="PduCsPolViolationFormatter" class="com.softwareag.pg.pgmen.events.snmp.PduCsPolViolationFormatter"
+          init-method="init" destroy-method="destroy"/>
+
+    <bean id="PduCsTransactionFormatter" class="com.softwareag.pg.pgmen.events.snmp.PduCsTransactionFormatter"
+          init-method="init" destroy-method="destroy"/>
+
+    <!--
+    A collection of formatters to support conversion of various event
+      types to send to third-party snmp server.
+    One formatter for each snmp message type.
+    -->
+    <bean id="Pdu3PErrorFormatter" class="com.softwareag.pg.pgmen.events.snmp.Pdu3PErrorFormatter"
+          init-method="init" destroy-method="destroy">
+        <!--  as stipulated by java SimpleDateFormat, default format: EEE, d MMM yyyy HH:mm:ss Z  -->
+        <property name="dateFormat" value="EEE, d MMM yyyy HH:mm:ss Z"/>
+    </bean>
+
+    <bean id="Pdu3PLifeCycleFormatter" class="com.softwareag.pg.pgmen.events.snmp.Pdu3PLifeCycleFormatter"
+          init-method="init" destroy-method="destroy">
+        <!--  as stipulated by java SimpleDateFormat, default format: EEE, d MMM yyyy HH:mm:ss Z  -->
+        <property name="dateFormat" value="EEE, d MMM yyyy HH:mm:ss Z"/>
+    </bean>
+
+    <bean id="Pdu3PMonitorFormatter" class="com.softwareag.pg.pgmen.events.snmp.Pdu3PMonitorFormatter"
+          init-method="init" destroy-method="destroy">
+        <!--  as stipulated by java SimpleDateFormat, default format: EEE, d MMM yyyy HH:mm:ss Z  -->
+        <property name="dateFormat" value="EEE, d MMM yyyy HH:mm:ss Z"/>
+    </bean>
+
+    <bean id="Pdu3PPolViolationFormatter" class="com.softwareag.pg.pgmen.events.snmp.Pdu3PPolViolationFormatter"
+          init-method="init" destroy-method="destroy">
+        <!--  as stipulated by java SimpleDateFormat, default format: EEE, d MMM yyyy HH:mm:ss Z  -->
+        <property name="dateFormat" value="EEE, d MMM yyyy HH:mm:ss Z"/>
+    </bean>
+
+    <bean id="Pdu3PTransactionFormatter" class="com.softwareag.pg.pgmen.events.snmp.Pdu3PTransactionFormatter"
+          init-method="init" destroy-method="destroy">
+        <!--  as stipulated by java SimpleDateFormat, default format: EEE, d MMM yyyy HH:mm:ss Z  -->
+        <property name="dateFormat" value="EEE, d MMM yyyy HH:mm:ss Z"/>
+    </bean>
+
+    <bean class="com.softwareag.pg.pgmen.events.snmp.SnmpEnginePropertyStore" factory-method="inst"/>
+
+</beans>

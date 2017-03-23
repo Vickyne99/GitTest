@@ -1,0 +1,350 @@
+<publication packageKind="version" name="Edition 2010" title="HL7 Reference Information Model, Release 2 (Data Types R1)" schemaVersion="2.1.6" xmlns="urn:hl7-org:v3/mif2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:hl7-org:v3/mif2 G:\v3PubGenCombined_For2010May\ToolFiles\MIF2Schemas\mif-COMPLETE.xsd">
+	<!--	 <publication packageKind="version" name="2009Jan" title="HL7 Reference Information Model" schemaVersion="2.1.6" xmlns="urn:hl7-org:v3/mif2"> -->
+	<packageLocation root="PUB" artifact="RIM" realmNamespace="UV" version="Edition2010"/>
+	<header>
+		<renderingInformation application="XMLspy by gwb" renderingTime="2010-05-04T00:00:01"/>
+		<legalese copyrightOwner="Health Level Seven" copyrightYears="2010">
+			<notation>All rights reserved.</notation>
+		</legalese>
+		<responsibleGroup organizationName="Health Level Seven"/>
+		<approvalInfo approvalStatus="Non-standard - Available for use" ballotOccurrence="1" approvingOrganization="HL7"/>
+		<realmNamespace value="UV"/>
+	</header>
+	<publishedGroup name="preface-notes" title="Preface - Notes To Readers" contentsLevel="Detailed" renderToLocation="false">
+		<precedingText lang="EN">
+			<div hl7Id="ANSI-note" title="Reference RIM Bound to Data Types R1">
+				<p>As a result of decisions endorsed in the Fall of 2009 by the HL7 Technical Steering Committee, this Normative Edition provides static models whose content is based on RIM Release 2, but whose data types are derived from Abstract Data Types Release 1. (Note that RIM Release 2 is "formally" bound to Abstract Data Types Release 2, but those data types did not complete ballot reconciliation in time to be released as part of this Normative Edition.)</p>
+				<p>This rendering of the RIM expresses the full content of RIM Release 2, but the data types used within it are mapped "back" to <a href="../../infrastructure/datatypes/datatypes.htm">Abstract Data Types R1</a>.  This RIM is provided as the reference basis for the static models in this Normative Edition.</p>
+			</div>
+			<div title="Release notes" hl7Id="relnote-rimdiv2"/>
+		</precedingText>
+		<publishedItem name="preface-rimdiv3" title="Preface" contentsLevel="None">
+			<itemReference root="DEFN" artifact="RIM" realmNamespace="UV"/>
+			<filter name="Reference" root="DEFN" filterType="Include" artifact="RIM" realmNamespace="UV" artifactName="//mif:staticModel/mif:historyItem/mif:description"/>
+		</publishedItem>
+	</publishedGroup>
+	<publishedGroup name="RIMrelated" title="Vocabulary and Data Types Specifications" contentsLevel="Detailed">
+		<precedingText>
+			<div title="Normative Vocabulary for the RIM" hl7Id="rimSpecVoc">
+				<div title="Normative Concept Domain Constraints for RIM Attributes" hl7Id="rimSpecConceptDomain">
+					<p>The <a href="../../infrastructure/vocabulary/vocabulary.htm">HL7 vocabulary specifications</a> are detailed in a separate document. A selected sub-set of these specifications is part of the normative RIM specification. Specifically, each RIM attribute that is assigned a coded data type also has a defined <b>Concept Domain</b> that is the RIM-level constraint for that attribute. At the point where each RIM attribute is defined (below) 
+the Concept Domain constraint for the coded attributes will be shown along with a hyper-link to the Concept Domain specification in the Vocabulary. Each of these Concept Domain definitions is part of this Normative specification.</p>
+				</div>
+				<div title="Normative Code Systems for RIM Attributes of Data Type CS" hl7Id="rimSpecCodeSystem">
+					<p>Where RIM attributes are assigned <b>data type "CS"</b> a further normative constraint arises. Each such attribute <b>SHALL</b> draw its coded content from an HL7-defined code system that is considered to be part of the Normative RIM specification, and therefore subject to ballot as part of the RIM ballot. These <strong>Normative Code Systems</strong> are listed below :</p>
+					<table border="0" width="95%" cellspacing="10">
+						<col width="30%" span="3"/>
+						<tbody>
+							<tr>
+								<td>
+									<strong>
+										<a href="../../infrastructure/vocabulary/AcknowledgementCondition.htm">AcknowledgementCondition</a>
+									</strong>
+									<br/>
+									<br/>
+									<strong>
+										<a href="../../infrastructure/vocabulary/AcknowledgementDetailType.htm">AcknowledgementDetailType</a>
+									</strong>
+									<br/>
+									<br/>
+									<strong>
+										<a href="../../infrastructure/vocabulary/AcknowledgementType.htm">AcknowledgementType</a>
+									</strong>
+									<br/>
+									<br/>
+									<strong>
+										<a href="../../infrastructure/vocabulary/ActClass.htm">ActClass</a>
+									</strong>
+									<br/>
+									<br/>
+									<strong>
+										<a href="../../infrastructure/vocabulary/ActMood.htm">ActMood</a>
+									</strong>
+									<br/>
+									<br/>
+									<strong>
+										<a href="../../infrastructure/vocabulary/ActRelationshipCheckpoint.htm">ActRelationshipCheckpoint</a>
+									</strong>
+									<br/>
+									<br/>
+									<strong>
+										<a href="../../infrastructure/vocabulary/ActRelationshipJoin.htm">ActRelationshipJoin</a>
+									</strong>
+									<br/>
+									<br/>
+									<strong>
+										<a href="../../infrastructure/vocabulary/ActRelationshipSplit.htm">ActRelationshipSplit</a>
+									</strong>
+									<br/>
+									<br/>
+									<strong>
+										<a href="../../infrastructure/vocabulary/ActRelationshipSubset.htm">ActRelationshipSubset</a>
+									</strong>
+									<br/>
+									<br/>
+									<strong>
+										<a href="../../infrastructure/vocabulary/ActRelationshipType.htm">ActRelationshipType</a>
+									</strong>
+									<br/>
+									<br/>
+									<strong>
+										<a href="../../infrastructure/vocabulary/ActStatus.htm">ActStatus</a>
+									</strong>
+									<br/>
+									<br/>
+									<strong>
+										<a href="../../infrastructure/vocabulary/CommunicationFunctionType.htm">CommunicationFunctionType</a>
+									</strong>
+								</td>
+								<td>
+									<strong>
+										<a href="../../infrastructure/vocabulary/ContextConductionStyle.htm">ContextConductionStyle</a>
+									</strong>
+									<br/>
+									<br/>
+									<strong>
+										<a href="../../infrastructure/vocabulary/ContextControl.htm">ContextControl</a>
+									</strong>
+									<br/>
+									<br/>
+									<strong>
+										<a href="../../infrastructure/vocabulary/EntityClass.htm">EntityClass</a>
+									</strong>
+									<br/>
+									<br/>
+									<strong>
+										<a href="../../infrastructure/vocabulary/EntityDeterminer.htm">EntityDeterminer</a>
+									</strong>
+									<br/>
+									<br/>
+									<strong>
+										<a href="../../infrastructure/vocabulary/EntityStatus.htm">EntityStatus</a>
+									</strong>
+									<br/>
+									<br/>
+									<strong>
+										<a href="../../infrastructure/vocabulary/HL7StandardVersionCode.htm">HL7StandardVersionCode</a>
+									</strong>
+									<br/>
+									<br/>
+									<strong>
+										<a href="../../infrastructure/vocabulary/ManagedParticipationStatus.htm">ManagedParticipationStatus</a>
+									</strong>
+									<br/>
+									<br/>
+									<strong>
+										<a href="../../infrastructure/vocabulary/ModifyIndicator.htm">ModifyIndicator</a>
+									</strong>
+									<br/>
+									<br/>
+									<strong>
+										<a href="../../infrastructure/vocabulary/NullFlavor.htm">NullFlavor</a>
+									</strong>
+									<br/>
+									<br/>
+									<strong>
+										<a href="../../infrastructure/vocabulary/ParticipationType.htm">ParticipationType</a>
+									</strong>
+									<br/>
+									<br/>
+									<strong>
+										<a href="../../infrastructure/vocabulary/ProcessingID.htm">ProcessingID</a>
+									</strong>
+									<br/>
+									<br/>
+									<strong>
+										<a href="../../infrastructure/vocabulary/ProcessingMode.htm">ProcessingMode</a>
+									</strong>
+								</td>
+								<td>
+									<strong>
+										<a href="../../infrastructure/vocabulary/QueryPriority.htm">QueryPriority</a>
+									</strong>
+									<br/>
+									<br/>
+									<strong>
+										<a href="../../infrastructure/vocabulary/QueryResponse.htm">QueryResponse</a>
+									</strong>
+									<br/>
+									<br/>
+									<strong>
+										<a href="../../infrastructure/vocabulary/QueryStatusCode.htm">QueryStatusCode</a>
+									</strong>
+									<br/>
+									<br/>
+									<strong>
+										<a href="../../infrastructure/vocabulary/RelationshipConjunction.htm">RelationshipConjunction</a>
+									</strong>
+									<br/>
+									<br/>
+									<strong>
+										<a href="../../infrastructure/vocabulary/ResponseLevel.htm">ResponseLevel</a>
+									</strong>
+									<br/>
+									<br/>
+									<strong>
+										<a href="../../infrastructure/vocabulary/ResponseModality.htm">ResponseModality</a>
+									</strong>
+									<br/>
+									<br/>
+									<strong>
+										<a href="../../infrastructure/vocabulary/ResponseMode.htm">ResponseMode</a>
+									</strong>
+									<br/>
+									<br/>
+									<strong>
+										<a href="../../infrastructure/vocabulary/RoleClass.htm">RoleClass</a>
+									</strong>
+									<br/>
+									<br/>
+									<strong>
+										<a href="../../infrastructure/vocabulary/RoleLinkType.htm">RoleLinkType</a>
+									</strong>
+									<br/>
+									<br/>
+									<strong>
+										<a href="../../infrastructure/vocabulary/RoleStatus.htm">RoleStatus</a>
+									</strong>
+									<br/>
+									<br/>
+									<strong>
+										<a href="../../infrastructure/vocabulary/Sequencing.htm">Sequencing</a>
+									</strong>
+									<br/>
+									<br/>
+									<strong>
+										<a href="../../infrastructure/vocabulary/TransmissionRelationshipTypeCode.htm">TransmissionRelationshipTypeCode</a>
+									</strong>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<div title="Governing Data Type Specifications for the RIM" hl7Id="rimSpecData">
+				<div title="Data Types Binding" hl7Id="rimDtBind">
+					<p>As noted above, this RIM expression is based on Normative RIM Release 2, but with data type bindings to 
+	<a href="../../infrastructure/datatypes/datatypes.htm">HL7 Version 3 Standard: Data Types - Abstract Specification, Release 1 (ANSI/HL7 V3 DT, R1-2004)</a>
+	.</p>
+				</div>
+			</div>
+		</precedingText>
+		<publishedItem name="relatedSpecs-rimdiv" title="Related Specs" contentsLevel="None">
+			<itemReference root="DEFN" artifact="RIM" realmNamespace="UV"/>
+			<filter name="MembershipNormativeBallot" root="DEFN" filterType="Exclude" artifact="RIM" realmNamespace="UV" artifactName="//mif:staticModel/mif:historyItem/mif:description"/>
+		</publishedItem>
+	</publishedGroup>
+	<publishedGroup name="RIMGraphics" title="UML Diagrams of RIM Content" contentsLevel="Detailed">
+		<precedingText>
+			<div title="Available Diagrams" hl7Id="rimSpecDgms">
+				<p>The representations available for the RIM include a diagram for most of the subject areas, state-machine diagrams for classes and a reference to the full RIM "billboard" in a PDF file where 'zooming' is more readily supported. The diagrams for the subject areas and state machines are grouped below.</p>
+				<ul>
+					<li>
+						<a href="./Graphics/RIM_billboard.pdf">The RIM Billboard as a PDF file can be reached from here.</a>
+					</li>
+				</ul>
+			</div>
+			<div title="Graphic Diagrams of the RIM Back Bone content" hl7Id="RIM-CoreGraphics">
+				<p>The classes in the "back-bone" of the RIM are represented in the following diagrams:</p>
+				<div title="FoundationClasses Subject Area" hl7Id="FoundationClasses">
+					<img imageType="image/gif" class="graphic" src="./Graphics/RIM_NormativeContent.gif" alt="FoundationClasses Subject Area"/>
+					<br/>
+					<br/>
+				</div>
+				<div title="Acts Subject Area" hl7Id="Acts">
+					<img imageType="image/gif" class="graphic" alt="Acts Subject Area" src="./Graphics/RIM_Acts.gif"/>
+					<br/>
+					<br/>
+				</div>
+				<div title="Entities Subject Area" hl7Id="Entities">
+					<img imageType="image/gif" class="graphic" alt="Entities Subject Area" src="./Graphics/RIM_Entities.gif"/>
+					<br/>
+					<br/>
+				</div>
+				<div title="Roles Subject Area" hl7Id="Roles">
+					<img imageType="image/gif" class="graphic" alt="Roles Subject Area" src="./Graphics/RIM_Roles.gif"/>
+					<br/>
+					<br/>
+				</div>
+				<div title="State-machine diagram for Act class" hl7Id="ActStatus">
+					<img imageType="image/gif" class="graphic" alt="State-machine diagram for Act class" src="./Graphics/RIM_ActStatus.gif"/>
+					<br/>
+					<br/>
+				</div>
+				<div title="State-machine diagram for Entity class" hl7Id="EntityStatus">
+					<img imageType="image/gif" class="graphic" alt="State-machine diagram for Entity class" src="./Graphics/RIM_EntityStatus.gif"/>
+					<br/>
+					<br/>
+				</div>
+				<div title="State-machine diagram for ManagedParticipation class" hl7Id="ManagedParticipationStatus">
+					<img imageType="image/gif" class="graphic" alt="State-machine diagram for ManagedParticipation class" src="./Graphics/RIM_ManagedParticipationStatus.gif"/>
+					<br/>
+					<br/>
+				</div>
+				<div title="State-machine diagram for Role class" hl7Id="RoleStatus">
+					<img imageType="image/gif" class="graphic" alt="State-machine diagram for Role class" src="./Graphics/RIM_RoleStatus.gif"/>
+					<br/>
+					<br/>
+				</div>
+				<div title="StructuredDocuments Subject Area" hl7Id="StructuredDocuments">
+					<img imageType="image/gif" class="graphic" alt="StructuredDocuments Subject Area" src="./Graphics/RIM_StructuredDocuments.gif"/>
+					<br/>
+					<br/>
+				</div>
+			</div>
+			<div title="Graphic Diagrams of the RIM Infrastructure classes" hl7Id="RIM-AddlGraphics">
+				<p>The classes in the Communication Infrastructure subject areas are represented in the following diagrams:</p>
+				<div title="MessageCommunicationsControl Subject Area" hl7Id="MessageCommunicationsControl">
+					<img imageType="image/gif" class="graphic" alt="MessageCommunicationsControl Subject Area" src="./Graphics/RIM_MessageCommunicationsControl.gif"/>
+					<br/>
+					<br/>
+				</div>
+				<div title="MessageControl Subject Area" hl7Id="MessageControl">
+					<img imageType="image/gif" class="graphic" alt="MessageControl Subject Area" src="./Graphics/RIM_MessageControl.gif"/>
+					<br/>
+					<br/>
+				</div>
+				<div title="QueryControl Subject Area" hl7Id="QueryControl">
+					<img imageType="image/gif" class="graphic" alt="QueryControl Subject Area" src="./Graphics/RIM_QueryControl.gif"/>
+					<br/>
+					<br/>
+				</div>
+				<div title="CoreInfrastructure Subject Area" hl7Id="CoreInfrastructure">
+					<img imageType="image/gif" class="graphic" alt="CoreInfrastructure Subject Area" src="./Graphics/RIM_CoreInfrastructure.gif"/>
+					<br/>
+					<br/>
+				</div>
+				<div title="State-machine diagram for QueryEvent class" hl7Id="QueryEventStatus">
+					<img imageType="image/gif" class="graphic" alt="State-machine diagram for QueryEvent class" src="./Graphics/RIM_QueryEventStatus.gif"/>
+					<br/>
+					<br/>
+				</div>
+			</div>
+		</precedingText>
+		<publishedItem name="graphics-rimdiv" title="Graphics" contentsLevel="None">
+			<itemReference root="DEFN" artifact="RIM" realmNamespace="UV"/>
+			<filter name="Reference" root="DEFN" filterType="Exclude" artifact="RIM" realmNamespace="UV" artifactName="//mif:staticModel/mif:historyItem/mif:description"/>
+		</publishedItem>
+	</publishedGroup>
+	<publishedGroup name="sbj-rimdiv" title="Subject areas" contentsLevel="Detailed">
+		<publishedItem contentsLevel="None">
+			<itemReference root="DEFN" artifact="RIM" realmNamespace="UV"/>
+			<filter name="Reference" root="DEFN" filterType="Include" artifact="RIM" realmNamespace="UV" artifactName="//mif:staticModel/mif:subjectAreaPackage"/>
+		</publishedItem>
+	</publishedGroup>
+	<publishedGroup name="cls-rimdiv" title="Classes" contentsLevel="Detailed">
+		<precedingText>
+			<p>Each of the classes is listed below. They are sorted in the alphabetic order of their names. Each class includes a hyperlink to its primary subject area adjacent to the class name. This link can be used to quickly locate similar classes.</p>
+		</precedingText>
+		<publishedItem name="cnt-Classes" title="All RIM Classes" contentsLevel="Detailed">
+			<itemReference root="DEFN" artifact="RIM" realmNamespace="UV"/>
+			<filter name="MembershipNormativeBallot" root="DEFN" filterType="Include" artifact="RIM" realmNamespace="UV" artifactName="//mif:class"/>
+		</publishedItem>
+	</publishedGroup>
+	<publishedGroup name="assoc-rimdiv" title="Associations" contentsLevel="Detailed">
+		<publishedItem contentsLevel="None">
+			<itemReference root="DEFN" artifact="RIM" realmNamespace="UV"/>
+			<filter name="MembershipNormativeBallot" root="DEFN" filterType="Include" artifact="RIM" realmNamespace="UV" artifactName="//mif:association"/>
+		</publishedItem>
+	</publishedGroup>
+</publication>

@@ -1,0 +1,28 @@
+*"* private components of class ZCL_BEM
+*"* do not include other source files here!!!
+PRIVATE SECTION.
+
+  DATA _rectype TYPE swetypecou-rectype .
+  DATA _evt_container TYPE swconttab .
+  DATA _evt_name TYPE swetypecou-event .
+  DATA _evt_objtype TYPE swetypecou-objtype .
+  DATA _evt_objkey TYPE sweinstcou-objkey .
+  DATA _businessdata TYPE zbem_businessdata .
+  DATA _error_list TYPE zbem_errortable .
+
+  CLASS-METHODS get_previous_object
+    CHANGING
+      value(bo) TYPE obj_record .
+  METHODS raise_local_event
+    IMPORTING
+      value(evt_name) TYPE swo_event
+      value(evt_objtype) TYPE swo_objtyp .
+  METHODS get_table_data
+    IMPORTING
+      value(vbeln) TYPE sweinstcou-objkey
+      value(tab_name) TYPE tabname
+    EXPORTING
+      value(tab_data) TYPE STANDARD TABLE .
+  METHODS add_status_info
+    CHANGING
+      value(ordercont) TYPE swconttab .

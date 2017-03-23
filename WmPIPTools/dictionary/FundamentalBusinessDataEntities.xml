@@ -1,0 +1,1701 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XML Spy v3.0.7 (http://www.xmlspy.com) by Suhayl Masud (private) -->
+<!DOCTYPE dictionary SYSTEM "C:\Program_Files\jakarta-tomcat\webapps\samples\RNET\Version1\BusinessDictionary.dtd">
+<dictionary>
+	<FundamentalBusinessDataEntities>
+		<NAME>AccountNumber</NAME>
+		<DEFINITION>Identification number of an account.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max>35</Max>
+		<Repr>X(35)</Repr>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>AffirmationIndicator</NAME>
+		<DEFINITION>Used to indicate "yes", "no" statements e.g. Serialized Product.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max>3</Max>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>AttemptCount</NAME>
+		<DEFINITION>Indicates whether this message is the first attempt to execute this transaction, or a retry. This element is optional and, when specified, should be an integer 1 or greater. If it is not specified, or is specified and has a value of 1, then this is the first attempt. A value greater than 1 indicates a retry attempt.</DEFINITION>
+		<Type>NaturalNumber</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>BusinessActivityIdentifier</NAME>
+		<DEFINITION>An identifier which specifies a business activity.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>BusinessConstraint</NAME>
+		<DEFINITION>A constraint that must be met by the entire response document.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>BusinessTaxIdentifier</NAME>
+		<DEFINITION>Identifying number for Tax Information Field.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max>30</Max>
+		<Repr>X(30)</Repr>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>Cardinality</NAME>
+		<DEFINITION>A number that specifies the upper or lower bound for an object (e.g. product sub-component) in a collection.</DEFINITION>
+		<Type>NaturalNumber</Type>
+		<Min>1</Min>
+		<Max>10</Max>
+		<Repr>9(10)</Repr>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>CheckNumber</NAME>
+		<DEFINITION>The identifier of a bank cheque.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>CommunicationsNumber</NAME>
+		<DEFINITION>The electro-technical communication number, e.g., telephone number, facsimile number, pager number.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max>30</Max>
+		<Repr>X(30)</Repr>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>ConfirmationNumber</NAME>
+		<DEFINITION>An identifier used to reference the confirmation information that describes the processing of a business action e.g. subscription confirmation.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>CountableAmount</NAME>
+		<DEFINITION>Dimensionless magnitude, e.g. number of products.</DEFINITION>
+		<Type>PositiveInteger</Type>
+		<Min>1</Min>
+		<Max>15</Max>
+		<Repr>9(15)</Repr>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>DateStamp</NAME>
+		<DEFINITION>Specifies a specific date. Date stamp based on the ISO 8601 specification. The "Z" following the day identifier (DD) is used to indicate Coordinated Universal Time. Informal format: CCYYMMDDZ</DEFINITION>
+		<Type>Date</Type>
+		<Min>9</Min>
+		<Max>9</Max>
+		<Repr>9(8)X</Repr>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>DateTimeStamp</NAME>
+		<DEFINITION>Specifies an instance in time. Based on the ISO 8601 specification where "CC" represents the century, "YY" the year, "MM" the month and "DD" the day. The letter "T" is the date/time separator and "hh", "mm", "ss.sss" represent hour, minute and second respectively. This representation is immediately followed by a "Z" to indicate Coordinated Universal Time. Informal format: CCYYMMDDThhmmss.sssZ</DEFINITION>
+		<Type>DateTime</Type>
+		<Min>13</Min>
+		<Max>20</Max>
+		<Repr>9(8)X9(6)V9(3)X</Repr>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>DigitalCertificateSignature</NAME>
+		<DEFINITION>A data structure created using public key cryptography and one-way hash functions to produce a signature on the data that can be authenticated and which is difficult to forge or repudiate. A digital signature is also know as an encrypted message digest.</DEFINITION>
+		<Type/>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalDistributionFormatCode</NAME>
+		<DEFINITION>An electronic resource/asset distribution format.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>EmailAddress</NAME>
+		<DEFINITION>Electronic mail address.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>NationalExportControlClassificationCode</NAME>
+		<DEFINITION>Code identifying product classification for export regulation.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>NationalFederalCommunicationsCommissionLicenseNumberClassificationCode</NAME>
+		<DEFINITION>Product classification according to United States Federal Communications Commission licensing authority.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>NationalFoodAndDrugAdministrationCertificationNumberClassificationCode</NAME>
+		<DEFINITION>Product classification according to United States Food and Drug Administration authority.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>FreeFormText</NAME>
+		<DEFINITION>Unformatted text.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>FundTransferRoutingNumber</NAME>
+		<DEFINITION>Bank routing number used for electronic fund transfers.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalAccountClassificationCode</NAME>
+		<DEFINITION>Account classification indicating its functionality, e.g., credit card account, debit card account.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalAccountProfileResponseCode</NAME>
+		<DEFINITION>Code identifying whether changes to an account have been resent in their entirety or only the changes have been sent.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalAccountTypeCode</NAME>
+		<DEFINITION>Code identifying whether an account is for customer information or vendor information.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalAccountUseCode</NAME>
+		<DEFINITION>Code identifying the purpose of the account.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalActionCode</NAME>
+		<DEFINITION>Code identifying the business action that must be performed on or with the data.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalAdjustmentReasonCode</NAME>
+		<DEFINITION/>
+		<Type/>
+		<Min/>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalAdministeringAuthorityCode</NAME>
+		<DEFINITION>Code identifying the governing body responsible for administering a standard.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalAttachmentDescriptionCode</NAME>
+		<DEFINITION>Code identifying the type of product attachment, e.g. assembly instructions, block diagrams, test requirements, etc.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalBilledAmountTypeCode</NAME>
+		<DEFINITION>Code identifying the type of charge being billed, e.g. principal.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalBusinessActionCode</NAME>
+		<DEFINITION>Code identifying a business action. The identifier is found in table 4.2 of the PIP specification document.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalBusinessIdentifier</NAME>
+		<DEFINITION>A unique business identifier. The DUNS number is specified by RosettaNet.</DEFINITION>
+		<Type>Integer</Type>
+		<Min>9</Min>
+		<Max>9</Max>
+		<Repr>9(9)</Repr>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalBusinessServiceCode</NAME>
+		<DEFINITION>Code identifying a business service network component. This code is found in table 4.1 in a PIP specification document.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalBusinessSignalCode</NAME>
+		<DEFINITION>Code identifying the business signal message.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalCarrierCode</NAME>
+		<DEFINITION>A unique carrier identification code, based on Standard Carrier Alpha Code(s)</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalClaimCostTypeCode</NAME>
+		<DEFINITION>Code identifying the type of product pricing for a claim.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalComponentNameCode</NAME>
+		<DEFINITION>Code identifying the name of a component. This is found in the technical property dictionary.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalCountryCode</NAME>
+		<DEFINITION>Code identifying the two character country code specified in ISO 3166-1993.</DEFINITION>
+		<Type>String</Type>
+		<Min>2</Min>
+		<Max>2</Max>
+		<Repr>X(2)</Repr>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalCreditStatusCode</NAME>
+		<DEFINITION/>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalCurrencyCode</NAME>
+		<DEFINITION>Code identifying the three character currency code specified in ISO 4217-1995.</DEFINITION>
+		<Type>String</Type>
+		<Min>3</Min>
+		<Max>3</Max>
+		<Repr>X(3)</Repr>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>CurrencyExchangeRate</NAME>
+		<DEFINITION>The rate at which currency can be converted.</DEFINITION>
+		<Type>Real</Type>
+		<Min>3</Min>
+		<Max>15</Max>
+		<Repr>9(7)V9(7)</Repr>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalCustomerWaiverRequestTypeCode</NAME>
+		<DEFINITION/>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalCustomerWaiverResponseCode</NAME>
+		<DEFINITION/>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalDesignAssemblyStatusCode</NAME>
+		<DEFINITION>Code identifying the chronological status of the assembly or board.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalDesignRegistrationNotificationCode</NAME>
+		<DEFINITION>Code identifying the purpose of a design registration notification, e.g. an initial notification or an update.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalDesignWinClaimRejectionReasonCode</NAME>
+		<DEFINITION>Code identifying the reason for a design win claim rejection.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalDesignWinClaimResponseCode</NAME>
+		<DEFINITION>Code identifying the approval or rejection of a design win claim.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalDesignWinClassificationCode</NAME>
+		<DEFINITION>Code specifying the type of Design Win claim, as determined in a trading partner agreement and the terms and conditions of the Design Win Registration program.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalDigestAlgorithmCode</NAME>
+		<DEFINITION>Code identifying the Digest Algorithm that has been used to create the message digest. (Should be either "MD5" or "SHA1")</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalDocumentFunctionCode</NAME>
+		<DEFINITION>Code identifying the function of a document as either a request or a response.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalDocumentTypeCode</NAME>
+		<DEFINITION>Code identifying the type of financial document, e.g. invoice, credit memo or debit memo.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalEngineeringChangeOrderStatusCode</NAME>
+		<DEFINITION>Code identifying the status of an approved engineering change request, that is, an engineering change order.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalEngineeringChangeResponseCode</NAME>
+		<DEFINITION>Code identifying the response to a request for an engineering change.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalEquipmentTypeCode</NAME>
+		<DEFINITION>Code identifying the type of manufacturing equipment in use for a particular process step.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalFeeTypeCode</NAME>
+		<DEFINITION>Code identifying the type of fee being charged.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalFinancePlanIdentifier</NAME>
+		<DEFINITION>A unique finance plan identity.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalFinanceTermsCode</NAME>
+		<DEFINITION>Code identifying the terms that govern financing.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalFinancialAdjustmentReasonCode</NAME>
+		<DEFINITION>Code identifying the reason for adjustments to a monetary amount due for payment.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalFinancialCommitmentTypeCode</NAME>
+		<DEFINITION/>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalFinancingRequestActionCode</NAME>
+		<DEFINITION>Code identifying the business action requested for financing.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalForecastCode</NAME>
+		<DEFINITION>Code identifying the intended use of forecasting information.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalForecastEventCode</NAME>
+		<DEFINITION>Code identifying the event that initiates a forecast.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalForecastExceptionCode</NAME>
+		<DEFINITION>Code identifying GTIN exception(s).</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalForecastIdentifier</NAME>
+		<DEFINITION>A unique identifier specifying a specific sales forecast.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalForecastResponseCode</NAME>
+		<DEFINITION>Code identifying forecast disposition at the GTIN level.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalForecastRevisionReasonCode</NAME>
+		<DEFINITION>Code identifying the reason for a forecast revision or adjustment.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalGeographicRegionCode</NAME>
+		<DEFINITION>Code identifying a geographic region.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalGovernmentPriorityRatingCode</NAME>
+		<DEFINITION>If a contract number exists and PO type is Government, a priority rating code is required.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalIncotermsCode</NAME>
+		<DEFINITION>Code identifying incoterms.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalIntervalCode</NAME>
+		<DEFINITION>Code specifying a standard interval.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalInvoiceRejectionCode</NAME>
+		<DEFINITION>Code identifying the reason for the rejection of an invoice.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalLanguageCode</NAME>
+		<DEFINITION>Language code as specified in ISO 639-1988.</DEFINITION>
+		<Type>String</Type>
+		<Min>3</Min>
+		<Max>3</Max>
+		<Repr>X(3)</Repr>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalLifecycleStatusCode</NAME>
+		<DEFINITION>Code identifying the status that indicates the relative position in the components life cycle.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalLocationIdentifier</NAME>
+		<DEFINITION>Location uniquely identified by the DUNS +4 number.</DEFINITION>
+		<Type>Integer</Type>
+		<Min>13</Min>
+		<Max>13</Max>
+		<Repr>9(13)</Repr>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalLostSalesLeadReasonCode</NAME>
+		<DEFINITION/>
+		<Type/>
+		<Min/>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalLotCode</NAME>
+		<DEFINITION>Code identifying a lot type.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalLotQuantityClassificationCode</NAME>
+		<DEFINITION>Code identifying the classification of a manufacturing lot quantity.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalLotQuantityTypeCode</NAME>
+		<DEFINITION>Code identifying the type of a manufacturing lot quantity.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalLotStatusCode</NAME>
+		<DEFINITION>Code identifying the status of a lot.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalMimeTypeQualifierCode</NAME>
+		<DEFINITION>The MIME type. Refer to http://www.iana.org for a list of types.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalMonetaryAmountTypeCode</NAME>
+		<DEFINITION>Code identifying whether the monetary amount is a debit or credit.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalPackageTypeCode</NAME>
+		<DEFINITION>Code specifying the type of packaging for a product.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalPartTypeCode</NAME>
+		<DEFINITION>Code identifying the eligibility of a part for a design win process.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalPartnerAuthorizationCode</NAME>
+		<DEFINITION>Code identifying the status of a partner being authorized to sell the product.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalPartnerClassificationCode</NAME>
+		<DEFINITION>Code identifying a partner's function in the supply chain.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalPartnerRoleClassificationCode</NAME>
+		<DEFINITION>Code identifying a party's role in the supply chain.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalPaymentMethodCode</NAME>
+		<DEFINITION>Code identifying the method of payment for goods and services.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalPaymentTermsCode</NAME>
+		<DEFINITION>Code identifying the terms that govern the payment for goods and services.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalPaymentTypeCode</NAME>
+		<DEFINITION>Code identifying what the payment represents.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalPhysicalUnitOfMeasureCode</NAME>
+		<DEFINITION>Code identifying the unit of measure for a physical quantity.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalPortOfDeclarationCode</NAME>
+		<DEFINITION>Code identifying the location of export clearance for a product shipment.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalPortOfEntryCode</NAME>
+		<DEFINITION>Code identifying the delivery location for the product shipment.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalPriceProtectionClaimStatusCode</NAME>
+		<DEFINITION>Code identifying the status of an entire claim as assigned by the payor, claim review organization or repricing organization</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalPricingTypeCode</NAME>
+		<DEFINITION>Code identifying the type of pricing available for a product.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalPrincipalTypeCode</NAME>
+		<DEFINITION>Code identifying the type of principal, e.g. matured principal.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalPriorityCode</NAME>
+		<DEFINITION>Code identifying the priority order of an activity, product or service.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalProcessCode</NAME>
+		<DEFINITION>Code identifying the business process.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalProcessIndicatorCode</NAME>
+		<DEFINITION>Code identifying a business process.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalProductAcceptanceResponseCode</NAME>
+		<DEFINITION/>
+		<Type/>
+		<Min/>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalProductClassificationCode</NAME>
+		<DEFINITION>Code identifying product classification. RosettaNet has adopted the UNSPSC.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalProductDevelopmentCode</NAME>
+		<DEFINITION/>
+		<Type/>
+		<Min/>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalProductIdentifier</NAME>
+		<DEFINITION>Global unique product identifier. RosettaNet has adopted the Global Trade Identification Number (GTIN).</DEFINITION>
+		<Type>String</Type>
+		<Min>14</Min>
+		<Max>14</Max>
+		<Repr>9(14)</Repr>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalProductReturnReasonCode</NAME>
+		<DEFINITION>Code identifying the reason that a product is returned.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalProductStatusCode</NAME>
+		<DEFINITION>Code specifying the production status of an item.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalProductTestMethodCode</NAME>
+		<DEFINITION/>
+		<Type/>
+		<Min/>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalProductUnitOfMeasureCode</NAME>
+		<DEFINITION>Code identifying a product unit of measure.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalProgramActivityTypeCode</NAME>
+		<DEFINITION/>
+		<Type/>
+		<Min/>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalProgramTypeCode</NAME>
+		<DEFINITION>Code identifying the type of sales or marketing program.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalProjectMarketSegmentCode</NAME>
+		<DEFINITION>The first two characters of the UN/SPCS code (I.e., the Global Product Classification Code); which is used to identify the market segment.</DEFINITION>
+		<Type>String</Type>
+		<Min>2</Min>
+		<Max>2</Max>
+		<Repr>X(2)</Repr>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalPromotionFundSourceCode</NAME>
+		<DEFINITION>Code identifying the source of promotion program funding.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalPurchaseOrderAcknowledgmentReasonCode</NAME>
+		<DEFINITION>The reason for acknowledging a purchase order.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalPurchaseOrderFillPriorityCode</NAME>
+		<DEFINITION>Code identifying fill priority for manufacturing in a constrained condition. Value to be determined by Trading Partner Agreement</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalPurchaseOrderStatusCode</NAME>
+		<DEFINITION>Code identifying the status of a purchase order.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalPurchaseOrderStatusReasonCode</NAME>
+		<DEFINITION>Code identifying the reason for the status of a purchase order.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalPurchaseOrderTypeCode</NAME>
+		<DEFINITION>Code identifying category specification for a purchase order.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalQualityRatingCode</NAME>
+		<DEFINITION/>
+		<Type/>
+		<Min/>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalReadinessStatusCode</NAME>
+		<DEFINITION/>
+		<Type/>
+		<Min/>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalReceivingDiscrepancyCode</NAME>
+		<DEFINITION/>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalReceivingDiscrepancyReasonCode</NAME>
+		<DEFINITION/>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalRegistrationComplexityLevelCode</NAME>
+		<DEFINITION>Code identifying the level of complexity for registering a product.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalRegistrationInvolvementLevelCode</NAME>
+		<DEFINITION>Code identifying the level of involvement for a Field Application Engineer for registering a product.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalRegistrationStatusCode</NAME>
+		<DEFINITION>Code identifying the registration status of a design; namely, the acknowledgment, collaboration and continuation on the submitted supplier part business opportunity between a supplier (manufacture representative) and a distributor.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalRegulationCode</NAME>
+		<DEFINITION>Code identifying the regulations that govern the sale or use of products and services.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalReportErrorCode</NAME>
+		<DEFINITION>Code identifying a type of error on a report (sales or inventory report), e.g. invalid product or invalid location.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalResponseCode</NAME>
+		<DEFINITION>Code identifying the general approval, rejection or pending response to a request.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalReturnMaterialAuthorizationResponseCode</NAME>
+		<DEFINITION>Code identifying an authorization response for returning goods.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalReturnMaterialAuthorizationResponseReasonCode</NAME>
+		<DEFINITION>Code identifying an authorization response reason for returning goods.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalReturnMaterialAuthorizationResultCode</NAME>
+		<DEFINITION/>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalReturnProductInstructionCode</NAME>
+		<DEFINITION>Code identifying instructions for returning goods.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalRiskAnalysisCode</NAME>
+		<DEFINITION/>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalSalesAuthorizerCode</NAME>
+		<DEFINITION/>
+		<Type/>
+		<Min/>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalSalesClassificationCode</NAME>
+		<DEFINITION>Code identifying the type of sale.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalSalesCycleStatusCode</NAME>
+		<DEFINITION/>
+		<Type/>
+		<Min/>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalSalesLeadAssignmentResponseCode</NAME>
+		<DEFINITION/>
+		<Type/>
+		<Min/>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalSalesLeadDispositionCode</NAME>
+		<DEFINITION/>
+		<Type/>
+		<Min/>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalSalesLeadRequestActionCode</NAME>
+		<DEFINITION/>
+		<Type/>
+		<Min/>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalSalesMarketingClaimFundsSourceCode</NAME>
+		<DEFINITION/>
+		<Type/>
+		<Min/>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalSalesMarketingClaimResponseCode</NAME>
+		<DEFINITION/>
+		<Type/>
+		<Min/>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalServiceContentTypeCode</NAME>
+		<DEFINITION>Code that classifies message content as either a business action or business signal.</DEFINITION>
+		<Type/>
+		<Min/>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalShipFromStockAndDebitAuthorizationRejectionCode</NAME>
+		<DEFINITION>Code identifying the reason a ship from stock and debit authorization request was rejected.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalShipFromStockAndDebitAuthorizationStatusCode</NAME>
+		<DEFINITION>Code identifying the result of a ship from stock and debit authorization request.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalShipFromStockAndDebitClaimDispositionCode</NAME>
+		<DEFINITION>Code identifying the result of a ship from stock and debit claim request.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalShipFromStockAndDebitClaimRejectionCode</NAME>
+		<DEFINITION>Code identifying the reason a ship from stock and debit claim was rejected.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalShipmentChangeDispositionCode</NAME>
+		<DEFINITION>Code identifying the additional reasons for a change to a product shipment.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalShipmentDiscrepancyReasonCode</NAME>
+		<DEFINITION/>
+		<Type/>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalShipmentStatusCode</NAME>
+		<DEFINITION>Code identifying the delivery status for a shipment.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalShipmentStatusReportingLevelCode</NAME>
+		<DEFINITION>Code identifying the level of reporting for shipment delivery statuses.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalShipmentTermsCode</NAME>
+		<DEFINITION>Code identifying the terms under which a product is shipped.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalShippingServiceLevelCode</NAME>
+		<DEFINITION>Code identifying the shipping service level, e.g., overnight, same day.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalShoppingCartStatusCode</NAME>
+		<DEFINITION>Code identifying the status of a shopping cart.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalSpecialChargesCode</NAME>
+		<DEFINITION>Code identifying additional charges associated with the product.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalSpecialDeliveryInstructionCode</NAME>
+		<DEFINITION>Code identifying special instructions for product delivery.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalSpecialFulfillmentRequestCode</NAME>
+		<DEFINITION>Code identifying a special fulfillment request, e.g. delivery options.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalSpecialHandlingCode</NAME>
+		<DEFINITION>Code identifying special handling or packaging requirements for the product.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalSubComponentRelationshipCode</NAME>
+		<DEFINITION>Code identifying the semantic meaning of the relationship between physical sub-components.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalSupplyChainCode</NAME>
+		<DEFINITION>Code identifying the supply chain for the partner's function.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalTransactionCode</NAME>
+		<DEFINITION>Service transaction dialog. The code is the name of the business activity and the transaction dialog in the PIP specification document.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalTransactionCommandCode</NAME>
+		<DEFINITION>A transaction is either sending a message to continue a dialog or aborting a dialog.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalTransportEventCode</NAME>
+		<DEFINITION>Code identifying an event during the transportation of a shipment.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalTransportationClaimStatusCode</NAME>
+		<DEFINITION>Code identifying the status of a transportation claim request.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max>1</Max>
+		<Repr>X(1)</Repr>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalTransportationClaimTypeCode</NAME>
+		<DEFINITION>Code identifying the type of transportation claim.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max>1</Max>
+		<Repr>X(1)</Repr>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalUrgencyCode</NAME>
+		<DEFINITION>Code identifying the requirement for immediate action.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalUsageCode</NAME>
+		<DEFINITION>Code identifying the message use specification is either for production or for testing.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalWorkInProcessLocationCode</NAME>
+		<DEFINITION>Code identifying the location of manufacturing, fabrication and assembly of components.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalWorkInProcessPartTypeCode</NAME>
+		<DEFINITION>Code identifying the type of proprietary part number sent in a work in process activity.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalWorkInProcessTypeCode</NAME>
+		<DEFINITION>Code identifying the manufacturing, fabrication and assembly status of components.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GovernmentExtendedTotal</NAME>
+		<DEFINITION>The number of (Units x dollars). Use if PO Type is Government.</DEFINITION>
+		<Type>Real</Type>
+		<Min>3</Min>
+		<Max>15</Max>
+		<Repr>9(7)V9(7)</Repr>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>NationalHarmonizedTariffScheduleCode</NAME>
+		<DEFINITION>Code identifying product classification for international shipping.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>NationalHazardousMaterialUnitedNationsClassificationCode</NAME>
+		<DEFINITION>Code classifying hazardous material products.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>Identifier</NAME>
+		<DEFINITION>A unique identifier.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>InstanceIdentifier</NAME>
+		<DEFINITION>A unique alpha-numeric identifier that represents a specific instance of an business process, business transaction, business action or business signal. The instance identifier must be unique for a particular instance of a business process, business transaction, business action and business signal.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>LineNumber</NAME>
+		<DEFINITION>Number of the line in the document.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max>6</Max>
+		<Repr>X(6)</Repr>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>Magnitude</NAME>
+		<DEFINITION>The amount of a physical measure.</DEFINITION>
+		<Type>Real</Type>
+		<Min>3</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>MonetaryAmount</NAME>
+		<DEFINITION>Magnitude of currency amount.</DEFINITION>
+		<Type>Real</Type>
+		<Min>1</Min>
+		<Max>19</Max>
+		<Repr>9(13)V9(5)</Repr>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>NationalProductCertificationCode</NAME>
+		<DEFINITION>Product certification specifying compliance to a National standard.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>NationalPostalCode</NAME>
+		<DEFINITION>Code identifying geographic location as specified by a national postal code.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max>9</Max>
+		<Repr>X(9)</Repr>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>NationalStandardIndustryClassificationCode</NAME>
+		<DEFINITION>Business classification code created by the USA Government.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>OriginalMessageDigest</NAME>
+		<DEFINITION>The base-64 encoded digest of the entire original mime message received. The digest should have been created using the above digest algorithm.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>PercentAmount</NAME>
+		<DEFINITION>A whole number representing a percentage value, e.g. 75 represents 75 percent.</DEFINITION>
+		<Type>NaturalNumber</Type>
+		<Min>1</Min>
+		<Max>3</Max>
+		<Repr>9(3)</Repr>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>PeriodNumber</NAME>
+		<DEFINITION>The number of measurable units in a date/time period.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>ProductCondition</NAME>
+		<DEFINITION>A description of the physical condition of a product.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>ProductQuantity</NAME>
+		<DEFINITION>A quantity specifying the number of product units.</DEFINITION>
+		<Type>Real</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>ProprietaryAuthorizationIdentifier</NAME>
+		<DEFINITION>The proprietary authorization number that allows a partner to perform a business activity.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>ProprietaryCIDIdentifier</NAME>
+		<DEFINITION>Unique identifier for credit card purchase activity utilized by American Express.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>ProprietaryContractIdentifier</NAME>
+		<DEFINITION>A unique identifier for referencing specific contracts.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>ProprietaryDestinationCountryRegulatoryIdentifier</NAME>
+		<DEFINITION>A unique identifier that certifies regulations are met in the destination country.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>ProprietaryDocumentIdentifier</NAME>
+		<DEFINITION>Unique identifier, i.e. a numeric value or alphanumeric value, for a business document.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>ProprietaryLotIdentifier</NAME>
+		<DEFINITION>A unique identifier representing the manufacturing lot of a Global Product Identifier.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>ProprietaryMessageIdentifier</NAME>
+		<DEFINITION>An identifier created by partner that is sending the message.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>ProprietaryPartIdentifier</NAME>
+		<DEFINITION>The unique identifier for a part.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>ProprietaryProductClassificationCode</NAME>
+		<DEFINITION>Proprietary code that classifies a product based on a proprietary classification criterion.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>ProprietaryProductIdentifier</NAME>
+		<DEFINITION>An internal identifier used to identify a product.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>ProprietaryProgramIdentifier</NAME>
+		<DEFINITION>Proprietary unique identifier used to relate business documents to a particular business program, such as a sales or marketing program.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>ProprietaryPurchaseOrderInformation</NAME>
+		<DEFINITION>Text for additional information included in a PO (special allowances, charges, factory info, warranty info). Use defined by the Trading Partner Agreement.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>ProprietaryReferenceIdentifier</NAME>
+		<DEFINITION>A unique reference identifier for goods, services or business documents.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>ProprietaryReportingOptions</NAME>
+		<DEFINITION>Options for reporting business activity and business information.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>ProprietarySerialIdentifier</NAME>
+		<DEFINITION>Unique serial identifier assigned to the product.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>ProprietaryShipmentTrackingIdentifier</NAME>
+		<DEFINITION>Proprietary unique identifier for tracking product shipments.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>ProprietaryShoppingCartIdentifier</NAME>
+		<DEFINITION>A unique identifier for referencing shopping cart descriptions.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalPurchaseOrderChangeCode</NAME>
+		<DEFINITION>Code identifying the type of purchase order change requested.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>QualityValue</NAME>
+		<DEFINITION>Abstract value for a quality specification.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>QueryConstraint</NAME>
+		<DEFINITION>An OCL compliant expression that constrains one or more parameters in a query.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>RevisionNumber</NAME>
+		<DEFINITION>An incremental number used to identify changes.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalSpecificationNameCode</NAME>
+		<DEFINITION>Code identifying the name of a specification in a technical specification sheet business document. The names are found in a technical specification dictionary.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>GlobalSpecificationValueCode</NAME>
+		<DEFINITION>Code identifying the name of a value in a technical specification sheet business document. The values are found in a technical dictionary.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>TimeDuration</NAME>
+		<DEFINITION>A relative period of time specified as a single quantity. The lexical representation for this quantity is the [ISO 8601] representation CCYYMMDDThhmmss.sss, preceded by an optional sign (+ or -), where "CC" represents the number of centuries, "YY" the number of years, "MM" the number of months and "DD" the number of days. The letter "T" is the date/time separator and "hh", "mm", "ss.sss" represent number of hours, minutes and seconds respectively. Note that this representation allows for fractional seconds. For example, to indicate a duration of 1 year, 2 months, 3 days, 10 hours, and 30 minutes, one would write: 00010203T103000.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max>20</Max>
+		<Repr>SCCYYMMDDThhmmssVsss</Repr>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>TimeStamp</NAME>
+		<DEFINITION>An instance in time. Based on the ISO 8601 representation hhmmss.sss where "hh", "mm", "ss.sss" represent hour, minute and second respectively. This representation is followed by a "Z" to indicate Coordinated Universal Time. Informal format: hhmmss.sssZ</DEFINITION>
+		<Type>Time</Type>
+		<Min>4</Min>
+		<Max>11</Max>
+		<Repr>9(6)V9(3)X</Repr>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>UniformResourceLocator</NAME>
+		<DEFINITION>A network address location for a network resource.</DEFINITION>
+		<Type>String</Type>
+		<Min>8</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>UniversalResourceIdentifier</NAME>
+		<DEFINITION>A network-centric identifier that provides the identity of a resource.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>Value</NAME>
+		<DEFINITION>The value for a property e.g. a technical specification.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>VersionIdentifier</NAME>
+		<DEFINITION>A unique identifier specifying the version of an entity e.g. a product, a message format, or a standard.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+	<FundamentalBusinessDataEntities>
+		<NAME>WireTransferIdentifier</NAME>
+		<DEFINITION>A unique identity of a wire transfer used for reference.</DEFINITION>
+		<Type>String</Type>
+		<Min>1</Min>
+		<Max/>
+		<Repr/>
+	</FundamentalBusinessDataEntities>
+</dictionary>

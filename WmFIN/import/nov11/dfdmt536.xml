@@ -1,0 +1,157 @@
+<?xml version="1.0"?>
+<constraints>
+
+<!-- Text Block for May05 MT536 -->
+<field name="22F::STCO" type="GenericFieldType">
+    <bizName>Settlement Transaction Condition</bizName>
+    <pattern>/[8c]/4!c</pattern>
+    <alias pattern="8c" bizName="Data Source Scheme" />    
+    <alias pattern="4!c" bizName="Indicator" />            
+    <choice>ASGN</choice>
+    <choice>BUTC</choice>
+    <choice>CLEN</choice>
+    <choice>DIRT</choice>
+    <choice>DLWM</choice>
+    <choice>DRAW</choice>
+    <choice>EXER</choice>
+    <choice>EXPI</choice>
+    <choice>FRCL</choice>
+    <choice>KNOC</choice>
+    <choice>NOMC</choice>
+    <choice>NPAR</choice>
+    <choice>PART</choice>
+    <choice>PENS</choice>
+    <choice>PHYS</choice>
+    <choice>RESI</choice>
+    <choice>RHYP</choice>
+    <choice>SHOR</choice>
+    <choice>SPDL</choice>
+    <choice>SPST</choice>
+    <choice>TRAN</choice>
+    <choice>UNEX</choice>
+</field>
+
+<field name="23G:" type="Mixed2Type">
+    <bizName>Function of the Message</bizName>
+    <pattern>4!c[/4!c]</pattern>
+    <alias pattern="4!c" bizName="Function" />            
+    <alias pattern="4!c" bizName="Subfunction" />                
+    <choice1>CANC</choice1><choice1>NEWM</choice1>
+    <choice2>CODU</choice2><choice2>COPY</choice2><choice2>DUPL</choice2>
+</field>
+<field name="22F::CAEV" type="GenericFieldType">
+    <bizName>Corporate Action Event Indicator</bizName>
+    <pattern>/[8c]/4!c</pattern>
+    <alias pattern="8c" bizName="Data Source Scheme" />    
+    <alias pattern="4!c" bizName="Indicator" />            
+    <choice>ACTV</choice> 
+    <choice>ATTI</choice>
+    <choice>BIDS</choice>
+    <choice>BONU</choice>
+    <choice>BPUT</choice>
+    <choice>BRUP</choice>
+    <choice>CHAN</choice> 
+    <choice>CONV</choice>
+    <choice>COOP</choice>    
+    <choice>DECR</choice>
+    <choice>DETI</choice>
+    <choice>DLST</choice>
+    <choice>DRAW</choice>
+    <choice>DRIP</choice>
+    <choice>DTCH</choice>
+    <choice>DVOP</choice>
+    <choice>DVSC</choice>
+    <choice>DVSE</choice>
+    <choice>EXOF</choice>
+    <choice>EXRI</choice>
+    <choice>EXWA</choice>
+    <choice>INCR</choice>
+    <choice>LIQU</choice>
+    <choice>MCAL</choice>
+    <choice>MRGR</choice>
+    <choice>ODLT</choice>
+    <choice>OTHR</choice>
+    <choice>PARI</choice>
+    <choice>PCAL</choice>
+    <choice>PDEF</choice>
+    <choice>PINK</choice>
+    <choice>PLAC</choice>
+    <choice>PPMT</choice>
+    <choice>PRII</choice>
+    <choice>PRIO</choice>
+    <choice>REDM</choice>
+    <choice>REDO</choice>
+    <choice>REMK</choice>
+    <choice>RHDI</choice>
+    <choice>RHTS</choice>
+    <choice>SMAL</choice>
+    <choice>SOFF</choice>
+    <choice>SPLF</choice>
+    <choice>SPLR</choice>
+    <choice>SUSP</choice>
+    <choice>TEND</choice>
+    <choice>WRTH</choice>
+</field>
+
+<field name="22F::REPT" type="GenericFieldType">
+    <bizName>Repurchase Type Indicator</bizName>
+    <pattern>/[8c]/4!c</pattern>
+    <alias pattern="8c" bizName="Data Source Scheme" />    
+    <alias pattern="4!c" bizName="Indicator" />            
+    <choice>CADJ</choice>
+    <choice>CALL</choice>
+    <choice>PAIR</choice>
+    <choice>RATE</choice>
+    <choice>ROLP</choice>
+    <choice>TOPU</choice>
+    <choice>WTHD</choice>
+</field>
+<field name="22F::STBA" type="GenericFieldType">
+    <bizName>Statement Basis</bizName>
+    <pattern>/[8c]/4!c</pattern>
+    <alias pattern="8c" bizName="Data Source Scheme" />    
+    <alias pattern="4!c" bizName="Indicator" />            
+    <choice>SETT</choice>
+    <choice>TRAD</choice>
+</field>
+
+<field name="94B::TRAD" type="GenericFieldType">
+    <bizName>Place B - Place of Trade</bizName>
+    <pattern>/[8c]/4!c[/30x]</pattern>
+    <alias pattern="8c" bizName="Data Source Scheme" />            
+    <alias pattern="4!c" bizName="Place Code" />                
+    <alias pattern="30x" bizName="Narrative" />                    
+    <choice>EXCH</choice>
+    <choice>OTCO</choice>
+    <choice>PRIM</choice>
+    <choice>SECM</choice>
+    <choice>VARI</choice>
+</field>
+
+<field name="97B::SAFE" type="PatternType">
+    <bizName>Account B - Safekeeping Account</bizName>
+    <pattern>/[8c]/4!c/35x</pattern>
+    <alias pattern="8c" bizName="Data Source Scheme" />                
+    <alias pattern="4!c" bizName="Account Type Code" />                    
+    <alias pattern="35x" bizName="Account Number" />                           
+</field>
+
+<field name="22F::CASY" type="GenericFieldType">
+    <bizName>Cash Settlement System Indicator</bizName>
+    <pattern>/[8c]/4!c</pattern>
+    <alias pattern="8c" bizName="Data Source Scheme" />    
+    <alias pattern="4!c" bizName="Indicator" />            
+    <choice>GROS</choice>
+    <choice>NETS</choice>
+</field>
+
+<field name="98B::SETT" type="GenericFieldType">
+    <bizName>Date/Time B - Settlement Date/Time</bizName>
+    <pattern>/[8c]/4!c</pattern>
+    <alias pattern="8c" bizName="Data Source Scheme" />        
+    <alias pattern="4!c" bizName="Date Code" />        
+    <choice>WISS</choice>
+</field>
+
+
+</constraints>

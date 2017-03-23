@@ -1,0 +1,162 @@
+<?xml version="1.0"?>
+<constraints>
+
+<!-- Text Block for NOV03 MT535 -->
+<field name="23G:" type="Mixed2Type">
+    <bizName>Function of the Message</bizName>
+    <pattern>4!c[/4!c]</pattern>
+    <alias pattern="4!c" bizName="Function" />            
+    <alias pattern="4!c" bizName="Subfunction" />                
+    <choice1>CANC</choice1>
+    <choice1>NEWM</choice1>
+    <choice2>CODU</choice2>
+    <choice2>COPY</choice2>
+    <choice2>DUPL</choice2>
+</field>
+<field name="93B::AVAI" type="GenericFieldType">
+    <bizName>Balance B - Available Balance</bizName>
+    <pattern>/[8c]/4!c/[N]&lt;NUMBER&gt;15</pattern>
+    <choice>AMOR</choice>
+    <choice>FAMT</choice>
+    <choice>UNIT</choice>
+</field>
+<field name="93B::NAVL" type="GenericFieldType">
+    <bizName>Balance B - Not Available Balance</bizName>
+    <pattern>/[8c]/4!c/[N]&lt;NUMBER&gt;15</pattern>
+    <choice>AMOR</choice>
+    <choice>FAMT</choice>
+    <choice>UNIT</choice>
+</field>
+<field name="93C::BLOK" type="Mixed2Type">
+    <bizName>Balance C - Blocked</bizName>
+    <pattern>//4!c/4!c/[N]&lt;NUMBER&gt;15</pattern>
+    <alias pattern="4!c" bizName="Quantity Type Code" />            
+    <alias pattern="4!c" bizName="Balance Type Code" />                
+    <choice1>AMOR</choice1>
+    <choice1>FAMT</choice1>
+    <choice1>UNIT</choice1>
+    <choice2>AVAI</choice2>
+    <choice2>NAVL</choice2>
+</field>
+<field name="93C::BORR" type="Mixed2Type">
+    <bizName>Balance C - Borrowed</bizName>
+    <pattern>//4!c/4!c/[N]&lt;NUMBER&gt;15</pattern>
+    <alias pattern="4!c" bizName="Quantity Type Code" />            
+    <alias pattern="4!c" bizName="Balance Type Code" />                
+    <choice1>FAMT</choice1>
+    <choice1>UNIT</choice1>
+    <choice1>AMOR</choice1>
+    <choice2>AVAI</choice2>
+    <choice2>NAVL</choice2>
+</field>
+<field name="93C::COLI" type="Mixed2Type">
+    <bizName>Balance C - Collateral In</bizName>
+    <pattern>//4!c/4!c/[N]&lt;NUMBER&gt;15</pattern>
+    <alias pattern="4!c" bizName="Quantity Type Code" />            
+    <alias pattern="4!c" bizName="Balance Type Code" />                
+    <choice1>FAMT</choice1>
+    <choice1>UNIT</choice1>
+    <choice1>AMOR</choice1>
+    <choice2>AVAI</choice2>
+    <choice2>NAVL</choice2>
+</field>
+<field name="93C::COLO" type="Mixed2Type">
+    <bizName>Balance C - Collateral Out</bizName>
+    <pattern>//4!c/4!c/[N]&lt;NUMBER&gt;15</pattern>
+    <alias pattern="4!c" bizName="Quantity Type Code" />            
+    <alias pattern="4!c" bizName="Balance Type Code" />                
+    <choice1>FAMT</choice1>
+    <choice1>UNIT</choice1>
+    <choice1>AMOR</choice1>
+    <choice2>AVAI</choice2>
+    <choice2>NAVL</choice2>
+</field>
+<field name="93C::LOAN" type="Mixed2Type">
+    <bizName>Balance C - On Loan</bizName>
+    <pattern>//4!c/4!c/[N]&lt;NUMBER&gt;15</pattern>
+    <alias pattern="4!c" bizName="Quantity Type Code" />            
+    <alias pattern="4!c" bizName="Balance Type Code" />                
+    <choice1>FAMT</choice1>
+    <choice1>UNIT</choice1>
+    <choice1>AMOR</choice1>
+    <choice2>AVAI</choice2>
+    <choice2>NAVL</choice2>
+</field>
+<field name="93C::NOMI" type="Mixed2Type">
+    <bizName>Balance C - In Nominee Name</bizName>
+    <pattern>//4!c/4!c/[N]&lt;NUMBER&gt;15</pattern>
+    <alias pattern="4!c" bizName="Quantity Type Code" />            
+    <alias pattern="4!c" bizName="Balance Type Code" />                
+    <choice1>FAMT</choice1>
+    <choice1>UNIT</choice1>
+    <choice1>AMOR</choice1>
+    <choice2>AVAI</choice2>
+    <choice2>NAVL</choice2>
+</field>
+<field name="93C::PEND" type="Mixed2Type">
+    <bizName>Balance C - Pending Delivery</bizName>
+    <pattern>//4!c/4!c/[N]&lt;NUMBER&gt;15</pattern>
+    <alias pattern="4!c" bizName="Quantity Type Code" />            
+    <alias pattern="4!c" bizName="Balance Type Code" />                
+    <choice1>FAMT</choice1>
+    <choice1>UNIT</choice1>
+    <choice1>AMOR</choice1>
+    <choice2>AVAI</choice2>
+    <choice2>NAVL</choice2>
+</field>
+<field name="93C::PENR" type="Mixed2Type">
+    <bizName>Balance C - Pending Receipt</bizName>
+    <pattern>//4!c/4!c/[N]&lt;NUMBER&gt;15</pattern>
+    <alias pattern="4!c" bizName="Quantity Type Code" />            
+    <alias pattern="4!c" bizName="Balance Type Code" />                
+    <choice1>FAMT</choice1>
+    <choice1>UNIT</choice1>
+    <choice1>AMOR</choice1>
+    <choice2>AVAI</choice2>
+    <choice2>NAVL</choice2>
+</field>
+<field name="93C::REGO" type="Mixed2Type">
+    <bizName>Balance C - Out for Registration</bizName>
+    <pattern>//4!c/4!c/[N]&lt;NUMBER&gt;15</pattern>
+    <alias pattern="4!c" bizName="Quantity Type Code" />            
+    <alias pattern="4!c" bizName="Balance Type Code" />                
+    <choice1>FAMT</choice1>
+    <choice1>UNIT</choice1>
+    <choice1>AMOR</choice1>
+    <choice2>AVAI</choice2>
+    <choice2>NAVL</choice2>
+</field>
+<field name="93C::SPOS" type="Mixed2Type">
+    <bizName>Balance C - Street Position</bizName>
+    <pattern>//4!c/4!c/[N]&lt;NUMBER&gt;15</pattern>
+    <alias pattern="4!c" bizName="Quantity Type Code" />            
+    <alias pattern="4!c" bizName="Balance Type Code" />                
+    <choice1>FAMT</choice1>
+    <choice1>UNIT</choice1>
+    <choice1>AMOR</choice1>
+    <choice2>AVAI</choice2>
+    <choice2>NAVL</choice2>
+</field>
+<field name="93C::TRAN" type="Mixed2Type">
+    <bizName>Balance C - In Transshipment</bizName>
+    <pattern>//4!c/4!c/[N]&lt;NUMBER&gt;15</pattern>
+    <alias pattern="4!c" bizName="Quantity Type Code" />            
+    <alias pattern="4!c" bizName="Balance Type Code" />                
+    <choice1>FAMT</choice1>
+    <choice1>UNIT</choice1>
+    <choice1>AMOR</choice1>
+    <choice2>AVAI</choice2>
+    <choice2>NAVL</choice2>
+</field>
+<field name="93C::OTHR" type="Mixed2Type">
+    <bizName>Balance C - Unclassified</bizName>
+    <pattern>//4!c/4!c/[N]&lt;NUMBER&gt;15</pattern>
+    <alias pattern="4!c" bizName="Quantity Type Code" />
+    <alias pattern="4!c" bizName="Balance Type Code" /> 
+    <choice1>FAMT</choice1>
+    <choice1>UNIT</choice1>
+    <choice1>AMOR</choice1>
+    <choice2>AVAI</choice2>
+    <choice2>NAVL</choice2>
+</field>
+</constraints>

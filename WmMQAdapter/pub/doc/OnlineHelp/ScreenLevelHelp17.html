@@ -1,0 +1,890 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="GENERATOR" content="Quadralay WebWorks Publisher Professional Edition 7.0" />
+  <meta name="TEMPLATEBASE" content="wM_WWH20030908" />
+  <meta name="LASTUPDATED" content="07/27/06 06:26:21" />
+  <title>Peek Service Template Screens</title>
+  <link rel="StyleSheet" href="document.css" type="text/css" />
+  <link rel="StyleSheet" href="catalog.css" type="text/css" />
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+ </head>
+
+ <body onLoad="WWHUpdate();">
+
+
+<a name="wp1109072"> </a><h2 class="pNewHTMLPage">
+Peek Service Template Screens
+</h2><a name="wp1109073"> </a><p class="pBody">
+The Peek service enables you to define and execute Peek services that retrieve a copy of a message without removing the original message from a specified queue:
+</p>
+<a name="wp1109074"> </a><p class="pBody">
+This service template includes the following tabs:
+</p>
+<a name="wp1109082"> </a><p class="pChapterTOC">
+<img src="images/bullet.gif" height="13" width="10" border="0" />
+<a  href="ScreenLevelHelp17.html#wp1109088">Peek Service Tab</a>
+</p>
+<a name="wp1115267"> </a><p class="pChapterTOC">
+<img src="images/bullet.gif" height="13" width="10" border="0" />
+<a  href="ScreenLevelHelp17.html#wp1115273">MQMD Header Tab</a>
+</p>
+<a name="wp1115268"> </a><p class="pChapterTOC">
+<img src="images/bullet.gif" height="13" width="10" border="0" />
+<a  href="ScreenLevelHelp17.html#wp1115277">JMS Properties Tab</a>
+</p>
+<a name="wp1109088"> </a><h4 class="pHeading3">
+Peek Service Tab       
+</h4>
+<a name="wp1115311"> </a><p class="pBody">
+Use the <b class="cBold">Peek Service</b> tab to identify message processing features to use with this adapter service. Specify values for the following fields:
+</p>
+<a name="wp1115320"> </a><p class="pAnchor">
+</p><div align="left">
+<table border="0">
+  <caption></caption>
+  <tr align="left" valign="bottom">    <th><a name="wp1115326"> </a><div style="text-align: left" class="pCellHeading">
+Field
+<hr />
+</div>
+</th>
+    <th><a name="wp1115328"> </a><div style="text-align: left" class="pCellHeading">
+Description/Action
+<hr />
+</div>
+</th>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1121052"> </a><p class="pBody">
+<b class="cBold">Wait Interval </b>(msec)
+</p>
+</td>
+    <td><a name="wp1121054"> </a><p class="pBody">
+Time period that the service waits for a message to appear on the queue. Enter this value in milliseconds.
+</p>
+<a name="wp1128443"> </a><p class="pBody">
+Default: <b class="cBold">60000</b>
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1125612"> </a><p class="pBody">
+<b class="cBold">Convert Application Data?</b>
+</p>
+</td>
+    <td><a name="wp1130665"> </a><p class="pBody">
+Select whether the service converts the message to the local character set and encoding:
+</p>
+<div class="pSmartList1" style="margin-top: 7pt"><ul class="pSmartList1" style="margin-top: 7pt">
+<a name="wp1130666"> </a><div style="margin-top: 7pt" class="pSmartList1"><li><b class="cBold">Checked</b>: The messages read using this service will be converted to the local character set and encoding.</li></div>
+<a name="wp1130667"> </a><div style="margin-top: 7pt" class="pSmartList1"><li><b class="cBold">Unchecked</b>: The messages read using this service will not be converted to the local character set and encoding.</li></div>
+</ul></div>
+<a name="wp1130668"> </a><p class="pNote">
+<b>Note:</b> If the property is checked and the message format does not match the local character set and encoding, a warning message appears.
+</p>
+<a name="wp1130669"> </a><p class="pBody">
+Default: <b class="cBold">Checked</b>
+</p>
+<a name="wp1130670"> </a><p class="pNote">
+<b>Note:</b> If you are using a Peek service configured using WebSphere MQ Adapter 6.0, the default value is <b class="cBold">Checked</b>.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1121056"> </a><p class="pBody">
+<b class="cBold">Throw Exception on Failure?</b>
+</p>
+</td>
+    <td><a name="wp1121058"> </a><p class="pBody">
+Select whether the service should throw an exception on failure:
+</p>
+<div class="pSmartList1" style="margin-top: 7pt"><ul class="pSmartList1" style="margin-top: 7pt">
+<a name="wp1121059"> </a><div style="margin-top: 7pt" class="pSmartList1"><li><b class="cBold">Checked: </b>Throws an exception when the adapter service returns error codes.</li></div>
+<a name="wp1121060"> </a><div style="margin-top: 7pt" class="pSmartList1"><li><b class="cBold">Unchecked: </b>Returns any error codes or error messages to the service’s output signature.</li></div>
+</ul></div>
+<a name="wp1128471"> </a><p class="pBody">
+Default: <b class="cBold">Checked</b>
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1121062"> </a><p class="pBody">
+<b class="cBold">Reset Cursor before Operation?</b>
+</p>
+</td>
+    <td><a name="wp1123617"> </a><p class="pBody">
+<span style="font-weight: normal">The value of the resetCursor is set on the </span><b style="font-weight: bold" class="cBold">Peek Service</b><span style="font-weight: normal"> tab in the Developer. Select the following values:</span>
+</p>
+<div class="pSmartList1" style="margin-top: 7pt"><ul class="pSmartList1" style="margin-top: 7pt">
+<a name="wp1123618"> </a><div style="margin-top: 7pt" class="pSmartList1"><li><b class="cBold">yes: </b>The Peek service starts at the beginning of the queue and gets a copy of the first message. The default value is <b class="cBold">yes</b> on the <b class="cBold">Peek Service</b> tab.</li></div>
+</ul></div>
+<a name="wp1123619"> </a><p class="pBody">
+OR
+</p>
+<div class="pSmartList1" style="margin-top: 7pt"><ul class="pSmartList1" style="margin-top: 7pt">
+<a name="wp1123620"> </a><div style="margin-top: 7pt" class="pSmartList1"><li><b class="cBold">no:</b> The Peek service retrieves a copy of the next message in the queue relative to the last message that the Peek service retrieved.</li></div>
+</ul></div>
+<a name="wp1128479"> </a><p class="pBody">
+Default: <b class="cBold">yes</b>
+</p>
+<a name="wp1123621"> </a><p class="pNote">
+<b>Note:</b> You can also set the value for the <b class="cBold">Reset Cursor before Operation</b> field in the Pipeline Editor. If you add a value other than <b class="cBold">yes </b>or <b class="cBold">no</b> in this field, then the WebSphere MQ Adapter automatically sets the value to <b class="cBold">no</b>.
+</p>
+</td>
+</tr>
+</table>
+</div>
+<p class="pAnchor">
+</p>
+<a name="wp1115273"> </a><h4 class="pHeading3">
+MQMD Header Tab
+</h4>
+<a name="wp1122931"> </a><p class="pBody">
+Use the<b class="cBold"> MQMD Header</b> tab to specify the selectionCriteria property fields and constant values for this service. Selection criteria refers to the specific values that must be present in the header of the actual message in order for the adapter to retrieve it from the WebSphere MQ queue.
+</p>
+<a name="wp1122935"> </a><p class="pBody">
+The selectionCriteria property fields appear on the <b class="cBold">Input/Output</b> tab in the <b class="cBold">Input</b> signature document for this adapter service. Use the following icons to manage the rows on the<b class="cBold"> MQMD Header</b> tab:
+</p>
+<div class="pSmartList1" style="margin-top: 7pt"><ul class="pSmartList1" style="margin-top: 7pt">
+<a name="wp1122942"> </a><div style="margin-top: 7pt" class="pSmartList1"><li>Select the Insert Row icon <img src="images/table_insertrow.gif" border="0" hspace="0" vspace="0"/> (or the Fill in all rows to the table icon <img src="images/append_all_rows.gif" border="0" hspace="0" vspace="0"/>) to define new selectionCriteria property fields and new output field names. </li></div>
+<a name="wp1122949"> </a><div style="margin-top: 7pt" class="pSmartList1"><li>If necessary, use the Shift Up <img src="images/btn_shift_up.gif" border="0" hspace="0" vspace="0"/> or Shift Down <img src="images/btn_shift_down.gif" border="0" hspace="0" vspace="0"/> icons to change the order of the selectionCriteria property fields or the output field names to ensure the parameters are parsed in the correct order.</li></div>
+<a name="wp1122953"> </a><div style="margin-top: 7pt" class="pSmartList1"><li>Use the Remove row icon <img src="images/remove_row.gif" border="0" hspace="0" vspace="0"/> to delete any selectionCriteria property fields or output field names.</li></div>
+</ul></div>
+<a name="wp1122954"> </a><p class="pBody">
+In the <b class="cBold">Constant Value</b> column, specify default values for any of the property fields. You can override these values at run time.You can add the following optional selectionCriteria property fields:
+</p>
+<a name="wp1115431"> </a><p class="pAnchor">
+</p><div align="left">
+<table border="0">
+  <caption></caption>
+  <tr align="left" valign="bottom">    <th><a name="wp1115438"> </a><div style="text-align: left" class="pCellHeading">
+selectionCriteria Property
+<hr />
+</div>
+</th>
+    <th><a name="wp1115440"> </a><div style="text-align: left" class="pCellHeading">
+Data Type
+<hr />
+</div>
+</th>
+    <th><a name="wp1115442"> </a><div style="text-align: left" class="pCellHeading">
+Maximum Field Length <br />for Constant Value
+<hr />
+</div>
+</th>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1115444"> </a><p class="pBody">
+<b class="cBold">CorrelId*</b>
+</p>
+</td>
+    <td><a name="wp1115446"> </a><p class="pBody">
+String
+</p>
+</td>
+    <td><a name="wp1115448"> </a><p class="pBody">
+24 alphanumeric single-byte characters
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1115450"> </a><p class="pBody">
+<b class="cBold">CorrelationByteArray*</b>
+</p>
+</td>
+    <td><a name="wp1115452"> </a><p class="pBody">
+Byte Array
+</p>
+</td>
+    <td><a name="wp1115454"> </a><p class="pBody">
+24 bytes
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1115456"> </a><p class="pBody">
+<b class="cBold">GroupId*</b>
+</p>
+</td>
+    <td><a name="wp1115458"> </a><p class="pBody">
+String
+</p>
+</td>
+    <td><a name="wp1115460"> </a><p class="pBody">
+24 alphanumeric single-byte characters
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1115462"> </a><p class="pBody">
+<b class="cBold">GroupIdByteArray*</b>
+</p>
+</td>
+    <td><a name="wp1115464"> </a><p class="pBody">
+Byte Array
+</p>
+</td>
+    <td><a name="wp1115466"> </a><p class="pBody">
+24 bytes
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1115468"> </a><p class="pBody">
+<b class="cBold">MsgId*</b>
+</p>
+</td>
+    <td><a name="wp1115470"> </a><p class="pBody">
+String
+</p>
+</td>
+    <td><a name="wp1115472"> </a><p class="pBody">
+24 alphanumeric single-byte characters
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1115474"> </a><p class="pBody">
+<b class="cBold">MsgIdByteArray*</b>
+</p>
+</td>
+    <td><a name="wp1115476"> </a><p class="pBody">
+Byte Array
+</p>
+</td>
+    <td><a name="wp1115478"> </a><p class="pBody">
+24 bytes
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1115480"> </a><p class="pBody">
+<b class="cBold">MsgSeqNumber</b>
+</p>
+</td>
+    <td><a name="wp1115482"> </a><p class="pBody">
+String
+</p>
+</td>
+    <td><a name="wp1115484"> </a><p class="pBody">
+4 digits
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1115486"> </a><p class="pBody">
+<b class="cBold">Offset</b>
+</p>
+</td>
+    <td><a name="wp1115488"> </a><p class="pBody">
+String
+</p>
+</td>
+    <td><a name="wp1115490"> </a><p class="pBody">
+4 digits
+</p>
+</td>
+</tr>
+</table>
+</div>
+<p class="pAnchor">
+</p>
+<a name="wp1121094"> </a><p class="pAnchor">
+</p><div align="left">
+<table border="0">
+  <caption></caption>
+  <tr align="left" valign="top">    <td><a name="wp1121103"> </a><p class="px_Note">
+&#160;
+<img src="images/note_icon.gif" height="25" width="25" border="1" alt="Note" />
+</p>
+</td>
+    <td><a name="wp1121105"> </a><p class="pNote">
+<b>Note:</b> An asterisk * indicates that you can enter these properties either as a string or as a byte array. For example, <b class="cBold">CorrelId</b> and <b class="cBold">CorrelationByteArray </b>refer to the same msgHeader property. If you specify values for both properties, then the byte array value will be used.
+</p>
+</td>
+</tr>
+</table>
+</div>
+<p class="pAnchor">
+</p>
+<a name="wp1115500"> </a><p class="pBody">
+The msgHeader property fields appear on the <b class="cBold">Input/Output</b> tab in the <b class="cBold">Output</b> signature document for this adapter service. Add the following optional msgHeader property fields to the <b class="cBold">Output Field Name</b> column:
+</p>
+<a name="wp1115505"> </a><p class="pAnchor">
+</p><div align="left">
+<table border="0">
+  <caption></caption>
+  <tr align="left" valign="bottom">    <th><a name="wp1115512"> </a><div style="text-align: left" class="pCellHeading">
+msgHeader Property
+<hr />
+</div>
+</th>
+    <th><a name="wp1115514"> </a><div style="text-align: left" class="pCellHeading">
+Data Type
+<hr />
+</div>
+</th>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1115516"> </a><p class="pBody">
+<b class="cBold">AccountingToken</b>
+</p>
+</td>
+    <td><a name="wp1115518"> </a><p class="pBody">
+String
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1115520"> </a><p class="pBody">
+<b class="cBold">AccountingTokenByteArray</b>
+</p>
+</td>
+    <td><a name="wp1115522"> </a><p class="pBody">
+Byte Array
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1115524"> </a><p class="pBody">
+<b class="cBold">ApplIdentityData</b>
+</p>
+</td>
+    <td><a name="wp1115526"> </a><p class="pBody">
+String
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1115528"> </a><p class="pBody">
+<b class="cBold">ApplOriginData</b>
+</p>
+</td>
+    <td><a name="wp1115530"> </a><p class="pBody">
+String
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1115532"> </a><p class="pBody">
+<b class="cBold">BackoutCount</b>
+</p>
+</td>
+    <td><a name="wp1115534"> </a><p class="pBody">
+String
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1115536"> </a><p class="pBody">
+<b class="cBold">CodedCharSetId</b>
+</p>
+</td>
+    <td><a name="wp1115538"> </a><p class="pBody">
+String
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1115540"> </a><p class="pBody">
+<b class="cBold">CorrelId</b>
+</p>
+</td>
+    <td><a name="wp1115542"> </a><p class="pBody">
+String
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1115544"> </a><p class="pBody">
+<b class="cBold">CorrelationIdByteArray</b>
+</p>
+</td>
+    <td><a name="wp1115546"> </a><p class="pBody">
+Byte Array
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1115548"> </a><p class="pBody">
+<b class="cBold">Encoding</b>
+</p>
+</td>
+    <td><a name="wp1115550"> </a><p class="pBody">
+String
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1115552"> </a><p class="pBody">
+<b class="cBold">Expiry</b>
+</p>
+</td>
+    <td><a name="wp1115554"> </a><p class="pBody">
+String
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1115556"> </a><p class="pBody">
+<b class="cBold">Feedback</b>
+</p>
+</td>
+    <td><a name="wp1115558"> </a><p class="pBody">
+String
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1115560"> </a><p class="pBody">
+<b class="cBold">Format</b>
+</p>
+</td>
+    <td><a name="wp1115562"> </a><p class="pBody">
+String
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1115564"> </a><p class="pBody">
+<b class="cBold">GroupId</b>
+</p>
+</td>
+    <td><a name="wp1115566"> </a><p class="pBody">
+String
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1115568"> </a><p class="pBody">
+<b class="cBold">GroupIdByteArray</b>
+</p>
+</td>
+    <td><a name="wp1115570"> </a><p class="pBody">
+Byte Array
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1115572"> </a><p class="pBody">
+<b class="cBold">MsgFlags</b>
+</p>
+</td>
+    <td><a name="wp1115574"> </a><p class="pBody">
+String
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1115576"> </a><p class="pBody">
+<b class="cBold">MsgId</b>
+</p>
+</td>
+    <td><a name="wp1115578"> </a><p class="pBody">
+String
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1115580"> </a><p class="pBody">
+<b class="cBold">MsgIdByteArray</b>
+</p>
+</td>
+    <td><a name="wp1115582"> </a><p class="pBody">
+Byte Array
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1115584"> </a><p class="pBody">
+<b class="cBold">MsgType</b>
+</p>
+</td>
+    <td><a name="wp1115586"> </a><p class="pBody">
+String
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1115588"> </a><p class="pBody">
+<b class="cBold">MsgSeqNumber</b>
+</p>
+</td>
+    <td><a name="wp1115590"> </a><p class="pBody">
+String
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1115592"> </a><p class="pBody">
+<b class="cBold">Offset</b>
+</p>
+</td>
+    <td><a name="wp1115594"> </a><p class="pBody">
+String
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1115596"> </a><p class="pBody">
+<b class="cBold">OriginalLength</b>
+</p>
+</td>
+    <td><a name="wp1115598"> </a><p class="pBody">
+String
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1115600"> </a><p class="pBody">
+<b class="cBold">Persistence</b>
+</p>
+</td>
+    <td><a name="wp1115602"> </a><p class="pBody">
+String
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1115604"> </a><p class="pBody">
+<b class="cBold">Priority</b>
+</p>
+</td>
+    <td><a name="wp1115606"> </a><p class="pBody">
+String
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1115608"> </a><p class="pBody">
+<b class="cBold">PutApplName</b>
+</p>
+</td>
+    <td><a name="wp1115610"> </a><p class="pBody">
+String
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1115612"> </a><p class="pBody">
+<b class="cBold">PutApplType</b>
+</p>
+</td>
+    <td><a name="wp1115614"> </a><p class="pBody">
+String
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1115616"> </a><p class="pBody">
+<b class="cBold">PutDate</b>
+</p>
+</td>
+    <td><a name="wp1115618"> </a><p class="pBody">
+String
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1115620"> </a><p class="pBody">
+<b class="cBold">PutTime</b>
+</p>
+</td>
+    <td><a name="wp1115622"> </a><p class="pBody">
+String
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1115624"> </a><p class="pBody">
+<b class="cBold">ReplytoQueueMgr</b>
+</p>
+</td>
+    <td><a name="wp1115626"> </a><p class="pBody">
+String
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1115628"> </a><p class="pBody">
+<b class="cBold">ReplyToQ</b>
+</p>
+</td>
+    <td><a name="wp1115630"> </a><p class="pBody">
+String
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1115632"> </a><p class="pBody">
+<b class="cBold">Report</b>
+</p>
+</td>
+    <td><a name="wp1115634"> </a><p class="pBody">
+String
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1115636"> </a><p class="pBody">
+<b class="cBold">UserIdentifier</b>
+</p>
+</td>
+    <td><a name="wp1115638"> </a><p class="pBody">
+String
+</p>
+</td>
+</tr>
+</table>
+</div>
+<p class="pAnchor">
+</p>
+<a name="wp1115277"> </a><h4 class="pHeading3">
+JMS Properties Tab 
+</h4>
+<a name="wp1115663"> </a><p class="pBody">
+Use the <b class="cBold">JMS Properties</b> tab to identify the optional JMS property fields for the adapter service. The JMS property fields appear on the <b class="cBold">Input/Output</b> tab in the <b class="cBold">Output</b> signature document for this adapter service.
+</p>
+<a name="wp1115664"> </a><p class="pBody">
+Use the following icons to manage the rows on the <b class="cBold">JMS Properties </b>tab:
+</p>
+<div class="pSmartList1" style="margin-top: 7pt"><ul class="pSmartList1" style="margin-top: 7pt">
+<a name="wp1115668"> </a><div style="margin-top: 7pt" class="pSmartList1"><li>To define new JMS property fields, select the Insert Row icon <img src="images/table_insertrow.gif" border="0" hspace="0" vspace="0"/> (or the Fill in all rows to the table icon <img src="images/append_all_rows.gif" border="0" hspace="0" vspace="0"/>).</li></div>
+<a name="wp1115672"> </a><div style="margin-top: 7pt" class="pSmartList1"><li>To change the order of JMS property fields to ensure the parameters are parsed in the correct order, use the Shift Up <img src="images/btn_shift_up.gif" border="0" hspace="0" vspace="0"/> or Shift Down <img src="images/btn_shift_down.gif" border="0" hspace="0" vspace="0"/> icons.</li></div>
+<a name="wp1115682"> </a><div style="margin-top: 7pt" class="pSmartList1"><li>To delete any JMS property fields, use the Remove row icon <img src="images/remove_row.gif" border="0" hspace="0" vspace="0"/>.</li></div>
+</ul></div>
+<a name="wp1115286"> </a><p class="pBody">
+You can add the following optional JMS property fields:
+</p>
+<a name="wp1115686"> </a><p class="pAnchor">
+</p><div align="left">
+<table border="0">
+  <caption></caption>
+  <tr align="left" valign="bottom">    <th><a name="wp1115693"> </a><div style="text-align: left" class="pCellHeading">
+JMS Property
+<hr />
+</div>
+</th>
+    <th><a name="wp1115695"> </a><div style="text-align: left" class="pCellHeading">
+Data Type
+<hr />
+</div>
+</th>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1115697"> </a><p class="pBody">
+<b class="cBold">JMSDestination</b>
+</p>
+</td>
+    <td><a name="wp1115699"> </a><p class="pBody">
+String
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1115701"> </a><p class="pBody">
+<b class="cBold">JMSExpiration</b>
+</p>
+</td>
+    <td><a name="wp1115703"> </a><p class="pBody">
+String
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1115705"> </a><p class="pBody">
+<b class="cBold">JMSPriority</b>
+</p>
+</td>
+    <td><a name="wp1115707"> </a><p class="pBody">
+String
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1115709"> </a><p class="pBody">
+<b class="cBold">JMSDeliveryMode</b>
+</p>
+</td>
+    <td><a name="wp1115711"> </a><p class="pBody">
+String
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1115713"> </a><p class="pBody">
+<b class="cBold">JMSCorrelationID</b>
+</p>
+</td>
+    <td><a name="wp1115715"> </a><p class="pBody">
+String
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1115717"> </a><p class="pBody">
+<b class="cBold">JMSCorrelationIDByteArray</b>
+</p>
+</td>
+    <td><a name="wp1115719"> </a><p class="pBody">
+Byte Array
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1115721"> </a><p class="pBody">
+<b class="cBold">JMSReplyTo</b>
+</p>
+</td>
+    <td><a name="wp1115723"> </a><p class="pBody">
+String
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1115725"> </a><p class="pBody">
+<b class="cBold">JMSType</b>
+</p>
+</td>
+    <td><a name="wp1115727"> </a><p class="pBody">
+String
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1115729"> </a><p class="pBody">
+<b class="cBold">JMSMessageID</b>
+</p>
+</td>
+    <td><a name="wp1115731"> </a><p class="pBody">
+String
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1115733"> </a><p class="pBody">
+<b class="cBold">JMSTimestamp</b>
+</p>
+</td>
+    <td><a name="wp1115735"> </a><p class="pBody">
+String
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1115737"> </a><p class="pBody">
+<b class="cBold">JMSRedelivered</b>
+</p>
+</td>
+    <td><a name="wp1115739"> </a><p class="pBody">
+String
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1115741"> </a><p class="pBody">
+<b class="cBold">JMSXGroupID</b>
+</p>
+</td>
+    <td><a name="wp1115743"> </a><p class="pBody">
+String
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1115745"> </a><p class="pBody">
+<b class="cBold">JMSXGroupIdByteArray</b>
+</p>
+</td>
+    <td><a name="wp1115747"> </a><p class="pBody">
+Byte Array
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1115749"> </a><p class="pBody">
+<b class="cBold">JMSXGroupSeq</b>
+</p>
+</td>
+    <td><a name="wp1115751"> </a><p class="pBody">
+String
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1115753"> </a><p class="pBody">
+<b class="cBold">JMSXUserID</b>
+</p>
+</td>
+    <td><a name="wp1115755"> </a><p class="pBody">
+String
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1115757"> </a><p class="pBody">
+<b class="cBold">JMSXAppID</b>
+</p>
+</td>
+    <td><a name="wp1115759"> </a><p class="pBody">
+String
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1115761"> </a><p class="pBody">
+<b class="cBold">JMSXDeliveryCount</b>
+</p>
+</td>
+    <td><a name="wp1115763"> </a><p class="pBody">
+String
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1128496"> </a><p class="pBody">
+<b class="cBold">MCDMessageDomain</b>
+</p>
+</td>
+    <td><a name="wp1128498"> </a><p class="pBody">
+String
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1128492"> </a><p class="pBody">
+<b class="cBold">MCDMessageSet</b>
+</p>
+</td>
+    <td><a name="wp1128494"> </a><p class="pBody">
+String
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1128488"> </a><p class="pBody">
+<b class="cBold">MCDMessageFormat</b>
+</p>
+</td>
+    <td><a name="wp1128490"> </a><p class="pBody">
+String
+</p>
+</td>
+</tr>
+</table>
+</div>
+<p class="pAnchor">
+</p>
+<a name="wp1125626"> </a><p class="pAnchor">
+</p><div align="left">
+<table border="0">
+  <caption></caption>
+  <tr align="left" valign="top">    <td><a name="wp1117998"> </a><p class="px_Note">
+&#160;
+<img src="images/note_icon.gif" height="25" width="25" border="1" alt="Note" />
+</p>
+</td>
+    <td><a name="wp1118000"> </a><p class="pNote">
+<b>Note:</b> An “X“ in the JMS property name indicates that the property is provider specific. The remaining JMS properties are generic, delivered by any JMS provider.
+</p>
+</td>
+</tr>
+</table>
+</div>
+<p class="pAnchor">
+</p>
+<a name="wp1125636"> </a><p class="pBody">
+You can also add your own folders and properties to the JMS Properties.
+</p>
+<a name="wp1125637"> </a><p class="pBody">
+Use the following icons to manage the rows for <b class="cBold">User-Defined Properties</b> on the <b class="cBold">JMS Properties</b> tab:
+</p>
+<div class="pSmartList1" style="margin-top: 7pt"><ul class="pSmartList1" style="margin-top: 7pt">
+<a name="wp1125641"> </a><div style="margin-top: 7pt" class="pSmartList1"><li>To define new folders and properties, select the Insert Row icon <img src="images/table_insertrowa.gif" border="0" hspace="0" vspace="0"/>.</li></div>
+<a name="wp1125642"> </a><div style="margin-top: 7pt" class="pSmartList1"><li>Enter the new folder and property. For example, enter “jms.usr.usr1”. The “jms” and “usr” are the names of the folders and “usr1” is the name of the property.</li></div>
+</ul></div>
+<a name="wp1125643"> </a><p class="pBody">
+All the folders and properties you add will be under JMSProperties as part of the output signature of the adapter service.</p><div align="left">
+<table border="0">
+  <caption></caption>
+  <tr align="left" valign="top">    <td><a name="wp1126414"> </a><p class="px_Note">
+&#160;
+<img src="images/note_icon.gif" height="25" width="25" border="1" alt="Note" />
+</p>
+</td>
+    <td><a name="wp1126420"> </a><p class="pNote">
+<b>Note:</b> The property name has to be prefixed with a folder name. You cannot use “JMSProperties” and “mcd” as the first folder name.
+</p>
+</td>
+</tr>
+</table>
+</div>
+<p class="pBody">
+</p>
+<div class="pSmartList1" style="margin-top: 7pt"><ul class="pSmartList1" style="margin-top: 7pt">
+<a name="wp1125649"> </a><div style="margin-top: 7pt" class="pSmartList1"><li>To change the order of User-Defined property fields to ensure the parameters are parsed in the correct order, use the Shift Up <img src="images/btn_shift_upa.gif" border="0" hspace="0" vspace="0"/> or Shift Down <img src="images/btn_shift_downa.gif" border="0" hspace="0" vspace="0"/> icons.</li></div>
+<a name="wp1125659"> </a><div style="margin-top: 7pt" class="pSmartList1"><li> To delete any User-Defined property fields, use the Remove row icon <img src="images/remove_rowa.gif" border="0" hspace="0" vspace="0"/>.</li></div>
+</ul></div>
+
+ <hr />
+
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag());
+   // -->
+  </script>
+
+ </body>
+</html>

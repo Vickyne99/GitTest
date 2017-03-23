@@ -1,0 +1,282 @@
+<?xml version="1.0"?>
+<constraints>
+
+<!-- Text Block for NOV03 MT564 -->
+
+<field name="22F::CAOP" type="GenericFieldType">
+    <bizName>Indicator F - Corporate Action Option Code</bizName>
+    <pattern>/[8c]/4!c</pattern>
+    <alias pattern="8c" bizName="Data Source Scheme" />    
+    <alias pattern="4!c" bizName="Indicator" />            
+    <choice>ABST</choice>
+    <choice>AMGT</choice>
+    <choice>BSPL</choice>
+    <choice>BUYA</choice>
+    <choice>CASE</choice>
+    <choice>CASH</choice>
+    <choice>CERT</choice>
+    <choice>CEXC</choice>
+    <choice>CONN</choice>
+    <choice>CONY</choice>
+    <choice>CTEN</choice>
+    <choice>EXER</choice>
+    <choice>LAPS</choice>
+    <choice>MNGT</choice>
+    <choice>MPUT</choice>
+    <choice>NOAC</choice>
+    <choice>NOQU</choice>
+    <choice>OFFR</choice>
+    <choice>OTHR</choice>
+    <choice>OVER</choice>
+    <choice>PROX</choice>
+    <choice>QINV</choice>
+    <choice>SECU</choice>
+    <choice>SLLE</choice>
+    <choice>SPLI</choice>
+    <choice>MKDW</choice>
+    <choice>MKUP</choice>
+</field>
+<field name="22H::CAOP" type="MixedType">
+    <bizName>Indicator H - Corporate Action Option Code</bizName>
+    <pattern>//4!c</pattern>
+    <choice>ABST</choice>
+    <choice>AMGT</choice>
+    <choice>BSPL</choice>
+    <choice>BUYA</choice>
+    <choice>CASE</choice>
+    <choice>CASH</choice>
+    <choice>CERT</choice>
+    <choice>CEXC</choice>
+    <choice>CONN</choice>
+    <choice>CONY</choice>
+    <choice>CTEN</choice>
+    <choice>EXER</choice>
+    <choice>LAPS</choice>
+    <choice>MNGT</choice>
+    <choice>MPUT</choice>
+    <choice>NOAC</choice>
+    <choice>NOQU</choice>
+    <choice>OFFR</choice>
+    <choice>OTHR</choice>
+    <choice>OVER</choice>
+    <choice>PROX</choice>
+	<choice>PRUN</choice>
+    <choice>QINV</choice>
+    <choice>SECU</choice>
+    <choice>SLLE</choice>
+    <choice>SPLI</choice>
+    <choice>MKDW</choice>
+    <choice>MKUP</choice>
+</field>
+<field name="22F::CAEV" type="GenericFieldType">
+    <bizName>Corporate Action Event Indicator</bizName>
+    <pattern>/[8c]/4!c</pattern>
+    <choice>ACTV</choice>
+    <choice>ATTI</choice>
+    <choice>BIDS</choice>
+    <choice>BONU</choice>
+    <choice>BPUT</choice>
+    <choice>BRUP</choice>
+    <choice>CAPD</choice>    
+    <choice>CAPG</choice>
+    <choice>CAPI</choice>
+    <choice>CERT</choice>
+    <choice>CHAN</choice>
+    <choice>CLSA</choice>
+    <choice>CMET</choice>
+    <choice>CONS</choice>
+    <choice>CONV</choice>
+    <choice>COOP</choice>
+    <choice>CREV</choice>
+    <choice>DECR</choice>
+    <choice>DETI</choice>
+    <choice>DFLT</choice>
+    <choice>DLST</choice>
+    <choice>DRAW</choice>
+	<choice>DRCA</choice>
+    <choice>DRIP</choice>
+    <choice>DSCL</choice>
+    <choice>DTCH</choice>
+    <choice>DVCA</choice>
+    <choice>DVOP</choice>
+    <choice>DVSC</choice>
+    <choice>DVSE</choice>
+    <choice>EXOF</choice>
+    <choice>EXRI</choice>
+    <choice>EXTM</choice>
+    <choice>EXWA</choice>
+    <choice>INCR</choice>
+    <choice>INTR</choice>
+    <choice>LIQU</choice>
+    <choice>MCAL</choice>
+    <choice>MEET</choice>
+    <choice>MRGR</choice>
+	<choice>NOOF</choice>
+    <choice>ODLT</choice>
+    <choice>OMET</choice>
+    <choice>OTHR</choice>
+    <choice>PARI</choice>
+    <choice>PCAL</choice>
+    <choice>PDEF</choice>
+    <choice>PINK</choice>
+    <choice>PLAC</choice>
+    <choice>PPMT</choice>
+    <choice>PRED</choice>
+    <choice>PRII</choice>
+    <choice>PRIO</choice>
+    <choice>REDM</choice>
+    <choice>REDO</choice>
+    <choice>REMK</choice>
+    <choice>RHDI</choice>
+    <choice>RHTS</choice>
+    <choice>SMAL</choice>
+    <choice>SOFF</choice>
+    <choice>SPLF</choice>
+    <choice>SPLR</choice>
+    <choice>SUSP</choice>
+    <choice>TEND</choice>
+    <choice>TREC</choice>
+    <choice>WRTH</choice>
+    <choice>WTRC</choice>
+    <choice>XMET</choice>
+    <choice>SHPR</choice>
+    <choice>COOP</choice>
+</field>
+<field name="22F::CETI" type="GenericFieldType">
+    <bizName>Certification Type Indicator</bizName>
+    <pattern>/[8c]/4!c</pattern>
+    <alias pattern="8c" bizName="Data Source Scheme" />    
+    <alias pattern="4!c" bizName="Indicator" />            
+    <choice>ACCI</choice>    
+    <choice>NCOM</choice>
+    <choice>QIBB</choice>
+</field>
+<field name="23G:" type="Mixed2Type">
+    <bizName>Function of the Message</bizName>
+    <pattern>4!c[/4!c]</pattern>
+    <alias pattern="4!c" bizName="Function" />            
+    <alias pattern="4!c" bizName="Subfunction" />                
+    <choice1>CANC</choice1>
+    <choice1>NEWM</choice1>
+    <choice2>CODU</choice2>
+    <choice2>COPY</choice2>
+    <choice2>DUPL</choice2>
+    <error type="choice">T86</error>
+</field>
+<field name="90B::INDC" type="MixedType">
+    <bizName>Price B - Indicative Price</bizName>
+    <pattern>//4!c/&lt;CUR&gt;&lt;NUMBER&gt;15</pattern>
+    <choice>ACTU</choice>
+    <choice>DISC</choice>
+    <choice>PREM</choice>
+    <choice>PLOT</choice>
+</field>
+<field name="90B::MRKT" type="MixedType">
+    <bizName>Price B - Market Price</bizName>
+    <pattern>//4!c/&lt;CUR&gt;&lt;NUMBER&gt;15</pattern>
+    <choice>ACTU</choice>
+    <choice>DISC</choice>
+    <choice>PREM</choice>
+    <choice>PLOT</choice>
+</field>
+<field name="90B::EXER" type="MixedType">
+    <bizName>Price B - Exercise Price</bizName>
+    <pattern>//4!c/&lt;CUR&gt;&lt;NUMBER&gt;15</pattern>
+    <choice>ACTU</choice>
+    <choice>DISC</choice>
+    <choice>PREM</choice>
+    <choice>PLOT</choice>
+</field>
+<field name="90B::ISSU" type="MixedType">
+    <bizName>Price B - Issue Price</bizName>
+    <pattern>//4!c/&lt;CUR&gt;&lt;NUMBER&gt;15</pattern>
+    <choice>ACTU</choice>
+    <choice>DISC</choice>
+    <choice>PREM</choice>
+    <choice>PLOT</choice>
+</field>
+<field name="90B::OFFR" type="MixedType">
+    <bizName>Price B - Offer Price Received</bizName>
+    <pattern>//4!c/&lt;CUR&gt;&lt;NUMBER&gt;15</pattern>
+    <choice>ACTU</choice>
+    <choice>DISC</choice>
+    <choice>PREM</choice>
+    <choice>PLOT</choice>
+</field>
+<field name="90B::PRPP" type="MixedType">
+    <bizName>Price B - Price per Product Paid</bizName>
+    <pattern>//4!c/&lt;CUR&gt;&lt;NUMBER&gt;15</pattern>
+    <choice>ACTU</choice>
+    <choice>DISC</choice>
+    <choice>PREM</choice>
+    <choice>PLOT</choice>
+</field>
+<field name="90B::REIN" type="MixedType">
+    <bizName>Price B - Reinvestment Price</bizName>
+    <pattern>//4!c/&lt;CUR&gt;&lt;NUMBER&gt;15</pattern>
+    <choice>ACTU</choice>
+    <choice>DISC</choice>
+    <choice>PREM</choice>
+    <choice>PLOT</choice>
+</field>
+<field name="90B::REDM" type="MixedType">
+    <bizName>Price B - Redemption  Price</bizName>
+    <pattern>//4!c/&lt;CUR&gt;&lt;NUMBER&gt;15</pattern>
+    <choice>ACTU</choice>
+    <choice>DISC</choice>
+    <choice>PREM</choice>
+    <choice>PLOT</choice>
+</field>
+<field name="90B::SUPR" type="MixedType">
+    <bizName>Price B - Subscription Price</bizName>
+    <pattern>//4!c/&lt;CUR&gt;&lt;NUMBER&gt;15</pattern>
+    <choice>ACTU</choice>
+    <choice>DISC</choice>
+    <choice>PREM</choice>
+    <choice>PLOT</choice>
+</field>
+<field name="90B::OFFP" type="MixedType">
+    <bizName>Price B - Offer Price Paid</bizName>
+    <pattern>//4!c/&lt;CUR&gt;&lt;NUMBER&gt;15</pattern>
+    <choice>ACTU</choice>
+    <choice>DISC</choice>
+    <choice>PREM</choice>
+    <choice>PLOT</choice>
+</field>
+<field name="90B::PRPR" type="MixedType">
+    <bizName>Price B - Price per Product Received</bizName>
+    <pattern>//4!c/&lt;CUR&gt;&lt;NUMBER&gt;15</pattern>
+    <choice>ACTU</choice>
+    <choice>DISC</choice>
+    <choice>PREM</choice>
+    <choice>PLOT</choice>
+</field>
+<field name="94B::SAFE" type="GenericFieldType">
+    <bizName>Place B - Place of Safekeeping</bizName>
+    <pattern>/[8c]/4!c[/30x]</pattern>
+    <choice>SHHE</choice>
+    <choice>ALLP</choice>
+</field>
+
+<field name="22F::DISF" type="GenericFieldType">
+    <bizName>Disposition of Fractions</bizName>
+    <pattern>/[8c]/4!c</pattern>
+    <alias pattern="8c" bizName="Data Source Scheme" />    
+    <alias pattern="4!c" bizName="Indicator" />            
+    <choice>BUYU</choice>
+    <choice>CINL</choice>
+    <choice>DIST</choice>
+    <choice>EXPI</choice>
+    <error type="choice">K22</error>
+</field>
+
+<field name="90E::OFFR" type="MixedType">
+    <bizName>Price E - Market Price</bizName>
+    <pattern>//4!c</pattern>
+    <choice>UKWN</choice>
+    <choice>TBSP</choice>
+    <choice>UNSP</choice>
+    <error type="choice">K90</error>
+</field>
+
+</constraints>

@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<constraints>
+
+<!-- Text Block for NOV03 MT609 -->
+
+<field name="31C:" type="PatternType">
+    <bizName>C - Statement Date</bizName>
+    <pattern>&lt;DATE2&gt;</pattern>
+</field>
+<field name="30:" type="PatternType">
+    <bizName>Date - Date Prepared</bizName>
+    <pattern>&lt;DATE2&gt;</pattern>
+</field>
+<field name="23:" type="MixedType">
+    <bizName>Further Identification</bizName>
+    <pattern>16x</pattern>
+    <choice>SPOTS</choice>
+    <choice>FORWARDS</choice>
+    <choice>OPTIONS</choice>    
+</field>
+<field name="72:" type="PatternType">
+    <bizName>Sender to Receiver Information</bizName>
+    <pattern>&lt;ERI_F72narrative&gt;</pattern>
+</field>
+
+<field name="68C:" type="MixedType">
+    <bizName>C - Transaction Details</bizName>
+    <pattern>4a/4a/1!a[&lt;DATE2&gt;]3!a&lt;NUMBER&gt;15CRLF&lt;CUR&gt;&lt;NUMBER&gt;15&lt;CUR&gt;&lt;NUMBER&gt;15&lt;CUR&gt;&lt;AMOUNT&gt;15</pattern>
+    <choiceList>
+ 	   <pattern>4a</pattern>
+ 	   <choice>BUY</choice>
+  	  <choice>SELL</choice>
+    </choiceList>
+    <choiceList>
+    	<pattern>4a</pattern>
+    	<choice>CALL</choice>
+    	<choice>PUT</choice>
+    </choiceList>
+    <choiceList>
+    	<pattern>1!a</pattern>
+    	<choice>A</choice>
+    	<choice>E</choice>
+    	<choice>V</choice>
+    </choiceList>
+   
+</field>
+
+
+<field name="68B:" type="Mixed2Type">
+    <bizName>B - Transaction Details</bizName>
+    <pattern>&lt;DATE2&gt;&lt;DATE2&gt;16x/1!a3!a&lt;NUMBER&gt;15CRLF&lt;CUR&gt;&lt;NUMBER&gt;15/&lt;DATE2&gt;&lt;CUR&gt;&lt;AMOUNT&gt;15</pattern>
+    <alias pattern="&lt;DATE2&gt;" bizName="Trade Date"/>
+    <alias pattern="&lt;DATE2&gt;" bizName="Maturity Date"/> 
+    <alias pattern="&lt;NUMBER&gt;15" bizName="Quantity Of Metal"/>     
+    <choice1>B</choice1>
+    <choice1>S</choice1>
+    <choice2>FOZ</choice2>
+        <choice2>GOZ</choice2>
+        <choice2>GRM</choice2>
+        <choice2>KLO</choice2>
+        <choice2>LIT</choice2>
+        <choice2>LOT</choice2>
+        <choice2>OTH</choice2>
+        <choice2>PND</choice2>
+        <choice2>TAL</choice2>
+        <choice2>OTH</choice2>
+        <choice2>TOL</choice2>
+        <choice2>TON</choice2>
+        <choice2>TOZ</choice2>
+    <choice2>
+</constraints>

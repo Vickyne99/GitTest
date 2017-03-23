@@ -1,0 +1,19 @@
+METHOD get_table_data.
+  DATA table TYPE tabname.
+
+*- Make sure table name is upper case
+  table = tab_name.
+  TRANSLATE table TO UPPER CASE.                          "#EC SYNTCHAR
+
+*- Execute select statement
+  SELECT *
+         FROM (table)
+         INTO CORRESPONDING FIELDS OF TABLE tab_data
+         WHERE vbeln = vbeln.
+
+*- Test received data
+  READ TABLE tab_data INDEX 1 TRANSPORTING NO FIELDS.
+  IF sy-subrc <> 0.                                         "#EC NEEDED
+    ...
+  ENDIF.
+ENDMETHOD.

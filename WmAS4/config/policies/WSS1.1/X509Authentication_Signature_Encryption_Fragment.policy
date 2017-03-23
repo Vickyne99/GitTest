@@ -1,0 +1,83 @@
+  <!--
+    This WS-SecurityPolicy has the following constraints: 
+    1. Uses Asymmetric Binding to do request/response Signature and Encryption 
+    2. Timestamp is requested (Timestamp token needs to be signed) 
+    
+    Note: Property MustSupportRefKeyIdentifier will only work if the incoming
+    cert is X509v3 (according to ws-security x509 1.1 profile; so don't
+    use a cert generated using JDK keytool - it only generates v1 certs)
+  -->
+  
+<wsp:Policy wsu:Id="WSS11_X509Authentication_Signature_Encryption_Fragment" Name="X509 Authentication, Signature and Encryption of Fragments"
+  xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+  xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"
+  xmlns:sp13="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200802">
+  
+  <wsp:ExactlyOne>
+    <wsp:All>
+      <sp:AsymmetricBinding xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702">
+        <wsp:Policy>
+          <sp:InitiatorToken>
+            <wsp:Policy>
+              <sp:X509Token sp:IncludeToken="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702/IncludeToken/AlwaysToRecipient">
+                <wsp:Policy>
+                  <sp:WssX509V3Token11 />
+                  <sp:WssX509PkiPathV1Token11 />
+                </wsp:Policy>
+              </sp:X509Token>
+            </wsp:Policy>
+          </sp:InitiatorToken>
+          <sp:RecipientToken>
+            <wsp:Policy>
+              <sp:X509Token sp:IncludeToken="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702/IncludeToken/AlwaysToRecipient">
+                <wsp:Policy>
+                  <sp:WssX509V3Token11 />
+                  <sp:WssX509PkiPathV1Token11 />
+                </wsp:Policy>
+              </sp:X509Token>
+            </wsp:Policy>
+          </sp:RecipientToken>
+          
+          <sp:AlgorithmSuite>
+            <wsp:Policy>
+              <sp:TripleDesRsa15 />
+            </wsp:Policy>
+          </sp:AlgorithmSuite>
+          
+          <sp:Layout>
+            <wsp:Policy>
+              <sp:Strict />
+            </wsp:Policy>
+          </sp:Layout>
+
+          <sp:IncludeTimestamp />
+
+          <sp:ProtectTokens />
+          
+          <sp:OnlySignEntireHeadersAndBody />
+          
+          <sp:SignBeforeEncrypting />
+
+        </wsp:Policy>
+      </sp:AsymmetricBinding>
+
+      <sp:Wss11 xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702">
+          <wsp:Policy>
+              <!-- sp:MustSupportRefKeyIdentifier/ -->
+              <sp:MustSupportRefIssuerSerial/>
+              <sp:MustSupportRefThumbprint/>
+          </wsp:Policy>
+      </sp:Wss11>
+
+      <sp:SignedParts xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702">
+      <sp:Header Name="MessageFragment" Namespace="http://docs.oasis-open.org/ebxml-msg/ns/v3.0/mf/2010/04/" />
+      <sp:Header Name="UserMessage" Namespace="http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/" />
+      </sp:SignedParts>
+
+      <sp:EncryptedParts xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702">
+        <sp:Body />
+      </sp:EncryptedParts>
+
+    </wsp:All>
+  </wsp:ExactlyOne>
+</wsp:Policy>

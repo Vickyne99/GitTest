@@ -1,0 +1,969 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="node_type">webServiceDescriptor</value>
+  <value name="node_nsName">mediator.integration:Deployer</value>
+  <value name="node_pkg">WmMediator</value>
+  <Boolean name="inbound">true</Boolean>
+  <Boolean name="WSICompliant">false</Boolean>
+  <value name="SOAPProtocol">SOAP 1.1 Protocol</value>
+  <value name="targetNamespace">http://integration.mediator</value>
+  <Boolean name="attachmentEnabled">false</Boolean>
+  <number name="mtomThreshold" type="Integer">0</number>
+ <value name="externalWSDL">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:ns1="http://org.apache.axis2/xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:certjava="http://cert.security.java/xsd" xmlns:secjava="http://security.java/xsd" xmlns:med="http://integration.mediator" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" targetNamespace="http://integration.mediator"&gt;
+    &lt;wsdl:documentation&gt;MediatorDeploymentSupporter&lt;/wsdl:documentation&gt;
+    &lt;wsdl:types&gt;
+        &lt;xs:schema xmlns:med="http://integration.mediator" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://integration.mediator"&gt;
+            &lt;xs:element name="update"&gt;
+                &lt;xs:complexType&gt;
+                    &lt;xs:sequence&gt;
+                        &lt;xs:element maxOccurs="1" minOccurs="0" name="serviceInfos" nillable="false" type="med:servicesDeployInfoType"/&gt;
+                        &lt;xs:element maxOccurs="1" minOccurs="0" name="registeredConsumerNames" nillable="false" type="med:consumersRegisterInputType"/&gt;
+                        &lt;xs:element maxOccurs="1" minOccurs="0" name="consumerApps" nillable="false" type="med:consumersAppDetailsType"/&gt;
+			            &lt;xs:element maxOccurs="1" minOccurs="0" name="apiKeys" nillable="false"
+						type="med:deployAPIKeyRequestType"/&gt;
+						&lt;xs:element maxOccurs="1" minOccurs="0" name="oauth2Tokens" nillable="false"
+						type="med:deployOauth2TokensRequestType"/&gt;
+						&lt;xs:element maxOccurs="1" minOccurs="0" name="aliases" nillable="false"
+						type="med:aliasesDetailsType"/&gt;
+						&lt;xs:element maxOccurs="1" minOccurs="0" name="serviceAliasAssociation" nillable="false" 
+						type="med:serviceAliasAssociationInputType"/&gt;
+                    &lt;/xs:sequence&gt;
+                &lt;/xs:complexType&gt;
+            &lt;/xs:element&gt;
+            &lt;xs:element name="updateResponse"&gt;
+                &lt;xs:complexType&gt;
+                    &lt;xs:sequence&gt;
+                        &lt;xs:element maxOccurs="1" minOccurs="0" name="serviceResponses" nillable="false" type="med:servicesDeployResponseType"/&gt;
+                        &lt;xs:element maxOccurs="1" minOccurs="0" name="registerResponses" nillable="false" type="med:consumersRegisterResponseType"/&gt;
+                        &lt;xs:element maxOccurs="1" minOccurs="0" name="consumerResponses" nillable="false" type="med:consumerAppsResponseType"/&gt;
+						&lt;xs:element maxOccurs="1" minOccurs="0" name="deployAPIKeyResponse" nillable="false" type="med:deployAPIKeyResponseType"/&gt;
+						&lt;xs:element maxOccurs="1" minOccurs="0" name="deployOauth2TokenResponse" nillable="false" type="med:deployOauth2TokenResponseType"/&gt;
+						&lt;xs:element maxOccurs="1" minOccurs="0" name="aliasResponses" nillable="false" type="med:aliasesResponseType"/&gt;
+						&lt;xs:element maxOccurs="1" minOccurs="0" name="serviceAliasAssociationResponses" nillable="false" type="med:serviceAliasAssociationResponseType"/&gt;
+					&lt;/xs:sequence&gt;
+                &lt;/xs:complexType&gt;
+            &lt;/xs:element&gt;
+            &lt;xs:element name="replace"&gt;
+                &lt;xs:complexType&gt;
+                    &lt;xs:sequence&gt;
+                        &lt;xs:element maxOccurs="1" minOccurs="0" name="registeredConsumerNames" nillable="false" type="med:consumersRegisterReplaceInputType"/&gt;
+                        &lt;xs:element maxOccurs="1" minOccurs="0" name="consumerApps" nillable="false" type="med:consumersAppReplaceType"/&gt;
+                    &lt;/xs:sequence&gt;
+                &lt;/xs:complexType&gt;
+            &lt;/xs:element&gt;
+            &lt;xs:element name="replaceResponse"&gt;
+                &lt;xs:complexType&gt;
+                    &lt;xs:sequence&gt;
+                        &lt;xs:element maxOccurs="1" minOccurs="0" name="registerResponses" nillable="false" type="med:consumersRegisterResponseType"/&gt;
+                        &lt;xs:element maxOccurs="1" minOccurs="0" name="consumerResponses" nillable="false" type="med:consumerAppsResponseType"/&gt;
+                    &lt;/xs:sequence&gt;
+                &lt;/xs:complexType&gt;
+            &lt;/xs:element&gt;
+            &lt;xs:element name="remove"&gt;
+                &lt;xs:complexType&gt;
+                    &lt;xs:sequence&gt;
+                        &lt;xs:element maxOccurs="1" minOccurs="0" name="serviceInfos" nillable="false" type="med:servicesUndeployInfoType"/&gt;
+                        &lt;xs:element maxOccurs="1" minOccurs="0" name="registeredConsumerNames" nillable="false" type="med:consumersRegisterRemoveInputType"/&gt;
+                        &lt;xs:element maxOccurs="1" minOccurs="0" name="consumerApps" nillable="false" type="med:consumersAppRemoveType"/&gt;
+						&lt;xs:element maxOccurs="1" minOccurs="0" name="apiKeys" nillable="false"
+						type="med:undeployAPIKeyRequestType"/&gt;
+						&lt;xs:element maxOccurs="1" minOccurs="0" name="oauth2Tokens" nillable="false" type="med:undeployOAuth2ClientsRequestType"/&gt;
+                        &lt;xs:element maxOccurs="1" minOccurs="0" name="aliases" nillable="false" type="med:aliasesRemoveType"/&gt;
+                    &lt;/xs:sequence&gt;
+                &lt;/xs:complexType&gt;
+            &lt;/xs:element&gt;
+            &lt;xs:element name="removeResponse"&gt;
+                &lt;xs:complexType&gt;
+                    &lt;xs:sequence&gt;
+                        &lt;xs:element maxOccurs="1" minOccurs="0" name="serviceResponses" nillable="false" type="med:servicesUndeployResponseType"/&gt;
+                        &lt;xs:element maxOccurs="1" minOccurs="0" name="registerResponses" nillable="false" type="med:consumersRegisterResponseType"/&gt;
+                        &lt;xs:element maxOccurs="1" minOccurs="0" name="consumerResponses" nillable="false" type="med:consumerAppsResponseType"/&gt;
+                        &lt;xs:element maxOccurs="1" minOccurs="0" name="undeployAPIKeyResponse" nillable="false" type="med:undeployAPIKeyResponseType"/&gt;
+                        &lt;xs:element maxOccurs="1" minOccurs="0" name="undeployOAuth2ClientsResponse" nillable="false" type="med:undeployOAuth2ClientsResponseType"/&gt;
+                        &lt;xs:element maxOccurs="1" minOccurs="0" name="aliasResponses" nillable="false" type="med:aliasesResponseType"/&gt;
+                    &lt;/xs:sequence&gt;
+                &lt;/xs:complexType&gt;
+            &lt;/xs:element&gt;
+            &lt;xs:element name="ping" type="med:pingRequestType"/&gt;
+            &lt;xs:complexType name="pingRequestType"&gt;
+                &lt;xs:sequence&gt;
+                    &lt;xs:element name="pingInput" nillable="false" type="med:pingInputType"/&gt;
+                &lt;/xs:sequence&gt;
+            &lt;/xs:complexType&gt;
+            &lt;xs:element name="pingResponse" type="med:pingResponseType"/&gt;
+            &lt;xs:complexType name="pingResponseType"&gt;
+                &lt;xs:sequence&gt;
+                    &lt;xs:element name="pingOutput" nillable="false" type="med:pingOutputType"/&gt;
+                &lt;/xs:sequence&gt;
+            &lt;/xs:complexType&gt;
+			&lt;xs:element name="fetchOAuth2Client"&gt;
+                &lt;xs:complexType&gt;
+                    &lt;xs:sequence&gt;
+                        &lt;xs:element maxOccurs="1" minOccurs="0" name="fetchOAuth2ClientRequestInfo" nillable="false" type="med:fetchOAuth2ClientRequestInfoType"/&gt;
+                    &lt;/xs:sequence&gt;
+                &lt;/xs:complexType&gt;
+            &lt;/xs:element&gt;
+			
+            &lt;xs:element name="fetchOAuth2ClientResponse"&gt;
+                &lt;xs:complexType&gt;
+                    &lt;xs:sequence&gt;
+                        &lt;xs:element maxOccurs="1" minOccurs="0" name="fetchOAuth2ClientResponseInfo" nillable="false" type="med:fetchOAuth2ClientResponseInfoType"/&gt;
+                    &lt;/xs:sequence&gt;
+                &lt;/xs:complexType&gt;
+            &lt;/xs:element&gt;
+			
+			&lt;xs:element name="fetchOAuth2ClientRequestInfo" type="med:fetchOAuth2ClientRequestInfoType"/&gt;
+            &lt;xs:complexType name="fetchOAuth2ClientRequestInfoType"&gt;
+                &lt;xs:sequence&gt;
+                    &lt;xs:element minOccurs="1" maxOccurs="unbounded" name="fetchOAuth2ClientInput" nillable="false" type="med:fetchOAuth2ClientInputType"/&gt;
+                &lt;/xs:sequence&gt;
+            &lt;/xs:complexType&gt;
+			
+			&lt;xs:element name="fetchOAuth2ClientInput" type="med:fetchOAuth2ClientInputType"/&gt;
+            &lt;xs:complexType name="fetchOAuth2ClientInputType"&gt;
+                &lt;xs:sequence&gt;
+					&lt;xs:element name="clientName" type="xs:string"/&gt;
+					&lt;xs:element name="oauth2Scope" type="xs:string"/&gt;
+                    &lt;xs:element name="expirationDate" type="xs:dateTime" minOccurs="0" maxOccurs="1"/&gt;
+					&lt;xs:element name="accessTokenRetryLimit" type="xs:string" maxOccurs="1" minOccurs="0"/&gt;
+					&lt;xs:element name="redirectUriList" type="med:redirectUriType" maxOccurs="1" minOccurs="0" nillable="true"/&gt;
+                &lt;/xs:sequence&gt;
+            &lt;/xs:complexType&gt;
+			
+			&lt;xs:element name="fetchOAuth2ClientResponseInfo" type="med:fetchOAuth2ClientResponseInfoType"/&gt;
+            &lt;xs:complexType name="fetchOAuth2ClientResponseInfoType"&gt;
+                &lt;xs:sequence&gt;
+                    &lt;xs:element minOccurs="1" maxOccurs="unbounded" name="fetchOAuth2ClientOutput" nillable="false" type="med:fetchOAuth2ClientOutputType"/&gt;
+                &lt;/xs:sequence&gt;
+            &lt;/xs:complexType&gt;
+			
+			&lt;xs:element name="fetchOAuth2ClientOutput" type="med:fetchOAuth2ClientOutputType"/&gt;
+            &lt;xs:complexType name="fetchOAuth2ClientOutputType"&gt;
+                &lt;xs:sequence&gt;
+					&lt;xs:element name="clientId" type="xs:string"/&gt;
+					&lt;xs:element name="clientSecret" type="xs:string"/&gt;
+                    &lt;xs:element name="accessTokenRequestURI" type="xs:string"/&gt;
+					&lt;xs:element name="expirationDate" type="xs:dateTime" minOccurs="0" maxOccurs="1"/&gt;
+					&lt;xs:element name="oauth2Scope" type="xs:string"/&gt;
+					&lt;xs:element name="statusMessage" type="xs:string"/&gt;
+                &lt;/xs:sequence&gt;
+            &lt;/xs:complexType&gt;
+			
+			&lt;xs:element name="redirectUriList" type="med:redirectUriType"/&gt;
+            &lt;xs:complexType name="redirectUriType"&gt;
+                &lt;xs:sequence&gt;
+                    &lt;xs:element maxOccurs="unbounded" minOccurs="0" name="redirectUri" nillable="true" type="xs:string"/&gt;
+                &lt;/xs:sequence&gt;
+            &lt;/xs:complexType&gt;
+			
+            &lt;xs:element name="apiKeys" type="med:deployAPIKeyRequestType"/&gt;
+            &lt;xs:complexType name="deployAPIKeyRequestType"&gt;
+                &lt;xs:sequence&gt;
+                    &lt;xs:element minOccurs="1" maxOccurs="unbounded" name="deployAPIKeyInput" nillable="false" type="med:deployAPIKeyInputType"/&gt;
+                &lt;/xs:sequence&gt;
+            &lt;/xs:complexType&gt;
+
+            &lt;xs:element name="oauth2Tokens" type="med:deployOauth2TokensRequestType"/&gt;
+            &lt;xs:complexType name="deployOauth2TokensRequestType"&gt;
+                &lt;xs:sequence&gt;
+                    &lt;xs:element minOccurs="1" maxOccurs="unbounded" name="deployOauth2TokenInput" nillable="false" type="med:deployOauth2TokenInputType"/&gt;
+                &lt;/xs:sequence&gt;
+            &lt;/xs:complexType&gt;
+			
+			&lt;xs:element name="deployAPIKeyResponse" type="med:deployAPIKeyResponseType"/&gt;
+			&lt;xs:complexType name="deployAPIKeyResponseType"&gt;
+				&lt;xs:sequence&gt;
+					&lt;xs:element minOccurs="1" maxOccurs="unbounded" name="deployAPIKeyOutput" nillable="false" type="med:deployAPIKeyOutputType"/&gt;
+				&lt;/xs:sequence&gt;
+			&lt;/xs:complexType&gt;
+
+			&lt;xs:element name="deployOauth2TokenResponse" type="med:deployOauth2TokenResponseType"/&gt;
+			&lt;xs:complexType name="deployOauth2TokenResponseType"&gt;
+				&lt;xs:sequence&gt;
+					&lt;xs:element minOccurs="1" maxOccurs="unbounded" name="deployOauth2TokenOutput" nillable="false" type="med:deployOauth2TokenOutputType"/&gt;
+				&lt;/xs:sequence&gt;
+			&lt;/xs:complexType&gt;
+			
+
+            &lt;xs:element name="consumersAppDetails" type="med:consumersAppDetailsType"/&gt;
+            &lt;xs:complexType name="consumersAppDetailsType"&gt;
+                &lt;xs:sequence&gt;
+                    &lt;xs:element maxOccurs="unbounded" minOccurs="1" name="consumerAppDetails" nillable="false" type="med:ConsumerAppDetailsInputType"/&gt;
+                &lt;/xs:sequence&gt;
+            &lt;/xs:complexType&gt;
+			
+            &lt;xs:element name="aliasesDetails" type="med:aliasesDetailsType"/&gt;
+            &lt;xs:complexType name="aliasesDetailsType"&gt;
+                &lt;xs:sequence&gt;
+                    &lt;xs:element maxOccurs="unbounded" minOccurs="1" name="aliasDetails" nillable="false" type="med:AliasDetailsInputType"/&gt;
+                &lt;/xs:sequence&gt;
+            &lt;/xs:complexType&gt;						
+			
+			
+            &lt;xs:element name="consumersAppReplace" type="med:consumersAppReplaceType"/&gt;
+            &lt;xs:complexType name="consumersAppReplaceType"&gt;
+                &lt;xs:sequence&gt;
+                    &lt;xs:element maxOccurs="unbounded" minOccurs="0" name="consumerAppReplace" nillable="false" type="med:ConsumerAppDetailsInputType"/&gt;
+                &lt;/xs:sequence&gt;
+            &lt;/xs:complexType&gt;
+            &lt;xs:element name="consumersAppRemove" type="med:consumersAppRemoveType"/&gt;
+            &lt;xs:complexType name="consumersAppRemoveType"&gt;
+                &lt;xs:sequence&gt;
+                    &lt;xs:element maxOccurs="unbounded" minOccurs="1" name="consumerAppRemove" nillable="false" type="med:ConsumerAppRemoveInputType"/&gt;
+                &lt;/xs:sequence&gt;
+            &lt;/xs:complexType&gt;
+			&lt;xs:element name="apiKeysUndeploy" type="med:undeployAPIKeyRequestType"/&gt;
+            &lt;xs:complexType name="undeployAPIKeyRequestType"&gt;
+                &lt;xs:sequence&gt;
+                    &lt;xs:element maxOccurs="unbounded" minOccurs="1" name="undeployAPIKeyInput" nillable="false" type="med:undeployAPIKeysInputType"/&gt;
+                &lt;/xs:sequence&gt;
+            &lt;/xs:complexType&gt;
+			
+			&lt;xs:element name="oAuth2ClientsUndeploy" type="med:undeployOAuth2ClientsRequestType"/&gt;
+            &lt;xs:complexType name="undeployOAuth2ClientsRequestType"&gt;
+                &lt;xs:sequence&gt;
+                    &lt;xs:element maxOccurs="unbounded" minOccurs="1" name="undeployOAuth2ClientInput" nillable="false" type="med:undeployOAuth2ClientInputType"/&gt;
+                &lt;/xs:sequence&gt;
+            &lt;/xs:complexType&gt;
+			
+            &lt;xs:element name="consumerAppsResponse" type="med:consumerAppsResponseType"/&gt;
+            &lt;xs:complexType name="consumerAppsResponseType"&gt;
+                &lt;xs:sequence&gt;
+                    &lt;xs:element maxOccurs="unbounded" minOccurs="1" name="returnInfo" nillable="false" type="med:ConsumerAppResponseType"/&gt;
+                &lt;/xs:sequence&gt;
+            &lt;/xs:complexType&gt;
+            &lt;xs:element name="consumersRegisterInput" type="med:consumersRegisterInputType"/&gt;
+            &lt;xs:complexType name="consumersRegisterInputType"&gt;
+                &lt;xs:sequence&gt;
+                    &lt;xs:element maxOccurs="unbounded" minOccurs="1" name="registerUpdateInfo" nillable="false" type="med:RegisterConsumersInputType"/&gt;
+                &lt;/xs:sequence&gt;
+            &lt;/xs:complexType&gt;
+            &lt;xs:element name="consumersRegisterRemoveInput" type="med:consumersRegisterRemoveInputType"/&gt;
+            &lt;xs:complexType name="consumersRegisterRemoveInputType"&gt;
+                &lt;xs:sequence&gt;
+                    &lt;xs:element maxOccurs="unbounded" minOccurs="1" name="registerRemoveInfo" nillable="false" type="med:RegisterConsumersRemoveInputType"/&gt;
+                &lt;/xs:sequence&gt;
+            &lt;/xs:complexType&gt;
+            &lt;xs:element name="undeployAPIKeyResponse"  type="med:undeployAPIKeyResponseType"/&gt;
+            &lt;xs:complexType name="undeployAPIKeyResponseType"&gt;
+                &lt;xs:sequence&gt;
+                    &lt;xs:element maxOccurs="unbounded" minOccurs="1" name="undeployAPIKeyOutput" nillable="false" type="med:undeployAPIKeyOutputType"/&gt;
+                &lt;/xs:sequence&gt;
+            &lt;/xs:complexType&gt;
+			
+            &lt;xs:element name="undeployOAuth2ClientsResponse"  type="med:undeployOAuth2ClientsResponseType"/&gt;
+            &lt;xs:complexType name="undeployOAuth2ClientsResponseType"&gt;
+                &lt;xs:sequence&gt;
+                    &lt;xs:element maxOccurs="unbounded" minOccurs="1" name="undeployOAuth2ClientOutput" nillable="false" type="med:undeployOAuth2ClientOutputType"/&gt;
+                &lt;/xs:sequence&gt;
+            &lt;/xs:complexType&gt;
+			
+			
+            &lt;xs:element name="consumersRegisterReplaceInput" type="med:consumersRegisterReplaceInputType"/&gt;
+            &lt;xs:complexType name="consumersRegisterReplaceInputType"&gt;
+                &lt;xs:sequence&gt;
+                    &lt;xs:element maxOccurs="unbounded" minOccurs="1" name="registerReplaceInfo" nillable="false" type="med:RegisterConsumersInputType"/&gt;
+                &lt;/xs:sequence&gt;
+            &lt;/xs:complexType&gt;
+            &lt;xs:element name="consumersRegisterResponse" type="med:consumersRegisterResponseType"/&gt;
+            &lt;xs:complexType name="consumersRegisterResponseType"&gt;
+                &lt;xs:sequence&gt;
+                    &lt;xs:element maxOccurs="unbounded" minOccurs="1" name="returnInfo" nillable="false" type="med:RegisterConsumersResponseType"/&gt;
+                &lt;/xs:sequence&gt;
+            &lt;/xs:complexType&gt;
+            &lt;xs:element name="servicesDeployInfo" type="med:servicesDeployInfoType"/&gt;
+            &lt;xs:complexType name="servicesDeployInfoType"&gt;
+                &lt;xs:sequence&gt;
+                    &lt;xs:element maxOccurs="unbounded" minOccurs="1" name="serviceDeployInfo" nillable="false" type="med:VirtualServiceDeployInputType"/&gt;
+                &lt;/xs:sequence&gt;
+            &lt;/xs:complexType&gt;
+            &lt;xs:element name="servicesDeployResponse" type="med:servicesDeployResponseType"/&gt;
+            &lt;xs:complexType name="servicesDeployResponseType"&gt;
+                &lt;xs:sequence&gt;
+                    &lt;xs:element maxOccurs="unbounded" minOccurs="1" name="returnInfo" nillable="false" type="med:VirtualServiceDeployResponseType"/&gt;
+                &lt;/xs:sequence&gt;
+            &lt;/xs:complexType&gt;
+            &lt;xs:element name="servicesUndeployInfo" type="med:servicesUndeployInfoType"/&gt;
+            &lt;xs:complexType name="servicesUndeployInfoType"&gt;
+                &lt;xs:sequence&gt;
+                    &lt;xs:element maxOccurs="unbounded" minOccurs="1" name="serviceUndeployInfo" nillable="false" type="med:VirtualServiceUndeployInputType"/&gt;
+                &lt;/xs:sequence&gt;
+            &lt;/xs:complexType&gt;
+            &lt;xs:element name="servicesUndeployResponse" type="med:servicesUndeployResponseType"/&gt;
+            &lt;xs:complexType name="servicesUndeployResponseType"&gt;
+                &lt;xs:sequence&gt;
+                    &lt;xs:element maxOccurs="unbounded" minOccurs="1" name="returnInfo" nillable="false" type="med:VirtualServiceUndeployResponseType"/&gt;
+                &lt;/xs:sequence&gt;
+            &lt;/xs:complexType&gt;
+			&lt;xs:element name="serviceAliasAssociationInput" type="med:serviceAliasAssociationInputType"/&gt;
+            &lt;xs:complexType name="serviceAliasAssociationInputType"&gt;
+                &lt;xs:sequence&gt;
+                    &lt;xs:element maxOccurs="unbounded" minOccurs="1" name="associationInfo" nillable="false" type="med:AliasServiceAssociationInputType"/&gt;
+                &lt;/xs:sequence&gt;
+            &lt;/xs:complexType&gt;
+			&lt;xs:element name="AliasServiceAssociationInput" type="med:AliasServiceAssociationInputType"/&gt;
+            &lt;xs:complexType name="AliasServiceAssociationInputType"&gt;
+                &lt;xs:sequence&gt;
+                    &lt;xs:element name="aliasName" nillable="false" type="xs:string"/&gt;
+                    &lt;xs:element name="modifiedDate" nillable="false" type="xs:dateTime"/&gt;
+                    &lt;xs:element name="servicesName" nillable="false" type="med:serviceNameType"/&gt;
+                &lt;/xs:sequence&gt;
+            &lt;/xs:complexType&gt;
+			&lt;xs:element name="servicesName" type="med:serviceNameType"/&gt;
+            &lt;xs:complexType name="serviceNameType"&gt;
+                &lt;xs:sequence&gt;
+                    &lt;xs:element maxOccurs="unbounded" minOccurs="1" name="name" nillable="false" type="xs:string"/&gt;
+                &lt;/xs:sequence&gt;
+            &lt;/xs:complexType&gt;			
+	        &lt;xs:element name="ConsumerAppDetailsInput" type="med:ConsumerAppDetailsInputType"/&gt;
+            &lt;xs:complexType name="ConsumerAppDetailsInputType"&gt;
+                &lt;xs:sequence&gt;
+                    &lt;xs:element name="name" nillable="false" type="xs:string"/&gt;
+                    &lt;xs:element name="key" nillable="false" type="xs:string"/&gt;
+                    &lt;xs:element name="version" nillable="false" type="xs:string"/&gt;
+                    &lt;xs:element name="description" nillable="true" type="xs:string"/&gt;
+                    &lt;xs:element name="createdDate" nillable="false" type="xs:dateTime"/&gt;
+                    &lt;xs:element name="modifiedDate" nillable="false" type="xs:dateTime"/&gt;
+					&lt;xs:element maxOccurs="1" minOccurs="0" name="partnerId" nillable="true" type="xs:string"/&gt;
+                    &lt;xs:element maxOccurs="1" minOccurs="0" name="wss-cert" nillable="true" type="xs:string"/&gt;
+                    &lt;xs:element maxOccurs="1" minOccurs="0" name="iPAddresses" nillable="true" type="med:iPAddressType"/&gt;
+                    &lt;xs:element maxOccurs="1" minOccurs="0" name="identificationTokens" nillable="true" type="med:iDTokenType"/&gt;
+                &lt;/xs:sequence&gt;
+		    &lt;/xs:complexType&gt;
+            &lt;xs:element name="iPAddress" type="med:iPAddressType"/&gt;
+            &lt;xs:complexType name="iPAddressType"&gt;
+                &lt;xs:sequence&gt;
+                    &lt;xs:element maxOccurs="unbounded" minOccurs="1" name="iPAddress" nillable="false" type="xs:string"/&gt;
+                &lt;/xs:sequence&gt;
+            &lt;/xs:complexType&gt;
+            &lt;xs:element name="iDToken" type="med:iDTokenType"/&gt;
+            &lt;xs:complexType name="iDTokenType"&gt;
+                &lt;xs:sequence&gt;
+                    &lt;xs:element maxOccurs="unbounded" minOccurs="1" name="iDToken" nillable="false" type="xs:string"/&gt;
+                &lt;/xs:sequence&gt;
+            &lt;/xs:complexType&gt;
+			
+            &lt;xs:element name="AliasDetailsInput" type="med:AliasDetailsInputType"/&gt;
+            &lt;xs:complexType name="AliasDetailsInputType"&gt;
+                &lt;xs:sequence&gt;
+                    &lt;xs:element name="key" nillable="false" type="xs:string"/&gt;
+					&lt;xs:element name="type" nillable="false" type="xs:string"/&gt;
+                    &lt;xs:element name="description"  maxOccurs="1" minOccurs="0" nillable="true" type="xs:string"/&gt;
+                    &lt;xs:element maxOccurs="1" minOccurs="1" name="name" nillable="true" type="xs:string"/&gt;
+                    &lt;xs:element maxOccurs="1" minOccurs="0" name="alias" nillable="true" type="med:aliasType"/&gt;
+					&lt;xs:element maxOccurs="1" minOccurs="0" name="endpoint-alias" nillable="true" type="med:endpointAliasType"/&gt;
+					&lt;xs:element maxOccurs="1" minOccurs="0" name="secure-alias" nillable="true" type="med:secureAliasType"/&gt;
+					&lt;xs:element maxOccurs="1" minOccurs="0" name="esb-alias" nillable="true" type="med:esbAliasType"/&gt;
+					&lt;xs:element maxOccurs="1" minOccurs="0" name="xslt-alias" nillable="true" type="med:xsltAliasType"/&gt;
+				&lt;/xs:sequence&gt;
+            &lt;/xs:complexType&gt;
+	
+            &lt;xs:element name="alias" type="med:aliasType"/&gt;
+            &lt;xs:complexType name="aliasType"&gt;
+                &lt;xs:sequence&gt;
+                    &lt;xs:element maxOccurs="1" minOccurs="1" name="value" nillable="false" type="xs:string"/&gt;
+                &lt;/xs:sequence&gt;
+            &lt;/xs:complexType&gt;	
+			  	
+			&lt;xs:element name="endpoint-alias" type="med:endpointAliasType"/&gt;
+            &lt;xs:complexType name="endpointAliasType"&gt;
+                &lt;xs:sequence&gt;
+                    &lt;xs:element maxOccurs="1" minOccurs="1" name="endpoint" nillable="false" type="xs:string"/&gt;
+					&lt;xs:element maxOccurs="1" minOccurs="1" name="connection-timeout" nillable="false" type="xs:int"/&gt;
+					&lt;xs:element maxOccurs="1" minOccurs="1" name="read-timeout" nillable="false" type="xs:int"/&gt;
+                    &lt;xs:element maxOccurs="1" minOccurs="1" name="keyalias" nillable="false" type="xs:string"/&gt;
+                    &lt;xs:element maxOccurs="1" minOccurs="1" name="keystore-alias" nillable="false" type="xs:string"/&gt;
+                    &lt;xs:element maxOccurs="1" minOccurs="1" name="pass-wss-headers" nillable="false" type="xs:string"/&gt;
+                    &lt;xs:element maxOccurs="1" minOccurs="1" name="soap-optimization" nillable="false" type="xs:string"/&gt;
+                &lt;/xs:sequence&gt;
+            &lt;/xs:complexType&gt;
+			
+			&lt;xs:element name="secure-alias" type="med:secureAliasType"/&gt;
+            &lt;xs:complexType name="secureAliasType"&gt;
+                &lt;xs:sequence&gt;
+					&lt;xs:element maxOccurs="1" minOccurs="1" name="authentication-type" nillable="false" type="xs:string"/&gt;
+                    &lt;xs:element maxOccurs="1" minOccurs="1" name="secure-string" nillable="false" type="xs:string"/&gt;
+					&lt;xs:element maxOccurs="1" minOccurs="1" name="username" nillable="false" type="xs:string"/&gt;
+					&lt;xs:element maxOccurs="1" minOccurs="1" name="domain" nillable="false" type="xs:string"/&gt;
+                &lt;/xs:sequence&gt;
+            &lt;/xs:complexType&gt;
+			
+			&lt;xs:element name="xslt-alias" type="med:xsltAliasType"/&gt;
+            &lt;xs:complexType name="xsltAliasType"&gt;
+                &lt;xs:sequence&gt;
+                    &lt;xs:element maxOccurs="1" minOccurs="1" name="xslt-content" nillable="false" type="xs:string"/&gt;
+                &lt;/xs:sequence&gt;
+            &lt;/xs:complexType&gt;
+			
+			&lt;xs:element name="esb-alias" type="med:esbAliasType"/&gt;
+            &lt;xs:complexType name="esbAliasType"&gt;
+                &lt;xs:sequence&gt;
+                    &lt;xs:element maxOccurs="1" minOccurs="1" name="service-name" nillable="false" type="xs:string"/&gt;
+                &lt;/xs:sequence&gt;
+            &lt;/xs:complexType&gt;
+		
+            &lt;xs:element name="ConsumerAppRemoveInput" type="med:ConsumerAppRemoveInputType"/&gt;
+            &lt;xs:complexType name="ConsumerAppRemoveInputType"&gt;
+                &lt;xs:sequence&gt;
+                    &lt;xs:element name="name" nillable="false" type="xs:string"/&gt;
+                    &lt;xs:element name="key" nillable="false" type="xs:string"/&gt;
+                &lt;/xs:sequence&gt;
+            &lt;/xs:complexType&gt;
+			&lt;xs:element name="undeployAPIKeyInput" type="med:undeployAPIKeysInputType"/&gt;
+            &lt;xs:complexType name="undeployAPIKeysInputType"&gt;
+                &lt;xs:sequence&gt;
+				&lt;xs:element name="key" nillable="false" type="xs:string"/&gt;
+                &lt;/xs:sequence&gt;
+            &lt;/xs:complexType&gt;
+			
+			&lt;xs:element name="undeployOAuth2ClientInput" type="med:undeployOAuth2ClientInputType"/&gt;
+            &lt;xs:complexType name="undeployOAuth2ClientInputType"&gt;
+                &lt;xs:sequence&gt;
+				&lt;xs:element name="key" nillable="false" type="xs:string"/&gt;
+				&lt;xs:element name="client-id" nillable="false" type="xs:string"/&gt;
+                &lt;/xs:sequence&gt;
+            &lt;/xs:complexType&gt;
+			
+            &lt;xs:element name="ConsumerAppResponse" type="med:ConsumerAppResponseType"/&gt;
+            &lt;xs:complexType name="ConsumerAppResponseType"&gt;
+                &lt;xs:sequence&gt;
+                    &lt;xs:element name="key" nillable="false" type="xs:string"/&gt;
+                    &lt;xs:element name="statusCode" nillable="false" type="xs:string"/&gt;
+                    &lt;xs:element name="statusMessage" nillable="false" type="xs:string"/&gt;
+                &lt;/xs:sequence&gt;
+            &lt;/xs:complexType&gt;
+			
+            &lt;xs:element name="undeployAPIKeyOutput"  type="med:undeployAPIKeyOutputType"/&gt;
+            &lt;xs:complexType name="undeployAPIKeyOutputType"&gt;
+                &lt;xs:sequence&gt;
+                    &lt;xs:element name="key" nillable="false" type="xs:string"/&gt;
+                    &lt;xs:element name="statusCode" nillable="false" type="xs:string"/&gt;
+                    &lt;xs:element name="statusMessage" nillable="false" type="xs:string"/&gt;
+                &lt;/xs:sequence&gt;
+            &lt;/xs:complexType&gt;
+			
+            &lt;xs:element name="undeployOAuth2ClientOutput"  type="med:undeployOAuth2ClientOutputType"/&gt;
+            &lt;xs:complexType name="undeployOAuth2ClientOutputType"&gt;
+                &lt;xs:sequence&gt;
+                    &lt;xs:element name="key" nillable="false" type="xs:string"/&gt;
+                    &lt;xs:element name="statusCode" nillable="false" type="xs:string"/&gt;
+                    &lt;xs:element name="statusMessage" nillable="false" type="xs:string"/&gt;
+                &lt;/xs:sequence&gt;
+            &lt;/xs:complexType&gt;
+
+			
+			&lt;xs:element name="aliasesResponse" type="med:aliasesResponseType"/&gt;
+            &lt;xs:complexType name="aliasesResponseType"&gt;
+                &lt;xs:sequence&gt;
+                    &lt;xs:element maxOccurs="unbounded" minOccurs="1" name="returnInfo" nillable="false" type="med:AliasResponseType"/&gt;
+                &lt;/xs:sequence&gt;
+            &lt;/xs:complexType&gt;
+			
+			&lt;xs:element name="AliasResponse" type="med:AliasResponseType"/&gt;
+            &lt;xs:complexType name="AliasResponseType"&gt;
+                &lt;xs:sequence&gt;
+                    &lt;xs:element name="key" nillable="false" type="xs:string"/&gt;
+                    &lt;xs:element name="statusCode" nillable="false" type="xs:string"/&gt;
+                    &lt;xs:element name="statusMessage" nillable="false" type="xs:string"/&gt;
+                &lt;/xs:sequence&gt;
+            &lt;/xs:complexType&gt;
+			
+            &lt;xs:element name="RegisterConsumersInput" type="med:RegisterConsumersInputType"/&gt;
+            &lt;xs:complexType name="RegisterConsumersInputType"&gt;
+                &lt;xs:sequence&gt;
+                    &lt;xs:element name="serviceName" nillable="false" type="xs:string"/&gt;
+                    &lt;xs:element name="modifiedDate" nillable="false" type="xs:dateTime"/&gt;
+                    &lt;xs:element name="consumerNames" nillable="false" type="med:consumerNameType"/&gt;
+                &lt;/xs:sequence&gt;
+            &lt;/xs:complexType&gt;
+            &lt;xs:element name="RegisterConsumersRemoveInput" type="med:RegisterConsumersRemoveInputType"/&gt;
+            &lt;xs:complexType name="RegisterConsumersRemoveInputType"&gt;
+                &lt;xs:sequence&gt;
+                    &lt;xs:element name="serviceName" nillable="false" type="xs:string"/&gt;
+                    &lt;xs:element name="consumerNames" nillable="false" type="med:consumerNameType"/&gt;
+                &lt;/xs:sequence&gt;
+            &lt;/xs:complexType&gt;
+            &lt;xs:element name="consumerName" type="med:consumerNameType"/&gt;
+            &lt;xs:complexType name="consumerNameType"&gt;
+                &lt;xs:sequence&gt;
+                    &lt;xs:element maxOccurs="unbounded" minOccurs="1" name="name" nillable="false" type="xs:string"/&gt;
+                &lt;/xs:sequence&gt;
+            &lt;/xs:complexType&gt;
+            &lt;xs:element name="RegisterConsumersResponse" type="med:RegisterConsumersResponseType"/&gt;
+            &lt;xs:complexType name="RegisterConsumersResponseType"&gt;
+                &lt;xs:sequence&gt;
+                    &lt;xs:element name="serviceName" nillable="false" type="xs:string"/&gt;
+                    &lt;xs:element name="consumerNames" nillable="false" type="med:consumerNameType"/&gt;
+                    &lt;xs:element name="statusCode" nillable="false" type="xs:string"/&gt;
+                    &lt;xs:element name="statusMessage" nillable="false" type="xs:string"/&gt;
+                &lt;/xs:sequence&gt;
+            &lt;/xs:complexType&gt;
+			&lt;xs:element name="serviceAliasAssociationResponse" type="med:serviceAliasAssociationResponseType"/&gt;
+            &lt;xs:complexType name="serviceAliasAssociationResponseType"&gt;
+                &lt;xs:sequence&gt;
+                    &lt;xs:element maxOccurs="unbounded" minOccurs="1" name="returnInfo" nillable="false" type="med:AliasServiceAssociationResponseType"/&gt;
+                &lt;/xs:sequence&gt;
+            &lt;/xs:complexType&gt;
+			&lt;xs:element name="AliasServiceAssociationResponse" type="med:AliasServiceAssociationResponseType"/&gt;
+            &lt;xs:complexType name="AliasServiceAssociationResponseType"&gt;
+                &lt;xs:sequence&gt;
+                    &lt;xs:element name="aliasName" nillable="false" type="xs:string"/&gt;
+                    &lt;xs:element name="serviceNames" nillable="false" type="med:serviceNameType"/&gt;
+                    &lt;xs:element name="statusCode" nillable="false" type="xs:string"/&gt;
+                    &lt;xs:element name="statusMessage" nillable="false" type="xs:string"/&gt;
+                &lt;/xs:sequence&gt;
+            &lt;/xs:complexType&gt;
+            &lt;xs:element name="VirtualServiceDeployInput" type="med:VirtualServiceDeployInputType"/&gt;
+            &lt;xs:complexType name="VirtualServiceDeployInputType"&gt;
+                &lt;xs:sequence&gt;
+                    &lt;xs:element name="key" nillable="false" type="xs:string"/&gt;
+                    &lt;xs:element name="name" nillable="false" type="xs:string"/&gt;
+                    &lt;xs:element name="displayName" nillable="false" type="xs:string"/&gt;
+                    &lt;xs:element name="vsdSchemaVersion" nillable="false" type="xs:string"/&gt;
+                    &lt;xs:element name="modifiedDate" nillable="false" type="xs:dateTime"/&gt;
+                    &lt;xs:element name="vsdDoc" nillable="false" type="xs:string"/&gt;
+                    &lt;xs:element name="wsdlJarBytes" nillable="true" type="xs:base64Binary"/&gt;
+                &lt;/xs:sequence&gt;
+            &lt;/xs:complexType&gt;
+            &lt;xs:element name="VirtualServiceDeployResponse" type="med:VirtualServiceDeployResponseType"/&gt;
+            &lt;xs:complexType name="VirtualServiceDeployResponseType"&gt;
+                &lt;xs:sequence&gt;
+                    &lt;xs:element name="key" nillable="false" type="xs:string"/&gt;
+                    &lt;xs:element maxOccurs="1" minOccurs="0" name="bindingEndPoints" nillable="false" type="med:endPointsType"/&gt;
+                    &lt;xs:element name="statusCode" nillable="false" type="xs:string"/&gt;
+                    &lt;xs:element name="statusMessage" nillable="false" type="xs:string"/&gt;
+                &lt;/xs:sequence&gt;
+            &lt;/xs:complexType&gt;
+            &lt;xs:element name="endPoints" type="med:endPointsType"/&gt;
+            &lt;xs:complexType name="endPointsType"&gt;
+                &lt;xs:sequence&gt;
+                    &lt;xs:element maxOccurs="unbounded" minOccurs="1" name="endPoint" nillable="false" type="xs:string"/&gt;
+                &lt;/xs:sequence&gt;
+            &lt;/xs:complexType&gt;
+            &lt;xs:element name="VirtualServiceUndeployInput" type="med:VirtualServiceUndeployInputType"/&gt;
+            &lt;xs:complexType name="VirtualServiceUndeployInputType"&gt;
+                &lt;xs:sequence&gt;
+                    &lt;xs:element name="name" nillable="false" type="xs:string"/&gt;
+                    &lt;xs:element name="key" nillable="false" type="xs:string"/&gt;
+                &lt;/xs:sequence&gt;
+            &lt;/xs:complexType&gt;
+            &lt;xs:element name="VirtualServiceUndeployResponse" type="med:VirtualServiceUndeployResponseType"/&gt;
+            &lt;xs:complexType name="VirtualServiceUndeployResponseType"&gt;
+                &lt;xs:sequence&gt;
+                    &lt;xs:element name="key" nillable="false" type="xs:string"/&gt;
+                    &lt;xs:element maxOccurs="1" minOccurs="0" name="bindingEndPoints" nillable="false" type="med:endPointsType"/&gt;
+                    &lt;xs:element name="statusCode" nillable="false" type="xs:string"/&gt;
+                    &lt;xs:element name="statusMessage" nillable="false" type="xs:string"/&gt;
+                &lt;/xs:sequence&gt;
+            &lt;/xs:complexType&gt;
+            &lt;xs:element name="pingInput" type="med:pingInputType"/&gt;
+            &lt;xs:complexType name="pingInputType"&gt;
+                &lt;xs:sequence&gt;
+                    &lt;xs:element name="version" type="xs:string"/&gt;
+                &lt;/xs:sequence&gt;
+            &lt;/xs:complexType&gt;
+            &lt;xs:element name="pingOutput" type="med:pingOutputType"/&gt;
+            &lt;xs:complexType name="pingOutputType"&gt;
+                &lt;xs:sequence&gt;
+                    &lt;xs:element name="version" nillable="false" type="xs:string"/&gt;
+                    &lt;xs:element name="targetName" nillable="false" type="xs:string"/&gt;
+                    &lt;xs:element name="statusCode" nillable="false" type="xs:string"/&gt;
+                    &lt;xs:element name="statusMessage" nillable="false" type="xs:string"/&gt;
+                &lt;/xs:sequence&gt;
+            &lt;/xs:complexType&gt;
+		   &lt;xs:element name="deployAPIKeyInput" type="med:deployAPIKeyInputType"/&gt;
+           &lt;xs:complexType name="deployAPIKeyInputType"&gt;
+                &lt;xs:sequence&gt;
+					&lt;xs:element name="name" nillable="true" type="xs:string"/&gt;
+					&lt;xs:element name="key" type="xs:string"/&gt;
+					&lt;xs:element name="apikey" type="xs:string"/&gt;
+					&lt;xs:element name="version" minOccurs="0" type="xs:string"/&gt;
+					&lt;xs:element name="serviceName" type="xs:string"/&gt;
+                    &lt;xs:element name="expirationDate" type="xs:dateTime"/&gt;
+				&lt;xs:element name="clientName" minOccurs="0" type="xs:string"/&gt;
+					&lt;xs:element maxOccurs="1" minOccurs="0" name="partnerId" nillable="true" type="xs:string"/&gt;
+                    &lt;xs:element maxOccurs="1" minOccurs="0" name="wss-cert" nillable="true" type="xs:string"/&gt;
+                    &lt;xs:element maxOccurs="1" minOccurs="0" name="iPAddresses" nillable="true" type="med:iPAddressType"/&gt;
+                    &lt;xs:element maxOccurs="1" minOccurs="0" name="identificationTokens" nillable="true" type="med:iDTokenType"/&gt;
+                &lt;/xs:sequence&gt;
+            &lt;/xs:complexType&gt;
+		   &lt;xs:element name="deployOauth2TokenInput" type="med:deployOauth2TokenInputType"/&gt;
+           &lt;xs:complexType name="deployOauth2TokenInputType"&gt;
+                &lt;xs:sequence&gt;
+					&lt;xs:element name="uddiKey" type="xs:string"/&gt;
+					&lt;xs:element name="clientName" minOccurs="0" type="xs:string"/&gt;
+                    &lt;xs:element name="expirationDate" type="xs:dateTime" minOccurs="0" maxOccurs="1"/&gt;
+					&lt;xs:element name="accessTokenRetryLimit" type="xs:string" maxOccurs="1" minOccurs="0"/&gt;
+					&lt;xs:element name="redirectUriList"  type="med:redirectUriType" maxOccurs="1" minOccurs="0" /&gt;
+					&lt;xs:element name="clientID"  minOccurs="0" type="xs:string"/&gt;
+					&lt;xs:element name="clientSecret"  minOccurs="0" type="xs:string"/&gt;
+					&lt;xs:element name="accessToken" minOccurs="0" type="xs:string"/&gt;					
+					&lt;xs:element name="version" minOccurs="0" type="xs:string"/&gt;
+					&lt;xs:element name="serviceName" type="xs:string"/&gt;
+					&lt;xs:element maxOccurs="1" minOccurs="0" name="partnerId" nillable="true" type="xs:string"/&gt;
+                    &lt;xs:element maxOccurs="1" minOccurs="0" name="wss-cert" nillable="true" type="xs:string"/&gt;
+                    &lt;xs:element maxOccurs="1" minOccurs="0" name="iPAddresses" nillable="true" type="med:iPAddressType"/&gt;
+                    &lt;xs:element maxOccurs="1" minOccurs="0" name="identificationTokens" nillable="true" type="med:iDTokenType"/&gt;
+                &lt;/xs:sequence&gt;
+            &lt;/xs:complexType&gt;			
+			&lt;xs:element name="deployAPIKeyOutput" nillable="false" type="med:deployAPIKeyOutputType"/&gt;
+			&lt;xs:complexType name="deployAPIKeyOutputType"&gt;
+				 &lt;xs:sequence&gt;
+                    &lt;xs:element name="key" nillable="false" type="xs:string"/&gt;
+                    &lt;xs:element name="statusCode" nillable="false" type="xs:string"/&gt;
+                    &lt;xs:element name="statusMessage" nillable="false" type="xs:string"/&gt;
+				 &lt;/xs:sequence&gt;
+			&lt;/xs:complexType&gt;
+			&lt;xs:element name="deployOauth2TokenOutput" nillable="false" type="med:deployOauth2TokenOutputType"/&gt;
+			&lt;xs:complexType name="deployOauth2TokenOutputType"&gt;
+				 &lt;xs:sequence&gt;
+                    &lt;xs:element name="uddiKey" nillable="false" type="xs:string"/&gt;
+                    &lt;xs:element name="statusCode" nillable="false" type="xs:string"/&gt;
+                    &lt;xs:element name="statusMessage" nillable="false" type="xs:string"/&gt;
+                    &lt;xs:element name="accessTokenRequestURI" type="med:accessTokenRequestURIType" minOccurs="0" /&gt;
+				 &lt;/xs:sequence&gt;
+			&lt;/xs:complexType&gt;
+			
+			&lt;xs:element name="accessTokenRequestURI" type="med:accessTokenRequestURIType"/&gt;
+            &lt;xs:complexType name="accessTokenRequestURIType"&gt;
+                &lt;xs:sequence&gt;
+                    &lt;xs:element maxOccurs="unbounded" minOccurs="0" name="tokenRequestURI" nillable="true" type="xs:string"/&gt;
+                &lt;/xs:sequence&gt;
+            &lt;/xs:complexType&gt;
+            &lt;xs:element name="aliasesRemove" type="med:aliasesRemoveType"/&gt;
+            &lt;xs:complexType name="aliasesRemoveType"&gt;
+                &lt;xs:sequence&gt;
+                    &lt;xs:element maxOccurs="unbounded" minOccurs="1" name="aliasRemove" nillable="false" type="med:AliasRemoveInputType"/&gt;
+                &lt;/xs:sequence&gt;
+            &lt;/xs:complexType&gt;
+            
+            &lt;xs:element name="AliasRemoveInput" type="med:AliasRemoveInputType"/&gt;
+            &lt;xs:complexType name="AliasRemoveInputType"&gt;
+                &lt;xs:sequence&gt;
+                    &lt;xs:element name="name" nillable="false" type="xs:string"/&gt;
+                    &lt;xs:element name="key" nillable="false" type="xs:string"/&gt;
+                    &lt;xs:element name="type" nillable="false" type="xs:string"/&gt;
+                &lt;/xs:sequence&gt;
+            &lt;/xs:complexType&gt;    
+			
+        &lt;/xs:schema&gt;
+    &lt;/wsdl:types&gt;
+    &lt;wsdl:message name="updateRequestMessage"&gt;
+        &lt;wsdl:part name="parameters" element="med:update"/&gt;
+    &lt;/wsdl:message&gt;
+    &lt;wsdl:message name="updateResponseMessage"&gt;
+        &lt;wsdl:part name="parameters" element="med:updateResponse"/&gt;
+    &lt;/wsdl:message&gt;
+    &lt;wsdl:message name="replaceRequestMessage"&gt;
+        &lt;wsdl:part name="parameters" element="med:replace"/&gt;
+    &lt;/wsdl:message&gt;
+    &lt;wsdl:message name="replaceResponseMessage"&gt;
+        &lt;wsdl:part name="parameters" element="med:replaceResponse"/&gt;
+    &lt;/wsdl:message&gt;
+    &lt;wsdl:message name="removeRequestMessage"&gt;
+        &lt;wsdl:part name="parameters" element="med:remove"/&gt;
+    &lt;/wsdl:message&gt;
+    &lt;wsdl:message name="removeResponseMessage"&gt;
+        &lt;wsdl:part name="parameters" element="med:removeResponse"/&gt;
+    &lt;/wsdl:message&gt;
+    &lt;wsdl:message name="pingRequestMessage"&gt;
+        &lt;wsdl:part name="request" element="med:ping"/&gt;
+    &lt;/wsdl:message&gt;
+    &lt;wsdl:message name="pingResponseMessage"&gt;
+        &lt;wsdl:part name="response" element="med:pingResponse"/&gt;
+    &lt;/wsdl:message&gt;
+	&lt;wsdl:message name="oAuth2ClientRegistrationRequestMessage"&gt;
+        &lt;wsdl:part name="request" element="med:fetchOAuth2Client"/&gt;
+    &lt;/wsdl:message&gt;
+	&lt;wsdl:message name="oAuth2ClientRegistrationResponseMessage"&gt;
+        &lt;wsdl:part name="response" element="med:fetchOAuth2ClientResponse"/&gt;
+    &lt;/wsdl:message&gt;
+    &lt;wsdl:portType name="DeploymentSupportPortType"&gt;
+        &lt;wsdl:operation name="update"&gt;
+            &lt;wsdl:input message="med:updateRequestMessage" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" wsaw:Action="urn:update"/&gt;
+            &lt;wsdl:output message="med:updateResponseMessage" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" wsaw:Action="http://integration.mediator/DeploymentSupportPortType/updateResponse"/&gt;
+        &lt;/wsdl:operation&gt;
+        &lt;wsdl:operation name="replace"&gt;
+            &lt;wsdl:input message="med:replaceRequestMessage" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" wsaw:Action="urn:replace"/&gt;
+            &lt;wsdl:output message="med:replaceResponseMessage" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" wsaw:Action="http://integration.mediator/DeploymentSupportPortType/replaceResponse"/&gt;
+        &lt;/wsdl:operation&gt;
+        &lt;wsdl:operation name="remove"&gt;
+            &lt;wsdl:input message="med:removeRequestMessage" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" wsaw:Action="urn:remove"/&gt;
+            &lt;wsdl:output message="med:removeResponseMessage" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" wsaw:Action="http://integration.mediator/DeploymentSupportPortType/removeResponse"/&gt;
+        &lt;/wsdl:operation&gt;
+        &lt;wsdl:operation name="ping"&gt;
+            &lt;wsdl:input message="med:pingRequestMessage" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" wsaw:Action="urn:ping"/&gt;
+            &lt;wsdl:output message="med:pingResponseMessage" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" wsaw:Action="http://integration.mediator/DeploymentSupportPortType/pingResponse"/&gt;
+        &lt;/wsdl:operation&gt;
+		&lt;wsdl:operation name="fetchOAuth2Client"&gt;
+            &lt;wsdl:input message="med:oAuth2ClientRegistrationRequestMessage" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" wsaw:Action="urn:fetchOAuth2Client"/&gt;
+            &lt;wsdl:output message="med:oAuth2ClientRegistrationResponseMessage" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" wsaw:Action="http://integration.mediator/DeploymentSupportPortType/fetchOAuth2ClientResponse"/&gt;
+        &lt;/wsdl:operation&gt;
+    &lt;/wsdl:portType&gt;
+    &lt;wsdl:binding name="DeploymentSupportSoap11Binding" type="med:DeploymentSupportPortType"&gt;
+        &lt;soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/&gt;
+        &lt;wsdl:operation name="update"&gt;
+            &lt;soap:operation soapAction="urn:update" style="document"/&gt;
+            &lt;wsdl:input&gt;
+                &lt;soap:body use="literal"/&gt;
+            &lt;/wsdl:input&gt;
+            &lt;wsdl:output&gt;
+                &lt;soap:body use="literal"/&gt;
+            &lt;/wsdl:output&gt;
+        &lt;/wsdl:operation&gt;
+        &lt;wsdl:operation name="replace"&gt;
+            &lt;soap:operation soapAction="urn:replace" style="document"/&gt;
+            &lt;wsdl:input&gt;
+                &lt;soap:body use="literal"/&gt;
+            &lt;/wsdl:input&gt;
+            &lt;wsdl:output&gt;
+                &lt;soap:body use="literal"/&gt;
+            &lt;/wsdl:output&gt;
+        &lt;/wsdl:operation&gt;
+        &lt;wsdl:operation name="remove"&gt;
+            &lt;soap:operation soapAction="urn:remove" style="document"/&gt;
+            &lt;wsdl:input&gt;
+                &lt;soap:body use="literal"/&gt;
+            &lt;/wsdl:input&gt;
+            &lt;wsdl:output&gt;
+                &lt;soap:body use="literal"/&gt;
+            &lt;/wsdl:output&gt;
+        &lt;/wsdl:operation&gt;
+        &lt;wsdl:operation name="ping"&gt;
+            &lt;soap:operation soapAction="urn:ping" style="document"/&gt;
+            &lt;wsdl:input&gt;
+                &lt;soap:body use="literal"/&gt;
+            &lt;/wsdl:input&gt;
+            &lt;wsdl:output&gt;
+                &lt;soap:body use="literal"/&gt;
+            &lt;/wsdl:output&gt;
+        &lt;/wsdl:operation&gt;
+		&lt;wsdl:operation name="fetchOAuth2Client"&gt;
+            &lt;soap:operation soapAction="urn:fetchOAuth2Client" style="document"/&gt;
+            &lt;wsdl:input&gt;
+                &lt;soap:body use="literal"/&gt;
+            &lt;/wsdl:input&gt;
+            &lt;wsdl:output&gt;
+                &lt;soap:body use="literal"/&gt;
+            &lt;/wsdl:output&gt;
+        &lt;/wsdl:operation&gt;
+     &lt;/wsdl:binding&gt;
+    &lt;wsdl:service name="DeploymentSupport"&gt;
+        &lt;wsdl:port name="DeploymentSupportHttpSoap11Endpoint" binding="med:DeploymentSupportSoap11Binding"&gt;
+            &lt;soap:address location="http://localhost:5555/ws/mediator.integration:Deployer"/&gt;
+        &lt;/wsdl:port&gt;
+    &lt;/wsdl:service&gt;
+&lt;/wsdl:definitions&gt;
+</value>
+  <value name="externalWSDLURL">file:/D:/SAGOffice/devel/policyGateway/J/docs/devel/pushDeployment/final/DeploymentSupport.wsdl</value>
+  <value name="WSDLURL">http://pcrburgett.AME.ad.sag:5555/ws/mediator.integration:Deployer?WSDL</value>
+  <value name="definitionName">Deployer</value>
+  <value name="version">_8_2</value>
+  <value name="schemaDomain">6bea241e45e98a82129f31baf0a</value>
+  <Boolean name="rawArray">true</Boolean>
+  <array name="handlerList" type="record" depth="1">
+  </array>
+  <array name="binderList" type="record" depth="1">
+    <record javaclass="com.wm.util.Values">
+      <value name="binderName">DeploymentSupportSoap11Binding</value>
+      <value name="bindingName">DeploymentSupportSoap11Binding</value>
+      <value name="bindingStyle">document</value>
+      <value name="bindingUse">literal</value>
+      <value name="bindingType">SOAP</value>
+      <value name="portName">DeploymentSupportHttpSoap11Endpoint</value>
+      <value name="portTypeName">DeploymentSupportPortType</value>
+      <value name="bindingTransport">http://schemas.xmlsoap.org/soap/http</value>
+      <value name="transportType">http</value>
+      <record name="operationMap" javaclass="com.wm.util.Values">
+        <value name="urn:replace">replace</value>
+        <value name="urn:remove">remove</value>
+        <value name="urn:ping">ping</value>
+        <value name="urn:update">update</value>
+		<value name="urn:fetchOAuth2Client">fetchOAuth2Client</value>
+      </record>
+      <value name="SOAPProtocol">SOAP 1.1 Protocol</value>
+      <value name="SOAPDirective">ws</value>
+    </record>
+  </array>
+  <array name="operationList" type="record" depth="1">
+    <record javaclass="com.wm.util.Values">
+      <value name="operationName">update</value>
+      <value name="serviceName">mediator.integration.Deployer_.services:update</value>
+      <record name="requestElement" javaclass="com.wm.util.Values">
+        <array name="headers" type="record" depth="1">
+        </array>
+        <record name="body" javaclass="com.wm.util.Values">
+          <value name="name">http://integration.mediator:DeploymentSupportPortType_update_Input</value>
+          <value name="docType">mediator.integration.Deployer_.docTypes:DeploymentSupportPortType_update_Input</value>
+          <value name="nsOwner">mediator.integration.Deployer_.docTypes:DeploymentSupportPortType_update_Input</value>
+          <number name="nsOwnerType" type="Integer">3</number>
+          <Boolean name="addedByClient">false</Boolean>
+          <null name="originalDocName"/>
+        </record>
+        <array name="faults" type="record" depth="1">
+        </array>
+      </record>
+      <record name="responseElement" javaclass="com.wm.util.Values">
+        <array name="headers" type="record" depth="1">
+        </array>
+        <record name="body" javaclass="com.wm.util.Values">
+          <value name="name">http://integration.mediator:DeploymentSupportPortType_update_Output</value>
+          <value name="docType">mediator.integration.Deployer_.docTypes:DeploymentSupportPortType_update_Output</value>
+          <value name="nsOwner">mediator.integration.Deployer_.docTypes:DeploymentSupportPortType_update_Output</value>
+          <number name="nsOwnerType" type="Integer">3</number>
+          <Boolean name="addedByClient">false</Boolean>
+          <null name="originalDocName"/>
+        </record>
+        <array name="faults" type="record" depth="1">
+        </array>
+      </record>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="operationName">remove</value>
+      <value name="serviceName">mediator.integration.Deployer_.services:remove</value>
+      <record name="requestElement" javaclass="com.wm.util.Values">
+        <array name="headers" type="record" depth="1">
+        </array>
+        <record name="body" javaclass="com.wm.util.Values">
+          <value name="name">http://integration.mediator:DeploymentSupportPortType_remove_Input</value>
+          <value name="docType">mediator.integration.Deployer_.docTypes:DeploymentSupportPortType_remove_Input</value>
+          <value name="nsOwner">mediator.integration.Deployer_.docTypes:DeploymentSupportPortType_remove_Input</value>
+          <number name="nsOwnerType" type="Integer">3</number>
+          <Boolean name="addedByClient">false</Boolean>
+          <null name="originalDocName"/>
+        </record>
+        <array name="faults" type="record" depth="1">
+        </array>
+      </record>
+      <record name="responseElement" javaclass="com.wm.util.Values">
+        <array name="headers" type="record" depth="1">
+        </array>
+        <record name="body" javaclass="com.wm.util.Values">
+          <value name="name">http://integration.mediator:DeploymentSupportPortType_remove_Output</value>
+          <value name="docType">mediator.integration.Deployer_.docTypes:DeploymentSupportPortType_remove_Output</value>
+          <value name="nsOwner">mediator.integration.Deployer_.docTypes:DeploymentSupportPortType_remove_Output</value>
+          <number name="nsOwnerType" type="Integer">3</number>
+          <Boolean name="addedByClient">false</Boolean>
+          <null name="originalDocName"/>
+        </record>
+        <array name="faults" type="record" depth="1">
+        </array>
+      </record>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="operationName">ping</value>
+      <value name="serviceName">mediator.integration.Deployer_.services:ping</value>
+      <record name="requestElement" javaclass="com.wm.util.Values">
+        <array name="headers" type="record" depth="1">
+        </array>
+        <record name="body" javaclass="com.wm.util.Values">
+          <value name="name">http://integration.mediator:DeploymentSupportPortType_ping_Input</value>
+          <value name="docType">mediator.integration.Deployer_.docTypes:DeploymentSupportPortType_ping_Input</value>
+          <value name="nsOwner">mediator.integration.Deployer_.docTypes:DeploymentSupportPortType_ping_Input</value>
+          <number name="nsOwnerType" type="Integer">3</number>
+          <Boolean name="addedByClient">false</Boolean>
+          <null name="originalDocName"/>
+        </record>
+        <array name="faults" type="record" depth="1">
+        </array>
+      </record>
+      <record name="responseElement" javaclass="com.wm.util.Values">
+        <array name="headers" type="record" depth="1">
+        </array>
+        <record name="body" javaclass="com.wm.util.Values">
+          <value name="name">http://integration.mediator:DeploymentSupportPortType_ping_Output</value>
+          <value name="docType">mediator.integration.Deployer_.docTypes:DeploymentSupportPortType_ping_Output</value>
+          <value name="nsOwner">mediator.integration.Deployer_.docTypes:DeploymentSupportPortType_ping_Output</value>
+          <number name="nsOwnerType" type="Integer">3</number>
+          <Boolean name="addedByClient">false</Boolean>
+          <null name="originalDocName"/>
+        </record>
+        <array name="faults" type="record" depth="1">
+        </array>
+      </record>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="operationName">replace</value>
+      <value name="serviceName">mediator.integration.Deployer_.services:replace</value>
+      <record name="requestElement" javaclass="com.wm.util.Values">
+        <array name="headers" type="record" depth="1">
+        </array>
+        <record name="body" javaclass="com.wm.util.Values">
+          <value name="name">http://integration.mediator:DeploymentSupportPortType_replace_Input</value>
+          <value name="docType">mediator.integration.Deployer_.docTypes:DeploymentSupportPortType_replace_Input</value>
+          <value name="nsOwner">mediator.integration.Deployer_.docTypes:DeploymentSupportPortType_replace_Input</value>
+          <number name="nsOwnerType" type="Integer">3</number>
+          <Boolean name="addedByClient">false</Boolean>
+          <null name="originalDocName"/>
+        </record>
+        <array name="faults" type="record" depth="1">
+        </array>
+      </record>
+      <record name="responseElement" javaclass="com.wm.util.Values">
+        <array name="headers" type="record" depth="1">
+        </array>
+        <record name="body" javaclass="com.wm.util.Values">
+          <value name="name">http://integration.mediator:DeploymentSupportPortType_replace_Output</value>
+          <value name="docType">mediator.integration.Deployer_.docTypes:DeploymentSupportPortType_replace_Output</value>
+          <value name="nsOwner">mediator.integration.Deployer_.docTypes:DeploymentSupportPortType_replace_Output</value>
+          <number name="nsOwnerType" type="Integer">3</number>
+          <Boolean name="addedByClient">false</Boolean>
+          <null name="originalDocName"/>
+        </record>
+        <array name="faults" type="record" depth="1">
+        </array>
+      </record>
+    </record>
+	<record javaclass="com.wm.util.Values">
+      <value name="operationName">fetchOAuth2Client</value>
+      <value name="serviceName">mediator.integration.Deployer_.services:fetchOAuth2Client</value>
+      <record name="requestElement" javaclass="com.wm.util.Values">
+        <array name="headers" type="record" depth="1">
+        </array>
+        <record name="body" javaclass="com.wm.util.Values">
+          <value name="name">http://integration.mediator:DeploymentSupportPortType_fetchOAuth2Client_Input</value>
+          <value name="docType">mediator.integration.Deployer_.docTypes:DeploymentSupportPortType_fetchOAuth2Client_Input</value>
+          <value name="nsOwner">mediator.integration.Deployer_.docTypes:DeploymentSupportPortType_fetchOAuth2Client_Input</value>
+          <number name="nsOwnerType" type="Integer">3</number>
+          <Boolean name="addedByClient">false</Boolean>
+          <null name="originalDocName"/>
+        </record>
+        <array name="faults" type="record" depth="1">
+        </array>
+      </record>
+      <record name="responseElement" javaclass="com.wm.util.Values">
+        <array name="headers" type="record" depth="1">
+        </array>
+        <record name="body" javaclass="com.wm.util.Values">
+          <value name="name">http://integration.mediator:DeploymentSupportPortType_fetchOAuth2Client_Output</value>
+          <value name="docType">mediator.integration.Deployer_.docTypes:DeploymentSupportPortType_fetchOAuth2Client_Output</value>
+          <value name="nsOwner">mediator.integration.Deployer_.docTypes:DeploymentSupportPortType_fetchOAuth2Client_Output</value>
+          <number name="nsOwnerType" type="Integer">3</number>
+          <Boolean name="addedByClient">false</Boolean>
+          <null name="originalDocName"/>
+        </record>
+        <array name="faults" type="record" depth="1">
+        </array>
+      </record>
+    </record>
+  </array>
+  <record name="namespaces" javaclass="com.wm.util.Values">
+    <value name="soapenc">http://schemas.xmlsoap.org/soap/encoding/</value>
+    <value name="med">http://integration.mediator</value>
+    <value name="secjava">http://security.java/xsd</value>
+    <value name="ns1">http://org.apache.axis2/xsd</value>
+    <value name="wsaw">http://www.w3.org/2006/05/addressing/wsdl</value>
+    <value name="http">http://schemas.xmlsoap.org/wsdl/http/</value>
+    <value name="wsdl">http://schemas.xmlsoap.org/wsdl/</value>
+    <value name="certjava">http://cert.security.java/xsd</value>
+    <value name="xs">http://www.w3.org/2001/XMLSchema</value>
+    <value name="soap">http://schemas.xmlsoap.org/wsdl/soap/</value>
+    <value name="mime">http://schemas.xmlsoap.org/wsdl/mime/</value>
+    <value name="soap12">http://schemas.xmlsoap.org/wsdl/soap12/</value>
+  </record>
+  <Boolean name="HeadersInPipelineEnabled">true</Boolean>
+  <Boolean name="validateSOAPResponse">true</Boolean>
+  <Boolean name="enableCompatibility">true</Boolean>
+</Values>

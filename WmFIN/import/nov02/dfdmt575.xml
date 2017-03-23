@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<constraints>
+
+<!-- Text Block for NOV02 MT575 -->
+
+<field name="22F::TRAN" type="PathType">
+    <bizName>Transaction Indicator</bizName>
+    <path name="B4/B1a2/22F::TRAN" type="GenericFieldType">
+        <bizName>Transaction Indicator</bizName>
+        <pattern>/[8c]/4!c</pattern>
+        <choice>CASH</choice>
+        <choice>CORP</choice>
+    </path>
+    <path name="B4/B1a3/22F::TRAN" type="GenericFieldType">
+        <bizName>Transaction Indicator</bizName>
+        <pattern>/[8c]/4!c</pattern>
+        <choice>BOLE</choice>
+        <choice>COLL</choice>
+        <choice>CORP</choice>
+        <choice>SETT</choice>
+    </path>
+    <path name="B4/C2/22F::TRAN" type="GenericFieldType">
+        <bizName>Transaction Indicator</bizName>
+        <pattern>/[8c]/4!c</pattern>
+        <choice>BOLE</choice>
+        <choice>COLL</choice>
+        <choice>CORP</choice>
+        <choice>SETT</choice>
+    </path>
+</field>
+<field name="22F::STCO" type="GenericFieldType">
+    <bizName>Settlement Transaction Condition</bizName>
+    <pattern>/[8c]/4!c</pattern>
+    <choice>EXPI</choice>
+    <choice>CLEN</choice>
+    <choice>DIRT</choice>
+    <choice>DRAW</choice>
+    <choice>EXER</choice>
+    <choice>FRCL</choice>
+    <choice>KNOC</choice>
+    <choice>NPAR</choice>
+    <choice>PART</choice>
+    <choice>PHYS</choice>
+    <choice>SPCS</choice>
+    <choice>SPDL</choice>
+    <choice>SPST</choice>
+    <choice>UNEX</choice>
+</field>
+<field name="22F::REPT" type="GenericFieldType">
+    <bizName>Repurchase Type Indicator</bizName>
+    <pattern>/[8c]/4!c</pattern>
+</field>
+<field name="23G:" type="Mixed2Type">
+    <bizName>Function of the Message</bizName>
+    <pattern>4!c[/4!c]</pattern>
+    <choice1>CANC</choice1>
+    <choice1>NEWM</choice1>
+    <choice2>CODU</choice2>
+    <choice2>COPY</choice2>
+    <choice2>DUPL</choice2>
+    <error type="choice">T86</error>
+</field>
+<field name="98B::ESET" type="GenericFieldType">
+    <bizName>Date/Time B - Effective Settlement Date/Time</bizName>
+    <pattern>/[8c]/4!c</pattern>
+    <choice>OPEN</choice>
+    <choice>UKWN</choice>
+</field>
+
+</constraints>

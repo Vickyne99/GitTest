@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<constraints>
+
+<!-- Text Block for NOV03 MT536 -->
+<field name="22F::SETR" type="GenericFieldType">
+    <bizName>Type of Settlement Transaction</bizName>
+    <pattern>/[8c]/4!c</pattern>
+    <choice>BSBC</choice>
+    <choice>BSBO</choice>
+    <choice>COLL</choice>
+    <choice>CONV</choice>
+    <choice>ISSU</choice>
+    <choice>OWNE</choice>
+    <choice>OWNI</choice>
+    <choice>MKDW</choice>
+    <choice>MKUP</choice>
+    <choice>NETT</choice>
+    <choice>NSYN</choice>
+    <choice>PAIR</choice>
+    <choice>PLAC</choice>
+    <choice>REAL</choice>
+    <choice>REDI</choice>
+    <choice>REDM</choice>
+    <choice>RELE</choice>
+    <choice>REPU</choice>
+    <choice>RODE</choice>
+    <choice>RPTO</choice>
+    <choice>SECB</choice>
+    <choice>SECL</choice>
+    <choice>SUBS</choice>
+    <choice>SYND</choice>
+    <choice>TRAD</choice>
+    <choice>TRPO</choice>
+    <choice>TURN</choice>
+</field>
+<field name="22F::STCO" type="GenericFieldType">
+    <bizName>Settlement Transaction Condition</bizName>
+    <pattern>/[8c]/4!c</pattern>
+    <choice>EXER</choice>
+    <choice>EXPI</choice>
+    <choice>KNOC</choice>
+    <choice>PHYS</choice>
+    <choice>CLEN</choice>
+    <choice>DIRT</choice>
+    <choice>DLWM</choice>
+    <choice>DRAW</choice>
+    <choice>FRCL</choice>
+    <choice>NPAR</choice>
+    <choice>PART</choice>
+    <choice>SPCS</choice>
+    <choice>SPDL</choice>
+    <choice>SPST</choice>
+    <choice>UNEX</choice>
+</field>
+<field name="23G:" type="Mixed2Type">
+    <bizName>Function of the Message</bizName>
+    <pattern>4!c[/4!c]</pattern>
+    <alias pattern="4!c" bizName="Function" />            
+    <alias pattern="4!c" bizName="Subfunction" />                
+    <choice1>CANC</choice1><choice1>NEWM</choice1>
+    <choice2>CODU</choice2><choice2>COPY</choice2><choice2>DUPL</choice2>
+</field>
+</constraints>

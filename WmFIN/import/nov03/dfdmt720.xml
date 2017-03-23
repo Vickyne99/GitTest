@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<constraints>
+
+<!-- Text Block for NOV03 MT720 -->
+
+<field name="20:" type="PatternType">
+    <bizName>Reference - Transferring Bank's Reference</bizName>
+    <pattern>16x</pattern>
+</field>
+<field name="21:" type="PatternType">
+    <bizName>Reference - Documentary Credit Number</bizName>
+    <pattern>16x</pattern>
+</field>
+<field name="40B:" type="PatternType">
+    <bizName>Form of Documentary Credit</bizName>
+    <pattern>24x[CRLF]24x</pattern>
+    <choiceList>
+    	<pattern>24x</pattern>
+    	<choice>IRREVOCABLE</choice>
+    	<choice>REVOCABLE</choice>
+	   	<choice>IRREVOC TRANS STANDBY</choice>
+    </choiceList>
+    <choiceList>
+    	<pattern>24x</pattern>
+    	<choice>ADDING OUR CONFIRMATION</choice>
+    	<choice>WITHOUT OUR CONFIRMATION</choice>
+    </choiceList>
+</field>
+<field name="50:" type="PatternType">
+    <bizName>First Beneficiary</bizName>
+    <pattern>4*35x</pattern>
+</field>
+<field name="52A:" type="MixedType">
+    <bizName>A - Issuing Bank of the Original Documentary Credit</bizName>
+    <pattern>[&lt;BICPLUS&gt;][CRLF]&lt;SWIFTBIC&gt;|&lt;NONSWIFTBIC&gt;</pattern>
+    <choice>C</choice>
+    <choice>D</choice>
+</field>
+<field name="52D:" type="MixedType">
+    <bizName>D - Issuing Bank of the Original Documentary Credit</bizName>
+    <pattern>[&lt;BICPLUS&gt;][CRLF]4*35x</pattern>
+    <choice>C</choice>
+    <choice>D</choice>
+</field>
+<field name="57A:" type="MixedType">
+    <bizName>A - 'Advise Through' Bank</bizName>
+    <pattern>[&lt;BICPLUS&gt;][CRLF]&lt;SWIFTBIC&gt;|&lt;NON-SWIFTBIC&gt;</pattern>
+    <choice>C</choice>
+    <choice>D</choice>
+</field>
+<field name="57B:" type="MixedType">
+    <bizName>B - 'Advise Through' Bank</bizName>
+    <pattern>[&lt;BICPLUS&gt;][CRLF][35x]</pattern>
+    <choice>C</choice>
+    <choice>D</choice>
+</field>
+<field name="57D:" type="MixedType">
+    <bizName>D - 'Advise Through' Bank</bizName>
+    <pattern>[&lt;BICPLUS&gt;][CRLF]4*35x</pattern>
+    <choice>C</choice>
+    <choice>D</choice>
+</field>
+<field name="59:" type="PatternType">
+    <bizName>Second Beneficiary</bizName>
+    <pattern>[/34xCRLF]4*35x</pattern>
+</field>
+<field name="72:" type="PatternType">
+    <bizName>Sender to Receiver Information</bizName>
+    <pattern>&lt;ERI_F72narrative&gt;</pattern>
+</field>
+
+</constraints>

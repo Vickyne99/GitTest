@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<constraints>
+
+<!-- Text Block for NOV02 MT 410 -->
+<field name="20:" type="PatternType">
+    <bizName>Reference - Sending Bank's TRN</bizName>
+    <pattern>16x</pattern>
+</field>
+<field name="32A:" type="PatternType">
+    <bizName>A - Amount Acknowledged</bizName>
+    <pattern>&lt;DATE2&gt;&lt;CUR&gt;&lt;AMOUNT&gt;15</pattern>
+</field>
+<field name="32K:" type="Mixed2Type">
+    <bizName>K - Amount Acknowledged</bizName>
+    <pattern>1!a3!n2!a&lt;CUR&gt;&lt;AMOUNT&gt;15</pattern>
+    <choice1>D</choice1>
+    <choice1>M</choice1>
+    <choice2>BE</choice2>
+    <choice2>CC</choice2>
+    <choice2>FD</choice2>
+    <choice2>FP</choice2>
+    <choice2>GA</choice2>
+    <choice2>ID</choice2>
+    <choice2>ST</choice2>
+    <choice2>TD</choice2>
+    <choice2>XX</choice2>
+</field>
+<field name="32B:" type="PatternType">
+    <bizName>B - Amount Acknowledged</bizName>
+    <pattern>&lt;CUR&gt;&lt;AMOUNT&gt;15</pattern>
+</field>
+<field name="72:" type="PatternType">
+    <bizName>Sender to Receiver Information</bizName>
+    <pattern>&lt;ERI_F72narrative&gt;</pattern>
+</field>
+</constraints>

@@ -1,0 +1,523 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+  <format>
+  <record id="ALL_ENTRIES_FILE_HEADER" name="ALL ENTRIES FILE HEADER RECORD">
+  <field required="M" length="1" name="RECORD_TYPE_CODE" index="1" position="01" type="fixed" typeData="1" /> 
+  <field required="R" length="2" name="PRIORITY_CODE" index="2" position="02" type="Numeric" /> 
+  <field required="M" length="10" name="IMMEDIATE_DESTINATION" index="3" position="04" type="bTTTTAAAAC" /> 
+  <field required="M" length="10" name="IMMEDIATE_ORIGIN" index="4" position="14" type="bTTTTAAAAC" /> 
+  <field required="M" length="6" name="FILE_CREATION_DATE" index="5" position="24" type="YYMMDD" /> 
+  <field required="O" length="4" name="FILE_CREATION_TIME" index="6" position="30" type="HHMM" /> 
+  <field required="M" length="1" name="FILE_ID_MODIFIER" index="7" position="34" type="regex" typeData="[A-Z0-9]*" /> 
+  <field required="M" length="3" name="RECORD_SIZE" index="8" position="35" type="fixed" typeData="094" /> 
+  <field required="M" length="2" name="BLOCKING_FACTOR" index="9" position="38" type="fixed" typeData="10" /> 
+  <field required="M" length="1" name="FORMAT_CODE" index="10" position="40" type="fixed" typeData="1" /> 
+  <field required="O" length="23" name="IMMEDIATE_DESTINATION_NAME" index="11" position="41" type="Alphameric" /> 
+  <field required="O" length="23" name="IMMEDIATE_ORIGIN_NAME" index="12" position="64" type="Alphameric" /> 
+  <field required="O" length="8" name="REFERENCE_CODE" index="13" position="87" type="Alphameric" /> 
+  </record>
+  <record id="ALL_ENTRIES_FILE_CONTROL" name="ALL ENTRIES FILE CONTROL RECORD">
+  <field required="M" length="1" name="RECORD_TYPE_CODE" index="1" position="01" type="fixed" typeData="9" /> 
+  <field required="M" length="6" name="BATCH_COUNT" index="2" position="02" type="Numeric" /> 
+  <field required="M" length="6" name="BLOCK_COUNT" index="3" position="08" type="Numeric" /> 
+  <field required="M" length="8" name="ENTRY_ADDENDA_COUNT" index="4" position="14" type="Numeric" /> 
+  <field required="M" length="10" name="ENTRY_HASH" index="5" position="22" type="Numeric" /> 
+  <field required="M" length="12" name="TOTAL_DEBIT_ENTRY_DOLLAR_AMOUNT_IN_FILE" index="6" position="32" type="$amount" /> 
+  <field required="M" length="12" name="TOTAL_CREDIT_ENTRY_DOLLAR_AMOUNT_IN_FILE" index="7" position="44" type="$amount" /> 
+  <field required="O" length="39" name="RESERVED" index="8" position="56" type="Blank" /> 
+  </record>
+  <record id="ALL_ENTRIES_BATCH_HEADER" name="ALL ENTRIES COMPANY or BATCH HEADER RECORD (EXCEPT CBR and PBR)">
+  <field required="M" length="1" name="RECORD_TYPE_CODE" index="1" position="01" type="fixed" typeData="5" /> 
+  <field required="M" length="3" name="SERVICE_CLASS_CODE" index="2" position="02" type="Set" /> 
+  <field required="M" length="16" name="COMPANY_NAME" index="3" position="05" type="Alphameric" /> 
+  <field required="O" length="20" name="COMPANY_DISCRETIONARY_DATA" index="4" position="21" type="Alphameric" /> 
+  <field required="M" length="10" name="COMPANY_IDENTIFICATION" index="5" position="41" type="Alphameric" /> 
+  <field required="M" length="3" name="STANDARD_ENTRY_CLASS_CODE" index="6" position="51" type="Set" /> 
+  <field required="M" length="10" name="COMPANY_ENTRY_DESCRIPTION" index="7" position="54" type="Alphameric" /> 
+  <field required="O" length="6" name="COMPANY_DESCRIPTIVE_DATE" index="8" position="64" type="Alphameric" /> 
+  <field required="M" length="6" name="EFFECTIVE_ENTRY_DATE" index="9" position="70" type="YYMMDD" /> 
+  <field required="I_A_O" length="3" name="SETTLEMENT_DATE" index="10" position="76" type="Numeric" /> 
+  <field required="M" length="1" name="ORIGINATOR_STATUS_CODE" index="11" position="79" type="Set" /> 
+  <field required="M" length="8" name="ORIGINATING_DFI_IDENTIFICATION" index="12" position="80" type="TTTTAAAA" /> 
+  <field required="M" length="7" name="BATCH_NUMBER" index="13" position="88" type="Numeric" /> 
+  </record>
+  <record id="ALL_ENTRIES_BATCH_CONTROL" name="ALL ENTRIES COMPANY or BATCH CONTROL RECORD">
+  <field required="M" length="1" name="RECORD_TYPE_CODE" index="1" position="01" type="fixed" typeData="8" /> 
+  <field required="M" length="3" name="SERVICE_CLASS_CODE" index="2" position="02" type="Set" /> 
+  <field required="M" length="6" name="ENTRY_ADDENDA_COUNT" index="3" position="05" type="Numeric" /> 
+  <field required="M" length="10" name="ENTRY_HASH" index="4" position="11" type="Numeric" /> 
+  <field required="M" length="12" name="TOTAL_DEBIT_ENTRY_DOLLAR_AMOUNT" index="5" position="21" type="$amount" /> 
+  <field required="M" length="12" name="TOTAL_CREDIT_ENTRY_DOLLAR_AMOUNT" index="6" position="33" type="$amount" /> 
+  <field required="R" length="10" name="COMPANY_IDENTIFICATION" index="7" position="45" type="Alphameric" /> 
+  <field required="O" length="19" name="MESSAGE_AUTHENTICATION_CODE" index="8" position="55" type="Alphameric" /> 
+  <field required="O" length="6" name="RESERVED" index="9" position="74" type="Blank" /> 
+  <field required="M" length="8" name="ORIGINATING_DFI_IDENTIFICATION" index="10" position="80" type="TTTTAAAA" /> 
+  <field required="M" length="7" name="BATCH_NUMBER" index="11" position="88" type="Numeric" /> 
+  </record>
+  <record id="CBR_BATCH_HEADER" name="CBR COMPANY or BATCH HEADER RECORD">
+  <field required="M" length="1" name="RECORD_TYPE_CODE" index="1" position="01" type="fixed" typeData="5" /> 
+  <field required="M" length="3" name="SERVICE_CLASS_CODE" index="2" position="02" type="Set" /> 
+  <field required="M" length="16" name="COMPANY_NAME" index="3" position="05" type="Alphameric" /> 
+  <field required="R" length="2" name="FOREIGN_EXCHANGE_INDICATOR" index="4" position="21" type="Set" /> 
+  <field required="R" length="1" name="FOREIGN_EXCHANGE_REFERENCE_INDICATOR" index="5" position="23" type="Numeric" /> 
+  <field required="R" length="15" name="FOREIGN_EXCHANGE_REFERENCE" index="6" position="24" type="Alphameric" /> 
+  <field required="R" length="2" name="ISO_DESTINATION_COUNTRY_CODE" index="7" position="39" type="Alphameric" /> 
+  <field required="M" length="10" name="COMPANY_IDENTIFICATION" index="8" position="41" type="Alphameric" /> 
+  <field required="M" length="3" name="STANDARD_ENTRY_CLASS_CODE" index="9" position="51" type="Set" /> 
+  <field required="M" length="10" name="COMPANY_ENTRY_DESCRIPTION" index="10" position="54" type="Alphameric" /> 
+  <field required="R" length="3" name="ISO_ORIGINATING_CURRENCY_CODE" index="11" position="64" type="Alphameric" /> 
+  <field required="R" length="3" name="ISO_DESTINATION_CURRENCY_CODE" index="12" position="67" type="Alphameric" /> 
+  <field required="R" length="6" name="EFFECTIVE_ENTRY_DATE" index="13" position="70" type="YYMMDD" /> 
+  <field required="I_A_O" length="3" name="SETTLEMENT_DATE" index="14" position="76" type="Numeric" /> 
+  <field required="M" length="1" name="ORIGINATOR_STATUS_CODE" index="15" position="79" type="Set" /> 
+  <field required="M" length="8" name="ORIGINATING_DFI_IDENTIFICATION" index="16" position="80" type="TTTTAAAA" /> 
+  <field required="M" length="7" name="BATCH_NUMBER" index="17" position="88" type="Numeric" /> 
+  </record>
+  <record id="PBR_BATCH_HEADER" name="PBR COMPANY or BATCH HEADER RECORD">
+  <field required="M" length="1" name="RECORD_TYPE_CODE" index="1" position="01" type="fixed" typeData="5" /> 
+  <field required="M" length="3" name="SERVICE_CLASS_CODE" index="2" position="02" type="Set" /> 
+  <field required="M" length="16" name="COMPANY_NAME" index="3" position="05" type="Alphameric" /> 
+  <field required="R" length="2" name="FOREIGN_EXCHANGE_INDICATOR" index="4" position="21" type="Set" /> 
+  <field required="R" length="1" name="FOREIGN_EXCHANGE_REFERENCE_INDICATOR" index="5" position="23" type="Numeric" /> 
+  <field required="R" length="15" name="FOREIGN_EXCHANGE_REFERENCE" index="6" position="24" type="Alphameric" /> 
+  <field required="R" length="2" name="ISO_DESTINATION_COUNTRY_CODE" index="7" position="39" type="Alphameric" /> 
+  <field required="M" length="10" name="COMPANY_IDENTIFICATION" index="8" position="41" type="Alphameric" /> 
+  <field required="M" length="3" name="STANDARD_ENTRY_CLASS_CODE" index="9" position="51" type="Set" /> 
+  <field required="M" length="10" name="COMPANY_ENTRY_DESCRIPTION" index="10" position="54" type="Alphameric" /> 
+  <field required="R" length="3" name="ISO_ORIGINATING_CURRENCY_CODE" index="11" position="64" type="Alphameric" /> 
+  <field required="R" length="3" name="ISO_DESTINATION_CURRENCY_CODE" index="12" position="67" type="Alphameric" /> 
+  <field required="R" length="6" name="EFFECTIVE_ENTRY_DATE" index="13" position="70" type="YYMMDD" /> 
+  <field required="I_A_O" length="3" name="SETTLEMENT_DATE" index="14" position="76" type="Numeric" /> 
+  <field required="M" length="1" name="ORIGINATOR_STATUS_CODE" index="15" position="79" type="Set" /> 
+  <field required="M" length="8" name="ORIGINATING_DFI_IDENTIFICATION" index="16" position="80" type="TTTTAAAA" /> 
+  <field required="M" length="7" name="BATCH_NUMBER" index="17" position="88" type="Numeric" /> 
+  </record>
+  <record id="ADV_FILE_HEADER" name="ADV FILE HEADER RECORD">
+  <field required="M" length="1" name="RECORD_TYPE_CODE" index="1" position="01" type="fixed" typeData="1" /> 
+  <field required="R" length="2" name="PRIORITY_CODE" index="2" position="02" type="Numeric" /> 
+  <field required="M" length="10" name="IMMEDIATE_DESTINATION" index="3" position="04" type="bTTTTAAAAC" /> 
+  <field required="M" length="10" name="IMMEDIATE_ORIGIN" index="4" position="14" type="bTTTTAAAAC" /> 
+  <field required="M" length="6" name="FILE_CREATION_DATE" index="5" position="24" type="YYMMDD" /> 
+  <field required="O" length="4" name="FILE_CREATION_TIME" index="6" position="30" type="HHMM" /> 
+  <field required="M" length="1" name="FILE_ID_MODIFIER" index="7" position="34" type="regex" typeData="[A-Z0-9]*" /> 
+  <field required="M" length="3" name="RECORD_SIZE" index="8" position="35" type="fixed" typeData="094" /> 
+  <field required="M" length="2" name="BLOCKING_FACTOR" index="9" position="38" type="fixed" typeData="10" /> 
+  <field required="M" length="1" name="FORMAT_CODE" index="10" position="40" type="fixed" typeData="1" /> 
+  <field required="M" length="23" name="IMMEDIATE_DESTINATION_NAME" index="11" position="41" type="Alphameric" /> 
+  <field required="M" length="23" name="IMMEDIATE_ORIGIN_NAME" index="12" position="64" type="Alphameric" /> 
+  <field required="O" length="8" name="REFERENCE_CODE" index="13" position="87" type="Alphameric" /> 
+  </record>
+  <record id="ADV_FILE_CONTROL" name="ADV FILE CONTROL RECORD">
+  <field required="M" length="1" name="RECORD_TYPE_CODE" index="1" position="01" type="fixed" typeData="9" /> 
+  <field required="M" length="6" name="BATCH_COUNT" index="2" position="02" type="Numeric" /> 
+  <field required="M" length="6" name="BLOCK_COUNT" index="3" position="08" type="Numeric" /> 
+  <field required="M" length="8" name="ENTRY_ADDENDA_COUNT" index="4" position="14" type="Numeric" /> 
+  <field required="M" length="10" name="ENTRY_HASH" index="5" position="22" type="Numeric" /> 
+  <field required="M" length="20" name="TOTAL_DEBIT_ENTRY_DOLLAR_AMOUNT_IN_FILE" index="6" position="32" type="$amount" /> 
+  <field required="M" length="20" name="TOTAL_CREDIT_ENTRY_DOLLAR_AMOUNT_IN_FILE" index="7" position="52" type="$amount" /> 
+  <field required="O" length="23" name="RESERVED" index="8" position="72" type="Blank" /> 
+  </record>
+  <record id="ADV_BATCH_CONTROL" name="ADV COMPANY/BATCH CONTROL RECORD">
+  <field required="M" length="1" name="RECORD_TYPE_CODE" index="1" position="01" type="8" /> 
+  <field required="M" length="3" name="SERVICE_CLASS_CODE" index="2" position="02" type="Set" /> 
+  <field required="M" length="6" name="ENTRY_ADDENDA_COUNT" index="3" position="05" type="Numeric" /> 
+  <field required="M" length="10" name="ENTRY_HASH" index="4" position="11" type="Numeric" /> 
+  <field required="M" length="20" name="TOTAL_DEBIT_ENTRY_DOLLAR_AMOUNT" index="5" position="21" type="$amount" /> 
+  <field required="M" length="20" name="TOTAL_CREDIT_ENTRY_DOLLAR_AMOUNT" index="6" position="41" type="$amount" /> 
+  <field required="O" length="19" name="ACH_OPERATOR_DATA" index="7" position="61" type="Alphameric" /> 
+  <field required="M" length="8" name="ORIGINATING_DFI_IDENTIFICATION" index="8" position="80" type="TTTTAAAA" /> 
+  <field required="M" length="7" name="BATCH_NUMBER" index="9" position="88" type="Numeric" /> 
+  </record>
+  <record id="ADV_ENTRY_DETAIL" name="ADV ENTRY DETAIL RECORD">
+  <field required="M" length="1" name="RECORD_TYPE_CODE" index="1" position="01" type="fixed" typeData="6" /> 
+  <field required="M" length="2" name="TRANSACTION_CODE" index="2" position="02" type="Set" /> 
+  <field required="M" length="8" name="RECEIVING_DFI_IDENTIFICATION" index="03" position="04" type="TTTTAAAA" /> 
+  <field required="M" length="1" name="CHECK_DIGIT" index="4" position="12" type="Numeric" /> 
+  <field required="R" length="15" name="DFI_ACCOUNT_NUMBER" index="5" position="13" type="Alphameric" /> 
+  <field required="M" length="12" name="AMOUNT" index="6" position="28" type="$amount" /> 
+  <field required="M" length="9" name="ADVICE_ROUTING_NUMBER" index="7" position="40" type="Numeric" /> 
+  <field required="O" length="5" name="FILE_IDENTIFICATION" index="8" position="49" type="Alphameric" /> 
+  <field required="O" length="1" name="ACH_OPERATOR_DATA" index="9" position="54" type="Alphameric" /> 
+  <field required="R" length="22" name="INDIVIDUAL_NAME" index="10" position="55" type="Alphameric" /> 
+  <field required="O" length="2" name="DISCRETIONARY_DATA" index="11" position="77" type="Alphameric" /> 
+  <field required="M" length="1" name="ADDENDA_RECORD_INDICATOR" index="12" position="79" type="Set" /> 
+  <field required="M" length="8" name="ROUTING_NUMBER_OF_ACH_OPERATOR" index="13" position="80" type="TTTTAAAA" /> 
+  <field required="M" length="3" name="JULIAN_DATE_ON_WHICH_THIS_ADVICE_IS_CREATED" index="14" position="88" type="Numeric" /> 
+  <field required="M" length="4" name="SEQUENCE_NUMBER_WITHIN_BATCH" index="15" position="91" type="Numeric" /> 
+  </record>
+  <record id="ARC_ENTRY_DETAIL" name="ARC ENTRY DETAIL RECORD">
+  <field required="M" length="1" name="RECORD_TYPE_CODE" index="1" position="01" type="fixed" typeData="6" /> 
+  <field required="M" length="2" name="TRANSACTION_CODE" index="2" position="02" type="Set" /> 
+  <field required="M" length="8" name="RECEIVING_DFI_IDENTIFICATION" index="3" position="04" type="TTTTAAAA" /> 
+  <field required="M" length="1" name="CHECK_DIGIT" index="4" position="12" type="Numeric" /> 
+  <field required="O" length="17" name="DFI_ACCOUNT_NUMBER" index="5" position="13" type="Alphameric" /> 
+  <field required="M" length="10" name="AMOUNT" index="6" position="30" type="$amount" /> 
+  <field required="M" length="15" name="CHECK_SERIAL_NUMBER" index="7" position="40" type="Alphameric" /> 
+  <field required="O" length="22" name="INDIVIDUAL_NAME" index="8" position="55" type="Alphameric" /> 
+  <field required="O" length="2" name="DISCRETIONARY_DATA" index="9" position="77" type="Alphameric" /> 
+  <field required="M" length="1" name="ADDENDA_RECORD_INDICATOR" index="10" position="79" type="Set" /> 
+  <field required="M" length="15" name="TRACE_NUMBER" index="11" position="80" type="Numeric" /> 
+  </record>
+  <record id="CBR_ENTRY_DETAIL" name="CBR ENTRY DETAIL RECORD (Corporate)">
+  <field required="M" length="1" name="RECORD_TYPE_CODE" index="1" position="01" type="fixed" typeData="6" /> 
+  <field required="M" length="2" name="TRANSACTION_CODE" index="2" position="02" type="Set" /> 
+  <field required="M" length="8" name="RECEIVING_DFI_IDENTIFICATION_OGO_IDENTIFICATION" index="3" position="04" type="TTTTAAAA" /> 
+  <field required="M" length="1" name="CHECK_DIGIT" index="4" position="12" type="Numeric" /> 
+  <field required="R" length="17" name="DFI_ACCOUNT_NUMBER" index="5" position="13" type="Alphameric" /> 
+  <field required="M" length="10" name="AMOUNT" index="6" position="30" type="$amount" /> 
+  <field required="O" length="15" name="IDENTIFICATION_NUMBER" index="7" position="40" type="Alphameric" /> 
+  <field required="R" length="22" name="RECEIVING_COMPANY_NAME" index="8" position="55" type="Alphameric" /> 
+  <field required="O" length="2" name="DISCRETIONARY_DATA" index="9" position="77" type="Alphameric" /> 
+  <field required="M" length="1" name="ADDENDA_RECORD_INDICATOR" index="10" position="79" type="Set" /> 
+  <field required="M" length="15" name="TRACE_NUMBER" index="11" position="80" type="Numeric" /> 
+  </record>
+  <record id="CBR_ADDENDA" name="CBR ADDENDA RECORD (Corporate)">
+  <field required="M" length="1" name="RECORD_TYPE_CODE" index="1" position="01" type="fixed" typeData="7" /> 
+  <field required="M" length="2" name="ADDENDA_TYPE_CODE" index="2" position="02" type="fixed" typeData="01" /> 
+  <field required="R" length="3" name="TRANSACTION_TYPE_CODE" index="3" position="04" type="Alphameric" /> 
+  <field required="R" length="11" name="FOREIGN_RECEIVING_DFI_IDENTIFICATION" index="4" position="07" type="Alphameric" /> 
+  <field required="R" length="15" name="FOREIGN_PAYMENT_AMOUNT" index="5" position="18" type="$amount" /> 
+  <field required="O" length="22" name="FOREIGN_TRACE_NUMBER" index="6" position="33" type="Numeric" /> 
+  <field required="R" length="25" name="FOREIGN_RECEIVERS_ACCOUNT_NUMBER" index="7" position="55" type="Alphameric" /> 
+  <field required="M" length="15" name="TRACE_NUMBER" index="8" position="80" type="Numeric" /> 
+  </record>
+  <record id="CCD_ENTRY_DETAIL" name="CCD ENTRY DETAIL RECORD">
+  <field required="M" length="1" name="RECORD_TYPE_CODE" index="1" position="01" type="fixed" typeData="6" /> 
+  <field required="M" length="2" name="TRANSACTION_CODE" index="2" position="02" type="Set" /> 
+  <field required="M" length="8" name="RECEIVING_DFI_IDENTIFICATION" index="3" position="04" type="TTTTAAAA" /> 
+  <field required="M" length="1" name="CHECK_DIGIT" index="4" position="12" type="Numeric" /> 
+  <field required="R" length="17" name="DFI_ACCOUNT_NUMBER" index="5" position="13" type="Alphameric" /> 
+  <field required="M" length="10" name="AMOUNT" index="6" position="30" type="$amount" /> 
+  <field required="O" length="15" name="IDENTIFICATION_NUMBER" index="7" position="40" type="Alphameric" /> 
+  <field required="R" length="22" name="RECEIVING_COMPANY_NAME" index="8" position="55" type="Alphameric" /> 
+  <field required="O" length="2" name="DISCRETIONARY_DATA" index="9" position="77" type="Alphameric" /> 
+  <field required="M" length="1" name="ADDENDA_RECORD_INDICATOR" index="10" position="79" type="Set" /> 
+  <field required="M" length="15" name="TRACE_NUMBER" index="11" position="80" type="Numeric" /> 
+  </record>
+  <record id="CCD_ADDENDA" name="CCD ADDENDA RECORD">
+  <field required="M" length="1" name="RECORD_TYPE_CODE" index="1" position="01" type="fixed" typeData="7" /> 
+  <field required="M" length="2" name="ADDENDA_TYPE_CODE" index="2" position="02" type="fixed" typeData="05" /> 
+  <field required="O" length="80" name="PAYMENT_RELATED_INFORMATION" index="3" position="04" type="Alphameric" /> 
+  <field required="M" length="4" name="ADDENDA_SEQUENCE_NUMBER" index="4" position="84" type="Numeric" /> 
+  <field required="M" length="7" name="ENTRY_DETAIL_SEQUENCE_NUMBER" index="5" position="88" type="Numeric" /> 
+  </record>
+  <record id="CIE_ENTRY_DETAIL" name="CIE ENTRY DETAIL RECORD">
+  <field required="M" length="1" name="RECORD_TYPE_CODE" index="1" position="01" type="fixed" typeData="6" /> 
+  <field required="M" length="2" name="TRANSACTION_CODE" index="2" position="02" type="Set" /> 
+  <field required="M" length="8" name="RECEIVING_DFI_IDENTIFICATION" index="3" position="04" type="TTTTAAAA" /> 
+  <field required="M" length="1" name="CHECK_DIGIT" index="4" position="12" type="Numeric" /> 
+  <field required="R" length="17" name="DFI_ACCOUNT_NUMBER" index="5" position="13" type="Alphameric" /> 
+  <field required="M" length="10" name="AMOUNT" index="6" position="30" type="$amount" /> 
+  <field required="R" length="15" name="INDIVIDUAL_NAME" index="7" position="40" type="Alphameric" /> 
+  <field required="M" length="22" name="INDIVIDUAL_IDENTIFICATION_NUMBER" index="8" position="55" type="Alphameric" /> 
+  <field required="O" length="2" name="DISCRETIONARY_DATA" index="9" position="77" type="Alphameric" /> 
+  <field required="M" length="1" name="ADDENDA_RECORD_INDICATOR" index="10" position="79" type="Set" /> 
+  <field required="M" length="15" name="TRACE_NUMBER" index="11" position="80" type="Numeric" /> 
+  </record>
+  <record id="CIE_ADDENDA" name="CIE ADDENDA RECORD">
+  <field required="M" length="1" name="RECORD_TYPE_CODE" index="1" position="01" type="fixed" typeData="7" /> 
+  <field required="M" length="2" name="ADDENDA_TYPE_CODE" index="2" position="02" type="fixed" typeData="05" /> 
+  <field required="O" length="80" name="PAYMENT_RELATED_INFORMATION" index="3" position="04" type="Alphameric" /> 
+  <field required="M" length="4" name="ADDENDA_SEQUENCE_NUMBER" index="4" position="84" type="Numeric" /> 
+  <field required="M" length="7" name="ENTRY_DETAIL_SEQUENCE_NUMBER" index="5" position="88" type="Numeric" /> 
+  </record>
+  <record id="CTX_ENTRY_DETAIL" name="CTX CORPORATE ENTRY DETAIL RECORD">
+  <field required="M" length="1" name="RECORD_TYPE_CODE" index="1" position="01" type="fixed" typeData="6" /> 
+  <field required="M" length="2" name="TRANSACTION_CODE" index="2" position="02" type="Set" /> 
+  <field required="M" length="8" name="RECEIVING_DFI_IDENTIFICATION" index="3" position="04" type="TTTTAAAA" /> 
+  <field required="M" length="1" name="CHECK_DIGIT" index="4" position="12" type="Numeric" /> 
+  <field required="R" length="17" name="DFI_ACCOUNT_NUMBER" index="5" position="13" type="Alphameric" /> 
+  <field required="M" length="10" name="AMOUNT" index="6" position="30" type="$amount" /> 
+  <field required="O" length="15" name="IDENTIFICATION_NUMBER" index="7" position="40" type="Alphameric" /> 
+  <field required="M" length="4" name="NUMBER_OF_ADDENDA_RECORDS" index="8" position="55" type="Numeric" /> 
+  <field required="R" length="16" name="RECEIVING_COMPANY_NAME_ID_NUMBER" index="9" position="59" type="Alphameric" /> 
+  <field required="O" length="2" name="RESERVED" index="10" position="75" type="Blank" /> 
+  <field required="O" length="2" name="DISCRETIONARY_DATA" index="11" position="77" type="Alphameric" /> 
+  <field required="M" length="1" name="ADDENDA_RECORD_INDICATOR" index="12" position="79" type="Set" /> 
+  <field required="M" length="15" name="TRACE_NUMBER" index="13" position="80" type="Numeric" /> 
+  </record>
+  <record id="CTX_ADDENDA" name="CTX ADDENDA RECORD">
+  <field required="M" length="1" name="RECORD_TYPE_CODE" index="1" position="01" type="fixed" typeData="7" /> 
+  <field required="M" length="2" name="ADDENDA_TYPE_CODE" index="2" position="02" type="fixed" typeData="05" /> 
+  <field required="O" length="80" name="PAYMENT_RELATED_INFORMATION" index="3" position="04" type="Alphameric" /> 
+  <field required="M" length="4" name="ADDENDA_SEQUENCE_NUMBER" index="4" position="84" type="Numeric" /> 
+  <field required="M" length="7" name="ENTRY_DETAIL_SEQUENCE_NUMBER" index="5" position="88" type="Numeric" /> 
+  </record>
+  <record id="DNE_ENTRY_DETAIL" name="DNE ENTRY DETAIL RECORD">
+  <field required="M" length="1" name="RECORD_TYPE_CODE" index="1" position="01" type="fixed" typeData="6" /> 
+  <field required="M" length="2" name="TRANSACTION_CODE" index="2" position="02" type="Set" /> 
+  <field required="M" length="8" name="RECEIVING_DFI_IDENTIFICATION" index="3" position="04" type="TTTTAAAA" /> 
+  <field required="M" length="1" name="CHECK_DIGIT" index="4" position="12" type="Numeric" /> 
+  <field required="R" length="17" name="DFI_ACCOUNT_NUMBER" index="5" position="13" type="Alphameric" /> 
+  <field required="M" length="10" name="AMOUNT" index="6" position="30" type="$amount" /> 
+  <field required="O" length="15" name="INDIVIDUAL_IDENTIFICATION_NUMBER" index="7" position="40" type="Alphameric" /> 
+  <field required="R" length="22" name="INDIVIDUAL_NAME" index="8" position="55" type="Alphameric" /> 
+  <field required="O" length="2" name="DISCRETIONARY_DATA" index="9" position="77" type="Alphameric" /> 
+  <field required="M" length="1" name="ADDENDA_RECORD_INDICATOR" index="10" position="79" type="Set" /> 
+  <field required="M" length="15" name="TRACE_NUMBER" index="11" position="80" type="Numeric" /> 
+  </record>
+  <record id="DNE_ADDENDA" name="DNE ADDENDA RECORD">
+  <field required="M" length="1" name="RECORD_TYPE_CODE" index="1" position="01" type="fixed" typeData="7" /> 
+  <field required="M" length="2" name="ADDENDA_TYPE_CODE" index="2" position="02" type="fixed" typeData="05" /> 
+  <field required="O" length="80" name="PAYMENT_RELATED_INFORMATION" index="3" position="04" type="Alphameric" /> 
+  <field required="M" length="4" name="ADDENDA_SEQUENCE_NUMBER" index="4" position="84" type="Numeric" /> 
+  <field required="M" length="7" name="ENTRY_DETAIL_SEQUENCE_NUMBER" index="5" position="88" type="Numeric" /> 
+  </record>
+  <record id="ENR_ENTRY_DETAIL" name="ENR ENTRY DETAIL RECORD">
+  <field required="M" length="1" name="RECORD_TYPE_CODE" index="1" position="01" type="fixed" typeData="6" /> 
+  <field required="M" length="2" name="TRANSACTION_CODE" index="2" position="02" type="Set" /> 
+  <field required="M" length="8" name="RECEIVING_DFI_IDENTIFICATION" index="3" position="04" type="TTTTAAAA" /> 
+  <field required="M" length="1" name="CHECK_DIGIT" index="4" position="12" type="Numeric" /> 
+  <field required="R" length="17" name="DFI_ACCOUNT_NUMBER" index="5" position="13" type="Alphameric" /> 
+  <field required="M" length="10" name="AMOUNT" index="6" position="30" type="fixed" typeData="0000000000" /> 
+  <field required="O" length="15" name="IDENTIFICATION_NUMBER" index="7" position="40" type="Alphameric" /> 
+  <field required="M" length="4" name="NUMBER_OF_ADDENDA_RECORDS" index="8" position="55" type="Numeric" /> 
+  <field required="R" length="16" name="RECEIVING_COMPANY_NAME_ID_NUMBER" index="9" position="59" type="Alphameric" /> 
+  <field required="O" length="2" name="RESERVED" index="10" position="75" type="Blank" /> 
+  <field required="O" length="2" name="DISCRETIONARY_DATA" index="11" position="77" type="Alphameric" /> 
+  <field required="M" length="1" name="ADDENDA_RECORD_INDICATOR" index="12" position="79" type="Set" /> 
+  <field required="M" length="15" name="TRACE_NUMBER" index="13" position="80" type="Numeric" /> 
+  </record>
+  <record id="ENR_ADDENDA" name="ENR ADDENDA RECORD">
+  <field required="M" length="1" name="RECORD_TYPE_CODE" index="1" position="01" type="fixed" typeData="7" /> 
+  <field required="M" length="2" name="ADDENDA_TYPE_CODE" index="2" position="02" type="fixed" typeData="05" /> 
+  <field required="R" length="80" name="PAYMENT_RELATED_INFORMATION" index="3" position="04" type="Alphameric" /> 
+  <field required="M" length="4" name="ADDENDA_SEQUENCE_NUMBER" index="4" position="84" type="Numeric" /> 
+  <field required="M" length="7" name="ENTRY_DETAIL_SEQUENCE_NUMBER" index="5" position="88" type="Numeric" /> 
+  </record>
+  <record id="MTE_ENTRY_DETAIL" name="MTE ENTRY DETAIL RECORD">
+  <field required="M" length="1" name="RECORD_TYPE_CODE" index="1" position="01" type="fixed" typeData="6" /> 
+  <field required="M" length="2" name="TRANSACTION_CODE" index="2" position="02" type="Set" /> 
+  <field required="M" length="8" name="RECEIVING_DFI_IDENTIFICATION" index="3" position="04" type="TTTTAAAA" /> 
+  <field required="M" length="1" name="CHECK_DIGIT" index="4" position="12" type="Numeric" /> 
+  <field required="R" length="17" name="DFI_ACCOUNT_NUMBER" index="5" position="13" type="Alphameric" /> 
+  <field required="M" length="10" name="AMOUNT" index="6" position="30" type="$amount" /> 
+  <field required="M" length="15" name="INDIVIDUAL_NAME" index="7" position="40" type="Alphameric" /> 
+  <field required="M" length="22" name="INDIVIDUAL_IDENTIFICATION_NUMBER" index="8" position="55" type="Alphameric" /> 
+  <field required="O" length="2" name="DISCRETIONARY_DATA" index="9" position="77" type="Alphameric" /> 
+  <field required="M" length="1" name="ADDENDA_RECORD_INDICATOR" index="10" position="79" type="Set" /> 
+  <field required="M" length="15" name="TRACE_NUMBER" index="11" position="80" type="Numeric" /> 
+  </record>
+  <record id="MTE_ADDENDA" name="MTE ADDENDA RECORD">
+  <field required="M" length="1" name="RECORD_TYPE_CODE" index="1" position="01" type="fixed" typeData="7" /> 
+  <field required="M" length="2" name="ADDENDA_TYPE_CODE" index="2" position="02" type="fixed" typeData="02" /> 
+  <field required="R" length="7" name="TRANSACTION_DESCRIPTION" index="3" position="04" type="Alphameric" /> 
+  <field required="O" length="3" name="NETWORK_IDENTIFICATION_CODE" index="4" position="11" type="Alphameric" /> 
+  <field required="R" length="6" name="TERMINAL_IDENTIFICATION_CODE" index="5" position="14" type="Alphameric" /> 
+  <field required="R" length="6" name="TRANSACTION_SERIAL_NUMBER" index="6" position="20" type="Alphameric" /> 
+  <field required="R" length="4" name="TRANSACTION_DATE" index="7" position="26" type="MMDD" /> 
+  <field required="R" length="6" name="TRANSACTION_TIME" index="8" position="30" type="HHMMSS" /> 
+  <field required="R" length="27" name="TERMINAL_LOCATION" index="9" position="36" type="Alphameric" /> 
+  <field required="R" length="15" name="TERMINAL_CITY" index="10" position="63" type="Alphameric" /> 
+  <field required="R" length="2" name="TERMINAL_STATE" index="11" position="78" type="Alphameric" /> 
+  <field required="M" length="15" name="TRACE_NUMBER" index="12" position="80" type="Numeric" /> 
+  </record>
+  <record id="PBR_ENTRY_DETAIL" name="PBR ENTRY DETAIL RECORD (Consumer)">
+  <field required="M" length="1" name="RECORD_TYPE_CODE" index="1" position="01" type="fixed" typeData="6" /> 
+  <field required="M" length="2" name="TRANSACTION_CODE" index="2" position="02" type="Set" /> 
+  <field required="M" length="8" name="RECEIVING_DFI_IDENTIFICATION_OGO_IDENTIFICATION" index="3" position="04" type="TTTTAAAA" /> 
+  <field required="M" length="1" name="CHECK_DIGIT" index="4" position="12" type="Numeric" /> 
+  <field required="R" length="17" name="DFI_ACCOUNT_NUMBER" index="5" position="13" type="Alphameric" /> 
+  <field required="M" length="10" name="AMOUNT" index="6" position="30" type="$amount" /> 
+  <field required="O" length="15" name="INDIVIDUAL_IDENTIFICATION_NUMBER" index="7" position="40" type="Alphameric" /> 
+  <field required="R" length="22" name="INDIVIDUAL_NAME" index="8" position="55" type="Alphameric" /> 
+  <field required="O" length="2" name="DISCRETIONARY_DATA" index="9" position="77" type="Alphameric" /> 
+  <field required="M" length="1" name="ADDENDA_RECORD_INDICATOR" index="10" position="79" type="Set" /> 
+  <field required="M" length="15" name="TRACE_NUMBER" index="11" position="80" type="Numeric" /> 
+  </record>
+  <record id="PBR_ADDENDA" name="PBR ADDENDA RECORD (Consumer)">
+  <field required="M" length="1" name="RECORD_TYPE_CODE" index="1" position="01" type="fixed" typeData="7" /> 
+  <field required="M" length="2" name="ADDENDA_TYPE_CODE" index="2" position="02" type="fixed" typeData="01" /> 
+  <field required="R" length="3" name="TRANSACTION_TYPE_CODE" index="3" position="04" type="Alphameric" /> 
+  <field required="R" length="11" name="FOREIGN_RECEIVING_DFI_IDENTIFICATION" index="4" position="07" type="Alphameric" /> 
+  <field required="R" length="15" name="FOREIGN_PAYMENT_AMOUNT" index="5" position="18" type="$amount" /> 
+  <field required="O" length="22" name="FOREIGN_TRACE_NUMBER" index="6" position="33" type="Numeric" /> 
+  <field required="R" length="25" name="FOREIGN_RECEIVERS_ACCOUNT_NUMBER" index="7" position="55" type="Alphameric" /> 
+  <field required="M" length="15" name="TRACE_NUMBER" index="8" position="80" type="Numeric" /> 
+  </record>
+  <record id="POP_ENTRY_DETAIL" name="POP ENTRY DETAIL RECORD">
+  <field required="M" length="1" name="RECORD_TYPE_CODE" index="1" position="01" type="fixed" typeData="6" /> 
+  <field required="M" length="2" name="TRANSACTION_CODE" index="2" position="02" type="Set" /> 
+  <field required="M" length="8" name="RECEIVING_DFI_IDENTIFICATION" index="3" position="04" type="TTTTAAAA" /> 
+  <field required="M" length="1" name="CHECK_DIGIT" index="4" position="12" type="Numeric" /> 
+  <field required="R" length="17" name="DFI_ACCOUNT_NUMBER" index="5" position="13" type="Alphameric" /> 
+  <field required="M" length="10" name="AMOUNT" index="6" position="30" type="$amount" /> 
+  <field required="M" length="9" name="CHECK_SERIAL_NUMBER" index="7" position="40" type="Alphameric" /> 
+  <field required="M" length="4" name="TERMINAL_CITY" index="8" position="49" type="Alphameric" /> 
+  <field required="M" length="2" name="TERMINAL_STATE" index="9" position="53" type="Alphameric" /> 
+  <field required="O" length="22" name="INDIVIDUAL_NAME" index="10" position="55" type="Alphameric" /> 
+  <field required="O" length="2" name="DISCRETIONARY_DATA" index="11" position="77" type="Alphameric" /> 
+  <field required="M" length="1" name="ADDENDA_RECORD_INDICATOR" index="12" position="79" type="Set" /> 
+  <field required="M" length="15" name="TRACE_NUMBER" index="13" position="80" type="Numeric" /> 
+  </record>
+  <record id="POS_ENTRY_DETAIL" name="POS ENTRY DETAIL RECORD">
+  <field required="M" length="1" name="RECORD_TYPE_CODE" index="1" position="01" type="fixed" typeData="6" /> 
+  <field required="M" length="2" name="TRANSACTION_CODE" index="2" position="02" type="Set" /> 
+  <field required="M" length="8" name="RECEIVING_DFI_IDENTIFICATION" index="3" position="04" type="TTTTAAAA" /> 
+  <field required="M" length="1" name="CHECK_DIGIT" index="4" position="12" type="Numeric" /> 
+  <field required="R" length="17" name="DFI_ACCOUNT_NUMBER" index="5" position="13" type="Alphameric" /> 
+  <field required="M" length="10" name="AMOUNT" index="6" position="30" type="$amount" /> 
+  <field required="O" length="15" name="INDIVIDUAL_IDENTIFICATION_NUMBER" index="7" position="40" type="Alphameric" /> 
+  <field required="R" length="22" name="INDIVIDUAL_NAME" index="8" position="55" type="Alphameric" /> 
+  <field required="M" length="2" name="CARD_TRANSACTION_TYPE_CODE" index="9" position="77" type="Set" /> 
+  <field required="M" length="1" name="ADDENDA_RECORD_INDICATOR" index="10" position="79" type="Set" /> 
+  <field required="M" length="15" name="TRACE_NUMBER" index="11" position="80" type="Numeric" /> 
+  </record>
+  <record id="POS_ADDENDA" name="POS ADDENDA RECORD">
+  <field required="M" length="1" name="RECORD_TYPE_CODE" index="1" position="01" type="fixed" typeData="7" /> 
+  <field required="M" length="2" name="ADDENDA_TYPE_CODE" index="2" position="02" type="fixed" typeData="02" /> 
+  <field required="O" length="7" name="REFERENCE_INFORMATION_1" index="3" position="04" type="Alphameric" /> 
+  <field required="O" length="3" name="REFERENCE_INFORMATION_2" index="4" position="11" type="Alphameric" /> 
+  <field required="R" length="6" name="TERMINAL_IDENTIFICATION_CODE" index="5" position="14" type="Alphameric" /> 
+  <field required="R" length="6" name="TRANSACTION_SERIAL_NUMBER" index="6" position="20" type="Alphameric" /> 
+  <field required="R" length="4" name="TRANSACTION_DATE" index="7" position="26" type="MMDD" /> 
+  <field required="O" length="6" name="AUTHORIZATION_CODE_OR_CARD_EXPIRATION_DATE" index="8" position="30" type="Alphameric" /> 
+  <field required="R" length="27" name="TERMINAL_LOCATION" index="9" position="36" type="Alphameric" /> 
+  <field required="R" length="15" name="TERMINAL_CITY" index="10" position="63" type="Alphameric" /> 
+  <field required="R" length="2" name="TERMINAL_STATE" index="11" position="78" type="Alphameric" /> 
+  <field required="M" length="15" name="TRACE_NUMBER" index="12" position="80" type="Numeric" /> 
+  </record>
+  <record id="PPD_ENTRY_DETAIL" name="PPD ENTRY DETAIL RECORD">
+  <field required="M" length="1" name="RECORD_TYPE_CODE" index="1" position="01" type="fixed" typeData="6" /> 
+  <field required="M" length="2" name="TRANSACTION_CODE" index="2" position="02" type="Set" /> 
+  <field required="M" length="8" name="RECEIVING_DFI_IDENTIFICATION" index="3" position="04" type="TTTTAAAA" /> 
+  <field required="M" length="1" name="CHECK_DIGIT" index="4" position="12" type="Numeric" /> 
+  <field required="R" length="17" name="DFI_ACCOUNT_NUMBER" index="5" position="13" type="Alphameric" /> 
+  <field required="M" length="10" name="AMOUNT" index="6" position="30" type="$amount" /> 
+  <field required="O" length="15" name="INDIVIDUAL_IDENTIFICATION_NUMBER" index="7" position="40" type="Alphameric" /> 
+  <field required="R" length="22" name="INDIVIDUAL_NAME" index="8" position="55" type="Alphameric" /> 
+  <field required="O" length="2" name="DISCRETIONARY_DATA" index="9" position="77" type="Alphameric" /> 
+  <field required="M" length="1" name="ADDENDA_RECORD_INDICATOR" index="10" position="79" type="Set" /> 
+  <field required="M" length="15" name="TRACE_NUMBER" index="11" position="80" type="Numeric" /> 
+  </record>
+  <record id="PPD_ADDENDA" name="PPD ADDENDA RECORD">
+  <field required="M" length="1" name="RECORD_TYPE_CODE" index="1" position="01" type="fixed" typeData="7" /> 
+  <field required="M" length="2" name="ADDENDA_TYPE_CODE" index="2" position="02" type="fixed" typeData="05" /> 
+  <field required="O" length="80" name="PAYMENT_RELATED_INFORMATION" index="3" position="04" type="Alphameric" /> 
+  <field required="M" length="4" name="ADDENDA_SEQUENCE_NUMBER" index="4" position="84" type="Numeric" /> 
+  <field required="M" length="7" name="ENTRY_DETAIL_SEQUENCE_NUMBER" index="5" position="88" type="Numeric" /> 
+  </record>
+  <record id="RCK_ENTRY_DETAIL" name="RCK ENTRY DETAIL RECORD">
+  <field required="M" length="1" name="RECORD_TYPE_CODE" index="1" position="01" type="fixed" typeData="6" /> 
+  <field required="M" length="2" name="TRANSACTION_CODE" index="2" position="02" type="Set" /> 
+  <field required="M" length="8" name="RECEIVING_DFI_IDENTIFICATION" index="3" position="04" type="TTTTAAAA" /> 
+  <field required="M" length="1" name="CHECK_DIGIT" index="4" position="12" type="Numeric" /> 
+  <field required="M" length="17" name="DFI_ACCOUNT_NUMBER" index="5" position="13" type="Alphameric" /> 
+  <field required="R" length="10" name="AMOUNT" index="6" position="30" type="$amount" /> 
+  <field required="M" length="15" name="CHECK_SERIAL_NUMBER" index="7" position="40" type="Alphameric" /> 
+  <field required="M" length="22" name="INDIVIDUAL_NAME" index="8" position="55" type="Alphameric" /> 
+  <field required="O" length="2" name="DISCRETIONARY_DATA" index="9" position="77" type="Alphameric" /> 
+  <field required="M" length="1" name="ADDENDA_RECORD_INDICATOR" index="10" position="79" type="Set" /> 
+  <field required="M" length="15" name="TRACE_NUMBER" index="11" position="80" type="Numeric" /> 
+  </record>
+  <record id="SHR_ENTRY_DETAIL" name="SHR ENTRY DETAIL RECORD">
+  <field required="M" length="1" name="RECORD_TYPE_CODE" index="1" position="01" type="fixed" typeData="6" /> 
+  <field required="M" length="2" name="TRANSACTION_CODE" index="2" position="02" type="Set" /> 
+  <field required="M" length="8" name="RECEIVING_DFI_IDENTIFICATION" index="3" position="04" type="TTTTAAAA" /> 
+  <field required="M" length="1" name="CHECK_DIGIT" index="4" position="12" type="Numeric" /> 
+  <field required="R" length="17" name="DFI_ACCOUNT_NUMBER" index="5" position="13" type="Alphameric" /> 
+  <field required="M" length="10" name="AMOUNT" index="6" position="30" type="$amount" /> 
+  <field required="R" length="4" name="CARD_EXPIRATION_DATE" index="7" position="40" type="MMYY" /> 
+  <field required="R" length="11" name="DOCUMENT_REFERENCE_NUMBER" index="8" position="44" type="Numeric" /> 
+  <field required="R" length="22" name="INDIVIDUAL_CARD_ACCOUNT_NUMBER" index="9" position="55" type="Numeric" /> 
+  <field required="M" length="2" name="CARD_TRANSACTION_TYPE_CODE" index="10" position="77" type="Set" /> 
+  <field required="M" length="1" name="ADDENDA_RECORD_INDICATOR" index="11" position="79" type="Set" /> 
+  <field required="M" length="15" name="TRACE_NUMBER" index="12" position="80" type="Numeric" /> 
+  </record>
+  <record id="SHR_ADDENDA" name="SHR ADDENDA RECORD">
+  <field required="M" length="1" name="RECORD_TYPE_CODE" index="1" position="01" type="fixed" typeData="7" /> 
+  <field required="M" length="2" name="ADDENDA_TYPE_CODE" index="2" position="02" type="fixed" typeData="02" /> 
+  <field required="O" length="7" name="REFERENCE_INFORMATION_1" index="3" position="04" type="Alphameric" /> 
+  <field required="O" length="3" name="REFERENCE_INFORMATION_2" index="4" position="11" type="Alphameric" /> 
+  <field required="R" length="6" name="TERMINAL_IDENTIFICATION_CODE" index="5" position="14" type="Alphameric" /> 
+  <field required="R" length="6" name="TRANSACTION_SERIAL_NUMBER" index="6" position="20" type="Alphameric" /> 
+  <field required="R" length="4" name="TRANSACTION_DATE" index="7" position="26" type="MMDD" /> 
+  <field required="O" length="6" name="AUTHORIZATION_CODE_OR_CARD_EXPIRATION_DATE" index="8" position="30" type="Alphameric" /> 
+  <field required="R" length="27" name="TERMINAL_LOCATION" index="9" position="36" type="Alphameric" /> 
+  <field required="R" length="15" name="TERMINAL_CITY" index="10" position="63" type="Alphameric" /> 
+  <field required="R" length="2" name="TERMINAL_STATE" index="11" position="78" type="Alphameric" /> 
+  <field required="M" length="15" name="TRACE_NUMBER" index="12" position="80" type="Numeric" /> 
+  </record>
+  <record id="TEL_ENTRY_DETAIL" name="TEL ENTRY DETAIL RECORD">
+  <field required="M" length="1" name="RECORD_TYPE_CODE" index="1" position="01" type="fixed" typeData="6" /> 
+  <field required="M" length="2" name="TRANSACTION_CODE" index="2" position="02" type="Set" /> 
+  <field required="M" length="8" name="RECEIVING_DFI_IDENTIFICATION" index="3" position="04" type="TTTTAAAA" /> 
+  <field required="M" length="1" name="CHECK_DIGIT" index="4" position="12" type="Numeric" /> 
+  <field required="R" length="17" name="DFI_ACCOUNT_NUMBER" index="5" position="13" type="Alphameric" /> 
+  <field required="M" length="10" name="AMOUNT" index="6" position="30" type="$amount" /> 
+  <field required="O" length="15" name="INDIVIDUAL_IDENTIFICATION_NUMBER" index="7" position="40" type="Alphameric" /> 
+  <field required="R" length="22" name="INDIVIDUAL_NAME" index="8" position="55" type="Alphameric" /> 
+  <field required="O" length="2" name="DISCRETIONARY_DATA" index="9" position="77" type="Alphameric" /> 
+  <field required="M" length="1" name="ADDENDA_RECORD_INDICATOR" index="10" position="79" type="Set" /> 
+  <field required="M" length="15" name="TRACE_NUMBER" index="11" position="80" type="Numeric" /> 
+  </record>
+  <record id="TRC_ENTRY_DETAIL" name="TRC ENTRY DETAIL RECORD">
+  <field required="M" length="1" name="RECORD_TYPE_CODE" index="1" position="01" type="fixed" typeData="6" /> 
+  <field required="M" length="2" name="TRANSACTION_CODE" index="2" position="02" type="Set" /> 
+  <field required="M" length="8" name="RECEIVING_DFI_IDENTIFICATION" index="3" position="04" type="TTTTAAAA" /> 
+  <field required="M" length="1" name="CHECK_DIGIT" index="4" position="12" type="Numeric" /> 
+  <field required="R" length="17" name="DFI_ACCOUNT_NUMBER" index="5" position="13" type="Alphameric" /> 
+  <field required="M" length="10" name="AMOUNT" index="6" position="30" type="$amount" /> 
+  <field required="O" length="15" name="CHECK_SERIAL_NUMBER" index="7" position="40" type="Alphameric" /> 
+  <field required="R" length="6" name="PROCESS_CONTROL_FIELD" index="8" position="55" type="Alphameric" /> 
+  <field required="R" length="16" name="ITEM_RESEARCH_NUMBER" index="9" position="61" type="Alphameric" /> 
+  <field required="O" length="2" name="ITEM_TYPE_INDICATOR" index="10" position="77" type="fixed" typeData="01" /> 
+  <field required="M" length="1" name="ADDENDA_RECORD_INDICATOR" index="11" position="79" type="Set" /> 
+  <field required="M" length="15" name="TRACE_NUMBER" index="12" position="80" type="Numeric" /> 
+  </record>
+  <record id="TRX_ENTRY_DETAIL" name="TRX ENTRY DETAIL RECORD">
+  <field required="M" length="1" name="RECORD_TYPE_CODE" index="1" position="01" type="fixed" typeData="6" /> 
+  <field required="M" length="2" name="TRANSACTION_CODE" index="2" position="02" type="Set" /> 
+  <field required="M" length="8" name="RECEIVING_DFI_IDENTIFICATION" index="3" position="04" type="TTTTAAAA" /> 
+  <field required="M" length="1" name="CHECK_DIGIT" index="4" position="12" type="Numeric" /> 
+  <field required="R" length="17" name="DFI_ACCOUNT_NUMBER" index="5" position="13" type="Alphameric" /> 
+  <field required="M" length="10" name="AMOUNT" index="6" position="30" type="$amount" /> 
+  <field required="O" length="15" name="IDENTIFICATION_NUMBER" index="7" position="40" type="Alphameric" /> 
+  <field required="M" length="4" name="NUMBER_OF_ADDENDA_RECORDS" index="8" position="55" type="Numeric" /> 
+  <field required="R" length="16" name="RECEIVING_COMPANY_NAME_ID_NUMBER" index="9" position="59" type="Alphameric" /> 
+  <field required="O" length="2" name="RESERVED" index="10" position="75" type="Blank" /> 
+  <field required="O" length="2" name="ITEM_TYPE_INDICATOR" index="11" position="77" type="fixed" typeData="01" /> 
+  <field required="M" length="1" name="ADDENDA_RECORD_INDICATOR" index="12" position="79" type="Set" /> 
+  <field required="M" length="15" name="TRACE_NUMBER" index="13" position="80" type="Numeric" /> 
+  </record>
+  <record id="TRX_ADDENDA" name="TRX ADDENDA RECORD">
+  <field required="M" length="1" name="RECORD_TYPE_CODE" index="1" position="01" type="fixed" typeData="7" /> 
+  <field required="M" length="2" name="ADDENDA_TYPE_CODE" index="2" position="02" type="fixed" typeData="05" /> 
+  <field required="O" length="80" name="PAYMENT_RELATED_INFORMATION" index="3" position="04" type="Alphameric" /> 
+  <field required="M" length="4" name="ADDENDA_SEQUENCE_NUMBER" index="4" position="84" type="Numeric" /> 
+  <field required="M" length="7" name="ENTRY_DETAIL_SEQUENCE_NUMBER" index="5" position="88" type="Numeric" /> 
+  </record>
+  <record id="WEB_ENTRY_DETAIL" name="WEB ENTRY DETAIL RECORD">
+  <field required="M" length="1" name="RECORD_TYPE_CODE" index="1" position="01" type="fixed" typeData="6" /> 
+  <field required="M" length="2" name="TRANSACTION_CODE" index="2" position="02" type="Set" /> 
+  <field required="M" length="8" name="RECEIVING_DFI_IDENTIFICATION" index="3" position="04" type="TTTTAAAA" /> 
+  <field required="M" length="1" name="CHECK_DIGIT" index="4" position="12" type="Numeric" /> 
+  <field required="R" length="17" name="DFI_ACCOUNT_NUMBER" index="5" position="13" type="Alphameric" /> 
+  <field required="M" length="10" name="AMOUNT" index="6" position="30" type="$amount" /> 
+  <field required="O" length="15" name="INDIVIDUAL_IDENTIFICATION_NUMBER" index="7" position="40" type="Alphameric" /> 
+  <field required="R" length="22" name="INDIVIDUAL_NAME" index="8" position="55" type="Alphameric" /> 
+  <field required="R" length="2" name="PAYMENT_TYPE_CODE" index="9" position="77" type="Alphameric" /> 
+  <field required="M" length="1" name="ADDENDA_RECORD_INDICATOR" index="10" position="79" type="Set" /> 
+  <field required="M" length="15" name="TRACE_NUMBER" index="11" position="80" type="Numeric" /> 
+  </record>
+  <record id="WEB_ADDENDA" name="WEB ADDENDA RECORD">
+  <field required="M" length="1" name="RECORD_TYPE_CODE" index="1" position="01" type="fixed" typeData="7" /> 
+  <field required="M" length="2" name="ADDENDA_TYPE_CODE" index="2" position="02" type="fixed" typeData="05" /> 
+  <field required="O" length="80" name="PAYMENT_RELATED_INFORMATION" index="3" position="04" type="Alphameric" /> 
+  <field required="M" length="4" name="ADDENDA_SEQUENCE_NUMBER" index="4" position="84" type="Numeric" /> 
+  <field required="M" length="7" name="ENTRY_DETAIL_SEQUENCE_NUMBER" index="5" position="88" type="Numeric" /> 
+  </record>
+  <record id="XCK_ENTRY_DETAIL" name="XCK ENTRY DETAIL RECORD">
+  <field required="M" length="1" name="RECORD_TYPE_CODE" index="1" position="01" type="fixed" typeData="6" /> 
+  <field required="M" length="2" name="TRANSACTION_CODE" index="2" position="02" type="Set" /> 
+  <field required="M" length="8" name="RECEIVING_DFI_IDENTIFICATION" index="3" position="04" type="TTTTAAAA" /> 
+  <field required="M" length="1" name="CHECK_DIGIT" index="4" position="12" type="Numeric" /> 
+  <field required="R" length="17" name="DFI_ACCOUNT_NUMBER" index="5" position="13" type="Alphameric" /> 
+  <field required="M" length="10" name="AMOUNT" index="6" position="30" type="$amount" /> 
+  <field required="M" length="15" name="CHECK_SERIAL_NUMBER" index="7" position="40" type="Alphameric" /> 
+  <field required="R" length="6" name="PROCESS_CONTROL_FIELD" index="8" position="55" type="Alphameric" /> 
+  <field required="R" length="16" name="ITEM_RESEARCH_NUMBER" index="9" position="61" type="Alphameric" /> 
+  <field required="O" length="2" name="DISCRETIONARY_DATA" index="10" position="77" type="Alphameric" /> 
+  <field required="M" length="1" name="ADDENDA_RECORD_INDICATOR" index="11" position="79" type="Set" /> 
+  <field required="M" length="15" name="TRACE_NUMBER" index="12" position="80" type="Numeric" /> 
+  </record>
+  </format>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<FLOW VERSION="3.0" CLEANUP="true">
+  <COMMENT></COMMENT>
+
+  <!-- nodes -->
+
+<LOOP TIMEOUT="" IN-ARRAY="/DTM">
+  <COMMENT></COMMENT>
+
+  <!-- nodes -->
+
+<BRANCH TIMEOUT="" SWITCH="/DTM/DTM01/code">
+  <COMMENT></COMMENT>
+
+  <!-- nodes -->
+
+<MAP NAME="002" MODE="STANDALONE">
+  <COMMENT>Requested Delivery Date &amp; Time</COMMENT>
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="MapCopy" FROM="/DTM;2;0/DTM02;1;0" TO="/RequestedDeliveryDate;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="MapCopy" FROM="/DTM;2;0/DTM03;1;0" TO="/RequestedDeliveryTime;1;0">
+</MAPCOPY>
+</MAP>
+
+<MAP NAME="007" MODE="STANDALONE">
+  <COMMENT>Original Order Request Date &amp; Time</COMMENT>
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="MapCopy" FROM="/DTM;2;0/DTM02;1;0" TO="/OrderRequestDate;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="MapCopy" FROM="/DTM;2;0/DTM03;1;0" TO="/OrderRequestTime;1;0">
+</MAPCOPY>
+</MAP>
+
+<MAP NAME="036" MODE="STANDALONE">
+  <COMMENT>Charge Card Expiration Date</COMMENT>
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="MapCopy" FROM="/DTM;2;0/DTM07;1;0" TO="/ChargeCardExpirationDate;1;0">
+</MAPCOPY>
+</MAP>
+</BRANCH>
+</LOOP>
+</FLOW>

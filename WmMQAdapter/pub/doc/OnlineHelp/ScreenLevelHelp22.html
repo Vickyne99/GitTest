@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="GENERATOR" content="Quadralay WebWorks Publisher Professional Edition 7.0" />
+  <meta name="TEMPLATEBASE" content="wM_WWH20030908" />
+  <meta name="LASTUPDATED" content="07/27/06 06:26:21" />
+  <title>Asynchronous Publishable Document Type Screen</title>
+  <link rel="StyleSheet" href="document.css" type="text/css" />
+  <link rel="StyleSheet" href="catalog.css" type="text/css" />
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+ </head>
+
+ <body onLoad="WWHUpdate();">
+
+
+<a name="wp1110717"> </a><h2 class="pNewHTMLPage">
+Asynchronous Publishable Document Type Screen
+</h2><a name="wp1116636"> </a><p class="pBody">
+When you configure an asynchronous notification, the WebSphere MQ Adapter creates an asynchronous publishable document type. A service, which you created, publishes this document type that contains a message to the Integration Server.
+</p>
+<a name="wp1116656"> </a><p class="pBody">
+This document type includes the following tab:
+</p>
+<a name="wp1116735"> </a><p class="pChapterTOC">
+<img src="images/bullet.gif" height="13" width="10" border="0" />
+<a  href="ScreenLevelHelp22.html#wp1116657">Publication Properties</a>
+</p>
+<a name="wp1116657"> </a><h4 class="pHeading3">
+Publication Properties  
+</h4>
+<a name="wp1116661"> </a><p class="pBody">
+Use the <b class="cBold">Publication Properties</b> tab to select a storage type and set a time-to-live value:
+</p>
+<a name="wp1116665"> </a><p class="pAnchor">
+</p><div align="left">
+<table border="0">
+  <caption></caption>
+  <tr align="left" valign="bottom">    <th><a name="wp1116671"> </a><div style="text-align: left" class="pCellHeading">
+Property
+<hr />
+</div>
+</th>
+    <th><a name="wp1116673"> </a><div style="text-align: left" class="pCellHeading">
+Description/Action
+<hr />
+</div>
+</th>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1116675"> </a><p class="pBody">
+<b class="cBold">Storage type</b>
+</p>
+</td>
+    <td><a name="wp1116709"> </a><p class="pBody">
+For a publishable document type, you can set a storage type property to specify the steps the Integration Server and the Broker will take to ensure that a document does not get lost if a resource fails. Select the appropriate setting:
+</p>
+<div class="pSmartList1" style="margin-top: 7pt"><ul class="pSmartList1" style="margin-top: 7pt">
+<a name="wp1116710"> </a><div style="margin-top: 7pt" class="pSmartList1"><li><b class="cBold">Volatile:</b> Offers a faster, but less reliable type of storage than guaranteed. Volatile documents move through the webMethods Integration Platform faster than guaranteed documents because volatile documents are not acknowledged. Volatile documents will be lost if the resource on which the volatile document resides (Integration Server or Broker) fails or shuts down. Specify volatile storage for documents that have a short life or are not critical.</li></div>
+<a name="wp1116714"> </a><div style="margin-top: 7pt" class="pSmartList1"><li><b class="cBold">Guaranteed:</b> Guaranteed storage offers a safer, but slower type of document storage. The Integration Server saves guaranteed documents in a disk-backed document store using a process that ensures that guaranteed documents are never lost. Guaranteed documents move through the Integration Server more slowly than volatile documents. Use guaranteed storage for documents that you cannot afford to lose. If the resource (Integration Server or Broker) that contains the guaranteed document fails or shuts down, the resource recovers the guaranteed documents when the resource restarts.</li></div>
+<a name="wp1116715"> </a><p class="pBodyRelative">
+Refer to the <em class="cEmphasis">Building Integration Solutions Using Publication User’s Guide </em>for more discussion on volatile and guaranteed storage types.
+</p>
+</ul></div>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1116679"> </a><p class="pBody">
+<b class="cBold">Time to live</b>
+</p>
+</td>
+    <td><a name="wp1116721"> </a><p class="pBody">
+The length of time the document type is allowed to stay on the Integration Server, before it is thrown away. Select the appropriate setting that indicates how the Integration Server processes the document type:
+</p>
+<div class="pSmartList1" style="margin-top: 7pt"><ul class="pSmartList1" style="margin-top: 7pt">
+<a name="wp1116728"> </a><div style="margin-top: 7pt" class="pSmartList1"><li><b class="cBold">Never discard:</b> Specifies that the Broker should never discard instances of the publishable document type. </li></div>
+<a name="wp1116681"> </a><div style="margin-top: 7pt" class="pSmartList1"><li><b class="cBold">Discard after:</b> Specify that the Broker should discard instances of the publishable document type after the specified time elapses. Specify the time interval in seconds, minutes, hours, days, weeks, months, or years.</li></div>
+</ul></div>
+</td>
+</tr>
+</table>
+</div>
+<p class="pAnchor">
+</p>
+
+ <hr />
+
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag());
+   // -->
+  </script>
+
+ </body>
+</html>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd"
+       default-init-method="init"
+       default-destroy-method="shutdown">
+
+    <bean id="AuditRecordSender" class="com.softwareag.pg.pgmen.events.audit.AuditRecordSender"
+          init-method="init" destroy-method="destroy" depends-on="AuditTransactionFormatter">
+        <property name="active" value="true"/>
+        <!-- IS server is responsible for this, so it should already be running unless Unit test. -->
+        <property name="startAdmin" value="false"/>
+    </bean>
+
+    <!-- Custom mediator record type and logger  -->
+    <bean id="AuditTransactionFormatter" class="com.softwareag.pg.pgmen.events.audit.AuditTransactionFormatter"
+          init-method="init" destroy-method="destroy">
+
+        <property name="loggerName" value="Mediator Transaction Logger"/>
+        <!--
+    	     The last portion of URI context is the func alias name defined in IS
+    	     The table name is defined in each record type class.
+    	     The destination name is stored in AuditConfig.xml
+    	     The uri paths must be unique within the audit config. ( Shared component verifies this )
+    	  -->
+        <property name="jdbcUri" value="java:webmethods/jdbc/ISCoreAudit"/>
+        <property name="jdbcDestName" value="mediatorTxnJdbc"/>
+        <!--  no other logger can have this uri or server startup will FAIL (See AuditConfig.xml)  -->
+        <property name="dirUri" value="dir:./logs/Mediator"/>
+        <property name="fileDestName" value="mediatorTxnFile"/>
+        <!--  the decision to use JDBC or File is determined when configuring the IS logger, but we default to JDBC  -->
+        <!--   The name cannot be dynamically changed and must be valid for a JDBC table or filename
+               MED_EVENT_TXN  or MediatorEventTxn.log
+          -->
+        <property name="tableOrFilename" value="MED_EVENT_TXN"/>
+
+    </bean>
+</beans>

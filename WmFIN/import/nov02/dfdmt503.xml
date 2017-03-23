@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<constraints>
+
+<!-- this is for field 119 in the B3 block of the message -->
+<field name="119:" type="PatternType">
+    <pattern>'COMM'|'CRPR'|'CRSP'|'CRTL'|'EXTD'|'FIXI'|'FORX'|'LIQU'|'OTCD'|'PAYM'|'REPO'|'SBSB'|'SCRP'|'SECL'|'SLEB'|'TCRP'</pattern>
+</field>
+
+<!-- Text Block for NOV02 MT503 -->
+
+<field name="22H::TYCO" type="MixedType">
+    <bizName>Type of Collateralisation Indicator</bizName>
+    <pattern>//4!c</pattern>
+    <choice>BLPG</choice>
+    <choice>LOAN</choice>
+    <choice>OTHR</choice>
+    <choice>OUTT</choice>
+    <choice>SPLG</choice>
+</field>
+<field name="23G:" type="Mixed2Type">
+    <bizName>Function of the Message</bizName>
+    <pattern>4!c[/4!c]</pattern>
+    <choice1>CANC</choice1>
+    <choice1>NEWM</choice1>
+    <choice2>CODU</choice2>
+    <choice2>COPY</choice2>
+    <choice2>DUPL</choice2>
+    <error type="choice">T86</error>
+</field>
+</constraints>

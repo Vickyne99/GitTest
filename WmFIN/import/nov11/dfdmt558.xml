@@ -1,0 +1,205 @@
+<?xml version="1.0"?>
+<constraints>
+
+<!-- Text Block for NOV03 MT558 -->
+<field name="22F::AUTA" type="GenericFieldType">
+    <bizName>Automatic Allocation Indicator</bizName>
+    <pattern>/[8c]/4!c</pattern>
+    <choice>AUTO</choice>
+    <choice>MANU</choice>
+</field>
+<field name="22F::FSSA" type="GenericFieldType">
+    <bizName>Failed Settlement Salvation Indicator</bizName>
+    <pattern>/[8c]/4!c</pattern>
+    <choice>FSSN</choice>
+    <choice>FSSY</choice>
+</field>
+<field name="23G:" type="Mixed2Type">
+    <bizName>Function of the Message</bizName>
+    <pattern>4!c[/4!c]</pattern>
+    	<alias pattern="4!c" bizName="Function" />            
+    	<alias pattern="4!c" bizName="Subfunction" />                
+    <choice1>ADVD</choice1>
+    <choice1>CAST</choice1>
+    <choice1>INST</choice1>
+    <choice1>REST</choice1>
+    <choice2>CODU</choice2>
+    <choice2>COPY</choice2>
+    <choice2>DUPL</choice2>
+    <error type="choice">T86</error>
+</field>
+<field name="24B::CAND" type="GenericFieldType">
+    <bizName>Cancellation Reason</bizName>
+    <pattern>/[8c]/4!c</pattern>
+    <choice>CANI</choice>
+    <choice>CANS</choice>
+    <choice>CSUB</choice>
+    <choice>NARR</choice>
+</field>
+<field name="24B::DEND" type="GenericFieldType">
+    <bizName>Denied Reason</bizName>
+    <pattern>/[8c]/4!c</pattern>
+    <choice>CEDE</choice>
+    <choice>DAKV</choice>
+    <choice>ECLR</choice>
+</field>
+<field name="24B::NMAT" type="GenericFieldType">
+    <bizName>Unmatched Reason</bizName>
+    <pattern>/[8c]/4!c</pattern>
+    <choice>CPCA</choice>
+</field>
+<field name="24B::PEND" type="GenericFieldType">
+    <bizName>Pending Reason</bizName>
+    <pattern>/[8c]/4!c</pattern>
+    <choice>FUTU</choice>
+    <choice>PRCY</choice>
+    <choice>PREA</choice>
+    <choice>SFRZ</choice>
+</field>
+<field name="24B::REJT" type="GenericFieldType">
+    <bizName>Rejection Reason</bizName>
+    <pattern>/[8c]/4!c</pattern>
+    <choice>CEDE</choice>
+    <choice>DAKV</choice>
+    <choice>ECLR</choice>
+</field>
+<field name="25D::IPRC" type="GenericFieldType">
+    <bizName>Instruction Processing Status</bizName>
+    <pattern>/[8c]/4!c</pattern>
+    <choice>CAND</choice>
+    <choice>FUTU</choice>
+    <choice>PACK</choice>
+    <choice>CANP</choice>
+    <choice>CPRC</choice>
+    <choice>REJT</choice>
+    <choice>TREA</choice>
+</field>
+<field name="25D::MOVE" type="GenericFieldType">
+    <bizName>Movement Status</bizName>
+    <pattern>/[8c]/4!c</pattern>
+    <choice>LIMB</choice>
+    <choice>CASH</choice>
+    <choice>CURR</choice>
+    <choice>NLEG</choice>
+    <choice>EXCL</choice>
+    <choice>TAXE</choice>
+    <choice>AMTI</choice>
+    <choice>MANU</choice>
+    <choice>WAIT</choice>
+    <choice>FUTU</choice>
+</field>
+<field name="25D::SETT" type="GenericFieldType">
+    <bizName>Settlement Status</bizName>
+    <pattern>/[8c]/4!c</pattern>
+    <alias pattern="8c" bizName="Data Source Scheme" />    
+    <alias pattern="4!c" bizName="Status Code" />        
+    <choice>PAIN</choice>
+    <choice>SETT</choice>
+    <choice>USET</choice>
+</field>
+<field name="98B::TERM" type="GenericFieldType">
+    <bizName>Date/Time B - Closing Date/Time</bizName>
+    <pattern>/[8c]/4!c</pattern>
+    <choice>OPEN</choice>
+</field>
+
+
+<field name="22F::COLA" type="GenericFieldType">
+    <bizName>Exposure Type Indicator</bizName>
+    <pattern>/[8c]/4!c</pattern>
+    <alias pattern="8c" bizName="Data Source Scheme" />    
+    <alias pattern="4!c" bizName="Indicator" />  
+    <choice>BFWD</choice>
+    <choice>CBCO</choice>
+    <choice>CCIR</choice>
+    <choice>COMM</choice>
+    <choice>CRDS</choice>
+    <choice>CRPR</choice>
+    <choice>CRSP</choice>
+    <choice>CRTL</choice>
+    <choice>EQPT</choice>
+    <choice>EQUS</choice>
+    <choice>EXPT</choice>
+    <choice>EXTD</choice>    
+    <choice>FIXI</choice>
+    <choice>FORW</choice>
+    <choice>FORX</choice>
+    <choice>FUTR</choice>
+    <choice>LIQU</choice>
+    <choice>OPTN</choice>
+    <choice>OTCD</choice>
+    <choice>PAYM</choice>
+    <choice>REPO</choice>
+    <choice>RVPO</choice>
+    <choice>SBSB</choice>
+    <choice>SCIE</choice>
+    <choice>SCIR</choice>
+    <choice>SCRP</choice>    
+    <choice>SHSL</choice>    
+    <choice>SLEB</choice>
+    <choice>SLOA</choice>
+    <choice>SWPT</choice>
+    <choice>TBAS</choice>
+    <choice>TCRP</choice>
+</field>
+
+<field name="22H::COLA" type="MixedType">
+    <bizName>Indicator H - Exposure Type Indicator</bizName>
+    <pattern>//4!c</pattern>
+    <alias pattern="4!c" bizName="Indicator" /> 
+    	<choice>BFWD</choice>
+    	<choice>CBCO</choice>
+	    <choice>CCIR</choice>
+	    <choice>COMM</choice>
+	    <choice>CRDS</choice>
+	    <choice>CRPR</choice>
+	    <choice>CRSP</choice>
+	    <choice>CRTL</choice>
+	    <choice>EQPT</choice>
+	    <choice>EQUS</choice>
+	    <choice>EXPT</choice>
+	    <choice>EXTD</choice>    
+	    <choice>FIXI</choice>
+	    <choice>FORW</choice>
+	    <choice>FORX</choice>
+	    <choice>FUTR</choice>
+	    <choice>LIQU</choice>
+	    <choice>OPTN</choice>
+	    <choice>OTCD</choice>
+	    <choice>PAYM</choice>
+	    <choice>REPO</choice>
+	    <choice>RVPO</choice>
+	    <choice>SBSB</choice>
+	    <choice>SCIE</choice>
+	    <choice>SCIR</choice>
+	    <choice>SCRP</choice>    
+	    <choice>SHSL</choice>    
+	    <choice>SLEB</choice>
+	    <choice>SLOA</choice>
+	    <choice>SWPT</choice>
+	    <choice>TBAS</choice>
+    <choice>TCRP</choice>
+</field>
+
+<field name="97B::SAFE" type="PatternType">
+    <bizName>Account B - Safekeeping Account</bizName>
+    <pattern>/[8c]/4!c/35x</pattern>
+    <alias pattern="8c" bizName="Data Source Scheme" />                
+    <alias pattern="4!c" bizName="Account Type Code" />                    
+    <alias pattern="35x" bizName="Account Number" />                           
+</field>
+
+<field name="25D::COLL" type="GenericFieldType">
+    <bizName>Collateral Status</bizName>
+    <pattern>/[8c]/4!c</pattern>
+    <choice>PEND</choice>
+</field>
+
+<field name="24B::CANP" type="GenericFieldType">
+    <bizName>Pending Cancellation Reason</bizName>
+    <pattern>/[8c]/4!c</pattern>
+    <alias pattern="8c" bizName="Data Source Scheme" />    
+    <alias pattern="4!c" bizName="Reason Code" />        
+    <choice>CONF</choice>
+</field>
+</constraints>

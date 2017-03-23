@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<constraints>
+
+<!-- Text Block for NOV02 MT822 -->
+
+<field name="23:" type="PatternType">
+    <bizName>Trust Receipt Reference</bizName>
+    <pattern>16x</pattern>
+</field>
+<field name="30:" type="PatternType">
+    <bizName>Date Received</bizName>
+    <pattern>&lt;DATE2&gt;</pattern>
+</field>
+<field name="32B:" type="PatternType">
+    <bizName>B - Total Face Value of Currency</bizName>
+    <pattern>&lt;CUR&gt;&lt;AMOUNT&gt;15</pattern>
+</field>
+<field name="51A:" type="MixedType">
+    <bizName>A - Selling Agent</bizName>
+    <pattern>[&lt;BICPLUS&gt;][CRLF]&lt;SWIFTBIC&gt;|&lt;NONSWIFTBIC&gt;</pattern>
+    <choice>C</choice>
+    <choice>D</choice>
+</field>
+<field name="51C:" type="PatternType">
+    <bizName>C - Selling Agent</bizName>
+    <pattern>/34x</pattern>
+</field>
+<field name="72:" type="PatternType">
+    <bizName>Sender to Receiver Information</bizName>
+    <pattern>&lt;ERI_F72narrative&gt;</pattern>
+</field>
+
+</constraints>

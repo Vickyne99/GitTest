@@ -1,0 +1,12 @@
+METHOD handle_substeps.
+*- For demonstration purpose, we show how a previously defined business
+*- object event can be triggered from ABAP
+  CALL METHOD raise_local_event(
+    evt_objtype = zbem_bus2032
+    evt_name = zbem_determine_pricing ).
+
+*- For demonstration purpose, we show how to call remote FM
+*- WM_PUSH_EVENT directly from a local receiver FM
+  _evt_name = zbem_check_available.
+  CALL METHOD push_event( ).
+ENDMETHOD.

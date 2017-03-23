@@ -1,0 +1,18 @@
+SAGMessagePartner=[MessagePartner]
+server_pki_profile=[UserName]
+server_pki_password=
+Sign=TRUE
+Decrypt=TRUE
+encryptDN=cn=[encryptCN], o=[bic], o=swift
+SwSecUserDN=cn=[encryptCN], o=[bic], o=swift
+Authorisation=TRUE
+AllFileEvents=TRUE
+FullFileStatus=TRUE
+SwEventEP=File_Status_Event_EP
+ReceptionFolder=C:/tmp/
+SwTransferEP=
+cryptoMode=Automatic
+Transport=MQHA
+MQ_Request_Reply_Client_Service=wm.swiftnet.config.sample.mq.services:getAndRecieveService
+MQ_Put_Server_Service=wm.swiftnet.config.sample.mq.services:serverResponse1
+MQ_Listener_Notification_Document=wm.swiftnet.config.sample.mq.notifications:HandleRequestNotificationPublishDocument

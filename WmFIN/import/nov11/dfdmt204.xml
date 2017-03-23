@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<constraints>
+
+<!-- Text Block for NOV03 MT204 -->
+
+<field name="32B:" type="PatternType">
+    <bizName>B - Transaction Amount</bizName>
+    <pattern>&lt;CUR&gt;&lt;AMOUNT&gt;15</pattern>
+</field>
+<field name="53A:" type="MixedType">
+    <bizName>A - Debit Institution</bizName>
+    <pattern>[&lt;PartyIdentifier&gt;][CRLF]&lt;SWIFTBIC&gt;</pattern>
+</field>
+<field name="53B:" type="MixedType">
+    <bizName>B - Debit Institution</bizName>
+    <pattern>[&lt;PartyIdentifier&gt;][CRLF][35x]</pattern>
+</field>
+<field name="53D:" type="MixedType">
+    <bizName>D - Debit Institution</bizName>
+    <pattern>[&lt;PartyIdentifier&gt;][CRLF]4*35x</pattern>
+</field>
+<field name="57A:" type="MixedType">
+    <bizName>A - Account With Institution</bizName>
+    <pattern>[&lt;PartyIdentifier&gt;][CRLF]&lt;SWIFTBIC&gt;</pattern>
+</field>
+<field name="57D:" type="MixedType">
+    <bizName>D - Account With Institution</bizName>
+    <pattern>[&lt;PartyIdentifier&gt;][CRLF]4*35x</pattern>
+</field>
+<field name="58A:" type="MixedType">
+    <bizName>A - Beneficiary Institution</bizName>
+    <pattern>[&lt;PartyIdentifier&gt;][CRLF]&lt;SWIFTBIC&gt;</pattern>
+</field>
+<field name="58D:" type="MixedType">
+    <bizName>D - Beneficiary Institution</bizName>
+    <pattern>[&lt;PartyIdentifier&gt;][CRLF]4*35x</pattern>
+</field>
+<field name="72:" type="PatternType">
+    <bizName>Sender to Receiver Information</bizName>
+    <pattern>&lt;REJT/RETN/72&gt;|&lt;FLD72&gt;</pattern>
+</field>
+</constraints>

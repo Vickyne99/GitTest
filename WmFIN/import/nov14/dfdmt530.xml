@@ -1,0 +1,116 @@
+<?xml version="1.0"?>
+<constraints>
+
+<field name="23G:" type="Mixed2Type">
+    <bizName>Function of the Message</bizName>
+    <pattern>4!c[/4!c]</pattern>
+    <alias pattern="4!c" bizName="Function" />            
+    <alias pattern="4!c" bizName="Subfunction" />                
+    <choice1>NEWM</choice1>
+    <choice2>CODU</choice2>
+    <choice2>COPY</choice2>
+    <choice2>DUPL</choice2>
+    <error type="choice">T86</error>
+</field>
+
+<field name="22F::BORR" type="GenericFieldType">
+    <bizName>Automatic Borrowing Indicator</bizName>
+    <pattern>/[8c]/4!c</pattern>
+    <alias pattern="8c" bizName="Data Source Scheme" />    
+    <alias pattern="4!c" bizName="Indicator" />            
+    <choice>LAMI</choice>
+    <choice>NBOR</choice>
+    <choice>YBOR</choice>
+    <choice>RTRN</choice>
+</field>
+
+<field name="22F::CONP" type="GenericFieldType">
+    <bizName>Retain Indicator</bizName>
+    <pattern>/[8c]/4!c</pattern>
+    <alias pattern="8c" bizName="Data Source Scheme" />    
+    <alias pattern="4!c" bizName="Indicator" />            
+    <choice>YCON</choice>
+</field>
+
+<field name="22F::LINK" type="GenericFieldType">
+    <bizName>Linkage Type Indicator</bizName>
+    <pattern>/[8c]/4!c</pattern>
+    <alias pattern="4!c" bizName="Indicator" />        
+    <choice>LINK</choice>
+    <choice>UNLK</choice>
+    <choice>SOFT</choice>
+    <choice>AFTE</choice>
+    <choice>BEFO</choice>
+    <choice>WITH</choice>
+</field>
+
+<field name="22F::PROC" type="GenericFieldType">
+    <bizName>Processing Indicator</bizName>
+    <pattern>/[8c]/4!c</pattern>
+    <alias pattern="8c" bizName="Data Source Scheme" />    
+    <alias pattern="4!c" bizName="Indicator" />            
+</field>
+
+<field name="22F::PRTL" type="GenericFieldType">
+    <bizName>Partial Settlement Indicator</bizName>
+    <pattern>/[8c]/4!c</pattern>
+    <alias pattern="8c" bizName="Data Source Scheme" />    
+    <alias pattern="4!c" bizName="Indicator" /> 
+    <choice>NPAR</choice>
+    <choice>PART</choice>
+</field>
+
+
+
+<field name="23G:" type="Mixed2Type">
+    <bizName>Function of the Message</bizName>
+    <pattern>4!c[/4!c]</pattern>
+    	<alias pattern="4!c" bizName="Function" />            
+    	<alias pattern="4!c" bizName="Subfunction" />                
+    <choice1>NEWM</choice1>
+    <choice2>CODU</choice2>
+    <choice2>COPY</choice2>
+    <choice2>DUPL</choice2>
+    <error type="choice">T86</error>
+</field>
+
+<field name="97B::SAFE" type="PatternType">
+    <bizName>Account B - Safekeeping Account</bizName>
+    <pattern>/[8c]/4!c/35x</pattern>
+    <alias pattern="8c" bizName="Data Source Scheme" />                
+    <alias pattern="4!c" bizName="Account Type Code" />                    
+    <alias pattern="35x" bizName="Account Number" />                           
+</field>
+<field name="25D::IPRC" type="GenericFieldType">
+    <bizName>Instruction Processing Status</bizName>
+    <pattern>/[8c]/4!c</pattern>
+    <alias pattern="8c" bizName="Data Source Scheme" />    
+    <alias pattern="4!c" bizName="Status Code" />        
+    <choice>CAND</choice>
+    <choice>PACK</choice>
+    <choice>REJT</choice>
+</field>
+<field name="24B::REJT" type="GenericFieldType">
+    <bizName>Rejection Reason</bizName>
+    <pattern>/[8c]/4!c</pattern>
+    <alias pattern="8c" bizName="Data Source Scheme" />    
+    <alias pattern="4!c" bizName="Reason Code" />        
+    <choice>CASY</choice>
+    <choice>DDAT</choice>
+    <choice>DDEA</choice>
+    <choice>DEPT</choice>
+    <choice>DMON</choice>
+    <choice>DQUA</choice>
+    <choice>DSEC</choice>
+    <choice>DTRD</choice>
+    <choice>ICAG</choice>
+    <choice>ICUS</choice>
+    <choice>IEXE</choice>
+    <choice>NARR</choice>
+    <choice>NCRR</choice>
+    <choice>PLCE</choice>
+    <choice>RTGS</choice>
+    <choice>SAFE</choice>
+    <choice>SETR</choice>
+</field>
+</constraints>

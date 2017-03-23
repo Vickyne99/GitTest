@@ -1,0 +1,18 @@
+METHOD set_corr_object.
+  DATA : bo              TYPE obj_record,
+         bo_id           TYPE swotobjid.
+
+*- Get event object
+  swc0_get_element _evt_container zbem_evt_object bo.
+
+*- Retrieve document flow information
+  CALL METHOD get_previous_object
+    CHANGING
+      bo = bo.
+
+*- Add correlation object to container
+  IF NOT bo IS INITIAL.
+    swc0_object_to_persistent bo bo_id.
+    swc0_set_element _evt_container zbem_corr_object bo_id.
+  ENDIF.
+ENDMETHOD.

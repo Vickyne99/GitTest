@@ -1,0 +1,1040 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="GENERATOR" content="Quadralay WebWorks Publisher Professional Edition 7.0" />
+  <meta name="TEMPLATEBASE" content="wM_WWH20030908" />
+  <meta name="LASTUPDATED" content="07/27/06 06:26:21" />
+  <title>Request/Reply Service Template Screens</title>
+  <link rel="StyleSheet" href="document.css" type="text/css" />
+  <link rel="StyleSheet" href="catalog.css" type="text/css" />
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+ </head>
+
+ <body onLoad="WWHUpdate();">
+
+
+<a name="wp1109147"> </a><h2 class="pNewHTMLPage">
+Request/Reply Service Template Screens
+</h2><a name="wp1109148"> </a><p class="pBody">
+The Request/Reply service enables you to define and execute Request/Reply services that deliver a message to a specified queue, and retrieve a corresponding response message:
+</p>
+<a name="wp1115794"> </a><p class="pBody">
+This service template includes the following tabs:
+</p>
+<a name="wp1115798"> </a><p class="pChapterTOC">
+<img src="images/bullet.gif" height="13" width="10" border="0" />
+<a  href="ScreenLevelHelp18.html#wp1115801">Request/Reply Service Tab</a>
+</p>
+<a name="wp1115806"> </a><p class="pChapterTOC">
+<img src="images/bullet.gif" height="13" width="10" border="0" />
+<a  href="ScreenLevelHelp18.html#wp1110512">MQMD Header Tab</a>
+</p>
+<a name="wp1115807"> </a><p class="pChapterTOC">
+<img src="images/bullet.gif" height="13" width="10" border="0" />
+<a  href="ScreenLevelHelp18.html#wp1115781">JMS Properties Tab</a>
+</p>
+<a name="wp1115801"> </a><h4 class="pHeading3">
+Request/Reply Service Tab       
+</h4>
+<a name="wp1115819"> </a><p class="pBody">
+Use the <b class="cBold">Request/Reply Service</b> tab to identify message processing features to use with this adapter service. Specify values for the following fields:
+</p>
+<a name="wp1115831"> </a><p class="pAnchor">
+</p><div align="left">
+<table border="0">
+  <caption></caption>
+  <tr align="left" valign="bottom">    <th><a name="wp1115837"> </a><div style="text-align: left" class="pCellHeading">
+Field
+<hr />
+</div>
+</th>
+    <th><a name="wp1115839"> </a><div style="text-align: left" class="pCellHeading">
+Description/Action
+<hr />
+</div>
+</th>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1121120"> </a><p class="pBody">
+<b class="cBold">Wait Interval</b> (msec)
+</p>
+</td>
+    <td><a name="wp1121122"> </a><p class="pBody">
+Time period that the service waits for a reply message to appear on the queue. Enter this value in milliseconds.
+</p>
+<a name="wp1128505"> </a><p class="pBody">
+Default: <b class="cBold">60000</b>
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1121124"> </a><p class="pBody">
+<b class="cBold">Dead Letter Queue Name</b>
+</p>
+</td>
+    <td><a name="wp1123314"> </a><p class="pBody">
+The name of the queue that will contain any messages that could not reach their destination.
+</p>
+<a name="wp1121129"> </a><p class="pBody">
+If you do not specify a value for this field, then the WebSphere MQ Adapter sends the message to the System Dead Letter Queue for that Queue Manager.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1121132"> </a><p class="pBody">
+<b class="cBold">Dead Letter Queue Manager Name</b>
+</p>
+</td>
+    <td><a name="wp1121134"> </a><p class="pBody">
+The name of the queue manager for the dead letter queue.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1125726"> </a><p class="pBody">
+<b class="cBold">Headers to include in Dead Letter Message</b>
+</p>
+</td>
+    <td><a name="wp1130778"> </a><p class="pBody">
+Select, which headers to include in the message sent to the dead letter queue:
+</p>
+<div class="pSmartList1" style="margin-top: 7pt"><ul class="pSmartList1" style="margin-top: 7pt">
+<a name="wp1130779"> </a><div style="margin-top: 7pt" class="pSmartList1"><li><b class="cBold">None</b>: Use when you do not want to include any headers along with the original payload in the message sent to the dead letter queue.</li></div>
+<a name="wp1130780"> </a><div style="margin-top: 7pt" class="pSmartList1"><li><b class="cBold">DLH</b>: Use when you want to include only the DLH header along with the original payload in the message sent to the dead letter queue.</li></div>
+<a name="wp1130781"> </a><div style="margin-top: 7pt" class="pSmartList1"><li><b class="cBold">MQMD</b>: Use when you want to include only the MQMD header along with the original payload in the message sent to the dead letter queue.</li></div>
+<a name="wp1130782"> </a><div style="margin-top: 7pt" class="pSmartList1"><li><b class="cBold">DLH_&amp;_MQMD</b>: Use when you want to include both DLH and MQMD headers along with the original payload in the message sent to the dead letter queue.</li></div>
+</ul></div>
+<a name="wp1130783"> </a><p class="pBody">
+Default: <b class="cBold">DLH_&amp;_MQMD</b>
+</p>
+<a name="wp1130784"> </a><p class="pNote">
+<b>Note:</b> If you are using a Request/Reply service configured using WebSphere MQ Adapter 6.0, the service refers to the watt property watt.WmMQAdapter.deadLetterMessageHeaders. If this watt property is not set, then the WebSphere MQ Adapter sets <b class="cBold">Headers to include in Dead Letter Message</b> parameter to a default value <b class="cBold">DLH_&amp;_MQMD</b>.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1121136"> </a><p class="pBody">
+<b class="cBold">Backout Threshold</b>
+</p>
+</td>
+    <td><a name="wp1121138"> </a><p class="pBody">
+The number of times the service will attempt to send the Request message or receive the Reply message before it is sent to the Dead Letter Queue. For example, specify 2 to attempt to send the message twice.
+</p>
+<a name="wp1128527"> </a><p class="pBody">
+Default: <b class="cBold">1</b>.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1121140"> </a><p class="pBody">
+<b class="cBold">Open Queue in Shared Mode?</b>
+</p>
+</td>
+    <td><a name="wp1121142"> </a><p class="pBody">
+Select how the queue should be opened:
+</p>
+<div class="pSmartList1" style="margin-top: 7pt"><ul class="pSmartList1" style="margin-top: 7pt">
+<a name="wp1121143"> </a><div style="margin-top: 7pt" class="pSmartList1"><li><b class="cBold">Checked:</b> Use in shared mode to allow simultaneous access to the queue by other applications.</li></div>
+<a name="wp1121144"> </a><div style="margin-top: 7pt" class="pSmartList1"><li><b class="cBold">Unchecked:</b> Use in exclusive mode to prevent simultaneous access to the queue by other applications.</li></div>
+</ul></div>
+<a name="wp1128532"> </a><p class="pBody">
+Default: <b class="cBold">Checked</b>
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1125770"> </a><p class="pBody">
+<b class="cBold">Convert Application Data?</b>
+</p>
+</td>
+    <td><a name="wp1130865"> </a><p class="pBody">
+Select whether the service converts the message to the local character set and encoding:
+</p>
+<div class="pSmartList1" style="margin-top: 7pt"><ul class="pSmartList1" style="margin-top: 7pt">
+<a name="wp1130866"> </a><div style="margin-top: 7pt" class="pSmartList1"><li><b class="cBold">Checked</b>: The messages read using this service will be converted to the local character set and encoding.</li></div>
+<a name="wp1130867"> </a><div style="margin-top: 7pt" class="pSmartList1"><li><b class="cBold">Unchecked</b>: The messages read using this service will not be converted to the local character set and encoding.</li></div>
+</ul></div>
+<a name="wp1130868"> </a><p class="pNote">
+<b>Note:</b> If the property is checked and the message format does not match the local character set and encoding, a warning message appears.
+</p>
+<a name="wp1130869"> </a><p class="pBody">
+Default: <b class="cBold">Checked</b>
+</p>
+<a name="wp1130870"> </a><p class="pNote">
+<b>Note:</b> If you are using a Request/Reply service configured using WebSphere MQ Adapter 6.0, the default value is <b class="cBold">Checked</b>.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1121146"> </a><p class="pBody">
+<b class="cBold">Throw Exception on Failure?</b>
+</p>
+</td>
+    <td><a name="wp1121148"> </a><p class="pBody">
+Select whether the service should throw an exception on failure:
+</p>
+<div class="pSmartList1" style="margin-top: 7pt"><ul class="pSmartList1" style="margin-top: 7pt">
+<a name="wp1121149"> </a><div style="margin-top: 7pt" class="pSmartList1"><li><b class="cBold">Checked: </b>Throws an exception when the adapter service returns error codes.</li></div>
+<a name="wp1121150"> </a><div style="margin-top: 7pt" class="pSmartList1"><li><b class="cBold">Unchecked: </b>Returns any error codes or error messages to the service’s output signature.</li></div>
+</ul></div>
+<a name="wp1128578"> </a><p class="pBody">
+Default: <b class="cBold">Checked</b>
+</p>
+</td>
+</tr>
+</table>
+</div>
+<p class="pAnchor">
+</p>
+<a name="wp1110509"> </a><p class="pAnchor">
+
+</p>
+<a name="wp1110512"> </a><h4 class="pHeading3">
+MQMD Header Tab      
+</h4>
+<a name="wp1122989"> </a><p class="pBody">
+Use the<b class="cBold"> MQMD Header</b> tab to specify the msgHeader property fields and constant values for this service. 
+</p>
+<a name="wp1122990"> </a><p class="pBody">
+Use the following icons to manage the rows in the <b class="cBold">MQMD Header</b> tab:
+</p>
+<div class="pSmartList1" style="margin-top: 7pt"><ul class="pSmartList1" style="margin-top: 7pt">
+<a name="wp1122997"> </a><div style="margin-top: 7pt" class="pSmartList1"><li>Select the Insert Row icon <img src="images/table_insertrow.gif" border="0" hspace="0" vspace="0"/> (or the Fill in all rows to the table icon <img src="images/append_all_rows.gif" border="0" hspace="0" vspace="0"/>) to define new input or output field names. </li></div>
+<a name="wp1123004"> </a><div style="margin-top: 7pt" class="pSmartList1"><li>If necessary, use the Shift Up <img src="images/btn_shift_up.gif" border="0" hspace="0" vspace="0"/> or Shift Down <img src="images/btn_shift_down.gif" border="0" hspace="0" vspace="0"/> icons to change the order of the input or output fields to ensure the parameters are parsed in the correct order.</li></div>
+<a name="wp1123008"> </a><div style="margin-top: 7pt" class="pSmartList1"><li>Use the Remove row icon <img src="images/remove_row.gif" border="0" hspace="0" vspace="0"/> to delete input field names or output field names.</li></div>
+</ul></div>
+<a name="wp1123009"> </a><p class="pBody">
+The msgHeader property fields that you select from the <b class="cBold">Input Field Name</b> column appear on the <b class="cBold">Input/Output</b> tab in the <b class="cBold">Input</b> signature for this adapter service. The msgHeader property fields that you select from the <b class="cBold">Output Field Name</b> column appear on the <b class="cBold">Input/Output</b> tab in the <b class="cBold">Output</b> signature for this adapter service.
+</p>
+<a name="wp1123010"> </a><p class="pBody">
+You can add the following msgHeader property fields to the <b class="cBold">Input Field Name</b> column and the <b class="cBold">Output Field Name</b> column. In the <b class="cBold">Constant Value</b> column, specify values for the default property fields. Also, you can override the property fields at run time, using the Pipeline Editor.
+</p>
+<a name="wp1119307"> </a><p class="pAnchor">
+</p><div align="left">
+<table border="0">
+  <caption></caption>
+  <tr align="left" valign="bottom">    <th><a name="wp1115954"> </a><div style="text-align: left" class="pCellHeading">
+msgHeader Property
+<hr />
+</div>
+</th>
+    <th><a name="wp1115956"> </a><div style="text-align: left" class="pCellHeading">
+Data Type
+<hr />
+</div>
+</th>
+    <th><a name="wp1115958"> </a><div style="text-align: left" class="pCellHeading">
+Maximum Field Length <br />for Constant Value
+<hr />
+</div>
+</th>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1121152"> </a><p class="pBody">
+<b class="cBold">AccountingToken*</b>
+</p>
+</td>
+    <td><a name="wp1121154"> </a><p class="pBody">
+String
+</p>
+</td>
+    <td><a name="wp1121156"> </a><p class="pBody">
+32 alphanumeric single-byte characters
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1121158"> </a><p class="pBody">
+<b class="cBold">AccountingTokenByteArray*</b>
+</p>
+</td>
+    <td><a name="wp1121160"> </a><p class="pBody">
+Byte Array
+</p>
+</td>
+    <td><a name="wp1121162"> </a><p class="pBody">
+32 bytes
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1121164"> </a><p class="pBody">
+<b class="cBold">ApplIdentityData</b>
+</p>
+</td>
+    <td><a name="wp1121166"> </a><p class="pBody">
+String
+</p>
+</td>
+    <td><a name="wp1121168"> </a><p class="pBody">
+32 alphanumeric single-byte characters
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1121170"> </a><p class="pBody">
+<b class="cBold">ApplOriginData</b>
+</p>
+</td>
+    <td><a name="wp1121172"> </a><p class="pBody">
+String
+</p>
+</td>
+    <td><a name="wp1121174"> </a><p class="pBody">
+4 alphanumeric single-byte characters
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1121176"> </a><p class="pBody">
+<b class="cBold">BackoutCount</b>
+</p>
+</td>
+    <td><a name="wp1121178"> </a><p class="pBody">
+String
+</p>
+</td>
+    <td><a name="wp1121180"> </a><p class="pBody">
+4 digits
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1121182"> </a><p class="pBody">
+<b class="cBold">CodedCharSetId</b>
+</p>
+</td>
+    <td><a name="wp1121184"> </a><p class="pBody">
+String
+</p>
+</td>
+    <td><a name="wp1121186"> </a><p class="pBody">
+4 digits
+</p>
+<a name="wp1121187"> </a><p class="pNote">
+<b>Note:</b> If this field is left blank, then the WebSphere MQ Adapter enters a default value of <b class="cBold">MQCCSI_Q_MGR</b>.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1121192"> </a><p class="pBody">
+<b class="cBold">CorrelId*</b>
+</p>
+</td>
+    <td><a name="wp1121194"> </a><p class="pBody">
+String
+</p>
+</td>
+    <td><a name="wp1121196"> </a><p class="pBody">
+24 alphanumeric single-byte characters
+</p>
+<a name="wp1121197"> </a><p class="pNote">
+<b>Note:</b> The MsgId value in the Request message maps to the CorrelationID in the Reply message.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1121199"> </a><p class="pBody">
+<b class="cBold">CorrelationIdByteArray*</b>
+</p>
+</td>
+    <td><a name="wp1121201"> </a><p class="pBody">
+Byte Array
+</p>
+</td>
+    <td><a name="wp1121203"> </a><p class="pBody">
+24 bytes
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1121205"> </a><p class="pBody">
+<b class="cBold">Encoding</b>
+</p>
+</td>
+    <td><a name="wp1121207"> </a><p class="pBody">
+String
+</p>
+</td>
+    <td><a name="wp1121209"> </a><p class="pBody">
+4 digits
+</p>
+<a name="wp1121210"> </a><p class="pNote">
+<b>Note:</b> If this field is left blank, then the WebSphere MQ Adapter enters a default value <br />of <b class="cBold">00273 - Native</b>.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1121215"> </a><p class="pBody">
+<b class="cBold">Expiry</b>
+</p>
+</td>
+    <td><a name="wp1121217"> </a><p class="pBody">
+String
+</p>
+</td>
+    <td><a name="wp1121219"> </a><p class="pBody">
+4 digits
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1121221"> </a><p class="pBody">
+<b class="cBold">Feedback</b>
+</p>
+</td>
+    <td><a name="wp1121223"> </a><p class="pBody">
+String
+</p>
+</td>
+    <td><a name="wp1121225"> </a><p class="pBody">
+4 digits
+</p>
+<a name="wp1121226"> </a><p class="pNote">
+<b>Note:</b> If this field is left blank, then the WebSphere MQ Adapter enters a default value of <b class="cBold">MQFB_NONE.</b>
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1121231"> </a><p class="pBody">
+<b class="cBold">Format</b>
+</p>
+</td>
+    <td><a name="wp1121233"> </a><p class="pBody">
+String
+</p>
+</td>
+    <td><a name="wp1121235"> </a><p class="pBody">
+8 alphanumeric single-byte characters
+</p>
+<a name="wp1121236"> </a><p class="pNote">
+<b>Note:</b> If this field is left blank, then the WebSphere MQ Adapter enters a default value of (<b class="cBold">NONE)</b>.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1121241"> </a><p class="pBody">
+<b class="cBold">GroupId*</b>
+</p>
+</td>
+    <td><a name="wp1121243"> </a><p class="pBody">
+String
+</p>
+</td>
+    <td><a name="wp1121245"> </a><p class="pBody">
+24 alphanumeric single-byte characters
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1121247"> </a><p class="pBody">
+<b class="cBold">GroupIdByteArray*</b>
+</p>
+</td>
+    <td><a name="wp1121249"> </a><p class="pBody">
+Byte Array
+</p>
+</td>
+    <td><a name="wp1121251"> </a><p class="pBody">
+24 bytes
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1121253"> </a><p class="pBody">
+<b class="cBold">MsgFlags</b>
+</p>
+</td>
+    <td><a name="wp1121255"> </a><p class="pBody">
+String
+</p>
+</td>
+    <td><a name="wp1121257"> </a><p class="pBody">
+4 digits
+</p>
+<a name="wp1121258"> </a><p class="pNote">
+<b>Note:</b> If this field is left blank, then the WebSphere MQ Adapter enters a default value of <b class="cBold">NONE</b>.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1121263"> </a><p class="pBody">
+<b class="cBold">MsgId*</b>
+</p>
+</td>
+    <td><a name="wp1121265"> </a><p class="pBody">
+String
+</p>
+</td>
+    <td><a name="wp1121267"> </a><p class="pBody">
+24 alphanumeric single-byte characters
+</p>
+<a name="wp1121268"> </a><p class="pNote">
+<b>Note:</b> The MsgId value in the Request message maps to the CorrelationID in the Reply message.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1121270"> </a><p class="pBody">
+<b class="cBold">MsgIdByteArray*</b>
+</p>
+</td>
+    <td><a name="wp1121272"> </a><p class="pBody">
+Byte Array
+</p>
+</td>
+    <td><a name="wp1121274"> </a><p class="pBody">
+24 bytes
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1121276"> </a><p class="pBody">
+<b class="cBold">MsgType</b>
+</p>
+</td>
+    <td><a name="wp1121278"> </a><p class="pBody">
+String
+</p>
+</td>
+    <td><a name="wp1121280"> </a><p class="pBody">
+4 digits
+</p>
+<a name="wp1121281"> </a><p class="pNote">
+<b>Note:</b> If this field is left blank, then the WebSphere MQ Adapter enters a default value of <b class="cBold">Datagram</b>.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1121286"> </a><p class="pBody">
+<b class="cBold">MsgSeqNumber</b>
+</p>
+</td>
+    <td><a name="wp1121288"> </a><p class="pBody">
+String
+</p>
+</td>
+    <td><a name="wp1121290"> </a><p class="pBody">
+4 digits
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1121292"> </a><p class="pBody">
+<b class="cBold">Offset</b>
+</p>
+</td>
+    <td><a name="wp1121294"> </a><p class="pBody">
+String
+</p>
+</td>
+    <td><a name="wp1121296"> </a><p class="pBody">
+4 digits
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1121298"> </a><p class="pBody">
+<b class="cBold">OriginalLength</b>
+</p>
+</td>
+    <td><a name="wp1121300"> </a><p class="pBody">
+String
+</p>
+</td>
+    <td><a name="wp1121302"> </a><p class="pBody">
+4 digits
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1121304"> </a><p class="pBody">
+<b class="cBold">Persistence</b>
+</p>
+</td>
+    <td><a name="wp1121306"> </a><p class="pBody">
+String
+</p>
+</td>
+    <td><a name="wp1121308"> </a><p class="pBody">
+4 digits
+</p>
+<a name="wp1121309"> </a><p class="pNote">
+<b>Note:</b> If this field is left blank, then the WebSphere MQ Adapter enters a default value of <b class="cBold">Not Persistent</b>.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1121314"> </a><p class="pBody">
+<b class="cBold">Priority</b>
+</p>
+</td>
+    <td><a name="wp1121316"> </a><p class="pBody">
+String
+</p>
+</td>
+    <td><a name="wp1121318"> </a><p class="pBody">
+4 digits
+</p>
+<a name="wp1121319"> </a><p class="pNote">
+<b>Note:</b> If this field is left blank, then the WebSphere MQ Adapter enters a default value based on the default priority of the queue.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1121324"> </a><p class="pBody">
+<b class="cBold">PutApplName</b>
+</p>
+</td>
+    <td><a name="wp1121326"> </a><p class="pBody">
+String
+</p>
+</td>
+    <td><a name="wp1121328"> </a><p class="pBody">
+24 alphanumeric single-byte characters
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1121330"> </a><p class="pBody">
+<b class="cBold">PutApplType</b>
+</p>
+</td>
+    <td><a name="wp1121332"> </a><p class="pBody">
+String
+</p>
+</td>
+    <td><a name="wp1121334"> </a><p class="pBody">
+4 digits
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1121336"> </a><p class="pBody">
+<b class="cBold">PutDate</b>
+</p>
+</td>
+    <td><a name="wp1121338"> </a><p class="pBody">
+String
+</p>
+</td>
+    <td><a name="wp1121340"> </a><p class="pBody">
+8 digits
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1121342"> </a><p class="pBody">
+<b class="cBold">PutTime</b>
+</p>
+</td>
+    <td><a name="wp1121344"> </a><p class="pBody">
+String
+</p>
+</td>
+    <td><a name="wp1121346"> </a><p class="pBody">
+8 digits
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1121348"> </a><p class="pBody">
+<b class="cBold">ReplytoQueueMgr</b>
+</p>
+</td>
+    <td><a name="wp1121350"> </a><p class="pBody">
+String
+</p>
+</td>
+    <td><a name="wp1121352"> </a><p class="pBody">
+48 alphanumeric single-byte characters
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1121354"> </a><p class="pBody">
+<b class="cBold">ReplyToQ</b>
+</p>
+</td>
+    <td><a name="wp1121356"> </a><p class="pBody">
+String
+</p>
+</td>
+    <td><a name="wp1121358"> </a><p class="pBody">
+48 alphanumeric single-byte characters
+</p>
+<a name="wp1121359"> </a><p class="pImportant">
+<b>Important!</b> ReplyToQ is a required field. 
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1121361"> </a><p class="pBody">
+<b class="cBold">Report</b>
+</p>
+</td>
+    <td><a name="wp1121363"> </a><p class="pBody">
+String
+</p>
+</td>
+    <td><a name="wp1121365"> </a><p class="pBody">
+4 digits
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1121367"> </a><p class="pBody">
+<b class="cBold">UserIdentifier</b>
+</p>
+</td>
+    <td><a name="wp1121369"> </a><p class="pBody">
+String
+</p>
+</td>
+    <td><a name="wp1121371"> </a><p class="pBody">
+12 alphanumeric single-byte characters
+</p>
+</td>
+</tr>
+</table>
+</div>
+<p class="pAnchor">
+</p>
+<a name="wp1119310"> </a><p class="pAnchor">
+</p><div align="left">
+<table border="0">
+  <caption></caption>
+  <tr align="left" valign="top">    <td><a name="wp1121374"> </a><p class="px_Note">
+&#160;
+<img src="images/note_icon.gif" height="25" width="25" border="1" alt="Note" />
+</p>
+</td>
+    <td><a name="wp1121376"> </a><p class="pNote">
+<b>Note:</b> An asterisk * indicates that you can enter these properties either as a string or as a byte array. For example, <b class="cBold">AccountingToken</b> and <b class="cBold">AccountingTokenByteArray</b> refer to the same msgHeader property. If you specify values for both properties, then the byte array value will be used.
+</p>
+</td>
+</tr>
+</table>
+</div>
+<p class="pAnchor">
+</p>
+<a name="wp1123707"> </a><p class="pBody">
+The following are considerations for the <b class="cBold">ReplyToQueueManager</b> and <b class="cBold">ReplyToQueue</b> required fields:
+</p>
+<a name="wp1123713"> </a><p class="pAnchor">
+</p><div align="left">
+<table border="0">
+  <caption></caption>
+  <tr align="left" valign="bottom">    <th><a name="wp1123763"> </a><div style="text-align: left" class="pCellHeading">
+If...
+<hr />
+</div>
+</th>
+    <th><a name="wp1123765"> </a><div style="text-align: left" class="pCellHeading">
+...Then
+<hr />
+</div>
+</th>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1123883"> </a><p class="pBody">
+You utilize the overrideReplyToConnection feature to override the ReplyToQ or ReplyToQueueMgr properties.
+</p>
+</td>
+    <td><a name="wp1123885"> </a><p class="pBody">
+...the values in the overrideReplyToConnection will override these properties before any validation is done. That is, the values for queueName and queueManagerName will be used instead of ReplyToQ and ReplyToQueueMgr. The adapter throws an exception if the ReplyToQ property field in the msgHeader and the queueName in the overrideReplyToConnection are both left blank.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1123887"> </a><p class="pBody">
+You specify only the ReplyToQ field and if you leave the ReplyToQueueMgr field blank.
+</p>
+</td>
+    <td><a name="wp1123892"> </a><p class="pBody">
+...the WebSphere MQ Adapter uses the same Queue Manager that you specified when you configured the connection and uses the value that you specify for ReplyToQ.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1123894"> </a><p class="pBody">
+You specify only the ReplyToQueueMgr value and not the ReplyToQ value
+</p>
+</td>
+    <td><a name="wp1123899"> </a><p class="pBody">
+...the WebSphere MQ Adapter throws an error.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1123901"> </a><p class="pBody">
+You do not specify values for both the ReplyToQueueMgr and the ReplytoQ
+</p>
+</td>
+    <td><a name="wp1123906"> </a><p class="pBody">
+...the WebSphere MQ Adapter throws an exception.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1123908"> </a><p class="pBody">
+You specify values for both the ReplyToQueueMgr and the ReplytoQ 
+</p>
+</td>
+    <td><a name="wp1123913"> </a><p class="pBody">
+...the WebSphere MQ Adapter makes a connection to the ReplyToQ and to the ReplyToQueueMgr that you specified.
+</p>
+</td>
+</tr>
+</table>
+</div>
+<p class="pAnchor">
+</p>
+<a name="wp1115781"> </a><h4 class="pHeading3">
+JMS Properties Tab
+</h4>
+<a name="wp1116204"> </a><p class="pBody">
+Use the <b class="cBold">JMS Properties </b>tab to identify the optional JMS property fields for the adapter service. The JMS property fields appear on the <b class="cBold">Input/Output</b> tab in the <b class="cBold">Output</b> signature document for this adapter service.
+</p>
+<a name="wp1116205"> </a><p class="pBody">
+Use the following icons to manage the rows on the <b class="cBold">JMS Properties </b>tab:
+</p>
+<div class="pSmartList1" style="margin-top: 7pt"><ul class="pSmartList1" style="margin-top: 7pt">
+<a name="wp1116212"> </a><div style="margin-top: 7pt" class="pSmartList1"><li>Select the Insert Row icon <img src="images/table_insertrow.gif" border="0" hspace="0" vspace="0"/> (or the Fill in all rows to the table icon <img src="images/append_all_rows.gif" border="0" hspace="0" vspace="0"/>) to define new JMS property fields. </li></div>
+<a name="wp1116219"> </a><div style="margin-top: 7pt" class="pSmartList1"><li>If necessary, use the Shift Up <img src="images/btn_shift_up.gif" border="0" hspace="0" vspace="0"/> or Shift Down <img src="images/btn_shift_down.gif" border="0" hspace="0" vspace="0"/> icons to change the order of JMS property fields to ensure the parameters are parsed in the correct order.</li></div>
+<a name="wp1116223"> </a><div style="margin-top: 7pt" class="pSmartList1"><li>Use the Remove row icon <img src="images/remove_row.gif" border="0" hspace="0" vspace="0"/> to delete any JMS property fields.</li></div>
+</ul></div>
+<a name="wp1116224"> </a><p class="pBody">
+You can add the following optional JMS property fields:
+</p>
+<a name="wp1125979"> </a><p class="pAnchor">
+</p><div align="left">
+<table border="0">
+  <caption></caption>
+  <tr align="left" valign="bottom">    <th><a name="wp1125908"> </a><div style="text-align: left" class="pCellHeading">
+JMS Property
+<hr />
+</div>
+</th>
+    <th><a name="wp1125910"> </a><div style="text-align: left" class="pCellHeading">
+Data Type
+<hr />
+</div>
+</th>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1125912"> </a><p class="pBody">
+<b class="cBold">JMSDestination</b>
+</p>
+</td>
+    <td><a name="wp1125914"> </a><p class="pBody">
+String
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1125916"> </a><p class="pBody">
+<b class="cBold">JMSExpiration</b>
+</p>
+</td>
+    <td><a name="wp1125918"> </a><p class="pBody">
+String
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1125920"> </a><p class="pBody">
+<b class="cBold">JMSPriority</b>
+</p>
+</td>
+    <td><a name="wp1125922"> </a><p class="pBody">
+String
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1125924"> </a><p class="pBody">
+<b class="cBold">JMSDeliveryMode</b>
+</p>
+</td>
+    <td><a name="wp1125926"> </a><p class="pBody">
+String
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1125928"> </a><p class="pBody">
+<b class="cBold">JMSCorrelationID</b>
+</p>
+</td>
+    <td><a name="wp1125930"> </a><p class="pBody">
+String
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1125932"> </a><p class="pBody">
+<b class="cBold">JMSCorrelationIDByteArray</b>
+</p>
+</td>
+    <td><a name="wp1125934"> </a><p class="pBody">
+Byte Array
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1125936"> </a><p class="pBody">
+<b class="cBold">JMSReplyTo</b>
+</p>
+</td>
+    <td><a name="wp1125938"> </a><p class="pBody">
+String
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1125940"> </a><p class="pBody">
+<b class="cBold">JMSType</b>
+</p>
+</td>
+    <td><a name="wp1125942"> </a><p class="pBody">
+String
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1125944"> </a><p class="pBody">
+<b class="cBold">JMSMessageID</b>
+</p>
+</td>
+    <td><a name="wp1125946"> </a><p class="pBody">
+String
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1125948"> </a><p class="pBody">
+<b class="cBold">JMSTimestamp</b>
+</p>
+</td>
+    <td><a name="wp1125950"> </a><p class="pBody">
+String
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1125952"> </a><p class="pBody">
+<b class="cBold">JMSRedelivered</b>
+</p>
+</td>
+    <td><a name="wp1125954"> </a><p class="pBody">
+String
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1125956"> </a><p class="pBody">
+<b class="cBold">JMSXGroupID</b>
+</p>
+</td>
+    <td><a name="wp1125958"> </a><p class="pBody">
+String
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1125960"> </a><p class="pBody">
+<b class="cBold">JMSXGroupIdByteArray</b>
+</p>
+</td>
+    <td><a name="wp1125962"> </a><p class="pBody">
+Byte Array
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1125964"> </a><p class="pBody">
+<b class="cBold">JMSXGroupSeq</b>
+</p>
+</td>
+    <td><a name="wp1125966"> </a><p class="pBody">
+String
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1125968"> </a><p class="pBody">
+<b class="cBold">JMSXUserID</b>
+</p>
+</td>
+    <td><a name="wp1125970"> </a><p class="pBody">
+String
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1125972"> </a><p class="pBody">
+<b class="cBold">JMSXAppID</b>
+</p>
+</td>
+    <td><a name="wp1125974"> </a><p class="pBody">
+String
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1125976"> </a><p class="pBody">
+<b class="cBold">JMSXDeliveryCount</b>
+</p>
+</td>
+    <td><a name="wp1125978"> </a><p class="pBody">
+String
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1128602"> </a><p class="pBody">
+<b class="cBold">MCDMessageDomain</b>
+</p>
+</td>
+    <td><a name="wp1128604"> </a><p class="pBody">
+String
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1128598"> </a><p class="pBody">
+<b class="cBold">MCDMessageSet</b>
+</p>
+</td>
+    <td><a name="wp1128600"> </a><p class="pBody">
+String
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1128594"> </a><p class="pBody">
+<b class="cBold">MCDMessageFormat</b>
+</p>
+</td>
+    <td><a name="wp1128596"> </a><p class="pBody">
+String
+</p>
+</td>
+</tr>
+</table>
+</div>
+<p class="pAnchor">
+</p>
+<a name="wp1125980"> </a><p class="pAnchor">
+</p><div align="left">
+<table border="0">
+  <caption></caption>
+  <tr align="left" valign="top">    <td><a name="wp1125998"> </a><p class="px_Note">
+&#160;
+<img src="images/note_icon.gif" height="25" width="25" border="1" alt="Note" />
+</p>
+</td>
+    <td><a name="wp1126007"> </a><p class="pNote">
+<b>Note:</b> An “X“ in the JMS property name indicates that the property is provider specific. The remaining JMS properties are generic, delivered by any JMS provider.
+</p>
+</td>
+</tr>
+</table>
+</div>
+<p class="pAnchor">
+</p>
+<a name="wp1125981"> </a><p class="pBody">
+You can also add your own folders and properties to the JMS Properties.
+</p>
+<a name="wp1125780"> </a><p class="pBody">
+Use the following icons to manage the rows for <b class="cBold">User-Defined Properties</b> on the <b class="cBold">JMS Properties</b> tab:
+</p>
+<div class="pSmartList1" style="margin-top: 7pt"><ul class="pSmartList1" style="margin-top: 7pt">
+<a name="wp1125784"> </a><div style="margin-top: 7pt" class="pSmartList1"><li>To define new folders and properties, select the Insert Row icon <img src="images/table_insertrowa.gif" border="0" hspace="0" vspace="0"/>.</li></div>
+<a name="wp1125785"> </a><div style="margin-top: 7pt" class="pSmartList1"><li>Enter the new folder and property. For example, enter “jms.usr.usr1”. The “jms” and “usr” are the names of the folders and “usr1” is the name of the property.</li></div>
+</ul></div>
+<a name="wp1125786"> </a><p class="pBody">
+All the folders and properties you add will be under JMSProperties as part of the output signature of the adapter service.</p><div align="left">
+<table border="0">
+  <caption></caption>
+  <tr align="left" valign="top">    <td><a name="wp1126383"> </a><p class="px_Note">
+&#160;
+<img src="images/note_icon.gif" height="25" width="25" border="1" alt="Note" />
+</p>
+</td>
+    <td><a name="wp1126391"> </a><p class="pNote">
+<b>Note:</b> The property name has to be prefixed with a folder name. You cannot use “JMSProperties” and “mcd” as the first folder name.
+</p>
+</td>
+</tr>
+</table>
+</div>
+<p class="pBody">
+</p>
+<div class="pSmartList1" style="margin-top: 7pt"><ul class="pSmartList1" style="margin-top: 7pt">
+<a name="wp1125792"> </a><div style="margin-top: 7pt" class="pSmartList1"><li>To change the order of User-Defined property fields to ensure the parameters are parsed in the correct order, use the Shift Up <img src="images/btn_shift_upa.gif" border="0" hspace="0" vspace="0"/> or Shift Down <img src="images/btn_shift_downa.gif" border="0" hspace="0" vspace="0"/> icons.</li></div>
+<a name="wp1125802"> </a><div style="margin-top: 7pt" class="pSmartList1"><li> To delete any User-Defined property fields, use the Remove row icon <img src="images/remove_rowa.gif" border="0" hspace="0" vspace="0"/>.</li></div>
+</ul></div>
+
+ <hr />
+
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag());
+   // -->
+  </script>
+
+ </body>
+</html>

@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<constraints>
+
+<!-- Text Block for NOV03 MT942 -->
+
+<field name="20:" type="PatternType">
+    <bizName>Reference - Transaction Reference Number (TRN)</bizName>
+    <pattern>16x</pattern>
+</field>
+<field name="28:" type="PatternType">
+    <bizName>Statement Number/Sequence Number</bizName>
+    <pattern>5n[/2n]</pattern>
+</field>
+<field name="34F:" type="MixedType">
+    <bizName>F - Floor Limit Indicator (First Occurrence)</bizName>
+    <pattern>&lt;CUR&gt;[1!a]&lt;AMOUNT&gt;15</pattern>
+    <choice>C</choice>
+    <choice>D</choice>
+</field>
+<field name="61:" type="PatternType">
+    <bizName>Statement Line</bizName>
+    <pattern>&lt;Fld61Plus&gt;</pattern>
+</field>
+<field name="86:" type="PatternType">
+    <bizName>Information to Account Owner (First Occurence)</bizName>
+    <pattern>&lt;ERI_F86&gt;</pattern>
+</field>
+<field name="86:" type="PatternType">
+    <bizName>Information to Account Owner (Second Occurence)</bizName>
+    <pattern>&lt;ERI_F86&gt;</pattern>
+</field>
+</constraints>

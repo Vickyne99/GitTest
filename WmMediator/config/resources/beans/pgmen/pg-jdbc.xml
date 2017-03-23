@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+       default-init-method="init"
+       default-destroy-method="shutdown">
+	   
+	<!--<bean id="JdbcEventSenderPool" class="com.softwareag.pg.pgmen.readers.DCIntervalPool"
+          init-method="init" destroy-method="destroy">
+        <property name="minThreads" value="${pg.jdbc.JdbcEventSenderPool.minThreads}"/>
+        <property name="maxThreads" value="${pg.jdbc.JdbcEventSenderPool.maxThreads}"/>
+        <property name="forcefulShutdown" value="${pg.jdbc.JdbcEventSenderPool.forcefulShutdown}"/>
+        <property name="poolName" value="${pg.jdbc.JdbcEventSenderPool.poolName}"/>
+    </bean>-->
+	
+	<bean id="EventJdbcDataSource" class="com.wm.app.b2b.server.jdbc.JDBCConnDataSource">
+		<constructor-arg>
+			<value>Mediator</value>
+		</constructor-arg>
+	</bean>
+    
+    <bean id="JdbcEventSender" class="com.softwareag.pg.pgmen.events.jdbc.JdbcEventDestination" init-method="init"
+          destroy-method="onDestroy">
+		<property name="dataSource" ref="EventJdbcDataSource"/>
+		<property name="batchSize" value="1"/>
+		<!-- thread will flush queued events to data source every 'flushInterval' milliseconds -->
+		<!--<property name="flushInterval" value="${pg.jdbc.JdbcEventSender.flushInterval}"/>-->
+		<!-- a debug log message may be sent to server.log if it takes more than 'jdbcLogThreshold' msecs -->
+        <!-- to get/close a prepared statement/connection -->
+		<property name="jdbcLogThreshold" value="50"/>
+		<!-- a debug log message may be sent to server.log if it takes more than 'executeLogThreshold' msecs -->
+        <!-- to execute a jdbc batch update -->
+		<property name="executeLogThreshold" value="500"/>
+    </bean>
+    
+	<bean id="JdbcErrorFormatter" class="com.softwareag.pg.pgmen.events.jdbc.JdbcErrorFormatter"
+          init-method="init" destroy-method="destroy">
+        <property name="tableName" value="MED_EVENT_ERR"/>
+    </bean>
+
+    <bean id="JdbcLifecycleFormatter" class="com.softwareag.pg.pgmen.events.jdbc.JdbcLifecycleFormatter"
+          init-method="init" destroy-method="destroy">
+        <property name="tableName" value="MED_EVENT_LC"/>
+    </bean>
+    
+    <bean id="JdbcMonitorFormatter" class="com.softwareag.pg.pgmen.events.jdbc.JdbcMonitorFormatter"
+          init-method="init" destroy-method="destroy">
+        <property name="tableName" value="MED_EVENT_MON"/>
+    </bean>
+    
+    <bean id="JdbcPVFormatter" class="com.softwareag.pg.pgmen.events.jdbc.JdbcPVFormatter"
+          init-method="init" destroy-method="destroy">
+        <property name="tableName" value="MED_EVENT_PV"/>
+    </bean>
+	
+    <bean id="JdbcPerfMetricsFormatter" class="com.softwareag.pg.pgmen.events.jdbc.JdbcPerfMetricsFormatter"
+          init-method="init" destroy-method="destroy">
+        <property name="tableName" value="MED_EVENT_METRICS"/>
+    </bean>
+	
+    <bean id="JdbcTransactionFormatter" class="com.softwareag.pg.pgmen.events.jdbc.JdbcTransactionFormatter"
+          init-method="init" destroy-method="destroy">
+        <property name="tableName" value="MED_EVENT_TXN"/>
+    </bean>
+    
+</beans>

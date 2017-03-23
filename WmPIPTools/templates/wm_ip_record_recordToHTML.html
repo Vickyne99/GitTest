@@ -1,0 +1,69 @@
+<HTML>
+	<HEAD>
+		<TITLE>%value recordName%: RN-Like Summary </TITLE>
+<style type='text/css'>
+		td {
+			mso-style-parent:"";
+			margin:0in;
+			margin-bottom:.0001pt;
+			mso-pagination:widow-orphan;
+			font-size: 8.0pt;
+			font-family:"Times New Roman";
+			mso-fareast-font-family:"Courier";}
+		</style>
+	</HEAD>	
+	<BODY>
+		<TABLE>
+			<TR>
+				<TH width="15%" align="left">%value recordName%</TH>
+			</TR>	
+		</TABLE>
+
+		<TABLE>
+			<TR>
+				<TH width="15%" align="left">Line #</TH>
+				<TH width="15%" align="left">Card</TH>
+				<TH align="left">Description</TH>
+			<!-- check for empty line items -->
+				<TR><TD>
+			%loop LineItems%
+				%ifvar Element equals('@xml:lang')%
+				%else%
+					%ifvar Element equals('*body')%
+					%else%
+						%ifvar Siblings equals('1')%
+							%ifvar LineNumber equals('1')%
+								</TD>
+								</TR>
+								<TR>
+									<TD>%value LineNumber%</TD>
+									<TD>%value Cardinality%</TD>
+									<TD>%value Details%
+							%else%
+								.%value Element%
+							%end%
+						%else% </TD>
+							</TR>
+							<TR>
+								<TD>%value LineNumber%</TD>
+								<TD>%value Cardinality%</TD>
+								<TD>%value Details%
+						%end%
+					%end%
+				%end%
+			%endLoop%
+			</TD></TR>
+		</TABLE>
+		%loop Choices%
+			<BR>
+			<TABLE>
+				<TR><TD>%value LineNumber%: %value RecordName%</TD></TR>
+				<TR><TD>
+					<U>Entity Instances:</U><BR>
+					%loop Choices%%value Choices%<BR>
+					%endloop%
+				</TD></TR>
+			</TABLE>
+		%endloop%
+	</BODY>
+</HTML>

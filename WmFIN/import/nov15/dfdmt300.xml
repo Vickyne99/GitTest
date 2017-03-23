@@ -1,0 +1,147 @@
+<?xml version="1.0"?>
+<constraints>
+
+<!-- Text Block for NOV03 MT300 -->
+
+<field name="17A:" type="MixedType">
+    <bizName>Buy (Sell) Indicator</bizName>
+    <pattern>1!a</pattern>
+    <choice>Y</choice>
+    <choice>N</choice>
+    <error type="choice">T36</error>
+</field>
+<field name="20:" type="PatternType">
+    <bizName>Reference - Sender's Reference</bizName>
+    <pattern>16x</pattern>
+</field>
+<field name="32B:" type="PatternType">
+    <bizName>B - Currency, Amount (Bought)</bizName>
+    <pattern>&lt;CUR&gt;&lt;AMOUNT&gt;15</pattern>
+</field>
+<field name="33B:" type="PatternType">
+    <bizName>B - Currency, Amount (Sold)</bizName>
+    <pattern>&lt;CUR&gt;&lt;AMOUNT&gt;15</pattern>
+</field>
+<field name="71F:" type="PatternType">
+    <bizName>F - Broker's Commission</bizName>
+    <pattern>&lt;CUR&gt;&lt;AMOUNT&gt;15</pattern>
+</field>
+<field name="72:" type="PatternType">
+    <bizName>Sender to Receiver Information</bizName>
+    <pattern>&lt;FLD72&gt;</pattern>
+</field>
+<field name="83A:" type="MixedType">
+    <bizName>A - Fund or Beneficiary Customer</bizName>
+    <pattern>[&lt;PartyIdentifier&gt;][CRLF]&lt;SWIFTBIC&gt;</pattern>
+</field>
+<field name="83D:" type="MixedType">
+    <bizName>D - Fund or Beneficiary Customer</bizName>
+    <pattern>[&lt;PartyIdentifier&gt;][CRLF]4*35x</pattern>
+</field>
+<field name="83J:" type="MixedType">
+    <bizName>J - Fund or Beneficiary Customer</bizName>
+    <pattern>&lt;PARTYFLD/J&gt;</pattern>
+    <choice>/ABIC/</choice>
+    <choice>/ACCT/</choice>
+    <choice>/NAME/</choice>
+    <choice>/ADD1/</choice>
+    <choice>/ADD2/</choice>
+    <choice>/CITY/</choice>
+    <choice>/USFW/</choice>
+    <choice>/USCH/</choice>
+    <choice>/GBSC/</choice>
+    <choice>/CLRC/</choice>
+	<choice>/LEIC/</choice>
+    <error type="choice">T78</error>
+</field>
+
+<field name="91A:" type="MixedType">
+    <bizName>A - Reporting Party</bizName>
+    <pattern>[&lt;PartyIdentifier&gt;][CRLF]&lt;SWIFTBIC&gt;</pattern>
+</field>
+<field name="91D:" type="MixedType">
+    <bizName>D - Reporting Party</bizName>
+    <pattern>[&lt;PartyIdentifier&gt;][CRLF]4*35x</pattern>
+</field>
+<field name="91J:" type="MixedType">
+    <bizName>J - Reporting Party</bizName>
+    <pattern>&lt;PARTYFLD/J&gt;</pattern>
+    <choice>/ABIC/</choice>
+    <choice>/CLRC/</choice>
+    <choice>/LEIC/</choice>
+    <choice>/NAME/</choice>
+    <error type="choice">T78</error>
+</field>
+	
+<field name="81A:" type="MixedType">
+    <bizName>A - Central Counterparty Clearing House</bizName>
+    <pattern>[&lt;PartyIdentifier&gt;][CRLF]&lt;SWIFTBIC&gt;</pattern>
+</field>
+<field name="81D:" type="MixedType">
+    <bizName>D - Central Counterparty Clearing House</bizName>
+    <pattern>[&lt;PartyIdentifier&gt;][CRLF]4*35x</pattern>
+</field>
+<field name="81J:" type="MixedType">
+    <bizName>J - Central Counterparty Clearing House</bizName>
+    <pattern>&lt;PARTYFLD/J&gt;</pattern>
+	<choice>/ABIC/</choice>
+    <choice>/CLRC/</choice>
+    <choice>/LEIC/</choice>
+    <choice>/NAME/</choice>
+    <error type="choice">T78</error>
+</field>
+
+<field name="96A:" type="MixedType">
+    <bizName>A - Clearing Exception Party</bizName>
+    <pattern>[&lt;PartyIdentifier&gt;][CRLF]&lt;SWIFTBIC&gt;</pattern>
+</field>
+<field name="96D:" type="MixedType">
+    <bizName>D - Clearing Exception Party</bizName>
+    <pattern>[&lt;PartyIdentifier&gt;][CRLF]4*35x</pattern>
+</field>
+<field name="96J:" type="MixedType">
+    <bizName>J - Clearing Exception Party</bizName>
+    <pattern>&lt;PARTYFLD/J&gt;</pattern>
+	<choice>/ABIC/</choice>
+    <choice>/CLRC/</choice>
+    <choice>/LEIC/</choice>
+    <choice>/NAME/</choice>
+    <error type="choice">T78</error>
+</field>
+<field name="17E:" type="MixedType">
+    <bizName>Clearing Threshold Indicator</bizName>
+    <pattern>1!a</pattern>
+    <choice>Y</choice>
+    <choice>N</choice>
+    <error type="choice">T36</error>
+</field>
+<field name="17H:" type="MixedType">
+    <bizName>Allocation Indicator</bizName>
+    <pattern>1!a</pattern>
+    <choice>A</choice>
+    <choice>P</choice>
+	<choice>U</choice>
+    <error type="choice">T36</error>
+</field>
+<field name="17P:" type="MixedType">
+    <bizName>Collateralisation Indicator</bizName>
+    <pattern>1!a</pattern>
+    <choice>F</choice>
+	<choice>O</choice>
+    <choice>P</choice>
+	<choice>U</choice>
+    <error type="choice">T36</error>
+</field>
+<field name="98D" type="MixedType">
+    <bizName>Execution Timestamp</bizName>
+    <pattern>&lt;DATE4&gt;&lt;TIME2&gt;[3n][/[N]2!n[2!n]]</pattern>
+    <alias pattern="&lt;DATE4&gt;" bizName="Execution Date" />                
+    <alias pattern="&lt;TIME2&gt;" bizName="Execution Time" />
+</field>
+<field name="17W:" type="MixedType">
+    <bizName>Non Standard Flag</bizName>
+    <pattern>1!a</pattern>
+    <choice>Y</choice>
+    <error type="choice">T36</error>
+</field>
+</constraints>

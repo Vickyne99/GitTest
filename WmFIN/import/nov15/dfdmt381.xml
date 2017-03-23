@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<constraints>
+
+<!-- Text Block for NOV03 MT 381 -->
+<field name="23G:" type="Mixed2Type">
+    <bizName>Function of the Message</bizName>
+    <pattern>4!c[/4!c]</pattern>
+    <alias pattern="4!c" bizName="Function" />            
+    <alias pattern="4!c" bizName="Subfunction" />                
+    <choice1>CANC</choice1>
+    <choice1>NEWM</choice1>
+    <choice2>CODU</choice2>
+    <choice2>COPY</choice2>
+    <choice2>DUPL</choice2>
+    <error type="choice">T86</error>
+</field>
+<field name="22F::AGRE" type="GenericFieldType">
+    <bizName>Agreement Indicator</bizName>
+    <pattern>/[8c]/4!c</pattern>
+    <alias pattern="8c" bizName="Data Source Scheme" />    
+    <alias pattern="4!c" bizName="Indicator" />            
+    <choice>AFBA</choice>
+    <choice>BBAA</choice>
+    <choice>DERV</choice>
+	<choice>ISCN</choice>
+    <choice>ISDA</choice>
+    <choice>NONR</choice>
+</field>
+</constraints>

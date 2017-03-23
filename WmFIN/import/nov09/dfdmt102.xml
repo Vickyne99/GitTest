@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<constraints>
+
+<!-- Text Block for NOV03 MT102 -->
+<field name="20:" type="PatternType">
+    <bizName>Reference - File Reference</bizName>
+    <pattern>16x</pattern>
+    <alias pattern="16x" bizName="File Reference" />    
+    <error type="content">T26</error>
+</field>
+<field name="21:" type="PatternType">
+    <bizName>Reference - Transaction Reference</bizName>
+    <pattern>16x</pattern>
+    <alias pattern="16x" bizName="Transaction Reference" />        
+    <error type="content">T26</error>
+</field>
+<field name="23:" type="PatternType">
+    <bizName>Bank Operation Code</bizName>
+    <pattern>6a</pattern>
+    <alias pattern="6a" bizName="Bank Operation Code" />            
+</field>
+<field name="32B:" type="PatternType">
+    <bizName>B - Transaction Amount</bizName>
+    <pattern>&lt;CUR&gt;&lt;AMOUNT&gt;15</pattern>
+</field>
+<field name="52A:" type="MixedType">
+    <bizName>A - Ordering Institution</bizName>
+    <pattern>[&lt;PartyIdentifier&gt;][CRLF]&lt;SWIFTBIC&gt;</pattern>
+</field>
+<field name="52B:" type="MixedType">
+    <bizName>B - Ordering Institution</bizName>
+    <pattern>[&lt;PartyIdentifier&gt;][CRLF][35x]</pattern>
+</field>
+<field name="52C:" type="MixedType">
+    <bizName>C - Ordering Institution</bizName>
+    <pattern>/34x</pattern>
+    <alias pattern="/34x" bizName="Party Identifier" />            
+
+</field>
+<field name="53A:" type="MixedType">
+    <bizName>A - Sender's Correspondent</bizName>
+    <pattern>[&lt;PartyIdentifier&gt;][CRLF]&lt;SWIFTBIC&gt;</pattern>
+</field>
+<field name="57A:" type="MixedType">
+    <bizName>A - Account With Institution</bizName>
+    <pattern>[&lt;PartyIdentifier&gt;][CRLF]&lt;SWIFTBIC&gt;</pattern>
+</field>
+<field name="71G:" type="PatternType">
+    <bizName>G - (Sum of) Receiver's Charges</bizName>
+    <pattern>&lt;CUR&gt;&lt;AMOUNT&gt;15</pattern>
+</field>
+<field name="72:" type="PatternType">
+    <bizName>Sender to Receiver Information</bizName>
+    <pattern>&lt;REJT/RETN/72&gt;|&lt;FLD72_not_STP&gt;</pattern>
+</field>
+</constraints>

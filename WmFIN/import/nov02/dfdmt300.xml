@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<constraints>
+
+<!-- Text Block for NOV02 MT300 -->
+
+<field name="17A:" type="MixedType">
+    <bizName>Buy (Sell) Indicator</bizName>
+    <pattern>1!a</pattern>
+    <choice>Y</choice>
+    <choice>N</choice>
+    <error type="choice">T36</error>
+</field>
+<field name="20:" type="PatternType">
+    <bizName>Reference - Sender's Reference</bizName>
+    <pattern>16x</pattern>
+</field>
+<field name="32B:" type="PatternType">
+    <bizName>B - Currency, Amount (Bought)</bizName>
+    <pattern>&lt;CUR&gt;&lt;AMOUNT&gt;15</pattern>
+</field>
+<field name="33B:" type="PatternType">
+    <bizName>B - Currency, Amount (Sold)</bizName>
+    <pattern>&lt;CUR&gt;&lt;AMOUNT&gt;15</pattern>
+</field>
+<field name="71F:" type="PatternType">
+    <bizName>F - Broker's Commission</bizName>
+    <pattern>&lt;CUR&gt;&lt;AMOUNT&gt;15</pattern>
+</field>
+<field name="72:" type="PatternType">
+    <bizName>Sender to Receiver Information</bizName>
+    <pattern>&lt;FLD72&gt;</pattern>
+</field>
+<field name="83A:" type="MixedType">
+    <bizName>A - Fund or Beneficiary Customer</bizName>
+    <pattern>[&lt;BICPLUS&gt;][CRLF]&lt;SWIFTBIC&gt;|&lt;NONSWIFTBIC&gt;</pattern>
+    <choice>C</choice>
+    <choice>D</choice>
+</field>
+<field name="83D:" type="MixedType">
+    <bizName>D - Fund or Beneficiary Customer</bizName>
+    <pattern>[&lt;BICPLUS&gt;][CRLF]4*35x</pattern>
+    <choice>C</choice>
+    <choice>D</choice>
+</field>
+<field name="83J:" type="MixedType">
+    <bizName>J - Fund or Beneficiary Customer</bizName>
+    <pattern>&lt;PARTYFLD/J&gt;</pattern>
+    <choice>/ABIC/</choice>
+    <choice>/ACCT/</choice>
+    <choice>/NAME/</choice>
+    <choice>/ADD1/</choice>
+    <choice>/ADD2/</choice>
+    <choice>/CITY/</choice>
+    <choice>/USFW/</choice>
+    <choice>/USCH/</choice>
+    <choice>/GBSC/</choice>
+    <choice>/CLRC/</choice>
+    <error type="choice">T78</error>
+</field>
+</constraints>

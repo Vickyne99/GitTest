@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<constraints>
+
+<!-- Text Block for NOV02 MT769 -->
+
+<field name="30:" type="PatternType">
+    <bizName>Date - Date of Reduction or Release</bizName>
+    <pattern>&lt;DATE2&gt;</pattern>
+</field>
+<field name="32B:" type="PatternType">
+    <bizName>B - Amount of Charges</bizName>
+    <pattern>&lt;CUR&gt;&lt;AMOUNT&gt;15</pattern>
+</field>
+<field name="33B:" type="PatternType">
+    <bizName>B - Amount Reduced or Released</bizName>
+    <pattern>&lt;CUR&gt;&lt;NUMBER&gt;15</pattern>
+</field>
+<field name="34B:" type="PatternType">
+    <bizName>B - Amount Outstanding</bizName>
+    <pattern>&lt;CUR&gt;&lt;AMOUNT&gt;15</pattern>
+</field>
+<field name="39C:" type="PatternType">
+    <bizName>Amount Specification</bizName>
+    <pattern>4*35x</pattern>
+</field>
+<field name="57A:" type="MixedType">
+    <bizName>A - Account With Bank</bizName>
+    <pattern>[&lt;BICPLUS&gt;][CRLF]&lt;SWIFTBIC&gt;|&lt;NON-SWIFTBIC&gt;</pattern>
+    <choice>C</choice>
+    <choice>D</choice>
+</field>
+<field name="57B:" type="MixedType">
+    <bizName>B - Account With Bank</bizName>
+    <pattern>[&lt;BICPLUS&gt;][CRLF][35x]</pattern>
+    <choice>C</choice>
+    <choice>D</choice>
+</field>
+<field name="57D:" type="MixedType">
+    <bizName>D - Account With Bank</bizName>
+    <pattern>[&lt;BICPLUS&gt;][CRLF]4*35x</pattern>
+    <choice>C</choice>
+    <choice>D</choice>
+</field>
+<field name="71B:" type="PatternType">
+    <bizName>B - Details of Charges</bizName>
+    <pattern>6*35x</pattern>
+</field>
+<field name="72:" type="PatternType">
+    <bizName>Sender to Receiver Information</bizName>
+    <pattern>&lt;ERI_F72narrative&gt;</pattern>
+</field>
+
+
+</constraints>

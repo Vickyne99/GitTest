@@ -1,0 +1,1452 @@
+             webMethods SAP Adapter 7.1 Fix 15 readme
+
+                        February 2016
+_________________________________________________________________
+
+This file provides important information for applying webMethods
+SAP Adapter 7.1 Fix 15 to webMethods SAP Adapter 7.1. For
+additional information about webMethods SAP Adapter 7.1, see the
+readme file in the _documentation directory of your Software AG
+installation (if installed) or on the Empower Web site at
+https://empower.softwareag.com.
+
+
+
+Contents:
+
+1.0   Fix Name
+2.0   Product(s)/Component(s) Affected
+3.0   Fix Requirements
+4.0   Fix Contents
+5.0   Platform Support
+6.0   Installation
+7.0   Uninstallation
+8.0   Cautions and Warnings
+9.0   Globalization
+10.0  Copyright
+11.0  Contacting Us
+
+
+
+1.0 Fix Name
+
+webMethods SAP Adapter 7.1 Fix 15
+
+
+
+2.0 Product(s)/Component(s) Affected
+
+This fix affects webMethods SAP Adapter.
+
+
+
+3.0 Fix Requirements
+
+This fix requires the installation of the SAP JCo library
+version 3.0.10 or higher and SAP IDoc Class library version 3.0.9
+or higher.
+
+For language pack requirements, see the Globalization section
+of the Software AG Empower Product Support Web site. The
+Globalization section can be found at:
+
+https://empower.softwareag.com/Products/Globalization/default.asp
+
+
+
+4.0 Fix Contents
+
+WSP-1044
+
+In webMethods SAP Adapter 7.1, error occurs when the Secure
+Network Communications (SNC) connection expires.
+
+If the SNC mode is enabled for an RFC client connection and
+the Minimum Pool Size parameter is set to 0, the following error
+message appears in the error log when the connection expires:
+
+'An error occurred while attempting to destroy connection
+int_sap_adapter.connections:connNode_SAP0047(18)'.
+
+This issue is now resolved.
+
+WSP-1042
+
+In webMethods SAP Adapter 7.1, passwords in the text box appear
+as cleartext.
+
+When WmSAP public API services are invoked from the Integration
+Server Administrator, all the passwords in the text box appear
+as cleartext.
+
+This issue is now resolved.
+
+WSP-1039
+
+In webMethods SAP Adapter 7.1, the foreign language characters
+appear as invalid characters.
+
+The logging screen of SAP Adapter 7.1 displays the foreign
+language characters as invalid characters. However, in the
+Integration Server Administrator the same foreign language
+characters appear in the valid format.
+ 
+This issue is now resolved.
+
+WSP-1034
+
+In webMethods SAP Adapter, an error occurs when you click old log
+files.
+
+The following error message is displayed in Integration Server
+Administrator when you click on old log files in SAP Adapter.
+
+"Specified path does not match any log file path"
+
+This issue is resolved.
+
+WSP-1008 (SAP_7.1_Fix14)
+
+In webMethods SAP Adapter 7.1, the return values of the
+pub.sap.transport.BAPI:OutboundProcess service are not mappable.
+
+After running the pub.sap.transport.BAPI:OutboundProcess
+service, the return values in the $metabapi and $abapexection
+documents are properly displayed but cannot be mapped to other
+variables.
+
+This issue is resolved. Now, all the return values of the
+pub.sap.transport.BAPI:OutboundProcess service can be mapped to
+other variables.
+
+WSP-1007 (SAP_7.1_Fix14)
+
+In webMethods SAP Adapter 7.1, when CSRF guard is enabled an
+error occurs while trying to view transactions or use the
+"Apply Filter" button.
+
+The following error message is displayed in Integration Server
+Administrator:
+"Access Denied. Invalid CSRF secure token"
+
+This issue is resolved. 
+
+WSP-1005 (SAP_7.1_Fix14)
+
+In webMethods SAP Adapter 7.1, the pub.sap.transaction:sweep
+service can throw a NullPointerException.
+
+When a thread in webMethods SAP Adapter 7.1 is deleting
+transactions while another thread is listing the content of
+the transaction store, a race condition can occur which causes
+a NullPointerException. The following error message is displayed
+in the logs:
+
+[SAP.110.9407] WmSAP Adapter: Error in transaction store:
+java.lang.NullPointerException
+
+This issue is resolved. The pub.sap.transaction:sweep service
+does not throw NullPointerExceptions due to race conditions
+anymore.
+
+WSP-1003 (SAP_7.1_Fix14)
+
+In webMethods SAP Adapter 7.1 Fix 11, the
+pub.sap.idoc:iDocToDocument service does not copy empty
+segments from inbound IDocs.
+
+Since Fix 11, the pub.sap.idoc:iDocToDocument service does not
+copy empty segments from inbound IDocs into the pipeline.
+This may lead to mapping issues in certain use cases.
+
+This issue is resolved. You must add the new watt property,
+watt.sap.idoc.keepEmptySegments and set it to true to enable the
+pub.sap.idoc:iDocToDocument service to copy empty segments from
+inbound IDocs. 
+
+WSP-1001 (SAP_7.1_Fix14)
+
+webMethods SAP Adapter 7.1 is not compatible with SAP JCo version
+3.0.13 and higher.
+
+Changes in the SAP JCo middleware version 3.0.13 cause exceptions
+during the IDoc processing in SAP Adapter 7.1.
+
+This issue is resolved. The adapter is now compatible with SAP
+JCo version 3.0.13 and higher. 
+
+WSP-1000 (SAP_7.1_Fix14)
+
+In webMethods SAP Adapter 7.1, SNC enabled RFC connections
+still use non-SNC connections for repository lookups.
+
+SNC enabled RFC connections use non-SNC connections for
+repository metadata lookups. This requires that the non-SNC
+connections must be able to access the connected SAP system,
+which can violate security guidelines.
+
+This issue is resolved. Now, SNC enabled RFC connections only
+use SNC repository connections for metadata lookups. 
+
+WSP-999 (SAP_7.1_Fix14)
+
+In webMethods SAP Adapter, an error occurs when you click old log
+files.
+
+The following error message is displayed in Integration Server
+Administrator when you click on old log files in SAP Adapter.
+
+"Specified path does not match any log file path"
+
+This issue is resolved.
+
+WSP-998 (SAP_7.1_Fix14)
+
+In webMethods SAP Adapter 7.1, running the
+pub.sap.idoc:documentToIDoc service throws a NullPointerException
+when the IDOCTYP information is missing in the IDoc control
+record.
+
+When running the pub.sap.idoc:documentToIDoc service to process
+an IDoc package containing two or more IDocs where the IDOCTYP
+information is not specified in the IDoc control record, the
+SAP Adapter abruptly ends the service. The error log displays a
+NullPointerException without an error message.
+
+This issue is resolved. Now, the adapter returns a detailed
+error message in the log when the IDOCTYP information is missing
+in the IDoc control record. 
+
+WSP-973 (SAP_7.1_Fix13)
+
+A cross-site scripting (XSS) issue was discovered in Integration
+Server Administrator during internal security testing.
+
+This issue is resolved. 
+
+WSP-972 (SAP_7.1_Fix13)
+
+A path traversal issue was discovered in Integration Server
+Administrator during internal security testing.
+
+This issue is resolved.
+
+WSP-965 (SAP_7.1_Fix13)
+
+In webMethods SAP Adapter 7.1 Fix 11, empty segments in an
+inbound IDoc are returned by the adapter as null objects.
+
+When SAP sends an IDoc that contains an empty segment to
+Integration Server, the adapter returns the empty segment as
+a null object and not as an empty object.
+
+This issue is resolved.
+
+WSP-942 (SAP_7.1_Fix12)
+Several cross-site scripting (XSS) issues were discovered in
+Integration Server Administrator during internal security
+testing.
+
+This issue is resolved. 
+
+WSP-941 (SAP_7.1_Fix12)
+In webMethods SAP Adapter, a NullPointerException error occurs
+in the Centralized Transaction Store(CTS) Server during a
+transaction update.
+
+When a CTS Client updates a deleted transaction before the
+transaction is deleted from the CTS Server, SAP Adapter logs a
+NullPointerException error in the logs files of CTS Client and
+Server.
+
+This issue is resolved. 
+
+WSP-928 (SAP_7.1_Fix11)
+webMethods SAP Adapter returns an “Access Denied” message when
+using the CSRF guard feature in webMethods Integration Server.
+
+Using SAP Adapter with the Integration Server Cross-Site Request
+Forgery (CSRF) guard enabled results in an “Access Denied”
+message when you attempt to:
+- Disable an SAP Adapter RFC Listener in a “pending enabled”
+state.
+- View the details of a transaction on the SAP Adapter
+Transactions screen by selecting the Transaction ID (TID) and
+clicking a link in the Received Message Body section.
+
+The issue is resolved. 
+
+WSP-917 (SAP_7.1_Fix11)
+webMethods SAP Adapter does not report an error back to the
+sending SAP system when creating a new transaction entry fails.
+
+When an error occurs during the creation of a new transaction
+entry in the SAP Adapter transaction store for an incoming tRFC
+request, the adapter does not report an error back to the sending
+SAP system, which may lead to an incorrect state for the tRFC in
+the SAP system.
+
+The issue is resolved. SAP Adapter now reports the error back to
+the sending SAP system when creating a new transaction entry
+for an incoming tRFC fails.
+
+WSP-915 (SAP_7.1_Fix11)
+When using webMethods SAP Adapter ALE notifications, all IDoc
+fields are available in the pipeline after the notification
+document is published irrespective of the field selection
+made at design time.
+
+When configuring an SAP Adapter ALE notification in Designer, 
+even when you select only some of the IDoc fields on the Request
+Field Selection tab of the notification template, all fields are
+present in the pipeline at run time.
+
+The issue is resolved. You can use a new watt property,
+watt.sap.notification.filterIDocFields, to enable filtering
+of unselected IDoc fields.
+
+Adapter Configuration Parameter Reference:
+watt.sap.notification.filterIDocFields
+Removes unselected IDoc fields from an adapter notification
+in the pipeline at run time.
+Values are:
+- true. Removes unselected IDoc fields.
+- false (default). Does not remove unselected IDoc
+fields.
+
+If no filtering of IDoc fields is required, Software AG
+recommends keeping the default adapter behavior for better
+performance.
+
+Important! Filtering of IDoc control record fields may lead
+to subsequent errors if the filtered IDoc is passed to IDoc
+built-in adapter services.
+
+WSP-899 (SAP_7.1_Fix10)
+Integration Server sessions expire when the webMethods SAP
+Adapter "watt.sap.listener.session.timeout" configuration
+parameter is set to "0".
+
+In SAP Adapter, when the "watt.sap.listener.session.timeout"
+parameter is set to the default value of "0", which prevents
+session timeout for RFC Listener sessions, the Integration
+Server session pool becomes exhausted. The issue occurs
+because the server does not terminate used sessions if the
+timeout value is "0".
+
+The issue is resolved. Integration Server now terminates
+RFC Listener sessions when their session timeout is "0",
+which prevents the exhaustion of the server's session pool.
+
+WSP-895 (SAP_7.1_Fix10)
+Accessing some webMethods SAP Adapter pages fails when CSRF
+Guard is enabled in webMethods Integration Server.
+
+When the CSRF Guard feature is enabled in Integration Server,
+some of the SAP Adapter pages in Integration Server
+Administrator are blocked with the error: "Access denied.
+Invalid CSRF secure token."
+
+This issue is resolved.
+
+WSP-886 (SAP_7.1_Fix9)
+webMethods SAP Adapter takes too much memory in the JVM heap
+when multiple adapter listener threads and notifications are
+active. 
+
+When SAP Adapter checks if an active notification matches an
+incoming request, the adapter may keep a reference to the request
+pipeline content within the notification object, even if the
+notification is not processing the request. This behavior may
+cause a memory leak because no garbage collection occurs for
+obsolete pipeline data, which can become critical when many
+active listener threads are receiving documents and many
+notifications are enabled. 
+
+The issue is resolved. Now SAP Adapter does not keep redundant
+references to request pipelines in notification objects.
+
+WSP-867 (SAP_7.1_Fix9)
+webMethods SAP Adapter 7.1 routing notifications may send a
+document to the wrong SAP system, when using the ALE, RFC or
+BAPI transport.
+
+When an SAP Adapter 7.1 routing notification receives a document
+directly from an RFC listener, the ALE, RFC or BAPI transport
+returns the document to the sending SAP system, instead of
+sending it to the SAP system specified in the 'serverName'
+transport parameter.
+
+The issue is resolved. Routing notifications now always send
+the document to the SAP system specified in the 'serverName'
+transport parameter of the ALE, RFC or BAPI transport configured
+for the notification.
+
+WSP-855 (SAP_7.1_Fix9)
+webMethods SAP Adapter 7.1 inbound processing aborts with an
+Integration Server session timeout when processing long-running
+RFC requests.
+
+When webMethods SAP Adapter 7.1 is processing RFC requests over
+a long period of time, the associated Integration Server sessions
+may abort with a timeout.
+
+The issue is resolved. The "watt.sap.listener.session.timeout"
+parameter is now modified to prevent Integration Server session
+timeouts when processing inbound RFC requests.
+
+Changed Parameter Reference:
+watt.sap.listener.session.timeout
+The parameter has a new default value of “0”. When you use the
+default value, webMethods Integration Server does not perform
+Integration Server session timeout checks for inbound RFC
+requests. The allowed minimum value is "0". 
+
+WSP-849 (SAP_7.1_Fix9)
+webMethods SAP Adapter 7.1 does not stop an RFC Listener properly
+if the shutdown sequence takes longer than three seconds.
+
+webMethods SAP Adapter 7.1 assumes that the shutdown sequence
+of an RFC Listener does not take longer than 3 seconds and sets
+the listener status to 'disabled' even when the underlying JCo
+RFC has not yet finished its internal shutdown procedure. As a
+result, SAP Adapter may not restart the RFC Listener
+successfully.
+
+The issue is resolved. webMethods SAP Adapter 7.1 now has two
+new server configuration parameters,
+watt.sap.listener.start.timeout and watt.sap.listener.stop.timeout,
+which you use to set waiting periods for the RFC Listener startup
+and shutdown sequence.
+
+New Parameter Reference:
+watt.sap.listener.start.timeout
+The number of seconds webMethods SAP Adapter will wait for the
+RFC Listener startup to succeed before the adapter sets the
+status of the RFC Listener to 'enabled' in Integration Server
+Administrator. The default is "60" (seconds). The minimum value
+is "0". When the value is set to "0", the adapter will wait
+indefinitely for the RFC Listener to start.
+
+watt.sap.listener.stop.timeout
+The number of seconds webMethods SAP Adapter will wait for the
+RFC Listener shutdown to succeed before the adapter sets the
+status of the RFC Listener to 'disabled' in Integration Server
+Administrator. The default value is "300" (seconds). The minimum
+value is "0". When the value is set to "0", the adapter will wait
+indefinitely for the RFC Listener to shutdown.
+
+For information about setting Integration Server configuration
+parameters, see "webMethods Integration Server Administrator's
+Guide".
+
+WSP-845 (SAP_7.1_Fix9)
+webMethods SAP Adapter 7.1 log messages do not provide enough
+information about JCo and IDoc Library exceptions.
+
+When the SAP JCo or the SAP IDoc Library throws an unexpected
+generic exception, for example NullPointerException, webMethods
+SAP Adapter 7.1 only logs a general error message.
+
+The issue is resolved. The webMethods SAP Adapter 7.1 log
+messages now log the internal operation for which an unspecific
+JCo or IDoc Library exception occurs.
+
+WSP-851 (SAP_7.1_Fix8)
+In webMethods SAP Adapter 7.1, the SAP_7.1_Fix8 fix sets the
+log level of the SAP Adapter log component to 'Trace'.
+
+The log level of webMethods SAP Adapter is set and modified only 
+in the SAP Adapter user interface in Integration Server
+Administrator. The log level of the Integration Server log
+component 'SAP Adapter' must always be set to 'Trace', otherwise
+the adapter log messages may be lost or not displayed completely.
+
+The issue is resolved. webMethods SAP Adapter 7.1 now sets the
+log level of the 'SAP Adapter' Integration Server log component
+automatically to 'Trace' whenever the log level is set or changed 
+in the SAP Adapter user interface. 
+
+WSP-834 (SAP_7.1_Fix8)
+webMethods SAP Adapter startup is delayed by SAP system logon
+timeouts.
+
+When the logon to one or more SAP systems fails due to a timeout,
+the SAP Adapter startup can be delayed for several minutes.
+
+This issue is resolved. SAP Adapter provides a new
+configuration parameter, watt.sap.jco.clientConnectTimeout,
+to set the JCo timeout for the logon to an SAP ABAP server.
+Note: The new parameter does not prevent or shorten other
+timeouts in the TCP/IP network layer, which occur when the
+SAP System is not available.
+
+watt.sap.jco.clientConnectTimeout
+Set the JCo logon timeout (in seconds) after opening a technical
+connection to an SAP system. For example, to set the logon
+timeout to 5 seconds, specify:
+
+    watt.sap.jco.clientConnectTimeout=5
+    
+The parameter has a default value of 60 (seconds) and a minimum
+value of 1 (second). It has no maximum value.
+
+For information about setting server configuration parameters and
+working with extended settings, see Administering webMethods
+Integration Server.
+
+WSP-827 (SAP_7.1_Fix8)
+webMethods SAP Adapter transaction processing fails with
+the following error: JCO_ERROR_REQUEST_CANCELLED.
+
+During long-running SAP client calls, SAP Adapter may abort
+the processing with a JCO_ERROR_REQUEST_CANCELLED error
+message. The error occurs when JCo is checking for the
+Integration Server session associated with the call,
+but the Integration Server session has already timed out.
+As a result, JCo aborts the client call to SAP with
+an error. This can happen if you have a lengthy task, such as
+sending out 10,000 IDocs, and the task takes longer than
+the Integration Server session timeout. An easy and direct
+solution would be to increase the watt.server.clientTimeout
+parameter value (to perhaps 30 mins or more). However,
+this might not be desirable in some installations.
+
+This issue is resolved. When it is not desirable to increase
+the value of watt.server.clientTimeout,
+SAP Adapter provides a new configuration parameter,
+watt.sap.rfc.callDuration. With the new parameter, you
+prevent premature Integration Server session timeouts during
+SAP client calls.
+
+watt.sap.rfc.callDuration
+Set the maximum duration of SAP client calls (in minutes)
+directly so that the associated Integration Server session cannot
+timeout and expire during the execution of an SAP client call.
+For example, to set the call duration to 30 minutes, specify:
+
+    watt.sap.rfc.callDuration=30
+    
+The parameter has a default value equal to the Integration
+Server session timeout value as specified in
+watt.server.clientTimeout. The minimum value of the parameter is
+10 (minutes). There is no maximum value.
+
+For information about setting server configuration parameters
+and working with extended settings, see Administering webMethods
+Integration Server.
+
+WSP-814 (SAP_7.1_Fix8)
+webMethods SAP Adapter uses the wrong user context for SSO
+Connections.
+
+When creating SSO connections with the reserved user name
+'$MYSAPSSO2$' in the pipeline $user variable, SAP Adapter does
+not clear all internal JCo connection parameters. This behavior
+causes JCo to assign the default RFC user to the new SSO
+connection instead of the user provided in the logon ticket.
+
+This issue is resolved. Now SAP Adapter opens new SSO
+connections with the user provided in the SSO logon ticket.
+
+WSP-808 (SAP_7.1_Fix8)
+In webMethods SAP Adapter, SAP table field appears as String when
+creating SAP event listener notification.
+
+When using SAP Adapter to create an event listener notification
+for a SAP event containing a table field, the created
+notification represents the table field as a string instead of a
+stringList.
+
+This issue is resolved. webMethods SAP Adapter now represents a
+table field as a stringList when creating an event listener
+notification. 
+
+WSP-806 (SAP_7.1_Fix8)
+webMethods SAP Adapter does not release all locked adapter
+connections.
+
+When passing either empty strings or values that are identical to
+the default connection parameters in the $user, $client, or
+$language input parameters of the pub.sap.client:lockSession
+public service, SAP Adapter does not release the locked adapter
+connections properly when calling pub.sap.client:releaseSession.
+
+This issue is resolved. Now SAP Adapter releases locked
+connections for all $user, $client, and $language input parameter
+settings.
+
+WSP-796 (SAP_7.1_Fix8)
+In webMethods SAP Adapter 7.1, qRFC and inbound queue processing
+is not supported.
+
+SAP Adapter cannot process inbound IDocs sent with qRFC. SAP
+Adapter 6.5 supports qRFC, but version 7.1 aborts the qRFC
+processing with the error message: "IDOC_ERROR_NO_QUEUE_HANDLER: 
+The provided handler implementation cannot handle queued IDocs
+properly. Make sure to implement a JCoQueuedIDocHandler."
+
+This issue is resolved. SAP Adapter 7.1 can now process inbound
+qRFC transactions and it supports first-in-first-out processing
+for multiple inbound IDoc queues. You must install the SAP IDoc
+Library version 3.0.8 (or higher) to support inbound queue
+processing.
+
+WSP-794 (SAP_7.1_Fix7)
+webMethods SAP Adapter 7.1 does not support the reserved user
+name '$MYSAPSSO2$' that was used in SAP Adapter 6.5 for single
+sign on (SSO) to the SAP System.
+
+In SAP Adapter 6.5, when the reserved user name '$MYSAPSSO2$' is
+passed in the pipeline $user variable, SAP Adapter uses the
+password (passed in the $pass variable) as a SSO ticket for the
+RFC connection to the SAP System. However, SAP Adapter 7.1 does
+not support this SSO logon mechanism.
+
+This issue is resolved. Now SAP Adapter 7.1 supports the
+'$MYSAPSSO2$' user name for SSO logon to SAP Systems.
+
+WSP-781 (SAP_7.1_Fix7)
+In webMethods SAP Adapter, the pub.sap.transaction:list
+public service returns all transactions when the state is set to
+"Rolled back".
+
+Calling the SAP Adapter's pub.sap.transaction:list service with
+the "state" input parameter set to "Rolled back" returns
+all transactions instead of only the rolled-back transactions.
+The issue occurs because the state description was changed
+from "Rolled back" in SAP Adapter version 4.6 to "Rolledback"
+in adapter versions 6.5 and 7.1.
+
+This issue is resolved. Now the pub.sap.transaction:list service
+returns only rolled-back transactions when the "state" input
+parameter is set to "Rolled back".
+
+WSP-778 (SAP_7.1_Fix7)
+ALEListenerNotification document type is not conforming to the
+IDOC structure on SAP
+
+In webMethods SAP Adapter, the ALE Listener Notification document
+type does not conform to the IDoc structure.
+
+The publishable document type of an asynchronous ALE Listener
+Notification in SAP Adapter has all the fields and segments set
+as mandatory when the IDoc type has an extended name, for example
+/IRM/AGRMNTS01. This can cause the failure of inbound IDoc
+processing with the following error message:
+"Error: [ISS.0098.9007] Data does not conform to the Publishable
+Document Type."
+
+This issue is resolved. The publishable document type of
+asynchronous ALE Listener Notifications now conforms to the
+IDoc structure for both standard and extended IDoc type names. 
+
+WSP-773 (SAP_7.1_Fix7)
+In webMethods SAP Adapter, executing the Transaction Sweep
+service may block tRFC processing and cause RFC connections to
+be exhausted.
+
+The SAP Adapter transaction store is blocked during the execution
+of the pub.sap.transaction:sweep service. All other transaction
+operations have to wait until the Transaction Sweep service ends.
+This behavior can cause the exhaustion of RFC connections in the
+connection pool and errors when starting RFC adapter services
+under high load.
+
+This issue is resolved. Now the pub.sap.transaction:sweep service
+does not block the SAP Adapter transaction store.
+
+WSP-765 (SAP_7.1_Fix7)
+In webMethods SAP Adapter, after invoking the
+pub.sap.idoc:encodeString service, it runs in an endless loop.
+
+The SAP Adapter pub.sap.idoc:encodeString service runs in an
+endless loop when an empty IDoc without segments is passed as an
+input. This issue gets cleared only after restarting Integration
+Server.
+
+The issue is resolved. The pub.sap.idoc:encodeString service does
+not run in an endless loop when an empty IDoc without segments is
+passed as input.
+
+WSP-755 (SAP_7.1_Fix7)
+The webMethods SAP Adapter pub.sap.client:sendIDoc built-in
+service does not use the $queueName input parameter.
+
+The pub.sap.client:sendIDoc public service ignores the $queueName
+input parameter, which makes it impossible to send an IDoc to a
+specific IDoc inbound queue in the receiving SAP system.
+
+This issue is resolved. The pub.sap.client:sendIDoc service now
+acknowledges the $queueName input parameter and sends IDocs to
+specific inbound queues by passing the name of the IDoc inbound
+queue in the $queueName parameter.
+
+WSP-750 (SAP_7.1_Fix7)
+webMethods SAP Adapter cannot initialize Centralized Transaction
+Store (CTS) on Integration Server 8.0.1 and higher.
+
+When starting SAP Adapter on Integration Server version 8.0.1
+and higher, an SAP Adapter instance configured as a CTS client
+fails to connect to the CTS server instance with the following
+error message:
+"Error - ..pub.remote:invoke - java.net.ConnectException:
+Connection refused" unreachable:".
+
+This issue is resolved. SAP Adapter configured as a CTS client
+can now connect to the CTS server on all supported Intergation
+Server versions.
+
+WSP-747 (SAP_7.1_Fix6)
+SNC connections cannot be configured as poolable.
+
+SNC enabled RFC connections cannot be made poolable with the SAP
+Adapter 7.1. This user interface (UI) restriction was carried
+over from previous SAP Adapter versions that relied on JCo
+version 2. SAP Adapter 7.1 uses JCo 3, which allows connection
+pooling for SNC enabled connections; therefore, the restriction
+is no longer necessary.
+
+This issue is resolved. SNC enabled RFC client connections can
+now be configured as poolable in the SAP Adapter 7.1 UI. 
+
+WSP-743 (SAP_7.1_Fix6)
+SNC connections cannot be enabled after installation of
+SAP_7.1_Fix5.
+
+After installing webMethods SAP Adapter fix SAP_7.1_Fix5,
+attempts to enable RFC SNC connections fail, resulting in a
+java.lang.NullPointerException being thrown during preparation of
+the SNC connection.
+
+This issue is resolved. SNC connections can now be enabled
+successfully.
+
+WSP-736 (SAP_7.1_Fix5)
+SAP Adapter notification throws "Type mismatch, String expected"
+error.
+
+SAP Adapter asynchronous RFC notifications cannot publish
+incoming documents to the Broker, and abort with the error
+message "Type mismatch, String expected" if RFC tables consist
+of single CHAR or STRING fields. This issue is caused by the
+SAP Adapter storing such tables in Object arrays instead of
+String arrays, as expected by the Integration Server's document
+validation.
+
+This issue is resolved. SAP Adapter can now publish RFC tables
+consisting of single CHAR and STRING fields to the Broker.
+
+WSP-711 (SAP_7.1_Fix5)
+SAP Adapter transaction processing fails with error
+JCO_ERROR_REQUEST_CANCELLED.
+
+During long running SAP transactions, SAP Adapter may abort the
+processing with a JCO_ERROR_REQUEST_CANCELLED error message.
+This behavior occurs when JCo is checking for an Integration
+Server session timeout, and the total processing time of the
+transaction exceeds the time specified by the
+watt.server.clientTimeout server configuration parameter.
+This issue occurs because in JCo 3.0.6., SAP has reduced the
+session check interval. Therefore, if you have a lengthy task,
+such as sending out 10,000 IDocs, it is possible that the task
+takes longer than the Integration Server session timeout. For
+older JCo versions, this condition is 'unnoticed'. But with the
+earlier check in JCo 3.0.6, this can result in the issue
+described here. An easy and direct solution would be to increase
+the watt.server.clientTimeout value accordingly (to perhaps 30
+mins or more); however, this may not be desirable in some
+installations.
+
+This issue is resolved. SAP Adapter does not abort long running
+SAP transactions for an Integration Server session timeout, but
+it logs a message in the server's error log.
+To accomplish this, SAP Adapter now automatically sets the JCo
+property "jco.session_timeout.check_interval" to the same default
+value (10 min.) as in previous JCo3 versions before 3.0.6.
+
+Additionally, two new server configuration parameters,
+watt.sap.jco.timeout and watt.sap.listener.session.timeout, have
+been added. watt.sap.jco.timeout sets the JCo timeout check
+interval for RFC client connections, whereas
+watt.sap.listener.session.timeout sets the timeout for
+Integration Server sessions created by the SAP Adapter to process
+incoming RFC documents. Use these new parameters when it is not
+desirable to increase the value of watt.server.clientTimeout.
+
+  watt.sap.jco.timeout allows you to set the global JCo session
+  timeout check interval (in minutes) directly so that
+  Integration Server session timeout checks do not occur too
+  early. For example, to set the timeout to 30 minutes, specify:
+
+    watt.sap.jco.timeout=30
+
+  watt.sap.listener.session.timeout allows you to set a global
+  session timeout value (in minutes) for all RFC listener
+  sessions so that Integration Server session timeouts do not
+  occur too early for lengthy RFC inbound processing tasks. For
+  example, to set the RFC listener session timeout to 1 day
+  (24*60 minutes), specify:
+
+    watt.sap.listener.session.timeout=1440
+
+For information about setting server configuration parameters,
+see Administering webMethods Integration Server (webMethods
+Integration Server Administrator's Guide).
+
+WSP-710 (SAP_7.1_Fix5)
+SAP Adapter transaction processing fails with "session ID does
+not exist" error.
+
+During long running SAP transactions, SAP Adapter may abort the
+processing with a "...Session with session ID {0} does not
+exist..." error message. This behavior occurs when JCo is
+checking for an Integration Server session timeout, and the total
+processing time of the transaction exceeds the time specified by
+the watt.server.clientTimeout server configuration parameter.
+This issue occurs because in JCo 3.0.6., SAP has reduced the
+session check interval. Therefore, if you have a lengthy task,
+such as sending out 10,000 IDocs, it is possible that the task
+takes longer than the Integration Server session timeout. For
+older JCo versions, this condition is 'unnoticed'. But with the
+earlier check in JCo 3.0.6, this can result in the issue
+described here. An easy and direct solution would be to increase
+the watt.server.clientTimeout value accordingly (to perhaps 30
+mins or more); however, this may not be desirable in some
+installations.
+
+This issue is resolved. SAP Adapter does not abort long running
+SAP transactions for an Integration Server session timeout, but
+it logs a message in the server's error log. To accomplish this,
+SAP Adapter now automatically sets the JCo property
+"jco.session_timeout.check_interval" to the same default value
+(10 min.) as in previous JCo3 versions before 3.0.6.
+
+Additionally, a new server configuration parameter,
+watt.sap.jco.timeout, has been added. Use this new parameter when
+it is not desirable to increase the value of
+watt.server.clientTimeout. The new watt.sap.jco.timeout parameter
+allows you to set the global JCo session timeout check interval
+directly so that Integration Server session timeout checks do
+not occur too early. For example, to set the timeout to
+30 minutes, specify:
+
+  watt.sap.jco.timeout=30
+
+For information about setting server configuration parameters,
+see Administering webMethods Integration Server (webMethods
+Integration Server Administrator's Guide).
+
+WSP-706 (SAP_7.1_Fix5)
+SAP Adapter throws "Access denied to invoke..." exceptions when
+accessing the CTS server.
+
+When SAP Adapter is configured as a Centralized Transaction Store
+(CTS) client and when it is processing many listener threads in
+parallel, the CTS transaction updates may be blocked with "Access
+denied to invoke on remote server..." messages in the server.log
+file.
+
+This issue is resolved. SAP Adapter now uses a dedicated
+Integration Server session for all remote CTS transaction updates
+to avoid the "Access denied..." exceptions.
+
+WSP-701, WSP-702 (SAP_7.1_Fix5)
+Routing notification throws null pointer exception when receiving
+a document.
+
+After migration of a SAP Adapter routing notification, the
+notification may throw null pointer exceptions when receiving and
+processing incoming documents. This behavior is caused by the
+Adapter Runtime (ART) and is related to resolved issue PIEAR-194.
+
+This issue is resolved. Migrated routing notifications no longer
+throw null pointer exceptions, but display an error log entry
+instead. Requirement is that the latest IS_Core fix for supported
+Integration Server versions in which issue PIEAR-194 was resolved
+must also be installed. The resolution for PIEAR-194 added three
+new services and one new watt parameter. Using these services and
+setting the watt parameter, you can update associated listener
+notifications for a listener and you can log the data to analyze
+whether listeners and listener notifications are correctly
+linked.
+
+See the IS_Core fix readme file for complete information about
+the new services and the watt parameter.
+
+WSP-700 (SAP_7.1_Fix5)
+Developer cannot create SAP Document Types.
+
+After a long period of Integration Server inactivity (for
+example, 3 to 4 hours), SAP Adapter 7.1 fails under certain
+conditions to provide valid repository connections for metadata
+lookups. This behavior can cause Developer to either hang or to
+ display an empty 'SAP System ID' selection list when creating
+SAP Document Types. This 'System ID' information is also missing
+in the SAP Repository Connection Pools section of the SAP Adapter
+Monitoring screen. The issue is caused by a bug in the current
+SAP JCo, including version 3.0.7.
+
+This issue is resolved. SAP Document Types can be now be created
+after long periods of inactivity without hang ups or an empty
+'SAP System ID' selection list.
+
+WSP-685 (SAP_7.1_Fix4)
+Integration Server runs out of threads when configured as a
+CTS server.
+
+The SAP Adapter Central Transaction Store (CTS) implementation
+uses standard Integration Server Remote Server calls to
+communicate between CTS clients and the CTS server. Periodically,
+CTS clients send their "heartbeat" status to the CTS server.
+These calls are causing the server to exhaust all available
+threads and become unresponsive over time.
+
+The issue is caused by a change in the signature of the public
+service wm.server.remote:invoke, which is used by all CTS
+clients. Starting with Integration Server 7.1.3, this service
+requires a new parameter, $clusterRetry, to be set to avoid
+automatic Remote Server call redirection on clustered Integration
+Servers. If this parameter is not set properly, CTS client calls
+can result in an endless recursion that uses up all Integration
+Server threads.
+
+The issue is resolved. SAP Adapter now sets the $clusterRetry
+parameter for all calls to wm.server.remote:invoke to avoid
+automatic Remote Server call redirection.
+
+WSP-683 (SAP_7.1_Fix4)
+While processing large numbers of inbound IDocs, the maximum
+session limit is reached after some are processed, but remaining
+IDocs are not processed and appear to be lost.
+
+When the SAP system sends a large number of IDOCs (for example,
+30k or more) to the Integration Server, the server processes some
+(10-11k), but soon reaches the maximum number of allowed sessions
+limit. At that point the remaining IDocs are lost without being
+processed. This behavior occurs because SAP Adapter sessions
+exceed the Integration Server maximum licensed sessions limit
+during high tRFC load. The issue is due to an inconsistency of
+the state information update for JCo3 stateless servers. JCo does
+not properly report session-has-ended events for such servers.
+This has the effect that Integration Server Sessions opened for
+the tRFC processing can not be closed after the processing had
+ended, thus causing IS Session overflow for high-volume tRFC
+processing.
+
+The issue is resolved. SAP Adapter now uses stateful JCo servers
+which allow SAP Adapter to close IS Sessions immediately after
+tRFC processing has ended, and avoid IS Session overload.
+
+WSP-677 (SAP_7.1_Fix4)
+webMethods SAP Adapter 7.1 with Fix3 is partially loaded if SAP
+connections fail during startup.
+
+After applying SAP_7.1_Fix3, SAP Adapter 7.1 package, WmSAP, is
+only partially loaded if one of the RFC connections fails to
+initialize.
+
+This issue is resolved. SAP Adapter 7.1 now loads successfully
+and gives a warning message for each failed connection during
+startup.
+
+WSP-676 (SAP_7.1_Fix4)
+Cannot start an RFC Listener that requires a SAP Router string.
+
+When used with SAP Adapter 7.1, RFC Listeners that require a SAP
+router string cannot be started. This behavior occurs because SAP
+Adapter 7.1 does not allow for specifying a SAP Router String for
+RFC Listeners. This prevents RFC Listeners from connecting to SAP
+systems that are behind a firewall.
+
+This issue is resolved. SAP Adapter 7.1 now uses the SAP Router
+String definition set in the RFC Connection also for the RFC
+Listeners connecting to the same SAP host. This enables RFC
+Listeners to connect to SAP host systems behind a firewall.
+
+WSP-663 (SAP_7.1_Fix3)
+New Integration Server connections rejected with many expired SAP
+Adapter sessions being restored.
+
+On Integration IS 7.1.2 and higher, the scheduled JCo session
+checking causes expired Integration Server sessions to be
+reloaded from the cluster store. This behavior causes the server
+to reject new connections because the maximum number of licensed
+sessions has been exceeded. This behavior is due to the JCo
+AutoJobRunner permanently restoring expired sessions.
+
+This issue is resolved. SAP Adapter does not restore expired
+sessions.
+
+WSP-656 (SAP_7.1_Fix3)
+Cannot create SAP Document Type in Developer.
+
+In webMethods Developer, when creating a new SAP Document Type,
+Developer either hangs or displays an empty 'SAP System ID'.
+Depending on the number of currently open connections and
+listeners, this behavior occurs because SAP Adapter 7.1 fails
+under certain conditions to provide valid repository connections
+for metadata lookups.
+
+This issue is resolved. SAP Document Types can be now be created
+successfully in Developer.
+
+WSP-646 (SAP_7.1_Fix3)
+Metadata lookup errors occur during SAP Adapter processing.
+
+SAP Adapter 7.1 uses common repository connections for all RFC
+connections to SAP systems with the same system id. Under certain
+conditions, the adapter prematurely deletes repository
+connections
+while there is a still an open RFC connection that depends on the
+deleted repository connection. When the adapter deletes the
+repository connections, metadata lookup exceptions like
+"IDOC_ERROR_METADATA_UNAVAILABLE: The metadata for the IDoc type
+is unavailable." occur.
+
+This issue is resolved. SAP Adapter now deletes repository
+connections only after all dependent RFC connections have been
+closed, and processing completes without metadata lookup errors.
+
+WSP-637 (SAP_7.1_Fix2)
+SAP Adapter listener notification (remote event/receiver
+coupling) fails to publish notification document.
+
+After creating a remote event/receiver coupling listener
+notification, there is an error publishing the notification
+document. The following error is thrown:
+pathName=/_env/activation errorCode=VV-005 errorMessage=
+[ISC.0082.9034] Field is absent, field must exist.
+In addition, the adapter notification document shows all envelope
+fields (under _env) as required; however, the envelope fields
+should all be optional, as with any other adapter notification.
+Looking at pub.publish:envelope (which is part of the WmPublic
+package.), all the fields of this envelope document are also
+changed to required. Restarting the Integration Server causes all
+these _env fields to change back to optional.
+
+This issue is resolved. Notification documents can be published
+without error when creating or changing a remote event/receiver
+coupling adapter notification, and the pub.publish:envelope
+document type is not altered.
+
+WSP-631 (SAP_7.1_Fix2)
+SAP Adapter sometimes incorrectly creates IDoc SDATA strings
+that are longer than 1000 characters.
+
+For IDocs sent from SAP Unicode systems, the built-in service
+‘pub.sap.idoc:encodeSDATA’ sometimes incorrectly creates SDATA
+strings that are longer than 1000 characters and with invalid
+field lengths.
+
+This issue is now resolved.
+
+WSP-629 (SAP_7.1_Fix2)
+SAP Adapter 4.6 routing rule migrated by the migration utility
+to SAP Adapter 6.5 or SAP Adapter 7.1 contains the wrong Service
+Name in the resulting routing notification.
+
+During migration from SAP Adapter 4.6 version to 6.5 version or
+7.1 version, the migration utility converts WmPartners routing
+rules to SAP Adapter 6.5 or 7.1 routing notifications,
+respectively. However, after the migration completes, the new
+routing notification is not invoking the correct service.
+Looking at the new routing notification, the Adapter Settings
+tab's "Service Invoke" field contains a different service than
+the service defined on the original routing rule.
+
+This issue occurs because the migration utility, when migrating
+routing rules, is expecting that routing rules will have an
+outbound transport type of "B2B Service." However it appears that
+some older versions of the SAP Adapter did set this value to
+"Service".
+
+This issue is resolved. The migration utility now checks for both
+values, "B2B Service" and "Service", during routing rule
+migration.
+
+WSP-623 (SAP_7.1_Fix2)
+While viewing the transactions in the transactions store, SAP
+Adapter blocks the processing of the tRFC calls.
+
+While viewing the content of the transactions in the Transactions
+page, SAP Adapter blocks the processing of all inbound and
+outbound tRFC calls. If the transaction store contains large
+number of transactions, then the blockage time sometimes extends
+to several minutes.
+
+This issue is now resolved.
+
+WSP-621 (SAP_7.1_Fix2)
+SAP Adapter does not support RFC Changing Parameters.
+
+webMethods SAP Adapter 7.1 does not display RFC Changing
+Parameters in the RFC Lookup screen or in the signature of
+RFC Adapter Services. Additionally, the adapter does not allow
+any Changing Parameters to pass when executing RFCs.
+
+The issue is resolved. SAP Adapter now displays all Changing
+Parameters in the RFC Lookup and in RFC Adapter Service
+signatures, and it passes Changing Parameters to the executed RFC
+and returns the modified values.
+
+WSP-605 (SAP_7.1_Fix2)
+After migrating from SAP Adapter 6.5 SP1 to SAP Adapter 7.1, RFC
+notifications with changing parameters do not work.
+
+After migrating from SAP Adapter 6.5 SP1 to SAP Adapter 7.1, RFC
+notifications with changing parameters do not work. This issue
+occurs because the SAP Adapter 7.1 does not transfer the inbound
+data of changing RFC parameters to the associated RFC
+notifications.
+
+This issue is resolved. Now, after migrating from SAP Adapter 6.5
+SP1 to SAP Adapter 7.1, RFC notifications with changing
+parameters work as expected.
+
+WSP-611 (SAP_7.1_Fix1)
+The "." (dot) character in IDoc field-name causes invalid
+document structure.
+
+If an RFC or IDoc field name contains the "." (dot) character,
+webMethods SAP Adapter creates a document type with an invalid
+hierarchical structure for the RFC or IDoc document. This issue
+occurs because ART limits the use of the "." (dot) character
+to separate different document-type nesting levels.
+
+This issue is resolved. Now, SAP Adapter substitutes all "."
+(dot) characters in RFC and IDoc field names with the "|" (pipe)
+character to avoid hierarchy issues in the document that
+ART creates.
+
+WSP-602 (SAP_7.1_Fix1)
+pub.sap.encodeString service fails with "Index greater than
+number of IDoc fields" error.
+
+The public service pub.sap.encodeString fails with an "Index
+greater than number of IDoc fields" error message when the IDoc
+input parameter contains segments with empty fields.
+
+This issue is resolved. The public service pub.sap.encodeString
+now successfully processes IDocs with partially empty segments
+without errors.
+
+WSP-597 (SAP_7.1_Fix1)
+SAP Adapter does not work with SAP JCo 3.0.3 or higher.
+
+SAP JCo and IDoc Library version 3.0.3 and higher are
+incompatible with the previous versions and therefore cause SAP
+Adapter runtime exceptions when processing IDocs or performing
+RFC Repository lookups.
+
+The issue is resolved. SAP Adapter is now compatible with SAP JCo
+and IDoc Library version 3.0.3 and higher. Important: The
+previous JCo releases 3.0.1 and 3.0.2 are no longer supported.
+
+WSP-596 (SAP_7.1_Fix1)
+pub.sap.idoc:decodeString creates invalid fields for
+unicode SAP Systems
+
+When calling public service pub.sap.idoc:decodeString for an
+unicode SAP system, the fields within the data-part of each IDoc
+segment are populated with invalid data.
+
+The issue is resolved, pub.sap.idoc:decodeString now extracts the
+data for the segment fields properly for unicode SAP Systems.
+
+WSP-579 (SAP_7.1_Fix1)
+Defined event-receiver couplings do not work with SAP
+Process Monitoring Agent 8.0.
+
+The SAP Process Monitoring Agent component of webMethods Optimize
+for SAP uses the "WMBAM" receiver type prefix. However, this
+prefix is not compatible with SAP Process Monitoring Agent 8.0,
+which expects the prefix to be "WMBEM." Therefore, previously
+defined couplings do not work.
+
+This issue is resolved. A new configuration parameter
+"watt.sap.rectype.prefix" has been added to allow the receiver
+type prefix to be set.
+
+To set the receiver type prefix:
+
+1. From the Integration Server Administrator, click Settings >
+   Extended.
+
+2. Click Edit Extended Settings. In the Extended Settings editor,
+   type the following:
+
+   watt.sap.rectype.prefix=WMBAM
+
+   Note: The parameter name is case sensitive.
+
+3. Click Save Changes. A key for the new property appears in the
+   Extended Settings list.
+
+4. Click Show and Hide Keys. You will see
+   "watt.sap.rectype.prefix" listed as a Key and is visible.
+
+5. Restart the webMethods Integration Server for the changes to
+   take effect.
+
+For more information about the server configuration and the
+server.cnf file, see the guide "Administering webMethods
+Integration Server."
+
+WSP-414 (SAP_7.1_Fix1)
+Events from business object with several keyfields are not
+processed by the SAP Process Monitoring Agent.
+
+Business objects instances are uniquely identified by their
+keyfields, but they might consist of more than one keyfield. In
+the case of multiple keyfields, the SAP Adapter does not process
+the notification, and instead returns the following error:
+
+java.lang.ExceptionInInitializerError - WmSAP Adapter: Error on
+creating new Object: com.wm.adapter.sap.bo.BOInstanceEvent
+
+The issue is resolved. Events for business objects with more than
+one keyfield are now processed correctly.
+
+WSP-412 (SAP_7.1_Fix1)
+IDocs cannot be sent to SAP Adapter when configured for
+Central Transaction Store.
+
+SAP Adapter returns the error message "User session required to
+invoke a protected remote server" to the sending SAP System when
+the adapter is configured to use a Centralized Transaction Store
+(CTS). This behavior occurs because SAP Adapter, which uses the
+Integration Server Remote Invoke mechanism to communicate with
+the CTS, does not always provide a valid IS Session.
+
+This issue is resolved. The Invoke State of the Remote Invokes
+now always contains a valid IS Session to prevent access denials,
+and SAP Adapter now receives and processes IDocs sent from SAP
+when configured to use a CTS.
+
+WSP-411 (SAP_7.1_Fix1)
+Local Function Module WM_PUSH_EVENT cannot be accessed
+
+Creating an adapter notification for the predefined function
+module WM_PUSH_EVENT or looking up WM_PUSH_EVENT in the SAP
+Adapter GUI results in the following error: [SAP.105.9205] WmSAP
+Adapter: Function interface named 'WM_PUSH_EVENT' does not exist
+on SAP system with system id 'E60'
+
+The issue is resolved. Notifications for WM_PUSH_EVENT can be
+created without errors.
+
+WSP-407 (SAP_7.1_Fix1)
+IDocs sent from SAP to webMethods have invalid date/time fields
+in the DC40 header.
+
+For IDocs sent to webMethods, the date and time format
+(represented by the CREDAT and CRETIM fields) in the EDI_DC40
+header record shows with dashes. This behavior occurs because the
+IDoc header fields CREDAT and CRETIM are not represented
+consistently within webMethods.
+
+This issue is resolved. The IDoc header is now decoded correctly
+using the proper format for dates and times. Specifically, IDocs
+can be represented at the webMethods platform in four different
+layouts: iDocList object, IDOC tables, document, and flat file
+string.
+
+- For iDocList object and IDOC tables, header fields CREDAT and
+  CRETIM are now formatted using the 10 resp 8 character length
+  ISO extended format. That is: CREDAT is shown as YYYY-MM-DD and
+  CRETIM is shown as hh:mm:ss.
+
+- For document and flat file string, header fields CREDAT and
+  CRETIM are formatted using the 8 resp 6 character length SAP
+  format. That is: CREDAT is shown as YYYYMMDD and CRETIM is
+  shown as hhmmss.
+
+WSP-398 (SAP_7.1_Fix1)
+$abapexception not filled properly.
+
+WmSAP_6-5_SP1_Fix17 causes pub.sap.transport.BAPI:OutboundProcess
+to not pass BAPI exception data properly to output parameter
+$abapexception in case of an ABAP or BAPI exception.
+
+The issue is resolved. The service now transfers all exception
+data to output parameter $abapexception.
+
+WSP-395 (SAP_7.1_Fix1)
+pub.sap.transport.BAPI:OutboundProcess throws
+NullPointerException.
+
+The public service pub.sap.transport.BAPI:OutboundProcess throws
+a NullPointerException if the BAPI does not exist in the target
+SAP system.
+
+The issue is resolved. The service now creates an error messages
+when the BAPI does not exist.
+
+
+
+5.0 Platform Support
+
+This fix is supported on all platforms supported by
+webMethods SAP Adapter 7.1.
+
+
+
+6.0 Installation
+
+To install the fix:
+
+1. Disable all enabled SAP Adapter RFC Connections and RFC
+   Listeners.
+
+2. Wait until all pending SAP processing finishes before
+   installing the fix. Disable any scheduled Integration Server
+   tasks related to SAP Adapter.
+
+3. If SAP Adapter is configured as a CTS server, you must either
+   stop all connected CTS clients or disable their RFC
+   Connections and RFC Listeners before installing the fix on the
+   CTS server. The CTS clients must be at the same fix level as
+   the SAP Adapter configured as a CTS server.
+
+4. Make a backup of the IntegrationServer/packages/WmSAP 
+   folder, and then delete the txstore subfolder from
+   IntegrationServer/packages/WmSAP.
+
+5. Install the fix using the Software AG Update Manager.
+   For instructions, see Using the Software AG Update
+   Manager located either in the _documentation directory
+   or on the documentation Web site at
+   http://documentation.softwareag.com.
+
+6. After installing the fix, restore the saved txstore subfolder
+   to IntegrationServer/packages/WmSAP.
+   
+7. Enable the disabled scheduled Integration Server tasks, and
+   SAP Adapter RFC Connections and RFC Listeners.
+   
+8. Restart all stopped CTS clients or enable their disabled RFC
+   Connections and RFC Listeners.
+
+
+
+7.0 Uninstallation
+
+To uninstall the fix:
+
+1. Disable all enabled SAP Adapter RFC Connections and RFC
+   Listeners.
+
+2. Wait until all pending SAP processing finishes before
+   installing the fix. Disable any scheduled Integration Server
+   tasks related to SAP Adapter.
+
+3. If SAP Adapter is configured as a CTS server, you must either
+   stop all connected CTS clients or disable their RFC
+   Connections and RFC Listeners before installing the fix on the
+   CTS server. The CTS clients must be at the same fix level as
+   the SAP Adapter configured as a CTS server.
+
+4. Make a backup of the IntegrationServer/packages/WmSAP 
+   folder. 
+
+5. Uninstall the fix using the Software AG Update Manager.
+   For instructions, see Using the Software AG Update
+   Manager.
+
+6. After uninstalling the fix, delete the txstore
+   subfolder from IntegrationServer/packages/WmSAP, and then
+   restore the saved txstore folder to
+   IntegrationServer/packages/WmSAP.
+   
+7. Enable the disabled scheduled Integration Server tasks, and
+   SAP Adapter RFC Connections and RFC Listeners.
+   
+8. Restart all stopped CTS clients or enable their disabled RFC
+   Connections and RFC Listeners.
+
+NOTE: This uninstall procedure can only be used to uninstall the
+most recently installed fix. This action will revert your
+installation to the previously installed fix. You cannot apply
+this uninstall procedure to the previously installed fix.
+
+
+
+8.0 Cautions and Warnings
+
+Software AG recommends disabling all RFC Connections and
+Listeners, and ending all pending SAP processing before
+installing or uninstalling the fix. 
+
+If webMethods SAP Adapter is configured as a CTS 
+server, you must either stop all connected CTS clients or disable
+their RFC Connections and Listeners before installing or 
+uninstalling the fix on the CTS server. The CTS clients 
+must be at the same fix level as the SAP Adapter configured 
+as a CTS server.
+
+
+
+9.0 Globalization
+
+This fix conforms to the internationalization standards of the
+webMethods product suite and includes support for operation in
+any country, locale, or language as specified in the webMethods
+Installation Guide. It was not tested with non-English
+configurations and non-ASCII data. However, this fix has no
+globalization impact and can be applied to systems running in
+any supported locale or configuration.
+
+
+9.1 Localization
+
+This fix does not require an updated Language Pack. It might
+contain new messages and these messages will appear in English.
+
+
+
+10.0 Copyright
+
+Copyright c 2013 Software AG, Darmstadt, Germany and/or Software
+AG USA, Inc., Reston, VA, United States of America, and/or their
+licensors.
+
+The name Software AG, webMethods and all Software AG product
+names are either trademarks or registered trademarks of 
+Software AG and/or Software AG USA, Inc. and/or its Subsidiaries
+and/or their licensors. Other company and product names mentioned
+herein may be trademarks of their respective owners.
+
+Detailed information on trademarks and patents owned by 
+Software AG and/or its subsidiaries is located at 
+http://documentation.softwareag.com/legal/.
+
+This software may include portions of third-party products.  For 
+third-party copyright notices and license terms, please refer to
+"License Texts, Copyright Notices and Disclaimers of Third Party
+Products." This document is part of the product documentation,
+located at http://documentation.softwareag.com/legal/ and/or in 
+the root installation directory of the licensed product(s).
+
+
+
+11.0 Contacting Us
+
+Authorized technical support contacts can reach Software AG
+Global Support in the following ways:
+
+  Web: https://empower.softwareag.com (online support center)
+
+  E-mail: empower@softwareag.com
+
+You can find complete contact information in our Global Support
+Contact Directory at:
+
+https://empower.softwareag.com/public_directory.asp
+
+You can also visit our Software AG Developer Communities to
+access additional articles, demos, and tutorials, technical
+information, samples, useful resources, online discussion forums
+moderated by Software AG professionals, and more at:
+
+http://communities.softwareag.com/ecosystem/communities/public/index.html   

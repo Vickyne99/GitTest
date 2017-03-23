@@ -1,0 +1,237 @@
+<ehcache name="SoftwareAG.IS.Mediator" updateCheck="false">
+    <defaultCache
+            maxElementsInMemory="0"
+            eternal="false"
+            overflowToDisk="false"/>
+
+    <cache name="ConsumerApplicationsCache"
+           maxElementsInMemory="1000"
+           maxElementsOnDisk="0"
+           eternal="true"
+           copyOnRead="false"
+           copyOnWrite="false">
+        <terracotta clustered="false">            
+            <nonstop enabled="false"
+                     immediateTimeout="true"
+                     timeoutMillis="45000">
+                <timeoutBehavior type="exception"/>
+            </nonstop>
+        </terracotta>
+    </cache>
+
+    <cache name="ClusterStatusCache"
+           maxElementsInMemory="100"
+           maxElementsOnDisk="0"
+           eternal="true"
+           copyOnRead="false"
+           copyOnWrite="false">
+        <terracotta clustered="false">            
+            <nonstop enabled="false"
+                     immediateTimeout="true"
+                     timeoutMillis="45000">
+                <timeoutBehavior type="exception"/>
+            </nonstop>
+        </terracotta>    
+    </cache>
+
+    <cache name="VirtualServicesCache"
+           maxElementsInMemory="10000"
+           maxElementsOnDisk="0"
+           eternal="true"
+           copyOnRead="false"
+           copyOnWrite="false">
+        <terracotta clustered="false">            
+            <nonstop enabled="false"
+                     immediateTimeout="true"
+                     timeoutMillis="45000">
+                <timeoutBehavior type="exception"/>
+            </nonstop>
+        </terracotta>    
+    </cache>
+
+    <cache name="RegisteredConsumerNamesCache"
+           maxElementsInMemory="1000"
+           maxElementsOnDisk="0"
+           eternal="true"
+           copyOnRead="false"
+           copyOnWrite="false">
+        <terracotta clustered="false">            
+            <nonstop enabled="false"
+                     immediateTimeout="true"
+                     timeoutMillis="45000">
+                <timeoutBehavior type="exception"/>
+            </nonstop>
+        </terracotta>    
+    </cache>
+	
+   <cache name="ApiKeysCache"         
+        eternal="true"         
+        maxEntriesLocalHeap="100000"
+        copyOnRead="false"
+		copyOnWrite="false">
+       <terracotta clustered="false">            
+            <nonstop  enabled="false"                 
+					  immediateTimeout="true"                 
+                      timeoutMillis="45000">
+				<timeoutBehavior type="exception"/>
+			</nonstop>	
+        </terracotta>    
+    </cache>
+
+   <cache name="OAuth2TokensCache"         
+        eternal="true"         
+        maxEntriesLocalHeap="100000"
+        copyOnRead="false"
+		copyOnWrite="false">
+       <terracotta clustered="false">            
+            <nonstop  enabled="false"                 
+					  immediateTimeout="true"                 
+                      timeoutMillis="45000">
+				<timeoutBehavior type="exception"/>
+			</nonstop>	
+        </terracotta>    
+    </cache>
+	
+	<cache name="RuntimeAliasesCache"         
+        eternal="true"         
+        maxEntriesLocalHeap="1000"
+		maxElementsOnDisk="0"
+        copyOnRead="false"
+		copyOnWrite="false">
+       <terracotta clustered="false">            
+            <nonstop  enabled="false"                 
+					  immediateTimeout="true"                 
+                      timeoutMillis="45000">
+				<timeoutBehavior type="exception"/>
+			</nonstop>	
+        </terracotta>    
+    </cache>
+	
+	<cache name="RuntimeAliasesServicesAssociationCache"
+           maxElementsInMemory="1000"
+           maxElementsOnDisk="0"
+           eternal="true"
+           copyOnRead="false"
+           copyOnWrite="false">
+        <terracotta clustered="false">            
+            <nonstop enabled="false"
+                     immediateTimeout="true"
+                     timeoutMillis="45000">
+                <timeoutBehavior type="exception"/>
+            </nonstop>
+        </terracotta>    
+    </cache>
+	
+    <cache name="RuntimePolicyCache"
+           maxElementsInMemory="100000"
+           maxElementsOnDisk="0"
+           eternal="true"
+           copyOnRead="true"
+           copyOnWrite="true">
+        <terracotta clustered="false">            
+            <nonstop enabled="false"
+                     immediateTimeout="true"
+                     timeoutMillis="45000">
+                <timeoutBehavior type="exception"/>
+            </nonstop>
+        </terracotta>    
+    </cache>
+	
+	
+
+    <cache name="MetricAccumulatorCache"
+           maxElementsInMemory="10000"
+           maxElementsOnDisk="0"
+           eternal="true"
+           copyOnRead="true"
+           copyOnWrite="true">
+        <terracotta clustered="false">            
+            <nonstop enabled="false"
+                     immediateTimeout="true"
+                     timeoutMillis="45000">
+                <timeoutBehavior type="exception"/>
+            </nonstop>
+        </terracotta>    
+    </cache>
+
+    <cache name="IntervalNotificationCache"
+           maxElementsInMemory="10000"
+           maxElementsOnDisk="0"
+           eternal="true"
+           copyOnRead="true"
+           copyOnWrite="true">
+        <terracotta clustered="false">            
+            <nonstop enabled="false"
+                     immediateTimeout="true"
+                     timeoutMillis="45000">
+                <timeoutBehavior type="exception"/>
+            </nonstop>
+        </terracotta>    
+    </cache>
+	<cache         
+        name="MediatorServicesResultsCache"         
+        eternal="false"   
+        maxEntriesLocalHeap="10000">   
+		<searchable allowDynamicIndexing="false" keys="false" values="false"> >
+		<searchAttribute name="virtualServiceName" type="String" expression="value.getVirtualServiceName()"/>    
+		</searchable>
+		
+        <persistence             
+            strategy="none"/>        
+        <terracotta             
+            clustered="false"             
+            consistency="STRONG">            
+            <nonstop                 
+                enabled="false"                 
+                immediateTimeout="true"                 
+                timeoutMillis="45000"/>        
+        </terracotta>    
+    </cache>
+	
+	<cache name="CSCommunicationCache"         
+        eternal="true"         
+        maxEntriesLocalHeap="100"
+        copyOnRead="false"
+		copyOnWrite="false">
+       <terracotta clustered="false">            
+            <nonstop  enabled="false"                 
+					  immediateTimeout="true"                 
+                      timeoutMillis="45000">
+				<timeoutBehavior type="exception"/>
+			</nonstop>	
+        </terracotta>    
+    </cache>
+	
+	<cache name="ESCommunicationCache"
+        eternal="true"
+        maxEntriesLocalHeap="100"
+        copyOnRead="false"
+		copyOnWrite="false">
+		<terracotta clustered="false">
+            <nonstop enabled="false"
+					  immediateTimeout="true"
+                      timeoutMillis="45000">
+				<timeoutBehavior type="exception"/>
+			</nonstop>
+        </terracotta>
+    </cache>
+	
+	<cache name="APIPortalCommunicationCache"
+        eternal="true"
+        maxEntriesLocalHeap="100"
+        copyOnRead="false"
+		copyOnWrite="false">
+		<terracotta clustered="false">
+            <nonstop enabled="false"
+					  immediateTimeout="true"
+                      timeoutMillis="45000">
+				<timeoutBehavior type="exception"/>
+			</nonstop>
+        </terracotta>
+    </cache>
+
+    <diskStore path="./cacheStore/SoftwareAG-IS-Mediator">
+    </diskStore>
+	
+
+</ehcache>

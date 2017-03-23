@@ -1,0 +1,109 @@
+<?xml version="1.0"?>
+<constraints>
+
+<!-- Text Block for NOV03 MT107 -->
+<field name="20:" type="PatternType">
+    <bizName>Reference - Sender's Reference</bizName>
+    <pattern>16x</pattern>
+    <error type="content">T26</error>
+</field>
+<field name="21:" type="PatternType">
+    <bizName>Reference - Transaction Reference</bizName>
+    <pattern>16x</pattern>
+    <error type="content">T26</error>
+</field>
+<field name="21C:" type="PatternType">
+    <bizName>Reference C - Mandate Reference</bizName>
+    <pattern>35x</pattern>
+</field>
+<field name="23E:" type="PathType">
+    <bizName>Instruction Code</bizName>
+    <path name="B4/A/23E:" type="MixedType">
+        <bizName>Instruction Code</bizName>
+        <pattern>4!c[/30x]</pattern>
+        <choice>AUTH</choice>
+        <choice>NAUT</choice>
+        <choice>RTND</choice>
+        <choice>OTHR</choice>
+        <error type="code">T47</error>
+    </path>
+    <path name="B4/B/23E:" type="MixedType">
+        <pattern>4!c[/30x]</pattern>
+        <choice>AUTH</choice>
+        <choice>NAUT</choice>
+        <choice>OTHR</choice>
+        <error type="code">T47</error>
+    </path>
+</field>
+<field name="30:" type="PatternType">
+    <bizName>Date - Requested Execution Date</bizName>
+    <pattern>&lt;DATE2&gt;</pattern>
+</field>
+<field name="32B:" type="PatternType">
+    <bizName>B - Currency and Transaction (Settlement) Amount</bizName>
+    <pattern>&lt;CUR&gt;&lt;AMOUNT&gt;15</pattern>
+</field>
+<field name="33B:" type="PatternType">
+    <bizName>B - Currency/Original Ordered Amount</bizName>
+    <pattern>&lt;CUR&gt;&lt;NUMBER&gt;15</pattern>
+</field>
+<field name="50A:" type="PatternType">
+    <bizName>A - Creditor</bizName>
+    <pattern>[/34xCRLF]&lt;SWIFTBIC&gt;|&lt;NONSWIFTBIC&gt;</pattern>
+</field>
+<field name="50K:" type="PatternType">
+    <bizName>K - Creditor</bizName>
+    <pattern>[/34xCRLF]4*35x</pattern>
+    <error type="content">T77</error>
+</field>
+<field name="52A:" type="MixedType">
+    <bizName>A - Creditor's Bank</bizName>
+    <pattern>[&lt;BICPLUS&gt;][CRLF]&lt;SWIFTBIC&gt;|&lt;NONSWIFTBIC&gt;</pattern>
+</field>
+<field name="52C:" type="MixedType">
+    <bizName>C - Creditor's Bank</bizName>
+    <pattern>&lt;BICPLUS&gt;</pattern>
+</field>
+<field name="52D:" type="MixedType">
+    <bizName>D - Creditor's Bank</bizName>
+    <pattern>[&lt;BICPLUS&gt;][CRLF]4*35x</pattern>
+</field>
+<field name="53A:" type="MixedType">
+    <bizName>A - Sender's Correspondent</bizName>
+    <pattern>[&lt;BICPLUS&gt;][CRLF]&lt;SWIFTBIC&gt;|&lt;NON-SWIFTBIC&gt;</pattern>
+    <choice>C</choice>
+    <choice>D</choice>
+</field>
+<field name="57A:" type="MixedType">
+    <bizName>A - Debtor's Bank</bizName>
+    <pattern>[&lt;BICPLUS&gt;][CRLF]&lt;SWIFTBIC&gt;|&lt;NON-SWIFTBIC&gt;</pattern>
+</field>
+<field name="57C:" type="MixedType">
+    <bizName>C - Debtor's Bank</bizName>
+    <pattern>&lt;BICPLUS&gt;</pattern>
+</field>
+<field name="57D:" type="MixedType">
+    <bizName>D - Debtor's Bank</bizName>
+    <pattern>[&lt;BICPLUS&gt;][CRLF]4*35x</pattern>
+</field>
+<field name="59:" type="PatternType">
+    <bizName>Debtor</bizName>
+    <pattern>[/34xCRLF]4*35x</pattern>
+</field>
+<field name="59A:" type="PatternType">
+    <bizName>A - Debtor</bizName>
+    <pattern>[/34xCRLF]&lt;SWIFTBIC&gt;|&lt;NONSWIFTBIC&gt;</pattern>
+</field>
+<field name="71F:" type="PatternType">
+    <bizName>F - (Sum of) Sender's Charges</bizName>
+    <pattern>&lt;CUR&gt;&lt;AMOUNT&gt;15</pattern>
+</field>
+<field name="71G:" type="PatternType">
+    <bizName>G - (Sum of) Receiver's Charges</bizName>
+    <pattern>&lt;CUR&gt;&lt;AMOUNT&gt;15</pattern>
+</field>
+<field name="72:" type="PatternType">
+    <bizName>Sender to Receiver Information</bizName>
+    <pattern>&lt;REJT/RETN/72&gt;</pattern>
+</field>
+</constraints>

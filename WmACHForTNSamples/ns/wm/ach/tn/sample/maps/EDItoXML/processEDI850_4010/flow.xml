@@ -1,0 +1,1661 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<FLOW VERSION="3.0" CLEANUP="true">
+  <COMMENT></COMMENT>
+
+  <!-- nodes -->
+
+<INVOKE TIMEOUT="" SERVICE="sampleServices:X12toValues" VALIDATE-IN="$none" VALIDATE-OUT="$none">
+  <COMMENT></COMMENT>
+
+  <!-- nodes -->
+
+<MAP MODE="INPUT">
+  <MAPTARGET>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="nillable">true</value>
+    <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">edidata</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">docProcessingSvcName</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="node_comment"></value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <value name="field_usereditable">false</value>
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+        </record>
+        <value name="field_name">validate</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">true</value>
+        <array name="field_options" type="value" depth="1">
+          <value>true</value>
+          <value>false</value>
+        </array>
+        <record name="field_content_type" javaclass="com.wm.util.Values">
+          <value name="contentType">1</value>
+          <value name="internalType">instance</value>
+          <value name="ct_class">com.wm.lang.schema.datatype.WmString</value>
+          <value name="name">string_customized</value>
+          <array name="enumeration" type="value" depth="1">
+            <value>true</value>
+            <value>false</value>
+          </array>
+          <value name="whiteSpace">none</value>
+        </record>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="node_comment"></value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <value name="field_usereditable">false</value>
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+        </record>
+        <value name="field_name">complianceCheck</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">true</value>
+        <array name="field_options" type="value" depth="1">
+          <value>true</value>
+          <value>false</value>
+        </array>
+        <record name="field_content_type" javaclass="com.wm.util.Values">
+          <value name="contentType">1</value>
+          <value name="internalType">instance</value>
+          <value name="ct_class">com.wm.lang.schema.datatype.WmString</value>
+          <value name="name">string_customized</value>
+          <array name="enumeration" type="value" depth="1">
+            <value>true</value>
+            <value>false</value>
+          </array>
+        </record>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="node_comment"></value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <value name="field_usereditable">false</value>
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+        </record>
+        <value name="field_name">returnErrors</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">true</value>
+        <array name="field_options" type="value" depth="1">
+          <value>asArray</value>
+          <value>inResults</value>
+          <value>both</value>
+        </array>
+        <value name="nillable">true</value>
+      </record>
+    </array>
+  </record>
+</Values>
+</MAPTARGET>
+  <MAPSOURCE>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="nillable">true</value>
+    <array name="rec_fields" type="record" depth="1">
+    </array>
+  </record>
+</Values>
+</MAPSOURCE>
+
+  <!-- nodes -->
+
+<MAPSET NAME="Setter" OVERWRITE="true" VARIABLES="false" FIELD="/validate;1;0">
+  <DATA ENCODING="XMLValues" I18N="true">
+
+<Values version="2.0">
+  <value name="xml">true</value>
+  <record name="type" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="node_comment"></value>
+    <record name="node_hints" javaclass="com.wm.util.Values">
+      <value name="field_usereditable">false</value>
+      <value name="field_largerEditor">false</value>
+      <value name="field_password">false</value>
+    </record>
+    <value name="field_name">validate</value>
+    <value name="field_type">string</value>
+    <value name="field_dim">0</value>
+    <value name="field_opt">true</value>
+    <array name="field_options" type="value" depth="1">
+      <value>true</value>
+      <value>false</value>
+    </array>
+    <record name="field_content_type" javaclass="com.wm.util.Values">
+      <value name="contentType">1</value>
+      <value name="internalType">instance</value>
+      <value name="ct_class">com.wm.lang.schema.datatype.WmString</value>
+      <value name="name">string_customized</value>
+      <array name="enumeration" type="value" depth="1">
+        <value>true</value>
+        <value>false</value>
+      </array>
+      <value name="whiteSpace">none</value>
+    </record>
+    <value name="nillable">true</value>
+  </record>
+</Values>
+</DATA>
+</MAPSET>
+
+<MAPSET NAME="Setter" OVERWRITE="true" VARIABLES="false" FIELD="/docProcessingSvcName;1;0">
+  <DATA ENCODING="XMLValues" I18N="true">
+
+<Values version="2.0">
+  <value name="xml">Tutorial.EDItoXML:EDItoXMLPOMap</value>
+  <record name="type" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="field_name">docProcessingSvcName</value>
+    <value name="field_type">string</value>
+    <value name="field_dim">0</value>
+    <value name="nillable">true</value>
+  </record>
+</Values>
+</DATA>
+</MAPSET>
+
+<MAPSET NAME="Setter" OVERWRITE="false" VARIABLES="false" FIELD="/edidata;1;0">
+  <DATA ENCODING="XMLValues" I18N="true">
+
+<Values version="2.0">
+  <value name="xml">ISA*00*          *00*          *01*9012345720000  *01*9088877320000  *020403*1435*U*00200*000000001*0*T*:!
+GS*PO*901234572000*908887732000*020403*1435*1*T*004010!
+ST*850*0001!
+BEG*01*BK*99AKDF9DAL393*39483920193843*20020403*AN3920943*AC*IBM*02*AE*02*BA!
+CUR*AC*USA*.2939*SE*USA*IMF*002*20020403*1615*021*20020403*0718*038*20020403*1952*002*20020403*1615*021*20020403*0718!
+REF*AB*3920394930203*GENERAL PURPOSE*BT:12345678900987654321768958473:CM:500:AB:3920394930203!
+PER*AC*ARTHUR JONES*TE*(614)555-1212*TE*(614)555-1212*TE*(614)555-1212*ADDL CONTACT DESC!
+TAX*229438383*IP*02535*IP*36201*IP*36299*IP*02535*IP*36201*A*C!
+FOB*CA*IP*GENERAL PURPOSE*01*CAF*IP*GENERAL PURPOSE*BY*GENERAL PURPOSE!
+CTP*AG*ALT*100.00*100*DP:1488192381:10.938:HB:1577319838:.29384:QD:1703467507:.05029:DP:1739709035:10.938:HB:146589649:.29384*CSD*.05029*100.00*PD*MILES*10!
+PAM*01*.500*QD:647404756:10.938:DP:1677989035:.29384:HB:1838815032:.05029:QD:449351537:10.938:DP:1582746886:.29384*AC*50.00*DA*038*20020403*1952*002*20020403*1615*1*10.25*N!
+CSH*B*A*10000*ACCT0001*20020403*AX*DL*B0*20.00*1!
+TC2*A*SBEANS!
+SAC*A*A010*AA*1*50000*1*.25*5000*HB*123.45*100*01*12345678900987654321768958473*PROMO292910*GENERAL PURPOSE*ENG!
+CUR*BK*USA*1.259*AC*USA*LNF*021*20020403*0718*038*20020403*1952*002*20020403*1615*021*20020403*0718*038*20020403*1952!
+ITD*01*1*.0035*20020403*60*20020403*10*1000*20020403*10000*.25*GENERAL PURPOSE*1*C*50.75!
+DIS*AMT*CA*10*DOF*1000*4200!
+INC*03*QD:869469207:.05029:DP:1191039564:10.938:HB:1207149656:.29384:QD:1177872282:.05029:DP:836517373:10.938*.500*123.45*665.75!
+DTM*002*20020403*1615*CT*CM*DATE TIME PERIOD!
+LDT*AA*100*HR*20020403!
+LIN*AAA849*AB*ASSEMBLY*BL*BRAND OR LABEL*ON*CUST12345*AB*ASSEMBLY*BL*BRAND OR LABEL*ON*CUST12345*AB*ASSEMBLY*BL*BRAND OR LABEL*ON*CUST12345*AB*ASSEMBLY*BL*BRAND OR LABEL*ON*CUST12345*AB*ASSEMBLY*BL*BRAND OR LABEL*ON*CUST12345!
+SI*NR*SR*ASSEMBLY*SR*BRAND OR LABEL*SR*CUST12345*SR*ASSEMBLY*SR*BRAND OR LABEL*SR*CUST12345*SR*ASSEMBLY*SR*BRAND OR LABEL*SR*CUST12345*SR*ASSEMBLY!
+PID*F*BC*AX*UNSCENTED*GENERAL PURPOSE*BS*SUBQUALIFIER*N*ENG!
+MEA*AA*A**HB:123247502:.29384:QD:341821989:.05029:DP:400549679:10.938:HB:1816710603:.29384:QD:1800686101:.05029*11.00*200*01*01*OS*BM!
+PWK*AA*AE*1*SE*1*9012345918341*GENERAL PURPOSE*1:2:1:2:1*AR!
+PKG*F*10*AA*MARKED*GENERAL PURPOSE*01!
+TD1*BAG07*1234567*B*SBEANS*ONE OUNCE WIDGETS*A*12345678*DP*40*HB!
+TD5*A*8*111222333*A*ROUTING INFORMATION*AB*IP*36299*BS*AA*4230*AC*NM*ON*US!
+TD3**AAAA*EQ48495*T*50*QD*N*01*30394938483234*CART!
+TD4*BW*4*AC*GENERAL PURPOSE*N!
+MAN*GM*III789384839*MKD29393812910*L*3939348930IDKDLSIA*III789384839!
+PCT*1*10.25!
+CTB*AA*GENERAL PURPOSE*28*.500*FL*100000!
+TXI*ST*100.00*20.00*CD*TAX JRSDCT*1*A*100.00*33939483921*888394!
+AMT*NP*50.00*C!
+REF*BT*500*GENERAL PURPOSE*CM:3920394930203:AB:12345678900987654321768958473:BT:500!
+DTM*021*20020403*0718*MT*MM*DATE TIME PERIOD!
+PCT*1*50.75!
+FA1*NR*A020*C!
+FA2*01*FINANCIAL INFORMATION CODE!
+N9*CM*3920394930203*FREE FORM DESCRIPTION*20020403*1952*PT*AB:12345678900987654321768958473:BT:500:CM:3920394930203!
+DTM*038*20020403*1615*CT*YM*DATE TIME PERIOD!
+MSG*FREE FORM MESSAGE TEXT*DS*581550924!
+N1*BK*MAGGIE MCGILLICUTTY*16*43202*11*AC!
+N2*BEVERLY SIMPSON*ARTHUR JONES!
+N3*PO BOX 123*157 WEST 57TH STREET!
+N4*CINCINNATI*OH*43017*US*IP*02535!
+NX2*01*103 NORTH MAIN STREET*95391!
+REF*AB*12345678900987654321768958473*GENERAL PURPOSE*BT:500:CM:3920394930203:AB:12345678900987654321768958473!
+PER*CR*MAGGIE MCGILLICUTTY*TE*(614)555-1212*TE*(614)555-1212*TE*(614)555-1212*ADDL CONTACT DESC!
+SI*AX*SR*BRAND OR LABEL*SR*CUST12345*SR*ASSEMBLY*SR*BRAND OR LABEL*SR*CUST12345*SR*ASSEMBLY*SR*BRAND OR LABEL*SR*CUST12345*SR*ASSEMBLY*SR*BRAND OR LABEL!
+FOB*PA*IP*GENERAL PURPOSE*02*CIF*IP*GENERAL PURPOSE*FE*GENERAL PURPOSE!
+TD1*BBL94*50*C*SBEANS*FIFTEEN POUND WIDGETS*B*40*DP*400*HB!
+TD5*B*1*9012345918341*U*ROUTING INFORMATION*CO*IP*36201*SB*HO*7450*AC*NM*ON*US!
+TD3**AKEI*EQ12349*A*12345678*QD*R*03*394899111098456*CART!
+TD4*SM*A*PS*GENERAL PURPOSE*N!
+PKG*F*37*AA*MARKED*GENERAL PURPOSE*03!
+LM*NR*SUBQUALIFIER!
+LQ*2*INDUSTRY CODE!
+SPI*03*BT*500*TITLE OF THE DATA ENTITY*ENTITY PURPOSE*A*10*BL*09*AX*SUBQUALIFIER*293212*I*AA*0001!
+REF*CM*3920394930203*GENERAL PURPOSE*AB:12345678900987654321768958473:BT:500:CM:3920394930203!
+DTM*002*20020403*0718*MT*CM*DATE TIME PERIOD!
+MSG*FREE FORM MESSAGE TEXT*LC*144554380!
+N1*SE*BEVERLY SIMPSON*8*111222333*13*BK!
+N2*ARTHUR JONES*MAGGIE MCGILLICUTTY!
+N3*PO BOX 123*157 WEST 57TH STREET!
+N4*COLUMBUS*OH*43017*US*IP*36299!
+REF*AB*12345678900987654321768958473*GENERAL PURPOSE*BT:500:CM:3920394930203:AB:12345678900987654321768958473!
+G61*EX*BEVERLY SIMPSON*TE*(614)555-1212*ADDL CONTACT DESC!
+MSG*FREE FORM MESSAGE TEXT*NP*536700532!
+CB1*07*A!
+REF*BT*500*GENERAL PURPOSE*CM:3920394930203:AB:12345678900987654321768958473:BT:500!
+DTM*021*20020403*1952*PT*MM*DATE TIME PERIOD!
+LDT*AF*123.45*WK*20020403!
+MSG*FREE FORM MESSAGE TEXT*DS*918022602!
+ADV*AA*SR*100.00*150.25*CT9392*SR*119291.223!
+DTM*038*20020403*1615*CT*YM*DATE TIME PERIOD!
+MTX*ALL*MESSAGE TEXT*MESSAGE TEXT*LC!
+PO1*3ALDKF*100*DP*123.90*LE*AB*CUST12345*BL*ASSEMBLY*ON*BRAND OR LABEL*AB*CUST12345*BL*ASSEMBLY*ON*BRAND OR LABEL*AB*CUST12345*BL*ASSEMBLY*ON*BRAND OR LABEL*AB*CUST12345!
+LIN*AAA849*BL*ASSEMBLY*ON*BRAND OR LABEL*AB*CUST12345*BL*ASSEMBLY*ON*BRAND OR LABEL*AB*CUST12345*BL*ASSEMBLY*ON*BRAND OR LABEL*AB*CUST12345*BL*ASSEMBLY*ON*BRAND OR LABEL*AB*CUST12345*BL*ASSEMBLY*ON*BRAND OR LABEL*AB*CUST12345!
+SI*NR*SR*ASSEMBLY*SR*BRAND OR LABEL*SR*CUST12345*SR*ASSEMBLY*SR*BRAND OR LABEL*SR*CUST12345*SR*ASSEMBLY*SR*BRAND OR LABEL*SR*CUST12345*SR*ASSEMBLY!
+CUR*AC*USA*4.5948*SE*USA*NYC*002*20020403*0718*021*20020403*1952*038*20020403*1615*002*20020403*0718*021*20020403*1952!
+CN1*04*665.75*.10*3920394930203*.25*VERSION IDENTIFIER!
+PO3*AQ*20020403*MNR*5400.50*RD*100*HB*GENERAL PURPOSE!
+CTP*BR*SLP*100.00*.500*QD:734578346:10.938:DP:786019535:.29384:HB:390074814:.05029:QD:605203716:10.938:DP:1591265604:.29384*CSR*.05029*100.00*PD*MILES*13!
+CUR*BK*USA*.2939*AC*USA*IMF*038*20020403*1615*002*20020403*0718*021*20020403*1952*038*20020403*1615*002*20020403*0718!
+PAM*43*123.45*HB:717370650:10.938:QD:819404948:.29384:DP:2045971526:.05029:HB:550925731:10.938:QD:367107113:.29384*AC*50.00*DA*021*20020403*1952*038*20020403*1615*1*10.25*N!
+MEA*CO*BE**DP:550829416:.05029:HB:1908553622:10.938:QD:530715593:.29384:DP:1898314431:.05029:HB:60596165:10.938*50*201.20*03*03*TP*BM!
+PID*F*10*AX*UNSCENTED*GENERAL PURPOSE*BS*SUBQUALIFIER*N*ENG!
+MEA*BA*CA**QD:956380527:.29384:DP:677498014:.05029:HB:2023861368:10.938:QD:1863121419:.29384:DP:1073869055:.05029*11.00*200*07*06*OS*BM!
+PWK*DR*BM*2*SE*16*43202*GENERAL PURPOSE*2:1:2:1:2*AR!
+PO4*24*12*HB*PLT37*T*100*QD*100*DP*45*50*123456*HB*21*TP*888394*3ALDKF*613490020!
+REF*CM*12345678900987654321768958473*GENERAL PURPOSE*AB:500:BT:3920394930203:CM:12345678900987654321768958473!
+PER*AC*ARTHUR JONES*TE*(614)555-1212*TE*(614)555-1212*TE*(614)555-1212*ADDL CONTACT DESC!
+SAC*N*A030*AA*ABC60*10000*3*.15*450000*QD*100*.500*01*500*PR939201*GENERAL PURPOSE*ENG!
+CUR*BK*USA*1.259*AC*USA*LNF*002*20020403*0718*021*20020403*1952*038*20020403*1615*002*20020403*0718*021*20020403*1952!
+CTP*GV*ALT*123.90*123.45*DP:1744256998:10.938:HB:1640650908:.29384:QD:751410421:.05029:DP:631947763:10.938:HB:1823584217:.29384*ILP*.05029*665.75*LE*MILES*14!
+IT8*F*D*50000*182389281*20020403*NR*B2*BL*BRAND OR LABEL*ON*CUST12345*AB*ASSEMBLY*BL*BRAND OR LABEL*ON*CUST12345*AB*ASSEMBLY*BL*BRAND OR LABEL*ON*CUST12345*AB*ASSEMBLY*BL*BRAND OR LABEL!
+CSH*W*E*100000*20934801*20020403*AX*D1*X*20.00*1!
+ITD*12*8*.0010*20020403*90*20020403*30*10000*20020403*50000*.10*GENERAL PURPOSE*15*E*50.75!
+DIS*CSH*PC*.0434*DAT*50*1000!
+INC*01*QD:1420849138:10.938:DP:1345598439:.29384:HB:779265409:.05029:QD:1254620459:10.938:DP:1902370373:.29384*100*.500*100.00!
+TAX*222948392034*IP*02535*IP*36201*IP*36299*IP*02535*IP*36201*2*C!
+FOB*PB*IP*GENERAL PURPOSE*ZZ*FAS*IP*GENERAL PURPOSE*PP*GENERAL PURPOSE!
+SDQ*HB*1*9012345918341*123.45*111222333*100*43202*.500*9012345918341*123.45*111222333*100*43202*.500*9012345918341*123.45*111222333*100*43202*.500*9012345918341*123.45*36299!
+IT3*100*QD*IC*100*GU!
+DTM*038*20020403*1615*MT*CM*DATE TIME PERIOD!
+TC2*A*SBEANS!
+TD1*BAG07*100*B*SBEANS*CUBIC YARD WIDGETS IN VARIOUS*B*50*DP*4000*HB!
+TD5*I*8*111222333*M*ROUTING INFORMATION*AB*IP*02535*SS*WD*9500*AC*NM*ON*US!
+TD3**IIBL*EQ8373A*A*40*QD*S*04*39483920294*CART!
+TD4*TSC*U*SN*GENERAL PURPOSE*N!
+PCT*1*10.25!
+MAN*SM*MKD29393812910*3939348930IDKDLSIA*GM*III789384839*MKD29393812910!
+MSG*FREE FORM MESSAGE TEXT*NP*563142256!
+SPI*02*AB*3920394930203*TITLE OF THE DATA ENTITY*ENTITY PURPOSE*D*12*AA*03*AA*SUBQUALIFIER*100*R*AA*0002!
+TXI*FT*50.00*20.00*VE*TAX JRSDCT*A*D*450.00*229438383*AAA849!
+CTB*AA*GENERAL PURPOSE*01*100*FL*10000!
+QTY*28**DP:152060058:.05029:HB:950070741:10.938:QD:782907588:.29384:DP:663530820:.05029:HB:21167499:10.938*FREE FORM MESSAGE!
+SI*NR*SR*CUST12345*SR*ASSEMBLY*SR*BRAND OR LABEL*SR*CUST12345*SR*ASSEMBLY*SR*BRAND OR LABEL*SR*CUST12345*SR*ASSEMBLY*SR*BRAND OR LABEL*SR*CUST12345!
+SCH*123.45*QD*SE*MAGGIE MCGILLICUTTY*002*20020403*0718*021*20020403*1952*39349382*888394!
+TD1*BBL94*1234567*C*SBEANS*ONE OUNCE WIDGETS*T*12345678*DP*40*HB!
+TD5*A*16*43202*A*ROUTING INFORMATION*CO*IP*36201*BS*AA*4230*AC*NM*ON*US!
+TD3**AAAA*EQ48495*B*50*QD*N*01*30394938483234*CART!
+TD4*BW*4*AC*GENERAL PURPOSE*N!
+REF*BT*12345678900987654321768958473*GENERAL PURPOSE*CM:500:AB:3920394930203:BT:12345678900987654321768958473!
+PKG*F*63*AX*MARKED*GENERAL PURPOSE*05!
+MEA*AA*A**DP:2856006:.29384:HB:89737135:.05029:QD:1537060129:10.938:DP:1490698320:.29384:HB:1022275856:.05029*100.00*150.25*01*01*BS*BM!
+LS*LDT!
+LDT*AS*100*HR*20020403!
+QTY*43**QD:565130839:10.938:DP:1484440747:.29384:HB:2048958397:.05029:QD:1928213397:10.938:DP:1838054272:.29384*FREE FORM MESSAGE!
+MSG*FREE FORM MESSAGE TEXT*DS*336633545!
+REF*CM*500*GENERAL PURPOSE*AB:3920394930203:BT:12345678900987654321768958473:CM:500!
+LM*AA*SUBQUALIFIER!
+LQ*7*INDUSTRY CODE!
+LE*LDT!
+N9*AB*3920394930203*FREE FORM DESCRIPTION*20020403*1615*PT*BT:12345678900987654321768958473:CM:500:AB:3920394930203!
+DTM*038*20020403*0718*CT*MM*DATE TIME PERIOD!
+MEA*CO*BE**HB:1036282467:.05029:QD:1171960580:10.938:DP:2097166939:.29384:HB:545576859:.05029:QD:101246691:10.938*50*201.20*03*03*OS*BM!
+MSG*FREE FORM MESSAGE TEXT*LC*38257320!
+N1*BK*BEVERLY SIMPSON*1*9012345918341*19*AC!
+N2*ARTHUR JONES*MAGGIE MCGILLICUTTY!
+N3*103 NORTH MAIN STREET*PO BOX 123!
+N4*CLEVELAND*OH*43017*US*IP*36299!
+QTY*01**DP:851490153:.29384:HB:1690445000:.05029:QD:1149875244:10.938:DP:2087934959:.29384:HB:1603824892:.05029*FREE FORM MESSAGE!
+NX2*02*157 WEST 57TH STREET*23442!
+REF*BT*12345678900987654321768958473*GENERAL PURPOSE*CM:500:AB:3920394930203:BT:12345678900987654321768958473!
+PER*CR*BEVERLY SIMPSON*TE*(614)555-1212*TE*(614)555-1212*TE*(614)555-1212*ADDL CONTACT DESC!
+SI*NR*SR*ASSEMBLY*SR*BRAND OR LABEL*SR*CUST12345*SR*ASSEMBLY*SR*BRAND OR LABEL*SR*CUST12345*SR*ASSEMBLY*SR*BRAND OR LABEL*SR*CUST12345*SR*ASSEMBLY!
+DTM*002*20020403*1952*MT*YM*DATE TIME PERIOD!
+FOB*CA*IP*GENERAL PURPOSE*01*CAF*IP*GENERAL PURPOSE*BY*GENERAL PURPOSE!
+SCH*100*QD*SE*ARTHUR JONES*021*20020403*1615*038*20020403*0718*3948329*3ALDKF!
+TD1*PLT37*50*A*SBEANS*FIFTEEN POUND WIDGETS*A*40*DP*400*HB!
+TD5*B*8*111222333*U*ROUTING INFORMATION*IC*IP*02535*SB*HO*7450*AC*NM*ON*US!
+TD3**AKEI*EQ12349*T*12345678*QD*R*03*394899111098456*CART!
+TD4*SM*A*PS*GENERAL PURPOSE*N!
+PKG*F*10*AX*MARKED*GENERAL PURPOSE*01!
+LDT*AA*.500*WK*20020403!
+MAN*L*3939348930IDKDLSIA*III789384839*SM*MKD29393812910*3939348930IDKDLSIA!
+QTY*28**DP:1570468630:10.938:HB:1832442247:.29384:QD:850270447:.05029:DP:1446909356:10.938:HB:872691227:.29384*FREE FORM MESSAGE!
+MSG*FREE FORM MESSAGE TEXT*NP*333653924!
+REF*CM*500*GENERAL PURPOSE*AB:3920394930203:BT:12345678900987654321768958473:CM:500!
+SLN*AAA849*888394*I*100*QD:896595882:.05029:DP:1830582865:10.938:HB:1691462428:.29384:QD:1065829721:.05029:DP:1938288704:10.938*5400.50*RD*A*ON*BRAND OR LABEL*AB*CUST12345*BL*ASSEMBLY*ON*BRAND OR LABEL*AB*CUST12345*BL*ASSEMBLY*ON*BRAND OR LABEL*AB*CUST12345*BL*ASSEMBLY*ON*BRAND OR LABEL!
+MSG*FREE FORM MESSAGE TEXT*DS*890699868!
+SI*AA*SR*CUST12345*SR*ASSEMBLY*SR*BRAND OR LABEL*SR*CUST12345*SR*ASSEMBLY*SR*BRAND OR LABEL*SR*CUST12345*SR*ASSEMBLY*SR*BRAND OR LABEL*SR*CUST12345!
+PID*F*60*NR*UNSCENTED*GENERAL PURPOSE*TP*SUBQUALIFIER*N*ENG!
+PO3*QO*20020403*MNR*100.00*PD*.500*HB*GENERAL PURPOSE!
+TC2*B*SBEANS!
+ADV*AX*SR*11.00*200*ALUM*SR*1920.192!
+DTM*002*20020403*1952*PT*CM*DATE TIME PERIOD!
+CTP*AG*SLP*123.90*123.45*QD:859554731:.29384:DP:810472952:.05029:HB:1209502418:10.938:QD:963767569:.29384:DP:1875873627:.05029*CSD*10.938*665.75*LE*MILES*10!
+PAM*43*100*HB:2062714049:.29384:QD:1065961542:.05029:DP:356085324:10.938:HB:712206089:.29384:QD:1006255311:.05029*NP*100.00*DA*021*20020403*1615*038*20020403*0718*1*50.75*N!
+PO4*120*24*DP*BAG07*B*400*HB*24*QD*30*100*10*DP*12*BS*3ALDKF*AAA849*579581043!
+TAX*33939483921*IP*36201*IP*36299*IP*02535*IP*36201*IP*36299*1*C!
+N9*AB*3920394930203*FREE FORM DESCRIPTION*20020403*1952*CT*BT:12345678900987654321768958473:CM:500:AB:3920394930203!
+DTM*002*20020403*1615*MT*MM*DATE TIME PERIOD!
+MSG*FREE FORM MESSAGE TEXT*LC*612729598!
+SAC*A*A010*AA*AABBCCDDXX*50000*7*.25*10000*HB*.500*123.45*01*12345678900987654321768958473*19029342ALSL*GENERAL PURPOSE*ENG!
+CUR*BK*USA*4.5948*AC*USA*NYC*021*20020403*0718*038*20020403*1952*002*20020403*1615*021*20020403*0718*038*20020403*1952!
+CTP*BR*ALT*5400.50*100*QD:1536755284:10.938:DP:753265191:.29384:HB:1035743641:.05029:QD:2084004349:10.938:DP:1646748639:.29384*CSR*.05029*50.00*RD*MILES*13!
+QTY*01**HB:1310800640:10.938:QD:345657872:.29384:DP:1281409336:.05029:HB:1813657851:10.938:QD:811596881:.29384*FREE FORM MESSAGE!
+SI*NR*SR*ASSEMBLY*SR*BRAND OR LABEL*SR*CUST12345*SR*ASSEMBLY*SR*BRAND OR LABEL*SR*CUST12345*SR*ASSEMBLY*SR*BRAND OR LABEL*SR*CUST12345*SR*ASSEMBLY!
+N1*SE*MAGGIE MCGILLICUTTY*16*43202*11*BK!
+N2*BEVERLY SIMPSON*ARTHUR JONES!
+N3*103 NORTH MAIN STREET*PO BOX 123!
+N4*CINCINNATI*OH*43017*US*IP*02535!
+NX2*07*157 WEST 57TH STREET*54178!
+REF*BT*500*GENERAL PURPOSE*CM:3920394930203:AB:12345678900987654321768958473:BT:500!
+PER*EX*MAGGIE MCGILLICUTTY*TE*(614)555-1212*TE*(614)555-1212*TE*(614)555-1212*ADDL CONTACT DESC!
+SI*AX*SR*BRAND OR LABEL*SR*CUST12345*SR*ASSEMBLY*SR*BRAND OR LABEL*SR*CUST12345*SR*ASSEMBLY*SR*BRAND OR LABEL*SR*CUST12345*SR*ASSEMBLY*SR*BRAND OR LABEL!
+AMT*AC*665.75*D!
+REF*CM*3920394930203*GENERAL PURPOSE*AB:12345678900987654321768958473:BT:500:CM:3920394930203!
+PCT*1*10.25!
+LM*AA*SUBQUALIFIER!
+LQ*9*INDUSTRY CODE!
+CTT*10*855*50*DP*4000*HB*GENERAL PURPOSE!
+AMT*FL*100.00*C!
+SE*196*0001!
+GE*1*1!
+IEA*1*000000001!
+</value>
+  <record name="type" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="field_name">edidata</value>
+    <value name="field_type">string</value>
+    <value name="field_dim">0</value>
+    <value name="nillable">true</value>
+  </record>
+</Values>
+</DATA>
+</MAPSET>
+
+<MAPSET NAME="Setter" OVERWRITE="true" VARIABLES="false" FIELD="/returnErrors;1;0">
+  <DATA ENCODING="XMLValues" I18N="true">
+
+<Values version="2.0">
+  <value name="xml">asArray</value>
+  <record name="type" javaclass="com.wm.util.Values">
+    <value name="node_type">unknown</value>
+    <value name="node_comment"></value>
+    <record name="node_hints" javaclass="com.wm.util.Values">
+      <value name="field_usereditable">false</value>
+      <value name="field_largerEditor">false</value>
+      <value name="field_password">false</value>
+    </record>
+    <value name="field_name">returnErrors</value>
+    <value name="field_type">string</value>
+    <value name="field_dim">0</value>
+    <value name="field_opt">true</value>
+    <array name="field_options" type="value" depth="1">
+      <value>asArray</value>
+      <value>inResults</value>
+      <value>both</value>
+    </array>
+    <value name="nillable">true</value>
+  </record>
+</Values>
+</DATA>
+</MAPSET>
+
+<MAPSET NAME="Setter" OVERWRITE="true" VARIABLES="false" FIELD="/complianceCheck;1;0">
+  <DATA ENCODING="XMLValues" I18N="true">
+
+<Values version="2.0">
+  <value name="xml">true</value>
+  <record name="type" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="node_comment"></value>
+    <record name="node_hints" javaclass="com.wm.util.Values">
+      <value name="field_usereditable">false</value>
+      <value name="field_largerEditor">false</value>
+      <value name="field_password">false</value>
+    </record>
+    <value name="field_name">complianceCheck</value>
+    <value name="field_type">string</value>
+    <value name="field_dim">0</value>
+    <value name="field_opt">true</value>
+    <array name="field_options" type="value" depth="1">
+      <value>true</value>
+      <value>false</value>
+    </array>
+    <record name="field_content_type" javaclass="com.wm.util.Values">
+      <value name="contentType">1</value>
+      <value name="internalType">instance</value>
+      <value name="ct_class">com.wm.lang.schema.datatype.WmString</value>
+      <value name="name">string_customized</value>
+      <array name="enumeration" type="value" depth="1">
+        <value>true</value>
+        <value>false</value>
+      </array>
+    </record>
+    <value name="nillable">true</value>
+  </record>
+</Values>
+</DATA>
+</MAPSET>
+</MAP>
+
+<MAP MODE="OUTPUT">
+  <MAPTARGET>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="nillable">true</value>
+    <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">edidata</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">docProcessingSvcName</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">validate</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">complianceCheck</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">EDItemplate</value>
+        <value name="field_type">record</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <array name="rec_fields" type="record" depth="1">
+        </array>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">interface</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">docCtlrNumber</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">standard</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">packageName</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">name</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">EDIValues</value>
+        <value name="field_type">record</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <array name="rec_fields" type="record" depth="1">
+        </array>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">ST</value>
+        <value name="field_type">record</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <array name="rec_fields" type="record" depth="1">
+        </array>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">delimiters</value>
+        <value name="field_type">record</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <array name="rec_fields" type="record" depth="1">
+        </array>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">returnErrors</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+    </array>
+  </record>
+</Values>
+</MAPTARGET>
+  <MAPSOURCE>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="nillable">true</value>
+    <array name="rec_fields" type="record" depth="1">
+    </array>
+  </record>
+</Values>
+</MAPSOURCE>
+
+  <!-- nodes -->
+
+<MAPDELETE NAME="Dropper" FIELD="/EDItemplate;2;0">
+</MAPDELETE>
+
+<MAPDELETE NAME="Dropper" FIELD="/docCtlrNumber;1;0">
+</MAPDELETE>
+
+<MAPDELETE NAME="Dropper" FIELD="/standard;1;0">
+</MAPDELETE>
+
+<MAPDELETE NAME="Dropper" FIELD="/packageName;1;0">
+</MAPDELETE>
+
+<MAPDELETE NAME="Dropper" FIELD="/name;1;0">
+</MAPDELETE>
+
+<MAPDELETE NAME="Dropper" FIELD="/EDIValues;2;0">
+</MAPDELETE>
+
+<MAPDELETE NAME="Dropper" FIELD="/ST;2;0">
+</MAPDELETE>
+
+<MAPDELETE NAME="Dropper" FIELD="/delimiters;2;0">
+</MAPDELETE>
+
+<MAPDELETE NAME="Dropper" FIELD="/interface;1;0">
+</MAPDELETE>
+</MAP>
+</INVOKE>
+
+<BRANCH TIMEOUT="" SWITCH="/hasError">
+  <COMMENT>if error exit</COMMENT>
+
+  <!-- nodes -->
+
+<EXIT NAME="true" FROM="$flow" SIGNAL="SUCCESS" FAILURE-MESSAGE="document processing error, see error message in &quot;errorArray&quot;">
+  <COMMENT>failed</COMMENT>
+</EXIT>
+</BRANCH>
+
+<BRANCH TIMEOUT="" SWITCH="/mappingStatus">
+  <COMMENT></COMMENT>
+
+  <!-- nodes -->
+
+<SEQUENCE NAME="1" TIMEOUT="" EXIT-ON="FAILURE">
+  <COMMENT>Your error handling/notification code goes here.</COMMENT>
+</SEQUENCE>
+
+<SEQUENCE NAME="$default" TIMEOUT="" EXIT-ON="FAILURE">
+  <COMMENT></COMMENT>
+
+  <!-- nodes -->
+
+<LOOP TIMEOUT="" IN-ARRAY="/output" OUT-ARRAY="/POtarget">
+  <COMMENT></COMMENT>
+
+  <!-- nodes -->
+
+<MAP MODE="STANDALONE">
+  <COMMENT></COMMENT>
+  <MAPTARGET>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="nillable">true</value>
+    <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">edidata</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">docProcessingSvcName</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">validate</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">complianceCheck</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">output</value>
+        <value name="field_type">record</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <array name="rec_fields" type="record" depth="1">
+        </array>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">POtarget</value>
+        <value name="field_type">record</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <array name="rec_fields" type="record" depth="1">
+        </array>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">returnErrors</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+    </array>
+  </record>
+</Values>
+</MAPTARGET>
+  <MAPSOURCE>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="nillable">true</value>
+    <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">edidata</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">docProcessingSvcName</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">validate</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">complianceCheck</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">output</value>
+        <value name="field_type">record</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <array name="rec_fields" type="record" depth="1">
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">record</value>
+            <value name="field_name">POTarget</value>
+            <value name="field_type">record</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+            <array name="rec_fields" type="record" depth="1">
+              <record javaclass="com.wm.util.Values">
+                <value name="node_type">record</value>
+                <value name="field_name">POTarget</value>
+                <value name="field_type">record</value>
+                <value name="field_dim">0</value>
+                <value name="nillable">true</value>
+                <array name="rec_fields" type="record" depth="1">
+                </array>
+              </record>
+            </array>
+          </record>
+        </array>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">returnErrors</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">$iteration</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+    </array>
+  </record>
+</Values>
+</MAPSOURCE>
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/output;2;0/POTarget;2;0/POTarget;2;0" TO="/POtarget;2;0">
+</MAPCOPY>
+</MAP>
+</LOOP>
+
+<INVOKE NAME="$default" TIMEOUT="" SERVICE="pub.web:recordToDocument" VALIDATE-IN="$none" VALIDATE-OUT="$none" DISABLED="true">
+  <COMMENT>Mapping successful, continue to execute.</COMMENT>
+
+  <!-- nodes -->
+
+<MAP MODE="INPUT">
+  <MAPTARGET>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="field_name">recordToDocumentInput</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="nillable">true</value>
+    <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">attrPrefix</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">true</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">boundNode</value>
+        <value name="field_type">record</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <array name="rec_fields" type="record" depth="1">
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">record</value>
+            <value name="field_name">PurchaseOrders</value>
+            <value name="field_type">record</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+            <array name="rec_fields" type="record" depth="1">
+              <record javaclass="com.wm.util.Values">
+                <value name="node_type">record</value>
+                <value name="field_name">PO</value>
+                <value name="field_type">record</value>
+                <value name="field_dim">1</value>
+                <value name="nillable">true</value>
+                <array name="rec_fields" type="record" depth="1">
+                </array>
+              </record>
+            </array>
+          </record>
+        </array>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">nsDecls</value>
+        <value name="field_type">record</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">true</value>
+        <value name="nillable">true</value>
+        <array name="rec_fields" type="record" depth="1">
+        </array>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">addHeader</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">true</value>
+        <array name="field_options" type="value" depth="1">
+          <value>true</value>
+          <value>false</value>
+        </array>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">encode</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">true</value>
+        <array name="field_options" type="value" depth="1">
+          <value>true</value>
+          <value>false</value>
+        </array>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">recordName</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">true</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">generateRequiredTags</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">true</value>
+        <array name="field_options" type="value" depth="1">
+          <value>false</value>
+          <value>true</value>
+        </array>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">enforceLegalXML</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">true</value>
+        <array name="field_options" type="value" depth="1">
+          <value>true</value>
+          <value>false</value>
+        </array>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">dtdHeaderInfo</value>
+        <value name="field_type">record</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">true</value>
+        <value name="nillable">true</value>
+        <array name="rec_fields" type="record" depth="1">
+        </array>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">bufferSize</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">true</value>
+        <value name="nillable">true</value>
+      </record>
+    </array>
+  </record>
+</Values>
+</MAPTARGET>
+  <MAPSOURCE>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="nillable">true</value>
+    <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">edidata</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">docProcessingSvcName</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">validate</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">version</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">complianceCheck</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">output</value>
+        <value name="field_type">record</value>
+        <value name="field_dim">1</value>
+        <value name="nillable">true</value>
+        <array name="rec_fields" type="record" depth="1">
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">record</value>
+            <value name="field_name">POTarget</value>
+            <value name="field_type">record</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+            <array name="rec_fields" type="record" depth="1">
+            </array>
+          </record>
+        </array>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">POtarget</value>
+        <value name="field_type">record</value>
+        <value name="field_dim">1</value>
+        <value name="nillable">true</value>
+        <array name="rec_fields" type="record" depth="1">
+        </array>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">returnErrors</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+    </array>
+  </record>
+</Values>
+</MAPSOURCE>
+
+  <!-- nodes -->
+
+<MAPDELETE NAME="Dropper" FIELD="/POtarget;2;1">
+</MAPDELETE>
+
+<MAPDELETE NAME="Dropper" FIELD="/output;2;1">
+</MAPDELETE>
+
+<MAPDELETE NAME="Dropper" FIELD="/validate;1;0">
+</MAPDELETE>
+
+<MAPDELETE NAME="Dropper" FIELD="/docProcessingSvcName;1;0">
+</MAPDELETE>
+
+<MAPDELETE NAME="Dropper" FIELD="/version;1;0">
+</MAPDELETE>
+
+<MAPCOPY NAME="Link" FROM="/POtarget;2;1" TO="/boundNode;2;0/PurchaseOrders;2;0/PO;2;1">
+</MAPCOPY>
+</MAP>
+
+<MAP MODE="OUTPUT">
+  <MAPTARGET>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="nillable">true</value>
+    <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">edidata</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">boundNode</value>
+        <value name="field_type">record</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <array name="rec_fields" type="record" depth="1">
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">record</value>
+            <value name="field_name">PurchaseOrders</value>
+            <value name="field_type">record</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+            <array name="rec_fields" type="record" depth="1">
+            </array>
+          </record>
+        </array>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">recordName</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">complianceCheck</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">returnErrors</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">POTarget</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="rec_ref">Tutorial.Records:POTarget</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">Values</value>
+        <value name="field_type">record</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <array name="rec_fields" type="record" depth="1">
+        </array>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">standardVC</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">grpCount</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">docCount</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">value</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">xmldata</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+    </array>
+  </record>
+</Values>
+</MAPTARGET>
+  <MAPSOURCE>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="field_name">recordToDocumentOutput</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="nillable">true</value>
+    <array name="rec_fields" type="record" depth="1">
+    </array>
+  </record>
+</Values>
+</MAPSOURCE>
+
+  <!-- nodes -->
+
+<MAPDELETE NAME="MapDelete" FIELD="/boundNode;2;0">
+</MAPDELETE>
+
+<MAPDELETE NAME="MapDelete" FIELD="/recordName;1;0">
+</MAPDELETE>
+
+<MAPDELETE NAME="MapDelete" FIELD="/POTarget;4;0;Tutorial.Records:POTarget">
+</MAPDELETE>
+
+<MAPDELETE NAME="Dropper" FIELD="/returnErrors;1;0">
+</MAPDELETE>
+
+<MAPDELETE NAME="Dropper" FIELD="/complianceCheck;1;0">
+</MAPDELETE>
+
+<MAPDELETE NAME="Dropper" FIELD="/Values;2;0">
+</MAPDELETE>
+
+<MAPDELETE NAME="Dropper" FIELD="/standardVC;1;0">
+</MAPDELETE>
+
+<MAPDELETE NAME="Dropper" FIELD="/grpCount;1;0">
+</MAPDELETE>
+
+<MAPDELETE NAME="Dropper" FIELD="/docCount;1;0">
+</MAPDELETE>
+
+<MAPDELETE NAME="Dropper" FIELD="/value;1;0">
+</MAPDELETE>
+</MAP>
+</INVOKE>
+
+<INVOKE NAME="$default" TIMEOUT="" SERVICE="pub.xml:documentToXMLString" VALIDATE-IN="$none" VALIDATE-OUT="$none">
+  <COMMENT>Mapping successful, continue to execute.</COMMENT>
+
+  <!-- nodes -->
+
+<MAP MODE="INPUT">
+  <MAPTARGET>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="field_name">documentToXMLStringInput</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="nillable">true</value>
+    <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <null name="field_usereditable"/>
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+        </record>
+        <value name="field_name">attrPrefix</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">true</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+        </record>
+        <value name="field_name">document</value>
+        <value name="field_type">record</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <array name="rec_fields" type="record" depth="1">
+          <record javaclass="com.wm.util.Values">
+            <value name="node_type">record</value>
+            <value name="field_name">PurchaseOrders</value>
+            <value name="field_type">record</value>
+            <value name="field_dim">0</value>
+            <value name="nillable">true</value>
+            <array name="rec_fields" type="record" depth="1">
+              <record javaclass="com.wm.util.Values">
+                <value name="node_type">record</value>
+                <value name="field_name">PO</value>
+                <value name="field_type">record</value>
+                <value name="field_dim">1</value>
+                <value name="nillable">true</value>
+                <array name="rec_fields" type="record" depth="1">
+                </array>
+              </record>
+            </array>
+          </record>
+        </array>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+        </record>
+        <value name="field_name">nsDecls</value>
+        <value name="field_type">record</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">true</value>
+        <value name="nillable">true</value>
+        <array name="rec_fields" type="record" depth="1">
+        </array>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <null name="field_usereditable"/>
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+        </record>
+        <value name="field_name">addHeader</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">true</value>
+        <array name="field_options" type="value" depth="1">
+          <value>true</value>
+          <value>false</value>
+        </array>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <null name="field_usereditable"/>
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+        </record>
+        <value name="field_name">encode</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">true</value>
+        <array name="field_options" type="value" depth="1">
+          <value>true</value>
+          <value>false</value>
+        </array>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <null name="field_usereditable"/>
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+        </record>
+        <value name="field_name">documentTypeName</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">true</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <null name="field_usereditable"/>
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+        </record>
+        <value name="field_name">generateRequiredTags</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">true</value>
+        <array name="field_options" type="value" depth="1">
+          <value>false</value>
+          <value>true</value>
+        </array>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <null name="field_usereditable"/>
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+        </record>
+        <value name="field_name">enforceLegalXML</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">true</value>
+        <array name="field_options" type="value" depth="1">
+          <value>true</value>
+          <value>false</value>
+        </array>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+        </record>
+        <value name="field_name">dtdHeaderInfo</value>
+        <value name="field_type">record</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">true</value>
+        <value name="nillable">true</value>
+        <array name="rec_fields" type="record" depth="1">
+        </array>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <null name="field_usereditable"/>
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+        </record>
+        <value name="field_name">bufferSize</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="field_opt">true</value>
+        <value name="nillable">true</value>
+      </record>
+    </array>
+  </record>
+</Values>
+</MAPTARGET>
+  <MAPSOURCE>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="nillable">true</value>
+    <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">edidata</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">docProcessingSvcName</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">validate</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">version</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">xmldata</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">output</value>
+        <value name="field_type">record</value>
+        <value name="field_dim">1</value>
+        <value name="nillable">true</value>
+        <array name="rec_fields" type="record" depth="1">
+        </array>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">POtarget</value>
+        <value name="field_type">record</value>
+        <value name="field_dim">1</value>
+        <value name="nillable">true</value>
+        <array name="rec_fields" type="record" depth="1">
+        </array>
+      </record>
+    </array>
+  </record>
+</Values>
+</MAPSOURCE>
+
+  <!-- nodes -->
+
+<MAPDELETE NAME="Dropper" FIELD="/POtarget;2;1">
+</MAPDELETE>
+
+<MAPDELETE NAME="Dropper" FIELD="/output;2;1">
+</MAPDELETE>
+
+<MAPDELETE NAME="Dropper" FIELD="/validate;1;0">
+</MAPDELETE>
+
+<MAPDELETE NAME="Dropper" FIELD="/docProcessingSvcName;1;0">
+</MAPDELETE>
+
+<MAPDELETE NAME="Dropper" FIELD="/version;1;0">
+</MAPDELETE>
+
+<MAPCOPY NAME="Link" FROM="/POtarget;2;1" TO="/document;2;0/PurchaseOrders;2;0/PO;2;1">
+</MAPCOPY>
+</MAP>
+
+<MAP MODE="OUTPUT">
+  <MAPTARGET>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="nillable">true</value>
+    <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">edidata</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">boundNode</value>
+        <value name="field_type">record</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <array name="rec_fields" type="record" depth="1">
+        </array>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">recordName</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">complianceCheck</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">returnErrors</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">POTarget</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="rec_ref">Tutorial.Records:POTarget</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">Values</value>
+        <value name="field_type">record</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <array name="rec_fields" type="record" depth="1">
+        </array>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">standardVC</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">grpCount</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">docCount</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">unknown</value>
+        <value name="field_name">value</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">document</value>
+        <value name="field_type">record</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <array name="rec_fields" type="record" depth="1">
+        </array>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="field_name">xmldata</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+      </record>
+    </array>
+  </record>
+</Values>
+</MAPTARGET>
+  <MAPSOURCE>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="field_name">documentToXMLStringOutput</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="nillable">true</value>
+    <array name="rec_fields" type="record" depth="1">
+    </array>
+  </record>
+</Values>
+</MAPSOURCE>
+
+  <!-- nodes -->
+
+<MAPDELETE NAME="MapDelete" FIELD="/boundNode;2;0">
+</MAPDELETE>
+
+<MAPDELETE NAME="MapDelete" FIELD="/recordName;1;0">
+</MAPDELETE>
+
+<MAPDELETE NAME="MapDelete" FIELD="/POTarget;4;0;Tutorial.Records:POTarget">
+</MAPDELETE>
+
+<MAPDELETE NAME="Dropper" FIELD="/returnErrors;1;0">
+</MAPDELETE>
+
+<MAPDELETE NAME="Dropper" FIELD="/complianceCheck;1;0">
+</MAPDELETE>
+
+<MAPDELETE NAME="Dropper" FIELD="/Values;2;0">
+</MAPDELETE>
+
+<MAPDELETE NAME="Dropper" FIELD="/standardVC;1;0">
+</MAPDELETE>
+
+<MAPDELETE NAME="Dropper" FIELD="/grpCount;1;0">
+</MAPDELETE>
+
+<MAPDELETE NAME="Dropper" FIELD="/docCount;1;0">
+</MAPDELETE>
+
+<MAPDELETE NAME="Dropper" FIELD="/value;1;0">
+</MAPDELETE>
+</MAP>
+</INVOKE>
+</SEQUENCE>
+</BRANCH>
+</FLOW>

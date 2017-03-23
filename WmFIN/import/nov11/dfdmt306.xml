@@ -1,0 +1,176 @@
+<?xml version="1.0"?>
+<constraints>
+
+<!-- Text Block for NOV03 MT306 -->
+
+<field name="77H:" type="MixedType">
+    <bizName>Type, Date, Version of the Agreement</bizName>
+    <pattern>6a[/&lt;DATE4&gt;][//4!n]</pattern>
+    <choiceList>
+    	<pattern>6a</pattern>
+	<choice>AFB</choice>
+	<choice>DERV</choice>
+	<choice>FBF</choice>
+	<choice>FEOMA</choice>
+	<choice>ICOM</choice>
+	<choice>IFEMA</choice>
+	<choice>ISDA</choice>
+	<choice>OTHER</choice>	
+    </choiceList>
+</field>
+
+
+<field name="17A:" type="MixedType">
+    <bizName>Barrier Indicator</bizName>
+    <pattern>1!a</pattern>
+    <choice>Y</choice>
+    <choice>N</choice>
+    <error type="choice">T36</error>
+</field>
+<field name="17F:" type="MixedType">
+    <bizName>Non-Deliverable Indicator</bizName>
+    <pattern>1!a</pattern>
+    <choice>N</choice>
+    <choice>Y</choice>
+    <error type="choice">T36</error>
+</field>
+<field name="20:" type="PatternType">
+    <bizName>Reference - Sender's Reference</bizName>
+    <pattern>16x</pattern>
+</field>
+<field name="22A:" type="MixedType">
+    <bizName>Type of Operation</bizName>
+    <pattern>4!c</pattern>
+    <choice>AMND</choice>
+    <choice>CANC</choice>
+    <choice>NEWT</choice>
+    <error type="choice">T36</error>
+</field>
+<field name="30F:" type="PatternType">
+    <bizName>F - Final Settlement Date</bizName>
+    <pattern>&lt;DATE4&gt;</pattern>
+</field>
+<field name="30G:" type="PatternType">
+    <bizName>G - Barrier Window Start Date and End Date</bizName>
+    <pattern>&lt;DATE4&gt;/&lt;DATE4&gt;</pattern>
+</field>
+<field name="30Q:" type="PatternType">
+    <bizName>Q - Intermediate Exercise Date</bizName>
+    <pattern>&lt;DATE4&gt;</pattern>
+</field>
+<field name="30P:" type="PatternType">
+    <bizName>P - Earliest Excercise Date</bizName>
+    <pattern>&lt;DATE4&gt;</pattern>
+</field>
+<field name="30V:" type="PatternType">
+    <bizName>V - Premium Payment Date</bizName>
+    <pattern>&lt;DATE4&gt;</pattern>
+</field>
+<field name="30X:" type="PatternType">
+    <bizName>X - Expiration Date</bizName>
+    <pattern>&lt;DATE4&gt;</pattern>
+</field>
+<field name="32B:" type="PatternType">
+    <bizName>B - Put Currency and Amount</bizName>
+    <pattern>&lt;CUR&gt;&lt;AMOUNT&gt;15</pattern>
+</field>
+<field name="33B:" type="PatternType">
+    <bizName>B - Call Currency and Amount</bizName>
+    <pattern>&lt;CUR&gt;&lt;AMOUNT&gt;15</pattern>
+</field>
+<field name="33E:" type="PatternType">
+    <bizName>E - Currency, Amount</bizName>
+    <pattern>&lt;CUR&gt;&lt;NUMBER&gt;15</pattern>
+</field>
+<field name="36:" type="PatternType">
+    <bizName>Strike Price</bizName>
+    <pattern>&lt;NUMBER&gt;12</pattern>
+</field>
+<field name="37J:" type="PatternType">
+    <bizName>J - Barrier Level</bizName>
+    <pattern>&lt;NUMBER&gt;12</pattern>
+</field>
+<field name="37L:" type="PatternType">
+    <bizName>L - Lower Barrier Level</bizName>
+    <pattern>&lt;NUMBER&gt;12</pattern>
+</field>
+<field name="37P:" type="PatternType">
+    <bizName>P - Lower Trigger Level</bizName>
+    <pattern>&lt;NUMBER&gt;12</pattern>
+</field>
+<field name="37U:" type="PatternType">
+    <bizName>U - Trigger Level</bizName>
+    <pattern>&lt;NUMBER&gt;12</pattern>
+</field>
+<field name="71F:" type="PatternType">
+    <bizName>F - Broker's Commission</bizName>
+    <pattern>&lt;CUR&gt;&lt;AMOUNT&gt;15</pattern>
+</field>
+<field name="72:" type="PatternType">
+    <bizName>Sender to Receiver Information</bizName>
+    <pattern>&lt;FLD72&gt;</pattern>
+</field>
+<field name="77D:" type="PatternType">
+    <bizName>D - Additional Conditions</bizName>
+    <pattern>6*35x</pattern>
+</field>
+<field name="84A:" type="MixedType">
+    <bizName>A - Calculation Agent</bizName>
+    <pattern>[&lt;PartyIdentifier&gt;][CRLF]&lt;SWIFTBIC&gt;</pattern>
+</field>
+<field name="84B:" type="MixedType">
+    <bizName>B - Calculation Agent</bizName>
+    <pattern>[&lt;PartyIdentifier&gt;][CRLF][35x]</pattern>
+</field>
+<field name="84D:" type="MixedType">
+    <bizName>D - Calculation Agent</bizName>
+    <pattern>[&lt;PartyIdentifier&gt;][CRLF]4*35x</pattern>
+</field>
+<field name="84J:" type="MixedType">
+    <bizName>J - Calculation Agent</bizName>
+    <pattern>&lt;PARTYFLD/J&gt;</pattern>
+    <choice>/ABIC/</choice>
+    <choice>/ACCT/</choice>
+    <choice>/NAME/</choice>
+    <choice>/ADD1/</choice>
+    <choice>/ADD2/</choice>
+    <choice>/CITY/</choice>
+    <choice>/USFW/</choice>
+    <choice>/USCH/</choice>
+    <choice>/GBSC/</choice>
+    <choice>/CLRC/</choice>
+    <error type="choice">T78</error>
+</field>
+<field name="86A:" type="MixedType">
+    <bizName>A - Intermediary 2</bizName>
+    <pattern>[&lt;PartyIdentifier&gt;][CRLF]&lt;SWIFTBIC&gt;</pattern>
+</field>
+<field name="86D:" type="MixedType">
+    <bizName>D - Intermediary 2</bizName>
+    <pattern>[&lt;PartyIdentifier&gt;][CRLF]4*35x</pattern>
+</field>
+
+<field name="83A:" type="MixedType">
+    <bizName>A - Fund or Beneficiary Customer</bizName>
+    <pattern>[&lt;PartyIdentifier&gt;][CRLF]&lt;SWIFTBIC&gt;</pattern>
+ /field>
+<field name="83D:" type="MixedType">
+    <bizName>D - Fund or Beneficiary Customer</bizName>
+    <pattern>[&lt;PartyIdentifier&gt;][CRLF]4*35x</pattern>
+ /field>
+<field name="83J:" type="MixedType">
+    <bizName>J - Fund or Beneficiary Customer</bizName>
+    <pattern>&lt;PARTYFLD/J&gt;</pattern>
+    <choice>/ABIC/</choice>
+    <choice>/ACCT/</choice>
+    <choice>/NAME/</choice>
+    <choice>/ADD1/</choice>
+    <choice>/ADD2/</choice>
+    <choice>/CITY/</choice>
+    <choice>/USFW/</choice>
+    <choice>/USCH/</choice>
+    <choice>/GBSC/</choice>
+    <choice>/CLRC/</choice>
+    <error type="choice">T78</error>
+</field>
+</constraints>

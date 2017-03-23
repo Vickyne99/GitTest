@@ -1,0 +1,169 @@
+<?xml version="1.0"?>
+<constraints>
+
+<!-- Text Block for NOV03 MT543 -->
+<field name="22F::TRCA" type="GenericFieldType">
+    <bizName>Party Capacity Indicator</bizName>
+    <pattern>/[8c]/4!c</pattern>
+    <choice>INFI</choice>
+    <choice>MKTM</choice>
+    <choice>MLTF</choice>
+    <choice>RMKT</choice>
+    <choice>SINT</choice>
+    <choice>TAGT</choice>
+</field>
+
+<field name="94B::TRAD" type="GenericFieldType">
+    <bizName>Place B - Place of Trade</bizName>
+    <pattern>/[8c]/4!c[/30x]</pattern>
+    <alias pattern="8c" bizName="Data Source Scheme" />            
+    <alias pattern="4!c" bizName="Place Code" />                
+    <alias pattern="30x" bizName="Narrative" />                    
+    <choice>EXCH</choice>
+    <choice>OTCO</choice>
+    <choice>PRIM</choice>
+    <choice>SECM</choice>
+    <choice>VARI</choice>
+</field>
+
+<field name="98B::SETT" type="GenericFieldType">
+    <bizName>Date/Time B - Settlement Date/Time</bizName>
+    <pattern>/[8c]/4!c</pattern>
+    <alias pattern="8c" bizName="Data Source Scheme" />        
+    <alias pattern="4!c" bizName="Date Code" />        
+    <choice>WISS</choice>
+</field>
+
+<field name="94B::PLIS" type="GenericFieldType">
+    <bizName>Place B - Place Of Listing</bizName>
+    <pattern>/[8c]/4!c[/30x]</pattern>
+    <choice>EXCH</choice>
+    <choice>OTCO</choice>
+</field>
+
+<field name="12B::OPST" type="GenericFieldType">
+    <bizName>Type of Financial Instrument B - Option Style</bizName>
+    <pattern>/[8c]/4!c</pattern>
+    <alias pattern="8c" bizName="Data Source Scheme" />    
+    <alias pattern="4!c" bizName="Instrument Type Code" />            
+    <choice>AMER</choice>
+    <choice>EURO</choice>
+</field>
+
+<field name="22F::COLA" type="GenericFieldType">
+    <bizName>Exposure Type Indicator</bizName>
+    <pattern>/[8c]/4!c</pattern>
+    <alias pattern="8c" bizName="Data Source Scheme" />    
+    <alias pattern="4!c" bizName="Indicator" />  
+    <choice>BFWD</choice>
+    <choice>CCIR</choice>
+    <choice>COMM</choice>
+    <choice>CRDS</choice>
+    <choice>CRPR</choice>
+    <choice>CRSP</choice>
+    <choice>CRTL</choice>
+    <choice>EQPT</choice>
+    <choice>EQUS</choice>
+    <choice>EXPT</choice>
+    <choice>EXTD</choice>    
+    <choice>FIXI</choice>
+    <choice>FORW</choice>
+    <choice>FORX</choice>
+    <choice>FUTR</choice>
+    <choice>LIQU</choice>
+    <choice>OPTN</choice>
+    <choice>OTCD</choice>
+    <choice>PAYM</choice>
+    <choice>REPO</choice>
+    <choice>RVPO</choice>
+    <choice>SBSB</choice>
+    <choice>SCIE</choice>
+    <choice>SCIR</choice>
+    <choice>SCRP</choice>    
+    <choice>SLEB</choice>
+    <choice>SLOA</choice>
+    <choice>SWPT</choice>
+    <choice>TBAS</choice>
+    <choice>TCRP</choice>
+</field>
+
+<field name="22H::COLA" type="MixedType">
+    <bizName>Indicator H - Exposure Type Indicator</bizName>
+    <pattern>//4!c</pattern>
+    <alias pattern="4!c" bizName="Indicator" /> 
+    	<choice>BFWD</choice>
+	    <choice>CCIR</choice>
+	    <choice>COMM</choice>
+	    <choice>CRDS</choice>
+	    <choice>CRPR</choice>
+	    <choice>CRSP</choice>
+	    <choice>CRTL</choice>
+	    <choice>EQPT</choice>
+	    <choice>EQUS</choice>
+	    <choice>EXPT</choice>
+	    <choice>EXTD</choice>    
+	    <choice>FIXI</choice>
+	    <choice>FORW</choice>
+	    <choice>FORX</choice>
+	    <choice>FUTR</choice>
+	    <choice>LIQU</choice>
+	    <choice>OPTN</choice>
+	    <choice>OTCD</choice>
+	    <choice>PAYM</choice>
+	    <choice>REPO</choice>
+	    <choice>RVPO</choice>
+	    <choice>SBSB</choice>
+	    <choice>SCIE</choice>
+	    <choice>SCIR</choice>
+	    <choice>SCRP</choice>    
+	    <choice>SLEB</choice>
+	    <choice>SLOA</choice>
+	    <choice>SWPT</choice>
+	    <choice>TBAS</choice>
+    <choice>TCRP</choice>
+</field>
+
+<field name="22F::STCO" type="GenericFieldType">
+    <bizName>Settlement Transaction Condition</bizName>
+    <pattern>/[8c]/4!c</pattern>
+    <alias pattern="8c" bizName="Data Source Scheme" />    
+    <alias pattern="4!c" bizName="Indicator" />            
+    <choice>ASGN</choice>
+    <choice>BUTC</choice>
+    <choice>CLEN</choice>
+    <choice>DIRT</choice>
+    <choice>DLWM</choice>
+    <choice>DRAW</choice>
+    <choice>EXER</choice>
+    <choice>EXPI</choice>
+    <choice>FRCL</choice>
+    <choice>KNOC</choice>
+    <choice>NOMC</choice>
+    <choice>NPAR</choice>
+    <choice>PART</choice>
+    <choice>PENS</choice>
+    <choice>PHYS</choice>
+    <choice>RESI</choice>
+    <choice>SPDL</choice>
+    <choice>SPST</choice>
+    <choice>TRIP</choice>
+    <choice>UNEX</choice>
+</field>
+
+<field name="97B::SAFE" type="PatternType">
+    <bizName>Account B - Safekeeping Account</bizName>
+    <pattern>/[8c]/4!c/35x</pattern>
+    <alias pattern="8c" bizName="Data Source Scheme" />                
+    <alias pattern="4!c" bizName="Account Type Code" />                    
+    <alias pattern="35x" bizName="Account Number" />                           
+</field>
+<field name="22F::CASY" type="GenericFieldType">
+    <bizName>Cash Settlement System Indicator</bizName>
+    <pattern>/[8c]/4!c</pattern>
+    <alias pattern="8c" bizName="Data Source Scheme" />    
+    <alias pattern="4!c" bizName="Indicator" />            
+    <choice>GROS</choice>
+    <choice>NETS</choice>
+</field>
+
+</constraints>

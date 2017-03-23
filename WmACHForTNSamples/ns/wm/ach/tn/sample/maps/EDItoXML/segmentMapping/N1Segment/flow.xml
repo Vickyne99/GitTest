@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<FLOW VERSION="3.0" CLEANUP="true">
+  <COMMENT></COMMENT>
+
+  <!-- nodes -->
+
+<LOOP TIMEOUT="" IN-ARRAY="/N1">
+  <COMMENT></COMMENT>
+
+  <!-- nodes -->
+
+<BRANCH TIMEOUT="" SWITCH="/N1/N101/code">
+  <COMMENT></COMMENT>
+
+  <!-- nodes -->
+
+<SEQUENCE NAME="BY" TIMEOUT="" EXIT-ON="FAILURE">
+  <COMMENT>Buying Organization</COMMENT>
+
+  <!-- nodes -->
+
+<MAP MODE="STANDALONE">
+  <COMMENT></COMMENT>
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="MapCopy" FROM="/N1;2;0/N102;1;0" TO="/ID;2;0/BuyingOrganization;2;0/Name;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="MapCopy" FROM="/N1;2;0/N3;2;1/N301;1;0" TO="/ID;2;0/BuyingOrganization;2;0/StreetAddress1;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="MapCopy" FROM="/N1;2;0/N3;2;1/N302;1;0" TO="/ID;2;0/BuyingOrganization;2;0/StreetAddress2;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="MapCopy" FROM="/N1;2;0/N4;2;1/N401;1;0" TO="/ID;2;0/BuyingOrganization;2;0/CityName;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="MapCopy" FROM="/N1;2;0/N4;2;1/N402;2;0/code;1;0" TO="/ID;2;0/BuyingOrganization;2;0/State;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="MapCopy" FROM="/N1;2;0/N4;2;1/N403;2;0/code;1;0" TO="/ID;2;0/BuyingOrganization;2;0/PostalCode;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="MapCopy" FROM="/N1;2;0/N4;2;1/N404;2;0/code;1;0" TO="/ID;2;0/BuyingOrganization;2;0/CountryCode;1;0">
+</MAPCOPY>
+</MAP>
+</SEQUENCE>
+
+<SEQUENCE NAME="EY" TIMEOUT="" EXIT-ON="FAILURE">
+  <COMMENT>Requisitioner ID</COMMENT>
+
+  <!-- nodes -->
+
+<MAP MODE="STANDALONE">
+  <COMMENT></COMMENT>
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="MapCopy" FROM="/N1;2;0/N102;1;0" TO="/ID;2;0/Requisitioner;2;0/CommonName;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="MapCopy" FROM="/N1;2;0/N104;1;0" TO="/ID;2;0/Requisitioner;2;0/ReqID;1;0">
+</MAPCOPY>
+</MAP>
+</SEQUENCE>
+
+<SEQUENCE NAME="SE" TIMEOUT="" EXIT-ON="FAILURE">
+  <COMMENT>Selling Organization</COMMENT>
+
+  <!-- nodes -->
+
+<MAP MODE="STANDALONE">
+  <COMMENT></COMMENT>
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="MapCopy" FROM="/N1;2;0/N102;1;0" TO="/ID;2;0/SellingOrganization;2;0/Name;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="MapCopy" FROM="/N1;2;0/N3;2;1/N301;1;0" TO="/ID;2;0/SellingOrganization;2;0/StreetAddress1;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="MapCopy" FROM="/N1;2;0/N3;2;1/N302;1;0" TO="/ID;2;0/SellingOrganization;2;0/StreetAddress2;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="MapCopy" FROM="/N1;2;0/N4;2;1/N401;1;0" TO="/ID;2;0/SellingOrganization;2;0/CityName;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="MapCopy" FROM="/N1;2;0/N4;2;1/N402;2;0/code;1;0" TO="/ID;2;0/SellingOrganization;2;0/State;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="MapCopy" FROM="/N1;2;0/N4;2;1/N403;2;0/code;1;0" TO="/ID;2;0/SellingOrganization;2;0/PostalCode;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="MapCopy" FROM="/N1;2;0/N4;2;1/N404;2;0/code;1;0" TO="/ID;2;0/SellingOrganization;2;0/CountryCode;1;0">
+</MAPCOPY>
+</MAP>
+</SEQUENCE>
+
+<SEQUENCE NAME="ST" TIMEOUT="" EXIT-ON="FAILURE">
+  <COMMENT>Ship-To ID</COMMENT>
+
+  <!-- nodes -->
+
+<MAP MODE="STANDALONE">
+  <COMMENT></COMMENT>
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="MapCopy" FROM="/N1;2;0/N102;1;0" TO="/ID;2;0/ShipTo;2;0/Name;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="MapCopy" FROM="/N1;2;0/N104;1;0" TO="/ID;2;0/ShipTo;2;0/ShippingCode;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="MapCopy" FROM="/N1;2;0/N2;2;1/N201;1;0" TO="/ID;2;0/ShipTo;2;0/DesktopAddress1;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="MapCopy" FROM="/N1;2;0/N2;2;1/N202;1;0" TO="/ID;2;0/ShipTo;2;0/DesktopAddress2;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="MapCopy" FROM="/N1;2;0/N3;2;1/N301;1;0" TO="/ID;2;0/ShipTo;2;0/StreetAddress1;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="MapCopy" FROM="/N1;2;0/N3;2;1/N302;1;0" TO="/ID;2;0/ShipTo;2;0/StreetAddress2;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="MapCopy" FROM="/N1;2;0/N4;2;1/N401;1;0" TO="/ID;2;0/ShipTo;2;0/CityName;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="MapCopy" FROM="/N1;2;0/N4;2;1/N402;2;0/code;1;0" TO="/ID;2;0/ShipTo;2;0/State;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="MapCopy" FROM="/N1;2;0/N4;2;1/N403;2;0/code;1;0" TO="/ID;2;0/ShipTo;2;0/PostalCode;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="MapCopy" FROM="/N1;2;0/N4;2;1/N404;2;0/code;1;0" TO="/ID;2;0/ShipTo;2;0/CountryCode;1;0">
+</MAPCOPY>
+</MAP>
+</SEQUENCE>
+
+<SEQUENCE NAME="BT" TIMEOUT="" EXIT-ON="FAILURE">
+  <COMMENT>Bill-To ID</COMMENT>
+
+  <!-- nodes -->
+
+<MAP MODE="STANDALONE">
+  <COMMENT></COMMENT>
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="MapCopy" FROM="/N1;2;0/N102;1;0" TO="/ID;2;0/BillTo;2;0/Name;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="MapCopy" FROM="/N1;2;0/N3;2;1/N301;1;0" TO="/ID;2;0/BillTo;2;0/StreetAddress1;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="MapCopy" FROM="/N1;2;0/N3;2;1/N302;1;0" TO="/ID;2;0/BillTo;2;0/StreetAddress2;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="MapCopy" FROM="/N1;2;0/N4;2;1/N401;1;0" TO="/ID;2;0/BillTo;2;0/CityName;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="MapCopy" FROM="/N1;2;0/N4;2;1/N402;2;0/code;1;0" TO="/ID;2;0/BillTo;2;0/State;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="MapCopy" FROM="/N1;2;0/N4;2;1/N403;2;0/code;1;0" TO="/ID;2;0/BillTo;2;0/PostalCode;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="MapCopy" FROM="/N1;2;0/N4;2;1/N404;2;0/code;1;0" TO="/ID;2;0/BillTo;2;0/CountryCode;1;0">
+</MAPCOPY>
+</MAP>
+</SEQUENCE>
+</BRANCH>
+</LOOP>
+</FLOW>

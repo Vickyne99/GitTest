@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema targetNamespace="http://SAM/200/XMLMessageHeader/MandatoryAppHeader" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns="http://SAM/200/XMLMessageHeader/MandatoryAppHeader" elementFormDefault="qualified">
+	<xs:element name="IMessage" type="Message_Type" />
+	<xs:element name="OMessage" type="Message_Type" />
+	<xs:element name="RMessage" type="Response_Type" />
+	<xs:complexType name="Response_Type">
+		<xs:sequence>
+			<xs:element name="AppHeader" type= "AppHeader_Type"/>
+			<xs:element name="Body" type="Body_Type" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Message_Type">
+		<xs:sequence>
+			<xs:element name="Header" type="Header_Type" />
+			<xs:element name="AppHeader" type= "AppHeader_Type"/>
+			<xs:element name="Body" type="Body_Type" />
+			<xs:element name="Comments" type="Comments_Type"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Header_Type">
+		<xs:sequence>
+			<xs:element name="Unit" type="Unit_Type" />
+			<xs:element name="RequestorDN" type="string100" />
+			<xs:element name="ResponderDN" type="string100" />
+			<xs:element name="Service" type="string30" />
+			<xs:element name="MessageIdentifier" type="string20" />
+			<xs:element name="UserRef" type="string30" minOccurs="0" />
+			<xs:element name="Priority" type="Priority_Type" />
+			<xs:element name="Signed" type="xs:boolean" minOccurs="0"/>
+			<xs:element name="Non-Repudiation" type="xs:boolean" minOccurs="0" />
+			<xs:element name="DeliveryMode" type="DeliveryMode_Type" />
+			<xs:element name="PossibleDuplicate" type="xs:boolean" minOccurs="0"/>
+			<xs:element name="NotifRequired" type="xs:boolean" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="Priority_Type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Normal" />
+			<xs:enumeration value="Urgent" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="DeliveryMode_Type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Real-time" />
+			<xs:enumeration value="Store-and-forward" />
+			<xs:maxLength value="17"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="Body_Type">
+		<xs:sequence>
+			<xs:any />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="AppHeader_Type">
+		<xs:sequence>
+			<xs:any />
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="Comments_Type">
+		<xs:sequence>
+			<xs:element name="OperatorComment" type="Comment_Type" minOccurs="0"/>
+			<xs:element name="ReactivationComment" type="Comment_Type" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:simpleType name="Comment_Type">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="0"/>
+			<xs:maxLength value="500"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="string20">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1" />
+			<xs:maxLength value="20" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="string30">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1" />
+			<xs:maxLength value="30" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="string40">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1" />
+			<xs:maxLength value="40" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="string100">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1" />
+			<xs:maxLength value="100" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Unit_Type">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="24"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

@@ -1,0 +1,125 @@
+<?xml version="1.0"?>
+<constraints>
+
+<!-- this is for field 119 in the B3 block of the message -->
+<field name="119:" type="PatternType">
+    <pattern>'COMM'|'CRPR'|'CRSP'|'CRTL'|'EXTD'|'FIXI'|'FORX'|'LIQU'|'OTCD'|'PAYM'|'REPO'|'SBSB'|'SCRP'|'SECL'|'SLEB'|'TCRP'</pattern>
+</field>
+
+<!-- Text Block for NOV02 MT504 -->
+<field name="22F::CASY" type="GenericFieldType">
+    <bizName>Cash Settlement System Indicator</bizName>
+    <pattern>/[8c]/4!c</pattern>
+    <choice>ABEC</choice>
+    <choice>ARTI</choice>
+    <choice>AUCL</choice>
+    <choice>AVPS</choice>
+    <choice>BELS</choice>
+    <choice>BOFI</choice>
+    <choice>BOJS</choice>
+    <choice>BRLI</choice>
+    <choice>CHEC</choice>
+    <choice>DELS</choice>
+    <choice>DKCS</choice>
+    <choice>EAFD</choice>
+    <choice>EBAC</choice>
+    <choice>EPMS</choice>
+    <choice>GBSC</choice>
+    <choice>GROS</choice>
+    <choice>HERM</choice>
+    <choice>HSVP</choice>
+    <choice>IRIS</choice>
+    <choice>LIPS</choice>
+    <choice>LVTS</choice>
+    <choice>NETS</choice>
+    <choice>NICS</choice>
+    <choice>PCHS</choice>
+    <choice>PEGE</choice>
+    <choice>PNSF</choice>
+    <choice>PVEV</choice>
+    <choice>RIXS</choice>
+    <choice>SAMO</choice>
+    <choice>SEPI</choice>
+    <choice>SITS</choice>
+    <choice>SLBE</choice>
+    <choice>SPGT</choice>
+    <choice>TARG</choice>
+    <choice>TBFF</choice>
+    <choice>TOPN</choice>
+    <choice>USCH</choice>
+    <choice>USFW</choice>
+    <choice>VIBE</choice>
+    <choice>ZENG</choice>
+</field>
+<field name="22F::STAM" type="GenericFieldType">
+    <bizName>Stamp Duty Indicator</bizName>
+    <pattern>/[8c]/4!c</pattern>
+    <choice>NSTA</choice>
+</field>
+<field name="22F::STCO" type="PathType">
+    <bizName>Settlement Transaction Condition</bizName>
+    <path name="B4/C1a/22F::STCO" type="GenericFieldType">
+        <pattern>/[8c]/4!c</pattern>
+        <choice>EXER</choice>
+        <choice>FRCL</choice>
+        <choice>KNOC</choice>
+        <choice>NPAR</choice>
+        <choice>NSSP</choice>
+        <choice>PART</choice>
+        <choice>PHYS</choice>
+        <choice>SHOR</choice>
+        <choice>SPCS</choice>
+        <choice>SPDL</choice>
+        <choice>SPST</choice>
+        <choice>UNEX</choice>
+    </path>
+    <path name="B4/C2a/22F::STCO" type="GenericFieldType">
+        <pattern>/[8c]/4!c</pattern>
+        <choice>NSSP</choice>
+    </path>
+    <path name="B4/D/22F::STCO" type="GenericFieldType">
+        <pattern>/[8c]/4!c</pattern>
+        <choice>EXER</choice>
+        <choice>FRCL</choice>
+        <choice>KNOC</choice>
+        <choice>NPAR</choice>
+        <choice>NSSP</choice>
+        <choice>PART</choice>
+        <choice>PHYS</choice>
+        <choice>SHOR</choice>
+        <choice>SPCS</choice>
+        <choice>SPDL</choice>
+        <choice>SPST</choice>
+        <choice>UNEX</choice>
+    </path>
+    <path name="B4/E/22F::STCO" type="GenericFieldType">
+        <pattern>/[8c]/4!c</pattern>
+        <choice>NSSP</choice>
+    </path>
+</field>
+<field name="22H::COAL" type="MixedType">
+    <bizName>Collateral Action Type Indicator</bizName>
+    <pattern>//4!c</pattern>
+    <choice>INIT</choice>
+    <choice>VARI</choice>
+</field>
+<field name="23G:" type="Mixed2Type">
+    <bizName>Function of the Message</bizName>
+    <pattern>4!c[/4!c]</pattern>
+    <choice1>CANC</choice1>
+    <choice1>NEWM</choice1>
+    <choice2>CODU</choice2>
+    <choice2>COPY</choice2>
+    <choice2>DUPL</choice2>
+    <error type="choice">T86</error>
+</field>
+<field name="95S::ALTE" type="GenericFieldType">
+    <bizName>Party S - Alternate ID</bizName>
+    <pattern>/[8c]/4!c/&lt;CC&gt;/30x</pattern>
+    <choice>ARNU</choice>
+    <choice>CCPT</choice>
+    <choice>CORP</choice>
+    <choice>DRLC</choice>
+    <choice>TXID</choice>
+</field>
+</constraints>

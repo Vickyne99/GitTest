@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<constraints>
+
+<!-- Text Block for NOV03 MT810 -->
+
+<field name="26A:" type="PatternType">
+    <bizName>Serial Numbers Lost</bizName>
+    <pattern>16x[/4!x]</pattern>
+</field>
+<field name="30:" type="PatternType">
+    <bizName>Date - Sales Date</bizName>
+    <pattern>&lt;DATE2&gt;</pattern>
+</field>
+<field name="32B:" type="PatternType">
+    <bizName>B - Refund Amount Requested</bizName>
+    <pattern>&lt;CUR&gt;&lt;AMOUNT&gt;15</pattern>
+</field>
+<field name="33A:" type="PatternType">
+    <bizName>A - Date and Amount of Loss</bizName>
+    <pattern>&lt;DATE2&gt;&lt;CUR&gt;&lt;AMOUNT&gt;15</pattern>
+</field>
+<field name="33B:" type="PatternType">
+    <bizName>B - Face Amount</bizName>
+    <pattern>&lt;CUR&gt;&lt;NUMBER&gt;15</pattern>
+</field>
+<field name="34B:" type="PatternType">
+    <bizName>B - Refund Made</bizName>
+    <pattern>&lt;CUR&gt;&lt;AMOUNT&gt;15</pattern>
+</field>
+<field name="50:" type="PatternType">
+    <bizName>Claimant (Permanent Address)</bizName>
+    <pattern>4*35x</pattern>
+</field>
+<field name="51A:" type="MixedType">
+    <bizName>A - Selling Agent</bizName>
+    <pattern>[&lt;BICPLUS&gt;][CRLF]&lt;SWIFTBIC&gt;|&lt;NONSWIFTBIC&gt;</pattern>
+    <choice>C</choice>
+    <choice>D</choice>
+</field>
+<field name="51D:" type="MixedType">
+    <bizName>D - Selling Agent</bizName>
+    <pattern>[&lt;BICPLUS&gt;][CRLF]4*35x</pattern>
+    <choice>C</choice>
+    <choice>D</choice>
+</field>
+<field name="57A:" type="MixedType">
+    <bizName>A - Refund Agent</bizName>
+    <pattern>[&lt;BICPLUS&gt;][CRLF]&lt;SWIFTBIC&gt;|&lt;NON-SWIFTBIC&gt;</pattern>
+    <choice>C</choice>
+    <choice>D</choice>
+</field>
+<field name="57B:" type="MixedType">
+    <bizName>B - Refund Agent</bizName>
+    <pattern>[&lt;BICPLUS&gt;][CRLF][35x]</pattern>
+    <choice>C</choice>
+    <choice>D</choice>
+</field>
+<field name="57D:" type="MixedType">
+    <bizName>D - Refund Agent</bizName>
+    <pattern>[&lt;BICPLUS&gt;][CRLF]4*35x</pattern>
+    <choice>C</choice>
+    <choice>D</choice>
+</field>
+<field name="59:" type="PatternType">
+    <bizName>Claimant (Contact Address)</bizName>
+    <pattern>[/34xCRLF]4*35x</pattern>
+</field>
+<field name="77A:" type="PatternType">
+    <bizName>Details of Loss</bizName>
+    <pattern>&lt;ERI_F77A&gt;</pattern>
+</field>
+<field name="79:" type="PatternType">
+    <bizName>Claimant Details</bizName>
+    <pattern>35*50x</pattern>
+</field>
+</constraints>

@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="GENERATOR" content="Quadralay WebWorks Publisher Professional Edition 7.0" />
+  <meta name="TEMPLATEBASE" content="wM_WWH20030908" />
+  <meta name="LASTUPDATED" content="07/27/06 06:26:21" />
+  <title>PCF Command Service Template Screens</title>
+  <link rel="StyleSheet" href="document.css" type="text/css" />
+  <link rel="StyleSheet" href="catalog.css" type="text/css" />
+<script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+  <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+
+  <script type="text/javascript" language="JavaScript1.2">
+   <!--
+    // Set reference to top level help frame
+    //
+    var  WWHFrame = WWHGetWWHFrame("");
+   // -->
+  </script>
+ </head>
+
+ <body onLoad="WWHUpdate();">
+
+
+<a name="wp1126686"> </a><h2 class="pNewHTMLPage">
+PCF Command Service Template Screens
+</h2><a name="wp1126811"> </a><p class="pBody">
+PCF Command service issues Programmable Command Format (PCF) commands to the WebSphere MQ command server for execution. PCF commands allow you to use a single application to perform network administration from a single queue manager within the network.
+</p>
+<a name="wp1126858"> </a><p class="pChapterTOC">
+<img src="images/bullet.gif" height="13" width="10" border="0" />
+<a  href="ScreenLevelHelp20.html#wp1128668">PCF Command Service Tab</a>
+</p>
+<a name="wp1127134"> </a><p class="pChapterTOC">
+<img src="images/bullet.gif" height="13" width="10" border="0" />
+<a  href="ScreenLevelHelp20.html#wp1126953">Optional Request Parameters Tab</a>
+</p>
+<a name="wp1127144"> </a><p class="pChapterTOC">
+<img src="images/bullet.gif" height="13" width="10" border="0" />
+<a  href="ScreenLevelHelp20.html#wp1126958">Response Parameters Tab</a>
+</p>
+<a name="wp1128668"> </a><h4 class="pHeading3">
+PCF Command Service Tab</h4><div align="left">
+<table border="0">
+  <caption></caption>
+  <tr align="left" valign="top">    <td><a name="wp1128671"> </a><p class="px_Important">
+&#160;
+<img src="images/important_icon.gif" height="25" width="25" border="1" alt="Important" />
+</p>
+</td>
+    <td><a name="wp1128673"> </a><p class="pImportant">
+<b>Important!</b> To use this feature, you should be familiar with the WebSphere MQ Programmable Command Formats, described in the WebSphere MQ Programmable Command Formats and Administration Interface (SC34-6598).
+</p>
+</td>
+</tr>
+</table>
+</div>
+<h4 class="pHeading3"></h4><div align="left">
+<table border="0">
+  <caption></caption>
+  <tr align="left" valign="top">    <td><a name="wp1128683"> </a><p class="px_Important">
+&#160;
+<img src="images/important_icon.gif" height="25" width="25" border="1" alt="Important" />
+</p>
+</td>
+    <td><a name="wp1128685"> </a><p class="pImportant">
+<b>Important!</b> On platforms other than z/OS, the queue to which the PCF commands are sent is always called the SYSTEM.ADMIN.COMMAND.QUEUE. On z/OS, commands are sent to SYSTEM.COMMAND.INPUT, although SYSTEM.ADMIN.COMMAND.QUEUE can be an alias for it.
+</p>
+</td>
+</tr>
+</table>
+</div>
+<h4 class="pHeading3">
+</h4>
+<a name="wp1128675"> </a><p class="pBody">
+Select the <b class="cBold">PCF Command Service</b> tab to configure the following fields:	
+</p>
+<a name="wp1126889"> </a><p class="pAnchor">
+</p><div align="left">
+<table border="0">
+  <caption></caption>
+  <tr align="left" valign="bottom">    <th><a name="wp1126872"> </a><p class="pBody">
+<b class="cBold">Field</b>
+</p>
+</th>
+    <th><a name="wp1126874"> </a><p class="pBody">
+<b class="cBold">Description/Action</b>
+</p>
+</th>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1126876"> </a><p class="pBody">
+<b class="cBold">PCF Command</b>
+</p>
+</td>
+    <td><a name="wp1126878"> </a><p class="pBody">
+Select the PCF command you want to execute.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1126880"> </a><p class="pBody">
+<b class="cBold">Wait Interval (msec)</b>
+</p>
+</td>
+    <td><a name="wp1126882"> </a><p class="pBody">
+Time period that the service waits for a reply message to appear on the queue. Enter this value in milliseconds.
+</p>
+</td>
+</tr>
+  <tr align="left" valign="top">    <td><a name="wp1126884"> </a><p class="pBody">
+<b class="cBold">Throw Exception on Failure?</b>
+</p>
+</td>
+    <td><a name="wp1126886"> </a><p class="pBody">
+Select whether the service throws an exception on failure:
+</p>
+<div class="pSmartList1" style="margin-top: 7pt"><ul class="pSmartList1" style="margin-top: 7pt">
+<a name="wp1126887"> </a><div style="margin-top: 7pt" class="pSmartList1"><li><b class="cBold">Checked</b>: Throws an exception when the adapter service returns error codes.</li></div>
+<a name="wp1126888"> </a><div style="margin-top: 7pt" class="pSmartList1"><li><b class="cBold">Unchecked</b>: Returns reasonCode, conditionCode and errorMsg in the output signature.</li></div>
+</ul></div>
+<a name="wp1128692"> </a><p class="pBody">
+Default: <b class="cBold">Checked</b>
+</p>
+</td>
+</tr>
+</table>
+</div>
+<p class="pAnchor">
+</p>
+<a name="wp1126953"> </a><h4 class="pHeading3">
+Optional Request Parameters Tab    
+</h4>
+<a name="wp1126954"> </a><p class="pBody">
+Select the <b class="cBold">Optional Request Parameters</b> tab to specify the optional Input parameters.
+</p>
+<div class="pSmartList1" style="margin-top: 7pt"><ul class="pSmartList1" style="margin-top: 7pt">
+<a name="wp1126955"> </a><div style="margin-top: 7pt" class="pSmartList1"><li>Use the following icons to manage the rows on the Optional Request Parameters tab:</li></div>
+<a name="wp1126963"> </a><div style="margin-top: 7pt" class="pSmartList1"><li>To select an optional request parameter for the selected pcf command, select the Insert Row icon <img src="images/table_insertrowa.gif" border="0" hspace="0" vspace="0"/> (or the Fill in all rows to the table icon <img src="images/append_all_rowsa.gif" border="0" hspace="0" vspace="0"/>).</li></div>
+<a name="wp1126973"> </a><div style="margin-top: 7pt" class="pSmartList1"><li>To change the order of the selected parameters, use the Shift Up <img src="images/btn_shift_upa.gif" border="0" hspace="0" vspace="0"/> or Shift Down <img src="images/btn_shift_downa.gif" border="0" hspace="0" vspace="0"/> icons.</li></div>
+<a name="wp1126980"> </a><div style="margin-top: 7pt" class="pSmartList1"><li>To delete any of the selected parameter, use the Remove row icon <img src="images/remove_rowa.gif" border="0" hspace="0" vspace="0"/>.</li></div>
+</ul></div>
+<a name="wp1126981"> </a><p class="pBody">
+The specified Optional Request Parameters appear on the <b class="cBold">Input/Outpu</b>t tab in the <b class="cBold">Input</b> signature for this adapter service.
+</p>
+<a name="wp1126987"> </a><p class="pAnchor">
+</p><div align="left">
+<table border="0">
+  <caption></caption>
+  <tr align="left" valign="top">    <td><a name="wp1126984"> </a><p class="px_Note">
+&#160;
+<img src="images/note_icon.gif" height="25" width="25" border="1" alt="Note" />
+</p>
+</td>
+    <td><a name="wp1126986"> </a><p class="pNote">
+<b>Note:</b> Some PCF commands have mandatory Request parameters, which will appear under <b class="cBold">RequiredParameters</b> in the Input signature of the service.
+</p>
+</td>
+</tr>
+</table>
+</div>
+<p class="pAnchor">
+</p>
+<a name="wp1126958"> </a><h4 class="pHeading3">
+Response Parameters Tab    
+</h4>
+<a name="wp1127033"> </a><p class="pBody">
+Select the <b class="cBold">Response Parameters</b> tab to select the response parameters for the selected pcf command.
+</p>
+<a name="wp1127072"> </a><p class="pBody">
+Use the following icons to manage the rows on the <b class="cBold">Response Parameters</b> tab:
+</p>
+<div class="pSmartList1" style="margin-top: 7pt"><ul class="pSmartList1" style="margin-top: 7pt">
+<a name="wp1127034"> </a><div style="margin-top: 7pt" class="pSmartList1"><li>To select an response parameter for the selected pcf command, select the Insert Row icon <img src="images/table_insertrowa.gif" border="0" hspace="0" vspace="0"/> (or the Fill in all rows to the table icon <img src="images/append_all_rowsa.gif" border="0" hspace="0" vspace="0"/>).</li></div>
+<a name="wp1127044"> </a><div style="margin-top: 7pt" class="pSmartList1"><li>To change the order of the selected parameters, use the Shift Up <img src="images/btn_shift_upa.gif" border="0" hspace="0" vspace="0"/> or Shift Down <img src="images/btn_shift_downa.gif" border="0" hspace="0" vspace="0"/> icons.</li></div>
+<a name="wp1127051"> </a><div style="margin-top: 7pt" class="pSmartList1"><li>To delete any of the selected parameter, use the Remove row icon <img src="images/remove_rowa.gif" border="0" hspace="0" vspace="0"/>.</li></div>
+</ul></div>
+<a name="wp1127091"> </a><p class="pBody">
+The specified <b class="cBold">Response Parameters</b> appear on the <b class="cBold">Input/Output</b> tab in the <b class="cBold">Output</b> signature for this adapter service.
+</p>
+
+ <hr />
+
+
+<script type="text/javascript" language="JavaScript1.2">
+   <!--
+    document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag());
+   // -->
+  </script>
+
+ </body>
+</html>

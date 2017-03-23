@@ -1,0 +1,236 @@
+<?xml version="1.0"?>
+<constraints>
+
+<!-- Text Block for NOV03 MT515 -->
+
+<field name="19A::SUBS" type="PatternType">
+    <bizName>Amount A - Subscription Interest</bizName>
+    <pattern>//[N]&lt;CUR&gt;&lt;NUMBER&gt;15</pattern>
+</field>
+<field name="98B::SETT" type="GenericFieldType">
+    <bizName>Date/Time B - Settlement Date/Time</bizName>
+    <pattern>/[8c]/4!c</pattern>
+    <alias pattern="8c" bizName="Data Source Scheme" />        
+    <alias pattern="4!c" bizName="Date Code" />        
+    <choice>CASH</choice>
+    <choice>NEDA</choice>
+    <choice>OTHR</choice>
+    <choice>REGU</choice>
+    <choice>SEOP</choice>    
+    <choice>TBAT</choice>
+    <choice>TPL2</choice>
+    <choice>TPL3</choice>
+    <choice>TPL4</choice>
+    <choice>TPL5</choice>
+    <choice>WDIS</choice>
+    <choice>WIDI</choice>
+    <choice>WISS</choice>
+</field>
+<field name="22F::SETR" type="GenericFieldType">
+    <bizName>Type of Settlement Transaction</bizName>
+    <pattern>/[8c]/4!c</pattern>
+    <choice>BSBK</choice>
+    <choice>COLI</choice>
+    <choice>COLO</choice>
+    <choice>CONV</choice>
+    <choice>ISSU</choice>
+    <choice>OWNE</choice>
+    <choice>OWNI</choice>
+    <choice>MKDW</choice>
+    <choice>MKUP</choice>
+    <choice>NETT</choice>
+    <choice>NSYN</choice>
+    <choice>PAIR</choice>
+    <choice>PLAC</choice>
+    <choice>REAL</choice>
+    <choice>REDI</choice>
+    <choice>REDM</choice>
+    <choice>RELE</choice>
+    <choice>REPU</choice>
+    <choice>RODE</choice>
+    <choice>RPTO</choice>
+    <choice>RVPO</choice>
+    <choice>SBBK</choice>
+    <choice>SECB</choice>
+    <choice>SECL</choice>
+    <choice>SUBS</choice>
+    <choice>SYND</choice>
+    <choice>TRAD</choice>
+    <choice>TRPO</choice>
+    <choice>TRVO</choice>
+    <choice>TURN</choice>
+</field>
+<field name="22F::TRTR" type="GenericFieldType">
+    <bizName>Trade Transaction Type</bizName>
+    <pattern>/[8c]/4!c</pattern>
+    <choice>BASK</choice>
+    <choice>EMTR</choice>
+    <choice>INDX</choice>
+    <choice>LIST</choice>
+    <choice>PALL</choice>
+    <choice>PROG</choice>
+    <choice>TRAD</choice>
+</field>
+<field name="22H::BUSE" type="MixedType">
+    <bizName>Buy/Sell Indicator</bizName>
+    <pattern>//4!c</pattern>
+    <choice>BUYI</choice>
+    <choice>CROF</choice>
+    <choice>CROT</choice>
+    <choice>DIVR</choice>
+    <choice>IPOO</choice>
+    <choice>REDM</choice>
+    <choice>SELL</choice>
+    <choice>SUBS</choice>
+    <choice>SWIF</choice>
+    <choice>SWIT</choice>
+</field>
+<field name="22F::PRIC" type="GenericFieldType">
+    <bizName>Type of Price</bizName>
+    <pattern>/[8c]/4!c</pattern>
+    <choice>AVER</choice>
+    <choice>AVOV</choice>
+    <choice>COMB</choice>
+    <choice>GREX</choice>
+    <choice>NDIS</choice>    
+    <choice>NET1</choice>
+    <choice>NET2</choice>
+    <choice>NOGR</choice>
+    <choice>NUND</choice>    
+    <choice>PARV</choice>
+    <choice>RDAV</choice>
+</field>
+<field name="22F::PROC" type="GenericFieldType">
+    <bizName>Processing Indicator</bizName>
+    <pattern>/[8c]/4!c</pattern>
+    <choice>CLOA</choice>
+    <choice>CLOP</choice>
+    <choice>OPEP</choice>
+</field>
+<field name="22F::TTCO" type="GenericFieldType">
+    <bizName>Trade Transaction Condition Indicator</bizName>
+    <pattern>/[8c]/4!c</pattern>
+    <choice>BCBL</choice>
+    <choice>BCBN</choice>
+    <choice>BCFD</choice>
+    <choice>BCPD</choice>
+    <choice>BCRO</choice>
+    <choice>BCRP</choice>
+    <choice>BLKO</choice>
+    <choice>BTEX</choice>
+    <choice>BTMI</choice>
+    <choice>CALL</choice>
+    <choice>CBNS</choice>
+    <choice>CCPN</choice>
+    <choice>CDIV</choice>
+    <choice>CLBR</choice>
+    <choice>CLEN</choice>
+    <choice>CRST</choice>
+    <choice>CRTS</choice>
+    <choice>CWAR</choice>
+    <choice>DIOR</choice>
+    <choice>DIRT</choice>
+    <choice>DORD</choice>
+    <choice>FORW</choice>
+    <choice>FRAC</choice>
+    <choice>GTDL</choice>
+    <choice>HIST</choice>
+    <choice>MAPR</choice>
+    <choice>MONT</choice>
+    <choice>NBFR</choice>
+    <choice>NCRS</choice>
+    <choice>NEGO</choice>
+    <choice>NMPR</choice>
+    <choice>PETA</choice>
+    <choice>PUTT</choice>
+    <choice>SETI</choice>
+    <choice>SPCU</choice>
+    <choice>SPEX</choice>
+    <choice>SPSI</choice>
+    <choice>SSTI</choice>
+    <choice>TEFR</choice>
+    <choice>TRFR</choice>
+    <choice>XBNS</choice>
+    <choice>XCPN</choice>
+    <choice>XDIV</choice>
+    <choice>XRTS</choice>
+    <choice>XWAR</choice>
+</field>
+<field name="23G:" type="Mixed2Type">
+    <bizName>Function of the Message</bizName>
+    <pattern>4!c[/4!c]</pattern>
+    <alias pattern="4!c" bizName="Function" />            
+    <alias pattern="4!c" bizName="Subfunction" />                
+    <choice1>CANC</choice1>
+    <choice1>NEWM</choice1>
+    <choice2>CODU</choice2>
+    <choice2>COPY</choice2>
+    <choice2>DUPL</choice2>
+    <error type="choice">T86</error>
+</field>
+<field name="94B::TRAD" type="GenericFieldType">
+    <bizName>Place B - Place of Trade</bizName>
+    <pattern>/[8c]/4!c[/30x]</pattern>
+    <choice>EXCH</choice>
+    <choice>OTCO</choice>
+    <choice>PRIM</choice>
+    <choice>SECM</choice>
+    <choice>VARI</choice>
+</field>
+<field name="95S::ALTE" type="PathType">
+    <bizName>Party S - Alternate Identification</bizName>
+    <path name="/B4/16R:CONFDET/16R:CONFPRTY/SB1/95S::ALTE" type="GenericFieldType">
+	      <pattern>/[8c]/4!c/&lt;CC&gt;/30x</pattern>
+	      <alias pattern="8c" bizName="Data Source Scheme" />            
+	      <alias pattern="4!c" bizName="Type of ID" />                
+	      <alias pattern="30x" bizName="Alternate ID" />                    
+	      <choice>ARNU</choice>
+	      <choice>CCPT</choice>
+    	  <choice>CHTY</choice>
+    		<choice>CORP</choice>
+    		<choice>DRLC</choice>
+    		<choice>EMPL</choice>
+    		<choice>FIIN</choice>
+    		<choice>TXID</choice>
+    </path>
+    <path name="/B4/16R:SETDET/16R:SETPRTY/SB1/95S::ALTE" type="GenericFieldType">
+	      <pattern>/[8c]/4!c/&lt;CC&gt;/30x</pattern>
+	      <alias pattern="8c" bizName="Data Source Scheme" />            
+	      <alias pattern="4!c" bizName="Type of ID" />                
+	      <alias pattern="30x" bizName="Alternate ID" />                    
+	      <choice>ARNU</choice>
+	      <choice>CCPT</choice>
+    	  <choice>CHTY</choice>
+    		<choice>CORP</choice>
+    		<choice>DRLC</choice>
+    		<choice>FIIN</choice>
+    		<choice>TXID</choice>
+    </path>
+    <path name="/B4/16R:SETDET/16R:CSHPRTY/SB1/95S::ALTE" type="GenericFieldType">
+	      <pattern>/[8c]/4!c/&lt;CC&gt;/30x</pattern>
+	      <alias pattern="8c" bizName="Data Source Scheme" />            
+	      <alias pattern="4!c" bizName="Type of ID" />                
+	      <alias pattern="30x" bizName="Alternate ID" />                    
+	      <choice>ARNU</choice>
+	      <choice>CCPT</choice>
+    	  <choice>CHTY</choice>
+    		<choice>CORP</choice>
+    		<choice>DRLC</choice>
+    		<choice>FIIN</choice>
+    		<choice>TXID</choice>
+    </path>
+    <path name="/B4/16R:OTHRPRTY/SB1/95S::ALTE" type="GenericFieldType">
+	      <pattern>/[8c]/4!c/&lt;CC&gt;/30x</pattern>
+	      <alias pattern="8c" bizName="Data Source Scheme" />            
+	      <alias pattern="4!c" bizName="Type of ID" />                
+	      <alias pattern="30x" bizName="Alternate ID" />                    
+	      <choice>ARNU</choice>
+	      <choice>CCPT</choice>
+    	  <choice>CHTY</choice>
+    		<choice>CORP</choice>
+    		<choice>DRLC</choice>
+    		<choice>FIIN</choice>
+    		<choice>TXID</choice>
+    </path>
+</field>
+</constraints>

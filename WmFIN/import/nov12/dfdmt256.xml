@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<constraints>
+
+<!-- Text Block for NOV03 MT256 -->
+
+<field name="19:" type="PatternType">
+    <bizName>Total Cheque Amount</bizName>
+    <pattern>&lt;AMOUNT&gt;17</pattern>
+</field>
+<field name="20:" type="PatternType">
+    <bizName>Reference - Sender's Reference</bizName>
+    <pattern>16x</pattern>
+    <error type="content">T26</error>
+</field>
+<field name="21:" type="PatternType">
+    <bizName>Reference - Related Message Reference</bizName>
+    <pattern>16x</pattern>
+    <error type="content">T26</error>
+</field>
+<field name="21D:" type="PatternType">
+    <bizName>Reference D - Cheque Number</bizName>
+    <pattern>35x</pattern>
+</field>
+<field name="21E:" type="PatternType">
+    <bizName>Reference E - Cheque Reference Number</bizName>
+    <pattern>35x</pattern>
+</field>
+<field name="23E:" type="MixedType">
+    <bizName>Reason for Non-Payment/Dishonour</bizName>
+    <pattern>4!c[/30x]</pattern>
+    <choice>AMAM</choice><choice>AMTL</choice>
+    <choice>CLOS</choice><choice>COLN</choice>
+    <choice>DRAW</choice><choice>DUPL</choice>
+    <choice>FRAU</choice><choice>FROZ</choice>
+    <choice>FRWD</choice><choice>INCH</choice>
+    <choice>INSF</choice><choice>INSI</choice>
+    <choice>INVA</choice><choice>NELI</choice>
+    <choice>NMAT</choice><choice>OTHR</choice>
+    <choice>REVO</choice><choice>STLD</choice>
+    <choice>STOP</choice>
+    <error type="code">T47</error>
+</field>
+<field name="30:" type="PatternType">
+    <bizName>Date - Original Value Date</bizName>
+    <pattern>&lt;DATE2&gt;</pattern>
+</field>
+<field name="32A:" type="PatternType">
+    <bizName>A - Value Date, Currency Code and Total Amount Claimed</bizName>
+    <pattern>&lt;DATE2&gt;&lt;CUR&gt;&lt;AMOUNT&gt;15</pattern>
+</field>
+<field name="37J:" type="PatternType">
+    <bizName>J - Interest Rate</bizName>
+    <pattern>&lt;NUMBER&gt;12</pattern>
+</field>
+<field name="44A:" type="PatternType">
+    <bizName>Transaction Reference Number</bizName>
+    <pattern>65x</pattern>
+</field>
+<field name="57A:" type="MixedType">
+    <bizName>A - Account With Institution (for Settlement)</bizName>
+    <pattern>[&lt;PartyIdentifier&gt;][CRLF]&lt;SWIFTBIC&gt;</pattern>
+</field>
+<field name="57C:" type="PatternType">
+    <bizName>C - Account With Institution (for Settlement)</bizName>
+    <pattern>/34x</pattern>
+</field>
+<field name="57D:" type="MixedType">
+    <bizName>D - Account With Institution (for Settlement)</bizName>
+    <pattern>[&lt;PartyIdentifier&gt;][CRLF]4*35x</pattern>
+</field>
+<field name="71G:" type="PatternType">
+    <bizName>G - Interest Charges</bizName>
+    <pattern>&lt;CUR&gt;&lt;AMOUNT&gt;15</pattern>
+</field>
+</constraints>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="name">getKeystoreNames</value>
+  <value name="subtype">unknown</value>
+  <value name="sigtype">java 3.5</value>
+  <value name="encodeutf8">true</value>
+  <value name="body">SURhdGFDdXJzb3IgY3Vyc29yID0gcGlwZWxpbmUuZ2V0Q3Vyc29yKCk7DQpTdHJpbmcga3NIYW5k
+bGUgPSAoU3RyaW5nKSBJRGF0YVV0aWwuZ2V0KGN1cnNvciwgInBnLmtleXN0b3JlLmtleVN0b3Jl
+SGFuZGxlIik7DQoNCmJvb2xlYW4gaXNFeGlzdGluZyA9IGZhbHNlOw0KDQoJdHJ5IHsNCiAgICAg
+ICAgICAgIElTS2V5U3RvcmVNYW5hZ2VyIGtzTWdyID0gSVNLZXlTdG9yZU1hbmFnZXIuZ2V0SW5z
+dGFuY2UoKTsNCiAgICAgICAgICAgIFN0cmluZ1tdIGtzID0ga3NNZ3IubGlzdEtleVN0b3JlTmFt
+ZXMoKTsNCg0KCSAgICBJRGF0YVtdIG5hbWVzID0gbmV3IElEYXRhW2tzLmxlbmd0aF07DQoNCgkg
+ICAgZm9yIChpbnQgaT0wOyBpPGtzLmxlbmd0aDsgaSsrKSB7CQkNCgkJbmFtZXNbaV0gPSBJRGF0
+YUZhY3RvcnkuY3JlYXRlKCk7DQoJCW5hbWVzW2ldLmdldEN1cnNvcigpLmluc2VydEFmdGVyKCJu
+YW1lIiwga3NbaV0pOw0KCQkNCgkJaWYgKGtzW2ldLmVxdWFscyhrc0hhbmRsZSkpIGlzRXhpc3Rp
+bmcgPSB0cnVlOw0KCSAgICB9DQoJICAgIGN1cnNvci5pbnNlcnRBZnRlcihLRVlfU1RPUkVTLCBu
+YW1lcyk7DQoNCg0KCWlmICghaXNFeGlzdGluZykgew0KCSAgIElEYXRhVXRpbC5wdXQoY3Vyc29y
+LCAicGcua2V5c3RvcmUua2V5U3RvcmVIYW5kbGUiLCBrc1swXSk7DQoJfQ0KDQogICAgICAgIH0g
+Y2F0Y2ggKEV4Y2VwdGlvbiBlKSB7DQogICAgICAgIAlsb2dnZXIuZXJyb3IoIjAwMTAuMDg3MSIs
+IG5ldyBPYmplY3RbXXsgZS5nZXRNZXNzYWdlKCl9LGUpOw0KICAgICAgICB9DQoNCg==</value>
+</Values>

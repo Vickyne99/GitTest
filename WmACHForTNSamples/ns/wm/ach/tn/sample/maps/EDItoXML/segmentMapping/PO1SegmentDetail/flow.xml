@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<FLOW VERSION="3.0" CLEANUP="true">
+  <COMMENT></COMMENT>
+
+  <!-- nodes -->
+
+<BRANCH TIMEOUT="" SWITCH="/Product ID Qualifier">
+  <COMMENT></COMMENT>
+
+  <!-- nodes -->
+
+<MAP NAME="BP" MODE="STANDALONE">
+  <COMMENT>Buyer's Part Number</COMMENT>
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="MapCopy" FROM="/Product ID;1;0" TO="/ProductID;2;0/CustomerPartNumber;1;0">
+</MAPCOPY>
+</MAP>
+
+<MAP NAME="CG" MODE="STANDALONE">
+  <COMMENT>Commodity Grouping</COMMENT>
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="MapCopy" FROM="/Product ID;1;0" TO="/ProductID;2;0/CommodityGroup;1;0">
+</MAPCOPY>
+</MAP>
+
+<MAP NAME="CN" MODE="STANDALONE">
+  <COMMENT>Commodity Name</COMMENT>
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="MapCopy" FROM="/Product ID;1;0" TO="/ProductID;2;0/ProductName;1;0">
+</MAPCOPY>
+</MAP>
+
+<MAP NAME="MF" MODE="STANDALONE">
+  <COMMENT>Manufacturer</COMMENT>
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="MapCopy" FROM="/Product ID;1;0" TO="/ProductID;2;0/ManufacturerName;1;0">
+</MAPCOPY>
+</MAP>
+
+<MAP NAME="MG" MODE="STANDALONE">
+  <COMMENT>Manufacturer's Part Number</COMMENT>
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="MapCopy" FROM="/Product ID;1;0" TO="/ProductID;2;0/ManufacturerPartNumber;1;0">
+</MAPCOPY>
+</MAP>
+</BRANCH>
+
+<MAP MODE="STANDALONE">
+  <COMMENT></COMMENT>
+  <MAPTARGET>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="nillable">true</value>
+    <array name="rec_fields" type="record" depth="1">
+    </array>
+  </record>
+</Values>
+</MAPTARGET>
+  <MAPSOURCE>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="nillable">true</value>
+    <array name="rec_fields" type="record" depth="1">
+    </array>
+  </record>
+</Values>
+</MAPSOURCE>
+
+  <!-- nodes -->
+
+<MAPDELETE NAME="MapDelete" FIELD="/Product ID Qualifier;1;0">
+</MAPDELETE>
+
+<MAPDELETE NAME="MapDelete" FIELD="/Product ID;1;0">
+</MAPDELETE>
+</MAP>
+</FLOW>

@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<constraints>
+
+<!-- Text Block for NOV03 MT103+ -->
+<field name="20:" type="PatternType">
+    <bizName>Reference - Sender's Reference</bizName>
+    <pattern>16x</pattern>
+    <alias pattern="16x" bizName="Sender Reference" />    
+    <error type="content">T26</error>
+</field>
+<field name="23E:" type="MixedType">
+    <bizName>Instruction Code</bizName>
+    <pattern>4!c[/30x]</pattern>
+    <alias pattern="4!c" bizName="Instruction Code" />        
+    <alias pattern="30x" bizName="Instruction" />            
+    <choice>SDVA</choice>
+    <choice>INTC</choice>
+    <choice>REPA</choice>
+    <choice>CORT</choice>
+    <error type="code">T48</error>
+</field>
+<field name="32A:" type="PatternType">
+    <bizName>A - Value Date/Currency/Interbank Settled Amount</bizName>
+    <pattern>&lt;DATE2&gt;&lt;CUR&gt;&lt;AMOUNT&gt;15</pattern>
+    <alias pattern="&lt;DATE2&gt;" bizName="Value Date" />            
+</field>
+<field name="52A:" type="MixedType">
+    <bizName>A - Ordering Institution</bizName>
+    <pattern>[&lt;PartyIdentifier&gt;][CRLF]&lt;SWIFTBIC&gt;</pattern>
+</field>
+<field name="53A:" type="MixedType">
+    <bizName>A - Sender's Correspondent</bizName>
+    <pattern>[&lt;PartyIdentifier&gt;][CRLF]&lt;SWIFTBIC&gt;</pattern>
+</field>
+<field name="56A:" type="MixedType">
+    <bizName>A - Intermediary Institution</bizName>
+    <pattern>[&lt;PartyIdentifier&gt;][CRLF]&lt;SWIFTBIC&gt;</pattern>
+</field>
+<field name="57A:" type="MixedType">
+    <bizName>A - Account With Institution</bizName>
+    <pattern>[&lt;PartyIdentifier&gt;][CRLF]&lt;SWIFTBIC&gt;</pattern>
+</field>
+<field name="72:" type="PatternType">
+    <bizName>Sender to Receiver Information</bizName>
+    <pattern>&lt;FLD72_STP&gt;</pattern>
+    <alias pattern="&lt;FLD72_STP&gt;" bizName="Sender to Receiver Information" />                
+</field>
+<field name="26T:" type="MixedType">
+    <bizName>Transaction Type Code</bizName>
+    <pattern>3!c</pattern>
+    <alias pattern="3!c" bizName="Transaction Type Code" />   
+</field>
+</constraints>

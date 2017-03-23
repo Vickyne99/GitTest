@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<constraints>
+
+<!-- Text Block for NOV03 MT548 -->
+<field name="22F::STCO" type="GenericFieldType">
+    <bizName>Settlement Transaction Condition</bizName>
+    <pattern>/[8c]/4!c</pattern>
+    <alias pattern="8c" bizName="Data Source Scheme" />    
+    <alias pattern="4!c" bizName="Indicator" />        
+    <choice>BUTC</choice>
+    <choice>EXER</choice>
+    <choice>EXPI</choice>
+    <choice>KNOC</choice>
+    <choice>PHYS</choice>
+    <choice>CLEN</choice>
+    <choice>DIRT</choice>
+    <choice>DLWM</choice>
+    <choice>DRAW</choice>
+    <choice>FRCL</choice>
+    <choice>NPAR</choice>
+    <choice>PART</choice>
+    <choice>SHOR</choice>
+    <choice>SPCS</choice>
+    <choice>SPDL</choice>
+    <choice>SPST</choice>
+    <choice>UNEX</choice>
+</field>
+<field name="23G:" type="Mixed2Type">
+    <bizName>Function of the Message</bizName>
+    <pattern>4!c[/4!c]</pattern>
+    <alias pattern="4!c" bizName="Function" />
+    <alias pattern="4!c" bizName="Subfunction" />
+    <choice1>CAST</choice1><choice1>INST</choice1>
+    <choice2>CODU</choice2><choice2>COPY</choice2><choice2>DUPL</choice2>
+</field>
+<field name="98B::SETT" type="GenericFieldType">
+    <bizName>Date/Time B - Settlement Date/Time</bizName>
+    <pattern>/[8c]/4!c</pattern>
+    <alias pattern="8c" bizName="Data Source Scheme" />    
+    <alias pattern="4!c" bizName="Date Code" />        
+    <choice>OPEN</choice>
+    <choice>UKWN</choice>
+</field>
+</constraints>

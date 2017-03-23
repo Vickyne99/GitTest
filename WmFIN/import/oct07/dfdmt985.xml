@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<constraints>
+
+<!-- Text Block for NOV03 MT985 -->
+
+<field name="12:" type="PatternType">
+    <bizName>Message Type</bizName>
+    <pattern>3!n</pattern>
+    <choice>971</choice>
+    <choice>972</choice>
+    <choice>998</choice>
+</field>
+<field name="57A:" type="MixedType">
+    <bizName>A - Account With Institution</bizName>
+    <pattern>[&lt;BICPLUS&gt;][CRLF]&lt;SWIFTBIC&gt;|&lt;NON-SWIFTBIC&gt;</pattern>
+    <choice>C</choice>
+    <choice>D</choice>
+</field>
+<field name="57D:" type="MixedType">
+    <bizName>D - Account With Institution</bizName>
+    <pattern>[&lt;BICPLUS&gt;][CRLF]4*35x</pattern>
+    <choice>C</choice>
+    <choice>D</choice>
+</field>
+<field name="59:" type="PatternType">
+    <bizName>Enquired Party</bizName>
+    <pattern>[/34xCRLF]4*35x</pattern>
+</field>
+
+</constraints>

@@ -1,0 +1,179 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+<TITLE>webMethods WebSphere MQ Adapter Version 6.5</TITLE>
+<META HTTP-EQUIV="ContentType" CONTENT="text/html; charset=iso-8859-1">
+<META HTTP-EQUIV="ContentType" CONTENT="text/html; charset=UTF-8">
+</HEAD>
+<BODY vLink=#666666 link=#003399 bgColor=#ffffff STYLE="FONT-FAMILY:Arial">
+<CENTER><H1><FONT COLOR="#3366CC">webMethods WebSphere MQ Adapter</FONT></H1></CENTER>
+<CENTER><H2><FONT COLOR="#3366CC">Release Notes</FONT></H2></CENTER>
+<hr>
+<CENTER><H3>webMethods WebSphere MQ Adapter Version 6.5</H3></CENTER>
+
+<P>
+webMethods introduces version 6.5 of the webMethods WebSphere MQ Adapter. This is a major release of the adapter that provides several features to help you manage your WebSphere MQ integrations more easily. The WebSphere MQ Adapter provides seamless and real-time communication to and from WebSphere MQ without requiring changes to the WebSphere MQ system. Now you can leverage your existing WebSphere MQ information flow to collaborate with your customers, suppliers, and other business partners via webMethods Fabric.
+</p>
+
+<H3>Enable Listeners to Listen to Multiple Queues Simultaneously</H3>
+<p>
+The WebSphere MQ Adapter now simplifies the management of your large scale WebSphere MQ integrations by allowing you to configure a single listener that can listen to multiple queues on a queue manager, reducing the number of adapter connections and listener notifications that must be managed in your environment. This release of the adapter introduces a new type of listener called a Multi-Queue Listener, which you configure to listen to multiple queues on a single queue manager. For each queue you define in a Multi-Queue Listener's adapter connection, the adapter will create a child listener to receive MQ messages. When you manage a Multi-Queue Listener, all of the child listeners associated with it inherit its properties. For example, any adapter notifications associated with the Multi-Queue Listener are automatically associated with all of the child listeners, greatly reducing the number of notifications you must configure.
+</p>
+
+
+<H3>Query Properties of Queues and Queue Managers</H3>
+<p>
+The adapter provides a new adapter service called the InquireQueueManager service, which enables you to inquire properties of a WebSphere MQ queue and queue manager. The output of this service provides useful information about the properties of queues, such as the current depth of the queue, as well as properties of queue managers, such as the queue manager's dead letter queue name and connection count. Because these properties are returned in the output of the adapter service, this service enables you to design Java or flow services and make logical branches based on the data returned by the service.
+</p>
+
+
+<H3>Enable Users to Execute PCF Commands as Adapter Services</H3>
+
+<p>The adapter provides a new adapter service called the PCFCommand service that enables you to issue Programmable Command Formats (PCF) commands directly from your Java and flow services. You can use this service to issue PCF commands to fetch information about Websphere MQ objects (such as queue managers, queues, and channels), and also to perform administrative functions on these objects.
+</p>
+
+<H3>Send Messages to Remote Queues from Local Queue Managers</H3>
+<P>
+This feature enables the Put and RequestReply adapter services to send messages to a queue that is defined on a remote queue manager even though the adapter is connected to a local queue manager, without having to define a remote queue on the local queue manager. This feature makes it possible to send data to remote &quot;Reply To&quot; queues and &quot;Reply To&quot; queue managers, and is also helpful in conserving the number of connections opened on multiple Websphere MQ servers.
+</p>
+
+<H3>Add User-Defined Fields to Message Headers</H3>
+<P>The adapter now enables you to add user-defined fields to the JMSProperties header, as well as to add user-defined headers in the Get, Peek, Put, and RequestReply services, and Listener Notifications.
+</p>
+
+<H3>Compatibility With Previous webMethods WebSphere MQ Adapters</H3>
+<P>The webMethods WebSphere MQ Adapter 6.5 is compatible with the webMethods WebSphere MQ Adapter 6.0 and 6.0 SP1. That is, you you can use the webMethods WebSphere MQ Adapter 6.5 to run or edit services and listeners you generated 
+using the WebSphere MQ Adapter 6.0 and 6.0 SP1.
+</P>
+ 
+<P>
+For a list of all the changes and issues resolved since the last release, see the readme.txt file for webMethods WebSphere MQ Adapter on the webMethods software download site or in the directories in which you installed webMethods WebSphere MQ Adapter 6.5.
+</P>
+
+<P>
+For information about previous releases of the webMethods WebSphere MQ Adapter, see the release notes for those releases, below.
+</P>
+
+<H3>Platform Support</H3>
+<P>The webMethods WebSphere MQ Adapter supports WebSphere MQ 5.1, 5.2, 5.3, and 6.0. </P>
+
+<P>For a complete listing of the versions of WebSphere MQ and of webMethods 
+Integration Server with which the adapter works, see the <EM>webMethods WebSphere MQ 
+Adapter Installation Guide 6.5</EM>.</P>
+
+<hr>
+<CENTER><H3>webMethods WebSphere MQ Adapter Version 6.0</H3></CENTER>
+
+
+<P>The webMethods WebSphere MQ Adapter provides seamless and real-time 
+communication to and from the WebSphere MQ system without requiring changes to 
+the WebSphere MQ system. Now, companies can leverage their existing WebSphere MQ 
+information flow to collaborate with their customers, suppliers, and other 
+business partners via the webMethods integration platform.</P>
+<P>For example, you can retrieve a purchase order from a WebSphere MQ server and 
+route the purchase order to a supplier over the Internet. Additionally, you can 
+query order status information against suppliers' extranets and deliver the 
+information to a back-end system through the WebSphere MQ server.</P>
+
+
+<H2>Summary of Major Features</H2>
+<H3>Connectivity to WebSphere MQ</H3>
+<P>The WebSphere MQ Adapter enables you to establish and manage connections to your 
+WebSphere MQ queue managers. Connections, connection pools, and sessions are fully 
+managed by the adapter. Through these connections you can create and run your 
+WebSphere MQ integrations. </P>
+
+<H3>Dynamically Look Up WebSphere MQ Queues</H3>
+<P>When developing your integrations, you use the adapter and its webMethods Developer screens to view WebSphere MQ queues. From the list of queues, you select those on which you want to perform operations.</p> 
+
+<H3>Template-Based Integrations</H3>
+<P>The WebSphere MQ Adapter provides service templates for interactions with the 
+WebSphere MQ queue managers and queues. This makes it easy to develop adapter services to 
+interact with WebSphere MQ. </P>
+<P>Service templates represent specific WebSphere MQ operations. For 
+example, a WebSphere MQ Adapter service that Puts a message on a queue is based on the 
+Put service template included with the adapter. You can create specific 
+adapter services using the templates and invoke them from your integration 
+flows. </P>
+
+<P>The WebSphere MQ Adapter provides the ability to generate adapter services that 
+implement the following WebSphere MQ operations:</P>
+<TABLE border=1>
+  <TR>
+    <TD vAlign=top>Put</TD>
+    <TD>Opens a session to a WebSphere MQ Queue Manager and delivers a message to a specified queue.</TD>
+  </TR>
+  
+  <TR>
+    <TD vAlign=top>Get</TD>
+    <TD>Opens a session to a WebSphere MQ Queue Manager and retrieves a message from a specified queue.
+ </TD>
+ </TR>
+  <TR>
+    <TD vAlign=top>Peek</TD>
+    <TD>Opens a session to a WebSphere MQ Queue Manager and retrieves a copy of a message without removing the
+original message from a specified queue.</TD></TR>
+  <TR>
+    <TD vAlign=top>Request/Reply</TD>
+    <TD>Opens a session to a WebSphere MQ Queue Manager. This service delivers a message to a specified queue and retrieves a corresponding response
+from the sent message.</TD></TR>
+    	
+	</TABLE>
+	
+	
+<H3>WebSphere MQ Adapter Notifications</H3>
+
+The WebSphere MQ Adapter provides listeners and listener notifications to perform the
+following functions:
+<ul>
+<li>Monitor messages</li>
+<li>Filter messages</li>
+<li>Process messages</li>
+</ul>
+
+<h4>Listeners</h4>
+A listener continually monitors a queue for messages. When a message appears on a
+queue, the listener fetches the message, based on the filter criteria that you selected when
+you configured the listener. The listener passes the message to the listener notification.
+Unlike the Put and Get adapter services, you never invoke a listener directly from a
+service or client. Instead, a listener is a real-time process that you configure, enable, and
+disable using the Administrator.
+
+<h4>Listener Notifications</h4>
+<p>A listener notification works in conjunction with a listener to filter and process messages
+in the WebSphere MQ Adapter. When a listener detects a message on a queue, the listener
+performs a &quot;Get&quot; to retrieve the message, and passes the message to the listener
+notification. The listener notification receives the message and performs an additional
+filter on the message, based on the filter criteria that you selected when you configured
+the listener notification. The listener notification processes the message either
+synchronously or asynchronously.</p>
+
+<H3>Compatibility With Previous webMethods WebSphere MQ Adapters</H3>
+<P>The webMethods WebSphere MQ Adapter 6.0 is a new adapter and is not compatible with 
+integrations built using the webMethods WebSphere MQ Adapter 3.0. That is, you cannot 
+use the webMethods WebSphere MQ Adapter 6.0 to run or edit services you generated 
+using the earlier WebSphere MQ adapters, and vice versa. </P>
+<P>However, you can run the webMethods WebSphere MQ Adapter 6.0 on the same 
+Integration Server with earlier webMethods WebSphere MQ adapters. </P>
+
+
+<HR>
+
+<P>webMethods Access, webMethods Administrator, webMethods Broker,
+webMethods Dashboard, webMethods Developer, webMethods Fabric,
+webMethods Glue, webMethods Installer, webMethods Integration Server,
+webMethods Mainframe, webMethods Manager, webMethods Modeler,
+webMethods Monitor, webMethods Optimize, webMethods Portal, webMethods
+Servicenet, webMethods Trading Networks, and webMethods Workflow are
+trademarks of webMethods, Inc. webMethods and the webMethods logo are
+registered trademarks of webMethods, Inc.</P>
+
+<P>All other marks are the property of their respective owners.
+Copyright &copy; 2006 by webMethods, Inc. All rights reserved,
+including the right of reproduction in whole or in part in any
+form.
+</P>
+
+</BODY>
+</HTML>

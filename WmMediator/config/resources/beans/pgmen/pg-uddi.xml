@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd"
+       default-init-method="init"
+       default-destroy-method="shutdown">
+
+    <!--  This is the bean that initializes the uddi publish connection to   -->
+    <!--  CentraSite's UDDI registry. CentraSite should already be started   -->
+    <!--  and apache web server should be up and listening before this       -->
+    <!--  connection will successfully connect.                              -->
+    <!--  other bean properties are defined in this class, but they do not   -->
+    <!--  require configuration at this time, so they are not exposed here.  -->
+
+    <bean id="uddiPublisher" depends-on="configurationcontextsupplier, passman"
+          init-method="init" destroy-method="destroy"
+          class="com.softwareag.pg.pgmen.events.uddi.UddiClientAdapter">
+        <property name="protocol" value="${pg.uddiClient.protocol}"/>
+        <property name="hostName" value="${pg.uddiClient.hostName}"/>
+        <property name="uddiPort" value="${pg.uddiClient.uddiPort}"/>
+        <property name="username" value="${pg.uddiClient.userName}"/>
+        <property name="timeout" value="${pg.uddiClient.uddiClientTimeout}"/>
+    </bean>
+
+    <!--  Sends performance metrics events to CentraSite using pure UDDI publish service -->
+    <bean id="MetricsSender" class="com.softwareag.pg.pgmen.events.uddi.UddiPerformanceMetricsSender"
+          init-method="init" destroy-method="destroy">
+
+        <property name="uddiClientAdapter" ref="uddiPublisher"/>
+    </bean>
+
+</beans>

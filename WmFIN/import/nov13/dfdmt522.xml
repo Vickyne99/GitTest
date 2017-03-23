@@ -1,0 +1,173 @@
+<?xml version="1.0"?>
+<constraints>
+
+<!-- Text Block for MT522 -->
+<field name="20:" type="PatternType">
+    <bizName>Reference - Transaction Reference Number</bizName>
+    <pattern>16x</pattern>
+</field>
+<field name="21:" type="PatternType">
+    <bizName>Reference - Related Reference</bizName>
+    <pattern>16x</pattern>
+</field>
+<field name="30:" type="PatternType">
+    <bizName>Date - Delivery Date</bizName>
+    <pattern>&lt;DATE2&gt;</pattern>
+</field>
+<field name="31P:" type="PatternType">
+    <bizName>Date P - Date and Place of Trade</bizName>
+    <pattern>&lt;DATE2&gt;[29x]</pattern>
+</field>
+<field name="33T:" type="PatternType">
+    <bizName>Deal Price</bizName>
+    <pattern>3!a&lt;NUMBER&gt;15</pattern>
+    <alias pattern="3!a" bizName="CUR" />    
+</field>
+<field name="33V:" type="PatternType">
+    <bizName>Book Value</bizName>
+    <pattern>3!a&lt;AMOUNT&gt;15</pattern>
+    <alias pattern="3!a" bizName="CUR" />    
+</field>
+<field name="35A:" type="PatternType">
+    <bizName>Quantity of Securities</bizName>
+    <pattern>3!a&lt;NUMBER&gt;15</pattern>
+    <choice>BON</choice>
+    <choice>CER</choice>
+    <choice>CPN</choice>
+    <choice>FMT</choice>
+    <choice>MSC</choice>
+    <choice>OPC</choice>
+    <choice>OPS</choice>
+    <choice>PRC</choice>
+    <choice>PRS</choice>
+    <choice>RTE</choice>
+    <choice>RTS</choice>
+    <choice>SHS</choice>
+    <choice>UNT</choice>
+    <choice>WTS</choice>
+</field>
+<field name="35B:" type="PatternType">
+    <bizName>B - Identification of Securities</bizName>
+    <pattern>&lt;35B/ISITC&gt;</pattern>
+</field>
+<field name="35C:" type="PatternType">
+    <bizName>C - Next Coupon</bizName>
+    <pattern>3!c</pattern>
+</field>
+<field name="35D:" type="PatternType">
+    <bizName>D - Next Coupon</bizName>
+    <pattern>&lt;DATE2&gt;</pattern>
+</field>
+<field name="35E:" type="PatternType">
+    <bizName>E - Certificate Numbers</bizName>
+    <pattern>6*50x</pattern>
+</field>
+<field name="72:" type="PatternType">
+    <bizName>Sender to Receiver Information</bizName>
+    <pattern>&lt;FLD72&gt;</pattern>
+</field>
+<field name="77D:" type="PatternType">
+    <bizName>Registration Details</bizName>
+    <pattern>6*35x</pattern>
+</field>
+<field name="77R:" type="PatternType">
+    <bizName>Declaration Details</bizName>
+    <pattern>10*35x</pattern>
+</field>
+<field name="82A:" type="PatternType">
+    <bizName>A - Instructing Party</bizName>
+    <pattern>[/2x][/34x][CRLF]&lt;SWIFTBIC&gt;|&lt;NON-SWIFTBIC&gt;</pattern>
+    <choiceList>
+    	<pattern>2x</pattern>
+    	<choice>C</choice>
+    	<choice>D</choice>
+    	<choice>RC</choice>
+    	<choice>RD</choice>
+    </choiceList>
+</field>
+<field name="82D:" type="PatternType">
+    <bizName>D - Instructing Party</bizName>
+    <pattern>[/2x][/34x][CRLF]4*35x</pattern>
+    <choiceList>
+    	<pattern>2x</pattern>
+    	<choice>C</choice>
+    	<choice>D</choice>
+    	<choice>RC</choice>
+    	<choice>RD</choice>
+    </choiceList>
+</field>
+<field name="83A:" type="PatternType">
+    <bizName>A - Safekeeping Account</bizName>
+    <pattern>[/2x][/34x][CRLF]&lt;SWIFTBIC&gt;|&lt;NONSWIFTBIC&gt;</pattern>
+    <choiceList>
+    	<pattern>2x</pattern>
+    	<choice>C</choice>
+    	<choice>D</choice>
+    	<choice>RC</choice>
+    	<choice>RD</choice>
+    </choiceList>
+</field>
+<field name="83C:" type="PatternType">
+    <bizName>C - Safekeeping Account</bizName>
+    <pattern>/34x</pattern>
+</field>
+<field name="83D:" type="PatternType">
+    <bizName>D - Safekeeping Account</bizName>
+    <pattern>[/2x][/34x][CRLF]4*35x</pattern>
+    <choiceList>
+    	<pattern>2x</pattern>
+    	<choice>C</choice>
+    	<choice>D</choice>
+    	<choice>RC</choice>
+    	<choice>RD</choice>
+    </choiceList>
+</field>
+<field name="87A:" type="PatternType">
+    <bizName>A - Receiver of Securities</bizName>
+    <pattern>[/2x][/34x][CRLF]&lt;SWIFTBIC&gt;|&lt;NONSWIFTBIC&gt;</pattern>
+    <choiceList>
+    	<pattern>2x</pattern>
+    	<choice>C</choice>
+    	<choice>D</choice>
+    	<choice>RC</choice>
+    	<choice>RD</choice>
+    </choiceList>
+</field>
+<field name="87D:" type="PatternType">
+    <bizName>D - Receiver of Securities</bizName>
+    <pattern>[/2x][/34x][CRLF]4*35x</pattern>
+    <choiceList>
+    	<pattern>2x</pattern>
+    	<choice>C</choice>
+    	<choice>D</choice>
+    	<choice>RC</choice>
+    	<choice>RD</choice>
+    </choiceList>
+</field>
+<field name="88A:" type="PatternType">
+    <bizName>A - Beneficiary of Securities</bizName>
+    <pattern>[/2x][/34x][CRLF]&lt;SWIFTBIC&gt;|&lt;NONSWIFTBIC&gt;</pattern>
+    <choiceList>
+    	<pattern>2x</pattern>
+    	<choice>C</choice>
+    	<choice>D</choice>
+    	<choice>RC</choice>
+    	<choice>RD</choice>
+    </choiceList>
+</field>
+<field name="88C:" type="PatternType">
+    <bizName>C - Beneficiary of Securities</bizName>
+    <pattern>/34x</pattern>
+</field>
+<field name="88D:" type="PatternType">
+    <bizName>D - Beneficiary of Securities</bizName>
+    <pattern>[/2x][/34x][CRLF]4*35x</pattern>
+    <choiceList>
+    	<pattern>2x</pattern>
+    	<choice>C</choice>
+    	<choice>D</choice>
+    	<choice>RC</choice>
+    	<choice>RD</choice>
+    </choiceList>
+</field>
+</constraints>

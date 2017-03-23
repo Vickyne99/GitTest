@@ -1,0 +1,38 @@
+FUNCTION z_wm_handle_event.
+*"----------------------------------------------------------------------
+*"*"Local Interface:
+*"  IMPORTING
+*"     VALUE(EVENT) LIKE  SWETYPECOU-EVENT
+*"     VALUE(RECTYPE) LIKE  SWETYPECOU-RECTYPE
+*"     VALUE(OBJTYPE) LIKE  SWETYPECOU-OBJTYPE
+*"     VALUE(OBJKEY) LIKE  SWEINSTCOU-OBJKEY
+*"     VALUE(EXCEPTIONS_ALLOWED) LIKE  SWEFLAGS-EXC_OK DEFAULT SPACE
+*"  EXPORTING
+*"     VALUE(REC_ID) LIKE  SWELOG-RECID
+*"  TABLES
+*"      EVENT_CONTAINER STRUCTURE  SWCONT
+*"  EXCEPTIONS
+*"      TEMP_ERROR
+*"      ANY_ERROR
+*"----------------------------------------------------------------------
+  DATA hcl TYPE REF TO zcl_bem.
+
+*- Initialize helper class
+  CREATE OBJECT hcl
+    EXPORTING
+      evt_container = event_container[]
+      rectype       = rectype.
+
+*- Set business data
+  IF objtype = zbem_bus2032 AND event = zbem_created.
+    CALL METHOD hcl->set_business_data( ).
+  ENDIF.
+
+*- Push the data to webM
+  CALL METHOD hcl->push_event( ).
+
+*- Handle substeps
+  IF objtype = zbem_bus2032.
+    CALL METHOD hcl->handle_substeps( ).
+  ENDIF.
+ENDFUNCTION.

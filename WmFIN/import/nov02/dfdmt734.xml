@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<constraints>
+
+<!-- Text Block for NOV02 MT734 -->
+
+<field name="20:" type="PatternType">
+    <bizName>Reference - Sender's TRN</bizName>
+    <pattern>16x</pattern>
+</field>
+<field name="21:" type="PatternType">
+    <bizName>Reference - Presenting Bank's Reference</bizName>
+    <pattern>16x</pattern>
+</field>
+<field name="32A:" type="PatternType">
+    <bizName>A - Date and Amount of Utilisation</bizName>
+    <pattern>&lt;DATE2&gt;&lt;CUR&gt;&lt;AMOUNT&gt;15</pattern>
+</field>
+<field name="73:" type="PatternType">
+    <bizName>Charges Claimed</bizName>
+    <pattern>6*35x</pattern>
+</field>
+<field name="33A:" type="PatternType">
+    <bizName>A - Total Amount Claimed</bizName>
+    <pattern>&lt;DATE2&gt;&lt;CUR&gt;&lt;AMOUNT&gt;15</pattern>
+</field>
+<field name="33B:" type="PatternType">
+    <bizName>B - Total Amount Claimed</bizName>
+    <pattern>&lt;CUR&gt;&lt;NUMBER&gt;15</pattern>
+</field>
+<field name="57A:" type="MixedType">
+    <bizName>A - Account With Bank</bizName>
+    <pattern>[&lt;BICPLUS&gt;][CRLF]&lt;SWIFTBIC&gt;|&lt;NON-SWIFTBIC&gt;</pattern>
+    <choice>C</choice>
+    <choice>D</choice>
+</field>
+<field name="57B:" type="MixedType">
+    <bizName>B - Account With Bank</bizName>
+    <pattern>[&lt;BICPLUS&gt;][CRLF][35x]</pattern>
+    <choice>C</choice>
+    <choice>D</choice>
+</field>
+<field name="57D:" type="MixedType">
+    <bizName>D - Account With Bank</bizName>
+    <pattern>[&lt;BICPLUS&gt;][CRLF]4*35x</pattern>
+    <choice>C</choice>
+    <choice>D</choice>
+</field>
+<field name="72:" type="PatternType">
+    <bizName>Sender to Receiver Information</bizName>
+    <pattern>&lt;ERI_F72narrative&gt;</pattern>
+</field>
+<field name="77B:" type="PatternType">
+    <bizName>Disposal of Documents</bizName>
+    <pattern>3*35x</pattern>
+</field>
+
+</constraints>

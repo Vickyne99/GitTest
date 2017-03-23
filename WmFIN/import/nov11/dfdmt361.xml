@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<constraints>
+
+<!-- Text Block for NOV03 MT361 -->
+<field name="17A:" type="MixedType">
+    <bizName>Collateral Agreement Indicator</bizName>
+    <pattern>1!a</pattern>
+    <choice>N</choice>
+    <choice>Y</choice>
+    <error type="choice">T36</error>
+</field>
+<field name="20:" type="PatternType">
+    <bizName>Reference - Sender's Reference</bizName>
+    <pattern>16x</pattern>
+</field>
+<field name="22A:" type="MixedType">
+    <bizName>Type of Operation</bizName>
+    <pattern>4!c</pattern>
+    <choice>AMND</choice>
+    <choice>CANC</choice>
+    <choice>DUPL</choice>
+    <choice>AMND</choice>
+    <choice>NEWT</choice>
+    <error type="choice">T36</error>
+</field>
+<field name="22E:" type="MixedType">
+    <bizName>Type of Payment</bizName>
+    <pattern>4!c</pattern>
+    <choice>FEES</choice>
+</field>
+<field name="23A:" type="Mixed2Type">
+    <bizName>Identification of the Swap</bizName>
+    <pattern>10a/5a</pattern>
+    <choice1>FIXEDFIXED</choice1>
+    <choice1>FIXEDFLOAT</choice1>
+    <choice1>FLOATFIXED</choice1>
+    <choice1>FLOATFLOAT</choice1>
+    <choice2>GROSS</choice2>
+</field>
+<field name="30T:" type="PatternType">
+    <bizName>V - Effective Date</bizName>
+    <pattern>&lt;DATE4&gt;</pattern>
+</field>
+<field name="32B:" type="PatternType">
+    <bizName>Party B Currency and Notional Amount</bizName>
+    <pattern>&lt;CUR&gt;&lt;AMOUNT&gt;15</pattern>
+</field>
+<field name="33B:" type="PatternType">
+    <bizName>Party A Currency and Notional Amount</bizName>
+    <pattern>&lt;CUR&gt;&lt;NUMBER&gt;15</pattern>
+</field>
+<field name="71F:" type="PatternType">
+    <bizName>F - Broker's Commission</bizName>
+    <pattern>&lt;CUR&gt;&lt;AMOUNT&gt;15</pattern>
+</field>
+<field name="72:" type="PatternType">
+    <bizName>Sender to Receiver Information</bizName>
+    <pattern>&lt;FLD72&gt;</pattern>
+</field>
+<field name="77D:" type="PatternType">
+    <bizName>Additional Conditions</bizName>
+    <pattern>6*35x</pattern>
+</field>
+<field name="77H:" type="MixedType">
+    <bizName>Type, Date, Version of the Agreement</bizName>
+    <pattern>6a[/&lt;DATE4&gt;][//4!n]</pattern>
+    <choiceList>
+    	<pattern>6a</pattern>
+	<choice>AFB</choice>
+	<choice>DERV</choice>
+	<choice>BBAIRS</choice>
+	<choice>ISDA</choice>
+	<choice>OTHER</choice>	
+    </choiceList>
+</field>
+</constraints>

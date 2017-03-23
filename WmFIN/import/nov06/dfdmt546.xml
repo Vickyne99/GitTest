@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<constraints>
+<!-- Text Block for NOV03 MT546 -->
+
+<field name="23G:" type="Mixed2Type">
+    <bizName>Function of the Message</bizName>
+    <pattern>4!c[/4!c]</pattern>
+    <alias pattern="4!c" bizName="Function" />
+    <alias pattern="4!c" bizName="Subfunction" />
+    <choice1>CANC</choice1>
+    <choice1>NEWM</choice1>
+    <choice1>RVSL</choice1>
+    <choice2>CODU</choice2>
+    <choice2>COPY</choice2>
+    <choice2>DUPL</choice2>
+    <error type="choice">T86</error>
+</field>
+<field name="22F::TTCO" type="GenericFieldType">
+    <bizName>Trade Transaction Condition Indicator</bizName>
+    <pattern>/[8c]/4!c</pattern>
+    <alias pattern="8c" bizName="Data Source Scheme" />    
+    <alias pattern="4!c" bizName="Indicator" />        
+    <choice>BCRO</choice>
+    <choice>BCRP</choice>
+    <choice>BCPD</choice>
+    <choice>BCFD</choice>
+    <choice>BCBL</choice>
+    <choice>BCBN</choice>
+    <choice>CBNS</choice>
+    <choice>CCPN</choice>
+    <choice>CDIV</choice>
+    <choice>CRTS</choice>
+    <choice>CWAR</choice>
+    <choice>GTDL</choice>
+    <choice>SPCU</choice>
+    <choice>SPEX</choice>
+    <choice>XBNS</choice>
+    <choice>XCPN</choice>
+    <choice>XDIV</choice>
+    <choice>XRTS</choice>
+    <choice>XWAR</choice>
+</field>
+
+</constraints>

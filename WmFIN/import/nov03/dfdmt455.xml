@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<constraints>
+
+<!-- Text Block for NOV03 MT 455 -->
+<field name="30:" type="PatternType">
+    <bizName>Date - Date of Cash Letter</bizName>
+    <pattern>&lt;DATE2&gt;</pattern>
+</field>
+<field name="32A:" type="PatternType">
+    <bizName>A - Value Date and Original Amount</bizName>
+    <pattern>&lt;DATE2&gt;&lt;CUR&gt;&lt;AMOUNT&gt;15</pattern>
+</field>
+<field name="52A:" type="MixedType">
+    <bizName>A - Sender of Cash Letter</bizName>
+    <pattern>[&lt;BICPLUS&gt;][CRLF]&lt;SWIFTBIC&gt;|&lt;NONSWIFTBIC&gt;</pattern>
+    <choice>C</choice>
+    <choice>D</choice>
+</field>
+<field name="52D:" type="MixedType">
+    <bizName>D - Sender of Cash Letter</bizName>
+    <pattern>[&lt;BICPLUS&gt;][CRLF]4*35x</pattern>
+    <choice>C</choice>
+    <choice>D</choice>
+</field>
+<field name="77A:" type="PatternType">
+    <bizName>Reason for Adjustment</bizName>
+    <pattern>&lt;ERI_F77A&gt;</pattern>
+</field>
+</constraints>

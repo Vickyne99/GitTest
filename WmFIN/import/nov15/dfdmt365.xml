@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+<constraints>
+
+<!-- Text Block for NOV03 MT 365 -->
+<field name="20:" type="PatternType">
+    <bizName>Reference - Sender's Reference</bizName>
+    <pattern>16x</pattern>
+</field>
+<field name="22A:" type="MixedType">
+    <bizName>Type of Operation</bizName>
+    <pattern>4!c</pattern>
+    <choice>AMND</choice>
+    <choice>CANC</choice>
+    <choice>DUPL</choice>
+    <choice>NEWT</choice>
+    <error type="choice">T36</error>
+</field>
+<field name="22B:" type="PatternType">
+    <bizName>Type of Event</bizName>
+    <pattern>4!c</pattern>
+</field>
+<field name="22D:" type="MixedType">
+    <bizName>Accrual of Interest Specification</bizName>
+    <pattern>4!c</pattern>
+    <choice>NEXT</choice>
+    <choice>LAST</choice>
+    <choice>OTHR</choice>
+</field>
+<field name="23A:" type="Mixed2Type">
+    <bizName>Identification of the Swap</bizName>
+    <pattern>10a/5a</pattern>
+	<choice1>CORRBUYER</choice1>
+    <choice1>CORRSELLER</choice1>
+    <choice1>FIXEDFIXED</choice1>
+    <choice1>FIXEDFLOAT</choice1>
+    <choice1>FLOATFIXED</choice1>
+    <choice1>FLOATFLOAT</choice1>
+	<choice1>VARBUYER</choice1>
+    <choice1>VARSELLER</choice1>
+    <choice1>VOLABUYER</choice1>
+    <choice1>VOLASELLER</choice1>
+    <choice2>GROSS</choice2>
+</field>
+<field name="30P:" type="PatternType">
+    <bizName>Original Termination Date</bizName>
+    <pattern>&lt;DATE4&gt;</pattern>
+</field>
+<field name="30Q:" type="PatternType">
+    <bizName>Termination/Recouponing Effective Date</bizName>
+    <pattern>&lt;DATE4&gt;</pattern>
+</field>
+<field name="30T:" type="PatternType">
+    <bizName>Termination/Recouponing Trade Date</bizName>
+    <pattern>&lt;DATE4&gt;</pattern>
+</field>
+<field name="30V:" type="PatternType">
+    <bizName>Original Effective Date</bizName>
+    <pattern>&lt;DATE4&gt;</pattern>
+</field>
+<field name="32B:" type="PatternType">
+    <bizName>Party B Current Currency, Notional Amount</bizName>
+    <pattern>&lt;CUR&gt;&lt;AMOUNT&gt;15</pattern>
+</field>
+<field name="32G:" type="PatternType">
+    <bizName>Party B New Currency, Notional Amount</bizName>
+    <pattern>&lt;CUR&gt;&lt;AMOUNT&gt;15</pattern>
+</field>
+<field name="33B:" type="PatternType">
+    <bizName>Party A Current Currency, Notional Amount</bizName>
+    <pattern>&lt;CUR&gt;&lt;NUMBER&gt;15</pattern>
+</field>
+<field name="33E:" type="PatternType">
+    <bizName>Party A New Currency, Notional Amount</bizName>
+    <pattern>&lt;CUR&gt;&lt;NUMBER&gt;15</pattern>
+</field>
+<field name="37U:" type="PatternType">
+    <bizName>Current Fixed Rate</bizName>
+    <pattern>&lt;NUMBER&gt;12</pattern>
+</field>
+<field name="72:" type="PatternType">
+    <bizName>Sender to Receiver Information</bizName>
+    <pattern>&lt;FLD72&gt;</pattern>
+</field>
+<field name="94A:" type="MixedType">
+    <bizName>Place A - Scope of Operation</bizName>
+    <pattern>4!c</pattern>
+    <choice>AGNT</choice>
+    <choice>BILA</choice>
+</field>
+</constraints>

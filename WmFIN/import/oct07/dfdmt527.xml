@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<constraints>
+
+<!-- Text Block for NOV03 MT527  -->
+
+<field name="22F::MICO" type="GenericFieldType">
+    <bizName>Indicator F - Method of Interest Computation</bizName>
+    <pattern>/[8c]/4!c</pattern>
+    <choice>A001</choice>
+    <choice>A002</choice>
+    <choice>A003</choice>
+    <choice>A004</choice>
+    <choice>A005</choice>
+    <choice>A006</choice>
+    <choice>A007</choice>
+</field>
+<field name="22F::AUTA" type="GenericFieldType">
+    <bizName>Automatic Allocation Indicator</bizName>
+    <pattern>/[8c]/4!c</pattern>
+    <choice>AUTO</choice>
+    <choice>MANU</choice>
+</field>
+<field name="22F::FSSA" type="GenericFieldType">
+    <bizName>Failed Settlement Salvation Indicator</bizName>
+    <pattern>/[8c]/4!c</pattern>
+    <choice>FSSN</choice>
+    <choice>FSSY</choice>
+</field>
+<field name="22H::COLA" type="MixedType">
+    <bizName>Indicator H - Exposure Type Indicator</bizName>
+    <pattern>//4!c</pattern>
+    <choice>COMM</choice>
+    <choice>CRSP</choice>
+    <choice>EXTD</choice>
+    <choice>OTCD</choice>
+    <choice>REPO</choice>
+    <choice>SLOA</choice>
+    <choice>SLEB</choice>
+</field>
+<field name="23G:" type="Mixed2Type">
+    <bizName>Function of the Message</bizName>
+    <pattern>4!c[/4!c]</pattern>
+    <alias pattern="4!c" bizName="Function" />            
+    <alias pattern="4!c" bizName="Subfunction" />                
+    <choice1>CANC</choice1>
+    <choice1>NEWM</choice1>
+    <choice1>REPL</choice1>
+    <choice2>CODU</choice2>
+    <choice2>COPY</choice2>
+    <choice2>DUPL</choice2>
+    <error type="choice">T86</error>
+</field>
+<field name="25D::REST" type="GenericFieldType">
+    <bizName>Response Status</bizName>
+    <pattern>/[8c]/4!c</pattern>
+    <choice>CONF</choice>
+    <choice>DKNY</choice>
+</field>
+<field name="22F::TRCA" type="GenericFieldType">
+    <bizName>Party Capacity Indicator</bizName>
+    <pattern>/[8c]/4!c</pattern>
+    <choice>AGEN</choice>
+    <choice>PRIN</choice>
+</field>
+</constraints>

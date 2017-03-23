@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<constraints>
+
+<!-- Text Block for NOV03 MT526 -->
+
+<field name="23:" type="PatternType">
+    <bizName>Further Identification</bizName>
+    <pattern>'BORROW'|'NOLEND'|'RECALL'|'RETURN'|'TOLEND'[/'COMP'|/'PART'|/'CANC'|/'HOLD'|/'FILL'|/'HELD']</pattern>
+</field>
+<field name="29A:" type="PatternType">
+    <bizName>From</bizName>
+    <pattern>4*35x</pattern>
+</field>
+<field name="30:" type="PatternType">
+    <bizName>Effective Date</bizName>
+    <pattern>&lt;DATE2&gt;</pattern>
+</field>
+<field name="31F:" type="PatternType">
+    <bizName>Expiry/Option Date</bizName>
+    <pattern>&lt;DATE2&gt;[/&lt;DATE2&gt;][//35x]</pattern>
+</field>
+<field name="87A:" type="MixedType">
+    <bizName>A - Receiver/Deliverer of Securities</bizName>
+    <pattern>[&lt;BICPLUS&gt;][CRLF]&lt;SWIFTBIC&gt;|&lt;NONSWIFTBIC&gt;</pattern>
+    <choice>C</choice>
+    <choice>D</choice>
+</field>
+<field name="87D:" type="MixedType">
+    <bizName>D - Receiver/Deliverer of Securities</bizName>
+    <pattern>[&lt;BICPLUS&gt;][CRLF]4*35x</pattern>
+    <choice>C</choice>
+    <choice>D</choice>
+</field>
+<field name="72:" type="PatternType">
+    <bizName>Sender to Receiver Information</bizName>
+    <pattern>&lt;ERI_F72narrative&gt;</pattern>
+</field>
+
+</constraints>

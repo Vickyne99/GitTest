@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<constraints>
+
+<!-- Text Block for NOV03 MT 102+ -->
+<field name="20:" type="PatternType">
+    <bizName>Reference - File Reference</bizName>
+    <pattern>16x</pattern>
+    <alias pattern="16x" bizName="File Reference" />    
+    <error type="content">T26</error>
+</field>
+<field name="21:" type="PatternType">
+    <bizName>Reference - Transaction Reference</bizName>
+    <pattern>16x</pattern>
+    <alias pattern="16x" bizName="Transaction Reference" />        
+    <error type="content">T26</error>
+</field>
+<field name="23:" type="ChoiceType">
+    <bizName>Bank Operation Code</bizName>
+    <pattern>6a</pattern>
+    <alias pattern="6a" bizName="Bank Operation Code" />            
+    <choice>CREDIT</choice>
+    <choice>CRTST</choice>
+    <choice>SPAY</choice>
+</field>
+<field name="32B:" type="PatternType">
+    <bizName>B - Transaction Amount</bizName>
+    <pattern>&lt;CUR&gt;&lt;AMOUNT&gt;15</pattern>
+</field>
+<field name="52A:" type="MixedType">
+    <bizName>A - Ordering Institution</bizName>
+    <pattern>[&lt;PartyIdentifier&gt;][CRLF]&lt;SWIFTBIC&gt;</pattern>
+</field>
+<field name="53A:" type="MixedType">
+    <bizName>A - Sender's Correspondent</bizName>
+    <pattern>[&lt;PartyIdentifier&gt;][CRLF]&lt;SWIFTBIC&gt;</pattern>
+</field>
+<field name="57A:" type="MixedType">
+    <bizName>A - Account With Institution</bizName>
+    <pattern>[&lt;PartyIdentifier&gt;][CRLF]&lt;SWIFTBIC&gt;</pattern>
+</field>
+<field name="71G:" type="PatternType">
+    <bizName>G - (Sum of) Receiver's Charges</bizName>
+    <pattern>&lt;CUR&gt;&lt;AMOUNT&gt;15</pattern>
+</field>
+<field name="72:" type="PatternType">
+    <bizName>Sender to Receiver Information</bizName>
+    <pattern>&lt;FLD72_STP&gt;</pattern>
+    <alias pattern="&lt;FLD72_STP&gt;" bizName="Narrative - Structured Format" />                
+</field>
+
+</constraints>

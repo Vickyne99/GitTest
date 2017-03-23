@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<constraints>
+
+
+<!-- Text Block for MT950 -->
+<field name="20:" type="PatternType">
+    <bizName>Reference - Transaction Reference Number</bizName>
+    <pattern>16x</pattern>
+    <error type="content">T26</error>
+</field>
+<field name="28C:" type="PatternType">
+    <bizName>Statement Number/Sequence Number</bizName>
+    <pattern>5n[/5n]</pattern>
+</field>
+<field name="61:" type="MixedType">
+    <bizName>Statement Line</bizName>
+    <pattern>&lt;Fld61Plus&gt;</pattern>
+    <choice>C</choice>
+    <choice>D</choice>
+    <choice>RC</choice>
+    <choice>RD</choice>
+</field>
+</constraints>

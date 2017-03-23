@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="name">mediatorDiagnosticZip</value>
+  <value name="subtype">unknown</value>
+  <value name="sigtype">java 3.5</value>
+  <value name="encodeutf8">true</value>
+  <value name="body">SURhdGFDdXJzb3IgY3NyID0gbnVsbDsNCmJvb2xlYW4gZGVsZXRlWmlwRmlsZSA9IHRydWU7DQp0
+cnkgew0KCWNzciA9IHBpcGVsaW5lLmdldEN1cnNvcigpOw0KICAgICAgICBEaWFnbm9zdGljTWFu
+YWdlciBkbSA9IG5ldyBEaWFnbm9zdGljTWFuYWdlcigpOw0KCVNlcnZpY2Uuc2V0UmVzcG9uc2Uo
+IGRtLmdldERpYWdub3N0aWNEYXRhQXNCeXRlcyhkZWxldGVaaXBGaWxlKSApOw0KICAgICAgICBI
+dHRwSGVhZGVyIGhkciA9IFNlcnZpY2UuZ2V0SHR0cFJlc3BvbnNlSGVhZGVyKCk7DQogICAgICAg
+IGlmICggaGRyICE9IG51bGwgKSB7IA0KICAgICAgICAJaGRyLmNsZWFyRmllbGQoSHR0cEhlYWRl
+ci5DT05URU5UX1RZUEUpOwkNCgkJaGRyLmFkZEZpZWxkKEh0dHBIZWFkZXIuQ09OVEVOVF9UWVBF
+LCAiYXBwbGljYXRpb24vemlwIiApOw0KICAgICAgICAgICAgICAgIGhkci5jbGVhckZpZWxkKEh0
+dHBIZWFkZXIuQ09OVEVOVF9ESVNQT1NJVElPTik7DQogICAgICAgICAgICAgICAgaGRyLmFkZEZp
+ZWxkKEh0dHBIZWFkZXIuQ09OVEVOVF9ESVNQT1NJVElPTiwgImF0dGFjaG1lbnQ7IGZpbGVuYW1l
+PW1lZGlhdG9yRGlhZ25vc3RpYy56aXAiKTsNCgl9DQoNCn0gY2F0Y2ggKFRocm93YWJsZSB0KSB7
+DQoJdGhyb3cgbmV3IFNlcnZpY2VFeGNlcHRpb24odCk7DQp9ICBmaW5hbGx5IHsNCglpZiAoIGNz
+ciAhPSBudWxsICkgeyBjc3IuZGVzdHJveSgpOyB9DQp9DQo=</value>
+</Values>

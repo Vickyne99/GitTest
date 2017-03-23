@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<constraints>
+
+
+<!-- Text Block for NOV02 MT537 -->
+<field name="22F::SETR" type="GenericFieldType">
+    <bizName>Type of Settlement Transaction</bizName>
+    <pattern>/[8c]/4!c</pattern><choice>BLCH</choice>
+    <choice>BLPA</choice>
+    <choice>BSBC</choice>
+    <choice>BSBO</choice>
+    <choice>COLL</choice>
+    <choice>OWNE</choice>
+    <choice>OWNI</choice>
+    <choice>PAIR</choice>
+    <choice>PLAC</choice>
+    <choice>REDI</choice>
+    <choice>REPU</choice>
+    <choice>RPTO</choice>
+    <choice>SECL</choice>
+    <choice>TRAD</choice>
+    <choice>TURN</choice>
+    <choice>PREA</choice>
+</field>
+<field name="22F::STCO" type="GenericFieldType">
+    <bizName>Settlement Transaction Condition</bizName>
+    <pattern>/[8c]/4!c</pattern>
+    <choice>EXER</choice>
+    <choice>EXPI</choice>
+    <choice>KNOC</choice>
+    <choice>PHYS</choice>
+    <choice>CLEN</choice>
+    <choice>DIRT</choice>
+    <choice>DRAW</choice>
+    <choice>FRCL</choice>
+    <choice>NPAR</choice>
+    <choice>PART</choice>
+    <choice>SPCS</choice>
+    <choice>SPDL</choice>
+    <choice>SPST</choice>
+    <choice>UNEX</choice>
+</field>
+<field name="23G:" type="Mixed2Type">
+    <bizName>Function of the Message</bizName>
+    <pattern>4!c[/4!c]</pattern>
+    <choice1>CANC</choice1><choice1>NEWM</choice1>
+    <choice2>CODU</choice2><choice2>COPY</choice2><choice2>DUPL</choice2>
+</field>
+<field name="24B::NMAT" type="GenericFieldType">
+    <bizName>Unmatched Reason</bizName>
+    <pattern>/[8c]/4!c</pattern><choice>CADE</choice>
+    <choice>CLAT</choice>
+    <choice>CMIS</choice>
+    <choice>CPCA</choice>
+    <choice>DDAT</choice>
+    <choice>DDEA</choice>
+    <choice>DELN</choice>
+    <choice>DEPT</choice>
+    <choice>DMON</choice>
+    <choice>DQUA</choice>
+    <choice>DSEC</choice>
+    <choice>DTRA</choice>
+    <choice>DTRD</choice>
+    <choice>FORF</choice>
+    <choice>FRAP</choice>
+    <choice>ICAG</choice>
+    <choice>ICUS</choice>
+    <choice>IEXE</choice>
+    <choice>IIND</choice>
+    <choice>LATE</choice>
+    <choice>NARR</choice>
+    <choice>NCRR</choice>
+    <choice>NMAS</choice>
+    <choice>RTGS</choice>
+    <choice>PHYS</choice>
+    <choice>PLCE</choice>
+    <choice>PODU</choice>
+    <choice>REPA</choice>
+    <choice>REPO</choice>
+    <choice>REPP</choice>
+    <choice>REGD</choice>
+    <choice>RERT</choice>
+    <choice>RSPR</choice>
+    <choice>SAFE</choice>
+    <choice>SETR</choice>
+    <choice>TERM</choice>
+    <choice>VASU</choice>
+</field>
+<field name="25D::IPRC" type="GenericFieldType">
+    <bizName>Instruction Processing Status</bizName>
+    <pattern>/[8c]/4!c</pattern>
+    <choice>CAND</choice>
+    <choice>CANP</choice>
+    <choice>CPRC</choice>
+    <choice>PACK</choice>
+</field>
+<field name="98B::SETT" type="GenericFieldType">
+    <bizName>Date/Time B - Settlement Date/Time</bizName>
+    <pattern>/[8c]/4!c</pattern>
+    <choice>OPEN</choice>
+    <choice>UKWN</choice>
+</field>
+</constraints>

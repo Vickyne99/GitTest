@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns="urn:hl7-org:v3" targetNamespace="urn:hl7-org:v3">
+	<xsd:include schemaLocation="../multicacheschemas/PRSC_IN020201UV01.xsd" />
+	<xsd:include schemaLocation="../multicacheschemas/PRSC_IN010201UV01.xsd" />
+	<xsd:include schemaLocation="../multicacheschemas/PRSC_IN010101UV01.xsd" />
+	<xsd:include schemaLocation="../multicacheschemas/PRSC_IN020101UV01.xsd" />
+	<xsd:group name="ALLMESSAGES.CONTENT">
+		<xsd:choice>
+			<xsd:element ref="PRSC_IN020201UV01" minOccurs="0"
+				maxOccurs="unbounded" />
+			<xsd:element ref="PRSC_IN010201UV01" minOccurs="0"
+				maxOccurs="unbounded" />
+			<xsd:element ref="PRSC_IN010101UV01" minOccurs="0"
+				maxOccurs="unbounded" />
+			<xsd:element ref="PRSC_IN020101UV01" minOccurs="0"
+				maxOccurs="unbounded" />
+		</xsd:choice>
+	</xsd:group>
+</xsd:schema>

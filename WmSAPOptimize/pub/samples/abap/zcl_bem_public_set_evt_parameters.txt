@@ -1,0 +1,17 @@
+METHOD set_evt_parameters.
+  DATA : tab        TYPE STANDARD TABLE
+                    OF ent6033
+                    WITH KEY vbeln posnr,
+         tab_name   TYPE tabname VALUE 'ent6033'.
+
+*- Get event parameter values
+  CALL METHOD me->get_table_data
+    EXPORTING
+      vbeln    = _evt_objkey
+      tab_name = tab_name
+    IMPORTING
+      tab_data = tab.
+
+*- Add event parameter data to the container
+  swc0_set_table _evt_container 'CREATEDSETS' tab.
+ENDMETHOD.

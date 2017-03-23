@@ -1,0 +1,148 @@
+<?xml version="1.0"?>
+<constraints>
+
+
+<!-- Text Block for NOV03 MT502 Fund Template -->
+<field name="11A::FXIB" type="PatternType">
+    <bizName>Currency - Currency of Redemption Order</bizName>
+    <pattern>//&lt;CUR&gt;</pattern>
+</field>
+<field name="11A::FXIS" type="PatternType">
+    <bizName>Currency - Currency of Subscription Order</bizName>
+    <pattern>//&lt;CUR&gt;</pattern>
+</field>
+<field name="22F::CAOP" type="MixedType">
+    <bizName>Indicator F - Dividend Option</bizName>
+    <pattern>//4!c</pattern>
+    <choice>CASH</choice>
+    <choice>DRIP</choice>
+</field>
+<field name="22F::COST" type="GenericFieldType">
+    <bizName>Commission Type</bizName>
+    <pattern>/[8c]/4!c</pattern>
+    <choice>PERN</choice>
+    <choice>PWEU</choice>
+    <choice>PWCD</choice>
+</field>
+<field name="22F::FORM" type="GenericFieldType">
+    <bizName>Form of Securities</bizName>
+    <pattern>/[8c]/4!c</pattern>
+    <choice>BEAR</choice>
+</field>
+<field name="22F::SETR" type="GenericFieldType">
+    <bizName>Type of Settlement Transaction</bizName>
+    <pattern>/[8c]/4!c</pattern>
+    <choice>TRAD</choice>
+</field>
+<field name="22F::STCO" type="GenericFieldType">
+    <bizName>Settlement Transaction Condition</bizName>
+    <pattern>/[8c]/4!c</pattern>
+    <choice>FRCL</choice>
+</field>
+<field name="22F::TILI" type="GenericFieldType">
+    <bizName>Time Limit</bizName>
+    <pattern>/[8c]/4!c</pattern>
+    <choice>GTHD</choice>
+    <choice>GDAY</choice>
+    <choice>GTCA</choice>
+</field>
+<field name="22F::TOOR" type="GenericFieldType">
+    <bizName>Type of Order</bizName>
+    <pattern>/[8c]/4!c</pattern>
+    <choice>MAKT</choice>
+</field>
+<field name="22F::TTCO" type="GenericFieldType">
+    <bizName>Trade Transaction Condition Indicator</bizName>
+    <pattern>/[8c]/4!c</pattern>
+    <choice>FORW</choice>
+    <choice>HIST</choice>
+</field>
+<field name="22H::BUSE" type="MixedType">
+    <bizName>Order Type Identification</bizName>
+    <pattern>//4!c</pattern>
+    <choice>SUBS</choice>
+    <choice>REDM</choice>
+    <choice>BUYI</choice>
+    <choice>SELL</choice>
+    <choice>SWIF</choice>
+    <choice>SWIT</choice>
+    <choice>CROF</choice>
+    <choice>CROT</choice>
+</field>
+<field name="22H::PAYM" type="MixedType">
+    <bizName>Trade Type Indicator</bizName>
+    <pattern>//4!c</pattern>
+    <choice>APMT</choice>
+</field>
+<field name="36B::ORDR" type="MixedType">
+    <bizName>B - Quantity of Financial Instrument Ordered</bizName>
+    <pattern>//4!c/&lt;NUMBER&gt;15</pattern>
+    <choice>UNIT</choice>
+</field>
+<field name="95P::BUYR" type="PatternType">
+    <bizName>Party P - Subscriber</bizName>
+    <pattern>//&lt;SWIFTBIC&gt;|&lt;NONSWIFTBIC&gt;</pattern>
+</field>
+<field name="95Q::BUYR" type="PatternType">
+    <bizName>Party Q - Subscriber</bizName>
+    <pattern>//4*35x</pattern>
+</field>
+<field name="95R::BUYR" type="PatternType">
+    <bizName>Party R - Subscriber</bizName>
+    <pattern>/8c/34x</pattern>
+</field>
+<field name="95P::SELL" type="PatternType">
+    <bizName>Party P - Redeemer</bizName>
+    <pattern>//&lt;SWIFTBIC&gt;|&lt;NONSWIFTBIC&gt;</pattern>
+</field>
+<field name="95Q::SELL" type="PatternType">
+    <bizName>Party Q - Redeemer</bizName>
+    <pattern>//4*35x</pattern>
+</field>
+<field name="95R::SELL" type="PatternType">
+    <bizName>Party R - Redeemer</bizName>
+    <pattern>/8c/34x</pattern>
+</field>
+<field name="95P::INVE" type="PatternType">
+    <bizName>Party P - Beneficial Owner</bizName>
+    <pattern>//&lt;SWIFTBIC&gt;|&lt;NONSWIFTBIC&gt;</pattern>
+</field>
+<field name="95Q::INVE" type="PatternType">
+    <bizName>Party Q - Beneficial Owner</bizName>
+    <pattern>//4*35x</pattern>
+</field>
+<field name="95R::INVE" type="PatternType">
+    <bizName>Party R - Beneficial Owner</bizName>
+    <pattern>/8c/34x</pattern>
+</field>
+<field name="95P::STBR" type="PatternType">
+    <bizName>Party P - Third Party Intermediary</bizName>
+    <pattern>//&lt;SWIFTBIC&gt;|&lt;NONSWIFTBIC&gt;</pattern>
+</field>
+<field name="95Q::STBR" type="PatternType">
+    <bizName>Party Q - Third Party Intermediary</bizName>
+    <pattern>//4*35x</pattern>
+</field>
+<field name="95R::STBR" type="PatternType">
+    <bizName>Party R - Third Party Intermediary</bizName>
+    <pattern>/8c/34x</pattern>
+</field>
+<field name="95P::CLBR" type="PatternType">
+    <bizName>Party P - 2nd Level of Third Party Intermediary</bizName>
+    <pattern>//&lt;SWIFTBIC&gt;|&lt;NONSWIFTBIC&gt;</pattern>
+</field>
+<field name="95Q::CLBR" type="PatternType">
+    <bizName>Party Q - 2nd Level of Third Party Intermediary</bizName>
+    <pattern>//4*35x</pattern>
+</field>
+<field name="95R::CLBR" type="PatternType">
+    <bizName>Party R - 2nd Level of Third Party Intermediary</bizName>
+    <pattern>/8c/34x</pattern>
+</field>
+<field name="95S::ALTE" type="GenericFieldType">
+    <bizName>Party S - Alternate ID</bizName>
+    <pattern>/[8c]/4!c/&lt;CC&gt;/30x</pattern>
+    <choice>CCPT</choice>
+    <choice>TXID</choice>
+</field>
+</constraints>

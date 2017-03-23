@@ -1,0 +1,164 @@
+<?xml version="1.0"?>
+<constraints>
+
+<!-- Text Block for NOV03 MT 405 -->
+<field name="17F:" type="MixedType">
+    <bizName>Interest Indicator</bizName>
+   <pattern>1!a</pattern>
+    <choice>N</choice>
+    <choice>Y</choice>
+    <error type="choice">T36</error>
+</field>
+<field name="19:" type="PatternType">
+    <bizName>Sum of Face Amounts of Financial Documents</bizName>
+    <pattern>&lt;AMOUNT&gt;17</pattern>
+</field>
+<field name="20:" type="PatternType">
+    <bizName>Reference - Sender's Reference</bizName>
+    <pattern>16x</pattern>
+</field>
+<field name="21A:" type="PatternType">
+    <bizName>Reference A - Transaction Reference</bizName>
+    <pattern>16x</pattern>
+</field>
+<field name="21C:" type="PatternType">
+    <bizName>Reference C - Principal's Reference</bizName>
+    <pattern>35x</pattern>
+</field>
+<field name="21D:" type="PatternType">
+    <bizName>Remitting Bank's Reference</bizName>
+    <pattern>35x</pattern>
+</field>
+<field name="21E:" type="PatternType">
+    <bizName>Reference E - Drawee's Reference</bizName>
+    <pattern>35x</pattern>
+</field>
+<field name="22D:" type="MixedType">
+    <bizName>Collection Instructions</bizName>
+    <pattern>4!c</pattern>
+    <choice>CACC</choice>
+    <choice>CPAY</choice>
+    <choice>CACP</choice>
+</field>
+<field name="22E:" type="MixedType">
+    <bizName>Protest Instructions</bizName>
+    <pattern>4!c</pattern>
+    <choice>PNAC</choice>
+    <choice>PNPY</choice>
+    <choice>PNAP</choice>
+</field>
+<field name="23E:" type="MixedType">
+    <bizName>Collection Type</bizName>
+    <pattern>4!c[/30x]</pattern>
+    <choice>BACC</choice>
+    <choice>BAAV</choice>
+    <choice>BNAC</choice>
+    <choice>RCPT</choice>
+    <choice>PRNO</choice>
+    <choice>OTHR</choice>
+</field>
+<field name="29C:" type="PatternType">
+    <bizName>Issue Place</bizName>
+    <pattern>35x</pattern>
+</field>
+<field name="30:" type="PatternType">
+    <bizName>Date - Issue Date</bizName>
+    <pattern>&lt;DATE2&gt;</pattern>
+</field>
+<field name="32A:" type="PatternType">
+    <bizName>A - Face Amount of Financial Document</bizName>
+    <pattern>&lt;DATE2&gt;&lt;CUR&gt;&lt;AMOUNT&gt;15</pattern>
+</field>
+<field name="32K:" type="MixedType">
+    <bizName>K - Face Amount of Financial Document</bizName>
+    <pattern>1!a3!n2!a&lt;CUR&gt;&lt;AMOUNT&gt;15</pattern>
+    <choice>BE</choice>
+    <choice>ST</choice>
+</field>
+<field name="32B:" type="PatternType">
+    <bizName>B - Proceeds to be Remitted</bizName>
+    <pattern>&lt;CUR&gt;&lt;AMOUNT&gt;15</pattern>
+</field>
+<field name="32D:" type="PatternType">
+    <bizName>D - Proceeds to be Remitted</bizName>
+    <pattern>&lt;DATE2&gt;&lt;CUR&gt;&lt;AMOUNT&gt;15</pattern>
+</field>
+<field name="32G:" type="PatternType">
+    <bizName>G - Proceeds to be Remitted</bizName>
+    <pattern>&lt;CUR&gt;&lt;AMOUNT&gt;15</pattern>
+</field>
+<field name="37J:" type="PatternType">
+    <bizName>J - Interest Rate</bizName>
+    <pattern>&lt;NUMBER&gt;12</pattern>
+</field>
+<field name="38A:" type="PatternType">
+    <bizName>Action Requested Within...</bizName>
+    <pattern>3n</pattern>
+</field>
+<field name="50K:" type="PatternType">
+    <bizName>K - Avalising Party</bizName>
+    <pattern>[/34xCRLF]4*35x</pattern>
+</field>
+<field name="52A:" type="MixedType">
+    <bizName>A - Remitting Bank</bizName>
+    <pattern>[&lt;BICPLUS&gt;][CRLF]&lt;SWIFTBIC&gt;|&lt;NONSWIFTBIC&gt;</pattern>
+    <choice>C</choice>
+    <choice>D</choice>
+</field>
+<field name="52D:" type="MixedType">
+    <bizName>D - Remitting Bank</bizName>
+    <pattern>[&lt;BICPLUS&gt;][CRLF]4*35x</pattern>
+    <choice>C</choice>
+    <choice>D</choice>
+</field>
+<field name="53A:" type="MixedType">
+    <bizName>A - Sender's Correspondent</bizName>
+    <pattern>[&lt;BICPLUS&gt;][CRLF]&lt;SWIFTBIC&gt;|&lt;NON-SWIFTBIC&gt;</pattern>
+    <choice>C</choice>
+    <choice>D</choice>
+</field>
+<field name="56A:" type="MixedType">
+    <bizName>A - Settlement Institution</bizName>
+    <pattern>[&lt;BICPLUS&gt;][CRLF]&lt;SWIFTBIC&gt;|&lt;NON-SWIFTBIC&gt;</pattern>
+    <choice>C</choice>
+    <choice>D</choice>
+</field>
+<field name="56D:" type="MixedType">
+    <bizName>D - Settlement Institution</bizName>
+    <pattern>[&lt;BICPLUS&gt;][CRLF]4*35x</pattern>
+    <choice>C</choice>
+    <choice>D</choice>
+</field>
+<field name="57A:" type="MixedType">
+    <bizName>A - Presenting Bank</bizName>
+    <pattern>[&lt;BICPLUS&gt;][CRLF]&lt;SWIFTBIC&gt;|&lt;NON-SWIFTBIC&gt;</pattern>
+    <choice>C</choice>
+    <choice>D</choice>
+</field>
+<field name="57C:" type="PatternType">
+    <bizName>C - Presenting Bank</bizName>
+    <pattern>/34x</pattern>
+</field>
+<field name="57D:" type="MixedType">
+    <bizName>D - Presenting Bank</bizName>
+    <pattern>[&lt;BICPLUS&gt;][CRLF]4*35x</pattern>
+    <choice>C</choice>
+    <choice>D</choice>
+</field>
+<field name="59:" type="PatternType">
+    <bizName>Drawee</bizName>
+    <pattern>[/34xCRLF]4*35x</pattern>
+</field>
+<field name="71F:" type="PatternType">
+    <bizName>F - (Sum of) Sender's Charges</bizName>
+    <pattern>&lt;CUR&gt;&lt;AMOUNT&gt;15</pattern>
+</field>
+<field name="71G:" type="PatternType">
+    <bizName>G - (Sum of) Receiver's Charges</bizName>
+    <pattern>&lt;CUR&gt;&lt;AMOUNT&gt;15</pattern>
+</field>
+<field name="72:" type="PatternType">
+    <bizName>Sender to Receiver Information</bizName>
+    <pattern>&lt;FLD72&gt;</pattern>
+</field>
+</constraints>

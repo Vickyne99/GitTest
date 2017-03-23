@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<FLOW VERSION="3.0" CLEANUP="true">
+  <COMMENT></COMMENT>
+
+  <!-- nodes -->
+
+<LOOP TIMEOUT="" IN-ARRAY="/PO1" OUT-ARRAY="/ProductID">
+  <COMMENT></COMMENT>
+
+  <!-- nodes -->
+
+<MAP MODE="STANDALONE">
+</MAP>
+
+<INVOKE TIMEOUT="" SERVICE="Tutorial.EDItoXML.segmentMapping:PO1SegmentDetail" VALIDATE-IN="$none" VALIDATE-OUT="$none">
+  <COMMENT></COMMENT>
+
+  <!-- nodes -->
+
+<MAP MODE="INPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="MapCopy" FROM="/PO1;2;0/PO108;2;0/code;1;0" TO="/Product ID Qualifier;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="MapCopy" FROM="/PO1;2;0/PO109;1;0" TO="/Product ID;1;0">
+</MAPCOPY>
+</MAP>
+
+<MAP MODE="OUTPUT">
+
+  <!-- nodes -->
+
+<MAPDELETE NAME="MapDelete" FIELD="/Product ID Qualifier;1;0">
+</MAPDELETE>
+
+<MAPDELETE NAME="MapDelete" FIELD="/Product ID;1;0">
+</MAPDELETE>
+</MAP>
+</INVOKE>
+
+<INVOKE TIMEOUT="" SERVICE="Tutorial.EDItoXML.segmentMapping:PO1SegmentDetail" VALIDATE-IN="$none" VALIDATE-OUT="$none">
+  <COMMENT></COMMENT>
+
+  <!-- nodes -->
+
+<MAP MODE="INPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="MapCopy" FROM="/PO1;2;0/PO110;2;0/code;1;0" TO="/Product ID Qualifier;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="MapCopy" FROM="/PO1;2;0/PO111;1;0" TO="/Product ID;1;0">
+</MAPCOPY>
+</MAP>
+
+<MAP MODE="OUTPUT">
+
+  <!-- nodes -->
+
+<MAPDELETE NAME="MapDelete" FIELD="/Product ID Qualifier;1;0">
+</MAPDELETE>
+
+<MAPDELETE NAME="MapDelete" FIELD="/Product ID;1;0">
+</MAPDELETE>
+</MAP>
+</INVOKE>
+
+<INVOKE TIMEOUT="" SERVICE="Tutorial.EDItoXML.segmentMapping:PO1SegmentDetail" VALIDATE-IN="$none" VALIDATE-OUT="$none">
+  <COMMENT></COMMENT>
+
+  <!-- nodes -->
+
+<MAP MODE="INPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="MapCopy" FROM="/PO1;2;0/PO112;2;0/code;1;0" TO="/Product ID Qualifier;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="MapCopy" FROM="/PO1;2;0/PO113;1;0" TO="/Product ID;1;0">
+</MAPCOPY>
+</MAP>
+
+<MAP MODE="OUTPUT">
+
+  <!-- nodes -->
+
+<MAPDELETE NAME="MapDelete" FIELD="/Product ID Qualifier;1;0">
+</MAPDELETE>
+
+<MAPDELETE NAME="MapDelete" FIELD="/Product ID;1;0">
+</MAPDELETE>
+</MAP>
+</INVOKE>
+
+<INVOKE TIMEOUT="" SERVICE="Tutorial.EDItoXML.segmentMapping:PO1SegmentDetail" VALIDATE-IN="$none" VALIDATE-OUT="$none">
+  <COMMENT></COMMENT>
+
+  <!-- nodes -->
+
+<MAP MODE="INPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="MapCopy" FROM="/PO1;2;0/PO114;2;0/code;1;0" TO="/Product ID Qualifier;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="MapCopy" FROM="/PO1;2;0/PO115;1;0" TO="/Product ID;1;0">
+</MAPCOPY>
+</MAP>
+
+<MAP MODE="OUTPUT">
+
+  <!-- nodes -->
+
+<MAPDELETE NAME="MapDelete" FIELD="/Product ID Qualifier;1;0">
+</MAPDELETE>
+
+<MAPDELETE NAME="MapDelete" FIELD="/Product ID;1;0">
+</MAPDELETE>
+</MAP>
+</INVOKE>
+
+<INVOKE TIMEOUT="" SERVICE="Tutorial.EDItoXML.segmentMapping:PO1SegmentDetail" VALIDATE-IN="$none" VALIDATE-OUT="$none">
+  <COMMENT></COMMENT>
+
+  <!-- nodes -->
+
+<MAP MODE="INPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="MapCopy" FROM="/PO1;2;0/PO116;2;0/code;1;0" TO="/Product ID Qualifier;1;0">
+</MAPCOPY>
+
+<MAPCOPY NAME="MapCopy" FROM="/PO1;2;0/PO117;1;0" TO="/Product ID;1;0">
+</MAPCOPY>
+</MAP>
+
+<MAP MODE="OUTPUT">
+
+  <!-- nodes -->
+
+<MAPDELETE NAME="MapDelete" FIELD="/Product ID Qualifier;1;0">
+</MAPDELETE>
+
+<MAPDELETE NAME="MapDelete" FIELD="/Product ID;1;0">
+</MAPDELETE>
+</MAP>
+</INVOKE>
+</LOOP>
+
+<MAP MODE="STANDALONE">
+  <COMMENT></COMMENT>
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="MapCopy" FROM="/ProductID;2;1" TO="/Items;2;1/ProductID;2;0">
+</MAPCOPY>
+
+<MAPDELETE NAME="MapDelete" FIELD="/ProductID;2;1">
+</MAPDELETE>
+</MAP>
+</FLOW>

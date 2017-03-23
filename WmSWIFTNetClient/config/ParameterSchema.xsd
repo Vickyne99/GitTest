@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns="urn:swift:sag:xsd:fta.param.1.0"
+	targetNamespace="urn:swift:sag:xsd:fta.param.1.0"
+	elementFormDefault="qualified">
+	<xs:element name="Parameters" type="Parameter_Type" />
+
+	<xs:complexType name="Parameter_Type">
+		<xs:sequence>
+			<xs:element name="Signature" type="Signature_Type" minOccurs="0"/>
+			<xs:element name="RequestDetails" type="RequestDetails_Type" minOccurs="0"/>
+			<xs:element name="Overrides" type="Overrides_Type" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="Signature_Type">
+		<xs:sequence>
+			<xs:element name="Algorithm" type="Algorithm_Type" />
+			<xs:element name="Value" type="Value_Type" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="Algorithm_Type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="HMAC_SHA256" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Value_Type">
+		<xs:restriction base="xs:string">
+			<xs:length value="24" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:complexType name="RequestDetails_Type">
+		<xs:sequence>
+			<xs:element name="RBAC" type="Any" minOccurs="0"/>
+			<xs:element name="SwiftTime" type="DateTime"/>
+			<xs:element name="NonRep" type="Any" minOccurs="0"/>
+			<xs:element name="SNLId" type="PCDATA" minOccurs="0"/>
+			<xs:element name="SNLEP" type="PCDATA" minOccurs="0"/>
+			<xs:element name="SnFSessionId" type="PCDATA" minOccurs="0"/>
+			<xs:element name="SnFOutputSeq" type="PCDATA" minOccurs="0"/>
+			<xs:element name="SnFPDMHistory" type="Any" minOccurs="0"/>
+			<xs:element name="DeliveryTime" type="DateTime" minOccurs="0"/>
+			<xs:element name="SecSecuredData" type="Any" minOccurs="0"/>
+			<xs:element name="FileRequestE2EControl" type="Any" minOccurs="0"/>
+			<xs:element name="MsgId" type="PCDATA" minOccurs="0"/>
+			<xs:element name="CreationTime" type="DateTime" minOccurs="0"/>
+			<xs:element name="PDIndication" type="Any" minOccurs="0"/>
+			<xs:element name="FileRequestHeader" type="Any"/>
+			<xs:element name="Requestor" type="UserDN"/>
+			<xs:element name="Responder" type="UserDN"/>
+			<xs:element name="Service" type="ServiceName"/>
+			<xs:element name="RequestType" type="PCDATA" minOccurs="0"/>
+			<xs:element name="Priority" type="PriorityCode" minOccurs="0"/>
+			<xs:element name="RequestRef" type="PCDATA" minOccurs="0"/>
+			<xs:element name="TransferRef" type="PCDATA"/>
+			<xs:element name="TransferDescription" type="PCDATA" minOccurs="0"/>
+			<xs:element name="TransferInfo" type="PCDATA" minOccurs="0"/>
+			<xs:element name="PossibleDuplicate" type="Boolean" minOccurs="0"/>
+			<xs:element name="OrigTransferRef" type="PCDATA" minOccurs="0"/>
+			<xs:element name="AckIndicator" type="Boolean" minOccurs="0"/>
+			<xs:element name="AckResponder" type="UserDN" minOccurs="0"/>
+			<xs:element name="AckRequestType" type="PCDATA" minOccurs="0"/>
+			<xs:element name="LogicalName" type="PCDATA"/>
+			<xs:element name="FileDescription" type="PCDATA" minOccurs="0"/>
+			<xs:element name="FileInfo" type="PCDATA" minOccurs="0"/>
+			<xs:element name="Size" type="MinZero_SimpleType"/>
+			<xs:element name="DigestAlgorithm" type="DigestAlgorithmCode" minOccurs="0"/>
+			<xs:element name="DigestValue" type="PCDATA" minOccurs="0"/>
+			<xs:element name="Copy" type="Any" minOccurs="0"/>
+			<xs:element name="SignatureList" type="Any" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="Overrides_Type">
+		<xs:sequence>
+			<xs:element name="Responder"           type="UserDN"           minOccurs="0"  maxOccurs="1"/>
+			<xs:element name="Service"             type="ServiceName"      minOccurs="0"  maxOccurs="1"/>
+			<xs:element name="RequestType"         type="RequestType_Type" minOccurs="0"  maxOccurs="1"/>
+			<xs:element name="TransferDescription" type="Description_Type" minOccurs="0"  maxOccurs="1"/>
+			<xs:element name="TransferInfo"        type="Info_Type"        minOccurs="0"  maxOccurs="1"/>
+			<xs:element name="FileDescription"     type="Description_Type" minOccurs="0"  maxOccurs="1"/>
+			<xs:element name="FileInfo"            type="Info_Type"        minOccurs="0"  maxOccurs="1"/>
+			<xs:element name="NonRepudiation"      type="Boolean"          minOccurs="0"  maxOccurs="1"/>
+			<xs:element name="Sign"                type="Boolean"          minOccurs="0"  maxOccurs="1"/>
+			<xs:element name="AckIndicator"        type="Boolean"          minOccurs="0"  maxOccurs="1"/>
+			<xs:element name="AckResponder"        type="UserDN"           minOccurs="0"  maxOccurs="1"/>
+			<xs:element name="AckRequestType"      type="RequestType_Type" minOccurs="0"  maxOccurs="1"/>
+			<xs:element name="Priority"            type="PriorityCode"     minOccurs="0"  maxOccurs="1"/>
+			<xs:element name="CopyIndicator"       type="ThreeWayBoolean"  minOccurs="0"  maxOccurs="1"/>
+			<xs:element name="AuthNotifInd"        type="ThreeWayBoolean"  minOccurs="0"  maxOccurs="1"/>
+			<xs:element name="E2EControl"          type="Any"              minOccurs="0"  maxOccurs="1"/>
+			<xs:element name="SystemMessage"       type="Boolean"          minOccurs="0"  maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:simpleType name="DateTime">
+		<xs:restriction base="xs:dateTime"/>
+	</xs:simpleType>
+	<xs:simpleType name="Boolean">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="TRUE"/>
+			<xs:enumeration value="FALSE"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ThreeWayBoolean">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="TRUE"/>
+			<xs:enumeration value="FALSE"/>
+			<xs:enumeration value=""/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="PCDATA">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:simpleType name="UserDN">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="100"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="RequestType_Type">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="30"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Description_Type">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="256"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Info_Type">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="256"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="Any" mixed="true">
+		<xs:sequence>
+			<xs:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="MinZero_SimpleType">
+		<xs:restriction base="xs:decimal">
+			<xs:minInclusive value="0"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ServiceName">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="30"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="PriorityCode">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Normal"/>
+			<xs:enumeration value="Urgent"/>
+			<xs:enumeration value=""/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="DigestAlgorithmCode">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="SHA-1"/>
+			<xs:enumeration value="SHA-256"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>
+

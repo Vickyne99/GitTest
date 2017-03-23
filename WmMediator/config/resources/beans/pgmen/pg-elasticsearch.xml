@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd"
+       default-init-method="init"
+       default-destroy-method="shutdown">
+
+    
+    <!--  Bean properties are defined in this class, but they do not   -->
+    <!--  require configuration at this time, so they are not exposed here.  -->
+
+    <bean id="esPublisher" depends-on="configurationcontextsupplier, passman"
+          init-method="init" destroy-method="destroy"
+          class="com.softwareag.pg.pgmen.events.es.ESClientAdapter">
+        <property name="protocol" value="${pg.es.protocol}"/>
+        <property name="hostName" value="${pg.es.hostName}"/>
+        <property name="port" value="${pg.es.port}"/>
+        <property name="username" value="${pg.es.userName}"/>
+		<property name="pubLifecycleEventsEnabled" value="${pg.es.PgMenConfiguration.publishLifeCycleEvents}"/>
+        <property name="pubErrorEventsEnabled" value="${pg.es.PgMenConfiguration.publishErrorEvents}"/>
+        <property name="pubPolicyViolationEventsEnabled" value="${pg.es.PgMenConfiguration.publishPolicyViolationEvents}"/>
+		<property name="reportInterval" value="${pg.es.PgMenConfiguration.reportInterval}"/>
+        <property name="pdEnabled" value="${pg.es.PgMenConfiguration.perfDataEnabled}"/>
+       
+    </bean>
+	
+	<bean id="PgMenEsConfiguration" class="com.softwareag.pg.pgmen.events.es.PgMenEsConfiguration"
+          factory-method="inst" destroy-method="destroy">
+        <property name="reportInterval" value="${pg.es.PgMenConfiguration.reportInterval}"/>
+        <property name="pdCollectionEnabled" value="${pg.es.PgMenConfiguration.perfDataEnabled}"/>
+        <property name="lifeCycleEventPublished" value="${pg.es.PgMenConfiguration.publishLifeCycleEvents}"/>
+        <property name="errorEventPublished" value="${pg.es.PgMenConfiguration.publishErrorEvents}"/>
+        <property name="policyViolationEventPublished" value="${pg.es.PgMenConfiguration.publishPolicyViolationEvents}"/>
+    </bean>
+    
+    <bean id="ESEventSender" class="com.softwareag.pg.pgmen.events.es.ESEventSender" init-method="init"
+          destroy-method="onDestroy"
+          depends-on="esPublisher">
+          <property name="indexName" value="${pg.es.indexName}"/>
+    </bean>
+    
+   <bean id="ESErrorFormatter" class="com.softwareag.pg.pgmen.events.es.ESErrorFormatter"
+          init-method="init" destroy-method="destroy">
+        <property name="typeName" value="ErrorEvents"/>
+    </bean>
+
+    <bean id="ESLifecycleFormatter" class="com.softwareag.pg.pgmen.events.es.ESLifecycleFormatter"
+          init-method="init" destroy-method="destroy">
+        <property name="typeName" value="LifeCycleEvents"/>
+    </bean>
+    
+    <bean id="ESMonitorFormatter" class="com.softwareag.pg.pgmen.events.es.ESMonitorFormatter"
+          init-method="init" destroy-method="destroy">
+        <property name="typeName" value="MonitorEvents"/>
+    </bean>
+    
+    <bean id="ESPVFormatter" class="com.softwareag.pg.pgmen.events.es.ESPVFormatter"
+          init-method="init" destroy-method="destroy">
+        <property name="typeName" value="PolicyViolationEvents"/>
+    </bean>
+    <bean id="ESPerfMetricsFormatter" class="com.softwareag.pg.pgmen.events.es.ESPerfMetricsFormatter"
+          init-method="init" destroy-method="destroy">
+        <property name="typeName" value="PerformanceMetrics"/>
+    </bean>
+    <bean id="ESTransactionFormatter" class="com.softwareag.pg.pgmen.events.es.ESTransactionFormatter"
+          init-method="init" destroy-method="destroy">
+        <property name="typeName" value="TransactionalEvents"/>
+    </bean>
+    
+</beans>

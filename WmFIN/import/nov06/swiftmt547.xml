@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<block id="547" isMandatory="true" isList="false">
+    <lineAttribute id="1:" isMandatory="true" EAImap="B1" B2BMap="" Validation="" extractHint="BR,{,},T,S" idHint="FL,0,2"/>
+    <lineAttribute id="2:" isMandatory="false" EAImap="B2" B2BMap="" Validation="" extractHint="BR,{,},T,S" idHint="FL,0,2"/>
+    <block id="3:" isMandatory="false" isList="false" termString="" EAImap="B3" B2BMap="" Validation="" extractHint="BR,{,},T,S" idHint="FL,0,2">
+        <lineAttribute id="103:" isMandatory="false" EAImap="O103" B2BMap="" Validation="" extractHint="BR,{,},T,S" idHint="FL,0,4"/>
+        <lineAttribute id="113:" isMandatory="false" EAImap="O113" B2BMap="" Validation="" extractHint="BR,{,},T,S" idHint="FL,0,4"/>
+        <lineAttribute id="108:" isMandatory="false" EAImap="O108" B2BMap="" Validation="" extractHint="BR,{,},T,S" idHint="FL,0,4"/>
+        <lineAttribute id="119:" isMandatory="false" EAImap="O119" B2BMap="" Validation="" extractHint="BR,{,},T,S" idHint="FL,0,4"/>
+        <lineAttribute id="115:" isMandatory="false" EAImap="O115" B2BMap="" Validation="" extractHint="BR,{,},T,S" idHint="FL,0,4"/>
+    </block>
+    <!-- Begin Text Block -->
+    <block id="4:\r\n" isMandatory="false" isList="false" EAImap="B4" extractHint="BR,{,-},T,S" idHint="FL,0,4" termString="\r\n" B2BMap="" Validation="">
+        <!-- Begin Mandatory Sequence A General Information -->
+        <block id="GENL" isMandatory="true" EAImap="MGENL" isList="false" extractHint="BR,:16R:GENL\r\n,:16S:GENL,T,S" idHint="EH,5,9" termString="\r\n" B2BMap="" Validation="">
+            <lineAttribute id=":20C::SEME" isMandatory="true" EAImap="M20CSEME" extractHint="DL,:,T,S" idHint="FL,0,10" B2BMap="" Validation=""/>
+            <lineAttribute id=":23G:" isMandatory="true" EAImap="M23G" extractHint="DL,:,T,S" idHint="FL,0,5" B2BMap="" Validation=""/>
+            <lineAttribute id=":98A::PREP,:98C::PREP" isMandatory="false" EAImap="O98APREP,O98CPREP" extractHint="DL,:,T,S" idHint="FL,0,10" B2BMap="" Validation=""/>
+            <!-- Repetitive Field 22a -->
+            <block id="SB1" isMandatory="false" EAImap="OBSB1" isList="true" termString="\r\n" B2BMap="" Validation="">
+                <lineAttribute id=":22H::PREC,:22F::PARS" isMandatory="true" EAImap="O22HPREC,O22FPARS" extractHint="DL,:,T,S" idHint="FL,0,10" B2BMap="" Validation=""/>
+            </block>
+            <!-- Begin Repetitive Mandatory Subsequence A1 Linkages -->
+            <block id="LINK" isMandatory="true" EAImap="MLINK" isList="true" extractHint="BR,:16R:LINK\r\n,:16S:LINK,T,S" idHint="EH,5,9" termString="\r\n" B2BMap="" Validation="">
+                <lineAttribute id=":22F::LINK" isMandatory="false" EAImap="O22FLINK" extractHint="DL,:,T,S" idHint="FL,0,10" B2BMap="" Validation=""/>
+                <lineAttribute id=":13A::LINK,:13B::LINK" isMandatory="false" EAImap="O13ALINK,O13BLINK" extractHint="DL,:,T,S" idHint="FL,0,10" B2BMap="" Validation=""/>
+                <lineAttribute id=":20C::POOL,:20C::PREV,:20C::RELA,:20C::TRRF,:20C::COMM,:20C::COLR" isMandatory="true" EAImap="O20CPOOL,O20CPREV,O20CRELA,O20CTRRF,O20CCOMM,O20CCOLR" extractHint="DL,:,T,S" idHint="FL,0,10" B2BMap="" Validation=""/>
+            </block>
+            <!-- End Repetitive Mandatory Subsequence A1 Linkages -->
+        </block>
+        <!-- Begin Mandatory Sequence B Trade Details -->
+        <block id="TRADDET" isMandatory="true" EAImap="MTRADDET" isList="false" extractHint="BR,:16R:TRADDET\r\n,:16S:TRADDET,T,S" idHint="EH,5,12" termString="\r\n" B2BMap="" Validation="">
+            <lineAttribute id=":94B::TRAD" isMandatory="false" EAImap="O94BTRAD" extractHint="DL,:,T,S" idHint="FL,0,10"/>
+            <!-- Repetitive Field 98a -->
+            <block id="SB1" isMandatory="true" isList="true" EAImap="MBSB1" termString="\r\n" B2BMap="" Validation="">
+                <lineAttribute id=":98A::SETT,:98B::SETT,:98C::SETT,:98A::TRAD,:98B::TRAD,:98C::TRAD,:98A::ESET,:98B::ESET,:98C::ESET" isMandatory="true" EAImap="O98ASETT,O98BSETT,O98CSETT,O98ATRAD,O98BTRAD,O98CTRAD,O98AESET,O98BESET,O98CESET" extractHint="DL,:,T,S" idHint="FL,0,10" B2BMap="" Validation=""/>
+            </block>
+            <lineAttribute id=":90A::DEAL,:90B::DEAL" isMandatory="false" EAImap="O90ADEAL,O90BDEAL" extractHint="DL,:,T,S" idHint="FL,0,10" B2BMap="" Validation=""/>
+            <lineAttribute id=":99A::DAAC" isMandatory="false" EAImap="O99ADAAC" extractHint="DL,:,T,S" idHint="FL,0,10" B2BMap="" Validation=""/>
+            <lineAttribute id=":35B:" isMandatory="true" EAImap="M35B" extractHint="DL,:,T,S" idHint="FL,0,5" B2BMap="" Validation=""/>
+            <!-- Begin Optional Subsequence B1 Financial Instrument Attributes -->
+            <block id="FIA" isMandatory="false" EAImap="OFIA" isList="false" extractHint="BR,:16R:FIA\r\n,:16S:FIA,T,S" idHint="EH,5,8" termString="\r\n" B2BMap="" Validation="">
+                <lineAttribute id=":94B::PLIS" isMandatory="false" EAImap="O94BPLIS" extractHint="DL,:,T,S" idHint="FL,0,10" B2BMap="" Validation=""/>
+                <!-- Repetitive Field 22F -->
+                <block id="SB1" isMandatory="false" isList="true" EAImap="OBSB1" termString="\r\n" B2BMap="" Validation="">
+                    <lineAttribute id=":22F::MICO,:22F::FORM,:22F::PFRE,:22F::PREF,:22F::PAYS,:22F::PADI,:22F::CFRE" isMandatory="true" EAImap="O22FMICO,O22FFORM,O22FPFRE,O22FPREF,O22FPAYS,O22FPADI,O22FCFRE" extractHint="DL,:,T,S" idHint="FL,0,10" B2BMap="" Validation=""/>
+                </block>
+                <!-- Repetitive Field 12a -->
+                <block id="SB2" isList="true" EAImap="OBSB2" isMandatory="false" termString="\r\n" B2BMap="" Validation="">
+                    <lineAttribute id=":12A::CLAS,:12C::CLAS,:12B::OPST,:12B::OPTI" isMandatory="true" EAImap="O12ACLAS,O12CCLAS,O12BOPST,O12BOPTI" extractHint="DL,:,T,S" idHint="FL,0,10" B2BMap="" Validation=""/>
+                </block>
+                <lineAttribute id=":11A::DENO" isMandatory="false" EAImap="O11ADENO" extractHint="DL,:,T,S" idHint="FL,0,10" B2BMap="" Validation=""/>
+                <!-- Repetitive Field 98A -->
+                <block id="SB3" isMandatory="false" isList="true" EAImap="OBSB3" termString="\r\n" B2BMap="" Validation="">
+                    <lineAttribute id=":98A::COUP,:98A::EXPI,:98A::FRNR,:98A::MATU,:98A::ISSU,:98A::CALD,:98A::CONV,:98A::PUTT,:98A::DDTE,:98A::FCOU,:98A::NWFC" isMandatory="true" EAImap="O98ACOUP,O98AEXPI,O98AFRNR,O98AMATU,O98AISSU,O98ACALD,O98ACONV,O98APUTT,O98ADDTE,O98AFCOU,O98ANWFC" extractHint="DL,:,T,S" idHint="FL,0,10" B2BMap="" Validation=""/>
+                </block>
+                <!-- Repetitive Field 92A -->
+                <block id="SB4" isMandatory="false" EAImap="OBSB4" isList="true" termString="\r\n" B2BMap="" Validation="">
+                    <lineAttribute id=":92A::PRFC,:92A::CUFC,:92A::NWFC,:92A::INTR,:92A::NXRT" isMandatory="false" EAImap="O92APRFC,O92ACUFC,O92ANWFC,O92AINTR,O92ANXRT" extractHint="DL,:,T,S" idHint="FL,0,10" B2BMap="" Validation=""/>
+                </block>
+                <!-- Repetitive Field 13a -->
+                <block id="SB5" isMandatory="false" EAImap="OBSB5" isList="true" termString="\r\n" B2BMap="" Validation="">
+                    <lineAttribute id=":13A::COUP,:13B::COUP,:13A::POOL,:13B::POOL,:13A::LOTS,:13B::LOTS,:13K::LOTS,:13A::VERN,:13B::VERN" isMandatory="true" EAImap="O13ACOUP,O13BCOUP,O13APOOL,O13BPOOL,O13ALOTS,O13BLOTS,O13KLOTS,O13AVERN,O13BVERN" extractHint="DL,:,T,S" idHint="FL,0,10" B2BMap="" Validation=""/>
+                </block>
+                <!-- Repetitive Field 17B -->
+                <block id="SB6" isMandatory="false" EAImap="OBSB6" isList="true" termString="\r\n" B2BMap="" Validation="">
+                    <lineAttribute id=":17B::CONV,:17B::FRNF,:17B::COVE,:17B::CALL,:17B::PUTT,:17B::WRTS,:17B::ODDC" isMandatory="true" EAImap="O17BCONV,O17BFRNF,O17BCOVE,O17BCALL,O17BPUTT,O17BWRTS,O17BODDC" extractHint="DL,:,T,S" idHint="FL,0,10" B2BMap="" Validation=""/>
+                </block>
+                <!-- Repetitive Field 90a -->
+                <block id="SB7" isMandatory="false" EAImap="OBSB7" isList="true" termString="\r\n" B2BMap="" Validation="">
+                    <lineAttribute id=":90A::INDC,:90B::INDC,:90A::MRKT,:90B::MRKT,:90A::EXER,:90B::EXER,:90B::TSMT" isMandatory="true" EAImap="O90AINDC,O90BINDC,O90AMRKT,O90BMRKT,O90AEXER,O90BEXER,O90BTSMT" extractHint="DL,:,T,S" idHint="FL,0,10" B2BMap="" Validation=""/>
+                </block>
+                <!-- Repetitive Field 36B -->
+                <block id="SB8" isMandatory="false" EAImap="OBSB8" isList="true" termString="\r\n" B2BMap="" Validation="">
+                    <lineAttribute id=":36B::MINO,:36B::MIEX,:36B::MILT,:36B::SIZE,:36B::ORGV" isMandatory="true" EAImap="O36BMINO,O36BMIEX,O36BMILT,O36BSIZE,O36BORGV" extractHint="DL,:,T,S" idHint="FL,0,10" B2BMap="" Validation=""/>
+                </block>
+		<lineAttribute id=":35B:" isMandatory="false" EAImap="O35B" B2BMap="" Validation="" extractHint="DL,:,T,S" idHint="FL,0,5" />
+                <lineAttribute id=":70E::FIAN" isMandatory="false" EAImap="O70EFIAN" extractHint="DL,:,T,S" idHint="FL,0,10" B2BMap="" Validation=""/>
+            </block>
+            <!-- Repetitive Field 22F -->
+            <block id="SB3" isMandatory="false" EAImap="OBSB3" isList="true" termString="\r\n" B2BMap="" Validation="">
+                <lineAttribute id=":22F::PROC,:22F::RPOR,:22F::PRIR,:22F::BORR,:22F::TTCO" isMandatory="true" EAImap="O22FPROC,O22FRPOR,O22FPRIR,O22FBORR,O22FTTCO" extractHint="DL,:,T,S" idHint="FL,0,10" B2BMap="" Validation=""/>
+            </block>
+            <!-- Repetitive Field 70E -->
+            <block id="SB4" isMandatory="false" EAImap="OBSB4" isList="true" termString="\r\n" B2BMap="" Validation="">
+                <lineAttribute id=":70E::FXIN,:70E::SPRO" isMandatory="true" EAImap="O70EFXIN,O70ESPRO" extractHint="DL,:,T,S" idHint="FL,0,10" B2BMap="" Validation=""/>
+            </block>
+        </block>
+        <!-- End Mandatory Sequence B Trade Details -->
+        <!-- Begin Repetitive Mandatory Sequence C Financial Instrument/Account -->
+        <block id="FIAC" isMandatory="true" isList="true" EAImap="MFIAC" extractHint="BR,:16R:FIAC\r\n,:16S:FIAC,T,S" idHint="EH,5,9" termString="\r\n" B2BMap="" Validation="">
+            <!-- Repetitive Field 36B -->
+            <block id="SB1" isMandatory="true" EAImap="MBSB1" isList="true" termString="\r\n" B2BMap="" Validation="">
+                <lineAttribute id=":36B::ESTT,:36B::PSTT,:36B::RSTT" isMandatory="true" EAImap="O36BESTT,O36BPSTT,O36BRSTT" extractHint="DL,:,T,S" idHint="FL,0,10" B2BMap="" Validation=""/>
+            </block>
+            <!-- Repetitive Field 19A -->
+            <block id="SB2" isMandatory="false" EAImap="OBSB2" isList="true" termString="\r\n" B2BMap="" Validation="">
+                <lineAttribute id=":19A::ESTT,:19A::PSTT,:19A::RSTT" isMandatory="true" EAImap="O19AESTT,O19APSTT,O19ARSTT" extractHint="DL,:,T,S" idHint="FL,0,10" B2BMap="" Validation=""/>
+            </block>
+            <lineAttribute id=":70D::DENC" isMandatory="false" EAImap="O70DDENC" extractHint="DL,:,T,S" idHint="FL,0,10" B2BMap="" Validation=""/>
+            <!-- Repetitive Field 13B -->
+            <block id="SB3" isMandatory="false" isList="true" EAImap="OBSB3" termString="\r\n" B2BMap="" Validation="">
+                <lineAttribute id=":13B::CERT" isMandatory="true" EAImap="O13BCERT" extractHint="DL,:,T,S" idHint="FL,0,10" B2BMap="" Validation=""/>
+            </block>
+            <!-- Repetitive Field 97a -->
+            <block id="SB4" isMandatory="true" isList="true" EAImap="MBSB4" termString="\r\n" B2BMap="" Validation="">
+                <lineAttribute id=":97A::SAFE,:97B::SAFE,:97A::CASH" isMandatory="true" EAImap="O97ASAFE,O97BSAFE,O97ACASH" extractHint="DL,:,T,S" idHint="FL,0,10" B2BMap="" Validation=""/>
+            </block>
+            <lineAttribute id=":94B::SAFE,:94C::SAFE,:94F::SAFE" isMandatory="false" EAImap="O94BSAFE,O94CSAFE,O94FSAFE" extractHint="DL,:,T,S" idHint="FL,0,10" B2BMap="" Validation=""/>
+        </block>
+        <!-- End Repetitive Mandatory Sequence C Financial Instrument/Account -->
+        <!-- Begin Optional Sequence D Repo Details -->
+        <block id="REPO" isMandatory="false" EAImap="OREPO" isList="false" extractHint="BR,:16R:REPO\r\n,:16S:REPO,T,S" idHint="EH,5,9" termString="\r\n" B2BMap="" Validation="">
+            <lineAttribute id=":98A::TERM,:98B::TERM,:98C::TERM" isMandatory="false" EAImap="O98ATERM,O98BTERM,O98CTERM" extractHint="DL,:,T,S" idHint="FL,0,10" B2BMap="" Validation=""/>
+            <!-- Repetitive Field 22F -->
+            <block id="SB1" isMandatory="false" EAImap="OBSB1" isList="true" termString="\r\n" B2BMap="" Validation="">
+                <lineAttribute id=":22F::RERT,:22F::MICO,:22F::REPT" isMandatory="true" EAImap="O22FRERT,O22FMICO,O22FREPT" extractHint="DL,:,T,S" idHint="FL,0,10" B2BMap="" Validation=""/>
+            </block>
+            <!-- Repetitive Field 20C -->
+            <block id="SB2" isMandatory="false" EAImap="OBSB2" isList="true" termString="\r\n" B2BMap="" Validation="">
+                <lineAttribute id=":20C::SECO,:20C::REPO" isMandatory="true" EAImap="O20CSECO,O20CREPO" extractHint="DL,:,T,S" idHint="FL,0,10" B2BMap="" Validation=""/>
+            </block>
+            <!-- Repetitive Field 92a -->
+            <block id="SB3" isMandatory="false" EAImap="OBSB3" isList="true" termString="\r\n" B2BMap="" Validation="">
+                <lineAttribute id=":92C::VASU,:92A::REPO,:92A::RSPR,:92F::RSPR" isMandatory="false" EAImap="O92CVASU,O92AREPO,O92ARSPR,O92FRSPR" extractHint="DL,:,T,S" idHint="FL,0,10" B2BMap="" Validation=""/>
+            </block>
+            <!-- Repetitive Field 99B -->
+            <block id="SB4" isMandatory="false" EAImap="OBSB4" isList="true" termString="\r\n" B2BMap="" Validation="">
+                <lineAttribute id=":99B::CADE,:99B::TOCO" isMandatory="true" EAImap="O99BCADE,O99BTOCO" extractHint="DL,:,T,S" idHint="FL,0,10" B2BMap="" Validation=""/>
+            </block>
+            <!-- Repetitive Field 19A -->
+            <block id="SB5" isMandatory="false" EAImap="OBSB5" isList="true" termString="\r\n" B2BMap="" Validation="">
+                <lineAttribute id=":19A::FORF,:19A::REPA,:19A::REPP,:19A::ACRU,:19A::DEAL" isMandatory="true" EAImap="O19AFORF,O19AREPA,O19AREPP,O19AACRU,O19ADEAL" extractHint="DL,:,T,S" idHint="FL,0,10" B2BMap="" Validation=""/>
+            </block>
+            <lineAttribute id=":70C::REPO" isMandatory="false" EAImap="O70CREPO" extractHint="DL,:,T,S" idHint="FL,0,10" B2BMap="" Validation=""/>
+        </block>
+        <!-- End Optional Sequence D Repo Details -->
+        <!-- Begin Mandatory Sequence E Settlement Details -->
+        <block id="SETDET" isMandatory="true" EAImap="MSETDET" isList="false" extractHint="BR,:16R:SETDET\r\n,:16S:SETDET,T,S" idHint="EH,5,11" termString="\r\n" B2BMap="" Validation="">
+            <!-- Repetitive Field 22F -->
+            <block id="SB1" isMandatory="true" EAImap="MBSB1" isList="true" termString="\r\n" B2BMap="" Validation="">
+        				<lineAttribute id=":22F::SETR,:22F::STCO,:22F::TRCA,:22F::STAM,:22F::RTGS,:22F::REGT,:22F::BENE,:22F::CASY,:22F::DBNM,:22F::TCPI,:22F::MACL,:22F::BLOC,:22F::REST,:22F::SETS,:22F::NETT,:22F::CCPT,:22F::LEOG" isMandatory="true" EAImap="O22FSETR,O22FSTCO,O22FTRCA,O22FSTAM,O22FRTGS,O22FREGT,O22FBENE,O22FCASY,O22FDBNM,O22FTCPI,O22FMACL,O22FBLOC,O22FREST,O22FSETS,O22FNETT,O22FCCPT,O22FLEOG" B2BMap="" Validation="" extractHint="DL,:,T,S" idHint="FL,0,10"/>
+            </block>
+            <!-- Begin Repetitive Mandatory Subsequence E1 Settlement Parties -->
+            <block id="SETPRTY" isMandatory="true" EAImap="MSETPRTY" isList="true" extractHint="BR,:16R:SETPRTY\r\n,:16S:SETPRTY,T,S" idHint="EH,5,12" termString="\r\n" B2BMap="" Validation="">
+                <!-- Repetitive Field 95a -->
+                <block id="SB1" isMandatory="true" EAImap="MBSB1" isList="true" termString="\r\n" B2BMap="" Validation="">
+                    <lineAttribute id=":95P::BUYR,:95Q::BUYR,:95R::BUYR,:95P::DEAG,:95Q::DEAG,:95R::DEAG,:95P::DECU,:95Q::DECU,:95R::DECU,:95P::DEI1,:95Q::DEI1,:95R::DEI1,:95P::DEI2,:95Q::DEI2,:95R::DEI2,:95C::PSET,:95P::PSET,:95Q::PSET,:95P::REAG,:95Q::REAG,:95R::REAG,:95P::RECU,:95Q::RECU,:95R::RECU,:95P::REI1,:95Q::REI1,:95R::REI1,:95P::REI2,:95Q::REI2,:95R::REI2,:95P::SELL,:95Q::SELL,:95R::SELL,:95S::ALTE" isMandatory="true" EAImap="O95PBUYR,O95QBUYR,O95RBUYR,O95PDEAG,O95QDEAG,O95RDEAG,O95PDECU,O95QDECU,O95RDECU,O95PDEI1,O95QDEI1,O95RDEI1,O95PDEI2,O95QDEI2,O95RDEI2,O95CPSET,O95PPSET,O95QPSET,O95PREAG,O95QREAG,O95RREAG,O95PRECU,O95QRECU,O95RRECU,O95PREI1,O95QREI1,O95RREI1,O95PREI2,O95QREI2,O95RREI2,O95PSELL,O95QSELL,O95RSELL,O95SALTE" extractHint="DL,:,T,S" idHint="FL,0,10" B2BMap="" Validation=""/>
+                </block>
+                <lineAttribute id=":97A::SAFE,:97B::SAFE" isMandatory="false" EAImap="O97ASAFE,O97BSAFE" extractHint="DL,:,T,S" idHint="FL,0,10" B2BMap="" Validation=""/>
+                <lineAttribute id=":98A::PROC,:98C::PROC" isMandatory="false" EAImap="O98APROC,O98CPROC" extractHint="DL,:,T,S" idHint="FL,0,10" B2BMap="" Validation=""/>
+                <lineAttribute id=":20C::PROC" isMandatory="false" EAImap="O20CPROC" extractHint="DL,:,T,S" idHint="FL,0,10" B2BMap="" Validation=""/>
+                <!-- Repetitive Field 70a -->
+                <block id="SB2" isMandatory="false" EAImap="OBSB2" isList="true" termString="\r\n" B2BMap="" Validation="">
+                    <lineAttribute id=":70E::DECL,:70D::REGI,:70C::PACO" isMandatory="false" EAImap="O70EDECL,O70DREGI,O70CPACO" extractHint="DL,:,T,S" idHint="FL,0,10" B2BMap="" Validation=""/>
+                </block>
+            </block>
+            <!-- End Repetitive Mandatory Subsequence E1 Settlement Parties -->
+            <!-- Begin Repetitive Optional Subsquence E2 Cash Parties -->
+            <block id="CSHPRTY" isMandatory="false" isList="true" EAImap="OCSHPRTY" extractHint="BR,:16R:CSHPRTY\r\n,:16S:CSHPRTY,T,S" idHint="EH,5,12" termString="\r\n" B2BMap="" Validation="">
+                <!-- Repetitive Field 95a -->
+                <block id="SB1" isMandatory="true" EAImap="MBSB1" isList="true" termString="\r\n" B2BMap="" Validation="">
+                    <lineAttribute id=":95P::ACCW,:95Q::ACCW,:95R::ACCW,:95P::BENM,:95Q::BENM,:95R::BENM,:95P::PAYE,:95Q::PAYE,:95R::PAYE,:95S::ALTE" isMandatory="true" EAImap="O95PACCW,O95QACCW,O95RACCW,O95PBENM,O95QBENM,O95RBENM,O95PPAYE,O95QPAYE,O95RPAYE,O95SALTE" B2BMap="" Validation="" extractHint="DL,:,T,S" idHint="FL,0,10"/>
+                </block>
+                <!-- Repetitive Field 97A -->
+                <block id="SB2" isMandatory="false" EAImap="OBSB2" isList="true" termString="\r\n" B2BMap="" Validation="">
+                    <lineAttribute id=":97A::CASH,:97A::CHAR,:97A::COMM,:97A::TAXE" isMandatory="true" EAImap="O97ACASH,O97ACHAR,O97ACOMM,O97ATAXE" extractHint="DL,:,T,S" idHint="FL,0,10" B2BMap="" Validation=""/>
+                </block>
+                <lineAttribute id=":20C::PROC" isMandatory="false" EAImap="O20CPROC" extractHint="DL,:,T,S" idHint="FL,0,10" B2BMap="" Validation=""/>
+                <!-- Repetitive Field 70a -->
+                <block id="SB3" isMandatory="false" EAImap="OBSB3" isList="true" termString="\r\n" B2BMap="" Validation="">
+                    <lineAttribute id=":70E::DECL,:70D::REGI,:70C::PACO" isMandatory="true" EAImap="O70EDECL,O70DREGI,O70CPACO" extractHint="DL,:,T,S" idHint="FL,0,10" B2BMap="" Validation=""/>
+                </block>
+            </block>
+            <!-- End Repetitive Optional Subsquence E2 Cash Parties -->
+            <!-- Begin Repetitive Mandatory Subsequence E3 Amounts -->
+            <block id="AMT" isMandatory="true" isList="true" EAImap="MAMT" extractHint="BR,:16R:AMT\r\n,:16S:AMT,T,S" idHint="EH,5,8" termString="\r\n" B2BMap="" Validation="">
+                <!-- Repetitive Field 17B -->
+                <block id="SB2" isMandatory="false" isList="true" EAImap="OBSB2" termString="\r\n" B2BMap="" Validation="">
+                    <lineAttribute id=":17B::ACRU,:17B::STAM" isMandatory="true" EAImap="O17BACRU,O17BSTAM" extractHint="DL,:,T,S" idHint="FL,0,10" B2BMap="" Validation=""/>
+                </block>
+                <!-- Repetitive Field 19A -->
+                <block id="SB1" isMandatory="true" isList="true" EAImap="MBSB1" termString="\r\n" B2BMap="" Validation="">
+                    <lineAttribute id=":19A::ACRU,:19A::ANTO,:19A::CHAR,:19A::COUN,:19A::DEAL,:19A::EUTR,:19A::ESTT,:19A::EXEC,:19A::ISDI,:19A::LEVY,:19A::LOCL,:19A::LOCO,:19A::MARG,:19A::OTHR,:19A::POST,:19A::REGF,:19A::SHIP,:19A::SPCN,:19A::STAM,:19A::STEX,:19A::TRAN,:19A::TRAX,:19A::VATA,:19A::WITH,:19A::COAX,:19A::ACCA,:19A::RESU,:19A::OCMT" isMandatory="true" EAImap="O19AACRU,O19AANTO,O19ACHAR,O19ACOUN,O19ADEAL,O19AEUTR,O19AESTT,O19AEXEC,O19AISDI,O19ALEVY,O19ALOCL,O19ALOCO,O19AMARG,O19AOTHR,O19APOST,O19AREGF,O19ASHIP,O19ASPCN,O19ASTAM,O19ASTEX,O19ATRAN,O19ATRAX,O19AVATA,O19AWITH,O19ACOAX,O19AACCA,O19ARESU,O19AOCMT" extractHint="DL,:,T,S" idHint="FL,0,10" B2BMap="" Validation=""/>
+                </block>
+                <lineAttribute id=":98A::VALU,:98C::VALU" isMandatory="false" EAImap="O98AVALU,O98CVALU" extractHint="DL,:,T,S" idHint="FL,0,10" B2BMap="" Validation=""/>
+                <lineAttribute id=":92B::EXCH" isMandatory="false" EAImap="O92BEXCH" extractHint="DL,:,T,S" idHint="FL,0,10" B2BMap="" Validation=""/>
+            </block>
+            <!-- End Repetitive Mandatory Subsequence E3 Amounts -->
+        </block>
+        <!-- End Mandatory Sequence E Settlement Details -->
+        <!-- Begin Optional Sequence F Other Partis -->
+        <block id="OTHRPRTY" isMandatory="false" isList="true" EAImap="OOTHRPRTY" extractHint="BR,:16R:OTHRPRTY\r\n,:16S:OTHRPRTY,T,S" idHint="EH,5,13" termString="\r\n" B2BMap="" Validation="">
+            <!-- Repetitive Field 95a -->
+            <block id="SB1" isMandatory="true" isList="true" EAImap="MBSB1" termString="\r\n" B2BMap="" Validation="">
+                <lineAttribute id=":95P::EXCH,:95Q::EXCH,:95R::EXCH,:95P::MEOR,:95Q::MEOR,:95R::MEOR,:95P::MERE,:95Q::MERE,:95R::MERE,:95P::TRRE,:95Q::TRRE,:95R::TRRE,:95C::INVE,:95P::INVE,:95Q::INVE,:95R::INVE,:95P::VEND,:95Q::VEND,:95R::VEND,:95P::TRAG,:95Q::TRAG,:95R::TRAG,:95S::ALTE" isMandatory="true" EAImap="O95PEXCH,O95QEXCH,O95REXCH,O95PMEOR,O95QMEOR,O95RMEOR,O95PMERE,O95QMERE,O95RMERE,O95PTRRE,O95QTRRE,O95RTRRE,O95PINVE,O95QINVE,O95RINVE,O95CINVE,O95PVEND,O95QVEND,O95RVEND,O95PTRAG,O95QTRAG,O95RTRAG,O95SALTE" extractHint="DL,:,T,S" idHint="FL,0,10" B2BMap="" Validation=""/>
+            </block>
+            <!-- Repetitive Field 97A -->
+            <block id="SB2" isMandatory="false" isList="true" EAImap="OBSB2" termString="\r\n" B2BMap="" Validation="">
+                <lineAttribute id=":97A::CASH,:97A::SAFE" isMandatory="true" EAImap="O97ACASH,O97ASAFE" extractHint="DL,:,T,S" idHint="FL,0,10" B2BMap="" Validation=""/>
+            </block>
+            <!-- Repetitive Field 70a -->
+            <block id="SB3" isMandatory="false" isList="true" EAImap="OBSB3" termString="\r\n" B2BMap="" Validation="">
+                <lineAttribute id=":70E::DECL,:70C::PACO,:70D::REGI" isMandatory="true" EAImap="O70EDECL,O70CPACO,O70DREGI" extractHint="DL,:,T,S" idHint="FL,0,10" B2BMap="" Validation=""/>
+            </block>
+            <lineAttribute id=":20C::PROC" isMandatory="false" EAImap="O20CPROC" extractHint="DL,:,T,S" idHint="FL,0,10" B2BMap="" Validation=""/>
+        </block>
+        <!-- End Optional Sequence F Other Partis -->
+    </block>
+    <!-- End Text Block -->
+        <block id="5:" isMandatory="false" isList="false" termString="" EAImap="B5" B2BMap="" Validation="" extractHint="BR,{,},T,S" idHint="FL,0,2">
+            <block id="SB1" isMandatory="false" isList="true" EAImap="OSB1" termString="" B2BMap="" Validation="">
+
+        <lineAttribute id="MAC:" isMandatory="false" EAImap="OMAC" B2BMap="" Validation="" extractHint="BR,{,},T,S" idHint="FL,0,4"/>
+        <lineAttribute id="CHK:" isMandatory="false" EAImap="OCHK" B2BMap="" Validation="" extractHint="BR,{,},T,S" idHint="FL,0,4"/>
+        <lineAttribute id="TNG:" isMandatory="false" EAImap="OTNG" B2BMap="" Validation="" extractHint="BR,{,},T,S" idHint="FL,0,4"/>
+        <lineAttribute id="PDE:" isMandatory="false" EAImap="OPDE" B2BMap="" Validation="" extractHint="BR,{,},T,S" idHint="FL,0,4"/>
+        <lineAttribute id="SYS:" isMandatory="false" EAImap="OSYS" B2BMap="" Validation="" extractHint="BR,{,},T,S" idHint="FL,0,4"/>
+        <lineAttribute id="PDM:" isMandatory="false" EAImap="OPDM" B2BMap="" Validation="" extractHint="BR,{,},T,S" idHint="FL,0,4"/>
+        <lineAttribute id="DLM:" isMandatory="false" EAImap="ODLM" B2BMap="" Validation="" extractHint="BR,{,},T,S" idHint="FL,0,4"/>
+        <lineAttribute id="PAC:" isMandatory="false" EAImap="OPAC" B2BMap="" Validation="" extractHint="BR,{,},T,S" idHint="FL,0,4"/>
+        <lineAttribute id="MRF:" isMandatory="false" EAImap="OMRF" B2BMap="" Validation="" extractHint="BR,{,},T,S" idHint="FL,0,4"/>
+    </block>
+</block>
+</block>
+

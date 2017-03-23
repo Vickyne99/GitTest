@@ -1,0 +1,478 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd"
+       default-init-method="init"
+       default-destroy-method="shutdown">
+
+
+    <!-- A 'DelayedRefresher' implementation; initially an IS-specific one. -->
+    <!-- Depends on policygateway because it needs to load web services.    -->
+    <!-- 'napMillis' prop specifies length of a nap between checks to see   -->
+    <!--    if IS has completed its start-up regimen.                       -->
+    <bean id="delayedRefresher"
+          class="com.softwareag.pg.init.ISDelayedRefresher"
+          init-method="refresh"
+          depends-on="policygateway, proxyLoader">
+
+        <property name="napMillis" value="${pg.delayedRefresher.napMillis}"/>
+    </bean>
+
+    <bean id="policygateway" class="com.softwareag.pg.PolicyGateway" factory-method="getInstance" init-method="init"
+          depends-on="consumerManager, vsdTransformer, IntervalManager">
+        <!--We need another bean to supply the ConfigurationContext for the Axis2 installation-->
+        <property name="configurationContextSupplier" ref="configurationcontextsupplier"/>
+        <!-- The PGConfiguration bean has references to the deployment handlers and other configuration-->
+        <property name="pgConfiguration" ref="pgconfiguration"/>
+        <property name="targetName" value="${pg.policygateway.targetName}"/>
+        <property name="deleteTempArtifacts" value="${pg.policygateway.deploy.receiver.deleteTempArtifacts}"/>
+        <!-- This is the location(relative to root of PG) of the modules/service directory. These are the modules/services that PG dynamically injects into the Axis Configuration-->
+        <property name="repositoryLocation" value="${pg.policygateway.repositoryLocation}"/>
+        <property name="deployer" ref="pgservicedeployer"/>
+    </bean>
+
+    <bean id="configurationcontextsupplier" class="com.softwareag.pg.config.ISConfigurationContextSupplier"/>
+	<bean id="rgHandler" class="com.softwareag.pg.config.ISRGHandler"/>
+
+    <bean id="pgconfiguration" class="com.softwareag.pg.config.PGConfiguration"
+          depends-on="pgServiceFactory, registeredNamesManager, aliasServiceAssociationManager">
+        <property name="creationHandlers">
+            <list>
+                <ref bean="rampartcreationhandler"/>
+                <ref bean="httpheaderscreationhandler"/>
+                <ref bean="pgmenpolicycreationhandler"/>
+                <ref bean="invokeesbhandler"/>
+				<ref bean="oauth2ScopeCreationHandler"/>
+				<ref bean="rest2SoapCreationHandler"/>
+				<ref bean="outboundPolicyCreationHandler"/>
+            </list>
+        </property>
+        <property name="deploymentHandlers">
+            <list>
+                <ref bean="rampartcreationhandler"/>
+                <ref bean="pgmenpolicyactiondeploymenthandler"/>
+                <ref bean="contextvardeploymenthandler"/>
+				<ref bean="defaultContentTypeDeploymentHandler"/>
+				<ref bean="serviceresultcachecreationhandler"/>
+				<ref bean="outboundPolicyCreationHandler"/>
+            </list>
+        </property>
+        <property name="backupFailedServices" value="${pg.backupFailedProxies}"/>
+        <property name="failedServicesDirPath" value="${pg.failedProxies.backupDir}"/>
+        <property name="schemaValidationPoolSize" value="10"/>
+        <property name="transformerPoolSize" value="5"/>
+        <property name="serviceManager" ref="serviceManager"/>
+        <property name="urlDispatcher" ref="urlDispatcher"/>
+    </bean>
+
+
+    <bean id="serviceManager" class="com.softwareag.pg.service.manager.GlobalServiceManager">
+        <constructor-arg>
+            <set>
+                <ref bean="soapServiceManager"/>
+                <ref bean="restServiceManager"/>
+            </set>
+        </constructor-arg>
+    </bean>
+
+    <bean id="soapServiceManager" class="com.softwareag.pg.service.manager.PGServiceManager">
+        <constructor-arg index="0" type="java.lang.Class" value="com.softwareag.pg.config.PGService"/>
+        <property name="serviceFinder" ref="soapServiceFinder"/>
+        <property name="serviceTree" ref="soapServiceTree"/>
+    </bean>
+    <bean id="soapServiceFinder" class="com.softwareag.pg.service.PGRestServiceFinder">
+        <property name="directive" value="ws"/>
+        <property name="serviceTree" ref="soapServiceTree"/>
+    </bean>
+    <bean id="soapServiceTree" class="com.softwareag.pg.dispatch.PGServicePathTrie"/>
+
+    <bean id="restServiceManager" class="com.softwareag.pg.service.manager.PGServiceManager">
+        <constructor-arg index="0" type="java.lang.Class" value="com.softwareag.pg.service.PGRestService"/>
+        <property name="serviceFinder" ref="restServiceFinder"/>
+        <property name="serviceTree" ref="restServiceTree"/>
+    </bean>
+    <bean id="restServiceFinder" class="com.softwareag.pg.service.PGRestServiceFinder">
+        <property name="directive" value="${pg.mediator.directive}"/>
+        <property name="serviceTree" ref="restServiceTree"/>
+    </bean>
+    <bean id="restServiceTree" class="com.softwareag.pg.dispatch.PGServicePathTrie"/>
+
+
+    <bean id="urlDispatcher" class="com.softwareag.pg.axisfree.DefaultUrlDispatcher">
+        <property name="directive" value="${pg.mediator.directive}"/>
+    </bean>
+
+    <bean id="mediatorHttpHandler" class="com.softwareag.pg.axisfree.MediatorHttpHandler">
+        <property name="serviceManager" ref="restServiceManager"/>
+        <property name="directive" value="${pg.mediator.directive}"/>
+        <property name="messageContextFactory" ref="restMessageContextFactory"/>
+    </bean>
+    <bean id="restMessageContextFactory" class="com.softwareag.pg.axisfree.RestMessageContextFactory">
+        <property name="serviceFinder" ref="restServiceFinder"/>
+    </bean>
+
+    <bean id="pgAxisFreeAddressEndpointFactoryBean"
+          class="com.softwareag.pg.axisfree.PGAxisFreeAddressEndpointFactoryBean"/>
+    <bean id="resultCacheManager" class="com.softwareag.pg.pgmen.cache.result.ResultCacheManager"/>
+
+    <bean name="pgservicedeployer" class="com.softwareag.pg.config.PGServiceDeployer">
+        <property name="config" ref="pgconfiguration"/>
+        <property name="serviceManager" ref="serviceManager"/>
+        <property name="serviceFactory" ref="pgServiceFactory"/>
+        <property name="proxyLoader" ref="proxyLoader"/>
+    </bean>
+
+    <bean id="serviceReader" class="com.softwareag.pg.config.tasks.PGServiceReader"
+          depends-on="IntervalManager, proxyLoader">
+        <property name="interval" value="${pg.serviceReader.interval}"/>
+        <!-- 15 secs -->
+    </bean>
+
+    <bean id="proxyLoader" class="com.softwareag.pg.config.ProxyLoader"
+          depends-on="pgServiceFactory, pgconfiguration">
+        <property name="deployer" ref="pgservicedeployer"/>
+        <property name="deployedVsInfoFactory" ref="deployedVsInfoFactory"/>
+        <property name="proxyLocation" value="${pg.proxyLoader.proxyLocation}"/>
+        <property name="serviceFactory" ref="pgServiceFactory"/>
+        <property name="serviceManager" ref="serviceManager"/>
+    </bean>
+
+    <bean name="deployedVsInfoFactory" class="com.softwareag.pg.integration.deployment.data.DeployedVsInfoFactory">
+        <property name="serviceFactory" ref="pgServiceFactory"/>
+    </bean>
+
+    <bean id="vsdTransformer" class="com.softwareag.pg.config.VSTransformer">
+        <property name="xslFilePath" value="${pg.vsdTransformer.xslFilePath}"/>
+    </bean>
+
+    <bean id="filePropertiesManager" class="com.softwareag.pg.ui.FilePropertiesManager"
+          depends-on="uddiPublisher,EmailSender,userTarget,communityTarget,csSnmpTarget">
+        <property name="observers">
+            <map>
+                <entry key="snmp-config-edit">
+                    <bean class="com.softwareag.pg.pgmen.events.snmp.PropertiesObserver"/>
+                </entry>
+                <entry key="email-config-edit">
+                    <bean class="com.softwareag.pg.pgmen.events.smtp.PropertiesObserver"/>
+                </entry>
+                <entry key="centrasite-config-edit">
+                    <bean class="com.softwareag.pg.pgmen.events.uddi.PropertiesObserver"/>
+                </entry>
+				<entry key="nerv-config-edit">
+                    <bean class="com.softwareag.pg.pgmen.events.eda.PropertiesObserver"/>
+                </entry>
+				<entry key="elasticsearch-config-edit">
+                    <bean class="com.softwareag.pg.pgmen.events.es.PropertiesObserver"/>
+                </entry>
+				<entry key="apiportal-config-edit">
+                    <bean class="com.softwareag.pg.pgmen.events.apiportal.PropertiesObserver"/>
+                </entry>
+                <entry key="general-config-edit">
+                    <bean class="com.softwareag.pg.ui.GeneralPageObserver"/>
+                </entry>
+				
+            </map>
+        </property>
+    </bean>
+
+
+    <!--Initialize the ConsumerManager to use the correct consumer store -->
+    <bean id="consumerManager" class="com.softwareag.pg.consumers.ConsumerManager" factory-method="getInstance">
+        <property name="keystoreMgr" ref="keystore"/>
+        <property name="store" ref="jaxbFileStore"/>
+    </bean>
+
+    <!-- By default, PG will use the file store configured below -->
+    <bean id="jaxbFileStore" class="com.softwareag.pg.consumers.JaxbFileStore">
+        <property name="consumerFileStore" value="${pg.jaxbFileStore.consumerFileStore}"/>
+    </bean>
+	
+    <bean id="consumerFinder" class="com.softwareag.pg.consumers.ConsumerFinder"/>
+
+    <bean id="registeredNamesManager" class="com.softwareag.pg.consumers.RegisteredConsumerNamesManager"
+          factory-method="getInstance">
+        <property name="store" ref="jaxbNamesStore"/>
+    </bean>
+
+    <!-- By default, PG will use the file store configured below -->
+    <bean id="jaxbNamesStore" class="com.softwareag.pg.consumers.JaxbNamesStore">
+        <property name="namesFileStore" value="${pg.jaxbNamesStore.namesFileStore}"/>
+    </bean>
+
+    <bean name="portsUpdater" class="com.softwareag.pg.ui.PortsUpdater"/>
+    <bean name="lbUpdater" class="com.softwareag.pg.ui.LoadBalancerUpdater"/>
+	
+	
+	<!--
+	 Content type handler
+	-->
+	<bean name="contentTypeJaxbStore" class="com.softwareag.pg.axis2.contenttype.ContentTypeStore"/>
+	
+    <bean name="contentTypeHandler" class="com.softwareag.pg.axis2.contenttype.CustomContentTypesManager">
+	   <property name="contentTypeStore" ref="contentTypeJaxbStore"/>
+	</bean>
+	
+    <bean id="downtimeDetector" class="com.softwareag.pg.config.downtime.DowntimeDetector">
+        <property name="patternFilePath" value="resources/downtime-patterns.txt"/>
+    </bean>
+
+    <bean id="policyviolationDetector" class="com.softwareag.pg.pgmen.axis2.PolicyViolationDetector">
+        <property name="patternFilePath" value="resources/policyviolation-patterns.txt"/>
+    </bean>
+
+    <bean id="pgEndpointFactory" class="com.softwareag.pg.config.endpoints.PGEndpointFactory" factory-method="get">
+        <property name="factories">
+            <list>
+                <bean class="com.softwareag.pg.config.endpoints.loadbalance.LoadbalanceEndpointFactory"/>
+                <bean class="com.softwareag.pg.config.endpoints.failover.FailoverEndpointFactory"/>
+                <bean class="com.softwareag.pg.config.endpoints.address.AddressEndpointFactory"/>
+            </list>
+        </property>
+    </bean>
+    
+    <bean id="serverBean" class="com.softwareag.pg.init.ISServerBean" />
+    
+
+    <bean id="localTransportReceiverInitializer" class="com.softwareag.pg.axis2.LocalTransportReceiverInitializer">
+        <property name="cfgCtxSupplier" ref="configurationcontextsupplier"/>
+    </bean>
+	
+	<bean id="routingEPConfig" class="com.softwareag.pg.config.endpoints.RoutingEPConfiguration" factory-method="get_instance" init-method="init" destroy-method="destroy">
+	    <property name="readTimeout" value="${pg.endpoint.readTimeout}"/>
+		<property name="connectionTimeout" value="${pg.endpoint.connectionTimeout}"/>
+	</bean>
+
+
+
+    <!--  ********************* Deployment/Creation Handlers used by PGConfiguration ******************** -->
+
+    <bean id="serviceFaultConfig" class="com.softwareag.pg.config.PGServiceGlobalConfig"/>
+    <bean id="httpheaderscreationhandler" class="com.softwareag.pg.mediators.HTTPHeadersCreationHandler"/>
+    <bean id="pgmenpolicycreationhandler" class="com.softwareag.pg.mediators.factory.PgMenPolicyCreationHandler"/>
+    <bean id="invokeesbhandler" class="com.softwareag.pg.config.InvokeESBHandler"/>
+	<bean id="serviceresultcachecreationhandler" class="com.softwareag.pg.mediators.ServiceResultCacheDeploymentHandler"/>
+
+    <bean id="pgmenpolicyactiondeploymenthandler" class="com.softwareag.pg.pgmen.PolicyActionDeploymentHandler"/>
+    <bean id="contextvardeploymenthandler" class="com.softwareag.pg.ctxvar.ContextVariableServiceDeploymentHandler"/>
+	<bean id="defaultContentTypeDeploymentHandler" class="com.softwareag.pg.axis2.contenttype.DefaultContentTypeDeploymentHandler"/>
+	
+    <bean id="oauth2ScopeCreationHandler" class="com.softwareag.pg.mediators.OAuth2ScopeCreationHandler"/>
+	
+	<bean id="rest2SoapCreationHandler" class="com.softwareag.pg.rest2soap.RESTToSOAPCreationHandler"/>
+	<bean id="outboundPolicyCreationHandler" class="com.softwareag.pg.mediators.MessageOutboundCreationHandler"/>
+
+    <!--  ********************* END Deployment/Creation Handlers used by PGConfiguration ******************** -->
+    <bean id="jmstransportlistener" class="com.softwareag.pg.axis2.transports.PGJMSTransportListener"
+          depends-on="policygateway" destroy-method="stop"/>
+     <bean id="httpResponseCodeCallback" class="com.softwareag.pg.axis2.transports.ISHTTPResponseCodeCallback">
+        	<property name="handleClientErrorCode" value="false"/>
+	</bean>
+	
+    <!--<bean class="com.softwareag.pg.config.PGLoggingBean"/>-->
+
+    <bean class="com.softwareag.pg.ctxvar.ContextVariableManager" factory-method="inst"/>
+	
+	
+	<!--
+	   All beans related to Aliases follows.	   
+	-->
+	
+	<bean id="aliasesManagerProvider" class="com.softwareag.pg.aliases.type.AliasesManagerProvider">
+        <property name="aliasManagers">
+            <map>
+                <entry key="simpleAlias">
+					<ref bean="simpleAliasesManager"/>
+                </entry>
+                <entry key="endpointAlias">
+					<ref bean="endpointAliasesManager"/>
+                </entry>
+                <entry key="secureAlias">
+					<ref bean="secureAliasesManager"/>
+                </entry>
+                <entry key="esbServiceAlias">
+					<ref bean="esbServiceAliasManager"/>
+                </entry>
+				<entry key="xsltAlias">
+					<ref bean="xsltAliasManager"/>
+                </entry>
+            </map>
+        </property>
+    </bean>
+	
+	<bean id="clusteredAliasesBaseDeployment" class="com.softwareag.pg.integration.deployment.cluster.aliases.ClusteredAliasesBaseDeployment"/>
+	
+	<bean id="simpleAliasesManager" class="com.softwareag.pg.aliases.type.SimpleAliasesManager">
+	     <property name="deploymentHandler" ref="simpleAliasesDeploymentManager"/>
+		 <property name="clusteredDeploymentHandler" ref="simpleAliasesClusteredDeploymentManager"/>
+	</bean>
+	
+	<bean id="simpleAliasesDeploymentManager" class="com.softwareag.pg.integration.deployment.aliases.SimpleAliasDeploymentManager"/>
+
+	<bean id="simpleAliasesClusteredDeploymentManager" class="com.softwareag.pg.integration.deployment.cluster.aliases.SimpleAliasesClusteredDeploymentManager">
+		<constructor-arg ref="clusteredAliasesBaseDeployment"/>
+	</bean>
+	
+	<bean id="endpointAliasesManager" class="com.softwareag.pg.aliases.type.EndpointAliasesManager">
+	     <property name="deploymentHandler" ref="endpointAliasesDeploymentManager"/>
+		 <property name="clusteredDeploymentHandler" ref="endpointAliasesClusteredDeploymentManager"/>
+	</bean>
+	
+	<bean id="endpointAliasesDeploymentManager" class="com.softwareag.pg.integration.deployment.aliases.EndpointAliasesDeploymentManager"/>
+	
+	<bean id="endpointAliasesClusteredDeploymentManager" class="com.softwareag.pg.integration.deployment.cluster.aliases.EndpointAliasesClusteredDeploymentManager">
+		<constructor-arg ref="clusteredAliasesBaseDeployment"/>
+	</bean>
+
+
+	<bean id="secureAliasesManager" class="com.softwareag.pg.aliases.type.SecureAliasesManager">
+	     <property name="deploymentHandler" ref="secureAliasesDeploymentManager"/>
+		  <property name="clusteredDeploymentHandler" ref="secureAliasesClusteredDeploymentManager"/>
+		 <property name="passman" ref="passman"/>
+	</bean>
+	
+	<bean id="secureAliasesDeploymentManager" class="com.softwareag.pg.integration.deployment.aliases.SecureAliasDeploymentManager"/>
+	
+	<bean id="secureAliasesClusteredDeploymentManager" class="com.softwareag.pg.integration.deployment.cluster.aliases.SecureAliasesClusteredDeploymentManager">
+		<constructor-arg ref="clusteredAliasesBaseDeployment"/>
+	</bean>
+
+	<bean id="esbServiceAliasManager" class="com.softwareag.pg.aliases.type.ESBServiceAliasManager">
+	     <property name="deploymentHandler" ref="esbServiceAliasDeploymentManager"/>
+		  <property name="clusteredDeploymentHandler" ref="esbServiceAliasClusteredDeploymentManager"/>
+	</bean>
+	
+	<bean id="esbServiceAliasDeploymentManager" class="com.softwareag.pg.integration.deployment.aliases.ESBServiceAliasDeploymentManager"/>
+	
+	<bean id="esbServiceAliasClusteredDeploymentManager" class="com.softwareag.pg.integration.deployment.cluster.aliases.ESBServiceAliasClusteredDeploymentManager">
+		<constructor-arg ref="clusteredAliasesBaseDeployment"/>
+	</bean>
+	
+	<bean id="xsltAliasManager" class="com.softwareag.pg.aliases.type.XSLTAliasManager">
+	     <property name="deploymentHandler" ref="xsltAliasDeploymentManager"/>
+		  <property name="clusteredDeploymentHandler" ref="xsltAliasClusteredDeploymentManager"/>
+		  <property name="aliasResourceFolder" value="${pg.jaxbFileStore.aliasResourceFolder}"/>
+	</bean>
+	
+	<bean id="xsltAliasDeploymentManager" class="com.softwareag.pg.integration.deployment.aliases.XSLTAliasDeploymentManager"/>
+	
+	<bean id="xsltAliasClusteredDeploymentManager" class="com.softwareag.pg.integration.deployment.cluster.aliases.XSLTAliasClusteredDeploymentManager">
+		<constructor-arg ref="clusteredAliasesBaseDeployment"/>
+	</bean>
+	
+    <!-- By default, PG will use the Aliases file store configured below -->
+    <bean id="jaxbAliasesFileStore" class="com.softwareag.pg.aliases.store.JaxbAliasesStore">
+        <property name="aliasesFileStore" value="${pg.jaxbFileStore.aliasesFileStore}"/>
+    </bean>
+
+	<!--Initialize the AliasManager and to use the correct alias store -->
+    <bean id="aliasesController" class="com.softwareag.pg.aliases.type.AliasesController" factory-method="getInstance">
+		<property name="provider" ref="aliasesManagerProvider"/>
+        <property name="store" ref="jaxbAliasesFileStore"/>
+    </bean>
+	
+	
+	<bean id="aliasServiceAssociationManager" class="com.softwareag.pg.aliases.association.AliasServiceAssociationManager"
+          factory-method="getInstance">
+        <property name="store" ref="jaxbAliasServiceAssociationStore"/>
+    </bean>
+
+
+    <bean id="jaxbAliasServiceAssociationStore" class="com.softwareag.pg.aliases.association.store.JaxbAliasServiceAssociationStore">
+        <property name="namesFileStore" value="${pg.jaxbAliasServiceAssociationStore.FileStore}"/>
+    </bean>
+	
+	<bean id="pgUpdateManager" class="com.softwareag.pg.update.PGUpdateManager">
+    </bean>
+	
+	<!--
+	   All beans related to REST2SOAP Conversion.
+	-->
+	
+	<bean id="contentTypesManager" class="com.softwareag.pg.rest2soap.contentTypes.ContentTypesManager">
+        <property name="contentTypesHandlers">
+            <map>
+                <entry key="application/xml">
+					<ref bean="applicationXMLConvertor"/>
+                </entry>
+				<entry key="application/x-www-form-urlencoded">
+					<ref bean="urlencodedConvertor"/>
+                </entry>
+				<entry key="application/json">
+					<ref bean="jsonConvertor"/>
+                </entry>
+				<entry key="application/json/badgerfish">
+					<ref bean="badgerfishJsonConvertor"/>
+                </entry>
+				<entry key="multipart/form-data">
+					<ref bean="multipartConvertor"/>
+                </entry>
+				<entry key="text/xml">
+					<ref bean="rawXMLConvertor"/>
+                </entry>
+            </map>
+        </property>
+    </bean>
+	
+	<bean id="applicationXMLConvertor" class="com.softwareag.pg.rest2soap.contentTypes.ApplicationXMLConvertor"/>
+	<bean id="urlencodedConvertor" class="com.softwareag.pg.rest2soap.contentTypes.XFormURLEncodedConvertor"/>
+	<bean id="jsonConvertor" class="com.softwareag.pg.rest2soap.contentTypes.JsonConvertor"/>
+	<bean id="badgerfishJsonConvertor" class="com.softwareag.pg.rest2soap.contentTypes.JsonBadgerfishConvertor"/>
+	<bean id="rawXMLConvertor" class="com.softwareag.pg.rest2soap.contentTypes.RawXMLConvertor"/>
+	<bean id="multipartConvertor" class="com.softwareag.pg.rest2soap.contentTypes.MultipartFormDataConvertor">
+	  <property name="bodyContentTypes">
+	     <list>
+		   <value>application/json</value>
+		    <value>application/json/badgerfish</value>
+		   <value>application/xml</value>
+		 </list>
+	  </property>
+	</bean>
+	
+	<bean id="defaultContentTypeHandler" class="com.softwareag.pg.axis2.contenttype.DefaultContentTypeHandlerImpl" factory-method="getInstance" init-method="init"/>
+	
+	<!--
+		Custom Error Handling
+	-->
+	<bean id="textErrorMessageFactory"  class="com.softwareag.pg.mediators.errorprocessing.factory.TextErrorMessageFactory"/>
+	
+	<bean id="jsonErrorMessageFactory"  class="com.softwareag.pg.mediators.errorprocessing.factory.JsonErrorMessageFactory"/>
+
+	<bean id="xmlErrorMessageFactory"  class="com.softwareag.pg.mediators.errorprocessing.factory.XMLErrorMessageFactory"/>
+
+	<bean id="jsonErrorMessageHandler"  class="com.softwareag.pg.mediators.errorprocessing.JSONErrorMessageHandler"/>
+	
+	<bean id="xmlErrorMessageHandler"  class="com.softwareag.pg.mediators.errorprocessing.XMLErrorMessageHandler"/>
+	
+	<bean id="textErrorMessageHandler"  class="com.softwareag.pg.mediators.errorprocessing.TextMessageHandler"/>
+		
+	<bean id="errorMessagesManager" class="com.softwareag.pg.mediators.errorprocessing.ErrorMessagesManager">
+	<!-- All factories that are used for building the errorMessages-->
+        <property name="errorMessageFactories">
+            <map>
+                <entry key="text">
+					<ref bean="textErrorMessageFactory"/>
+                </entry>
+				<entry key="json">
+					<ref bean="jsonErrorMessageFactory"/>
+                </entry>
+				<entry key="xml">
+					<ref bean="xmlErrorMessageFactory"/>
+                </entry>
+            </map>
+        </property>
+	<!-- All the message handlers-->	
+		<property name="errorMessageHandlers">
+            <map>
+                <entry key="application/json">
+					<ref bean="jsonErrorMessageHandler"/>
+                </entry>
+				<entry key="application/xml">
+					<ref bean="xmlErrorMessageHandler"/>
+                </entry>
+				<entry key="default">
+					<ref bean="textErrorMessageHandler"/>
+                </entry>
+            </map>
+        </property>
+    </bean>
+</beans>

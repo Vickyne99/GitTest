@@ -1,0 +1,627 @@
+package com.wm.fin.bic;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.Hashtable;
+import java.util.Map;
+import java.util.Vector;
+
+import junit.framework.TestCase;
+
+import com.wm.app.b2b.client.ServiceException;
+import com.wm.app.tn.db.Counter;
+import com.wm.app.tn.db.Datastore;
+import com.wm.data.IData;
+import com.wm.data.IDataCursor;
+import com.wm.data.IDataFactory;
+import com.wm.data.IDataUtil;
+import com.wm.data.ValuesEmulator;
+import com.wm.fin.is.ISInfo;
+import com.wm.fin.is.ISOps;
+
+public class BICOpsTest extends TestCase {
+	
+
+	// search this hash table first. If not found, then go to database.
+	
+	static Hashtable bicHash = new Hashtable();
+	private static String BIC_DATA_SEPERATOR = "\t";
+	private static String MOD_FLAG_DELETE = "D";
+	
+	/*
+	 * Read the given file, parse it and insert each
+	 * BIC code info into the database
+	 *
+	 */
+	public static final void insertBIC(String fileName, String bicType) 
+	throws Exception {
+	
+		String realName = fileName.replace('\\', File.separatorChar);
+        realName = realName.replace('/', File.separatorChar);
+        FileReader fr = new FileReader(realName);
+		BufferedReader reader = new BufferedReader(fr);
+		
+		PreparedStatement stmt = null;
+		Connection conn = Datastore.getConnection(); // get DB connection
+		try {
+				// delete all rows in BIC table
+				deleteBICTable(conn);
+				 
+				// prepare statement once for all the inserts.
+				stmt = conn.prepareStatement(BICSQL.INSERT_BIC_INFO);
+				String line;
+				while ((line = reader.readLine())!=null) {
+					BICInfo bc = new BICInfo();
+					populateBICInfo(line,bc);
+					insertBICInfo(stmt,bc);	
+					bc = null;															
+			
+			    }
+		}
+		finally {
+			reader.close();
+			fr.close();
+			dispose(conn,stmt,null);
+		}							
+		
+	}
+	
+	/*
+	 * Delete the entire BIC table
+	 */
+	public static final void deleteBICTable(Connection conn) throws Exception {
+		
+		PreparedStatement stmt = null;
+		try {
+				stmt = conn.prepareStatement(BICSQL.DELETE_BIC_TABLE);													
+				stmt.executeUpdate();
+		}
+		finally {
+			dispose(null,stmt,null);
+		}
+		
+	}
+	
+	/*
+	 *
+	 * Insert a single BIC code information into the database
+	 *
+	 */
+	public static final void insertBICInfo(PreparedStatement stmt, BICInfo bc) 
+	throws Exception {
+		
+		stmt.setString(1,Counter.next());
+		stmt.setString(2,(String) bc.ht.get(bc.TAG));
+		stmt.setString(3,(String) bc.ht.get(bc.MODFLAG));
+		stmt.setString(4,(String) bc.ht.get(bc.RECORD_KEY));
+		stmt.setString(5,(String) bc.ht.get(bc.INSTITUTION));		
+		stmt.setString(6,(String) bc.ht.get(bc.CITY));				
+		stmt.setString(7,(String) bc.ht.get(bc.BRANCH_INFO));
+		stmt.setString(8,(String) bc.ht.get(bc.BIC_CODE));
+		stmt.setString(9,(String) bc.ht.get(bc.BRANCH_CODE));
+		stmt.setString(10,(String) bc.ht.get(bc.UNIQUE_BIC_CODE));		
+		stmt.setString(11,(String) bc.ht.get(bc.UNIQUE_BRANCH_CODE));			
+		stmt.setString(12,(String) bc.ht.get(bc.IBAN_BIC_CODE));	
+		stmt.setString(13,(String) bc.ht.get(bc.IBAN_BRANCH_CODE));
+		stmt.setString(14,(String) bc.ht.get(bc.ROUTING_BIC_CODE));		
+		stmt.setString(15,(String) bc.ht.get(bc.ROUTING_BRANCH_CODE));				
+		stmt.setString(16,(String) bc.ht.get(bc.PARENT_BANK_CODE));
+		stmt.setString(17,(String) bc.ht.get(bc.COUNTRY_CODE));		
+		stmt.setString(18,(String) bc.ht.get(bc.NATIONAL_ID));	
+		stmt.setString(19,(String) bc.ht.get(bc.UNIQUE_NATIONAL_ID));
+		stmt.setString(20,(String) bc.ht.get(bc.IBAN_COUNTRY_CODE));
+		stmt.setString(21,(String) bc.ht.get(bc.IBAN_NATIONAL_ID));	
+		stmt.setString(22,(String) bc.ht.get(bc.UNIQUE_IBAN_NATIONAL_ID));
+		stmt.setString(23,(String) bc.ht.get(bc.OTHER_NATIONAL_ID_1));
+		stmt.setString(24,(String) bc.ht.get(bc.OTHER_NATIONAL_ID_2));
+		stmt.setString(25,(String) bc.ht.get(bc.CHIPS_UID));
+		stmt.setString(26,(String) bc.ht.get(bc.SUBTYPE));
+		stmt.setString(27,(String) bc.ht.get(bc.SERVICE_CODES));
+		stmt.setString(28,(String) bc.ht.get(bc.BRANCH_QUALIFIER));
+		stmt.setString(29,(String) bc.ht.get(bc.SPECIAL_CODE));
+		stmt.setString(30,(String) bc.ht.get(bc.PHYSICAL_ADDRESS_1));
+		stmt.setString(31,(String) bc.ht.get(bc.PHYSICAL_ADDRESS_2));
+		stmt.setString(32,(String) bc.ht.get(bc.PHYSICAL_ADDRESS_3));
+		stmt.setString(33,(String) bc.ht.get(bc.PHYSICAL_ADDRESS_4));
+		stmt.setString(34,(String) bc.ht.get(bc.ZIPCODE));
+		stmt.setString(35,(String) bc.ht.get(bc.LOCATION));
+		stmt.setString(36,(String) bc.ht.get(bc.COUNTRYNAME));
+		stmt.setString(37,(String) bc.ht.get(bc.POBNUMBER));
+		stmt.setString(38,(String) bc.ht.get(bc.POBZIPCODE));
+		stmt.setString(39,(String) bc.ht.get(bc.POBLOCATION));
+		stmt.setString(40,(String) bc.ht.get(bc.POBCOUNTRYNAME));
+		stmt.setString(41,(String) bc.ht.get(bc.NATIONAL_ID_EXPIRY_DATE));
+		stmt.setString(42,(String) bc.ht.get(bc.UPDATEDATE));		
+		stmt.executeUpdate();					    							
+		
+	}
+	
+	/*
+	 * Rut work. Set the member variables of BICInfo
+	 *
+	 */	 
+	public static final void populateBICInfo(String s, BICInfo bc) {
+		String[] values = s.split(BIC_DATA_SEPERATOR);
+		// populate BIC entries
+		bc.ht.put(BICInfo.TAG,values[0]);
+		bc.ht.put(BICInfo.MODFLAG,values[1]);
+		bc.ht.put(BICInfo.RECORD_KEY,values[2]);
+		bc.ht.put(BICInfo.INSTITUTION,values[3]);
+		bc.ht.put(BICInfo.CITY,values[4]);
+		bc.ht.put(BICInfo.BRANCH_INFO,values[5]);
+		bc.ht.put(BICInfo.BIC_CODE,values[6]);
+		bc.ht.put(BICInfo.BRANCH_CODE,values[7]);
+		bc.ht.put(BICInfo.UNIQUE_BIC_CODE,values[8]);
+		bc.ht.put(BICInfo.UNIQUE_BRANCH_CODE,values[9]);
+		bc.ht.put(BICInfo.IBAN_BIC_CODE,values[10]);
+		bc.ht.put(BICInfo.IBAN_BRANCH_CODE,values[11]);
+		bc.ht.put(BICInfo.ROUTING_BIC_CODE,values[12]);
+		bc.ht.put(BICInfo.ROUTING_BRANCH_CODE,values[13]);
+		bc.ht.put(BICInfo.PARENT_BANK_CODE,values[14]);
+		bc.ht.put(BICInfo.COUNTRY_CODE,values[15]);
+		bc.ht.put(BICInfo.NATIONAL_ID,values[16]);
+		bc.ht.put(BICInfo.UNIQUE_NATIONAL_ID,values[17]);
+		bc.ht.put(BICInfo.IBAN_COUNTRY_CODE,values[18]);
+		bc.ht.put(BICInfo.IBAN_NATIONAL_ID,values[19]);
+		bc.ht.put(BICInfo.UNIQUE_IBAN_NATIONAL_ID,values[20]);
+		bc.ht.put(BICInfo.OTHER_NATIONAL_ID_1,values[21]);
+		bc.ht.put(BICInfo.OTHER_NATIONAL_ID_2,values[22]);
+		bc.ht.put(BICInfo.CHIPS_UID,values[23]);
+		bc.ht.put(BICInfo.SUBTYPE,values[24]);
+		bc.ht.put(BICInfo.SERVICE_CODES,values[25]);
+		bc.ht.put(BICInfo.BRANCH_QUALIFIER,values[26]);
+		bc.ht.put(BICInfo.SPECIAL_CODE,values[27]);
+		bc.ht.put(BICInfo.PHYSICAL_ADDRESS_1,values[28]);
+		bc.ht.put(BICInfo.PHYSICAL_ADDRESS_2,values[29]);
+		bc.ht.put(BICInfo.PHYSICAL_ADDRESS_3,values[30]);
+		bc.ht.put(BICInfo.PHYSICAL_ADDRESS_4,values[31]);
+		bc.ht.put(BICInfo.ZIPCODE,values[32]);
+		bc.ht.put(BICInfo.LOCATION,values[33]);
+		bc.ht.put(BICInfo.COUNTRYNAME,values[34]);
+		bc.ht.put(BICInfo.POBNUMBER,values[35]);
+		bc.ht.put(BICInfo.POBZIPCODE,values[36]);
+		bc.ht.put(BICInfo.POBLOCATION,values[37]);
+		bc.ht.put(BICInfo.POBCOUNTRYNAME,values[38]);
+		bc.ht.put(BICInfo.NATIONAL_ID_EXPIRY_DATE,values[39]);
+		bc.ht.put(BICInfo.UPDATEDATE,values[40]);	
+				
+	}
+	
+						
+	
+	/*
+	 * Check to see if BIC code is present in the Hash table.
+	 * If it is not present, then retrieve from database and insert into
+	 * hash table for subsequent checks.
+	 *
+	 */
+	public static final boolean validateBICCode(Object code) throws Exception {
+	
+		if(code == null)
+			throw new Exception("Input must be a String or String[]");
+			
+		String codeList[] = new String[1];
+		
+	    if(code instanceof String)
+	    	codeList[0] = (String)code;
+	    else if(code instanceof String[])
+	    	codeList = (String[]) code;
+	    else
+	    	throw new Exception("Input must be a String or String[]");
+	    	    
+	    	
+	    boolean found = true;
+	    Hashtable ht = new Hashtable(codeList.length);
+	    for(int i = 0; i < codeList.length; i++) {
+		    Object obj = bicHash.get(codeList[i]);
+		  	if(obj == null) {
+		  		found = false;
+		  		ht.put(codeList[i],"false");
+		  	}
+		  	else
+		  		ht.put(codeList[i],"true");		  				  		
+	     }
+	     
+	     if(found)
+	     	return found;
+	      
+		Connection conn = Datastore.getConnection(); // get DB connection  
+	    PreparedStatement stmt = null;
+	    ResultSet set = null;
+		try {				
+	    
+		    // Prepare statement just once
+		    stmt = conn.prepareStatement(BICSQL.BIC_BY_FULL_CODE,
+		    							 ResultSet.TYPE_SCROLL_INSENSITIVE,
+	     								 ResultSet.CONCUR_READ_ONLY);
+		    for(int j = 0; j < codeList.length; j++) {
+		    	String bool =  (String) ht.get(codeList[j]);
+		    	
+		    	if(bool.equals("true"))
+		    	  continue;
+		    	  
+						String[] BICandBranchCode = BICUtils.getBICAndBranchCode(codeList[j]);				
+						stmt.setString(1,BICandBranchCode[0]);													
+						stmt.setString(2,BICandBranchCode[1]);													
+						set = stmt.executeQuery();
+						
+						if(!set.first())
+						    return false;
+											
+						String modFlag =  set.getString(BICInfo.MODFLAG);
+						// If modFlag == 'D', the Bank Code has been deleted
+						// and is no longer valid.
+						if(modFlag != null && modFlag.equalsIgnoreCase("D"))
+							return false;								
+						for(int i = 0; i < codeList.length; i++)
+							bicHash.put(codeList[i],new String(""));  
+						 
+			}
+		}
+		finally {
+			dispose(conn,stmt,set);
+		}
+	  
+	  return true;			
+		
+	}
+	
+	/*
+	 * Check to see if BICKEY is present in the Hash table.
+	 * If it is not present, then retrieve from database and insert into
+	 * hash table for subsequent checks.
+	 *
+	 */
+	public static final boolean validateBICKey(Object key) throws Exception {
+	
+		if(key == null)
+			throw new Exception("Input must be a String or String[]");
+			
+		String keyList[] = new String[1];
+		
+	    if(key instanceof String)
+	    	keyList[0] = (String)key;
+	    else if(key instanceof String[])
+	    	keyList = (String[]) key;
+	    else
+	    	throw new Exception("Input must be a String or String[]");
+	    	    
+	    	
+	    boolean found = true;
+	    Hashtable ht = new Hashtable(keyList.length);
+	    for(int i = 0; i < keyList.length; i++) {
+		    Object obj = bicHash.get(keyList[i]);
+		  	if(obj == null) {
+		  		found = false;
+		  		ht.put(keyList[i],"false");
+		  	}
+		  	else
+		  		ht.put(keyList[i],"true");		  				  		
+	     }
+	     
+	     if(found)
+	     	return found;
+	      
+		Connection conn = Datastore.getConnection(); // get DB connection  
+	    PreparedStatement stmt = null;
+	    ResultSet set = null;
+		try {				
+	    
+		    // Prepare statement just once
+		    stmt = conn.prepareStatement(BICSQL.BIC_BY_UNIQUE_BIC_CODE,
+		    							 ResultSet.TYPE_SCROLL_INSENSITIVE,
+	     								 ResultSet.CONCUR_READ_ONLY);
+		    for(int j = 0; j < keyList.length; j++) {
+		    	String bool =  (String) ht.get(keyList[j]);
+		    	
+		    	if(bool.equals("true"))
+		    	  continue;
+		    	  
+										
+						stmt.setString(1,keyList[j]);													
+						set = stmt.executeQuery();
+						
+						if(!set.first())
+						    return false;
+						
+						String modFlag =  set.getString(BICInfo.MODFLAG);
+						// If modFlag == 'D', the Bank Code has been deleted
+						// and is no longer valid.
+						if(modFlag != null && modFlag.equalsIgnoreCase(MOD_FLAG_DELETE))
+							return false;								
+						
+						bicHash.put(key,new String(""));  
+						 
+			}
+		}
+		finally {
+			dispose(conn,stmt,set);
+		}
+	  
+	  return true;	
+		
+		
+	}
+	
+	public static final BICInfo setBICInfo(ResultSet set) throws Exception {
+		
+		BICInfo bc = new BICInfo();
+				
+		bc.ht.put(BICInfo.BIC_CODE,set.getString(BICInfo.BIC_CODE));
+		
+		bc.ht.put(BICInfo.INSTITUTION,set.getString(BICInfo.INSTITUTION));
+		bc.ht.put(BICInfo.BRANCH_CODE,set.getString(BICInfo.BRANCH_CODE));
+		bc.ht.put(BICInfo.CITY,set.getString(BICInfo.CITY));
+		bc.ht.put(BICInfo.MODFLAG,set.getString(BICInfo.MODFLAG));
+		bc.ht.put(BICInfo.SUBTYPE,set.getString(BICInfo.SUBTYPE));
+		bc.ht.put(BICInfo.SERVICE_CODES,set.getString(BICInfo.SERVICE_CODES));
+		bc.ht.put(BICInfo.PHYSICAL_ADDRESS_1,set.getString(BICInfo.PHYSICAL_ADDRESS_1));
+		bc.ht.put(BICInfo.LOCATION,set.getString(BICInfo.LOCATION));
+		bc.ht.put(BICInfo.COUNTRYNAME,set.getString(BICInfo.COUNTRYNAME));
+		return bc;
+
+	}
+	
+	
+	/*
+	 * This method builds a static SQL statement and queries the database
+	 * for matching records.
+	 */
+	public static IData[] getBICInfo(IData data) throws Exception {
+		
+		Connection conn = Datastore.getConnection(); // get DB connection  
+	    Statement stmt = null;
+	    ResultSet set = null;
+		try {
+			String sql = BICSQL.buidSQLStatement(data);
+			stmt = conn.createStatement();
+
+            set = stmt.executeQuery(sql);
+            
+            Vector v = new Vector();
+            int count=0;
+            while(true) {
+            	if(!set.next())
+            		break; 
+            	v.addElement(setBICInfo(set).getIData());
+            	count++;
+            	if (count == 50)
+            	   break;
+            }
+            if(count == 0)
+            	throw new Exception("No records found");   
+            	
+            IData[] idata = new IData[v.size()];
+            for(int i = 0; i < v.size(); i++) {
+             idata[i] = (IData) v.elementAt(i);
+            }
+            return idata;
+            
+            
+		}
+		finally {
+			dispose(conn,stmt,set);
+		}									
+		
+	}
+	
+	
+	public static Map lookUpInfoForCCAndNationalID(String cc, String nationalId) throws Exception {
+		
+		Connection conn = Datastore.getConnection(); // get DB connection  
+	    PreparedStatement stmt = null;
+	    ResultSet set = null;
+		try {
+			stmt = conn.prepareStatement(BICSQL.CC_AND_UN_NATIONAL_ID_LOOKUP);
+			stmt.setString(1, cc);
+			stmt.setString(2, nationalId);
+			set = stmt.executeQuery();
+			if(set.next()) {
+				return BICInfo.getBICInfoMap(set);
+			} else {
+				// todo : internationalize excpetion
+				return null;
+			}
+		}
+		finally {
+			dispose(conn,stmt,set);
+		}									
+		
+	}
+	
+	public static Map lookUpInfoForCCAndInsNameAndCityHeading(String cc, String insName, String cityHeading) throws Exception {
+		
+		Connection conn = Datastore.getConnection(); // get DB connection  
+	    PreparedStatement stmt = null;
+	    ResultSet set = null;
+		try {
+			stmt = conn.prepareStatement(BICSQL.CC_AND_INS_NAME_AND_CITY_LOOKUP);
+			stmt.setString(1, cc);
+			stmt.setString(2, insName);
+			stmt.setString(3, cityHeading);
+			set = stmt.executeQuery();
+			if(set.next()) {
+				return BICInfo.getBICInfoMap(set);
+			} else {
+				// todo : internationalize excpetion
+				return null;
+			}
+		}
+		finally {
+			dispose(conn,stmt,set);
+		}									
+		
+	}
+	
+	
+	
+	/*
+	 *
+	 * Utility service to release db connection, close statements and result sets.
+	 *
+	 */
+	public static final void dispose(Connection conn, Statement stmt, ResultSet set) {
+		
+		try {
+			if (set != null) set.close();
+			if (stmt != null) stmt.close();
+			if (conn != null) Datastore.releaseConnection(conn);
+		} 
+		catch (Exception e) {}
+		
+	}
+		
+ 	public static final IData deriveBICfromIBAN(String IBAN, IData data) throws Exception {
+ 				String countryCode = BICUtils.getCountryCodeFromIBAN(IBAN);
+				// prepare statement once for all the inserts.
+				Map infoForCountryCode = ISOps.getInfoForCountryCode(countryCode);
+				if(infoForCountryCode ==null) {
+					throw new RuntimeException(" No matching record found in the data base for the country code = " + countryCode + 
+					" Check if the IS file has been successfully imported from the FIN UI");
+				}
+				String bankIdentifierPosition = (String)infoForCountryCode.get(ISInfo.BANK_IDENTIFIER_POSITION);
+				String IBANNationalIdLength = (String)infoForCountryCode.get(ISInfo.IBAN_NATIONAL_ID_LENGTH);
+				String uniqueNationalID = BICUtils.extractUnNationalIdFromBankIdPosAndNationalIDLength(IBAN, bankIdentifierPosition, IBANNationalIdLength);
+				Map bicDataMap = lookUpInfoForCCAndNationalID(countryCode, uniqueNationalID);
+				if(bicDataMap ==null) {
+					throw new RuntimeException("Could not find any record matching country code  = " 
+							+ countryCode + " and national Id = "+ uniqueNationalID  + " Check if the BI file has been successfully " +
+									"imported using the import BIC screen for SWIFT Adaptor");
+				}
+		  	     IDataCursor idc = data.getCursor();
+		  	   IDataUtil.put(idc,"IBAN",IBAN);
+		  	   IDataUtil.put(idc,"CC",countryCode);
+		  	   IDataUtil.put(idc,"IBAN_NATIONAL_ID",uniqueNationalID);
+		  	   IDataUtil.put(idc,BICInfo.IBAN_COUNTRY_CODE,bicDataMap.get(BICInfo.IBAN_COUNTRY_CODE));
+		  	   IDataUtil.put(idc,BICInfo.UNIQUE_IBAN_NATIONAL_ID,bicDataMap.get(BICInfo.UNIQUE_IBAN_NATIONAL_ID));
+		  	   IDataUtil.put(idc,BICInfo.BIC_CODE,bicDataMap.get(BICInfo.BIC_CODE));
+		  	   IDataUtil.put(idc,BICInfo.BRANCH_CODE,bicDataMap.get(BICInfo.BRANCH_CODE));
+		  	   IDataUtil.put(idc,BICInfo.IBAN_BIC_CODE,bicDataMap.get(BICInfo.IBAN_BIC_CODE));
+		  	   IDataUtil.put(idc,BICInfo.IBAN_BRANCH_CODE,bicDataMap.get(BICInfo.IBAN_BRANCH_CODE));
+		  	   IDataUtil.put(idc,BICInfo.ROUTING_BIC_CODE,bicDataMap.get(BICInfo.ROUTING_BIC_CODE));
+		  	   IDataUtil.put(idc,BICInfo.ROUTING_BRANCH_CODE,bicDataMap.get(BICInfo.ROUTING_BRANCH_CODE));
+			return data;
+		
+ 	}
+ 	
+ 	
+ 	public static final boolean validateBICIBAN(String IBAN, String BIC) throws Exception {
+ 		String countryCode = BICUtils.getCountryCodeFromIBAN(IBAN);
+ 		String bicBranchCode = null;
+		// prepare statement once for all the inserts.
+		Map infoForCountryCode = ISOps.getInfoForCountryCode(countryCode);
+		if(infoForCountryCode ==null) {
+			throw new RuntimeException(" No matching record found in the data base for the country code = " + countryCode + 
+			" Check if the IS file has been successfully imported from the FIN UI");
+		}
+		String bankIdentifierPosition = (String)infoForCountryCode.get(ISInfo.BANK_IDENTIFIER_POSITION);
+		String IBANNationalIdLength = (String)infoForCountryCode.get(ISInfo.IBAN_NATIONAL_ID_LENGTH);
+		String uniqueNationalID = BICUtils.extractUnNationalIdFromBankIdPosAndNationalIDLength(IBAN, bankIdentifierPosition, IBANNationalIdLength);
+		Map bicDataMap = lookUpInfoForCCAndNationalID(countryCode, uniqueNationalID);
+		if(bicDataMap ==null) {
+			throw new RuntimeException("Could not find any record matching country code  = " 
+					+ countryCode + " and national Id = "+ uniqueNationalID  + " Check if the BI file has been successfully " +
+							"imported using the import BIC screen for SWIFT Adaptor");
+		}
+		
+		String branchCode = (String)bicDataMap.get(BICInfo.PARENT_BANK_CODE);
+		Connection conn = Datastore.getConnection(); // get DB connection  
+	    PreparedStatement stmt = null;
+	    ResultSet set = null;
+		try {				
+	    
+		    // Prepare statement just once
+		    stmt = conn.prepareStatement(BICSQL.BIC_BY_FULL_CODE,
+		    							 ResultSet.TYPE_SCROLL_INSENSITIVE,
+	     								 ResultSet.CONCUR_READ_ONLY);
+						String[] BICandBranchCode = BICUtils.getBICAndBranchCode(BIC);				
+						stmt.setString(1,BICandBranchCode[0]);													
+						stmt.setString(2,BICandBranchCode[1]);													
+						set = stmt.executeQuery();
+			if(set.next()) {
+				Map infoMap = BICInfo.getBICInfoMap(set);				
+				bicBranchCode = (String)infoMap.get(BICInfo.PARENT_BANK_CODE);
+			}
+		}
+		finally {
+			dispose(conn,stmt,set);
+		}
+		
+		if(branchCode.equals(bicBranchCode)) {
+			return true;
+		} else {
+			throw new RuntimeException(" The BIC code and IBAN do not correspond to the same institution  " +
+					"manual investigation is required before  automatically rejecting a payment instruction");
+		}
+
+}
+ 	
+ 	public  static final boolean validateBankID(String IBAN) throws Exception {
+ 		String countryCode = BICUtils.getCountryCodeFromIBAN(IBAN);
+		// prepare statement once for all the inserts.
+		Map infoForCountryCode = ISOps.getInfoForCountryCode(countryCode);
+		if(infoForCountryCode ==null) {
+			throw new RuntimeException(" No matching record found in the data base for the country code = " + countryCode + 
+			" Check if the IS file has been successfully imported from the FIN UI");
+		}
+		String bankIdentifierPosition = (String)infoForCountryCode.get(ISInfo.BANK_IDENTIFIER_POSITION);
+		String IBANNationalIdLength = (String)infoForCountryCode.get(ISInfo.IBAN_NATIONAL_ID_LENGTH);
+		String uniqueNationalID = BICUtils.extractUnNationalIdFromBankIdPosAndNationalIDLength(IBAN, bankIdentifierPosition, IBANNationalIdLength);
+		Map bicDataMap = lookUpInfoForCCAndNationalID(countryCode, uniqueNationalID);
+		if(bicDataMap == null) {
+			return false;
+		}
+		
+		return true;
+ 	}
+ 	
+ 	public static final IData generateIBAN(IData pipeline) throws Exception {
+		String cc = ValuesEmulator.getString(pipeline,"Country_Code");
+		String insName = ValuesEmulator.getString(pipeline,"Institution_Name");
+		String cityHeading = ValuesEmulator.getString(pipeline,"City_Heading");
+		String accNumber = ValuesEmulator.getString(pipeline,"Account_Number");
+		
+		Map resultMap = lookUpInfoForCCAndInsNameAndCityHeading(cc, insName, cityHeading);
+		if(resultMap == null) {
+			throw new ServiceException("National ID could not be retrieved and IBAN cannot be created for the country code = " + cc 
+					+ " and Institution Name = " + insName + " and City Heading = " + cityHeading + ".Check the inputs " +
+							"and try again. If problem persists check the imported BICplusIBAN directory");
+		}
+		String natId = (String)resultMap.get(BICInfo.NATIONAL_ID);
+		String BBAN = natId  + accNumber;
+		IDataUtil.put(pipeline.getCursor(), "BBAN", BBAN);
+		String convertedBBAN = BICUtils.convertAlphaNumericToNumeric(BBAN);
+		String checkDigits = calculateCheckDigits(cc, BBAN);
+		String IBAN = cc + checkDigits + BBAN;
+		IDataUtil.put(pipeline.getCursor(), "IBAN", IBAN);
+ 		return pipeline;
+ 	}
+ 	
+ 	public static String calculateCheckDigits(String cc, String BBAN) throws ServiceException {
+ 		cc = cc.toUpperCase();
+ 		String IBAN = BBAN + cc +"00" ;
+ 		int reminder = 0 ;
+ 		String convertedIBAN = BICUtils.convertAlphaNumericToNumeric(IBAN);
+ 		while(convertedIBAN.length() >=5 ) {
+ 		String digits =  extractDigitsFromIBAN(convertedIBAN);
+ 		reminder  = new Integer(digits).intValue()%97;
+ 		convertedIBAN = reminder +  convertedIBAN.substring(5,convertedIBAN.length());
+ 		} 		
+ 		reminder  = new Integer(convertedIBAN).intValue()%97; 		
+ 		int checkDigits = 98 - reminder;
+ 		if(checkDigits <10) {
+ 			return  reminder + "0";
+ 		}
+ 		return "" + reminder;
+ 	}
+ 	
+ 	public static String extractDigitsFromIBAN(String IBAN) {
+ 		return IBAN.substring(0,5);
+ 	}
+}
+

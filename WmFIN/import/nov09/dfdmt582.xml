@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<constraints>
+
+<!-- Text Block for NOV03 MT582 -->
+
+<field name="32G:" type="PatternType">
+    <bizName>G - Gross Amount Claimed/Received</bizName>
+    <pattern>&lt;CUR&gt;&lt;AMOUNT&gt;15</pattern>
+</field>
+<field name="34A:" type="PatternType">
+    <bizName>Net Amount Claimed/Paid</bizName>
+    <pattern>&lt;DATE2&gt;&lt;CUR&gt;&lt;NUMBER&gt;15</pattern>
+</field>
+<field name="35B:" type="PatternType">
+    <bizName>B - Identification of Securities</bizName>
+    <pattern>&lt;35B/ISITC&gt;</pattern>
+</field>
+<field name="53A:" type="MixedType">
+    <bizName>A - Account for Payment</bizName>
+    <pattern>[&lt;PartyIdentifier&gt;][CRLF]&lt;SWIFTBIC&gt;</pattern>
+</field>
+<field name="53C:" type="PatternType">
+    <bizName>C - Account for Payment</bizName>
+    <pattern>/34x</pattern>
+</field>
+<field name="53D:" type="MixedType">
+    <bizName>D - Account for Payment</bizName>
+    <pattern>[&lt;PartyIdentifier&gt;][CRLF]4*35x</pattern>
+</field>
+<field name="57A:" type="MixedType">
+    <bizName>A - Account With Institution</bizName>
+    <<pattern>[&lt;PartyIdentifier&gt;][CRLF]&lt;SWIFTBIC&gt;</pattern>
+</field>
+<field name="57D:" type="MixedType">
+    <bizName>D - Account With Institution</bizName>
+    <pattern>[&lt;PartyIdentifier&gt;][CRLF]4*35x</pattern>
+</field>
+<field name="83A:" type="MixedType">
+    <bizName>A - Safekeeping Account</bizName>
+    <pattern>[&lt;PartyIdentifier&gt;][CRLF]&lt;SWIFTBIC&gt;</pattern>
+</field>
+<field name="83D:" type="MixedType">
+    <bizName>D - Safekeeping Account</bizName>
+    <pattern>[&lt;PartyIdentifier&gt;][CRLF]4*35x</pattern>
+</field>
+<field name="87A:" type="MixedType">
+    <bizName>A - Deliverer or Receiver of Securities</bizName>
+    <pattern>[&lt;PartyIdentifier&gt;][CRLF]&lt;SWIFTBIC&gt;</pattern>
+</field>
+<field name="87B:" type="MixedType">
+    <bizName>B - Deliverer or Receiver of Securities</bizName>
+    <pattern>[&lt;PartyIdentifier&gt;][CRLF][35x]</pattern>
+</field>
+<field name="87D:" type="MixedType">
+    <bizName>D - Deliverer or Receiver of Securities</bizName>
+    <pattern>[&lt;PartyIdentifier&gt;][CRLF]4*35x</pattern>
+</field>
+
+</constraints>

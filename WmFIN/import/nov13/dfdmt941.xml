@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<constraints>
+
+<!-- Text Block for NOV03 MT941 -->
+
+<field name="20:" type="PatternType">
+    <bizName>Reference - Transaction Reference Number (TRN)</bizName>
+    <pattern>16x</pattern>
+</field>
+<field name="28:" type="PatternType">
+    <bizName>Statement Number/Sequence Number</bizName>
+    <pattern>5n[/2n]</pattern>
+</field>
+<field name="86:" type="PatternType">
+    <bizName>Information to Account Owner</bizName>
+    <pattern>6*65x</pattern>
+</field>
+<field name="62F:" type="MixedType">
+    <bizName>F - Book Balance</bizName>
+    <pattern>1!a&lt;DATE2&gt;&lt;CUR&gt;&lt;AMOUNT&gt;15</pattern>
+    <alias pattern="1!a" bizName="D/C Mark" />                
+    <alias pattern="&lt;DATE2&gt;" bizName="Date" />                    
+    <choice>C</choice>
+    <choice>D</choice>
+</field>
+
+</constraints>

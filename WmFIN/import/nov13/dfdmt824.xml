@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<constraints>
+
+<!-- Text Block for NOV03 MT824 -->
+
+<field name="19:" type="PatternType">
+    <bizName>Total Face Value of Currency</bizName>
+    <pattern>&lt;AMOUNT&gt;17</pattern>
+</field>
+<field name="30:" type="PatternType">
+    <bizName>Date Destroyed/Cancelled</bizName>
+    <pattern>&lt;DATE2&gt;</pattern>
+</field>
+<field name="51A:" type="MixedType">
+    <bizName>A - Selling Agent</bizName>
+    <pattern>[&lt;PartyIdentifier&gt;][CRLF]&lt;SWIFTBIC&gt;</pattern>
+</field>
+<field name="51C:" type="PatternType">
+    <bizName>C - Selling Agent</bizName>
+    <pattern>/34x</pattern>
+</field>
+<field name="77B:" type="MixedType">
+    <bizName>Reason for Destruction/Cancellation</bizName>
+    <pattern>/6!a/[25x][CRLF][35x][CRLF][35x]</pattern>
+    <choice>REASON</choice>
+</field>
+<field name="72:" type="PatternType">
+    <bizName>Sender to Receiver Information</bizName>
+    <pattern>&lt;ERI_F72narrative&gt;</pattern>
+</field>
+</constraints>

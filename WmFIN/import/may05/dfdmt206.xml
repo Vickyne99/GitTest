@@ -1,0 +1,106 @@
+<?xml version="1.0"?>
+<constraints>
+
+<!-- Text Block for NOV03 MT206 -->
+
+<field name="17A:" type="MixedType">
+    <bizName>Cheque Truncation Indicator</bizName>
+    <pattern>1!a</pattern>
+    <choice>Y</choice>
+    <choice>N</choice>
+    <error type="choice">T36</error>
+</field>
+<field name="19:" type="PatternType">
+    <bizName>Settlement Amounts</bizName>
+    <pattern>&lt;AMOUNT&gt;17</pattern>
+</field>
+<field name="20:" type="PatternType">
+    <bizName>Reference - Sender's Reference</bizName>
+    <pattern>16x</pattern>
+    <error type="content">T26</error>
+</field>
+<field name="21D:" type="PatternType">
+    <bizName>Reference D - Cheque Number</bizName>
+    <pattern>35x</pattern>
+</field>
+<field name="21E:" type="PatternType">
+    <bizName>Reference E - Cheque Reference Number</bizName>
+    <pattern>35x</pattern>
+</field>
+<field name="23E:" type="MixedType">
+    <bizName>Cheque Type</bizName>
+    <pattern>4!c[/30x]</pattern>
+    <choice>GENC</choice>
+    <choice>OTHR</choice>
+    <choice>TRAV</choice>
+    <error type="code">T47</error>
+</field>
+<field name="25:" type="PatternType">
+    <bizName>Issuer's Account Number/Code</bizName>
+    <pattern>35x</pattern>
+</field>
+<field name="26E:" type="PatternType">
+    <bizName>Represented Cheque Entry</bizName>
+    <pattern>2n</pattern>
+</field>
+<field name="28E:" type="MixedType">
+    <bizName>E - Message Index/Total</bizName>
+    <pattern>5n/4!c</pattern>
+    <choice>LAST</choice>
+    <choice>MORE</choice>
+    <choice>ONLY</choice>
+    <error type="choice">T97</error>
+</field>
+<field name="30:" type="PatternType">
+    <bizName>Date - Date of Issue/Encashment</bizName>
+    <pattern>&lt;DATE2&gt;</pattern>
+</field>
+<field name="32A:" type="PatternType">
+    <bizName>A - Value Date, Currency Code and Sum of Settlement Amounts</bizName>
+    <pattern>&lt;DATE2&gt;&lt;CUR&gt;&lt;AMOUNT&gt;15</pattern>
+</field>
+<field name="39C:" type="PatternType">
+    <bizName>Place of Issue/Encashment</bizName>
+    <pattern>4*35x</pattern>
+</field>
+<field name="44A:" type="PatternType">
+    <bizName>Transaction Reference Number</bizName>
+    <pattern>65x</pattern>
+</field>
+<field name="52A:" type="MixedType">
+    <bizName>A - Safekeeper</bizName>
+    <pattern>[&lt;BICPLUS&gt;][CRLF]&lt;SWIFTBIC&gt;|&lt;NONSWIFTBIC&gt;</pattern>
+</field>
+<field name="52C:" type="MixedType">
+    <bizName>C - Safekeeper</bizName>
+    <pattern>&lt;BICPLUS&gt;</pattern>
+</field>
+<field name="52D:" type="MixedType">
+    <bizName>D - Safekeeper</bizName>
+    <pattern>[&lt;BICPLUS&gt;][CRLF]4*35x</pattern>
+</field>
+<field name="57A:" type="MixedType">
+    <bizName>A - Account With Institution (for Settlement)</bizName>
+    <pattern>[&lt;BICPLUS&gt;][CRLF]&lt;SWIFTBIC&gt;|&lt;NON-SWIFTBIC&gt;</pattern>
+</field>
+<field name="57C:" type="MixedType">
+    <bizName>C - Account With Institution (for Settlement)</bizName>
+    <pattern>&lt;BICPLUS&gt;</pattern>
+</field>
+<field name="57D:" type="MixedType">
+    <bizName>D - Account With Institution (for Settlement)</bizName>
+    <pattern>[&lt;BICPLUS&gt;][CRLF]4*35x</pattern>
+</field>
+<field name="58A:" type="MixedType">
+    <bizName>A - Issuer's Financial Institution</bizName>
+    <pattern>[&lt;BICPLUS&gt;][CRLF]&lt;SWIFTBIC&gt;|&lt;NONSWIFTBIC&gt;</pattern>
+</field>
+<field name="58D:" type="MixedType">
+    <bizName>D - Issuer's Financial Institution</bizName>
+    <pattern>[&lt;BICPLUS&gt;][CRLF]4*35x</pattern>
+</field>
+<field name="72:" type="PatternType">
+    <bizName>Sender to Receiver Information</bizName>
+    <pattern>&lt;FLD72&gt;</pattern>
+</field>
+</constraints>

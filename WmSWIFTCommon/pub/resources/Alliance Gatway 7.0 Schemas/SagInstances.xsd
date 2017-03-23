@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:element name="Port">
+      <xs:simpleType>
+         <xs:restriction base="xs:int">
+         </xs:restriction>
+      </xs:simpleType>
+   </xs:element>
+   <xs:element name="Name">
+      <xs:simpleType>
+         <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+         </xs:restriction>
+      </xs:simpleType>
+   </xs:element>
+   <xs:element name="Instances">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element ref="Inst" maxOccurs="unbounded"/>
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="Inst">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element ref="Name"/>
+            <xs:element ref="Host"/>
+            <xs:element ref="Port"/>
+            <xs:element ref="FileTransferPort"/>
+            <xs:element ref="Default"/>
+            <xs:element ref="EncryptionType"/>
+            <xs:sequence minOccurs="0">
+               <xs:element ref="CertificateDn"/>
+               <xs:element ref="CaCertificateLocation"/>
+            </xs:sequence>
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="Host">
+      <xs:simpleType>
+         <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+         </xs:restriction>
+      </xs:simpleType>
+   </xs:element>
+   <xs:element name="FileTransferPort">
+      <xs:simpleType>
+         <xs:restriction base="xs:int">
+         </xs:restriction>
+      </xs:simpleType>
+   </xs:element>
+   <xs:element name="EncryptionType">
+      <xs:simpleType>
+         <xs:restriction base="xs:string">
+            <xs:enumeration value="authentication"/>
+            <xs:enumeration value="data"/>
+            <xs:enumeration value="none"/>
+         </xs:restriction>
+      </xs:simpleType>
+   </xs:element>
+   <xs:element name="Default" type="xs:boolean"/>
+   <xs:element name="CertificateDn">
+      <xs:simpleType>
+         <xs:restriction base="xs:string">
+         </xs:restriction>
+      </xs:simpleType>
+   </xs:element>
+   <xs:element name="CaCertificateLocation" type="xs:string"/>
+</xs:schema>

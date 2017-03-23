@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<constraints>
+
+<!-- Text Block for NOV03 MT305 -->
+
+<field name="22:" type="PatternType">
+    <bizName>Code/Common Reference</bizName>
+    <pattern>('AMEND'|'CANCEL'|'CLOSEOUT'|'NEW')/&lt;SB-LCPlus&gt;</pattern>
+</field>
+<field name="23:" type="PatternType">
+    <bizName>Further Identification</bizName>
+    <pattern>4a/4a/1!a/&lt;CUR&gt;</pattern>
+    <alias pattern="4a" bizName="Code 1" />            
+    <alias pattern="4a" bizName="Code 2" />                
+</field>
+<field name="30:" type="PatternType">
+    <bizName>Date - Date Contract Agreed/Amended</bizName>
+    <pattern>&lt;DATE2&gt;</pattern>
+</field>
+<field name="31C:" type="PatternType">
+    <bizName>C - Earliest Exercise Date</bizName>
+    <pattern>&lt;DATE2&gt;</pattern>
+</field>
+<field name="31E:" type="PatternType">
+    <bizName>E - Final Settlement Date</bizName>
+    <pattern>&lt;DATE2&gt;</pattern>
+</field>
+<field name="32B:" type="PatternType">
+    <bizName>B - Counter Currency and Amount</bizName>
+    <pattern>&lt;CUR&gt;&lt;AMOUNT&gt;15</pattern>
+</field>
+<field name="33B:" type="PatternType">
+    <bizName>B - Currency, Amount Sold</bizName>
+    <pattern>&lt;CUR&gt;&lt;AMOUNT&gt;15</pattern>
+</field>
+<field name="36:" type="PatternType">
+    <bizName>Strike Price</bizName>
+    <pattern>&lt;NUMBER&gt;12</pattern>
+</field>
+<field name="53A:" type="MixedType">
+    <bizName>A - Sender's Correspondent</bizName>
+    <pattern>[&lt;BICPLUS&gt;][CRLF]&lt;SWIFTBIC&gt;|&lt;NON-SWIFTBIC&gt;</pattern>
+    <choice>C</choice>
+    <choice>D</choice>
+</field>
+<field name="53D:" type="MixedType">
+    <bizName>D - Sender's Correspondent</bizName>
+    <pattern>[&lt;BICPLUS&gt;][CRLF]4*35x</pattern>
+    <choice>C</choice>
+    <choice>D</choice>
+</field>
+<field name="57A:" type="MixedType">
+    <bizName>A - Account With Institution</bizName>
+    <pattern>[&lt;BICPLUS&gt;][CRLF]&lt;SWIFTBIC&gt;|&lt;NON-SWIFTBIC&gt;</pattern>
+    <choice>C</choice>
+    <choice>D</choice>
+</field>
+<field name="57D:" type="MixedType">
+    <bizName>D - Account With Institution</bizName>
+    <pattern>[&lt;BICPLUS&gt;][CRLF]4*35x</pattern>
+    <choice>C</choice>
+    <choice>D</choice>
+</field>
+<field name="72:" type="PatternType">
+    <bizName>Sender to Receiver Information</bizName>
+    <pattern>&lt;FLD72&gt;</pattern>
+</field>
+<field name="77D:" type="MixedType">
+    <bizName>D - Terms and Conditions</bizName>
+    <pattern>6*35x</pattern>
+</field>
+</constraints>

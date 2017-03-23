@@ -1,0 +1,113 @@
+<?xml version="1.0"?>
+<constraints>
+
+<!-- Text Block for NOV03 MT568 -->
+
+<field name="23G:" type="Mixed2Type">
+    <bizName>Function of the Message</bizName>
+    <pattern>4!c[/4!c]</pattern>
+    <alias pattern="4!c" bizName="Function" />            
+    <alias pattern="4!c" bizName="Subfunction" />                
+    <choice1>CANC</choice1>
+    <choice1>NEWM</choice1>
+    <choice1>REPE</choice1>
+    <choice1>REPL</choice1>
+    <choice1>RMDR</choice1>
+    <choice1>WITH</choice1>
+    <choice2>CODU</choice2>
+    <choice2>COPY</choice2>
+    <choice2>DUPL</choice2>
+    <error type="choice">T86</error>
+</field>
+<field name="22F::CAEV" type="GenericFieldType">
+    <bizName>Corporate Action Event Indicator</bizName>
+    <pattern>/[8c]/4!c</pattern>
+    <alias pattern="8c" bizName="Data Source Scheme" />    
+    <alias pattern="4!c" bizName="Indicator" />            
+    <choice>ACTV</choice>
+    <choice>ATTI</choice>
+    <choice>BIDS</choice>
+    <choice>BONU</choice>
+    <choice>BPUT</choice>
+    <choice>BRUP</choice>
+    <choice>CAPG</choice>
+    <choice>CERT</choice>
+    <choice>CHAN</choice>
+    <choice>CLSA</choice>
+    <choice>CMET</choice>
+    <choice>CONS</choice>
+    <choice>CONV</choice>
+    <choice>CPST</choice>
+    <choice>DECR</choice>
+    <choice>DETI</choice>
+    <choice>DFLT</choice>
+    <choice>DLST</choice>
+    <choice>DRAW</choice>
+    <choice>DRIP</choice>
+    <choice>DSCL</choice>
+    <choice>DTCH</choice>
+    <choice>DVCA</choice>
+    <choice>DVOP</choice>
+    <choice>DVSC</choice>
+    <choice>DVSE</choice>
+    <choice>EXOF</choice>
+    <choice>EXOP</choice>
+    <choice>EXRI</choice>
+    <choice>EXTM</choice>
+    <choice>EXWA</choice>
+    <choice>INCR</choice>
+    <choice>INTR</choice>
+    <choice>LIQU</choice>
+    <choice>MCAL</choice>
+    <choice>MEET</choice>
+    <choice>MRGR</choice>
+    <choice>ODLT</choice>
+    <choice>OMET</choice>
+    <choice>OTHR</choice>
+    <choice>PARI</choice>
+    <choice>PCAL</choice>
+    <choice>PDEF</choice>
+    <choice>PINK</choice>
+    <choice>PLAC</choice>
+    <choice>PPMT</choice>
+    <choice>PRII</choice>
+    <choice>PRIO</choice>
+    <choice>REDM</choice>
+    <choice>REDO</choice>
+    <choice>REMK</choice>
+    <choice>RHDI</choice>
+    <choice>RHTS</choice>
+    <choice>SCOP</choice>
+    <choice>SMAL</choice>
+    <choice>SOFF</choice>
+    <choice>SPLF</choice>
+    <choice>SPLR</choice>
+    <choice>SUSP</choice>
+    <choice>TEND</choice>
+    <choice>TREC</choice>
+    <choice>WRTH</choice>
+    <choice>WTRC</choice>
+    <choice>XMET</choice>
+    <choice>SHPR</choice>    
+    <choice>COOP</choice>
+</field>
+<field name="94B::SAFE" type="GenericFieldType">
+    <bizName>Place B - Place of Safekeeping</bizName>
+    <pattern>/[8c]/4!c[/30x]</pattern>
+    <choice>SHHE</choice>
+    <choice>ALLP</choice>
+</field>
+<field name="93C::LOAN" type="Mixed2Type">
+    <bizName>Balance C - On Loan</bizName>
+    <pattern>//4!c/4!c/[N]&lt;NUMBER&gt;15</pattern>
+    <alias pattern="4!c" bizName="Quantity Type Code" />            
+    <alias pattern="4!c" bizName="Balance Type Code" />                
+    <choice1>FAMT</choice1>
+    <choice1>UNIT</choice1>
+    <choice1>AMOR</choice1>
+    <choice2>ELIG</choice2>
+    <choice2>NELG</choice2>
+</field>
+
+
+</constraints>

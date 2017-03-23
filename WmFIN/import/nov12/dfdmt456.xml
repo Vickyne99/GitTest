@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<constraints>
+
+<!-- Text Block for NOV03 MT 456 -->
+<field name="32A:" type="PatternType">
+    <bizName>A - Date and Face Amount of Financial Document</bizName>
+    <pattern>&lt;DATE2&gt;&lt;CUR&gt;&lt;AMOUNT&gt;15</pattern>
+</field>
+<field name="32B:" type="PatternType">
+    <bizName>B - Date and Face Amount of Financial Document</bizName>
+    <pattern>&lt;CUR&gt;&lt;AMOUNT&gt;15</pattern>
+</field>
+<field name="33D:" type="PatternType">
+    <bizName>D - Total Amount Debited</bizName>
+    <pattern>&lt;DATE2&gt;&lt;CUR&gt;&lt;AMOUNT&gt;15</pattern>
+</field>
+<field name="52A:" type="MixedType">
+    <bizName>A - Sender of Cash Letter</bizName>
+    <pattern>[&lt;PartyIdentifier&gt;][CRLF]&lt;SWIFTBIC&gt;</pattern>
+</field>
+<field name="52D:" type="MixedType">
+    <bizName>D - Sender of Cash Letter</bizName>
+    <pattern>[&lt;PartyIdentifier&gt;][CRLF]4*35x</pattern>
+</field>
+<field name="71B:" type="PatternType">
+    <bizName>B - Fee</bizName>
+    <pattern>6*35x</pattern>
+</field>
+<field name="72:" type="PatternType">
+    <bizName>Sender to Receiver Information</bizName>
+    <pattern>&lt;ERI_F72narrative&gt;</pattern>
+</field>
+<field name="77A:" type="PatternType">
+    <bizName>Reason for Dishonour</bizName>
+    <pattern>&lt;ERI_F77A&gt;</pattern>
+</field>
+<field name="77D:" type="PatternType">
+    <bizName>D - Details of Dishonoured Item</bizName>
+    <pattern>6*35x</pattern>
+</field>
+</constraints>

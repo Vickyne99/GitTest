@@ -1,0 +1,179 @@
+<?xml version="1.0"?>
+<constraints>
+
+<!-- Text Block for NOV03 MT502 -->
+<field name="22F::PRIC" type="GenericFieldType">
+    <bizName>Type of Price</bizName>
+    <pattern>/[8c]/4!c</pattern>
+    <choice>COMB</choice>
+    <choice>GREX</choice>
+    <choice>NDIS</choice>
+    <choice>NET1</choice>
+    <choice>NET2</choice>
+    <choice>NOGR</choice>
+    <choice>NUND</choice>
+    <choice>PARV</choice>
+</field>
+<field name="22F::SETR" type="GenericFieldType">
+    <bizName>Type of Settlement Transaction</bizName>
+    <pattern>/[8c]/4!c</pattern>
+    <choice>BSBK</choice>
+    <choice>COLL</choice>
+    <choice>CONV</choice>
+    <choice>ISSU</choice>
+    <choice>OWNE</choice>
+    <choice>OWNI</choice>
+    <choice>MKDW</choice>
+    <choice>MKUP</choice>
+    <choice>NETT</choice>
+    <choice>NSYN</choice>
+    <choice>PAIR</choice>
+    <choice>PLAC</choice>
+    <choice>REAL</choice>
+    <choice>REDI</choice>
+    <choice>REDM</choice>
+    <choice>RELE</choice>
+    <choice>REPU</choice>
+    <choice>RODE</choice>
+    <choice>RPTO</choice>
+    <choice>RVPO</choice>
+    <choice>SBBK</choice>
+    <choice>SECB</choice>
+    <choice>SECL</choice>
+    <choice>SUBS</choice>
+    <choice>SYND</choice>
+    <choice>TRAD</choice>
+    <choice>TRPO</choice>
+    <choice>TURN</choice>
+</field>
+<field name="22F::TILI" type="GenericFieldType">
+    <bizName>Time Limit</bizName>
+    <pattern>/[8c]/4!c</pattern>
+    <choice>CLOS</choice>
+    <choice>FAKI</choice>
+    <choice>FIKI</choice>
+    <choice>GDAY</choice>
+    <choice>GTCA</choice>
+    <choice>GTHD</choice>
+    <choice>GTMO</choice>
+    <choice>GTNM</choice>
+    <choice>GTXO</choice>
+    <choice>IOCA</choice>
+    <choice>OPEN</choice>
+</field>
+<field name="22F::TOOR" type="GenericFieldType">
+    <bizName>Type of Order</bizName>
+    <pattern>/[8c]/4!c</pattern>
+    <choice>ALNO</choice>
+    <choice>CARE</choice>
+    <choice>COMB</choice>
+    <choice>DISC</choice>
+    <choice>DNIN</choice>
+    <choice>DNRE</choice>
+    <choice>ICEB</choice>
+    <choice>LIWI</choice>
+    <choice>LIWO</choice>
+    <choice>LMTO</choice>
+    <choice>MAKT</choice>
+    <choice>MANH</choice>
+    <choice>MTLO</choice>
+    <choice>MUTO</choice>
+    <choice>NOHE</choice>
+    <choice>ORLI</choice>
+    <choice>STLI</choice>
+    <choice>STOP</choice>
+    <choice>BCSE</choice>
+    <choice>BCSH</choice>
+    <choice>BMIN</choice>
+    <choice>SLOS</choice>
+    <choice>SPLU</choice>
+    <choice>SSEX</choice>
+    <choice>SSHO</choice>
+</field>
+<field name="22F::TRCA" type="GenericFieldType">
+    <bizName>Party Capacity Indicator</bizName>
+    <pattern>/[8c]/4!c</pattern>
+    <choice>AGEN</choice>
+    <choice>BAGN</choice>
+    <choice>CAGN</choice>
+    <choice>CPRN</choice>
+    <choice>OAGN</choice>
+    <choice>PRAG</choice>
+    <choice>PRIN</choice>
+</field>
+<field name="22F::TTCO" type="GenericFieldType">
+    <bizName>Trade Transaction Condition Indicator</bizName>
+    <pattern>/[8c]/4!c</pattern>
+    <choice>BCRO</choice>
+    <choice>BCRP</choice>
+    <choice>BCPD</choice>
+    <choice>BCFD</choice>
+    <choice>BCBL</choice>
+    <choice>BCBN</choice>
+    <choice>BLKO</choice>
+    <choice>BTEX</choice>
+    <choice>CALL</choice>
+    <choice>CBNS</choice>
+    <choice>CCPN</choice>
+    <choice>CDIV</choice>
+    <choice>CLBR</choice>
+    <choice>CLEN</choice>
+    <choice>CRST</choice>
+    <choice>CRTS</choice>
+    <choice>CWAR</choice>
+    <choice>DIOR</choice>
+    <choice>DIRT</choice>
+    <choice>DORD</choice>
+    <choice>FORW</choice>
+    <choice>FRAC</choice>
+    <choice>GTDL</choice>
+    <choice>HIST</choice>
+    <choice>MONT</choice>
+    <choice>NBFR</choice>
+    <choice>PUTT</choice>
+    <choice>NCRS</choice>
+    <choice>SPCU</choice>
+    <choice>SPEX</choice>
+    <choice>TRFR</choice>
+    <choice>XBNS</choice>
+    <choice>XCPN</choice>
+    <choice>XDIV</choice>
+    <choice>XRTS</choice>
+    <choice>XWAR</choice>
+</field>
+<field name="22H::BUSE" type="MixedType">
+    <bizName>Buy/Sell Indicator</bizName>
+    <pattern>//4!c</pattern>
+    <choice>BUYI</choice>
+    <choice>CROF</choice>
+    <choice>CROT</choice>
+    <choice>DIVR</choice>
+    <choice>IPOO</choice>
+    <choice>REDM</choice>
+    <choice>SELL</choice>
+    <choice>SUBS</choice>
+    <choice>SWIF</choice>
+    <choice>SWIT</choice>
+</field>
+<field name="23G:" type="Mixed2Type">
+    <bizName>Function of the Message</bizName>
+    <pattern>4!c[/4!c]</pattern>
+    <alias pattern="4!c" bizName="Function" />            
+    <alias pattern="4!c" bizName="Subfunction" />                
+    <choice1>CANC</choice1>
+    <choice1>NEWM</choice1>
+    <choice1>REPL</choice1>
+    <choice2>CODU</choice2>
+    <choice2>COPY</choice2>
+    <choice2>DUPL</choice2>
+</field>
+
+<field name="22H::RMTH" type="MixedType">
+    <bizName>Rounding Method Requested</bizName>
+    <pattern>//4!c</pattern>
+    <alias pattern="4!c" bizName="Indicator" />                                    
+    <choice>RDDN</choice>
+    <choice>RDUP</choice>
+    <choice>EXAC</choice>
+</field>
+</constraints>
